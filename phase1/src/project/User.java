@@ -10,6 +10,11 @@ class User implements Serializable {
 
 	private String username;
 	private String password;
+
+	public UserHistory getHistory() {
+		return history;
+	}
+
 	private UserHistory history;
 
 	User(UserHistory history, String username, String password){

@@ -1,15 +1,23 @@
 package project;
 
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 
 abstract public class UserManager<T extends User> {
     HashMap<String, T> users;
 
     // Type erasure doesn't allow us to call T's constructor :(
     abstract T createUser(UserHistory history, String name, String password);
-    UserHistory createUseHistory(){
+
+    UserHistory createUseHistory() {
+        // TODO: added whatever you need
         return null;
     }
+
     T signIn(String name, String password) {
         if (users.containsKey(name)) {
             T user = users.get(name);
@@ -21,5 +29,9 @@ abstract public class UserManager<T extends User> {
         T user = createUser(createUseHistory(), name, password);
         users.put(name, user);
         return user;
+    }
+
+    Collection<T> toCollection() {
+        return Collections.unmodifiableCollection(users.values());
     }
 }
