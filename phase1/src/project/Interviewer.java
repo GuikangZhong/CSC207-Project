@@ -1,7 +1,7 @@
 package project;
 
 public class Interviewer extends User {
-    Interviewer(String username, String password){
-        super(username,password);
+    Interviewer(UserHistory history,String username, String password){
+        super(history, username,password);
     }
 }

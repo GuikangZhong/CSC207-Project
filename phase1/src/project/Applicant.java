@@ -8,8 +8,8 @@ public class Applicant extends User {
     private Document document;
     private Collection<Application> applications;
 
-    Applicant(String username, String password) {
-        super(username, password);
+    Applicant(UserHistory history, String username, String password) {
+        super(history, username, password);
     }
 
     void applyFor(JobPosting jobPosting) {
