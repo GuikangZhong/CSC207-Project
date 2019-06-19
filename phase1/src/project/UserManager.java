@@ -14,7 +14,7 @@ abstract public class UserManager<T extends User> {
     abstract T createUser(UserHistory history, String name, String password);
 
 
-    abstract UserHistory createUseHistory();
+    abstract UserHistory createUserHistory();
 
     T signIn(String name, String password) {
         if (users.containsKey(name)) {
@@ -24,7 +24,7 @@ abstract public class UserManager<T extends User> {
             }
             throw new RuntimeException("Password or user name not correct");
         }
-        T user = createUser(createUseHistory(), name, password);
+        T user = createUser(createUserHistory(), name, password);
         users.put(name, user);
         return user;
     }
