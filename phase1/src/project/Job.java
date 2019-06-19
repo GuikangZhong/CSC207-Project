@@ -14,4 +14,9 @@ public class Job implements Serializable {
     }
 
     private Company company;
+
+    Job(String title, Company company){
+        this.title = title;
+        this.company = company;
+    }
 }

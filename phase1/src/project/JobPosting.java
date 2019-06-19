@@ -1,6 +1,7 @@
 package project;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.List;
 
@@ -36,11 +37,21 @@ public class JobPosting implements Serializable {
     private Requirement requirement;
     private int numberNeeded;
     private Collection<Application> applications ;
-
+    private LocalDateTime begin, end;
     void addApplication(Application application){
-        applications.add(application);
+        if(requirement.satisfies(application)){
+            applications.add(application);
+        }else{
+            throw new RuntimeException("Requirement not satisfied");
+        }
     }
     void removeApplication(Application application){
         applications.remove(application);
+    }
+    JobPosting(Job job, LocalDateTime begin, LocalDateTime end){
+        status = Status.OPEN;
+        this.begin = begin;
+        this.end = end;
+        this.job = job;
     }
 }
