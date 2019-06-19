@@ -1,0 +1,25 @@
+package project;
+
+import java.util.HashMap;
+
+abstract public class UserManager<T extends User> {
+    HashMap<String, T> users;
+
+    // Type erasure doesn't allow us to call T's constructor :(
+    abstract T createUser(UserHistory history, String name, String password);
+    UserHistory createUseHistory(){
+        return null;
+    }
+    T signIn(String name, String password) {
+        if (users.containsKey(name)) {
+            T user = users.get(name);
+            if (user.verifyPassword(password)) {
+                return user;
+            }
+            throw new RuntimeException("Password or user name not correct");
+        }
+        T user = createUser(createUseHistory(), name, password);
+        users.put(name, user);
+        return user;
+    }
+}

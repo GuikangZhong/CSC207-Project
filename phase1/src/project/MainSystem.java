@@ -9,22 +9,11 @@ public class MainSystem {
         return companys;
     }
 
-    public Collection<Applicant> getApplicants() {
-        return applicants;
-    }
-
-    public Collection<HR> getHRs() {
-        return HRs;
-    }
-
-    public Collection<Interviewer> getInterviewers() {
-        return interviewers;
-    }
 
     private Collection<Company>companys;
-    private Collection<Applicant> applicants;
-    private Collection<HR> HRs;
-    private Collection<Interviewer> interviewers;
+    private UserManager<Applicant> applicants;
+    private UserManager<HR> HRs;
+    private UserManager<Interviewer> interviewers;
 
 
 
