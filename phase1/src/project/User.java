@@ -2,7 +2,7 @@ package project;
 
 import java.io.Serializable;
 
-class User implements Serializable {
+class User<T extends UserHistory> implements Serializable {
 	public String getUsername() {
 		return username;
 	}
@@ -11,13 +11,13 @@ class User implements Serializable {
 	private String username;
 	private String password;
 
-	public UserHistory getHistory() {
+	public T getHistory() {
 		return history;
 	}
 
-	private UserHistory history;
+	private T history;
 
-	User(UserHistory history, String username, String password){
+	User(T history, String username, String password){
 		this.username = username;
 		this.password = password;
 	}

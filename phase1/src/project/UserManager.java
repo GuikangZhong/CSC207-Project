@@ -11,10 +11,7 @@ abstract public class UserManager<T extends User> {
     HashMap<String, T> users;
 
     // Type erasure doesn't allow us to call T's constructor :(
-    abstract T createUser(UserHistory history, String name, String password);
-
-
-    abstract UserHistory createUserHistory();
+    abstract T createUser(String name, String password);
 
     T signIn(String name, String password) {
         if (users.containsKey(name)) {
@@ -24,7 +21,7 @@ abstract public class UserManager<T extends User> {
             }
             throw new RuntimeException("Password or user name not correct");
         }
-        T user = createUser(createUserHistory(), name, password);
+        T user = createUser(name, password);
         users.put(name, user);
         return user;
     }
