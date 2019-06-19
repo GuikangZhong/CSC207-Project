@@ -10,29 +10,23 @@ public class CV {
     private String applicantName;
     private String content;
 
-    public static CV createCVByDirectInput(String applicantName, String input){
+    public static CV createCVByDirectInput(String applicantName, String input) {
         return new CV(applicantName, input);
     }
 
     public static CV createCVByFileName(String applicantName, String path) throws IOException {
-        BufferedReader in = null;
-        String content = "";
-        try {
-            in = new BufferedReader(new FileReader(path));
+        StringBuilder content = new StringBuilder();
+        try (BufferedReader in = new BufferedReader(new FileReader(path))) {
             String s = in.readLine();
-            while(s  != null){
-                content  = content + s;
+            while (s != null) {
+                content.append(s);
                 s = in.readLine();
             }
-        } finally {
-            if (in != null) {
-                in.close();
-            }
         }
-        return new CV(applicantName, content);
+        return new CV(applicantName, content.toString());
     }
 
-    private CV(String applicantName, String content){
+    private CV(String applicantName, String content) {
         this.applicantName = applicantName;
         this.content = content;
     }
