@@ -1,12 +1,29 @@
 package project;
 
+import java.util.Collection;
 import java.util.List;
 
 public class MainSystem {
-    private List<Company>companys;
-    private List<Applicant> applicants;
-    private List<HR> HRs;
-    private List<Interviewer> interviewers;
+    public Collection<Company> getCompanys() {
+        return companys;
+    }
+
+    public Collection<Applicant> getApplicants() {
+        return applicants;
+    }
+
+    public Collection<HR> getHRs() {
+        return HRs;
+    }
+
+    public Collection<Interviewer> getInterviewers() {
+        return interviewers;
+    }
+
+    private Collection<Company>companys;
+    private Collection<Applicant> applicants;
+    private Collection<HR> HRs;
+    private Collection<Interviewer> interviewers;
 
 
 }

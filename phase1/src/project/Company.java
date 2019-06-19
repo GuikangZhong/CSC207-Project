@@ -1,9 +1,9 @@
 package project;
 
 import java.io.Serializable;
-import java.util.List;
+import java.util.Collection;
 
 public class Company implements Serializable {
     private String name;
-    private List<JobPosting> jobPostingList;
+    private Collection<JobPosting> jobPostings;
 }

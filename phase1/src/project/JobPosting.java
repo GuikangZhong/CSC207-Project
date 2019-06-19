@@ -1,6 +1,7 @@
 package project;
 
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.List;
 
 public class JobPosting implements Serializable {
@@ -10,8 +11,36 @@ public class JobPosting implements Serializable {
         CLOSED,
         FILLED
     }
+
+    public Job getJob() {
+        return job;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public Requirement getRequirement() {
+        return requirement;
+    }
+
+    public int getNumberNeeded() {
+        return numberNeeded;
+    }
+
+    public Collection<Application> getApplications() {
+        return applications;
+    }
+
     Status status;
     private Requirement requirement;
     private int numberNeeded;
-    private List<Application> applications ;
+    private Collection<Application> applications ;
+
+    void addApplication(Application application){
+        applications.add(application);
+    }
+    void removeApplication(Application application){
+        applications.remove(application);
+    }
 }
