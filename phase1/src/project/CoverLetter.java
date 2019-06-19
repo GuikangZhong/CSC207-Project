@@ -1,6 +1,10 @@
 package project;
 
 public class CoverLetter {
+    public String getApplicantName() {
+        return applicantName;
+    }
+
     private String applicantName;
     private String content;
 
