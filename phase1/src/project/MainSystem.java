@@ -1,10 +1,11 @@
 package project;
 
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.Collections;
 
 
-public class MainSystem {
+public class MainSystem implements Serializable {
     public Collection<Company> getCompanys() {
         return Collections.unmodifiableCollection(companys);
     }
