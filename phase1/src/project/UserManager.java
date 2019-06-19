@@ -13,10 +13,8 @@ abstract public class UserManager<T extends User> {
     // Type erasure doesn't allow us to call T's constructor :(
     abstract T createUser(UserHistory history, String name, String password);
 
-    UserHistory createUseHistory() {
-        // TODO: added whatever you need
-        return null;
-    }
+
+    abstract UserHistory createUseHistory();
 
     T signIn(String name, String password) {
         if (users.containsKey(name)) {
