@@ -3,10 +3,6 @@ package project;
 import java.io.*;
 
 public class CV {
-    public String getApplicantName() {
-        return applicantName;
-    }
-
     private String applicantName;
     private String content;
 
@@ -37,5 +33,9 @@ public class CV {
 
     public String getContent() {
         return content;
+    }
+
+    public String getApplicantName() {
+        return applicantName;
     }
 }
