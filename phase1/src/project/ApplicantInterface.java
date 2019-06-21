@@ -1,6 +1,6 @@
 package project;
 
-public class ApplicationInterface implements UserInterface{
+public class ApplicantInterface implements UserInterface{
     @Override
     public void options() {
 
