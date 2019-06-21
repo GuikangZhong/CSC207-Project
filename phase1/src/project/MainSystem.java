@@ -7,7 +7,7 @@ import java.util.Collections;
 
 public class MainSystem implements Serializable {
     public Collection<Company> getCompanys() {
-        return Collections.unmodifiableCollection(companys);
+        return companys;
     }
 
     public SystemClock getClock() {

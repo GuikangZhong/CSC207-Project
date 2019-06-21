@@ -27,6 +27,6 @@ abstract public class UserManager<T extends User> {
     }
 
     Collection<T> toCollection() {
-        return Collections.unmodifiableCollection(users.values());
+        return users.values();
     }
 }

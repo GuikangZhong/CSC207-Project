@@ -14,7 +14,7 @@ public class Applicant extends User<ApplicantHistory> {
     private Document document;
 
     public Collection<Application> getApplications() {
-        return Collections.unmodifiableCollection(applications);
+        return applications;
     }
 
     private Collection<Application> applications;

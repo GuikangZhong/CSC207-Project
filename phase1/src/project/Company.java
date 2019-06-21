@@ -9,7 +9,7 @@ public class Company implements Serializable {
     private String name;
 
     public Collection<JobPosting> getJobPostings() {
-        return Collections.unmodifiableCollection(jobPostings);
+        return jobPostings;
     }
 
     private Collection<JobPosting> jobPostings;
