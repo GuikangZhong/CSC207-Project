@@ -1,6 +1,18 @@
 package project;
 
 public class Application {
+    private Applicant applicant;
+    private Document document;
+    private Job job;
+    private ApplicationStatus status;
+
+    public Application(Applicant applicant, Document document, Job job){
+        this.applicant = applicant;
+        this.document = document;
+        this.job = job;
+        this.status = new ApplicationStatus();
+    }
+
     public Applicant getApplicant() {
         return applicant;
     }
@@ -15,16 +27,5 @@ public class Application {
 
     public ApplicationStatus getStatus() {
         return status;
-    }
-
-    private Applicant applicant;
-    private Document document;
-    private Job job;
-    private ApplicationStatus status;
-    public Application(Applicant applicant, Document document, Job job){
-        this.applicant = applicant;
-        this.document = document;
-        this.job = job;
-        this.status = new ApplicationStatus();
     }
 }

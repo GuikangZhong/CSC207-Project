@@ -7,6 +7,12 @@ import java.util.List;
 
 public class JobPosting implements Serializable {
     private Job job;
+    Status status;
+    private Requirement requirement;
+    private int numberNeeded;
+    private Collection<Application> applications ;
+    private LocalDateTime begin, end;
+
     public enum Status{
         OPEN,
         CLOSED,
@@ -33,11 +39,6 @@ public class JobPosting implements Serializable {
         return applications;
     }
 
-    Status status;
-    private Requirement requirement;
-    private int numberNeeded;
-    private Collection<Application> applications ;
-    private LocalDateTime begin, end;
     void addApplication(Application application){
         if(requirement.satisfies(application)){
             applications.add(application);
@@ -48,6 +49,7 @@ public class JobPosting implements Serializable {
     void removeApplication(Application application){
         applications.remove(application);
     }
+
     JobPosting(Job job, LocalDateTime begin, LocalDateTime end){
         status = Status.OPEN;
         this.begin = begin;
