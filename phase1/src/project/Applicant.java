@@ -3,7 +3,6 @@ package project;
 import com.sun.istack.internal.NotNull;
 
 import java.util.Collection;
-import java.util.Collections;
 import java.util.Optional;
 
 public class Applicant extends User<ApplicantHistory> {

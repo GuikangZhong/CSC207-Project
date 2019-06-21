@@ -1,11 +1,7 @@
 package project;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
 import java.util.Collection;
-import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
 
 abstract public class UserManager<T extends User> {
     HashMap<String, T> users;
