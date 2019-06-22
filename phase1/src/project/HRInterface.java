@@ -1,5 +1,7 @@
 package project;
 
+import project.ui.UserInterface;
+
 public class HRInterface implements UserInterface {
     @Override
     public void signUp() {

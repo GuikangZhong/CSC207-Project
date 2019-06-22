@@ -1,4 +1,4 @@
-package project;
+package project.ui;
 
 public class ApplicantInterface implements UserInterface{
     @Override

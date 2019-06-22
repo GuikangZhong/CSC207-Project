@@ -1,4 +1,4 @@
-package project;
+package project.ui;
 
 public interface UserInterface {
     void login();
