@@ -1,8 +1,12 @@
 package project;
 
+import project.user.Applicant;
+import project.user.HR;
+import project.user.Interviewer;
+import project.user.UserManager;
+
 import java.io.Serializable;
 import java.util.Collection;
-import java.util.Collections;
 
 
 public class MainSystem implements Serializable {

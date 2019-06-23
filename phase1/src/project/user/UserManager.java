@@ -1,4 +1,4 @@
-package project;
+package project.user;
 
 import java.util.Collection;
 import java.util.HashMap;

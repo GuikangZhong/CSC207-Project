@@ -1,4 +1,4 @@
-package project;
+package project.user;
 
 public class HRManager extends UserManager<HR> {
 

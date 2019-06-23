@@ -1,5 +1,7 @@
 package project;
 
+import project.interview.InterviewStatus;
+
 import java.util.HashMap;
 
 public class ApplicationStatus {

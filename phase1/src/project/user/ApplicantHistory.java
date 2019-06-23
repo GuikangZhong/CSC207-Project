@@ -1,4 +1,6 @@
-package project;
+package project.user;
+
+import project.Job;
 
 import java.time.Clock;
 import java.util.List;

@@ -1,4 +1,4 @@
-package project;
+package project.user;
 
 import java.io.Serializable;
 import java.time.Clock;

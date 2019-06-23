@@ -1,4 +1,4 @@
-package project;
+package project.user;
 
 public class InterviewerManager extends UserManager<Interviewer> {
     @Override

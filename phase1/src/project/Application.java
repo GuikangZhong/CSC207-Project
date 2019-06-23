@@ -1,5 +1,7 @@
 package project;
 
+import project.user.Applicant;
+
 public class Application {
     private Applicant applicant;
     private Document document;

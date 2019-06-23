@@ -1,8 +1,10 @@
-package project;
+package project.user;
+
+import project.user.UserHistory;
 
 import java.io.Serializable;
 
-class User<T extends UserHistory> implements Serializable {
+public class User<T extends UserHistory> implements Serializable {
 	public String getUsername() {
 		return username;
 	}
@@ -17,12 +19,12 @@ class User<T extends UserHistory> implements Serializable {
 
 	private T history;
 
-	User(T history, String username, String password){
+	public User(T history, String username, String password){
 		this.username = username;
 		this.password = password;
 	}
 
-	final boolean verifyPassword(String password){
+	public final boolean verifyPassword(String password){
 		return this.password.equals(password);
 	}
 

@@ -1,4 +1,4 @@
-package project;
+package project.user;
 
 public class ApplicantManager extends UserManager<Applicant> {
     @Override

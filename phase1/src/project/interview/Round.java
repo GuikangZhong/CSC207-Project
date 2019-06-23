@@ -1,6 +1,4 @@
-package project;
-
-import java.util.Collection;
+package project.interview;
 
 public class Round {
 

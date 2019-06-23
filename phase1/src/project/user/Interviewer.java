@@ -1,4 +1,4 @@
-package project;
+package project.user;
 
 public class Interviewer extends User {
     Interviewer(UserHistory history, String username, String password) {

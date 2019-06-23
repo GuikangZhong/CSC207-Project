@@ -1,6 +1,9 @@
-package project;
+package project.user;
 
 import com.sun.istack.internal.NotNull;
+import project.Application;
+import project.Document;
+import project.JobPosting;
 
 import java.util.Collection;
 import java.util.Optional;

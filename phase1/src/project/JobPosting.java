@@ -47,14 +47,14 @@ public class JobPosting implements Serializable {
         return applications;
     }
 
-    void addApplication(Application application){
+    public void addApplication(Application application){
         if(requirement.satisfies(application)){
             applications.add(application);
         }else{
             throw new RuntimeException("Requirement not satisfied");
         }
     }
-    void removeApplication(Application application){
+    public void removeApplication(Application application){
         applications.remove(application);
     }
 
