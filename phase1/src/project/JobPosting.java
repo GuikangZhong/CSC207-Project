@@ -3,15 +3,23 @@ package project;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.Collection;
-import java.util.List;
 
 public class JobPosting implements Serializable {
     private Job job;
-    Status status;
+    private Status status;
     private Requirement requirement;
-    private int numberNeeded;
+    private int nApplicantNeeded;
     private Collection<Application> applications ;
-    private LocalDateTime begin, end;
+
+    public LocalDateTime getOpenDate() {
+        return openDate;
+    }
+
+    public LocalDateTime getCloseDate() {
+        return closeDate;
+    }
+
+    private LocalDateTime openDate, closeDate;
 
     public enum Status{
         OPEN,
@@ -31,8 +39,8 @@ public class JobPosting implements Serializable {
         return requirement;
     }
 
-    public int getNumberNeeded() {
-        return numberNeeded;
+    public int getnApplicantNeeded() {
+        return nApplicantNeeded;
     }
 
     public Collection<Application> getApplications() {
@@ -52,8 +60,8 @@ public class JobPosting implements Serializable {
 
     JobPosting(Job job, LocalDateTime begin, LocalDateTime end){
         status = Status.OPEN;
-        this.begin = begin;
-        this.end = end;
+        this.openDate = begin;
+        this.closeDate = end;
         this.job = job;
     }
 }

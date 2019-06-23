@@ -5,4 +5,8 @@ public class ApplicantManager extends UserManager<Applicant> {
     Applicant createUser(String name, String password) {
         return new Applicant(null, name, password);
     }
+
+    void checkExpiredDocument(){
+
+    }
 }

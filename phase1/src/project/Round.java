@@ -1,6 +1,9 @@
 package project;
 
+import java.util.Collection;
+
 public class Round {
+
     public int getTime() {
         return time;
     }
