@@ -10,17 +10,16 @@ public class Round {
 
     private final int time;
 
-    public int getNumOfApplicantsLeft() {
-        return numOfApplicantsLeft;
+    public ApplicantPool getPool() {
+        return pool;
     }
 
-    public void setNumOfApplicantsLeft(int numOfApplicantsLeft) {
-        this.numOfApplicantsLeft = numOfApplicantsLeft;
-    }
+    private ApplicantPool pool;
 
-    private int numOfApplicantsLeft;
-
-    Round(int time){
+    Round(int time, ApplicantPool pool){
         this.time = time;
+        this.pool = pool;
     }
+
+
 }
