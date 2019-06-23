@@ -1,4 +1,4 @@
-package project;
+package project.application;
 
 import project.interview.InterviewStatus;
 

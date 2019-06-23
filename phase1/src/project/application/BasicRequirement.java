@@ -1,4 +1,4 @@
-package project;
+package project.application;
 
 public class BasicRequirement implements Requirement {
     @Override

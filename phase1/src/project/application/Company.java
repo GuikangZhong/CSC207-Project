@@ -1,9 +1,8 @@
-package project;
+package project.application;
+
+import project.system.SystemClock;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
-import java.util.Collection;
-import java.util.Collections;
 
 public class Company implements Serializable {
     private String name;

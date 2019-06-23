@@ -1,4 +1,4 @@
-package project;
+package project.application;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;

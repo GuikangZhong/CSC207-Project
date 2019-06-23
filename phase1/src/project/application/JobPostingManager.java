@@ -1,6 +1,5 @@
-package project;
+package project.application;
 
-import java.time.LocalDateTime;
 import java.util.Collection;
 
 public class JobPostingManager {

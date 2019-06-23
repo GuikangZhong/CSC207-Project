@@ -1,5 +1,6 @@
-package project;
+package project.system;
 
+import project.application.Company;
 import project.user.Applicant;
 import project.user.HR;
 import project.user.Interviewer;
