@@ -21,5 +21,9 @@ public class Round {
         this.pool = pool;
     }
 
+    Round getNextRound(){
+        // TODO:
+        return null;
+    }
 
 }
