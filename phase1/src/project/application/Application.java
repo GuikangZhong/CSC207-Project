@@ -1,5 +1,6 @@
 package project.application;
 
+import project.interview.IndividualInterviewProgress;
 import project.user.Applicant;
 
 import java.util.Collections;
@@ -9,6 +10,16 @@ public class Application {
     private Applicant applicant;
     private List<Document> documents;
     private Job job;
+
+    public IndividualInterviewProgress getProgress() {
+        return progress;
+    }
+
+    public void setProgress(IndividualInterviewProgress progress) {
+        this.progress = progress;
+    }
+
+    private IndividualInterviewProgress progress = null;
 
     public Application(Applicant applicant, List<Document> documents, Job job){
         this.applicant = applicant;

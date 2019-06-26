@@ -17,6 +17,19 @@ public class Company implements Serializable {
 
     private JobPostingManager jobPostingManager;
     private HRManager hrManager;
+
+    public JobPostingManager getJobPostingManager() {
+        return jobPostingManager;
+    }
+
+    public HRManager getHrManager() {
+        return hrManager;
+    }
+
+    public InterviewerManager getInterviewerManager() {
+        return interviewerManager;
+    }
+
     private InterviewerManager interviewerManager;
     private SystemClock clock;
 

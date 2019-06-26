@@ -1,10 +1,12 @@
 package project.user;
 
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 
 abstract public class UserManager<T extends User> {
-    HashMap<String, T> users;
+
+    private HashMap<String, T> users;
 
     // Type erasure doesn't allow us to call T's constructor :(
     abstract T createUser(String name, String password);
@@ -22,7 +24,11 @@ abstract public class UserManager<T extends User> {
         return user;
     }
 
-    Collection<T> toCollection() {
-        return users.values();
+    public boolean containsUser(String name){
+        return users.containsKey(name);
+    }
+
+    public User getUser(String name){
+        return users.get(name);
     }
 }

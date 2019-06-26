@@ -47,4 +47,7 @@ public class Applicant extends User<ApplicantHistory> {
     void withdraw(Application application) {
         // TODO:
     }
+
+    @Override
+    public Type getType(){return Type.APPLICANT;}
 }

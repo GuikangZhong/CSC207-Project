@@ -4,7 +4,14 @@ import project.user.UserHistory;
 
 import java.io.Serializable;
 
-public class User<T extends UserHistory> implements Serializable {
+public abstract class User<T extends UserHistory> implements Serializable {
+	public enum Type{
+		NONE,
+		APPLICANT,
+		HR,
+		INTERVIEWER
+	}
+	public abstract Type getType();
 	public String getUsername() {
 		return username;
 	}

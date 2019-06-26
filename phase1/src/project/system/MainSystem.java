@@ -1,19 +1,13 @@
 package project.system;
 
 import project.application.Company;
-import project.user.Applicant;
-import project.user.HR;
-import project.user.Interviewer;
-import project.user.UserManager;
+import project.user.*;
 
 import java.io.Serializable;
-import java.util.Collection;
+import java.util.HashMap;
 
 
 public class MainSystem implements Serializable {
-    public Collection<Company> getCompanys() {
-        return companys;
-    }
 
     public SystemClock getClock() {
         return clock;
@@ -21,13 +15,39 @@ public class MainSystem implements Serializable {
 
     private SystemClock clock;
 
-    private Collection<Company>companys;
+    private HashMap<String, Company> companies;
     private UserManager<Applicant> applicants;
-    private UserManager<HR> HRs;
-    private UserManager<Interviewer> interviewers;
 
-    MainSystem(){
-         clock = new SystemClock();
+    MainSystem() {
+        clock = new SystemClock();
+    }
+
+
+
+    void signUp(User.Type type, String name, String password){
+        // TODO:
+    }
+    User login(String name, String password){
+        User user = null;
+         if(applicants.containsUser(name)){
+             user = applicants.getUser(name);
+         }else {
+
+             for (Company company : companies.values()) {
+                 if (company.getHrManager().containsUser(name)) {
+                     user = company.getHrManager().getUser(name);
+                     break;
+                 }
+                 if (company.getInterviewerManager().containsUser(name)) {
+                     user = company.getInterviewerManager().getUser(name);
+                     break;
+                 }
+             }
+         }
+         if(null != user && user.verifyPassword(password)){
+             return user;
+         }
+         return null;
     }
 
 }
