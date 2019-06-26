@@ -3,14 +3,12 @@ package project.application;
 import java.io.*;
 
 public class CoverLetter extends Document {
-    private String applicantName;
-    private String content;
 
-    public static CoverLetter createCoverLetterByDirectInput(String applicantName, String input) {
+    public static CoverLetter createByDirectInput(String applicantName, String input) {
         return new CoverLetter(applicantName, input);
     }
 
-    public static CoverLetter createCoverLetterByFileName(String applicantName, String path) throws IOException {
+    public static CoverLetter createByFileName(String applicantName, String path) throws IOException {
         StringBuilder content = new StringBuilder();
         try (BufferedReader in = new BufferedReader(new FileReader(path))) {
             String s = in.readLine();

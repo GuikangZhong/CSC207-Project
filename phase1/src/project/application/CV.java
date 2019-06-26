@@ -3,14 +3,12 @@ package project.application;
 import java.io.*;
 
 public class CV extends Document{
-    private String applicantName;
-    private String content;
 
-    public static CV createCVByDirectInput(String applicantName, String input) {
+    public static CV createByDirectInput(String applicantName, String input) {
         return new CV(applicantName, input);
     }
 
-    public static CV createCVByFileName(String applicantName, String path) throws IOException {
+    public static CV createByFileName(String applicantName, String path) throws IOException {
         StringBuilder content = new StringBuilder();
         try (BufferedReader in = new BufferedReader(new FileReader(path))) {
             String s = in.readLine();

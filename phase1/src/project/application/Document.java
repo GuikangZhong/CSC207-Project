@@ -1,5 +1,6 @@
 package project.application;
 
-abstract public class Document {
-    // Whatever you need
+public abstract class Document {
+    protected String applicantName;
+    protected String content;
 }
