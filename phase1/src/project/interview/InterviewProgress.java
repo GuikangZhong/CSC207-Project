@@ -1,6 +1,8 @@
 package project.interview;
 
+import project.application.Application;
 import project.application.Job;
+import project.user.Applicant;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -34,6 +36,16 @@ public class InterviewProgress {
         this.interviewees = interviewees;
         interviewIterator = interviews.iterator();
         currentInterview = interviewIterator.next();
+    }
+
+    static InterviewProgress CreateInterviewProgress(Job job,
+                                                     InterviewBuilder builder,
+                                                     List<Application> applications) {
+        List<InterviewRecord> interviewees = new ArrayList<>();
+        for (Application application : applications) {
+            interviewees.add(new InterviewRecord(application));
+        }
+        return new InterviewProgress(job, builder.getInterviews(), interviewees);
     }
 
     public boolean hasCurrentRoundFinished() {
