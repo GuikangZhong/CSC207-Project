@@ -27,6 +27,7 @@ public class InterviewProgress {
     private Iterator<Interview> interviewIterator;
     private Interview currentInterview;
 
+    // interview is from InterviewBuilder.getInterviews()
     private InterviewProgress(Job job, List<Interview> interviews, List<InterviewRecord> interviewees) {
         this.job = job;
         this.interviews = interviews;
