@@ -27,7 +27,7 @@ public class InterviewProgress {
     private Iterator<Interview> interviewIterator;
     private Interview currentInterview;
 
-    public InterviewProgress(Job job, List<Interview> interviews, List<InterviewRecord> interviewees) {
+    private InterviewProgress(Job job, List<Interview> interviews, List<InterviewRecord> interviewees) {
         this.job = job;
         this.interviews = interviews;
         this.interviewees = interviewees;

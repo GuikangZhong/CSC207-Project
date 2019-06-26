@@ -9,6 +9,10 @@ import java.util.List;
 
 public class JobPostingManager {
 
+    public HashMap<String, JobPosting> getJobPostings() {
+        return jobPostings;
+    }
+
     private HashMap<String, JobPosting> jobPostings;
 
     List<Applicant> getAllApplicants(){

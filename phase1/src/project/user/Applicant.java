@@ -32,6 +32,14 @@ public class Applicant extends User<ApplicantHistory> {
         documents.remove(index);
     }
 
+
+    boolean checkIfExpired(){
+        // TODO:
+        return false;
+    }
+    void removeIfExpired(){
+        // TODO:
+    }
     void addDocument(Document document) {
         documents.add(document);
     }
