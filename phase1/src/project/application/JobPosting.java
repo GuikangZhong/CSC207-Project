@@ -1,8 +1,12 @@
 package project.application;
 
+import project.user.Applicant;
+
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 public class JobPosting implements Serializable {
     private Job job;
@@ -69,4 +73,6 @@ public class JobPosting implements Serializable {
         this.job = job;
         hireResult = null;
     }
+
+
 }
