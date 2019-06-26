@@ -17,8 +17,14 @@ public class InterviewAssignment {
     }
 
     private List<InterviewRecord> interviewees;
+
     public InterviewAssignment(Interviewer interviewer, List<InterviewRecord> interviewees){
         this.interviewees = interviewees;
         this.interviewer = interviewer;
+    }
+
+    void submit(){
+        // TODO: submit the result and notify whoever needed
+        // TODO: hint: what about IndividualInterviewProgress, do they need to be notified?
     }
 }

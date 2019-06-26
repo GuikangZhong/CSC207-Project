@@ -1,10 +1,14 @@
 package project.system;
 
 import project.application.Company;
+import project.application.JobPosting;
 import project.user.*;
 
 import java.io.Serializable;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 
 
 public class MainSystem implements Serializable {
@@ -48,6 +52,9 @@ public class MainSystem implements Serializable {
              return user;
          }
          return null;
+    }
+    Collection<Company> getCompanies(){
+        return companies.values();
     }
 
 }
