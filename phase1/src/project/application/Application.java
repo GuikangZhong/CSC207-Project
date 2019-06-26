@@ -3,6 +3,7 @@ package project.application;
 import project.interview.IndividualInterviewProgress;
 import project.user.Applicant;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -23,7 +24,7 @@ public class Application {
 
     public Application(Applicant applicant, List<Document> documents, Job job){
         this.applicant = applicant;
-        this.documents = documents;
+        this.documents = new ArrayList<>(documents);
         this.job = job;
     }
 
