@@ -32,6 +32,12 @@ public class JobPostingManager {
         jobPostings.remove(name);
     }
 
+    void removeApplication(Application application){
+        String name = application.getJob().getTitle();
+        JobPosting jobPosting = getJobPostings().get(name);
+        jobPosting.removeApplication(application);
+    }
+
     List<Applicant> getAllApplicants(){
         List<Applicant> applicants = new ArrayList<>();
         for(JobPosting jobPosting : jobPostings.values()){
