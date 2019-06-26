@@ -1,14 +1,14 @@
 package project.application;
 
 import project.user.Applicant;
-
+import project.observer.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-public class JobPosting implements Serializable {
+public class JobPosting implements Serializable{
     private Job job;
     private Status status;
     private Requirement requirement;
@@ -23,7 +23,7 @@ public class JobPosting implements Serializable {
         this.openDate = begin;
         this.closeDate = end;
         this.job = job;
-        hireResult = null;
+        hireResult = new HireResult();
     }
 
     public LocalDateTime getOpenDate() {
@@ -59,6 +59,10 @@ public class JobPosting implements Serializable {
 
     public Collection<Application> getApplications() {
         return applications;
+    }
+
+    public HireResult getHireResult() {
+        return hireResult;
     }
 
     public void addApplication(Application application) {

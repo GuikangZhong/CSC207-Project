@@ -5,8 +5,9 @@ import project.user.Applicant;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import project.observer.HireResultObserver;
 
-public class JobPostingManager {
+public class JobPostingManager implements HireResultObserver {
     private HashMap<String, JobPosting> jobPostings;
 
     public HashMap<String, JobPosting> getJobPostings() {
@@ -47,8 +48,17 @@ public class JobPostingManager {
         }
         return applicants;
     }
+
     JobPosting getJobPosting(String title){
         return jobPostings.get(title);
+    }
+
+    @Override
+    public void updateOnHireResult(Applicant applicant, Job job) {
+        String name = job.getTitle();
+        JobPosting jobPosting = getJobPosting(name);
+        HireResult hireResult = jobPosting.getHireResult();
+        hireResult.addHiredApplicant(applicant);
     }
 
 }
