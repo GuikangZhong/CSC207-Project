@@ -2,7 +2,7 @@ package project.application;
 
 import java.io.*;
 
-public class CoverLetter {
+public class CoverLetter extends Document {
     private String applicantName;
     private String content;
 

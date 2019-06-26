@@ -1,5 +1,7 @@
 package project.system;
 
 public interface Observer {
-    void update();
+    void updateOnHireResult();
+    // void updateOnXXX
+
 }

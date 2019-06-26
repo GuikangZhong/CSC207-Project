@@ -3,17 +3,20 @@ package project.user;
 import com.sun.istack.internal.NotNull;
 import project.application.Application;
 import project.application.Document;
+import project.application.Job;
 import project.application.JobPosting;
 
 import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 import java.util.Optional;
 
 public class Applicant extends User<ApplicantHistory> {
-    public Document getDocument() {
-        return document;
+    public List<Document> getDocuments() {
+        return Collections.unmodifiableList(documents);
     }
 
-    private Document document;
+    private List<Document> documents;
 
     public Collection<Application> getApplications() {
         return applications;
@@ -25,27 +28,23 @@ public class Applicant extends User<ApplicantHistory> {
         super(history, username, password);
     }
 
-    void applyFor(@NotNull JobPosting jobPosting) {
-        Application application = new Application(this, document, jobPosting.getJob());
-        jobPosting.addApplication(application);
-        applications.add(application);
+    void removeDocument(int index) {
+        documents.remove(index);
     }
 
-    void withdraw(JobPosting jobPosting) {
-        Optional<Application> application =
-                applications.stream()
-                        .filter(app -> app.getApplicant() == this)
-                        .findAny();
-        if (application.isPresent()) {
-            jobPosting.removeApplication(application.get());
-            applications.remove(application.get());
-        } else {
-            throw new RuntimeException("You cannot withdraw an application you didn't apply for");
-        }
+    void addDocument(Document document) {
+        documents.add(document);
     }
 
-    void setDocument(Document document){
-        this.document = document;
+    void updateDocument(int index, Document document) {
+        documents.set(index, document);
     }
 
+    Application createApplication(Job job) {
+        return new Application(this, getDocuments(), job);
+    }
+
+    void withdraw(Application application) {
+        // TODO:
+    }
 }

@@ -2,7 +2,7 @@ package project.application;
 
 import java.io.*;
 
-public class CV {
+public class CV extends Document{
     private String applicantName;
     private String content;
 

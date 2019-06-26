@@ -1,14 +1,9 @@
 package project.application;
 
 import java.util.Collection;
+import java.util.HashMap;
 
 public class JobPostingManager {
-    public Collection<JobPosting> getJobPostings() {
-        return jobPostings;
-    }
 
-    private Collection<JobPosting> jobPostings;
-    void addJobPosting(JobPosting jobPosting){
-        jobPostings.add(jobPosting);
-    }
+    private HashMap<String, JobPosting> jobPostings;
 }
