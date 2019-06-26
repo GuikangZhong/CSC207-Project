@@ -47,6 +47,8 @@ public class JobPostingManager {
         }
         return applicants;
     }
-
+    JobPosting getJobPosting(String title){
+        return jobPostings.get(title)
+    }
 
 }
