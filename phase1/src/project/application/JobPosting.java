@@ -14,6 +14,17 @@ public class JobPosting implements Serializable {
     private Requirement requirement;
     private int nApplicantNeeded;
     private Collection<Application> applications;
+    private LocalDateTime openDate, closeDate;
+    private HireResult hireResult;
+
+    JobPosting(Job job, LocalDateTime begin, LocalDateTime end, Requirement requirement) {
+        status = Status.OPEN;
+        this.requirement = requirement;
+        this.openDate = begin;
+        this.closeDate = end;
+        this.job = job;
+        hireResult = null;
+    }
 
     public LocalDateTime getOpenDate() {
         return openDate;
@@ -23,7 +34,6 @@ public class JobPosting implements Serializable {
         return closeDate;
     }
 
-    private LocalDateTime openDate, closeDate;
 
     public enum Status {
         OPEN,
@@ -62,17 +72,5 @@ public class JobPosting implements Serializable {
     public void removeApplication(Application application) {
         applications.remove(application);
     }
-
-    private HireResult hireResult;
-
-    JobPosting(Job job, LocalDateTime begin, LocalDateTime end, Requirement requirement) {
-        status = Status.OPEN;
-        this.requirement = requirement;
-        this.openDate = begin;
-        this.closeDate = end;
-        this.job = job;
-        hireResult = null;
-    }
-
 
 }
