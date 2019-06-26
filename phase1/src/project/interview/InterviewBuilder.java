@@ -6,16 +6,17 @@ import java.util.List;
 
 public class InterviewBuilder {
     private HashMap<String, Integer> map;
+    private List<Interview> interviews;
+
+    public InterviewBuilder(){
+        map = new HashMap<>();
+        interviews = new ArrayList<>();
+    }
 
     public List<Interview> getInterviews() {
         return interviews;
     }
 
-    private List<Interview> interviews;
-    public InterviewBuilder(){
-        map = new HashMap<>();
-        interviews = new ArrayList<>();
-    }
     public boolean addInterview(Interview interview){
         String type = interview.getInterviewType();
         if(!map.containsKey(type)){
@@ -27,4 +28,6 @@ public class InterviewBuilder {
         map.put(type, map.get(type) + 1);
         return true;
     }
+
+
 }

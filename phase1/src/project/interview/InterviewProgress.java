@@ -1,6 +1,7 @@
 package project.interview;
 
 import project.application.Job;
+import project.observer.Observer;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -10,6 +11,17 @@ import java.util.List;
 public class InterviewProgress {
     private List<Interview> interviews;
     private List<InterviewRecord> interviewees;
+    private Job job;
+    private Iterator<Interview> interviewIterator;
+    private Interview currentInterview;
+
+    private InterviewProgress(Job job, List<Interview> interviews, List<InterviewRecord> interviewees) {
+        this.job = job;
+        this.interviews = interviews;
+        this.interviewees = interviewees;
+        interviewIterator = interviews.iterator();
+        currentInterview = interviewIterator.next();
+    }
 
     public List<Interview> getInterviews() {
         return Collections.unmodifiableList(interviews);
@@ -21,18 +33,6 @@ public class InterviewProgress {
 
     public Job getJob() {
         return job;
-    }
-
-    private Job job;
-    private Iterator<Interview> interviewIterator;
-    private Interview currentInterview;
-
-    private InterviewProgress(Job job, List<Interview> interviews, List<InterviewRecord> interviewees) {
-        this.job = job;
-        this.interviews = interviews;
-        this.interviewees = interviewees;
-        interviewIterator = interviews.iterator();
-        currentInterview = interviewIterator.next();
     }
 
     public boolean hasCurrentRoundFinished() {
@@ -63,9 +63,14 @@ public class InterviewProgress {
     }
 
     public void toNextRound() {
-        assert !isLastRound() && hasCurrentRoundFinished();
-        currentInterview = interviewIterator.next();
-        filterPassed();
+        if (!isLastRound() && hasCurrentRoundFinished()){
+            currentInterview = interviewIterator.next();
+            filterPassed();
+        }
+//        else if(isLastRound() && hasCurrentRoundFinished()){
+//
+//        }
 
     }
+
 }

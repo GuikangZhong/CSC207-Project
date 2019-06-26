@@ -1,8 +1,17 @@
 package project.interview;
 
 import project.application.Application;
+import project.observer.Observer;
 
 public class InterviewRecord {
+    private boolean passed;
+    private Application application;
+
+    public InterviewRecord(Application application){
+        passed = false;
+        this.application = application;
+    }
+
     public boolean isPassed() {
         return passed;
     }
@@ -11,15 +20,8 @@ public class InterviewRecord {
         this.passed = passed;
     }
 
-    private boolean passed;
-
     public Application getApplication() {
         return application;
     }
 
-    private Application application;
-    public InterviewRecord(Application application){
-        passed = false;
-        this.application = application;
-    }
 }
