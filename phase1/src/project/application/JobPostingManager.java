@@ -16,16 +16,16 @@ public class JobPostingManager {
     /**
      *
      * @param jobPosting needs to be added
-     * @return 1 if successfully added
-     *  0 if job posting already exists
+     * @return true if successfully added
+     *  false if job posting already exists
      */
-    int addJobPosting(JobPosting jobPosting){
+    boolean addJobPosting(JobPosting jobPosting){
         String jobName = jobPosting.getJob().getTitle();
         if (!jobPostings.containsKey(jobName)){
             jobPostings.put(jobName, jobPosting);
-            return 1;
+            return true;
         }
-        return 0;
+        return false;
     }
 
     void removeJobPosting(String name){
