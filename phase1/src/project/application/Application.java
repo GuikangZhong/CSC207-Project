@@ -11,6 +11,13 @@ public class Application {
     private Applicant applicant;
     private List<Document> documents;
     private Job job;
+    private IndividualInterviewProgress progress = null;
+
+    public Application(Applicant applicant, List<Document> documents, Job job){
+        this.applicant = applicant;
+        this.documents = new ArrayList<>(documents);
+        this.job = job;
+    }
 
     public IndividualInterviewProgress getProgress() {
         return progress;
@@ -18,14 +25,6 @@ public class Application {
 
     public void setProgress(IndividualInterviewProgress progress) {
         this.progress = progress;
-    }
-
-    private IndividualInterviewProgress progress = null;
-
-    public Application(Applicant applicant, List<Document> documents, Job job){
-        this.applicant = applicant;
-        this.documents = new ArrayList<>(documents);
-        this.job = job;
     }
 
     public Applicant getApplicant() {
