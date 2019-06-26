@@ -1,5 +1,9 @@
 package project.application;
 
-abstract public class Document {
-    // Whatever you need
+import java.time.LocalDateTime;
+
+public abstract class Document {
+    protected String applicantName;
+    protected String content;
+    protected LocalDateTime createdDate;
 }

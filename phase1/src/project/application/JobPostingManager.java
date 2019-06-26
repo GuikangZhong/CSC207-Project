@@ -5,8 +5,9 @@ import project.user.Applicant;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import project.observer.HireResultObserver;
 
-public class JobPostingManager {
+public class JobPostingManager implements HireResultObserver {
     private HashMap<String, JobPosting> jobPostings;
 
     public HashMap<String, JobPosting> getJobPostings() {
@@ -16,16 +17,16 @@ public class JobPostingManager {
     /**
      *
      * @param jobPosting needs to be added
-     * @return 1 if successfully added
-     *  0 if job posting already exists
+     * @return true if successfully added
+     *  false if job posting already exists
      */
-    int addJobPosting(JobPosting jobPosting){
+    boolean addJobPosting(JobPosting jobPosting){
         String jobName = jobPosting.getJob().getTitle();
         if (!jobPostings.containsKey(jobName)){
             jobPostings.put(jobName, jobPosting);
-            return 1;
+            return true;
         }
-        return 0;
+        return false;
     }
 
     void removeJobPosting(String name){
@@ -48,5 +49,16 @@ public class JobPostingManager {
         return applicants;
     }
 
+    JobPosting getJobPosting(String title){
+        return jobPostings.get(title);
+    }
+
+    @Override
+    public void updateOnHireResult(Applicant applicant, Job job) {
+        String name = job.getTitle();
+        JobPosting jobPosting = getJobPosting(name);
+        HireResult hireResult = jobPosting.getHireResult();
+        hireResult.addHiredApplicant(applicant);
+    }
 
 }

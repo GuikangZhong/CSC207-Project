@@ -7,8 +7,8 @@ import java.util.List;
 public class HireResult {
     List<Applicant> hired;
 
-    public HireResult(List<Applicant> hired) {
-        this.hired = hired;
+    void addHiredApplicant(Applicant applicant){
+        this.hired.add(applicant);
     }
 
     public List<Applicant> getHired() {
