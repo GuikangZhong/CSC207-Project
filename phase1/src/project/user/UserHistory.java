@@ -5,11 +5,12 @@ import java.time.Clock;
 import java.time.LocalDateTime;
 
 public class UserHistory implements Serializable {
+    private LocalDateTime dateCreated;
+
     public LocalDateTime getDateCreated() {
         return dateCreated;
     }
 
-    private LocalDateTime dateCreated;
     UserHistory(Clock clock){
         dateCreated = LocalDateTime.now(clock);
     }

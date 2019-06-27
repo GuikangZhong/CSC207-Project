@@ -4,14 +4,21 @@ import project.application.Job;
 
 import java.time.Clock;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 public class ApplicantHistory extends UserHistory{
     private List<Job> jobApplied;
-
-    // naming...
+    private LocalDateTime lastApplicationClosed;
     private List<Job> jobApplying;
+
+    public ApplicantHistory(Clock clock){
+        super(clock);
+        jobApplied = new ArrayList<>();
+        jobApplying = new ArrayList<>();
+        lastApplicationClosed = null;
+    }
 
     public List<Job> getJobApplied() {
         return Collections.unmodifiableList(jobApplied);
@@ -25,10 +32,20 @@ public class ApplicantHistory extends UserHistory{
         return lastApplicationClosed;
     }
 
-    private LocalDateTime lastApplicationClosed;
-    // TODO: add whatever argument you want
-    public ApplicantHistory(Clock clock){
-        super(clock);
+    void addJobApplied(Job job){
+        jobApplied.add(job);
+    }
+
+    void addJobApplying(Job job){
+        jobApplying.add(job);
+    }
+
+    void removeJobApplying(String name){
+        for (Job job: jobApplying){
+            if (job.getTitle().equals(name)){
+                jobApplying.remove(job);
+            }
+        }
     }
 
 }
