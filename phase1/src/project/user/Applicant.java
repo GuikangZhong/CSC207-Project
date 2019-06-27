@@ -5,6 +5,7 @@ import project.application.Document;
 import project.application.Job;
 import java.util.*;
 
+// TODO: When InterviewAssignment.submit is called, applicants will be notified whether they passed the interview of not.
 public class Applicant extends User<ApplicantHistory> {
     private Collection<Application> applications;
     private List<Document> documents;
