@@ -1,45 +1,40 @@
 package project.user;
 
-import com.sun.istack.internal.NotNull;
 import project.application.Application;
 import project.application.Document;
 import project.application.Job;
-import project.application.JobPosting;
-
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 public class Applicant extends User<ApplicantHistory> {
+    private Collection<Application> applications;
+    private List<Document> documents;
+
+    Applicant(ApplicantHistory history, String username, String password) {
+        super(history, username, password);
+        applications = new ArrayList<>();
+        documents = new ArrayList<>();
+    }
+
     public List<Document> getDocuments() {
         return Collections.unmodifiableList(documents);
     }
 
-    private List<Document> documents;
-
     public Collection<Application> getApplications() {
         return applications;
-    }
-
-    private Collection<Application> applications;
-
-    Applicant(ApplicantHistory history, String username, String password) {
-        super(history, username, password);
     }
 
     void removeDocument(int index) {
         documents.remove(index);
     }
 
-
     boolean checkIfExpired(){
-        // TODO:
         return false;
     }
+
     void removeIfExpired(){
         // TODO:
     }
+
     void addDocument(Document document) {
         documents.add(document);
     }
@@ -49,6 +44,8 @@ public class Applicant extends User<ApplicantHistory> {
     }
 
     Application createApplication(Job job) {
+        Application application = new Application(this, getDocuments(), job);
+        applications.add(application);
         return new Application(this, getDocuments(), job);
     }
 
