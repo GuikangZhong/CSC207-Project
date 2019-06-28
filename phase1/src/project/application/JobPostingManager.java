@@ -8,7 +8,7 @@ import java.util.List;
 import project.observer.HireResultObserver;
 
 public class JobPostingManager implements HireResultObserver {
-    private HashMap<String, JobPosting> jobPostings;
+    private HashMap<String, JobPosting> jobPostings = new HashMap<>();
 
     public HashMap<String, JobPosting> getJobPostings() {
         return jobPostings;
