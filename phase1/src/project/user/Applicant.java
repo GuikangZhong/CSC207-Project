@@ -47,6 +47,7 @@ public class Applicant extends User<ApplicantHistory> {
     Application createApplication(Job job) {
         Application application = new Application(this, getDocuments(), job);
         applications.add(application);
+        getHistory().addJobApplying(job);
         return application;
     }
 
@@ -54,6 +55,7 @@ public class Applicant extends User<ApplicantHistory> {
         for (Application application: applications){
             if (application.getJob().getTitle().equals(jobName)){
                 applications.remove(application);
+                this.getHistory().removeJobApplying(jobName);
             }
         }
     }
