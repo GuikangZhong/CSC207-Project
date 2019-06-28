@@ -15,6 +15,7 @@ public class CV extends Document{
             String s = in.readLine();
             while (s != null) {
                 content.append(s);
+                content.append("\n");
                 s = in.readLine();
             }
         }
