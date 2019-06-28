@@ -19,9 +19,7 @@ abstract public class UserManager<T extends User> {
             }
             throw new RuntimeException("Password or user name not correct");
         }
-        T user = createUser(name, password);
-        users.put(name, user);
-        return user;
+        return null;
     }
 
     public boolean containsUser(String name){
