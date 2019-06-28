@@ -57,9 +57,7 @@ public class JobPostingManager implements HireResultObserver {
     public void updateOnHireResult(Applicant applicant, Job job) {
         String name = job.getTitle();
         JobPosting jobPosting = getJobPosting(name);
-        HireResult hireResult = jobPosting.getHireResult();
-        hireResult.addHiredApplicant(applicant);
-        jobPosting.setStatus(JobPosting.Status.FILLED);
+        jobPosting.addHired(applicant);
     }
 
 }

@@ -1,5 +1,7 @@
 package project.application;
 
+import project.user.Applicant;
+
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -80,4 +82,10 @@ public class JobPosting implements Serializable{
         return applications.remove(application);
     }
 
+    void addHired(Applicant applicant){
+        hireResult.addHiredApplicant(applicant);
+        if(hireResult.getHired().size() >= nApplicantNeeded){
+            status = Status.FILLED;
+        }
+    }
 }
