@@ -1,6 +1,5 @@
 package project.application;
 
-import project.system.MainSystem;
 import project.system.SystemClock;
 import project.user.HR;
 import project.user.HRManager;
@@ -15,10 +14,10 @@ public class Company implements Serializable {
     private InterviewerManager interviewerManager;
     private SystemClock clock;
 
-    public Company(String name, MainSystem system) {
+    public Company(String name, SystemClock clock) {
         this.name = name;
-        this.clock = system.getClock();
-        jobPostingManager = new JobPostingManager(system.getClock());
+        this.clock = clock;
+        jobPostingManager = new JobPostingManager(clock);
         hrManager = new HRManager();
         interviewerManager = new InterviewerManager();
     }
