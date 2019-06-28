@@ -1,14 +1,15 @@
 package project.application;
 
 import java.io.*;
+import java.time.LocalDateTime;
 
 public class CV extends Document{
 
-    public static CV createByDirectInput(String applicantName, String input) {
-        return new CV(applicantName, input);
+    public static CV createByDirectInput(String applicantName, String input, LocalDateTime dateTime) {
+        return new CV(applicantName, input, dateTime);
     }
 
-    public static CV createByFileName(String applicantName, String path) throws IOException {
+    public static CV createByFileName(String applicantName, String path, LocalDateTime dateTime) throws IOException {
         StringBuilder content = new StringBuilder();
         try (BufferedReader in = new BufferedReader(new FileReader(path))) {
             String s = in.readLine();
@@ -17,12 +18,11 @@ public class CV extends Document{
                 s = in.readLine();
             }
         }
-        return new CV(applicantName, content.toString());
+        return new CV(applicantName, content.toString(), dateTime);
     }
 
-    private CV(String applicantName, String content) {
-        this.applicantName = applicantName;
-        this.content = content;
+    private CV(String applicantName, String content, LocalDateTime date) {
+        super(applicantName, content, date);
     }
 
     public void setContent(String content) {
