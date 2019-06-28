@@ -13,4 +13,19 @@ public abstract class Document {
         this.createdDate = date;
     }
 
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public String getApplicantName() {
+        return applicantName;
+    }
+
+    public LocalDateTime getCreatedDate() {
+        return createdDate;
+    }
 }

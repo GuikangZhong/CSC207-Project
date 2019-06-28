@@ -25,16 +25,4 @@ public class CV extends Document{
     private CV(String applicantName, String content, LocalDateTime date) {
         super(applicantName, content, date);
     }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public String getApplicantName() {
-        return applicantName;
-    }
 }
