@@ -15,6 +15,7 @@ public class CV extends Document{
             String s = in.readLine();
             while (s != null) {
                 content.append(s);
+                content.append("\n");
                 s = in.readLine();
             }
         }
@@ -23,17 +24,5 @@ public class CV extends Document{
 
     private CV(String applicantName, String content, LocalDateTime date) {
         super(applicantName, content, date);
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public String getApplicantName() {
-        return applicantName;
     }
 }
