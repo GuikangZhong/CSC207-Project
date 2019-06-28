@@ -1,5 +1,6 @@
 package project.application;
 
+import project.observer.JobPostingClosureObserver;
 import project.user.Applicant;
 
 import java.util.ArrayList;
@@ -7,7 +8,7 @@ import java.util.HashMap;
 import java.util.List;
 import project.observer.HireResultObserver;
 
-public class JobPostingManager implements HireResultObserver {
+public class JobPostingManager implements HireResultObserver, JobPostingClosureObserver {
     private HashMap<String, JobPosting> jobPostings = new HashMap<>();
 
     public HashMap<String, JobPosting> getJobPostings() {
@@ -60,4 +61,9 @@ public class JobPostingManager implements HireResultObserver {
         jobPosting.addHired(applicant);
     }
 
+    @Override
+    public void updateOnJobPostingClosure(String jobName) {
+        JobPosting jobPosting = getJobPosting(jobName);
+        jobPosting.setStatus(JobPosting.Status.CLOSED);
+    }
 }
