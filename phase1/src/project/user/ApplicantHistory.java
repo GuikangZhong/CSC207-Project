@@ -8,12 +8,12 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class ApplicantHistory extends UserHistory{
+public class ApplicantHistory extends UserHistory {
     private List<Job> jobApplied;
     private LocalDateTime lastApplicationClosed;
     private List<Job> jobApplying;
 
-    public ApplicantHistory(Clock clock){
+    public ApplicantHistory(Clock clock) {
         super(clock);
         jobApplied = new ArrayList<>();
         jobApplying = new ArrayList<>();
@@ -32,33 +32,29 @@ public class ApplicantHistory extends UserHistory{
         return lastApplicationClosed;
     }
 
-    
-    
-    void addJobApplied(Job job){
+
+    void addJobApplied(Job job) {
         jobApplied.add(job);
     }
 
-    void removeJobApplied(String name){
-        for (Job job: jobApplied){
-            if (job.getTitle().equals(name)){
+    void removeJobApplied(String name) {
+        for (Job job : jobApplied) {
+            if (job.getTitle().equals(name)) {
                 jobApplied.remove(job);
             }
         }
     }
-    
-    
-    
-    
-    void addJobApplying(Job job){
+
+
+    void addJobApplying(Job job) {
         jobApplying.add(job);
     }
 
-    void removeJobApplying(String name){
-        for (Job job: jobApplying){
-            if (job.getTitle().equals(name)){
+    void removeJobApplying(String name) {
+        for (Job job : jobApplying) {
+            if (job.getTitle().equals(name)) {
                 jobApplying.remove(job);
             }
         }
     }
-    
 }
