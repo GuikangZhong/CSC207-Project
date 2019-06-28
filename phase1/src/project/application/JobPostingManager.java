@@ -1,6 +1,7 @@
 package project.application;
 
 import project.observer.JobPostingClosureObserver;
+import project.system.SystemClock;
 import project.user.Applicant;
 
 import java.util.ArrayList;
@@ -9,7 +10,13 @@ import java.util.List;
 import project.observer.HireResultObserver;
 
 public class JobPostingManager implements HireResultObserver, JobPostingClosureObserver {
-    private HashMap<String, JobPosting> jobPostings = new HashMap<>();
+    private HashMap<String, JobPosting> jobPostings;
+    private SystemClock clock;
+
+    public JobPostingManager(SystemClock clock){
+        jobPostings = new HashMap<>();
+        this.clock = clock;
+    }
 
     public HashMap<String, JobPosting> getJobPostings() {
         return jobPostings;
