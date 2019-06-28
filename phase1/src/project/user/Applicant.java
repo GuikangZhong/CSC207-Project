@@ -3,6 +3,8 @@ package project.user;
 import project.application.Application;
 import project.application.Document;
 import project.application.Job;
+import project.application.Requirement;
+
 import java.util.*;
 
 // TODO: When InterviewAssignment.submit is called, applicants will be notified whether they passed the interview of not.
@@ -44,11 +46,14 @@ public class Applicant extends User<ApplicantHistory> {
         documents.set(index, document);
     }
 
-    Application createApplication(Job job) {
+    Application createApplication(Job job, Requirement requirement) {
         Application application = new Application(this, getDocuments(), job);
-        applications.add(application);
-        getHistory().addJobApplying(job);
-        return application;
+        if (requirement.satisfies(application)) {
+            applications.add(application);
+            getHistory().addJobApplying(job);
+            return application;
+        }
+        return null;
     }
 
     void withdraw(String jobName) {
