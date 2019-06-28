@@ -1,9 +1,6 @@
 package project.user;
 
-import project.application.Application;
-import project.application.Document;
-import project.application.Job;
-import project.application.Requirement;
+import project.application.*;
 
 import java.util.*;
 
@@ -46,14 +43,15 @@ public class Applicant extends User<ApplicantHistory> {
         documents.set(index, document);
     }
 
-    Application createApplication(Job job, Requirement requirement) {
-        Application application = new Application(this, getDocuments(), job);
-        if (requirement.satisfies(application)) {
-            applications.add(application);
-            getHistory().addJobApplying(job);
-            return application;
-        }
-        return null;
+
+    // tries to apply for a job
+    // throws RuntimeException if requirement not met
+    Application apply(JobPosting jobPosting) {
+        Application application = new Application(this, getDocuments(), jobPosting.getJob());
+        jobPosting.addApplication(application);
+        applications.add(application);
+        getHistory().addJobApplying(jobPosting.getJob());
+        return application;
     }
 
     void withdraw(String jobName) {
