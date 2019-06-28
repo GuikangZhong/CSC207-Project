@@ -1,12 +1,9 @@
 package project.application;
 
-import project.user.Applicant;
-import project.observer.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 
 public class JobPosting implements Serializable{
     private Job job;
@@ -47,6 +44,10 @@ public class JobPosting implements Serializable{
         return job;
     }
 
+    public void setStatus(Status status){
+        this.status = status;
+    }
+
     public Status getStatus() {
         return status;
     }
@@ -75,8 +76,8 @@ public class JobPosting implements Serializable{
         }
     }
 
-    public void removeApplication(Application application) {
-        applications.remove(application);
+    public boolean removeApplication(Application application) {
+        return applications.remove(application);
     }
 
 }
