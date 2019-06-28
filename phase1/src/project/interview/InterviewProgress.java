@@ -1,7 +1,8 @@
 package project.interview;
 
+import project.application.Application;
 import project.application.Job;
-import project.observer.Observer;
+import project.user.Applicant;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -35,6 +36,18 @@ public class InterviewProgress {
         return job;
     }
 
+    // interview is from InterviewBuilder.getInterviews()
+
+    static InterviewProgress createInterviewProgress(Job job,
+                                                     InterviewBuilder builder,
+                                                     List<Application> applications) {
+        List<InterviewRecord> interviewees = new ArrayList<>();
+        for (Application application : applications) {
+            interviewees.add(new InterviewRecord(application));
+        }
+        return new InterviewProgress(job, builder.getInterviews(), interviewees);
+    }
+
     public boolean hasCurrentRoundFinished() {
         for (InterviewRecord record : interviewees) {
             IndividualInterviewProgress individualInterviewProgress = record.getApplication().getProgress();
@@ -49,7 +62,7 @@ public class InterviewProgress {
     }
 
     void filterPassed() {
-        // TODO: do we need to notify those not passed?
+        // Notification done in InterviewAssignment.
         List<InterviewRecord> passed = new ArrayList<>();
         for (InterviewRecord record : interviewees) {
             if (record.isPassed()) {
@@ -64,13 +77,16 @@ public class InterviewProgress {
 
     public void toNextRound() {
         if (!isLastRound() && hasCurrentRoundFinished()){
-            currentInterview = interviewIterator.next();
-            filterPassed();
-        }
-//        else if(isLastRound() && hasCurrentRoundFinished()){
-//
-//        }
-
+        currentInterview = interviewIterator.next();
+        filterPassed();}
     }
 
+    public List<InterviewRecord> getRecommendationList() {
+        List<InterviewRecord> recommendation = new ArrayList<>();
+        for (InterviewRecord interviewee:interviewees
+             ) {if (interviewees.size()>1 && isLastRound() && hasCurrentRoundFinished()){
+            recommendation.add(interviewee); }
+        }
+        return recommendation;
+    }
 }

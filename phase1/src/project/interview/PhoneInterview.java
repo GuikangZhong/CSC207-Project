@@ -7,7 +7,6 @@ public class PhoneInterview extends Interview{
         super(1);
     }
 
-
     @Override
     public String getInterviewType() {
         return "Phone Interview";

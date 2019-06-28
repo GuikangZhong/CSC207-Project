@@ -20,7 +20,7 @@ public class InterviewBuilder {
     public boolean addInterview(Interview interview){
         String type = interview.getInterviewType();
         if(!map.containsKey(type)){
-            map.put(type, 0);
+            map.put(type, 1);
         }
         if(map.get(type).equals(interview.getMaxInterview())){
             return false;
