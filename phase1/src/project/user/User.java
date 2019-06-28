@@ -11,24 +11,24 @@ public abstract class User<T extends UserHistory> implements Serializable {
 		HR,
 		INTERVIEWER
 	}
-	public abstract Type getType();
-	public String getUsername() {
-		return username;
-	}
-
-
-	private String username;
-	private String password;
-
-	public T getHistory() {
-		return history;
-	}
 
 	private T history;
+	private String username;
+	private String password;
 
 	public User(T history, String username, String password){
 		this.username = username;
 		this.password = password;
+	}
+
+	public abstract Type getType();
+	
+	public String getUsername() {
+		return this.username;
+	}
+
+	public T getHistory() {
+		return this.history;
 	}
 
 	public final boolean verifyPassword(String password){
