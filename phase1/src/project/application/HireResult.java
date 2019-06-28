@@ -2,10 +2,15 @@ package project.application;
 
 import project.user.Applicant;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class HireResult {
-    List<Applicant> hired;
+    private List<Applicant> hired;
+
+    HireResult(){
+        hired = new ArrayList<>();
+    }
 
     void addHiredApplicant(Applicant applicant){
         this.hired.add(applicant);

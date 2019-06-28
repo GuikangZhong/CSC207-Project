@@ -8,10 +8,10 @@ public class UserHistory implements Serializable {
     private LocalDateTime dateCreated;
 
     public LocalDateTime getDateCreated() {
-        return dateCreated;
+        return this.dateCreated;
     }
 
     UserHistory(Clock clock){
-        dateCreated = LocalDateTime.now(clock);
+        this.dateCreated = LocalDateTime.now(clock);
     }
 }

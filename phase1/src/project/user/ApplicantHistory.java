@@ -32,10 +32,23 @@ public class ApplicantHistory extends UserHistory{
         return lastApplicationClosed;
     }
 
+    
+    
     void addJobApplied(Job job){
         jobApplied.add(job);
     }
 
+    void removeJobApplied(String name){
+        for (Job job: jobApplied){
+            if (job.getTitle().equals(name)){
+                jobApplied.remove(job);
+            }
+        }
+    }
+    
+    
+    
+    
     void addJobApplying(Job job){
         jobApplying.add(job);
     }
@@ -47,5 +60,5 @@ public class ApplicantHistory extends UserHistory{
             }
         }
     }
-
+    
 }

@@ -11,12 +11,13 @@ public class Application {
     private Applicant applicant;
     private List<Document> documents;
     private Job job;
-    private IndividualInterviewProgress progress = null;
+    private IndividualInterviewProgress progress;
 
     public Application(Applicant applicant, List<Document> documents, Job job){
         this.applicant = applicant;
         this.documents = new ArrayList<>(documents);
         this.job = job;
+        this.progress = null;
     }
 
     public IndividualInterviewProgress getProgress() {

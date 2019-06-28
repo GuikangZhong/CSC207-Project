@@ -1,12 +1,11 @@
 package project.application;
 
 import project.user.Applicant;
-import project.observer.*;
+
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 
 public class JobPosting implements Serializable{
     private Job job;
@@ -17,13 +16,15 @@ public class JobPosting implements Serializable{
     private LocalDateTime openDate, closeDate;
     private HireResult hireResult;
 
-    JobPosting(Job job, LocalDateTime begin, LocalDateTime end, Requirement requirement) {
+    JobPosting(Job job, LocalDateTime begin, LocalDateTime end, Requirement requirement, int nApplicantNeeded) {
         status = Status.OPEN;
         this.requirement = requirement;
         this.openDate = begin;
         this.closeDate = end;
         this.job = job;
-        hireResult = new HireResult();
+        this.hireResult = new HireResult();
+        this.nApplicantNeeded = nApplicantNeeded;
+        this.applications = new ArrayList<>();
     }
 
     public LocalDateTime getOpenDate() {
@@ -43,6 +44,10 @@ public class JobPosting implements Serializable{
 
     public Job getJob() {
         return job;
+    }
+
+    public void setStatus(Status status){
+        this.status = status;
     }
 
     public Status getStatus() {
@@ -66,15 +71,25 @@ public class JobPosting implements Serializable{
     }
 
     public void addApplication(Application application) {
-        if (requirement.satisfies(application)) {
-            applications.add(application);
-        } else {
-            throw new RuntimeException("Requirement not satisfied");
+        if (status == Status.OPEN){
+            if (requirement.satisfies(application)) {
+                applications.add(application);
+            } else {
+                throw new RuntimeException("Requirement not satisfied");
+            }
+        } else{
+            throw new RuntimeException("The job posting is closed");
         }
     }
 
-    public void removeApplication(Application application) {
-        applications.remove(application);
+    public boolean removeApplication(Application application) {
+        return applications.remove(application);
     }
 
+    void addHired(Applicant applicant){
+        hireResult.addHiredApplicant(applicant);
+        if(hireResult.getHired().size() >= nApplicantNeeded){
+            status = Status.FILLED;
+        }
+    }
 }
