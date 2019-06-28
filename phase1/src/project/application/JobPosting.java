@@ -17,13 +17,15 @@ public class JobPosting implements Serializable{
     private LocalDateTime openDate, closeDate;
     private HireResult hireResult;
 
-    JobPosting(Job job, LocalDateTime begin, LocalDateTime end, Requirement requirement) {
+    JobPosting(Job job, LocalDateTime begin, LocalDateTime end, Requirement requirement, int nApplicantNeeded) {
         status = Status.OPEN;
         this.requirement = requirement;
         this.openDate = begin;
         this.closeDate = end;
         this.job = job;
-        hireResult = new HireResult();
+        this.hireResult = new HireResult();
+        this.nApplicantNeeded = nApplicantNeeded;
+        this.applications = new ArrayList<>();
     }
 
     public LocalDateTime getOpenDate() {
