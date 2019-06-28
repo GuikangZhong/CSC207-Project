@@ -1,5 +1,6 @@
 package project.user;
 
+import project.system.SystemClock;
 import project.user.UserHistory;
 
 import java.io.Serializable;
@@ -15,10 +16,12 @@ public abstract class User<T extends UserHistory> implements Serializable {
 	private T history;
 	private String username;
 	private String password;
+	private SystemClock clock;
 
-	public User(T history, String username, String password){
+	public User(T history, String username, String password, SystemClock clock){
 		this.username = username;
 		this.password = password;
+		this.clock = clock;
 	}
 
 	public abstract Type getType();
