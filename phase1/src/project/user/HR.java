@@ -2,13 +2,15 @@ package project.user;
 
 import project.application.Application;
 import project.application.HireResult;
+import project.application.Job;
 import project.interview.IndividualInterviewProgress;
 import project.interview.InterviewRecord;
+import project.observer.HireResultObserver;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class HR extends User {
+public class HR extends User implements HireResultObserver {
     private List<List<Application>> recommendationLists;
     // TODO: check with piazza / prof if this is really what it wants
 
@@ -41,5 +43,10 @@ public class HR extends User {
 
     public List<List<Application>> getRecommendationLists() {
         return recommendationLists;
+    }
+
+    @Override
+    public void updateOnHireResult(Applicant applicant, Job job) {
+
     }
 }
