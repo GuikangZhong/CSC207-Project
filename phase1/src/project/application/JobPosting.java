@@ -71,10 +71,14 @@ public class JobPosting implements Serializable{
     }
 
     public void addApplication(Application application) {
-        if (requirement.satisfies(application)) {
-            applications.add(application);
-        } else {
-            throw new RuntimeException("Requirement not satisfied");
+        if (status == Status.OPEN){
+            if (requirement.satisfies(application)) {
+                applications.add(application);
+            } else {
+                throw new RuntimeException("Requirement not satisfied");
+            }
+        } else{
+            throw new RuntimeException("The job posting is closed");
         }
     }
 
