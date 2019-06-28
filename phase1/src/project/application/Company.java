@@ -17,7 +17,7 @@ public class Company implements Serializable {
     public Company(String name, SystemClock clock) {
         this.name = name;
         this.clock = clock;
-        jobPostingManager = new JobPostingManager();
+        jobPostingManager = new JobPostingManager(clock);
         hrManager = new HRManager();
         interviewerManager = new InterviewerManager();
     }
