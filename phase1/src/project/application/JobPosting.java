@@ -70,6 +70,10 @@ public class JobPosting implements Serializable {
         return hireResult;
     }
 
+    public String getJobTitle(){
+        return getJob().getTitle();
+    }
+
     public void addApplication(Application application) {
         if (status == Status.OPEN) {
             if (requirement.satisfies(application)) {

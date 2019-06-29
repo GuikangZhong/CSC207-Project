@@ -20,38 +20,26 @@ public class MainSystem implements Serializable {
     private SystemClock clock;
 
     private HashMap<String, Company> companies;
-    private UserManager<Applicant> applicants;
+    private ApplicantManager applicants;
 
     public MainSystem() {
         clock = new SystemClock();
     }
 
-
-    void signUp(User.Type type, String name, String password) {
-        // TODO:
-    }
-
     User login(String name, String password) {
-        User user = null;
         if (applicants.containsUser(name)) {
-            user = applicants.getUser(name);
+            return applicants.signIn(name, password);
         } else {
-
             for (Company company : companies.values()) {
                 if (company.getHrManager().containsUser(name)) {
-                    user = company.getHrManager().getUser(name);
-                    break;
+                    return company.getHrManager().signIn(name,password);
                 }
                 if (company.getInterviewerManager().containsUser(name)) {
-                    user = company.getInterviewerManager().getUser(name);
-                    break;
+                    return company.getInterviewerManager().signIn(name,password);
                 }
             }
+            return null;
         }
-        if (null != user && user.verifyPassword(password)) {
-            return user;
-        }
-        return null;
     }
 
     Collection<Company> getCompanies() {

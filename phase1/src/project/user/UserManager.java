@@ -10,7 +10,7 @@ import java.util.HashMap;
 
 abstract public class UserManager<T extends User> {
 
-    private HashMap<String, T> users;
+    protected HashMap<String, T> users;
 
     public MainSystem getSystem() {
         return system;
@@ -25,7 +25,12 @@ abstract public class UserManager<T extends User> {
     // Type erasure doesn't allow us to call T's constructor :(
     abstract T createUser(String name, String password);
 
-    T signIn(String name, String password) {
+
+    void addUser(T user){
+        users.put(user.getUsername(), user);
+    }
+
+    public T signIn(String name, String password) {
         if (users.containsKey(name)) {
             T user = users.get(name);
             if (user.verifyPassword(password)) {

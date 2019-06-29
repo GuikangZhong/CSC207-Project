@@ -1,23 +1,26 @@
 package project.interview;
 
 import project.application.Application;
-import project.application.Job;
 import project.application.JobPosting;
-import project.observer.InterviewResultObserver;
-import project.observer.RecommendationNeededObserver;
 import project.user.Applicant;
-import project.user.HR;
 
 import java.util.*;
 
-public class InterviewProgress implements InterviewResultObserver {
+public class InterviewProgress {
     private List<Interview> interviews;
     private List<InterviewRecord> interviewees;
     private JobPosting jobPosting;
     private Iterator<Interview> interviewIterator;
     private Interview currentInterview;
 
-    private InterviewProgress(JobPosting jobPosting, List<Interview> interviews, List<InterviewRecord> interviewees) {
+    public String getHRName() {
+        return HRName;
+    }
+
+    private String HRName;
+
+    private InterviewProgress(String HRName, JobPosting jobPosting, List<Interview> interviews, List<InterviewRecord> interviewees) {
+        this.HRName = HRName;
         this.jobPosting = jobPosting;
         this.interviews = interviews;
         this.interviewees = interviewees;
@@ -39,14 +42,16 @@ public class InterviewProgress implements InterviewResultObserver {
 
     // interview is from InterviewBuilder.getInterviews()
 
-    static InterviewProgress createInterviewProgress(JobPosting jobposting,
-                                                     InterviewBuilder builder,
-                                                     List<Application> applications) {
+    public static InterviewProgress createInterviewProgress(
+            String HRName,
+            JobPosting jobposting,
+            InterviewBuilder builder,
+            List<Application> applications) {
         List<InterviewRecord> interviewees = new ArrayList<>();
         for (Application application : applications) {
             interviewees.add(new InterviewRecord(application));
         }
-        return new InterviewProgress(jobposting, builder.getInterviews(), interviewees);
+        return new InterviewProgress(HRName, jobposting, builder.getInterviews(), interviewees);
     }
 
     public boolean hasCurrentRoundFinished() {
@@ -83,7 +88,7 @@ public class InterviewProgress implements InterviewResultObserver {
         Set<String> names = new HashSet<>();
         for (InterviewRecord record : filterPassed()) {
             if (record.isPassed()) {
-                names.add(record.getApplication().getApplicant().getRealName());
+                names.add(record.getApplication().getApplicant().getUsername());
             }
         }
         currentInterview.setNameApplicantPassed(names);
@@ -101,14 +106,13 @@ public class InterviewProgress implements InterviewResultObserver {
         return recommendation;
     }
 
-    @Override
     public void updateOnInterviewResult() {
         if (hasCurrentRoundFinished()) {
             List<InterviewRecord> passed = filterPassed();
             if (passed.size() > jobPosting.getnApplicantNeeded() && !isLastRound()) {
-                toNextRound();
                 // TODO: should you notify HR too?
                 // TODO: since HR might want to operate on subsequent interviews? (like assigning interviewers)
+                jobPosting.getCompany().updateOnInterviewRoundFinished(this);
             } else if (passed.size() > jobPosting.getnApplicantNeeded()) {
                 // TODO: recommendation list for HR
                 // TODO: Don't observer the object itself
@@ -124,6 +128,4 @@ public class InterviewProgress implements InterviewResultObserver {
             }
         }
     }
-
-
 }

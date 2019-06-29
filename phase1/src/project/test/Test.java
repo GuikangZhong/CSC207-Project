@@ -1,10 +1,10 @@
 package project.test;
 
-import project.application.BasicRequirement;
-import project.application.Company;
-import project.application.Job;
-import project.application.JobPosting;
-import project.system.MainSystem;
+import project.user.*;
+import project.application.*;
+import project.interview.*;
+import project.observer.*;
+import project.system.*;
 
 public class Test {
     public static void main(String[] args) {
@@ -13,6 +13,9 @@ public class Test {
         JobPosting jobPosting = new JobPosting(new Job("a", company), null, null,
                 new BasicRequirement(), 1);
         company.getJobPostingManager().addJobPosting(jobPosting);
+
+        System.out.println("End");
+
 
     }
 }

@@ -1,11 +1,9 @@
 package project.interview;
 
-import project.observer.InterviewResultObserver;
 import project.user.Interviewer;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.Observable;
 
 public class InterviewAssignment {
     private Interviewer interviewer;

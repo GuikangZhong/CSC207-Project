@@ -1,6 +1,8 @@
 package project.application;
 
+import project.interview.InterviewProgress;
 import project.observer.HireResultObserver;
+import project.observer.InterviewRoundFinishedObserver;
 import project.system.MainSystem;
 import project.system.SystemClock;
 import project.user.Applicant;
@@ -11,7 +13,7 @@ import project.user.InterviewerManager;
 import java.io.Serializable;
 import java.util.List;
 
-public class Company implements Serializable, HireResultObserver {
+public class Company implements Serializable, HireResultObserver, InterviewRoundFinishedObserver {
     private String name;
     private JobPostingManager jobPostingManager;
     private HRManager hrManager;
@@ -52,4 +54,8 @@ public class Company implements Serializable, HireResultObserver {
         getJobPostingManager().updateOnHireResult(applicants, job);
     }
 
+    @Override
+    public void updateOnInterviewRoundFinished(InterviewProgress progress) {
+        hrManager.updateOnInterviewRoundFinished(progress);
+    }
 }

@@ -1,10 +1,28 @@
 package project.user;
 
 import project.application.Company;
+import project.interview.InterviewProgress;
+import project.observer.InterviewRoundFinishedObserver;
+import project.observer.JobPostingClosureObserver;
 import project.system.MainSystem;
 
-public class HRManager extends UserManager<HR> {
+import java.util.Optional;
+
+public class HRManager
+        extends UserManager<HR>
+        implements InterviewRoundFinishedObserver, JobPostingClosureObserver {
     private Company company;
+
+    @Override
+    public void updateOnJobPostingClosure(String jobTitle) {
+        // select an HR
+        Optional<HR> hr = users.values().stream().findAny();
+        if (hr.isPresent()) {
+            hr.get().addInterviewsToBeScheduled(jobTitle);
+        } else {
+            throw new RuntimeException("No HR !!!!!");
+        }
+    }
 
     public HRManager(MainSystem system, Company company) {
         super(system);
@@ -14,5 +32,11 @@ public class HRManager extends UserManager<HR> {
     @Override
     HR createUser(String name, String password) {
         return new HR(new UserHistory(getSystem().getClock().getClock()), name, password, company);
+    }
+
+    @Override
+    public void updateOnInterviewRoundFinished(InterviewProgress progress) {
+        HR hr = getUser(progress.getHRName());
+        hr.addInterviewRoundFinished(progress.getJobPosting().getJobTitle());
     }
 }
