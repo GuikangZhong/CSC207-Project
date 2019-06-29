@@ -83,9 +83,9 @@ public class InterviewProgress {
 
     public List<InterviewRecord> getRecommendationList() {
         List<InterviewRecord> recommendation = new ArrayList<>();
-        for (InterviewRecord interviewee:interviewees
-             ) {if (interviewees.size()>1 && isLastRound() && hasCurrentRoundFinished()){
-            recommendation.add(interviewee); }
+        if (interviewees.size() > 1 && isLastRound() && hasCurrentRoundFinished()) {
+            filterPassed();
+            recommendation.addAll(interviewees);
         }
         return recommendation;
     }
