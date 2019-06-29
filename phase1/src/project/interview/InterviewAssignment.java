@@ -28,7 +28,7 @@ public class InterviewAssignment {
 
     void submit() {
         for (InterviewRecord record : interviewees) {
-            record.getApplication().getProgress().setCurrentRoundFinished();
+            record.setCurrentRoundFinished(true);
         }
         // notify InterviewAssignment
         interviewProgress.updateOnInterviewResult();

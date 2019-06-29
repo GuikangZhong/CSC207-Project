@@ -16,7 +16,7 @@ public class JobPosting implements Serializable {
     private LocalDateTime openDate, closeDate;
     private HireResult hireResult;
 
-    JobPosting(Job job, LocalDateTime begin, LocalDateTime end, Requirement requirement, int nApplicantNeeded) {
+    public JobPosting(Job job, LocalDateTime begin, LocalDateTime end, Requirement requirement, int nApplicantNeeded) {
         status = Status.OPEN;
         this.requirement = requirement;
         this.openDate = begin;

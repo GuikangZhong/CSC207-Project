@@ -22,7 +22,7 @@ public class MainSystem implements Serializable {
     private HashMap<String, Company> companies;
     private UserManager<Applicant> applicants;
 
-    MainSystem() {
+    public MainSystem() {
         clock = new SystemClock();
     }
 

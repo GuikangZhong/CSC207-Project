@@ -1,6 +1,6 @@
 package project.application;
 
-import project.interview.IndividualInterviewProgress;
+import project.interview.InterviewProgress;
 import project.user.Applicant;
 
 import java.util.ArrayList;
@@ -11,7 +11,7 @@ public class Application {
     private Applicant applicant;
     private List<Document> documents;
     private Job job;
-    private IndividualInterviewProgress progress;
+    private InterviewProgress progress;
 
     public Application(Applicant applicant, List<Document> documents, Job job) {
         this.applicant = applicant;
@@ -20,11 +20,11 @@ public class Application {
         this.progress = null;
     }
 
-    public IndividualInterviewProgress getProgress() {
+    public InterviewProgress getProgress() {
         return progress;
     }
 
-    public void setProgress(IndividualInterviewProgress progress) {
+    public void setProgress(InterviewProgress progress) {
         this.progress = progress;
     }
 

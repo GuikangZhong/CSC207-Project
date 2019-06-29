@@ -7,6 +7,16 @@ public class InterviewRecord {
     private boolean passed;
     private Application application;
 
+    public boolean isCurrentRoundFinished() {
+        return currentRoundFinished;
+    }
+
+    public void setCurrentRoundFinished(boolean currentRoundFinished) {
+        this.currentRoundFinished = currentRoundFinished;
+    }
+
+    private boolean currentRoundFinished;
+
     public InterviewRecord(Application application) {
         passed = false;
         this.application = application;

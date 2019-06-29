@@ -23,37 +23,12 @@ public class HR extends User {
         return Type.HR;
     }
 
-    void submit(List<InterviewRecord> passed) {
-        //the HR decides which applicants to hire or to fail, add those passed to the field
-        List<Application> recommendation = new ArrayList<>();
-        for (InterviewRecord interviewee : passed) {
-            recommendation.add(interviewee.getApplication());
-        }
-        recommendationLists.add(recommendation);
-    }
-
-    private List<List<Applicant>> getApplicants() {
-        List<List<Applicant>> applicantList = new ArrayList<>();
-        for (List<Application> applications : recommendationLists
-        ) {
-            List<Applicant> applicants = new ArrayList<>();
-            for (Application application : applications) {
-                applicants.add(application.getApplicant());
-            }
-            applicantList.add(applicants);
-        }
-        return applicantList;
-    }
-
-    void notifyJobPosting() {
-        for (List<Applicant> applicants : getApplicants()) {
-            Job job = recommendationLists.get(0).get(0).getJob();
-            company.updateOnHireResult(applicants, job);
-        }
-    }
-
     public List<List<Application>> getRecommendationLists() {
         return recommendationLists;
+    }
+
+    void updateOnInterviewFinished(){
+
     }
 
 

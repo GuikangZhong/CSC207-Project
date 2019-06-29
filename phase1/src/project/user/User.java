@@ -16,6 +16,12 @@ public abstract class User<T extends UserHistory> implements Serializable {
     private T history;
     private String username;
     private String password;
+
+    public String getRealName() {
+        return realName;
+    }
+
+    private String realName;
     private SystemClock clock;
 
     public User(T history, String username, String password, SystemClock clock) {

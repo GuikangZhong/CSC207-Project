@@ -6,11 +6,9 @@ import project.application.JobPosting;
 import project.observer.InterviewResultObserver;
 import project.observer.RecommendationNeededObserver;
 import project.user.Applicant;
+import project.user.HR;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 public class InterviewProgress implements InterviewResultObserver {
     private List<Interview> interviews;
@@ -53,8 +51,7 @@ public class InterviewProgress implements InterviewResultObserver {
 
     public boolean hasCurrentRoundFinished() {
         for (InterviewRecord record : interviewees) {
-            IndividualInterviewProgress individualInterviewProgress = record.getApplication().getProgress();
-            if (!individualInterviewProgress.isCurrentRoundFinished())
+            if (!record.isCurrentRoundFinished())
                 return false;
         }
         return true;
@@ -83,6 +80,13 @@ public class InterviewProgress implements InterviewResultObserver {
 
     public void toNextRound() {
         assert (!isLastRound() && hasCurrentRoundFinished());
+        Set<String> names = new HashSet<>();
+        for (InterviewRecord record : filterPassed()) {
+            if (record.isPassed()) {
+                names.add(record.getApplication().getApplicant().getRealName());
+            }
+        }
+        currentInterview.setNameApplicantPassed(names);
         currentInterview = interviewIterator.next();
         interviewees = filterPassed();
         resetPassed();
@@ -116,7 +120,7 @@ public class InterviewProgress implements InterviewResultObserver {
                 }
 
                 // TODO: remove the call chain
-                jobPosting.getCompany().getJobPostingManager().updateOnHireResult(hired, jobPosting.getJob());
+                jobPosting.getCompany().updateOnHireResult(hired, jobPosting.getJob());
             }
         }
     }

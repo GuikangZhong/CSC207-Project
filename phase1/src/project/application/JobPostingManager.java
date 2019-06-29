@@ -28,7 +28,7 @@ public class JobPostingManager implements HireResultObserver, JobPostingClosureO
      * @return true if successfully added
      * false if job posting already exists
      */
-    boolean addJobPosting(JobPosting jobPosting) {
+    public boolean addJobPosting(JobPosting jobPosting) {
         String jobName = jobPosting.getJob().getTitle();
         if (!jobPostings.containsKey(jobName)) {
             jobPostings.put(jobName, jobPosting);
@@ -37,17 +37,17 @@ public class JobPostingManager implements HireResultObserver, JobPostingClosureO
         return false;
     }
 
-    void removeJobPosting(String name) {
+    public void removeJobPosting(String name) {
         jobPostings.remove(name);
     }
 
-    void removeApplication(Application application) {
+    public void removeApplication(Application application) {
         String name = application.getJob().getTitle();
         JobPosting jobPosting = getJobPostings().get(name);
         jobPosting.removeApplication(application);
     }
 
-    List<Applicant> getAllApplicants() {
+    public List<Applicant> getAllApplicants() {
         List<Applicant> applicants = new ArrayList<>();
         for (JobPosting jobPosting : jobPostings.values()) {
             for (Application application : jobPosting.getApplications()) {
