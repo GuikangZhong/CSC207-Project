@@ -10,9 +10,11 @@ import java.util.Observable;
 public class InterviewAssignment {
     private Interviewer interviewer;
     private List<InterviewRecord> interviewees;
+    private InterviewProgress interviewProgress;
 
-    public InterviewAssignment(Interviewer interviewer, List<InterviewRecord> interviewees){
+    public InterviewAssignment(InterviewProgress interviewProgress,Interviewer interviewer, List<InterviewRecord> interviewees){
         this.interviewees = interviewees;
+        this.interviewProgress = interviewProgress;
         this.interviewer = interviewer;
     }
     public Interviewer getInterviewer() {
@@ -23,19 +25,12 @@ public class InterviewAssignment {
         return Collections.unmodifiableList(interviewees);
     }
 
-    void submit(List<InterviewRecord> passed, List<InterviewRecord> failed) {
-        for (InterviewRecord interviewee:passed) {
-            interviewee.setPassed(true);
-            IndividualInterviewProgress progress = interviewee.getApplication().getProgress();
-            progress.setCurrentRoundFinished();
-        }
-        for (InterviewRecord interviewee:failed) {
-            interviewee.setPassed(false);
-            IndividualInterviewProgress progress = interviewee.getApplication().getProgress();
-            progress.setCurrentRoundFinished();
-        }
-        // TODO: submit the result and notify whoever needed
-        // TODO: hint: what about IndividualInterviewProgress, do they need to be notified?
+    void submit() {
+       for(InterviewRecord record: interviewees){
+           record.getApplication().getProgress().setCurrentRoundFinished();
+       }
+       // notify InterviewAssignment
+        interviewProgress.updateOnInterviewResult();
     }
 
 

@@ -12,16 +12,15 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
-public class InterviewProgress implements InterviewResultObserver, RecommendationNeededObserver {
+public class InterviewProgress implements InterviewResultObserver {
     private List<Interview> interviews;
     private List<InterviewRecord> interviewees;
-    private Job job;
+    private JobPosting jobPosting;
     private Iterator<Interview> interviewIterator;
     private Interview currentInterview;
-    private JobPosting jobPosting;
 
-    private InterviewProgress(Job job, List<Interview> interviews, List<InterviewRecord> interviewees) {
-        this.job = job;
+    private InterviewProgress(JobPosting jobPosting, List<Interview> interviews, List<InterviewRecord> interviewees) {
+        this.jobPosting = jobPosting;
         this.interviews = interviews;
         this.interviewees = interviewees;
         interviewIterator = interviews.iterator();
@@ -36,20 +35,20 @@ public class InterviewProgress implements InterviewResultObserver, Recommendatio
         return Collections.unmodifiableList(interviewees);
     }
 
-    public Job getJob() {
-        return job;
+    public JobPosting getJobPosting() {
+        return jobPosting;
     }
 
     // interview is from InterviewBuilder.getInterviews()
 
-    static InterviewProgress createInterviewProgress(Job job,
+    static InterviewProgress createInterviewProgress(JobPosting jobposting,
                                                      InterviewBuilder builder,
                                                      List<Application> applications) {
         List<InterviewRecord> interviewees = new ArrayList<>();
         for (Application application : applications) {
             interviewees.add(new InterviewRecord(application));
         }
-        return new InterviewProgress(job, builder.getInterviews(), interviewees);
+        return new InterviewProgress(jobposting, builder.getInterviews(), interviewees);
     }
 
     public boolean hasCurrentRoundFinished() {
@@ -65,7 +64,7 @@ public class InterviewProgress implements InterviewResultObserver, Recommendatio
         return !interviewIterator.hasNext();
     }
 
-    void filterPassed() {
+    List<InterviewRecord> filterPassed() {
         // Notification done in InterviewAssignment.
         List<InterviewRecord> passed = new ArrayList<>();
         for (InterviewRecord record : interviewees) {
@@ -73,7 +72,7 @@ public class InterviewProgress implements InterviewResultObserver, Recommendatio
                 passed.add(record);
             }
         }
-        interviewees = passed;
+        return passed;
     }
 
     void resetPassed() {
@@ -83,11 +82,10 @@ public class InterviewProgress implements InterviewResultObserver, Recommendatio
     }
 
     public void toNextRound() {
-//        if (!isLastRound() && hasCurrentRoundFinished()){
+        assert (!isLastRound() && hasCurrentRoundFinished());
         currentInterview = interviewIterator.next();
-//        filterPassed();
+        interviewees = filterPassed();
         resetPassed();
-//    }
     }
 
     public List<InterviewRecord> getRecommendationList() {
@@ -102,17 +100,26 @@ public class InterviewProgress implements InterviewResultObserver, Recommendatio
     @Override
     public void updateOnInterviewResult() {
         if (hasCurrentRoundFinished()) {
-            filterPassed();
-            if (interviewees.size() > jobPosting.getnApplicantNeeded() && !isLastRound()) {
+            List<InterviewRecord> passed = filterPassed();
+            if (passed.size() > jobPosting.getnApplicantNeeded() && !isLastRound()) {
                 toNextRound();
-            } else if (interviewees.size() > jobPosting.getnApplicantNeeded()) {
-                updateOnRecommendationNeeded();
+                // TODO: should you notify HR too?
+                // TODO: since HR might want to operate on subsequent interviews? (like assigning interviewers)
+            } else if (passed.size() > jobPosting.getnApplicantNeeded()) {
+                // TODO: recommendation list for HR
+                // TODO: Don't observer the object itself
+            } else {
+                // hire
+                List<Applicant> hired = new ArrayList<>();
+                for (InterviewRecord record : passed) {
+                    hired.add(record.getApplication().getApplicant());
+                }
+
+                // TODO: remove the call chain
+                jobPosting.getCompany().getJobPostingManager().updateOnHireResult(hired, jobPosting.getJob());
             }
         }
     }
 
-    @Override
-    public void updateOnRecommendationNeeded() {
-        //TODO: This notifies HR recommendation is needed. What to write?
-    }
+
 }

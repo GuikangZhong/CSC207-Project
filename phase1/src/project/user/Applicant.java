@@ -1,6 +1,7 @@
 package project.user;
 
 import project.application.*;
+import project.system.SystemClock;
 
 import java.util.*;
 
@@ -10,8 +11,8 @@ public class Applicant extends User<ApplicantHistory> {
     private Collection<Application> applications;
     private List<Document> documents;
 
-    Applicant(ApplicantHistory history, String username, String password) {
-        super(history, username, password);
+    Applicant(ApplicantHistory history, String username, String password, SystemClock clock) {
+        super(history, username, password, clock);
         applications = new ArrayList<>();
         documents = new ArrayList<>();
     }

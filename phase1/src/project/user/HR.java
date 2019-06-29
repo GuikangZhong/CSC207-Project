@@ -7,7 +7,7 @@ import project.system.SystemClock;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HR extends User implements InterviewMatcher, InterviewMatchingChecker {
+public class HR extends User{
     private Company company;
     private List<List<Application>> recommendationLists;
     // TODO: check with piazza / prof if this is really what it wants
@@ -58,38 +58,4 @@ public class HR extends User implements InterviewMatcher, InterviewMatchingCheck
     }
 
 
-    @Override
-    public List<InterviewAssignment> match(List<Interviewer> interviewers, List<InterviewRecord> interviewees, Interview interview) {
-        List<InterviewAssignment> assignments = new ArrayList<>();
-        for (Interviewer interviewer : interviewers
-        ) {
-            for (InterviewRecord interviewee : interviewees
-            ) {
-                List<Applicant> applicants = new ArrayList<>();
-                Applicant applicant = interviewee.getApplication().getApplicant();
-                if (isPossibleMatching(interviewer, applicant, interview)) {
-                    applicants.add(applicant);
-                }
-
-            }
-//            TODO: not finished. needs to judge if an interviewee is already assigned.
-        }
-        return assignments;
-    }
-
-    @Override
-    public boolean isPossibleMatching(Interviewer interviewer, Applicant applicant, Interview interview) {
-        // TODO: how to judge if its possible?
-        boolean result = true;
-        for (InterviewAssignment assignment : interview.getAssignments()) {
-            for (InterviewRecord record : assignment.getInterviewees()) {
-                if (record.getApplication().getApplicant().equals(applicant)) {
-                    result = false;
-                }
-            }
-        }
-        return result;
-    }
-
-//    TODO: Are new interviews created here by HR or in the System?
 }

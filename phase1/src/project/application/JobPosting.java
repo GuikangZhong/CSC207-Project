@@ -92,4 +92,7 @@ public class JobPosting implements Serializable{
             status = Status.FILLED;
         }
     }
+    public Company getCompany(){
+        return job.getCompany();
+    }
 }
