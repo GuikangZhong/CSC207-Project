@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class JobPosting implements Serializable{
+public class JobPosting implements Serializable {
     private Job job;
     private Status status;
     private Requirement requirement;
@@ -46,7 +46,7 @@ public class JobPosting implements Serializable{
         return job;
     }
 
-    public void setStatus(Status status){
+    public void setStatus(Status status) {
         this.status = status;
     }
 
@@ -71,13 +71,13 @@ public class JobPosting implements Serializable{
     }
 
     public void addApplication(Application application) {
-        if (status == Status.OPEN){
+        if (status == Status.OPEN) {
             if (requirement.satisfies(application)) {
                 applications.add(application);
             } else {
                 throw new RuntimeException("Requirement not satisfied");
             }
-        } else{
+        } else {
             throw new RuntimeException("The job posting is closed");
         }
     }
@@ -88,11 +88,12 @@ public class JobPosting implements Serializable{
 
     public void addHired(Applicant applicant) {
         hireResult.addHiredApplicant(applicant);
-        if(hireResult.getHired().size() >= nApplicantNeeded){
+        if (hireResult.getHired().size() >= nApplicantNeeded) {
             status = Status.FILLED;
         }
     }
-    public Company getCompany(){
+
+    public Company getCompany() {
         return job.getCompany();
     }
 }

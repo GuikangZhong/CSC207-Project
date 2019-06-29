@@ -3,7 +3,7 @@ package project.application;
 import java.io.*;
 import java.time.LocalDateTime;
 
-public class CV extends Document{
+public class CV extends Document {
 
     public static CV createByDirectInput(String applicantName, String input, LocalDateTime dateTime) {
         return new CV(applicantName, input, dateTime);

@@ -11,7 +11,8 @@ public class UserHistory implements Serializable {
         return this.dateCreated;
     }
 
-    UserHistory(Clock clock){
+    UserHistory(Clock clock) {
         this.dateCreated = LocalDateTime.now(clock);
     }
+
 }

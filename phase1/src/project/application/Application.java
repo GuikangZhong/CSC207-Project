@@ -13,7 +13,7 @@ public class Application {
     private Job job;
     private IndividualInterviewProgress progress;
 
-    public Application(Applicant applicant, List<Document> documents, Job job){
+    public Application(Applicant applicant, List<Document> documents, Job job) {
         this.applicant = applicant;
         this.documents = new ArrayList<>(documents);
         this.job = job;

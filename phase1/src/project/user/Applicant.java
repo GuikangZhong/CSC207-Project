@@ -11,7 +11,7 @@ public class Applicant extends User<ApplicantHistory> {
     private Collection<Application> applications;
     private List<Document> documents;
 
-    Applicant(ApplicantHistory history, String username, String password, SystemClock clock) {
+    Applicant(SystemClock clock, ApplicantHistory history, String username, String password) {
         super(history, username, password, clock);
         applications = new ArrayList<>();
         documents = new ArrayList<>();
@@ -30,20 +30,19 @@ public class Applicant extends User<ApplicantHistory> {
     }
 
     void addDocument(Document document) {
-    	documents.add(document);
-    }
-    
-    void updateDocument(int index, Document document) {
-    	documents.set(index, document);
+        documents.add(document);
     }
 
-    
-    
-    boolean checkIfExpired(){
+    void updateDocument(int index, Document document) {
+        documents.set(index, document);
+    }
+
+
+    boolean checkIfExpired() {
         return false;
     }
 
-    void removeIfExpired(){
+    void removeIfExpired() {
         // TODO:
     }
 
@@ -58,8 +57,8 @@ public class Applicant extends User<ApplicantHistory> {
     }
 
     void withdraw(String jobName) {
-        for (Application application: applications){
-            if (application.getJob().getTitle().equals(jobName)){
+        for (Application application : applications) {
+            if (application.getJob().getTitle().equals(jobName)) {
                 applications.remove(application);
                 this.getHistory().removeJobApplying(jobName);
             }
@@ -67,7 +66,7 @@ public class Applicant extends User<ApplicantHistory> {
     }
 
     @Override
-    public Type getType(){
-    	return Type.APPLICANT;
+    public Type getType() {
+        return Type.APPLICANT;
     }
 }

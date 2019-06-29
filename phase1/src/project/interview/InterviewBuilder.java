@@ -8,7 +8,7 @@ public class InterviewBuilder {
     private HashMap<String, Integer> map;
     private List<Interview> interviews;
 
-    public InterviewBuilder(){
+    public InterviewBuilder() {
         map = new HashMap<>();
         interviews = new ArrayList<>();
     }
@@ -17,12 +17,12 @@ public class InterviewBuilder {
         return interviews;
     }
 
-    public boolean addInterview(Interview interview){
+    public boolean addInterview(Interview interview) {
         String type = interview.getInterviewType();
-        if(!map.containsKey(type)){
+        if (!map.containsKey(type)) {
             map.put(type, 1);
         }
-        if(map.get(type).equals(interview.getMaxInterview())){
+        if (map.get(type).equals(interview.getMaxInterview())) {
             return false;
         }
         map.put(type, map.get(type) + 1);

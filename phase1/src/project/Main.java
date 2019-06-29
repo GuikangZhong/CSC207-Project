@@ -1,4 +1,5 @@
 package project;
+
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -7,7 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-public class Main extends Application{
+public class Main extends Application {
     public Main() {
         //Optional constructor
     }
@@ -21,6 +22,7 @@ public class Main extends Application{
     public void start(Stage primaryStage) {
         primaryStage.show();
     }
+
     @Override
     public void stop() {
 

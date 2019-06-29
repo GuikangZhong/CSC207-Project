@@ -2,7 +2,7 @@ package project.interview;
 
 import java.util.List;
 
-public class PhoneInterview extends Interview{
+public class PhoneInterview extends Interview {
     PhoneInterview() {
         super(1);
     }

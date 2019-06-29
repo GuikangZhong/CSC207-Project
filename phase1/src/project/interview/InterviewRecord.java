@@ -7,7 +7,7 @@ public class InterviewRecord {
     private boolean passed;
     private Application application;
 
-    public InterviewRecord(Application application){
+    public InterviewRecord(Application application) {
         passed = false;
         this.application = application;
     }

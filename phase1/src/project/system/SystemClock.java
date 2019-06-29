@@ -13,12 +13,12 @@ public class SystemClock implements Serializable {
     // always call this method when a clock is needed
     // the returned clock has a very short lifetime
     // so never retain a reference to it
-    public Clock getClock(){
+    public Clock getClock() {
         return clock;
     }
 
 
-    void offset(Duration duration){
+    void offset(Duration duration) {
         clock = Clock.offset(clock, duration);
     }
 }

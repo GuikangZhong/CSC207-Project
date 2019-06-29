@@ -8,11 +8,11 @@ import java.util.List;
 public class HireResult {
     private List<Applicant> hired;
 
-    HireResult(){
+    HireResult() {
         hired = new ArrayList<>();
     }
 
-    void addHiredApplicant(Applicant applicant){
+    void addHiredApplicant(Applicant applicant) {
         this.hired.add(applicant);
     }
 

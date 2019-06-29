@@ -7,13 +7,14 @@ import project.system.SystemClock;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HR extends User{
+public class HR extends User {
     private Company company;
     private List<List<Application>> recommendationLists;
     // TODO: check with piazza / prof if this is really what it wants
 
-    HR(UserHistory history, String username, String password, SystemClock clock) {
-        super(history, username, password, clock);
+    HR(UserHistory history, String username, String password, Company company) {
+        super(history, username, password, company.getSystem().getClock());
+        this.company = company;
         recommendationLists = new ArrayList<>();
     }
 
@@ -25,7 +26,7 @@ public class HR extends User{
     void submit(List<InterviewRecord> passed) {
         //the HR decides which applicants to hire or to fail, add those passed to the field
         List<Application> recommendation = new ArrayList<>();
-        for (InterviewRecord interviewee:passed) {
+        for (InterviewRecord interviewee : passed) {
             recommendation.add(interviewee.getApplication());
         }
         recommendationLists.add(recommendation);
@@ -45,11 +46,9 @@ public class HR extends User{
     }
 
     void notifyJobPosting() {
-        for (List<Applicant> applicants : getApplicants()
-        ) {
+        for (List<Applicant> applicants : getApplicants()) {
             Job job = recommendationLists.get(0).get(0).getJob();
-            JobPostingManager jobPostingManager = company.getJobPostingManager();
-            jobPostingManager.updateOnHireResult(applicants, job);
+            company.updateOnHireResult(applicants, job);
         }
     }
 

@@ -12,11 +12,12 @@ public class InterviewAssignment {
     private List<InterviewRecord> interviewees;
     private InterviewProgress interviewProgress;
 
-    public InterviewAssignment(InterviewProgress interviewProgress,Interviewer interviewer, List<InterviewRecord> interviewees){
+    public InterviewAssignment(InterviewProgress interviewProgress, Interviewer interviewer, List<InterviewRecord> interviewees) {
         this.interviewees = interviewees;
         this.interviewProgress = interviewProgress;
         this.interviewer = interviewer;
     }
+
     public Interviewer getInterviewer() {
         return interviewer;
     }
@@ -26,10 +27,10 @@ public class InterviewAssignment {
     }
 
     void submit() {
-       for(InterviewRecord record: interviewees){
-           record.getApplication().getProgress().setCurrentRoundFinished();
-       }
-       // notify InterviewAssignment
+        for (InterviewRecord record : interviewees) {
+            record.getApplication().getProgress().setCurrentRoundFinished();
+        }
+        // notify InterviewAssignment
         interviewProgress.updateOnInterviewResult();
     }
 

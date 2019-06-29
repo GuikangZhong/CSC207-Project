@@ -27,33 +27,34 @@ public class MainSystem implements Serializable {
     }
 
 
-
-    void signUp(User.Type type, String name, String password){
+    void signUp(User.Type type, String name, String password) {
         // TODO:
     }
-    User login(String name, String password){
-        User user = null;
-         if(applicants.containsUser(name)){
-             user = applicants.getUser(name);
-         }else {
 
-             for (Company company : companies.values()) {
-                 if (company.getHrManager().containsUser(name)) {
-                     user = company.getHrManager().getUser(name);
-                     break;
-                 }
-                 if (company.getInterviewerManager().containsUser(name)) {
-                     user = company.getInterviewerManager().getUser(name);
-                     break;
-                 }
-             }
-         }
-         if(null != user && user.verifyPassword(password)){
-             return user;
-         }
-         return null;
+    User login(String name, String password) {
+        User user = null;
+        if (applicants.containsUser(name)) {
+            user = applicants.getUser(name);
+        } else {
+
+            for (Company company : companies.values()) {
+                if (company.getHrManager().containsUser(name)) {
+                    user = company.getHrManager().getUser(name);
+                    break;
+                }
+                if (company.getInterviewerManager().containsUser(name)) {
+                    user = company.getInterviewerManager().getUser(name);
+                    break;
+                }
+            }
+        }
+        if (null != user && user.verifyPassword(password)) {
+            return user;
+        }
+        return null;
     }
-    Collection<Company> getCompanies(){
+
+    Collection<Company> getCompanies() {
         return companies.values();
     }
 
