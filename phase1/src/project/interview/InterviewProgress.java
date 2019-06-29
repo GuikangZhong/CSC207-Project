@@ -2,6 +2,9 @@ package project.interview;
 
 import project.application.Application;
 import project.application.Job;
+import project.application.JobPosting;
+import project.observer.InterviewResultObserver;
+import project.observer.RecommendationNeededObserver;
 import project.user.Applicant;
 
 import java.util.ArrayList;
@@ -9,12 +12,13 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
-public class InterviewProgress {
+public class InterviewProgress implements InterviewResultObserver, RecommendationNeededObserver {
     private List<Interview> interviews;
     private List<InterviewRecord> interviewees;
     private Job job;
     private Iterator<Interview> interviewIterator;
     private Interview currentInterview;
+    private JobPosting jobPosting;
 
     private InterviewProgress(Job job, List<Interview> interviews, List<InterviewRecord> interviewees) {
         this.job = job;
@@ -69,16 +73,21 @@ public class InterviewProgress {
                 passed.add(record);
             }
         }
-        for (InterviewRecord record : passed) {
-            record.setPassed(false);
-        }
         interviewees = passed;
     }
 
+    void resetPassed() {
+        for (InterviewRecord record : interviewees) {
+            record.setPassed(false);
+        }
+    }
+
     public void toNextRound() {
-        if (!isLastRound() && hasCurrentRoundFinished()){
+//        if (!isLastRound() && hasCurrentRoundFinished()){
         currentInterview = interviewIterator.next();
-        filterPassed();}
+//        filterPassed();
+        resetPassed();
+//    }
     }
 
     public List<InterviewRecord> getRecommendationList() {
@@ -88,5 +97,22 @@ public class InterviewProgress {
             recommendation.addAll(interviewees);
         }
         return recommendation;
+    }
+
+    @Override
+    public void updateOnInterviewResult() {
+        if (hasCurrentRoundFinished()) {
+            filterPassed();
+            if (interviewees.size() > jobPosting.getnApplicantNeeded() && !isLastRound()) {
+                toNextRound();
+            } else if (interviewees.size() > jobPosting.getnApplicantNeeded()) {
+                updateOnRecommendationNeeded();
+            }
+        }
+    }
+
+    @Override
+    public void updateOnRecommendationNeeded() {
+        //TODO: This notifies HR recommendation is needed. What to write?
     }
 }

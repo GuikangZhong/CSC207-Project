@@ -19,4 +19,8 @@ public abstract class Interview {
     }
 
     public abstract String getInterviewType();
+
+    public List<InterviewAssignment> getAssignments() {
+        return assignments;
+    }
 }

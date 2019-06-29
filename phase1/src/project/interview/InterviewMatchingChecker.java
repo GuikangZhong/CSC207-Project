@@ -5,5 +5,5 @@ import project.user.Interviewer;
 
 @FunctionalInterface
 public interface InterviewMatchingChecker {
-    boolean isPossibleMatching(Interview interview, Interviewer interviewer, Applicant applicant);
+    boolean isPossibleMatching(Interviewer interviewer, Applicant applicant, Interview interview);
 }

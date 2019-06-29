@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Observable;
 
-public class InterviewAssignment implements InterviewResultObserver {
+public class InterviewAssignment {
     private Interviewer interviewer;
     private List<InterviewRecord> interviewees;
 
@@ -23,8 +23,7 @@ public class InterviewAssignment implements InterviewResultObserver {
         return Collections.unmodifiableList(interviewees);
     }
 
-    @Override
-    public void updateOnInterviewResult(List<InterviewRecord> passed, List<InterviewRecord> failed) {
+    void submit(List<InterviewRecord> passed, List<InterviewRecord> failed) {
         for (InterviewRecord interviewee:passed) {
             interviewee.setPassed(true);
             IndividualInterviewProgress progress = interviewee.getApplication().getProgress();
@@ -38,4 +37,6 @@ public class InterviewAssignment implements InterviewResultObserver {
         // TODO: submit the result and notify whoever needed
         // TODO: hint: what about IndividualInterviewProgress, do they need to be notified?
     }
+
+
 }
