@@ -62,10 +62,12 @@ public class JobPostingManager implements HireResultObserver, JobPostingClosureO
     }
 
     @Override
-    public void updateOnHireResult(Applicant applicant, Job job) {
+    public void updateOnHireResult(List<Applicant> applicants, Job job) {
         String name = job.getTitle();
         JobPosting jobPosting = getJobPosting(name);
-        jobPosting.addHired(applicant);
+        for (Applicant applicant: applicants) {
+            jobPosting.addHired(applicant);
+        }
     }
 
     @Override
