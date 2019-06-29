@@ -11,6 +11,11 @@ public class Applicant extends User<ApplicantHistory> {
     private Collection<Application> applications;
     private List<Document> documents;
 
+    public static int getDocumentsAutoDeleteDays() {
+        return DocumentsAutoDeleteDays;
+    }
+
+    private static int DocumentsAutoDeleteDays = 30;
     Applicant(SystemClock clock, ApplicantHistory history, String username, String password) {
         super(history, username, password, clock);
         applications = new ArrayList<>();

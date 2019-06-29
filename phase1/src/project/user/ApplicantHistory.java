@@ -13,6 +13,7 @@ public class ApplicantHistory extends UserHistory {
     private LocalDateTime lastApplicationClosed;
     private List<Job> jobApplying;
 
+
     public ApplicantHistory(Clock clock) {
         super(clock);
         jobApplied = new ArrayList<>();

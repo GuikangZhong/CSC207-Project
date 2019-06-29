@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="591d482d-6f65-4466-88a8-53d1ab9be688" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/project/observer/SystemTimeUpdateObserver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/application/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/application/Company.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/application/JobPosting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/application/JobPosting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/application/JobPostingManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/application/JobPostingManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/interview/InterviewMatchingStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/interview/InterviewMatchingStrategy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/system/MainSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/system/MainSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/user/ApplicantManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/user/ApplicantManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/user/HR.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/user/HR.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/user/UserManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/user/UserManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/user/Applicant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/user/Applicant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/user/ApplicantHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/user/ApplicantHistory.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,11 +30,27 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/project/user/Applicant.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+            <state relative-caret-position="144">
+              <caret line="12" column="51" selection-start-line="12" selection-start-column="51" selection-end-line="12" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/project/application/Company.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="137">
+              <caret line="55" column="10" selection-start-line="55" selection-start-column="10" selection-end-line="55" selection-end-column="10" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2015#2016#0" expanded="true" />
+                <element signature="e#2076#2077#0" expanded="true" />
+                <element signature="e#2141#2142#0" expanded="true" />
+                <element signature="e#2192#2193#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -50,8 +58,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/project/user/ApplicantManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="31" column="75" selection-start-line="31" selection-start-column="75" selection-end-line="31" selection-end-column="75" />
+            <state relative-caret-position="96">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
               <folding>
                 <element signature="e#796#797#0" expanded="true" />
                 <element signature="e#834#835#0" expanded="true" />
@@ -60,11 +68,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/project/user/ApplicantHistory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="128">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/project/application/JobPosting.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="41" column="49" selection-start-line="41" selection-start-column="49" selection-end-line="41" selection-end-column="49" />
+            <state relative-caret-position="208">
+              <caret line="28" column="32" lean-forward="true" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -101,8 +118,10 @@
         <option value="$PROJECT_DIR$/src/project/observer/SystemTimeUpdateObserver.java" />
         <option value="$PROJECT_DIR$/src/project/application/Company.java" />
         <option value="$PROJECT_DIR$/src/project/application/JobPostingManager.java" />
-        <option value="$PROJECT_DIR$/src/project/user/ApplicantManager.java" />
         <option value="$PROJECT_DIR$/src/project/application/JobPosting.java" />
+        <option value="$PROJECT_DIR$/src/project/user/ApplicantManager.java" />
+        <option value="$PROJECT_DIR$/src/project/user/ApplicantHistory.java" />
+        <option value="$PROJECT_DIR$/src/project/user/Applicant.java" />
       </list>
     </option>
   </component>
@@ -470,38 +489,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/application/Company.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="809">
-          <caret line="70" column="54" selection-start-line="70" selection-start-column="54" selection-end-line="70" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2015#2016#0" expanded="true" />
-            <element signature="e#2076#2077#0" expanded="true" />
-            <element signature="e#2204#2205#0" expanded="true" />
-            <element signature="e#2252#2253#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/user/Applicant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/user/ApplicantManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="31" column="75" selection-start-line="31" selection-start-column="75" selection-end-line="31" selection-end-column="75" />
-          <folding>
-            <element signature="e#796#797#0" expanded="true" />
-            <element signature="e#834#835#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/project/user/HRManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -515,8 +502,47 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/project/application/JobPosting.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="41" column="49" selection-start-line="41" selection-start-column="49" selection-end-line="41" selection-end-column="49" />
+        <state relative-caret-position="208">
+          <caret line="28" column="32" lean-forward="true" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/application/Company.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="55" column="10" selection-start-line="55" selection-start-column="10" selection-end-line="55" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2015#2016#0" expanded="true" />
+            <element signature="e#2076#2077#0" expanded="true" />
+            <element signature="e#2141#2142#0" expanded="true" />
+            <element signature="e#2192#2193#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/user/ApplicantManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="e#796#797#0" expanded="true" />
+            <element signature="e#834#835#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/user/ApplicantHistory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/user/Applicant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="12" column="51" selection-start-line="12" selection-start-column="51" selection-end-line="12" selection-end-column="51" />
         </state>
       </provider>
     </entry>
