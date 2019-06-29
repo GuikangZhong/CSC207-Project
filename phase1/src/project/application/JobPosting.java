@@ -86,7 +86,7 @@ public class JobPosting implements Serializable{
         return applications.remove(application);
     }
 
-    void addHired(Applicant applicant){
+    public void addHired(Applicant applicant) {
         hireResult.addHiredApplicant(applicant);
         if(hireResult.getHired().size() >= nApplicantNeeded){
             status = Status.FILLED;
