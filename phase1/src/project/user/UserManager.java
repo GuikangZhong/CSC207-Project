@@ -26,7 +26,7 @@ abstract public class UserManager<T extends User> {
     abstract T createUser(String name, String password);
 
 
-    void addUser(T user){
+    void addUser(T user) {
         users.put(user.getUsername(), user);
     }
 

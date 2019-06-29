@@ -3,6 +3,8 @@ package project.application;
 import project.interview.InterviewProgress;
 import project.observer.HireResultObserver;
 import project.observer.InterviewRoundFinishedObserver;
+import project.observer.JobPostingClosureObserver;
+import project.observer.SystemTimeUpdateObserver;
 import project.system.MainSystem;
 import project.system.SystemClock;
 import project.user.Applicant;
@@ -11,9 +13,14 @@ import project.user.HRManager;
 import project.user.InterviewerManager;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.List;
 
-public class Company implements Serializable, HireResultObserver, InterviewRoundFinishedObserver {
+public class Company
+        implements Serializable,
+        HireResultObserver,
+        InterviewRoundFinishedObserver,
+        JobPostingClosureObserver, SystemTimeUpdateObserver {
     private String name;
     private JobPostingManager jobPostingManager;
     private HRManager hrManager;
@@ -57,5 +64,15 @@ public class Company implements Serializable, HireResultObserver, InterviewRound
     @Override
     public void updateOnInterviewRoundFinished(InterviewProgress progress) {
         hrManager.updateOnInterviewRoundFinished(progress);
+    }
+
+    @Override
+    public void updateOnJobPostingClosure(String jobTitle) {
+        hrManager.updateOnJobPostingClosure(jobTitle);
+    }
+
+    @Override
+    public void updateOnTime(LocalDateTime now) {
+        jobPostingManager.updateOnTime(now);
     }
 }

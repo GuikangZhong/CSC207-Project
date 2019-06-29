@@ -32,10 +32,10 @@ public class MainSystem implements Serializable {
         } else {
             for (Company company : companies.values()) {
                 if (company.getHrManager().containsUser(name)) {
-                    return company.getHrManager().signIn(name,password);
+                    return company.getHrManager().signIn(name, password);
                 }
                 if (company.getInterviewerManager().containsUser(name)) {
-                    return company.getInterviewerManager().signIn(name,password);
+                    return company.getInterviewerManager().signIn(name, password);
                 }
             }
             return null;

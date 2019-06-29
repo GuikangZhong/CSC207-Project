@@ -26,6 +26,7 @@ public class HR extends User {
     private List<String> interviewsRoundFinished;
     private List<String> interviewsToBeScheduled;
     private List<String> jobsHired;
+
     public List<String> getInterviewsToBeScheduled() {
         return interviewsToBeScheduled;
     }
@@ -63,9 +64,11 @@ public class HR extends User {
     void addJobsHired(String title) {
         jobsHired.add(title);
     }
-    void addInterviewRoundFinished(String jobTitle){
+
+    void addInterviewRoundFinished(String jobTitle) {
         interviewsRoundFinished.add(jobTitle);
     }
+
     void addInterviewsToBeScheduled(String jobTitle) {
         interviewsToBeScheduled.add(jobTitle);
     }

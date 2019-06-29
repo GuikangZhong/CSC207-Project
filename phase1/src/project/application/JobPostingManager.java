@@ -1,16 +1,19 @@
 package project.application;
 
 import project.observer.JobPostingClosureObserver;
+import project.observer.SystemTimeUpdateObserver;
 import project.system.SystemClock;
 import project.user.Applicant;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 import project.observer.HireResultObserver;
 
-public class JobPostingManager implements HireResultObserver, JobPostingClosureObserver {
+public class JobPostingManager implements HireResultObserver,
+        SystemTimeUpdateObserver {
     private HashMap<String, JobPosting> jobPostings;
     private SystemClock clock;
 
@@ -71,8 +74,7 @@ public class JobPostingManager implements HireResultObserver, JobPostingClosureO
     }
 
     @Override
-    public void updateOnJobPostingClosure(String jobName) {
-        JobPosting jobPosting = getJobPosting(jobName);
-        jobPosting.setStatus(JobPosting.Status.CLOSED);
+    public void updateOnTime(LocalDateTime now) {
+
     }
 }

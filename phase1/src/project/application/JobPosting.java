@@ -1,13 +1,16 @@
 package project.application;
 
+import project.observer.SystemTimeUpdateObserver;
 import project.user.Applicant;
 
 import java.io.Serializable;
+import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class JobPosting implements Serializable {
+public class JobPosting
+        implements Serializable, SystemTimeUpdateObserver {
     private Job job;
     private Status status;
     private Requirement requirement;
@@ -33,6 +36,14 @@ public class JobPosting implements Serializable {
 
     public LocalDateTime getCloseDate() {
         return closeDate;
+    }
+
+    @Override
+    public void updateOnTime(LocalDateTime now) {
+        if (now.isAfter(closeDate) && getStatus() == Status.OPEN) {
+            setStatus(Status.CLOSED);
+            getCompany().updateOnJobPostingClosure(getJobTitle());
+        }
     }
 
 
@@ -70,7 +81,7 @@ public class JobPosting implements Serializable {
         return hireResult;
     }
 
-    public String getJobTitle(){
+    public String getJobTitle() {
         return getJob().getTitle();
     }
 
