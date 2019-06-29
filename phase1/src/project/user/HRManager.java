@@ -12,11 +12,16 @@ public class HRManager
         extends UserManager<HR>
         implements InterviewRoundFinishedObserver, JobPostingClosureObserver {
     private Company company;
+    private HRSelectionStrategy selectionStrategy;
+
+    public void useSelectionStrategy(HRSelectionStrategy strategy) {
+        selectionStrategy = strategy;
+    }
 
     @Override
     public void updateOnJobPostingClosure(String jobTitle) {
         // select an HR
-        Optional<HR> hr = users.values().stream().findAny();
+        Optional<HR> hr = selectionStrategy.select(users.values());
         if (hr.isPresent()) {
             hr.get().addInterviewsToBeScheduled(jobTitle);
         } else {
