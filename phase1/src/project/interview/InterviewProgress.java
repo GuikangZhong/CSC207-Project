@@ -11,6 +11,11 @@ public class InterviewProgress {
     private List<InterviewRecord> interviewees;
     private JobPosting jobPosting;
     private Iterator<Interview> interviewIterator;
+
+    public Interview getCurrentInterview() {
+        return currentInterview;
+    }
+
     private Interview currentInterview;
 
     public String getHRName() {

@@ -7,6 +7,12 @@ public abstract class Interview {
     private final int maxInterview;
     private List<InterviewAssignment> assignments;
 
+    public boolean isAssigned() {
+        return assigned;
+    }
+
+    private boolean assigned = false;
+
     public Set<String> getNameApplicantPassed() {
         return nameApplicantPassed;
     }
@@ -26,8 +32,9 @@ public abstract class Interview {
         return maxInterview;
     }
 
-    void setAssignments(List<InterviewAssignment> assignments) {
+    void assign(List<InterviewAssignment> assignments) {
         this.assignments = assignments;
+        assigned = true;
     }
 
     public abstract String getInterviewType();
