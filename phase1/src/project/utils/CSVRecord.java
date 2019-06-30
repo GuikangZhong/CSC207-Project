@@ -82,6 +82,9 @@ class WriteOnlyCSVRecord extends CSVRecord {
             value = value.replace("\"", "\"\"");
             builder.append(value);
         }
+        String s = builder.toString();
+        if (s.contains("\"") || s.contains(","))
+            return "\"" + s + "\"";
         return builder.toString();
     }
 

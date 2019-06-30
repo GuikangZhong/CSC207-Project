@@ -1,5 +1,6 @@
 package project.utils;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
@@ -19,6 +20,7 @@ public class CSVTable implements Iterable<CSVRecord> {
 
     CSVTable(List<String> keys) {
         this.keys = keys;
+        this.records = new ArrayList<>();
     }
 
     void addRecord(CSVRecord record) {
