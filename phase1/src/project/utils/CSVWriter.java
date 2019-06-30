@@ -1,5 +1,6 @@
 package project.utils;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CSVWriter {
@@ -8,6 +9,7 @@ public class CSVWriter {
 
     public CSVWriter(List<String> keys) {
         this.keys = keys;
+        this.records = new ArrayList<>();
     }
 
     CSVRecord newRecord() {
