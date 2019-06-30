@@ -12,12 +12,12 @@ public class CSVWriter {
         this.records = new ArrayList<>();
     }
 
-    CSVRecord newRecord() {
+    public CSVRecord newRecord() {
         WriteOnlyCSVRecord record = new WriteOnlyCSVRecord(keys);
         return record;
     }
 
-    void addRecord(CSVRecord record) {
+    public void addRecord(CSVRecord record) {
         records.add((WriteOnlyCSVRecord) record);
     }
 

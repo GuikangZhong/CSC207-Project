@@ -5,10 +5,10 @@ import project.application.*;
 import project.interview.*;
 import project.observer.*;
 import project.system.*;
-import project.utils.CSVReader;
-import project.utils.CSVTable;
+import project.utils.*;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -25,11 +25,24 @@ public class Test {
 
         try {
             String content = new String(Files.readAllBytes(Paths.get(
-                    "C:\\Users\\xiaoc\\Downloads\\FL_insurance_sample.csv"
+                    "C:\\Users\\xiaoc\\Downloads\\cs1_papers.csv"
             )), StandardCharsets.UTF_8);
             CSVReader reader = new CSVReader((content));
             CSVTable table = reader.parse();
-            System.out.println("End");
+            CSVWriter writer = new CSVWriter(table.getKeys());
+            for(CSVRecord record: table){
+                CSVRecord r = writer.newRecord();
+                for(CSVItem item : record){
+                    r.put(item.getValue());
+                }
+                writer.addRecord(r);
+            }
+            String out = writer.toString();
+            System.out.println(out);
+            PrintWriter printWriter = new PrintWriter("C:\\Users\\xiaoc\\Downloads\\cs1_papers.csv");
+            printWriter.print(out);
+            printWriter.flush();
+            printWriter.close();
         }
         catch(IOException e){
             e.printStackTrace();

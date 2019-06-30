@@ -56,7 +56,7 @@ class ReadOnlyCSVRecord extends CSVRecord {
 
         @Override
         public boolean hasNext() {
-            return index == record.keys.size() - 1;
+            return index != record.keys.size();
         }
 
         @Override
@@ -76,16 +76,15 @@ class ReadOnlyCSVRecord extends CSVRecord {
 
 class WriteOnlyCSVRecord extends CSVRecord {
     String toText() {
-        StringBuilder builder = new StringBuilder();
+        List<String> list = new ArrayList<>();
         for (String key : keys) {
             String value = row.get(key);
             value = value.replace("\"", "\"\"");
-            builder.append(value);
+            if (value.contains("\"") || value.contains(","))
+                value =  "\"" + value + "\"";
+            list.add(value);
         }
-        String s = builder.toString();
-        if (s.contains("\"") || s.contains(","))
-            return "\"" + s + "\"";
-        return builder.toString();
+        return String.join(",",list);
     }
 
     private HashMap<String, String> row;
