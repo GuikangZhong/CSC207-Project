@@ -10,6 +10,8 @@ public abstract class CSVRecord {
     public abstract String get(int index);
 
     public abstract void put(String key, String value);
+
+    public abstract CSVRecord put(String value);
 }
 
 class ReadOnlyCSVRecord extends CSVRecord {
@@ -17,7 +19,7 @@ class ReadOnlyCSVRecord extends CSVRecord {
     private List<String> rowOrdered;
     private List<String> keys;
 
-    public ReadOnlyCSVRecord(List<String> keys, HashMap<String, String> row, List<String> rowOrdered) {
+    ReadOnlyCSVRecord(List<String> keys, HashMap<String, String> row, List<String> rowOrdered) {
         this.row = row;
         this.rowOrdered = rowOrdered;
         this.keys = keys;
@@ -37,10 +39,15 @@ class ReadOnlyCSVRecord extends CSVRecord {
     public void put(String key, String value) {
         throw new UnsupportedOperationException();
     }
+
+    @Override
+    public CSVRecord put(String value) {
+        throw new UnsupportedOperationException();
+    }
 }
 
 class WriteOnlyCSVRecord extends CSVRecord {
-    public String toText() {
+    String toText() {
         StringBuilder builder = new StringBuilder();
         for (String key : keys) {
             String value = row.get(key);
@@ -52,6 +59,7 @@ class WriteOnlyCSVRecord extends CSVRecord {
 
     private HashMap<String, String> row;
     private List<String> keys;
+    private int index = 0;
 
     WriteOnlyCSVRecord(List<String> keys) {
         row = new HashMap<>();
@@ -64,6 +72,13 @@ class WriteOnlyCSVRecord extends CSVRecord {
 
     public String get(int index) {
         throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public CSVRecord put(String value) {
+        row.put(keys.get(index), value);
+        index++;
+        return this;
     }
 
     @Override

@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="591d482d-6f65-4466-88a8-53d1ab9be688" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/project/utils/CSVReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/project/utils/CSVRecord.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/project/utils/CSVTable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/project/utils/CSVWriter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/interview/Interview.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/interview/Interview.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/interview/InterviewProgress.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/interview/InterviewProgress.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/utils/CSVRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/utils/CSVRecord.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,11 +31,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/project/utils/CSVRecord.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-23">
-              <caret line="42" column="25" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="25" />
+            <state relative-caret-position="160">
+              <caret line="49" column="4" selection-start-line="49" selection-start-column="4" selection-end-line="49" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#686#687#0" expanded="true" />
@@ -50,6 +44,8 @@
                 <element signature="e#629#630#0" expanded="true" />
                 <element signature="e#972#973#0" expanded="true" />
                 <element signature="e#1029#1030#0" expanded="true" />
+                <element signature="e#1039#1040#0" expanded="true" />
+                <element signature="e#1066#1067#0" expanded="true" />
                 <element signature="e#1157#1158#0" expanded="true" />
                 <element signature="e#1206#1207#0" expanded="true" />
                 <element signature="e#1230#1231#0" expanded="true" />
@@ -61,11 +57,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/project/utils/CSVWriter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
+            <state relative-caret-position="89">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
               <folding>
                 <element signature="e#191#192#0" expanded="true" />
                 <element signature="e#223#224#0" expanded="true" />
@@ -78,13 +74,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/project/utils/CSVTable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="7" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="7" />
+            <state relative-caret-position="192">
+              <caret line="12" column="41" lean-forward="true" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#169#170#0" expanded="true" />
                 <element signature="e#225#226#0" expanded="true" />
-                <element signature="e#205#206#0" expanded="true" />
                 <element signature="e#233#234#0" expanded="true" />
                 <element signature="e#399#400#0" expanded="true" />
                 <element signature="e#418#419#0" expanded="true" />
@@ -98,7 +93,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/project/utils/CSVReader.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
+            <state relative-caret-position="361">
               <caret line="58" column="59" selection-start-line="58" selection-start-column="59" selection-end-line="58" selection-end-column="59" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -147,8 +142,8 @@
         <option value="$PROJECT_DIR$/src/project/utils/CSVLine.java" />
         <option value="$PROJECT_DIR$/src/project/utils/CSVTable.java" />
         <option value="$PROJECT_DIR$/src/project/utils/CSVReader.java" />
-        <option value="$PROJECT_DIR$/src/project/utils/CSVRecord.java" />
         <option value="$PROJECT_DIR$/src/project/utils/CSVWriter.java" />
+        <option value="$PROJECT_DIR$/src/project/utils/CSVRecord.java" />
       </list>
     </option>
   </component>
@@ -548,15 +543,36 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/utils/CSVWriter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="89">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#191#192#0" expanded="true" />
+            <element signature="e#223#224#0" expanded="true" />
+            <element signature="e#443#444#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/utils/CSVReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="58" column="59" selection-start-line="58" selection-start-column="59" selection-end-line="58" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/project/utils/CSVTable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="7" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="7" />
+        <state relative-caret-position="192">
+          <caret line="12" column="41" lean-forward="true" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#169#170#0" expanded="true" />
             <element signature="e#225#226#0" expanded="true" />
-            <element signature="e#205#206#0" expanded="true" />
             <element signature="e#233#234#0" expanded="true" />
             <element signature="e#399#400#0" expanded="true" />
             <element signature="e#418#419#0" expanded="true" />
@@ -566,20 +582,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/utils/CSVReader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="58" column="59" selection-start-line="58" selection-start-column="59" selection-end-line="58" selection-end-column="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/project/utils/CSVRecord.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-23">
-          <caret line="42" column="25" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="25" />
+        <state relative-caret-position="160">
+          <caret line="49" column="4" selection-start-line="49" selection-start-column="4" selection-end-line="49" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#686#687#0" expanded="true" />
@@ -588,24 +594,14 @@
             <element signature="e#629#630#0" expanded="true" />
             <element signature="e#972#973#0" expanded="true" />
             <element signature="e#1029#1030#0" expanded="true" />
+            <element signature="e#1039#1040#0" expanded="true" />
+            <element signature="e#1066#1067#0" expanded="true" />
             <element signature="e#1157#1158#0" expanded="true" />
             <element signature="e#1206#1207#0" expanded="true" />
             <element signature="e#1230#1231#0" expanded="true" />
             <element signature="e#1274#1275#0" expanded="true" />
             <element signature="e#1334#1335#0" expanded="true" />
             <element signature="e#1358#1359#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/utils/CSVWriter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="21" column="11" selection-start-line="21" selection-start-column="11" selection-end-line="21" selection-end-column="11" />
-          <folding>
-            <element signature="e#191#192#0" expanded="true" />
-            <element signature="e#223#224#0" expanded="true" />
-            <element signature="e#443#444#0" expanded="true" />
           </folding>
         </state>
       </provider>
