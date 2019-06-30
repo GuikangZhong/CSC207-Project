@@ -40,7 +40,7 @@ public class CSVReader {
             result = result.replace("\"\"", "\"").trim();
             return result;
         }
-        throw new RuntimeException("Parse failed " + source.isEmpty());
+        throw new RuntimeException("Parse failed at " + lineNo + ":" + colNo);
     }
 
     private void advance1() {

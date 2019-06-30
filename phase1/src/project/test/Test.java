@@ -25,7 +25,7 @@ public class Test {
 
         try {
             String content = new String(Files.readAllBytes(Paths.get(
-                    "C:\\Users\\xiaoc\\Downloads\\cs1_papers.csv"
+                    "C:\\Users\\xiaoc\\Downloads\\FL_insurance_sample2.csv"
             )), StandardCharsets.UTF_8);
             CSVReader reader = new CSVReader((content));
             CSVTable table = reader.parse();
@@ -39,7 +39,7 @@ public class Test {
             }
             String out = writer.toString();
             System.out.println(out);
-            PrintWriter printWriter = new PrintWriter("C:\\Users\\xiaoc\\Downloads\\cs1_papers.csv");
+            PrintWriter printWriter = new PrintWriter("C:\\Users\\xiaoc\\Downloads\\FL_insurance_sample3.csv");
             printWriter.print(out);
             printWriter.flush();
             printWriter.close();
