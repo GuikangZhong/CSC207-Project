@@ -2,9 +2,10 @@ package project.utils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 
-public abstract class CSVRecord {
+public abstract class CSVRecord implements Iterable<CSVItem> {
     public abstract String get(String key);
 
     public abstract String get(int index);
@@ -43,6 +44,33 @@ class ReadOnlyCSVRecord extends CSVRecord {
     @Override
     public CSVRecord put(String value) {
         throw new UnsupportedOperationException();
+    }
+
+    private class CSVIterator implements Iterator<CSVItem> {
+        private int index = 0;
+        ReadOnlyCSVRecord record;
+
+        CSVIterator(ReadOnlyCSVRecord record) {
+            this.record = record;
+        }
+
+        @Override
+        public boolean hasNext() {
+            return index == record.keys.size() - 1;
+        }
+
+        @Override
+        public CSVItem next() {
+            String key = record.keys.get(index);
+            CSVItem item = new CSVItem(key, record.row.get(key));
+            index++;
+            return item;
+        }
+    }
+
+    @Override
+    public Iterator<CSVItem> iterator() {
+        return new CSVIterator(this);
     }
 }
 
@@ -84,5 +112,10 @@ class WriteOnlyCSVRecord extends CSVRecord {
     @Override
     public void put(String key, String value) {
         row.put(key, value);
+    }
+
+    @Override
+    public Iterator<CSVItem> iterator() {
+        throw new UnsupportedOperationException();
     }
 }
