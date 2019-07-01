@@ -3,6 +3,7 @@ package project.user;
 import project.application.*;
 import project.system.SystemClock;
 
+import java.time.LocalDateTime;
 import java.util.*;
 
 // TODO: When InterviewAssignment.submit is called, applicants will be notified whether 
@@ -50,11 +51,16 @@ public class Applicant extends User<ApplicantHistory> {
 
 
     boolean checkIfExpired() {
-        return false;
+    	LocalDateTime last =  super.getHistory().getLastApplicationClosed();
+    	LocalDateTime deleteTime = last.plusDays(Applicant.getDocumentsAutoDeleteDays());
+    	if(deleteTime.isEqual(LocalDateTime.now()) || deleteTime.isBefore(LocalDateTime.now())) return true;
+    	else return false;
     }
 
     void removeIfExpired() {
-        // TODO:
+    	if (this.checkIfExpired()) {
+    		this.removeAllDoc();
+    	}
     }
 
     // tries to apply for a job

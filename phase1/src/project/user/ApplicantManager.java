@@ -27,7 +27,7 @@ public class ApplicantManager extends UserManager<Applicant> implements SystemTi
         for (Applicant applicant : users.values()) {
             LocalDateTime last = applicant.getHistory().getLastApplicationClosed();
             LocalDateTime deleteTime = last.plusDays(Applicant.getDocumentsAutoDeleteDays());
-            if (deleteTime.isEqual(now)) {
+            if (applicant.checkIfExpired()) {
                 applicant.removeAllDoc();
             }
         }
