@@ -6,12 +6,17 @@ import java.util.Set;
 public abstract class Interview {
     private final int maxInterview;
     private List<InterviewAssignment> assignments;
+    private Set<String> nameApplicantPassed;
+    private boolean assigned = false;
+
+    Interview(int maximumInterview) {
+        this.maxInterview = maximumInterview;
+        nameApplicantPassed = null;
+    }
 
     public boolean isAssigned() {
         return assigned;
     }
-
-    private boolean assigned = false;
 
     public Set<String> getNameApplicantPassed() {
         return nameApplicantPassed;
@@ -19,13 +24,6 @@ public abstract class Interview {
 
     public void setNameApplicantPassed(Set<String> nameApplicantPassed) {
         this.nameApplicantPassed = nameApplicantPassed;
-    }
-
-    private Set<String> nameApplicantPassed;
-
-    Interview(int maximumInterview) {
-        this.maxInterview = maximumInterview;
-        nameApplicantPassed = null;
     }
 
     public int getMaxInterview() {
@@ -42,5 +40,4 @@ public abstract class Interview {
     public List<InterviewAssignment> getAssignments() {
         return assignments;
     }
-
 }

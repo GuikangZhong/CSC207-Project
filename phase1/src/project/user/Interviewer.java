@@ -7,15 +7,16 @@ import java.util.Collections;
 import java.util.List;
 
 public class Interviewer extends User {
-    public Company getCompany() {
-        return company;
-    }
-
+    private List<InterviewAssignment> interviews;
     private Company company;
 
     Interviewer(UserHistory history, String username, String password, Company company) {
         super(history, username, password, company.getSystem().getClock());
         this.company = company;
+    }
+
+    public Company getCompany() {
+        return company;
     }
 
     @Override
@@ -31,5 +32,4 @@ public class Interviewer extends User {
         this.interviews = interviews;
     }
 
-    private List<InterviewAssignment> interviews;
 }

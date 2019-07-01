@@ -9,7 +9,7 @@ import java.util.List;
 
 public class HR extends User {
     private Company company;
-    private List<List<Application>> recommendationLists;   // TODO: check with piazza / prof if this is really what it wants
+    private List<List<Application>> recommendationLists; // TODO: check with piazza / prof if this is really what it wants
     private List<String> interviewsRoundFinished; //List of job titles
     private List<String> interviewsToBeScheduled; //List of job titles
     private List<String> jobsHired; //List of job titles
@@ -71,6 +71,10 @@ public class HR extends User {
 
     public void addRecommendationList(List<Application> recommendationList){
         recommendationLists.add(recommendationList);
+    }
+
+    public void setInterviews(List<InterviewAssignment> interviews, Interviewer interviewer){
+        interviewer.setInterviews(interviews);
     }
 
 }
