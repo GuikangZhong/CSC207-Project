@@ -10,11 +10,11 @@ import java.io.IOException;
 
 public class LoginController {
 
-    public void loginButton(ActionEvent event) throws IOException {
-        Parent loginPage = FXMLLoader.load(getClass().getResource("LoginPage.fxml"));
-        Scene loginScene = new Scene(loginPage);
+    public void returnButton(ActionEvent event) throws IOException {
+        Parent main = FXMLLoader.load(getClass().getResource("Main.fxml"));
+        Scene mainScene = new Scene(main);
         Stage loginWindow = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        loginWindow.setScene(loginScene);
+        loginWindow.setScene(mainScene);
         loginWindow.show();
 
     }

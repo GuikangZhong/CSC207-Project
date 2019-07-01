@@ -19,7 +19,11 @@ public class MainController {
 
     }
 
-    public void signUpButton(){
-        System.out.println("User signing up...");
+    public void signUpButton(ActionEvent event) throws IOException{
+        Parent loginPage = FXMLLoader.load(getClass().getResource("SignUpPage.fxml"));
+        Scene loginScene = new Scene(loginPage);
+        Stage loginWindow = (Stage)((Node)event.getSource()).getScene().getWindow();
+        loginWindow.setScene(loginScene);
+        loginWindow.show();
     }
 }
