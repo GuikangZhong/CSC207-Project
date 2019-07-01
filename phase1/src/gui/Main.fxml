@@ -1,21 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Main">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.MainController">
    <children>
-      <Button alignment="CENTER" layoutX="277.0" layoutY="175.0" mnemonicParsing="false" onAction="#loginButton" text="Login" />
-      <Button alignment="CENTER" layoutX="271.0" layoutY="213.0" mnemonicParsing="false" onAction="#signUpButton" text="Sign Up" />
-      <Label alignment="CENTER" layoutX="170.0" layoutY="41.0" prefHeight="99.0" prefWidth="260.0" text="Welcome to the App">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
+      <Label layoutX="95.0" layoutY="39.0" text="Welcome to the App" />
+      <Button contentDisplay="CENTER" layoutX="124.0" layoutY="75.0" mnemonicParsing="false" onAction="#loginButton" text="Login" />
+      <Button contentDisplay="CENTER" layoutX="118.0" layoutY="110.0" mnemonicParsing="false" text="Sign Up" />
    </children>
 </AnchorPane>
