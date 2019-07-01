@@ -39,7 +39,7 @@ public class Applicant extends User<ApplicantHistory> {
 
     void removeAllDoc() {
     	this.documents = new ArrayList<Document>();
-    }
+    } 
     
     void addDocument(Document document) {
         documents.add(document);
