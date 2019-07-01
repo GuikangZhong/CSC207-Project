@@ -16,6 +16,13 @@ public class LoginController {
         Stage loginWindow = (Stage) ((Node) event.getSource()).getScene().getWindow();
         loginWindow.setScene(mainScene);
         loginWindow.show();
+    }
 
+    public void loginButton(ActionEvent event) throws IOException {
+        Parent main = FXMLLoader.load(getClass().getResource("ApplicantMenu.fxml"));
+        Scene mainScene = new Scene(main);
+        Stage loginWindow = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        loginWindow.setScene(mainScene);
+        loginWindow.show();
     }
 }
