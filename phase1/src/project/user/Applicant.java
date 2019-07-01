@@ -10,18 +10,20 @@ import java.util.*;
 public class Applicant extends User<ApplicantHistory> {
     private Collection<Application> applications;
     private List<Document> documents;
+    private static int DocumentsAutoDeleteDays = 30;
 
     public static int getDocumentsAutoDeleteDays() {
         return DocumentsAutoDeleteDays;
     }
 
-    private static int DocumentsAutoDeleteDays = 30;
     Applicant(SystemClock clock, ApplicantHistory history, String username, String password) {
         super(history, username, password, clock);
         applications = new ArrayList<>();
         documents = new ArrayList<>();
     }
 
+    
+    
     public List<Document> getDocuments() {
         return Collections.unmodifiableList(documents);
     }
@@ -34,6 +36,10 @@ public class Applicant extends User<ApplicantHistory> {
         documents.remove(index);
     }
 
+    void removeAllDoc() {
+    	this.documents = new ArrayList<Document>();
+    }
+    
     void addDocument(Document document) {
         documents.add(document);
     }
