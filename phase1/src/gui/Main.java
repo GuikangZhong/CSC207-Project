@@ -20,12 +20,4 @@ public class Main extends Application {
         primaryStage.show();
     }
 
-    public void loginButton(){
-        System.out.println("User logging in...");
-    }
-
-    public void signUpButton(){
-        System.out.println("User signing up...");
-    }
-
 }
