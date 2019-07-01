@@ -7,6 +7,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class Interviewer extends User {
+    private static final long serialVersionUID = 6252452179878258209L;
     private List<InterviewAssignment> interviews;
     private Company company;
 

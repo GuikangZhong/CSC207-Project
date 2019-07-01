@@ -2,13 +2,15 @@ package project.user;
 
 import project.application.Job;
 
+import java.io.Serializable;
 import java.time.Clock;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class ApplicantHistory extends UserHistory {
+public class ApplicantHistory extends UserHistory implements Serializable {
+    private static final long serialVersionUID = -3522821418994680993L;
     private List<Job> jobApplied;
     private LocalDateTime lastApplicationClosed;
     private List<Job> jobApplying;

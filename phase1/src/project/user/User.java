@@ -6,6 +6,8 @@ import project.user.UserHistory;
 import java.io.Serializable;
 
 public abstract class User<T extends UserHistory> implements Serializable {
+    private static final long serialVersionUID = -5007096129053697211L;
+
     public enum Type {
         NONE,
         APPLICANT,

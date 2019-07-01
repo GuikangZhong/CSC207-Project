@@ -21,6 +21,7 @@ public class Company
         HireResultObserver,
         InterviewRoundFinishedObserver,
         JobPostingClosureObserver, SystemTimeUpdateObserver {
+    private static final long serialVersionUID = 2088083308860080279L;
     private String name;
     private JobPostingManager jobPostingManager;
     private HRManager hrManager;

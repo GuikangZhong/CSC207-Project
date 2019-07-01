@@ -3,12 +3,14 @@ package project.user;
 import project.application.*;
 import project.system.SystemClock;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.*;
 
 // TODO: When InterviewAssignment.submit is called, applicants will be notified whether 
 //they passed the interview of not.
-public class Applicant extends User<ApplicantHistory> {
+public class Applicant extends User<ApplicantHistory> implements Serializable {
+    private static final long serialVersionUID = -2248424347622029855L;
     private Collection<Application> applications;
     private List<Document> documents;
     private static int DocumentsAutoDeleteDays = 30;

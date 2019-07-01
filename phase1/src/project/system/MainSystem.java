@@ -13,6 +13,8 @@ import java.util.List;
 
 public class MainSystem implements Serializable {
 
+    private static final long serialVersionUID = 8741196022318228487L;
+
     public SystemClock getClock() {
         return clock;
     }

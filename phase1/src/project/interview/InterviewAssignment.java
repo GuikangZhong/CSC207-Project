@@ -3,10 +3,12 @@ package project.interview;
 import project.user.HR;
 import project.user.Interviewer;
 
+import java.io.Serializable;
 import java.util.Collections;
 import java.util.List;
 
-public class InterviewAssignment {
+public class InterviewAssignment implements Serializable {
+    private static final long serialVersionUID = -1255669893637911601L;
     private Interviewer interviewer;
     private List<InterviewRecord> interviewees;
     private InterviewProgress interviewProgress;

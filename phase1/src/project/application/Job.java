@@ -3,6 +3,7 @@ package project.application;
 import java.io.Serializable;
 
 public class Job implements Serializable {
+    private static final long serialVersionUID = -6288655413013484544L;
     private String title;
     private Company company;
 

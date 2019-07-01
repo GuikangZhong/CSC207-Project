@@ -5,6 +5,7 @@ import project.observer.SystemTimeUpdateObserver;
 import project.system.SystemClock;
 import project.user.Applicant;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -12,8 +13,9 @@ import java.util.List;
 
 import project.observer.HireResultObserver;
 
-public class JobPostingManager implements HireResultObserver,
+public class JobPostingManager implements HireResultObserver, Serializable,
         SystemTimeUpdateObserver {
+    private static final long serialVersionUID = -9197333240356088957L;
     private HashMap<String, JobPosting> jobPostings;
     private SystemClock clock;
 

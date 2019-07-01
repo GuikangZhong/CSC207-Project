@@ -11,6 +11,7 @@ import java.util.Collection;
 
 public class JobPosting
         implements Serializable, SystemTimeUpdateObserver {
+    private static final long serialVersionUID = 726794651891649767L;
     private Job job;
     private Status status;
     private Requirement requirement;

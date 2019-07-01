@@ -16,6 +16,7 @@ import javafx.stage.Stage;
 
 import javax.xml.soap.Text;
 import java.io.IOException;
+import org.json.*;
 
 public class Main extends Application {
     public Main() {
@@ -70,6 +71,6 @@ public class Main extends Application {
 
 
     public static void main(String[] arguments) {
-        launch(arguments);
+
     }
 }

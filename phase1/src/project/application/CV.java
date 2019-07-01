@@ -3,7 +3,9 @@ package project.application;
 import java.io.*;
 import java.time.LocalDateTime;
 
-public class CV extends Document {
+public class CV extends Document implements Serializable{
+
+    private static final long serialVersionUID = 6736238269987565017L;
 
     public static CV createByDirectInput(String applicantName, String input, LocalDateTime dateTime) {
         return new CV(applicantName, input, dateTime);

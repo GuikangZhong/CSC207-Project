@@ -1,8 +1,10 @@
 package project.application;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
-public abstract class Document {
+public abstract class Document implements Serializable {
+    private static final long serialVersionUID = -5700647472647007254L;
     protected String applicantName;
     protected String content;
     protected LocalDateTime createdDate;

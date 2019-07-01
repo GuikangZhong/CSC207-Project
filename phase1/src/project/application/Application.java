@@ -3,11 +3,13 @@ package project.application;
 import project.interview.InterviewProgress;
 import project.user.Applicant;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Application {
+public class Application implements Serializable {
+    private static final long serialVersionUID = -8550792289386170705L;
     private Applicant applicant;
     private List<Document> documents;
     private Job job;

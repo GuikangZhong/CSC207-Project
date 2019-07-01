@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HR extends User {
+    private static final long serialVersionUID = 5802323988227195270L;
     private Company company;
     private List<List<Application>> recommendationLists; // TODO: check with piazza / prof if this is really what it wants
     private List<String> interviewsRoundFinished; //List of job titles

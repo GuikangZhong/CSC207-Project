@@ -5,9 +5,11 @@ import project.application.JobPosting;
 import project.user.Applicant;
 import project.user.HR;
 
+import java.io.Serializable;
 import java.util.*;
 
-public class InterviewProgress {
+public class InterviewProgress implements Serializable {
+    private static final long serialVersionUID = 4445162449549062593L;
     private List<Interview> interviews;
     private List<InterviewRecord> interviewees;
     private JobPosting jobPosting;
