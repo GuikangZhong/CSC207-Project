@@ -76,4 +76,5 @@ public class Applicant extends User<ApplicantHistory>  implements Serializable {
     public Type getType() {
         return Type.APPLICANT;
     }
+
 }
