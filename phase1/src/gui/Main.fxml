@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.Main">
+   <children>
+      <Button alignment="CENTER" layoutX="277.0" layoutY="175.0" mnemonicParsing="false" onAction="#loginButton" text="Login" />
+      <Button alignment="CENTER" layoutX="271.0" layoutY="213.0" mnemonicParsing="false" onAction="#signUpButton" text="Sign Up" />
+      <Label alignment="CENTER" layoutX="170.0" layoutY="41.0" prefHeight="99.0" prefWidth="260.0" text="Welcome to the App">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
