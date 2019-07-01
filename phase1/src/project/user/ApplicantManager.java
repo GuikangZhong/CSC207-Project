@@ -27,11 +27,12 @@ public class ApplicantManager extends UserManager<Applicant> implements SystemTi
     }
 
     void checkExpiredDocument(LocalDateTime now) {
-        for (Applicant applicant : users.values()) {
+        for(Applicant applicant : users.values()){
             LocalDateTime last = applicant.getHistory().getLastApplicationClosed();
             LocalDateTime deleteTime = last.plusDays(Applicant.getDocumentsAutoDeleteDays());
-            if (applicant.checkIfExpired()) {
-                applicant.removeAllDoc();
+            if(deleteTime.isAfter(now)){
+                // TODO:
+                throw new RuntimeException("You should implement this!!!");
             }
         }
     }

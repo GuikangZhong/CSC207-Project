@@ -1,10 +1,11 @@
 package project.interview;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class InPersonInterview extends Interview {
+public class InPersonInterview extends Interview implements Serializable {
 
-    private static final long serialVersionUID = 599715767258542866L;
+    private static final long serialVersionUID = 4979548900357015567L;
 
     InPersonInterview() {
         super(3);

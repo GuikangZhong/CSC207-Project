@@ -5,7 +5,7 @@ import project.observer.Observer;
 
 import java.io.Serializable;
 
-public class InterviewRecord implements Serializable {
+public class InterviewRecord  implements Serializable {
     private static final long serialVersionUID = -1330477399962979682L;
     private boolean passed;
     private Application application;

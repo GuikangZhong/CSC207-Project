@@ -8,16 +8,16 @@ import java.util.List;
 
 public class Interviewer extends User {
     private static final long serialVersionUID = 6252452179878258209L;
-    private List<InterviewAssignment> interviews;
+
+    public Company getCompany() {
+        return company;
+    }
+
     private Company company;
 
     Interviewer(UserHistory history, String username, String password, Company company) {
         super(history, username, password, company.getSystem().getClock());
         this.company = company;
-    }
-
-    public Company getCompany() {
-        return company;
     }
 
     @Override
@@ -33,4 +33,5 @@ public class Interviewer extends User {
         this.interviews = interviews;
     }
 
+    private List<InterviewAssignment> interviews;
 }

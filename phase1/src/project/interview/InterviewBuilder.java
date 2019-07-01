@@ -1,12 +1,10 @@
 package project.interview;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class InterviewBuilder implements Serializable {
-    private static final long serialVersionUID = -2884587935651178357L;
+public class InterviewBuilder {
     private HashMap<String, Integer> map;
     private List<Interview> interviews;
 

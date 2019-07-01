@@ -3,10 +3,8 @@ package project.user;
 import project.application.Company;
 import project.system.MainSystem;
 
-import java.io.Serializable;
-
-public class InterviewerManager extends UserManager<Interviewer>implements Serializable {
-    private static final long serialVersionUID = -7938932127116069939L;
+public class InterviewerManager extends UserManager<Interviewer> {
+    private static final long serialVersionUID = 7347046775471127619L;
     private Company company;
 
     public InterviewerManager(MainSystem system, Company company) {

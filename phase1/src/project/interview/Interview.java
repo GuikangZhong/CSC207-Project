@@ -4,21 +4,16 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Set;
 
-public abstract class Interview implements Serializable {
+public abstract class Interview  implements Serializable {
     private static final long serialVersionUID = -1272861658449401440L;
     private final int maxInterview;
     private List<InterviewAssignment> assignments;
-    private Set<String> nameApplicantPassed;
-    private boolean assigned = false;
-
-    Interview(int maximumInterview) {
-        this.maxInterview = maximumInterview;
-        nameApplicantPassed = null;
-    }
 
     public boolean isAssigned() {
         return assigned;
     }
+
+    private boolean assigned = false;
 
     public Set<String> getNameApplicantPassed() {
         return nameApplicantPassed;
@@ -26,6 +21,13 @@ public abstract class Interview implements Serializable {
 
     public void setNameApplicantPassed(Set<String> nameApplicantPassed) {
         this.nameApplicantPassed = nameApplicantPassed;
+    }
+
+    private Set<String> nameApplicantPassed;
+
+    Interview(int maximumInterview) {
+        this.maxInterview = maximumInterview;
+        nameApplicantPassed = null;
     }
 
     public int getMaxInterview() {
@@ -42,4 +44,5 @@ public abstract class Interview implements Serializable {
     public List<InterviewAssignment> getAssignments() {
         return assignments;
     }
+
 }

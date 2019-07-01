@@ -4,29 +4,26 @@ import project.application.*;
 import project.system.SystemClock;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
 import java.util.*;
 
 // TODO: When InterviewAssignment.submit is called, applicants will be notified whether 
 //they passed the interview of not.
-public class Applicant extends User<ApplicantHistory> implements Serializable {
-    private static final long serialVersionUID = -2248424347622029855L;
+public class Applicant extends User<ApplicantHistory>  implements Serializable {
+    private static final long serialVersionUID = 6591554659403402970L;
     private Collection<Application> applications;
     private List<Document> documents;
-    private static int DocumentsAutoDeleteDays = 30;
 
     public static int getDocumentsAutoDeleteDays() {
         return DocumentsAutoDeleteDays;
     }
 
+    private static int DocumentsAutoDeleteDays = 30;
     Applicant(SystemClock clock, ApplicantHistory history, String username, String password) {
         super(history, username, password, clock);
         applications = new ArrayList<>();
         documents = new ArrayList<>();
     }
 
-    
-    
     public List<Document> getDocuments() {
         return Collections.unmodifiableList(documents);
     }
@@ -39,10 +36,6 @@ public class Applicant extends User<ApplicantHistory> implements Serializable {
         documents.remove(index);
     }
 
-    void removeAllDoc() {
-    	this.documents = new ArrayList<Document>();
-    } 
-    
     void addDocument(Document document) {
         documents.add(document);
     }
@@ -53,16 +46,11 @@ public class Applicant extends User<ApplicantHistory> implements Serializable {
 
 
     boolean checkIfExpired() {
-    	LocalDateTime last =  super.getHistory().getLastApplicationClosed();
-    	LocalDateTime deleteTime = last.plusDays(Applicant.getDocumentsAutoDeleteDays());
-    	if(deleteTime.isEqual(LocalDateTime.now()) || deleteTime.isBefore(LocalDateTime.now())) return true;
-    	else return false;
+        return false;
     }
 
     void removeIfExpired() {
-    	if (this.checkIfExpired()) {
-    		this.removeAllDoc();
-    	}
+        // TODO:
     }
 
     // tries to apply for a job

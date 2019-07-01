@@ -6,13 +6,11 @@ import project.observer.InterviewRoundFinishedObserver;
 import project.observer.JobPostingClosureObserver;
 import project.system.MainSystem;
 
-import java.io.Serializable;
 import java.util.Optional;
 
 public class HRManager
         extends UserManager<HR>
-        implements InterviewRoundFinishedObserver, JobPostingClosureObserver, Serializable {
-    private static final long serialVersionUID = 1961702424125345959L;
+        implements InterviewRoundFinishedObserver, JobPostingClosureObserver {
     private Company company;
     private HRSelectionStrategy selectionStrategy;
 
