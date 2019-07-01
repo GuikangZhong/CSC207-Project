@@ -1,5 +1,6 @@
 package project.interview;
 
+import project.user.HR;
 import project.user.Interviewer;
 
 import java.util.Collections;
@@ -24,12 +25,12 @@ public class InterviewAssignment {
         return Collections.unmodifiableList(interviewees);
     }
 
-    void submit() {
+    void submit(HR hr) {
         for (InterviewRecord record : interviewees) {
             record.setCurrentRoundFinished(true);
         }
         // notify InterviewAssignment
-        interviewProgress.updateOnInterviewResult();
+        interviewProgress.updateOnInterviewResult(hr);
     }
 
 

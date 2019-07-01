@@ -3,6 +3,7 @@ package project.interview;
 import project.application.Application;
 import project.application.JobPosting;
 import project.user.Applicant;
+import project.user.HR;
 
 import java.util.*;
 
@@ -11,17 +12,7 @@ public class InterviewProgress {
     private List<InterviewRecord> interviewees;
     private JobPosting jobPosting;
     private Iterator<Interview> interviewIterator;
-
-    public Interview getCurrentInterview() {
-        return currentInterview;
-    }
-
     private Interview currentInterview;
-
-    public String getHRName() {
-        return HRName;
-    }
-
     private String HRName;
 
     private InterviewProgress(String HRName, JobPosting jobPosting, List<Interview> interviews, List<InterviewRecord> interviewees) {
@@ -31,6 +22,14 @@ public class InterviewProgress {
         this.interviewees = interviewees;
         interviewIterator = interviews.iterator();
         currentInterview = interviewIterator.next();
+    }
+
+    public Interview getCurrentInterview() {
+        return currentInterview;
+    }
+
+    public String getHRName() {
+        return HRName;
     }
 
     public List<Interview> getInterviews() {
@@ -111,25 +110,36 @@ public class InterviewProgress {
         return recommendation;
     }
 
-    public void updateOnInterviewResult() {
+    public void updateOnInterviewResult(HR hr) {
         if (hasCurrentRoundFinished()) {
+            String jobTitle = jobPosting.getJobTitle();
+            hr.addInterviewRoundFinished(jobTitle);
+            jobPosting.getCompany().updateOnInterviewRoundFinished(this);
             List<InterviewRecord> passed = filterPassed();
-            if (passed.size() > jobPosting.getnApplicantNeeded() && !isLastRound()) {
-                // TODO: should you notify HR too?
-                // TODO: since HR might want to operate on subsequent interviews? (like assigning interviewers)
-                jobPosting.getCompany().updateOnInterviewRoundFinished(this);
-            } else if (passed.size() > jobPosting.getnApplicantNeeded()) {
-                // TODO: recommendation list for HR
-                // TODO: Don't observer the object itself
-            } else {
+            if(passed.size() <= jobPosting.getnApplicantNeeded()){
                 // hire
                 List<Applicant> hired = new ArrayList<>();
                 for (InterviewRecord record : passed) {
                     hired.add(record.getApplication().getApplicant());
                 }
-
                 // TODO: remove the call chain
                 jobPosting.getCompany().updateOnHireResult(hired, jobPosting.getJob());
+                hr.addJobsHired(jobTitle);
+            }else {
+                if (!isLastRound()){
+                    toNextRound();
+                    // TODO: should you notify HR too?
+                    // TODO: since HR might want to operate on subsequent interviews? (like assigning interviewers)
+                }else{
+                    List<Application> recommendationList = new ArrayList<>();
+                    for (InterviewRecord interviewee:interviewees
+                         ) {
+                        recommendationList.add(interviewee.getApplication());
+                    }
+                    hr.addRecommendationList(recommendationList);
+                    // TODO: recommendation list for HR
+                    // TODO: Don't observer the object itself
+                }
             }
         }
     }

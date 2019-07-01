@@ -8,12 +8,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HR extends User {
+    private Company company;
+    private List<List<Application>> recommendationLists;   // TODO: check with piazza / prof if this is really what it wants
+    private List<String> interviewsRoundFinished; //List of job titles
+    private List<String> interviewsToBeScheduled; //List of job titles
+    private List<String> jobsHired; //List of job titles
+
+    HR(UserHistory history, String username, String password, Company company) {
+        super(history, username, password, company.getSystem().getClock());
+        this.company = company;
+        recommendationLists = new ArrayList<>();
+    }
+
     public Company getCompany() {
         return company;
     }
-
-    private Company company;
-    private List<List<Application>> recommendationLists;
 
     public List<String> getInterviewsRoundFinished() {
         return interviewsRoundFinished;
@@ -22,10 +31,6 @@ public class HR extends User {
     public void setInterviewsRoundFinished(List<String> interviewsRoundFinished) {
         this.interviewsRoundFinished = interviewsRoundFinished;
     }
-
-    private List<String> interviewsRoundFinished;
-    private List<String> interviewsToBeScheduled;
-    private List<String> jobsHired;
 
     public List<String> getInterviewsToBeScheduled() {
         return interviewsToBeScheduled;
@@ -43,15 +48,6 @@ public class HR extends User {
         this.jobsHired = jobsHired;
     }
 
-
-    // TODO: check with piazza / prof if this is really what it wants
-
-    HR(UserHistory history, String username, String password, Company company) {
-        super(history, username, password, company.getSystem().getClock());
-        this.company = company;
-        recommendationLists = new ArrayList<>();
-    }
-
     @Override
     public Type getType() {
         return Type.HR;
@@ -61,16 +57,20 @@ public class HR extends User {
         return recommendationLists;
     }
 
-    void addJobsHired(String title) {
+    public void addJobsHired(String title) {
         jobsHired.add(title);
     }
 
-    void addInterviewRoundFinished(String jobTitle) {
+    public void addInterviewRoundFinished(String jobTitle) {
         interviewsRoundFinished.add(jobTitle);
     }
 
     void addInterviewsToBeScheduled(String jobTitle) {
         interviewsToBeScheduled.add(jobTitle);
+    }
+
+    public void addRecommendationList(List<Application> recommendationList){
+        recommendationLists.add(recommendationList);
     }
 
 }
