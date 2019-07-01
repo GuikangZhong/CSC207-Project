@@ -4,7 +4,7 @@ import project.application.Company;
 import project.application.JobPosting;
 import project.user.*;
 
-import java.io.Serializable;
+import java.io.*;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
@@ -48,4 +48,15 @@ public class MainSystem implements Serializable {
         return companies.values();
     }
 
+    public void serializeToFile(String filename) throws IOException {
+        FileOutputStream file = new FileOutputStream(filename);
+        ObjectOutputStream out = new ObjectOutputStream(file);
+        out.writeObject(this);
+    }
+
+    public static MainSystem loadFromFile(String filename) throws IOException, ClassNotFoundException {
+        FileInputStream file = new FileInputStream(filename);
+        ObjectInputStream in = new ObjectInputStream(file);
+        return (MainSystem) in.readObject();
+    }
 }
