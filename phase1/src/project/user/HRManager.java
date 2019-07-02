@@ -37,7 +37,7 @@ public class HRManager
 
     @Override
     public HR createUser(String name, String password) {
-        return new HR(new UserHistory(getSystem().getClock().getClock()), name, password, company);
+        return new HR(new UserHistory(getSystem().getClock()), name, password, company);
     }
 
     @Override

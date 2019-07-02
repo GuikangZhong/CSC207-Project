@@ -14,6 +14,6 @@ public class InterviewerManager extends UserManager<Interviewer> {
 
     @Override
     public Interviewer createUser(String name, String password) {
-        return new Interviewer(new UserHistory(getSystem().getClock().getClock()), name, password, company);
+        return new Interviewer(new UserHistory(getSystem().getClock()), name, password, company);
     }
 }
