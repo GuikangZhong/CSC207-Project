@@ -12,10 +12,6 @@ import java.time.LocalDateTime;
 public class ApplicantManager extends UserManager<Applicant> implements SystemTimeUpdateObserver, Serializable {
     private static final long serialVersionUID = -1825044094227184815L;
 
-    public ApplicantManager(MainSystem system, Company company) {
-        super(system);
-    }
-
     @Override
     Applicant createUser(String name, String password) {
 

@@ -26,9 +26,11 @@ public class MainSystem implements Serializable {
 
     public MainSystem() {
         clock = new SystemClock();
+        companies = new HashMap<>();
+        applicants = new ApplicantManager(this);
     }
 
-    User login(String name, String password) {
+    public User login(String name, String password) {
         if (applicants.containsUser(name)) {
             return applicants.signIn(name, password);
         } else {
@@ -44,7 +46,7 @@ public class MainSystem implements Serializable {
         }
     }
 
-    Collection<Company> getCompanies() {
+    public Collection<Company> getCompanies() {
         return companies.values();
     }
 

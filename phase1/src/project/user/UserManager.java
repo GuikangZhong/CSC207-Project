@@ -22,6 +22,7 @@ abstract public class UserManager<T extends User>  implements Serializable {
 
     public UserManager(MainSystem system) {
         this.system = system;
+        users = new HashMap<>();
     }
 
     // Type erasure doesn't allow us to call T's constructor :(

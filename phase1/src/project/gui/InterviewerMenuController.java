@@ -1,4 +1,4 @@
-package gui;
+package project.gui;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,21 +15,19 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class HRMenuController implements Initializable {
+public class InterviewerMenuController implements Initializable {
     @FXML
     private TreeView<String> options;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         TreeItem<String> option = new TreeItem<>("Option");
-        TreeItem<String> document = new TreeItem<>("View all applicants");
-        TreeItem<String> jobPosting = new TreeItem<>("View applicants for a job posting");
-        TreeItem<String> application = new TreeItem<>("Inspect interviewers");
-        TreeItem<String> history = new TreeItem<>("Interview status");
+        TreeItem<String> interview = new TreeItem<>("Upcoming interviews");
+        TreeItem<String> history = new TreeItem<>("Your history");
         TreeItem<String> exit = new TreeItem<>("Sign out");
 
 
-        option.getChildren().addAll(document, jobPosting, application, history, exit);
+        option.getChildren().addAll(interview, history, exit);
         option.setExpanded(true);
 
         options.setRoot(option);
@@ -46,3 +44,4 @@ public class HRMenuController implements Initializable {
         }
     }
 }
+
