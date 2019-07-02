@@ -1,8 +1,8 @@
 package project.user;
 
 import project.application.Job;
+import project.system.SystemClock;
 
-import java.time.Clock;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -15,7 +15,7 @@ public class ApplicantHistory extends UserHistory {
     private List<Job> jobApplying;
 
 
-    public ApplicantHistory(Clock clock) {
+    public ApplicantHistory(SystemClock clock) {
         super(clock);
         jobApplied = new ArrayList<>();
         jobApplying = new ArrayList<>();
