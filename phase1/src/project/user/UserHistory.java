@@ -1,7 +1,7 @@
 package project.user;
 
+import project.system.SystemClock;
 import java.io.Serializable;
-import java.time.Clock;
 import java.time.LocalDateTime;
 
 public class UserHistory implements Serializable {
@@ -12,8 +12,8 @@ public class UserHistory implements Serializable {
         return this.dateCreated;
     }
 
-    UserHistory(Clock clock) {
-        this.dateCreated = LocalDateTime.now(clock);
+    UserHistory(SystemClock clock) {
+        this.dateCreated = LocalDateTime.now(clock.getClock());
     }
 
 }
