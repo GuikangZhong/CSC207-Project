@@ -15,7 +15,7 @@ public class ApplicantManager extends UserManager<Applicant> implements SystemTi
     @Override
     public Applicant createUser(String name, String password) {
 
-        return new Applicant(getSystem().getClock(), new ApplicantHistory(getSystem().getClock().getClock()), name, password);
+        return new Applicant(getSystem().getClock(), new ApplicantHistory(getSystem().getClock()), name, password);
     }
 
     public ApplicantManager(MainSystem system) {
