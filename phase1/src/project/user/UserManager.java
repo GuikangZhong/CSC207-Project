@@ -26,10 +26,18 @@ abstract public class UserManager<T extends User>  implements Serializable {
     }
 
     // Type erasure doesn't allow us to call T's constructor :(
-    abstract T createUser(String name, String password);
+    public abstract T createUser(String name, String password);
 
+    public T signUp(String name, String password){
+        T user = createUser(name, password);
+        addUser(user);
+        return user;
+    }
 
     void addUser(T user) {
+        if(users.containsKey(user.getUsername())){
+            throw new RuntimeException("Username already exists");
+        }
         users.put(user.getUsername(), user);
     }
 

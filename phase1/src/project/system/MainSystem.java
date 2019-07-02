@@ -30,6 +30,24 @@ public class MainSystem implements Serializable {
         applicants = new ApplicantManager(this);
     }
 
+    public void createCompany(String name){
+        companies.put(name, new Company(name, this));
+    }
+
+    public Applicant signUpApplicant(String username, String password, String realname){
+        return applicants.signUp(username, password);
+    }
+
+    public User signUp(User.Type type, String companyName, String username, String password, String realname){
+        Company company = companies.get(companyName);
+        if(type == User.Type.HR){
+            return company.getHrManager().signUp(username, password);
+        }else if(type == User.Type.INTERVIEWER){
+            return company.getInterviewerManager().signUp(username, password);
+        }
+        throw new RuntimeException("What type have you entered???");
+    }
+
     public User login(String name, String password) {
         if (applicants.containsUser(name)) {
             return applicants.signIn(name, password);

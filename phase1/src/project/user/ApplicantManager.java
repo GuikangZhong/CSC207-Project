@@ -13,7 +13,7 @@ public class ApplicantManager extends UserManager<Applicant> implements SystemTi
     private static final long serialVersionUID = -1825044094227184815L;
 
     @Override
-    Applicant createUser(String name, String password) {
+    public Applicant createUser(String name, String password) {
 
         return new Applicant(getSystem().getClock(), new ApplicantHistory(getSystem().getClock().getClock()), name, password);
     }

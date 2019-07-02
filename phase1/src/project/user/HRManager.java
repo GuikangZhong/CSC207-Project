@@ -11,6 +11,7 @@ import java.util.Optional;
 public class HRManager
         extends UserManager<HR>
         implements InterviewRoundFinishedObserver, JobPostingClosureObserver {
+    private static final long serialVersionUID = 5741768326107391635L;
     private Company company;
     private HRSelectionStrategy selectionStrategy;
 
@@ -35,7 +36,7 @@ public class HRManager
     }
 
     @Override
-    HR createUser(String name, String password) {
+    public HR createUser(String name, String password) {
         return new HR(new UserHistory(getSystem().getClock().getClock()), name, password, company);
     }
 
