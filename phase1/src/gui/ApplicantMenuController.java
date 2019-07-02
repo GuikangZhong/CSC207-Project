@@ -1,15 +1,19 @@
 package gui;
 
+import javafx.event.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.TreeItem;
-import javafx.scene.control.TreeView;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+
 
 import java.io.IOException;
 import java.net.URL;
@@ -35,7 +39,7 @@ public class ApplicantMenuController implements Initializable {
         options.setRoot(option);
     }
 
-    public void selectItems(MouseEvent event) throws IOException {
+    public void selectItems(MouseEvent event) throws IOException{
         TreeItem<String> item = options.getSelectionModel().getSelectedItem();
         if (item.getValue().equals("Sign out")){
             Parent main = FXMLLoader.load(getClass().getResource("Main.fxml"));

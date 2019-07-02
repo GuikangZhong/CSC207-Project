@@ -29,7 +29,7 @@ public class LoginController {
     public void loginButton(ActionEvent event) throws IOException {
         System.out.println(usernameInput.getText());
         System.out.println(passwordInput.getText());
-        Parent main = FXMLLoader.load(getClass().getResource("InterviewerMenu.fxml"));
+        Parent main = FXMLLoader.load(getClass().getResource("ApplicantMenu.fxml"));
         Scene mainScene = new Scene(main);
         Stage loginWindow = (Stage) ((Node) event.getSource()).getScene().getWindow();
         loginWindow.setScene(mainScene);
