@@ -37,6 +37,7 @@ public abstract class User<T extends UserHistory> implements Serializable {
     public User(T history, String username, String password, SystemClock clock) {
         this.username = username;
         this.clock = clock;
+        this.history = history;
         try {
             this.password = getMD5ForPassword(password);
         }catch(NoSuchAlgorithmException e){
