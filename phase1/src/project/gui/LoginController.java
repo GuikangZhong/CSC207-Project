@@ -32,7 +32,6 @@ public class LoginController {
 
     public void loginButton(ActionEvent event) throws IOException {
         User user = Main.system.login(usernameInput.getText(), passwordInput.getText());
-        Parent main;
         if (user == null){
             Stage window = new Stage();
 
@@ -56,11 +55,7 @@ public class LoginController {
             window.showAndWait();
         }
         else{
-            main = FXMLLoader.load(getClass().getResource("ApplicantMenu.fxml"));
-            Scene mainScene = new Scene(main);
-            Stage loginWindow = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            loginWindow.setScene(mainScene);
-            loginWindow.show();
+            SceneSwitcher.switchScene(this.getClass(), event, "ApplicantMenu.fxml");
         }
 
     }

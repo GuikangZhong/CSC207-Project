@@ -1,14 +1,9 @@
 package project.gui;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
-import javafx.stage.Stage;
 
 
 import java.io.IOException;
@@ -38,11 +33,7 @@ public class ApplicantMenuController implements Initializable {
     public void selectItems(MouseEvent event) throws IOException{
         TreeItem<String> item = options.getSelectionModel().getSelectedItem();
         if (item.getValue().equals("Sign out")){
-            Parent main = FXMLLoader.load(getClass().getResource("Main.fxml"));
-            Scene mainScene = new Scene(main);
-            Stage loginWindow = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            loginWindow.setScene(mainScene);
-            loginWindow.show();
+            SceneSwitcher.switchScene(this.getClass(), event, "Main.fxml");
         }
     }
 }
