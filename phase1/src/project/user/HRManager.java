@@ -4,7 +4,7 @@ import project.application.Company;
 import project.application.Job;
 import project.interview.Interview;
 import project.observer.InterviewObserver;
-import project.observer.JobPostingClosureObserver;
+import project.observer.JobPostingObserver;
 import project.system.MainSystem;
 
 import java.util.List;
@@ -12,7 +12,7 @@ import java.util.Optional;
 
 public class HRManager
         extends UserManager<HR>
-        implements InterviewObserver, JobPostingClosureObserver {
+        implements InterviewObserver, JobPostingObserver {
     private static final long serialVersionUID = 5741768326107391635L;
     private Company company;
     private HRSelectionStrategy selectionStrategy;

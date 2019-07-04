@@ -5,12 +5,13 @@ import project.observer.InterviewObserver;
 import project.user.Applicant;
 
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
 public class Interview implements Serializable {
     private static final long serialVersionUID = -5626906039736330402L;
-    private List<InterviewObserver> observers;
+    private Collection<InterviewObserver> observers;
 
     private InterviewSetup setup;
     private int round;

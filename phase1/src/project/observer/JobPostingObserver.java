@@ -1,5 +1,5 @@
 package project.observer;
 
-public interface JobPostingClosureObserver {
+public interface JobPostingObserver {
     void updateOnJobPostingClosure(String jobTitle);
 }

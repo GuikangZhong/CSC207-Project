@@ -1,6 +1,6 @@
 package project.application;
 
-import project.observer.JobPostingClosureObserver;
+import project.observer.JobPostingObserver;
 import project.observer.SystemObserver;
 import project.system.MainSystem;
 import project.user.*;
@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 
 public class Company
         implements Serializable,
-        JobPostingClosureObserver, SystemObserver {
+        JobPostingObserver, SystemObserver {
     private static final long serialVersionUID = 2088083308860080279L;
     private String name;
     private JobPostingManager jobPostingManager;
