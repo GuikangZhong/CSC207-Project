@@ -5,6 +5,6 @@ import project.user.Interviewer;
 
 import java.util.List;
 
-public interface InterviewGroupSelectionStrategy {
+public interface InterviewGroupAssignmentStrategy {
     List<InterviewGroup> select(List<Applicant> applicants, List<Interviewer> interviewers);
 }
