@@ -1,8 +1,5 @@
 package project.interview;
 
-import project.application.Company;
-import project.user.Interviewer;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,11 +11,16 @@ public abstract class Round implements Serializable {
     public abstract String roundType();
     public abstract int getMaxRoundNumber();
 
+
+    private int number;
+    private List<InterviewGroup> groups;
+
+    private Interview interview = null;
+
     public void setNumber(int number) {
         this.number = number;
     }
 
-    private int number;
 
     public int getNumber() {
         return number;
@@ -35,7 +37,7 @@ public abstract class Round implements Serializable {
         return groups;
     }
 
-    private List<InterviewGroup> groups;
+
 
     public Interview getInterview() {
         return interview;
@@ -45,7 +47,6 @@ public abstract class Round implements Serializable {
         this.interview = interview;
     }
 
-    private Interview interview = null;
 
     private boolean isAllGroupsSubmitted(){
         for(InterviewGroup group : groups){
