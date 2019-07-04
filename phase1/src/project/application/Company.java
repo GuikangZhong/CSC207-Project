@@ -16,7 +16,6 @@ import java.util.List;
 public class Company
         implements Serializable,
         HireResultObserver,
-        InterviewRoundFinishedObserver,
         JobPostingClosureObserver, SystemTimeUpdateObserver {
     private static final long serialVersionUID = 2088083308860080279L;
     private String name;
@@ -75,11 +74,6 @@ public class Company
     @Override
     public void updateOnHireResult(List<Applicant> applicants, Job job) {
         getJobPostingManager().updateOnHireResult(applicants, job);
-    }
-
-    @Override
-    public void updateOnInterviewRoundFinished(Interview interview) {
-        hrManager.updateOnInterviewRoundFinished(interview);
     }
 
     @Override

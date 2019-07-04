@@ -53,7 +53,7 @@ public class HR extends User {
     }
 
     @Override
-    public Type getType() {
+    public final Type getType() {
         return Type.HR;
     }
 

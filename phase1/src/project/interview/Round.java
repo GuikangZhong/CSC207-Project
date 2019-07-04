@@ -1,5 +1,7 @@
 package project.interview;
 
+import project.application.Company;
+
 import java.util.List;
 
 public abstract class Round {
@@ -21,5 +23,19 @@ public abstract class Round {
     }
 
     private List<InterviewGroup> groups;
+    private Interview interview;
+
+    boolean isAllGroupsSubmitted(){
+        for(InterviewGroup group : groups){
+            if(!group.isSubmitted())
+                return false;
+        }
+        return true;
+    }
+    void updateOnGroupSubmitted(){
+        if(isAllGroupsSubmitted()){
+            interview.updateOnRoundFinished();
+        }
+    }
 
 }

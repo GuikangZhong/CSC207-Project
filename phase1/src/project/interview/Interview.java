@@ -1,5 +1,6 @@
 package project.interview;
 
+import project.application.Company;
 import project.application.JobPosting;
 
 import java.util.Collections;
@@ -27,7 +28,7 @@ public class Interview {
 
     InterviewStatus getStatus() {
         // TODO:
-       return null;
+        return null;
     }
 
     List<Round> getRoundsFinished() {
@@ -38,7 +39,12 @@ public class Interview {
         return Collections.unmodifiableList(setup.getRounds().subList(round + 1, setup.getRounds().size()));
     }
 
-    Round getRoundInProgress(){
+    Round getRoundInProgress() {
         return setup.getRounds().get(round);
+
+    }
+
+    void updateOnRoundFinished() {
+        jobPosting.getCompany().getHrManager().updateOnInterviewRoundFinished(this);
     }
 }

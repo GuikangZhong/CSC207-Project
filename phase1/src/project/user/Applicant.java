@@ -81,7 +81,7 @@ public class Applicant extends User implements Serializable {
     }
 
     @Override
-    public Type getType() {
+    public final Type getType() {
         return Type.APPLICANT;
     }
 

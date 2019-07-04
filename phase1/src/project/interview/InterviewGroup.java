@@ -6,6 +6,7 @@ public class InterviewGroup {
     private String interviewer;
     private Map<String, Boolean> applicantsStatus;
     private Interview interview;
+    private Round round;
 
     public String getInterviewer() {
         return interviewer;
@@ -19,5 +20,6 @@ public class InterviewGroup {
 
     public void submit(){
         submitted = true;
+        round.updateOnGroupSubmitted();
     }
 }
