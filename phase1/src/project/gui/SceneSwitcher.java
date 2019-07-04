@@ -11,7 +11,7 @@ import java.io.IOException;
 
 public class SceneSwitcher {
 
-    static void switchScene(Class c, Event event, String sceneName) throws IOException {
+    public static void switchScene(Class c, Event event, String sceneName) throws IOException {
         Parent main = FXMLLoader.load(c.getResource(sceneName));
         Scene mainScene = new Scene(main);
         Stage loginWindow = (Stage) ((Node) event.getSource()).getScene().getWindow();

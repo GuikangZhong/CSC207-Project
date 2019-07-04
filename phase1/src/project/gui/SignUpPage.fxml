@@ -11,12 +11,13 @@
          <children>
             <TextField fx:id="usernameInput" alignment="TOP_LEFT" prefHeight="20.0" prefWidth="100.0" promptText="new username" />
             <TextField fx:id="passwordInput" prefHeight="25.0" prefWidth="100.0" promptText="new password" />
+            <TextField fx:id="realNameInput" layoutX="20.0" layoutY="69.0" prefHeight="25.0" prefWidth="100.0" promptText="real name" />
          </children>
          <padding>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </padding>
       </VBox>
-      <HBox alignment="CENTER" layoutX="69.0" layoutY="110.0" prefHeight="61.0" prefWidth="163.0" spacing="20.0" AnchorPane.bottomAnchor="29.0" AnchorPane.leftAnchor="69.0" AnchorPane.rightAnchor="68.0" AnchorPane.topAnchor="110.0">
+      <HBox alignment="CENTER" layoutX="65.0" layoutY="142.0" prefHeight="45.0" prefWidth="171.0" spacing="20.0" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="65.0" AnchorPane.rightAnchor="64.0" AnchorPane.topAnchor="142.0">
          <children>
             <Button mnemonicParsing="false" onAction="#signUpButton" text="Sign up" />
             <Button mnemonicParsing="false" onAction="#returnToTypeButton" text="Return" />

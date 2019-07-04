@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.gui.ApplicantMenuController">
+   <left>
+      <TreeView fx:id="options" onContextMenuRequested="#selectItems" onMouseClicked="#selectItems" prefHeight="400.0" prefWidth="139.0" BorderPane.alignment="CENTER" />
+   </left>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" layoutX="135.0" layoutY="69.0" prefHeight="80.0" prefWidth="181.0" spacing="10.0" AnchorPane.leftAnchor="135.0" AnchorPane.rightAnchor="145.0" AnchorPane.topAnchor="69.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" text="Cover Letter">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Button alignment="CENTER" mnemonicParsing="false" text="View" />
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="150.0" layoutY="149.0" prefHeight="63.0" prefWidth="151.0" spacing="10.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="160.0" AnchorPane.topAnchor="149.0">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" text="CV">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Button alignment="CENTER" mnemonicParsing="false" text="View" />
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </HBox>
+            <Label alignment="CENTER" layoutX="161.0" layoutY="14.0" text="Your Document" AnchorPane.leftAnchor="161.0" AnchorPane.rightAnchor="161.0" AnchorPane.topAnchor="14.0">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </center>
+   <top>
+      <AnchorPane prefHeight="23.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="14.0" layoutY="1.0" prefHeight="27.0" prefWidth="77.0" text="Applicant" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="509.0" AnchorPane.topAnchor="1.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button alignment="CENTER" layoutX="523.0" layoutY="2.0" mnemonicParsing="false" onAction="#exit" text="Sign Out" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="2.0" />
+         </children>
+         <effect>
+            <ColorAdjust />
+         </effect>
+      </AnchorPane>
+   </top>
+</BorderPane>

@@ -13,19 +13,18 @@ import java.util.ResourceBundle;
 
 
 
-public class typeController implements Initializable {
+public class TypeController implements Initializable {
 
     @FXML
     ChoiceBox<String> type;
     @FXML
     private Button confirm;
-    @FXML
-    private String fileName;
+
+    static String typeName;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         type.getItems().addAll("Applicant", "HR", "Interviewer");
-        type.setValue("Applicant");
     }
 
     public void returnButton(ActionEvent event) throws IOException {
@@ -37,11 +36,10 @@ public class typeController implements Initializable {
     }
 
     public void typeSelected(MouseEvent event) throws IOException {
-        String item = type.getSelectionModel().getSelectedItem();
-        if (item != null){
-            if (item.equals("Applicant")) {
-                this.fileName = item;
+        type.getSelectionModel().selectedItemProperty().addListener((v, oldValue, newValue)  -> {
+            if (newValue != null){
+                typeName = newValue;
             }
-        }
+        });
     }
 }
