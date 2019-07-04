@@ -13,7 +13,7 @@ public class Interview implements Serializable {
     private List<InterviewObserver> observers;
 
     private InterviewSetup setup;
-    private int round = 0;
+    private int round;
 
     public JobPosting getJobPosting() {
         return jobPosting;
@@ -21,7 +21,12 @@ public class Interview implements Serializable {
 
     private JobPosting jobPosting;
 
-    public Interview() {
+    public Interview(String HR, JobPosting jobPosting,
+                     InterviewSetup setup) {
+        this.HR = HR;
+        this.setup = setup;
+        this.jobPosting = jobPosting;
+        round = 0;
     }
 
     public String getHR() {

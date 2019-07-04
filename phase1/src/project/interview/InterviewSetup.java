@@ -1,18 +1,19 @@
 package project.interview;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class InterviewSetup implements Serializable {
-
-
     private static final long serialVersionUID = -1939537566544034408L;
     private List<Round> rounds;
     private Map<String, Integer> record;
 
-    public InterviewSetup(List<Round> rounds) {
-        this.rounds = rounds;
+    public InterviewSetup() {
+        this.rounds = new ArrayList<>();
+        record = new HashMap<>();
     }
 
     public boolean addRound(Round round) {

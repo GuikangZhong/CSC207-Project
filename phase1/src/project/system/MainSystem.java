@@ -31,6 +31,7 @@ public class MainSystem implements Serializable {
         companies = new HashMap<>();
         applicants = new ApplicantManager(this);
         observers = new ArrayList<>();
+        addObserver(applicants);
     }
 
     public void addCompany(String name) {
