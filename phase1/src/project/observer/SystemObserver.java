@@ -2,6 +2,6 @@ package project.observer;
 
 import java.time.LocalDateTime;
 
-public interface SystemTimeUpdateObserver {
+public interface SystemObserver {
     void updateOnTime(LocalDateTime now);
 }

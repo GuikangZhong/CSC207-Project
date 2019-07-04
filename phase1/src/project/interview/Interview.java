@@ -54,7 +54,7 @@ public class Interview implements Serializable {
         }
     }
 
-    void notifyHireResult(List<Applicant> applicants) {
+    private void notifyHireResult(List<Applicant> applicants) {
         for (InterviewObserver observer : observers) {
             observer.updateOnHireResult(applicants,jobPosting.getJob());
         }

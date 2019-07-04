@@ -2,7 +2,7 @@ package project.application;
 
 import project.interview.Interview;
 import project.observer.InterviewObserver;
-import project.observer.SystemTimeUpdateObserver;
+import project.observer.SystemObserver;
 import project.system.SystemClock;
 import project.user.Applicant;
 
@@ -13,7 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class JobPostingManager implements InterviewObserver, Serializable,
-        SystemTimeUpdateObserver {
+        SystemObserver {
     private static final long serialVersionUID = -9197333240356088957L;
     private HashMap<String, JobPosting> jobPostings;
     private SystemClock clock;

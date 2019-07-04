@@ -1,16 +1,15 @@
 package project.application;
 
-import project.observer.SystemTimeUpdateObserver;
+import project.observer.SystemObserver;
 import project.user.Applicant;
 
 import java.io.Serializable;
-import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
 
 public class JobPosting
-        implements Serializable, SystemTimeUpdateObserver {
+        implements Serializable, SystemObserver {
     private static final long serialVersionUID = 726794651891649767L;
     private Job job;
     private Status status;
