@@ -1,16 +1,18 @@
 package project.user;
 
 import project.application.Company;
+import project.application.Job;
 import project.interview.Interview;
-import project.observer.InterviewRoundFinishedObserver;
+import project.observer.InterviewObserver;
 import project.observer.JobPostingClosureObserver;
 import project.system.MainSystem;
 
+import java.util.List;
 import java.util.Optional;
 
 public class HRManager
         extends UserManager<HR>
-        implements InterviewRoundFinishedObserver, JobPostingClosureObserver {
+        implements InterviewObserver, JobPostingClosureObserver {
     private static final long serialVersionUID = 5741768326107391635L;
     private Company company;
     private HRSelectionStrategy selectionStrategy;
@@ -39,5 +41,10 @@ public class HRManager
     public void updateOnInterviewRoundFinished(Interview interview) {
         HR hr = getUser(interview.getHR());
         hr.addInterviewRoundFinished(interview.getJobPosting().getJobTitle());
+    }
+
+    @Override
+    public void updateOnHireResult(List<Applicant> applicants, Job job) {
+        // TODO:
     }
 }

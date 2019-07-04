@@ -1,12 +1,8 @@
 package project.application;
 
-import project.interview.Interview;
-import project.observer.HireResultObserver;
-import project.observer.InterviewRoundFinishedObserver;
 import project.observer.JobPostingClosureObserver;
 import project.observer.SystemTimeUpdateObserver;
 import project.system.MainSystem;
-import project.system.SystemClock;
 import project.user.*;
 
 import java.io.Serializable;
@@ -15,7 +11,6 @@ import java.util.List;
 
 public class Company
         implements Serializable,
-        HireResultObserver,
         JobPostingClosureObserver, SystemTimeUpdateObserver {
     private static final long serialVersionUID = 2088083308860080279L;
     private String name;
@@ -69,11 +64,6 @@ public class Company
             return interviewerManager.getUser(username);
         }
         return null;
-    }
-
-    @Override
-    public void updateOnHireResult(List<Applicant> applicants, Job job) {
-        getJobPostingManager().updateOnHireResult(applicants, job);
     }
 
     @Override
