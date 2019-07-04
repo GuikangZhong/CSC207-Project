@@ -1,13 +1,19 @@
 package project.interview;
 
-import project.application.Company;
 import project.application.JobPosting;
+import project.observer.HireResultObserver;
+import project.observer.InterviewRoundFinishedObserver;
+import project.user.Applicant;
 
+import java.io.Serializable;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 
-public class Interview {
+public class Interview implements Serializable {
+    private static final long serialVersionUID = -5626906039736330402L;
+    private List<InterviewRoundFinishedObserver> interviewRoundFinishedObservers;
+    private List<HireResultObserver> hireResultObservers;
+
     private InterviewSetup setup;
     private int round = 0;
 
@@ -45,6 +51,22 @@ public class Interview {
     }
 
     void updateOnRoundFinished() {
-        jobPosting.getCompany().getHrManager().updateOnInterviewRoundFinished(this);
+        for (InterviewRoundFinishedObserver observer : interviewRoundFinishedObservers) {
+            observer.updateOnInterviewRoundFinished(this);
+        }
+    }
+
+    void notifyHireResult(List<Applicant> applicants) {
+        for (HireResultObserver observer : hireResultObservers) {
+            observer.updateOnHireResult(applicants, jobPosting.getJob());
+        }
+    }
+
+    public void addHireResultObserver(HireResultObserver observer) {
+        hireResultObservers.add(observer);
+    }
+
+    public void addInterviewRoundFinishedObserver(InterviewRoundFinishedObserver observer) {
+        interviewRoundFinishedObservers.add(observer);
     }
 }

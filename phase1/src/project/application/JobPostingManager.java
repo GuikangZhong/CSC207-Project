@@ -62,7 +62,7 @@ public class JobPostingManager implements HireResultObserver, Serializable,
         return applicants;
     }
 
-    JobPosting getJobPosting(String title) {
+    public JobPosting getJobPosting(String title) {
         return jobPostings.get(title);
     }
 

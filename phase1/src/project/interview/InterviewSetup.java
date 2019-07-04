@@ -1,11 +1,13 @@
 package project.interview;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
-public class InterviewSetup {
+public class InterviewSetup implements Serializable {
 
 
+    private static final long serialVersionUID = -1939537566544034408L;
     private List<Round> rounds;
     private Map<String, Integer> record;
 

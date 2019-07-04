@@ -2,9 +2,12 @@ package project.interview;
 
 import project.application.Company;
 
+import java.io.Serializable;
 import java.util.List;
 
-public abstract class Round {
+public abstract class Round implements Serializable {
+    private static final long serialVersionUID = 754458654121081552L;
+
     public abstract String roundType();
     public abstract int getMaxRoundNumber();
 

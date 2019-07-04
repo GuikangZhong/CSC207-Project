@@ -2,6 +2,7 @@ package project.system;
 
 import project.application.Company;
 import project.application.JobPosting;
+import project.observer.SystemTimeUpdateObserver;
 import project.user.*;
 
 import java.io.*;
@@ -22,6 +23,7 @@ public class MainSystem implements Serializable {
 
     private SystemClock clock;
 
+    private List<SystemTimeUpdateObserver> systemTimeUpdateObservers;
     private HashMap<String, Company> companies;
     private ApplicantManager applicants;
 
@@ -32,7 +34,9 @@ public class MainSystem implements Serializable {
     }
 
     public void addCompany(String name) {
-        companies.put(name, new Company(name, this));
+        Company company = new Company(name, this);
+        companies.put(name, company);
+        addSystemTimeUpdateObserver(company);
     }
 
     public User getUser(String username) {
@@ -76,7 +80,17 @@ public class MainSystem implements Serializable {
         return (MainSystem) in.readObject();
     }
 
-    LocalDateTime now() {
+    public LocalDateTime now() {
         return LocalDateTime.now(clock.getClock());
+    }
+
+    public void addSystemTimeUpdateObserver(SystemTimeUpdateObserver observer) {
+        systemTimeUpdateObservers.add(observer);
+    }
+
+    void notifyOnTimeUpdate() {
+        for (SystemTimeUpdateObserver observer : systemTimeUpdateObservers) {
+            observer.updateOnTime(now());
+        }
     }
 }

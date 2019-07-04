@@ -1,6 +1,10 @@
 package project.interview;
 
-public class InterviewStatus {
+import java.io.Serializable;
+
+public class InterviewStatus implements Serializable {
+    private static final long serialVersionUID = -3548145467435967616L;
+
     public int getNumber() {
         return number;
     }
