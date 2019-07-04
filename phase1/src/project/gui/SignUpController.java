@@ -16,7 +16,7 @@ public class SignUpController {
     private TextField realNameInput;
 
     public void signUpButton(ActionEvent event) throws IOException {
-        Main.system.signUpApplicant(usernameInput.getText(), passwordInput.getText(), realNameInput.getText());
+       // Main.system.signUpApplicant(usernameInput.getText(), passwordInput.getText(), realNameInput.getText());
         System.out.println(TypeController.typeName);
         SceneSwitcher.switchScene(this.getClass(), event, "SignUpSuccess.fxml");
     }

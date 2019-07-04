@@ -1,7 +1,7 @@
 package project.user;
 
 import project.application.Company;
-import project.interview.InterviewProgress;
+import project.interview.Interview;
 import project.observer.InterviewRoundFinishedObserver;
 import project.observer.JobPostingClosureObserver;
 import project.system.MainSystem;
@@ -36,13 +36,8 @@ public class HRManager
     }
 
     @Override
-    public HR createUser(String name, String password) {
-        return new HR(new UserHistory(getSystem().getClock()), name, password, company);
-    }
-
-    @Override
-    public void updateOnInterviewRoundFinished(InterviewProgress progress) {
-        HR hr = getUser(progress.getHRName());
-        hr.addInterviewRoundFinished(progress.getJobPosting().getJobTitle());
+    public void updateOnInterviewRoundFinished(Interview interview) {
+        HR hr = getUser(interview.getHR());
+        hr.addInterviewRoundFinished(interview.getJobPosting().getJobTitle());
     }
 }

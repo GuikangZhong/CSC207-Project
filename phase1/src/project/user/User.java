@@ -8,7 +8,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 
-public abstract class User<T extends UserHistory> implements Serializable {
+public abstract class User implements Serializable {
     private static final long serialVersionUID = -5007096129053697211L;
 
     public enum Type {
@@ -18,8 +18,18 @@ public abstract class User<T extends UserHistory> implements Serializable {
         INTERVIEWER
     }
 
-    private T history;
+    private UserHistory history;
     private String username;
+
+    public String getCompany() {
+        return company;
+    }
+
+    public void setCompany(String company) {
+        this.company = company;
+    }
+
+    private String company;
     private byte[] password;
 
     public String getRealName() {
@@ -27,20 +37,25 @@ public abstract class User<T extends UserHistory> implements Serializable {
     }
 
     private String realName;
-    private SystemClock clock;
 
-    private static byte[] getMD5ForPassword(String password) throws NoSuchAlgorithmException{
+    private static byte[] getMD5ForPassword(String password) throws NoSuchAlgorithmException {
         String salt = password + "ytv0cfj56t7890f3whntcw39v8v 6789";
         MessageDigest md = MessageDigest.getInstance("MD5");
         return md.digest(salt.getBytes());
     }
-    public User(T history, String username, String password, SystemClock clock) {
-        this.username = username;
-        this.clock = clock;
+
+    public User(UserHistory history,
+                String username,
+                String password,
+                String realName,
+                String company) {
         this.history = history;
+        this.realName = realName;
+        this.username = username;
+        this.company = company;
         try {
             this.password = getMD5ForPassword(password);
-        }catch(NoSuchAlgorithmException e){
+        } catch (NoSuchAlgorithmException e) {
             throw new RuntimeException("Are you kidding me?");
         }
     }
@@ -51,7 +66,7 @@ public abstract class User<T extends UserHistory> implements Serializable {
         return this.username;
     }
 
-    public T getHistory() {
+    public UserHistory getHistory() {
         return this.history;
     }
 
@@ -59,7 +74,7 @@ public abstract class User<T extends UserHistory> implements Serializable {
         try {
             byte[] digest = getMD5ForPassword(password);
             return Arrays.equals(this.password, digest);
-        }catch(NoSuchAlgorithmException e){
+        } catch (NoSuchAlgorithmException e) {
             throw new RuntimeException("Are you kidding me?");
         }
     }

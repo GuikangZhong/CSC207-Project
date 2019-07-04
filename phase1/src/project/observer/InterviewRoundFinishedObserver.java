@@ -1,7 +1,7 @@
 package project.observer;
 
-import project.interview.InterviewProgress;
+import project.interview.Interview;
 
 public interface InterviewRoundFinishedObserver {
-    void updateOnInterviewRoundFinished(InterviewProgress progress);
+    void updateOnInterviewRoundFinished(Interview interview);
 }

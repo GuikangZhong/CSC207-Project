@@ -31,7 +31,7 @@ public class LoginController {
     }
 
     public void loginButton(ActionEvent event) throws IOException {
-        User user = Main.system.login(usernameInput.getText(), passwordInput.getText());
+        User user = Main.system.getUser(usernameInput.getText());
         if (user == null){
             Stage window = new Stage();
 
@@ -55,6 +55,9 @@ public class LoginController {
             window.showAndWait();
         }
         else{
+            if(user.verifyPassword(passwordInput.getText())){
+
+            }
             SceneSwitcher.switchScene(this.getClass(), event, "ApplicantMenu.fxml");
         }
 

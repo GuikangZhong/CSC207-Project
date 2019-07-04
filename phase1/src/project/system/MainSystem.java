@@ -5,6 +5,7 @@ import project.application.JobPosting;
 import project.user.*;
 
 import java.io.*;
+import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
@@ -30,38 +31,33 @@ public class MainSystem implements Serializable {
         applicants = new ApplicantManager(this);
     }
 
-    public void createCompany(String name){
+    public void addCompany(String name) {
         companies.put(name, new Company(name, this));
     }
 
-    public Applicant signUpApplicant(String username, String password, String realname){
-        return applicants.signUp(username, password);
-    }
-
-    public User signUp(User.Type type, String companyName, String username, String password, String realname){
-        Company company = companies.get(companyName);
-        if(type == User.Type.HR){
-            return company.getHrManager().signUp(username, password);
-        }else if(type == User.Type.INTERVIEWER){
-            return company.getInterviewerManager().signUp(username, password);
-        }
-        throw new RuntimeException("What type have you entered???");
-    }
-
-    public User login(String name, String password) {
-        if (applicants.containsUser(name)) {
-            return applicants.signIn(name, password);
-        } else {
-            for (Company company : companies.values()) {
-                if (company.getHrManager().containsUser(name)) {
-                    return company.getHrManager().signIn(name, password);
-                }
-                if (company.getInterviewerManager().containsUser(name)) {
-                    return company.getInterviewerManager().signIn(name, password);
-                }
+    public User getUser(String username) {
+        if (applicants.containsUser(username))
+            return applicants.getUser(username);
+        for (Company company : getCompanies()) {
+            User user = company.getUser(username);
+            if (user != null) {
+                return user;
             }
-            return null;
         }
+        return null;
+    }
+
+    public boolean addUser(User user) {
+        if (user.getType() == User.Type.APPLICANT) {
+            return applicants.addUser((Applicant) user);
+        } else {
+            Company company = getCompany(user.getCompany());
+            return company.addUser(user);
+        }
+    }
+
+    public Company getCompany(String name) {
+        return companies.get(name);
     }
 
     public Collection<Company> getCompanies() {
@@ -78,5 +74,9 @@ public class MainSystem implements Serializable {
         FileInputStream file = new FileInputStream(filename);
         ObjectInputStream in = new ObjectInputStream(file);
         return (MainSystem) in.readObject();
+    }
+
+    LocalDateTime now() {
+        return LocalDateTime.now(clock.getClock());
     }
 }

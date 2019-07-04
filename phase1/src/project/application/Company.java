@@ -1,16 +1,13 @@
 package project.application;
 
-import project.interview.InterviewProgress;
+import project.interview.Interview;
 import project.observer.HireResultObserver;
 import project.observer.InterviewRoundFinishedObserver;
 import project.observer.JobPostingClosureObserver;
 import project.observer.SystemTimeUpdateObserver;
 import project.system.MainSystem;
 import project.system.SystemClock;
-import project.user.Applicant;
-import project.user.HR;
-import project.user.HRManager;
-import project.user.InterviewerManager;
+import project.user.*;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -57,14 +54,32 @@ public class Company
         return interviewerManager;
     }
 
+    public boolean addUser(User user){
+        if(user.getType() == User.Type.HR){
+            return hrManager.addUser((HR)user);
+        }else if(user.getType() == User.Type.INTERVIEWER){
+            return interviewerManager.addUser((Interviewer)user);
+        }
+        return false;
+    }
+
+    public User getUser(String username){
+        if(hrManager.containsUser(username)){
+            return hrManager.getUser(username);
+        }else if(interviewerManager.containsUser(username)){
+            return interviewerManager.getUser(username);
+        }
+        return null;
+    }
+
     @Override
     public void updateOnHireResult(List<Applicant> applicants, Job job) {
         getJobPostingManager().updateOnHireResult(applicants, job);
     }
 
     @Override
-    public void updateOnInterviewRoundFinished(InterviewProgress progress) {
-        hrManager.updateOnInterviewRoundFinished(progress);
+    public void updateOnInterviewRoundFinished(Interview interview) {
+        hrManager.updateOnInterviewRoundFinished(interview);
     }
 
     @Override

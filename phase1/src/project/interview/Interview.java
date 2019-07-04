@@ -1,48 +1,44 @@
 package project.interview;
 
-import java.io.Serializable;
+import project.application.JobPosting;
+
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
-import java.util.Set;
 
-public abstract class Interview  implements Serializable {
-    private static final long serialVersionUID = -1272861658449401440L;
-    private final int maxInterview;
-    private List<InterviewAssignment> assignments;
+public class Interview {
+    private InterviewSetup setup;
+    private int round = 0;
 
-    public boolean isAssigned() {
-        return assigned;
+    public JobPosting getJobPosting() {
+        return jobPosting;
     }
 
-    private boolean assigned = false;
+    private JobPosting jobPosting;
 
-    public Set<String> getNameApplicantPassed() {
-        return nameApplicantPassed;
+    public Interview() {
     }
 
-    public void setNameApplicantPassed(Set<String> nameApplicantPassed) {
-        this.nameApplicantPassed = nameApplicantPassed;
+    public String getHR() {
+        return HR;
     }
 
-    private Set<String> nameApplicantPassed;
+    private String HR;
 
-    Interview(int maximumInterview) {
-        this.maxInterview = maximumInterview;
-        nameApplicantPassed = null;
+    InterviewStatus getStatus() {
+        // TODO:
+       return null;
     }
 
-    public int getMaxInterview() {
-        return maxInterview;
+    List<Round> getRoundsFinished() {
+        return Collections.unmodifiableList(setup.getRounds().subList(0, round));
     }
 
-    void assign(List<InterviewAssignment> assignments) {
-        this.assignments = assignments;
-        assigned = true;
+    List<Round> getRoundsInFuture() {
+        return Collections.unmodifiableList(setup.getRounds().subList(round + 1, setup.getRounds().size()));
     }
 
-    public abstract String getInterviewType();
-
-    public List<InterviewAssignment> getAssignments() {
-        return assignments;
+    Round getRoundInProgress(){
+        return setup.getRounds().get(round);
     }
-
 }

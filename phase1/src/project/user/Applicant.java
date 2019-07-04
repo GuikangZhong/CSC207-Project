@@ -8,7 +8,7 @@ import java.util.*;
 
 // TODO: When InterviewAssignment.submit is called, applicants will be notified whether 
 //they passed the interview of not.
-public class Applicant extends User<ApplicantHistory>  implements Serializable {
+public class Applicant extends User implements Serializable {
     private static final long serialVersionUID = 6591554659403402970L;
     private Collection<Application> applications;
     private List<Document> documents;
@@ -18,12 +18,20 @@ public class Applicant extends User<ApplicantHistory>  implements Serializable {
     }
 
     private static int DocumentsAutoDeleteDays = 30;
-    Applicant(SystemClock clock, ApplicantHistory history, String username, String password) {
-        super(history, username, password, clock);
+
+    Applicant(ApplicantHistory history,
+              String username,
+              String password,
+              String realName,
+              String company) {
+        super(history, username, password, realName, company);
         applications = new ArrayList<>();
         documents = new ArrayList<>();
     }
 
+    public ApplicantHistory getApplicantHistory(){
+        return (ApplicantHistory)getHistory();
+    }
     public List<Document> getDocuments() {
         return Collections.unmodifiableList(documents);
     }
@@ -59,7 +67,7 @@ public class Applicant extends User<ApplicantHistory>  implements Serializable {
         Application application = new Application(this, getDocuments(), jobPosting.getJob());
         jobPosting.addApplication(application);
         applications.add(application);
-        getHistory().addJobApplying(jobPosting.getJob());
+        getApplicantHistory().addJobApplying(jobPosting.getJob());
         return application;
     }
 
@@ -67,7 +75,7 @@ public class Applicant extends User<ApplicantHistory>  implements Serializable {
         for (Application application : applications) {
             if (application.getJob().getTitle().equals(jobName)) {
                 applications.remove(application);
-                this.getHistory().removeJobApplying(jobName);
+                this.getApplicantHistory().removeJobApplying(jobName);
             }
         }
     }

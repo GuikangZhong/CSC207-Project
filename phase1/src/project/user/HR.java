@@ -10,11 +10,6 @@ import java.util.List;
 public class HR extends User {
     private static final long serialVersionUID = 6752053563376828029L;
 
-    public Company getCompany() {
-        return company;
-    }
-
-    private Company company;
     private List<List<Application>> recommendationLists;
 
     public List<String> getInterviewsRoundFinished() {
@@ -48,9 +43,12 @@ public class HR extends User {
 
     // TODO: check with piazza / prof if this is really what it wants
 
-    HR(UserHistory history, String username, String password, Company company) {
-        super(history, username, password, company.getSystem().getClock());
-        this.company = company;
+    HR(UserHistory history,
+       String username,
+       String password,
+       String realName,
+       String company) {
+        super(history, username, password, realName, company);
         recommendationLists = new ArrayList<>();
     }
 

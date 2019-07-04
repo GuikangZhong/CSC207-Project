@@ -1,6 +1,6 @@
 package project.application;
 
-import project.interview.InterviewProgress;
+import project.interview.Interview;
 import project.user.Applicant;
 
 import java.io.Serializable;
@@ -13,21 +13,11 @@ public class Application implements Serializable {
     private Applicant applicant;
     private List<Document> documents;
     private Job job;
-    private InterviewProgress progress;
 
     public Application(Applicant applicant, List<Document> documents, Job job) {
         this.applicant = applicant;
         this.documents = new ArrayList<>(documents);
         this.job = job;
-        this.progress = null;
-    }
-
-    public InterviewProgress getProgress() {
-        return progress;
-    }
-
-    public void setProgress(InterviewProgress progress) {
-        this.progress = progress;
     }
 
     public Applicant getApplicant() {
