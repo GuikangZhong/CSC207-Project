@@ -15,20 +15,20 @@ import java.io.IOException;
 public class Main extends Application {
 
     static MainSystem system;
-    static Company company;
-    static ApplicantManager applicantManager;
-    static HRManager hrManager;
-    static InterviewerManager interviewerManager;
+    static String autoSaveFileName = "auto.ser";
 
     public static void main(String[] args) throws IOException, ClassNotFoundException{
 //        MainSystem system = MainSystem.loadFromFile("C:\\Users\\Eric Zhong\\group_0002\\phase1\\src\\database\\autosave.csv");
         // test case
-        system = new MainSystem();
-        company = new Company("Microsoft", system);
-        applicantManager = new ApplicantManager(system);
-        hrManager = new HRManager(system, company);
-        interviewerManager = new InterviewerManager(system, company);
+        try {
+            system = MainSystem.loadFromFile(autoSaveFileName);
+        } catch (IOException e){
+            system = new MainSystem();
+        } catch (ClassNotFoundException e){
+            throw new ClassNotFoundException("Class not found");
+        }
         launch(args);
+        system.serializeToFile(autoSaveFileName);
     }
 
     @Override
