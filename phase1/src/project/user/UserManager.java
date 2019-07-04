@@ -42,11 +42,4 @@ abstract public class UserManager<T extends User>  implements Serializable {
         return users.containsKey(name);
     }
 
-    Clock getClock() {
-        return getSystemClock().getClock();
-    }
-
-    SystemClock getSystemClock() {
-        return system.getClock();
-    }
 }
