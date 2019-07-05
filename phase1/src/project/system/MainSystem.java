@@ -34,10 +34,14 @@ public class MainSystem implements Serializable {
         addObserver(applicants);
     }
 
-    public void addCompany(String name) {
-        Company company = new Company(name, this);
-        companies.put(name, company);
-        addObserver(company);
+    public boolean addCompany(String name) {
+        if (getCompany(name) == null){
+            Company company = new Company(name, this);
+            companies.put(name, company);
+            addObserver(company);
+            return true;
+        }
+        return false;
     }
 
     public User getUser(String username) {

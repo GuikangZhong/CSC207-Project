@@ -17,9 +17,18 @@ public class SignUpController {
     private TextField realNameInput;
 
     public void signUpButton(ActionEvent event) throws IOException {
-       // Main.system.signUpApplicant(usernameInput.getText(), passwordInput.getText(), realNameInput.getText());
-        Main.system.addUser(new Applicant(null, usernameInput.getText(),passwordInput.getText(),
-                realNameInput.getText(), null));
+        if (TypeController.typeName.equals("Applicant")){
+            Main.system.addUser(new Applicant(null, usernameInput.getText(),passwordInput.getText(),
+                    realNameInput.getText(), null));
+        }
+        else if (TypeController.typeName.equals("HR")){
+            Main.system.addUser(new Applicant(null, usernameInput.getText(),passwordInput.getText(),
+                    realNameInput.getText(), null));
+        }
+        else if (TypeController.typeName.equals("Interviewer")){
+            Main.system.addUser(new Applicant(null, usernameInput.getText(),passwordInput.getText(),
+                    realNameInput.getText(), null));
+        }
         System.out.println(TypeController.typeName);
         SceneSwitcher.switchScene(this.getClass(), event, "SignUpSuccess.fxml");
     }
