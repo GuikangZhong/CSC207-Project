@@ -79,7 +79,7 @@ public class Interview implements Serializable {
 
     public void toNextRound(){
         if(!getRoundInProgress().isAllGroupsSubmitted() || round == setup.getRounds().size() - 1){
-            throw new RuntimeException("What ???");
+            throw new RuntimeException("You have overflowed the rounds or skipped a round");
         }
         round++;
     }

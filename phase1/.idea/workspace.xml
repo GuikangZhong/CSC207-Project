@@ -2,25 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="591d482d-6f65-4466-88a8-53d1ab9be688" name="Default Changelist" comment="working on login and signup page">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/application/Company.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/phase1/project/application/Company.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/SignUpController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/SignUpController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/interview/Interview.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/phase1/project/interview/Interview.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/interview/InterviewGroup.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/phase1/project/interview/InterviewGroup.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/interview/InterviewSetup.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/phase1/project/interview/InterviewSetup.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/interview/Round.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/phase1/project/interview/Round.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/observer/InterviewAssignedObserver.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/observer/JobPostingClosureObserver.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/observer/Observer.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/system/MainSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/phase1/project/system/MainSystem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/user/Applicant.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/phase1/project/user/Applicant.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/user/HRManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/phase1/project/user/HRManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/user/UserManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/phase1/project/user/UserManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/gui/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/SignUpController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/project/interview/Interview.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/interview/Interview.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/interview/InterviewGroupAssignmentStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/interview/InterviewGroupAssignmentStrategy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/project/interview/Round.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/interview/Round.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/user/Applicant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/user/Applicant.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -54,11 +37,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/project/interview/Interview.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="441">
-              <caret line="82" column="9" lean-forward="true" selection-start-line="82" selection-start-column="9" selection-end-line="82" selection-end-column="9" />
+            <state relative-caret-position="260">
+              <caret line="90" lean-forward="true" selection-start-line="90" selection-end-line="90" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1280#1281#0" expanded="true" />
@@ -68,11 +51,23 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/project/application/Application.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="156">
+              <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/project/interview/Round.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="50" column="10" selection-start-line="50" selection-start-column="10" selection-end-line="50" selection-end-column="10" />
+            <state relative-caret-position="672">
+              <caret line="52" column="25" selection-start-line="52" selection-start-column="25" selection-end-line="52" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -436,7 +431,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3283582" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32669982" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32669982" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50053304" side_tool="true" weight="0.42036837" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49946696" weight="0.42036837" />
       <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.4989339" weight="0.32669982" />
@@ -713,16 +708,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/application/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/project/user/ApplicantManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64">
@@ -924,8 +909,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/project/interview/Round.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="50" column="10" selection-start-line="50" selection-start-column="10" selection-end-line="50" selection-end-column="10" />
+        <state relative-caret-position="672">
+          <caret line="52" column="25" selection-start-line="52" selection-start-column="25" selection-end-line="52" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -934,12 +919,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/project/interview/Interview.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="82" column="9" lean-forward="true" selection-start-line="82" selection-start-column="9" selection-end-line="82" selection-end-column="9" />
+        <state relative-caret-position="260">
+          <caret line="90" lean-forward="true" selection-start-line="90" selection-end-line="90" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1280#1281#0" expanded="true" />
             <element signature="e#1331#1332#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/application/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
