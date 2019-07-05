@@ -30,6 +30,7 @@ public class JobPosting implements Serializable, SystemObserver {
         this.hireResult = new HireResult();
         this.nApplicantNeeded = nApplicantNeeded;
         this.applications = new ArrayList<>();
+        this.observers = new ArrayList<>();
     }
 
     public enum Status {
