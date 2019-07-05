@@ -10,10 +10,10 @@ import java.util.List;
 
 public class ApplicantHistory extends UserHistory {
     private static final long serialVersionUID = -3949731953506050255L;
+
     private List<Job> jobApplied;
     private LocalDateTime lastApplicationClosed;
     private List<Job> jobApplying;
-
 
     public ApplicantHistory(SystemClock clock) {
         super(clock);
@@ -34,7 +34,6 @@ public class ApplicantHistory extends UserHistory {
         return lastApplicationClosed;
     }
 
-
     void addJobApplied(Job job) {
         jobApplied.add(job);
     }
@@ -46,7 +45,6 @@ public class ApplicantHistory extends UserHistory {
             }
         }
     }
-
 
     void addJobApplying(Job job) {
         jobApplying.add(job);

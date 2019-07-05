@@ -10,12 +10,16 @@ import project.system.MainSystem;
 import java.util.List;
 import java.util.Optional;
 
-public class HRManager
-        extends UserManager<HR>
-        implements InterviewObserver, JobPostingObserver {
+public class HRManager extends UserManager<HR> implements InterviewObserver, JobPostingObserver {
     private static final long serialVersionUID = 5741768326107391635L;
+
     private Company company;
     private HRSelectionStrategy selectionStrategy;
+
+    public HRManager(MainSystem system, Company company) {
+        super(system);
+        this.company = company;
+    }
 
     public void useSelectionStrategy(HRSelectionStrategy strategy) {
         selectionStrategy = strategy;
@@ -30,11 +34,6 @@ public class HRManager
         } else {
             throw new RuntimeException("No HR !!!!!");
         }
-    }
-
-    public HRManager(MainSystem system, Company company) {
-        super(system);
-        this.company = company;
     }
 
     @Override

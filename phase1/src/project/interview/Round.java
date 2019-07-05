@@ -5,17 +5,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Round implements Serializable {
-
     private static final long serialVersionUID = 8042645594070245259L;
+    private int number;
+    private List<InterviewGroup> groups;
+    private Interview interview = null;
 
     public abstract String roundType();
     public abstract int getMaxRoundNumber();
-
-
-    private int number;
-    private List<InterviewGroup> groups;
-
-    private Interview interview = null;
 
     public void setNumber(int number) {
         this.number = number;
@@ -37,8 +33,6 @@ public abstract class Round implements Serializable {
         return groups;
     }
 
-
-
     public Interview getInterview() {
         return interview;
     }
@@ -46,7 +40,6 @@ public abstract class Round implements Serializable {
     public void setInterview(Interview interview) {
         this.interview = interview;
     }
-
 
     public boolean isAllGroupsSubmitted(){
         for(InterviewGroup group : groups){

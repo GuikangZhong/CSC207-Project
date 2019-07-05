@@ -11,6 +11,19 @@ public class HR extends User {
     private static final long serialVersionUID = 6752053563376828029L;
 
     private List<List<Application>> recommendationLists;
+    private List<String> interviewsRoundFinished;
+    private List<String> interviewsToBeScheduled;
+    private List<String> jobsHired;
+
+    // TODO: check with piazza / prof if this is really what it wants
+    HR(UserHistory history,
+       String username,
+       String password,
+       String realName,
+       String company) {
+        super(history, username, password, realName, company);
+        recommendationLists = new ArrayList<>();
+    }
 
     public List<String> getInterviewsRoundFinished() {
         return interviewsRoundFinished;
@@ -19,10 +32,6 @@ public class HR extends User {
     public void setInterviewsRoundFinished(List<String> interviewsRoundFinished) {
         this.interviewsRoundFinished = interviewsRoundFinished;
     }
-
-    private List<String> interviewsRoundFinished;
-    private List<String> interviewsToBeScheduled;
-    private List<String> jobsHired;
 
     public List<String> getInterviewsToBeScheduled() {
         return interviewsToBeScheduled;
@@ -38,18 +47,6 @@ public class HR extends User {
 
     public void setJobsHired(List<String> jobsHired) {
         this.jobsHired = jobsHired;
-    }
-
-
-    // TODO: check with piazza / prof if this is really what it wants
-
-    HR(UserHistory history,
-       String username,
-       String password,
-       String realName,
-       String company) {
-        super(history, username, password, realName, company);
-        recommendationLists = new ArrayList<>();
     }
 
     @Override

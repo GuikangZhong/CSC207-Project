@@ -8,18 +8,13 @@ import project.user.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
-public class Company
-        implements Serializable, SystemObserver {
+public class Company implements Serializable, SystemObserver {
     private static final long serialVersionUID = 2088083308860080279L;
+
     private String name;
     private JobPostingManager jobPostingManager;
     private HRManager hrManager;
     private InterviewerManager interviewerManager;
-
-    public MainSystem getSystem() {
-        return system;
-    }
-
     private MainSystem system;
 
     public Company(String name, MainSystem system) {
@@ -28,6 +23,10 @@ public class Company
         jobPostingManager = new JobPostingManager(system.getClock());
         hrManager = new HRManager(system, this);
         interviewerManager = new InterviewerManager(system, this);
+    }
+
+    public MainSystem getSystem() {
+        return system;
     }
 
     public String getName() {

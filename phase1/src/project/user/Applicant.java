@@ -10,28 +10,30 @@ import java.util.*;
 //they passed the interview of not.
 public class Applicant extends User implements Serializable {
     private static final long serialVersionUID = 6591554659403402970L;
+
     private Collection<Application> applications;
     private List<Document> documents;
-
-    public static int getDocumentsAutoDeleteDays() {
-        return DocumentsAutoDeleteDays;
-    }
-
     private static int DocumentsAutoDeleteDays = 30;
 
     public Applicant(ApplicantHistory history,
-              String username,
-              String password,
-              String realName,
-              String company) {
+                     String username,
+                     String password,
+                     String realName,
+                     String company) {
         super(history, username, password, realName, company);
         applications = new ArrayList<>();
         documents = new ArrayList<>();
     }
 
-    public ApplicantHistory getApplicantHistory(){
-        return (ApplicantHistory)getHistory();
+    public static int getDocumentsAutoDeleteDays() {
+        return DocumentsAutoDeleteDays;
     }
+
+
+    public ApplicantHistory getApplicantHistory() {
+        return (ApplicantHistory) getHistory();
+    }
+
     public List<Document> getDocuments() {
         return Collections.unmodifiableList(documents);
     }
@@ -51,7 +53,6 @@ public class Applicant extends User implements Serializable {
     void updateDocument(int index, Document document) {
         documents.set(index, document);
     }
-
 
     boolean checkIfExpired() {
         return false;

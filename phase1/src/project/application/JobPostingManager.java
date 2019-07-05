@@ -12,8 +12,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class JobPostingManager implements InterviewObserver, Serializable,
-        SystemObserver {
+public class JobPostingManager implements InterviewObserver, Serializable, SystemObserver {
     private static final long serialVersionUID = -9197333240356088957L;
     private HashMap<String, JobPosting> jobPostings;
     private SystemClock clock;

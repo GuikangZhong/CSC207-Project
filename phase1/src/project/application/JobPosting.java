@@ -10,8 +10,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-public class JobPosting
-        implements Serializable, SystemObserver {
+public class JobPosting implements Serializable, SystemObserver {
     private static final long serialVersionUID = 726794651891649767L;
     private Job job;
     private Status status;
@@ -22,10 +21,6 @@ public class JobPosting
     private HireResult hireResult;
     private List<JobPostingObserver> observers;
 
-    public void addObserver(JobPostingObserver observer){
-        observers.add(observer);
-    }
-
     public JobPosting(Job job, LocalDateTime begin, LocalDateTime end, Requirement requirement, int nApplicantNeeded) {
         status = Status.OPEN;
         this.requirement = requirement;
@@ -35,6 +30,16 @@ public class JobPosting
         this.hireResult = new HireResult();
         this.nApplicantNeeded = nApplicantNeeded;
         this.applications = new ArrayList<>();
+    }
+
+    public enum Status {
+        OPEN,
+        CLOSED,
+        FILLED
+    }
+
+    public void addObserver(JobPostingObserver observer){
+        observers.add(observer);
     }
 
     public LocalDateTime getOpenDate() {
@@ -53,13 +58,6 @@ public class JobPosting
                 observer.updateOnJobPostingClosure(getJobTitle());
             }
         }
-    }
-
-
-    public enum Status {
-        OPEN,
-        CLOSED,
-        FILLED
     }
 
     public Job getJob() {

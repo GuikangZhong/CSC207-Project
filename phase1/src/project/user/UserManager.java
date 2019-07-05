@@ -9,15 +9,10 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 
-abstract public class UserManager<T extends User>  implements Serializable {
-
+abstract public class UserManager<T extends User> implements Serializable {
     private static final long serialVersionUID = -3896729601031943756L;
+
     protected HashMap<String, T> users;
-
-    public MainSystem getSystem() {
-        return system;
-    }
-
     private MainSystem system;
 
     public UserManager(MainSystem system) {
@@ -25,16 +20,19 @@ abstract public class UserManager<T extends User>  implements Serializable {
         users = new HashMap<>();
     }
 
+    public MainSystem getSystem() {
+        return system;
+    }
 
     public boolean addUser(T user) {
-        if(users.containsKey(user.getUsername())){
+        if (users.containsKey(user.getUsername())) {
             return false;
         }
         users.put(user.getUsername(), user);
         return true;
     }
 
-    public T getUser(String username){
+    public T getUser(String username) {
         return users.get(username);
     }
 

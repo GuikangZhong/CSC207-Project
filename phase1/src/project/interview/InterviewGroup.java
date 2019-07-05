@@ -8,21 +8,7 @@ public class InterviewGroup implements Serializable {
     private String interviewer;
     private Map<String, Boolean> applicantsStatus;
     private Round round;
-
-    public String getInterviewer() {
-        return interviewer;
-    }
-
-    public boolean isSubmitted() {
-        return submitted;
-    }
-
     private boolean submitted = false;
-
-    public void submit() {
-        submitted = true;
-        round.updateOnGroupSubmitted();
-    }
 
     InterviewGroup(Interview interview, String interviewer, List<String> applicants) {
         this.interviewer = interviewer;
@@ -30,6 +16,19 @@ public class InterviewGroup implements Serializable {
         for (String applicant : applicants) {
             applicantsStatus.put(applicant, false);
         }
+    }
+
+    public void submit() {
+        submitted = true;
+        round.updateOnGroupSubmitted();
+    }
+
+    public String getInterviewer() {
+        return interviewer;
+    }
+
+    public boolean isSubmitted() {
+        return submitted;
     }
 
     public List<String> getApplicantsNamePassed() {
