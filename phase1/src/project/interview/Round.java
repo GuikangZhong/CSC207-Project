@@ -26,7 +26,7 @@ public abstract class Round implements Serializable {
         return number;
     }
 
-    public void setGroups(List<InterviewGroup> groups) {
+    void setGroups(List<InterviewGroup> groups) {
         if(this.groups != null){
             throw new RuntimeException("You have already assigned groups!!!");
         }
@@ -48,7 +48,7 @@ public abstract class Round implements Serializable {
     }
 
 
-    private boolean isAllGroupsSubmitted(){
+    public boolean isAllGroupsSubmitted(){
         for(InterviewGroup group : groups){
             if(!group.isSubmitted())
                 return false;

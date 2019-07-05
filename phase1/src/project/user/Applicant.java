@@ -19,7 +19,7 @@ public class Applicant extends User implements Serializable {
 
     private static int DocumentsAutoDeleteDays = 30;
 
-    Applicant(ApplicantHistory history,
+    public Applicant(ApplicantHistory history,
               String username,
               String password,
               String realName,

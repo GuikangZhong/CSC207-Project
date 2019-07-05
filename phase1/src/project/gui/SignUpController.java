@@ -3,6 +3,7 @@ package project.gui;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
+import project.user.Applicant;
 
 import java.io.IOException;
 
@@ -17,6 +18,8 @@ public class SignUpController {
 
     public void signUpButton(ActionEvent event) throws IOException {
        // Main.system.signUpApplicant(usernameInput.getText(), passwordInput.getText(), realNameInput.getText());
+        Main.system.addUser(new Applicant(null, usernameInput.getText(),passwordInput.getText(),
+                realNameInput.getText(), null));
         System.out.println(TypeController.typeName);
         SceneSwitcher.switchScene(this.getClass(), event, "SignUpSuccess.fxml");
     }
