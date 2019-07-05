@@ -32,7 +32,12 @@ public class TypeController implements Initializable {
     }
 
     public void confirmButton(ActionEvent event) throws IOException {
-        SceneSwitcher.switchScene(this.getClass(), event, "SignUpPage.fxml");
+        if (typeName != null){
+            if (typeName.equals("Applicant"))
+                SceneSwitcher.switchScene(this.getClass(), event, "SignUpPage.fxml");
+            else if (typeName.equals("Interviewer") || typeName.equals("HR"))
+                SceneSwitcher.switchScene(this.getClass(), event, "StaffSignUpPage.fxml");
+        }
     }
 
     public void typeSelected(MouseEvent event) throws IOException {

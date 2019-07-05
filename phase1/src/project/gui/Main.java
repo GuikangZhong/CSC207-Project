@@ -21,6 +21,7 @@ public class Main extends Application {
     static String autoSaveFileName = "auto.ser";
     @FXML
     private TextField companyName;
+    static User user = null;
 
     public static void main(String[] args) throws IOException, ClassNotFoundException{
         try {

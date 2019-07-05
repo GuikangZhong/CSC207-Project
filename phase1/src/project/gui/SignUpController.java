@@ -17,20 +17,17 @@ public class SignUpController {
     private TextField realNameInput;
 
     public void signUpButton(ActionEvent event) throws IOException {
+        boolean added = false;
         if (TypeController.typeName.equals("Applicant")){
-            Main.system.addUser(new Applicant(null, usernameInput.getText(),passwordInput.getText(),
+            added = Main.system.addUser(new Applicant(null, usernameInput.getText(),passwordInput.getText(),
                     realNameInput.getText(), null));
         }
-        else if (TypeController.typeName.equals("HR")){
-            Main.system.addUser(new Applicant(null, usernameInput.getText(),passwordInput.getText(),
-                    realNameInput.getText(), null));
+        if (added){
+            System.out.println(TypeController.typeName);
+            SceneSwitcher.switchScene(this.getClass(), event, "SignUpSuccess.fxml");
         }
-        else if (TypeController.typeName.equals("Interviewer")){
-            Main.system.addUser(new Applicant(null, usernameInput.getText(),passwordInput.getText(),
-                    realNameInput.getText(), null));
-        }
-        System.out.println(TypeController.typeName);
-        SceneSwitcher.switchScene(this.getClass(), event, "SignUpSuccess.fxml");
+        else
+            System.out.println("Username already exists");
     }
 
     public void returnToTypeButton(ActionEvent event) throws IOException {

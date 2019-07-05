@@ -1,11 +1,13 @@
 package project.gui;
 
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.input.MouseEvent;
@@ -18,18 +20,18 @@ import java.util.ResourceBundle;
 public class InterviewerMenuController implements Initializable {
     @FXML
     private TreeView<String> options;
+    @FXML
+    private Label companyName;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         TreeItem<String> option = new TreeItem<>("Option");
         TreeItem<String> interview = new TreeItem<>("Upcoming interviews");
         TreeItem<String> history = new TreeItem<>("Your history");
-        TreeItem<String> exit = new TreeItem<>("Sign out");
+        companyName.setText(Main.user.getCompany());
 
-
-        option.getChildren().addAll(interview, history, exit);
+        option.getChildren().addAll(interview, history);
         option.setExpanded(true);
-
         options.setRoot(option);
     }
 
@@ -42,6 +44,10 @@ public class InterviewerMenuController implements Initializable {
             loginWindow.setScene(mainScene);
             loginWindow.show();
         }
+    }
+
+    public void exit(Event event) throws IOException{
+        SceneSwitcher.switchScene(this.getClass(), event, "Main.fxml");
     }
 }
 

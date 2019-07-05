@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="310.0" prefWidth="413.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.gui.StaffSignUpController">
+   <children>
+      <VBox alignment="CENTER" layoutX="98.0" layoutY="85.0" prefHeight="141.0" prefWidth="218.0" spacing="10.0" AnchorPane.bottomAnchor="84.0" AnchorPane.leftAnchor="98.0" AnchorPane.rightAnchor="97.0" AnchorPane.topAnchor="85.0">
+         <children>
+            <TextField fx:id="usernameInput" alignment="TOP_LEFT" prefHeight="25.0" prefWidth="220.0" promptText="new username" />
+            <TextField fx:id="passwordInput" prefHeight="25.0" prefWidth="100.0" promptText="new password" />
+            <TextField fx:id="realNameInput" layoutX="20.0" layoutY="69.0" prefHeight="25.0" prefWidth="100.0" promptText="real name" />
+            <ChoiceBox fx:id="companyNameInput" onContextMenuRequested="#companySelected" onMouseClicked="#companySelected" prefWidth="150.0" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+      <HBox alignment="CENTER" layoutX="112.0" layoutY="232.0" prefHeight="63.0" prefWidth="189.0" spacing="20.0" AnchorPane.bottomAnchor="24.0" AnchorPane.leftAnchor="112.0" AnchorPane.rightAnchor="112.0" AnchorPane.topAnchor="232.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#signUpButton" text="Sign up" />
+            <Button mnemonicParsing="false" onAction="#returnToTypeButton" text="Return" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </HBox>
+   </children>
+</AnchorPane>
