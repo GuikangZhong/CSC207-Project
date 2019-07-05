@@ -1,5 +1,6 @@
 package project.application;
 
+import project.observer.JobPostingObserver;
 import project.observer.SystemObserver;
 import project.user.Applicant;
 
@@ -7,6 +8,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 public class JobPosting
         implements Serializable, SystemObserver {
@@ -18,6 +20,11 @@ public class JobPosting
     private Collection<Application> applications;
     private LocalDateTime openDate, closeDate;
     private HireResult hireResult;
+    private List<JobPostingObserver> observers;
+
+    public void addObserver(JobPostingObserver observer){
+        observers.add(observer);
+    }
 
     public JobPosting(Job job, LocalDateTime begin, LocalDateTime end, Requirement requirement, int nApplicantNeeded) {
         status = Status.OPEN;
@@ -42,7 +49,9 @@ public class JobPosting
     public void updateOnTime(LocalDateTime now) {
         if (now.isAfter(closeDate) && getStatus() == Status.OPEN) {
             setStatus(Status.CLOSED);
-            getCompany().updateOnJobPostingClosure(getJobTitle());
+            for(JobPostingObserver observer : observers){
+                observer.updateOnJobPostingClosure(getJobTitle());
+            }
         }
     }
 

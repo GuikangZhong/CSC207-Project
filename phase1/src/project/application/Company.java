@@ -9,8 +9,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 public class Company
-        implements Serializable,
-        JobPostingObserver, SystemObserver {
+        implements Serializable, SystemObserver {
     private static final long serialVersionUID = 2088083308860080279L;
     private String name;
     private JobPostingManager jobPostingManager;
@@ -63,11 +62,6 @@ public class Company
             return interviewerManager.getUser(username);
         }
         return null;
-    }
-
-    @Override
-    public void updateOnJobPostingClosure(String jobTitle) {
-        hrManager.updateOnJobPostingClosure(jobTitle);
     }
 
     @Override
