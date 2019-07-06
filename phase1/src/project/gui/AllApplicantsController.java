@@ -31,6 +31,7 @@ public class AllApplicantsController implements Initializable {
         companyName.setText(Main.user.getCompany());
         options.setRoot(HRMenuController.getMenu().getOption());
 
+
         this.initializeApplicants();
     }
 
@@ -42,11 +43,15 @@ public class AllApplicantsController implements Initializable {
     }
 
     public void selectItems(MouseEvent event) throws IOException {
+        System.out.println("b");
         TreeItem<String> item = options.getSelectionModel().getSelectedItem();
         HRMenuController.getMenu().selectItem(this.getClass(),event, item);
     }
 
 
+    public void applicantsViewClicked(MouseEvent event){
+        // TODO:
+    }
 
     public void exit(Event event) throws IOException{
         SceneSwitcher.switchScene(this.getClass(), event, "Main.fxml");

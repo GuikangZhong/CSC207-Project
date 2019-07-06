@@ -8,7 +8,7 @@
   <center>
     <HBox prefHeight="100.0" prefWidth="200.0">
       <children>
-        <ListView fx:id="applicants" prefHeight="200.0" prefWidth="200.0" />
+        <ListView fx:id="applicants" onMouseClicked="#applicantsViewClicked" prefHeight="200.0" prefWidth="200.0" />
       </children>
     </HBox>
   </center>

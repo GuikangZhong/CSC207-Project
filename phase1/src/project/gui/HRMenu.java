@@ -22,6 +22,7 @@ public class HRMenu {
     }
 
     public void selectItem(Class c, Event event, TreeItem<String> item)throws IOException {
+        System.out.println("a");
         if (item != null){
             if (item.getValue().equals("View all applicants")){
                 SceneSwitcher.switchScene(c, event, "AllApplicants.fxml");

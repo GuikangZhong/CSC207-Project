@@ -43,6 +43,7 @@ public class HRMenuController implements Initializable {
         TreeItem<String> item = options.getSelectionModel().getSelectedItem();
         menu.selectItem(this.getClass(),event, item);
 
+
     }
 
     public void exit(Event event) throws IOException{

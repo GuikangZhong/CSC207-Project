@@ -9,12 +9,12 @@ public class ApplicantInfo {
     static Applicant applicant;
 
     public void display(String applicantUsername){
-        ApplicantManager applicantManager = Main.system.getApplicants();
-        applicant = applicantManager.getUser(applicantUsername);
-
-        Stage window = new Stage();
-        window.initModality(Modality.APPLICATION_MODAL);
-        window.setTitle(applicant.getRealName());
+//        ApplicantManager applicantManager = Main.system.getApplicants();
+//        applicant = applicantManager.getUser(applicantUsername);
+//
+//        Stage window = new Stage();
+//        window.initModality(Modality.APPLICATION_MODAL);
+//        window.setTitle(applicant.getRealName());
 
     }
 }
