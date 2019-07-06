@@ -11,6 +11,7 @@ public class HRMenu {
     }
 
     private TreeItem<String> option;
+
     public HRMenu(){
         option = new TreeItem<>("Option");
         TreeItem<String> document = new TreeItem<>("View all applicants");

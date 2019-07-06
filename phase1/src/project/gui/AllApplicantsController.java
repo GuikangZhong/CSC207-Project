@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
+import project.application.Document;
 import project.user.Applicant;
 import project.user.HR;
 import project.user.User;
@@ -21,6 +22,12 @@ public class AllApplicantsController implements Initializable {
 
     @FXML
     private ListView<String> applicants;
+
+    @FXML
+    private ListView<String> applicantDocuments;
+
+    @FXML
+    private ListView<String> applicantAppliedJobs;
 
     @FXML
     private Label companyName;
@@ -50,7 +57,11 @@ public class AllApplicantsController implements Initializable {
 
 
     public void applicantsViewClicked(MouseEvent event){
-        // TODO:
+        applicantDocuments.getItems().clear();
+        Applicant applicant = (Applicant)Main.system.getUser(applicants.getSelectionModel().getSelectedItem());
+        for(Document document : applicant.getDocuments()){
+            applicantDocuments.getItems().add(document.getName());
+        }
     }
 
     public void exit(Event event) throws IOException{

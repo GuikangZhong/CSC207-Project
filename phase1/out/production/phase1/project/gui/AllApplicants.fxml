@@ -9,6 +9,28 @@
     <HBox prefHeight="100.0" prefWidth="200.0">
       <children>
         <ListView fx:id="applicants" onMouseClicked="#applicantsViewClicked" prefHeight="200.0" prefWidth="200.0" />
+        <TabPane prefHeight="622.0" prefWidth="635.0" tabClosingPolicy="UNAVAILABLE">
+          <tabs>
+            <Tab text="Documents">
+              <content>
+                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <children>
+                    <ListView fx:id="applicantDocuments" layoutX="22.0" layoutY="32.0" prefHeight="464.0" prefWidth="200.00009999999747" />
+                  </children>
+                </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Applied Jobs">
+              <content>
+                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <children>
+                    <ListView fx:id="applicantAppliedJobs" layoutX="14.0" layoutY="14.0" prefHeight="546.0" prefWidth="253.0" />
+                  </children>
+                </AnchorPane>
+              </content>
+            </Tab>
+          </tabs>
+        </TabPane>
       </children>
     </HBox>
   </center>
