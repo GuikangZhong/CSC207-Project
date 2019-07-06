@@ -38,7 +38,6 @@ public class AllApplicantsController implements Initializable {
         companyName.setText(Main.user.getCompany());
         options.setRoot(HRMenuController.getMenu().getOption());
 
-
         this.initializeApplicants();
     }
 
