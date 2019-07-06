@@ -104,7 +104,9 @@ public class DocumentController implements Initializable {
     }
 
     public void saveButton(ActionEvent event) throws IOException{
-
+        CoverLetter coverLetter = CoverLetter.createByDirectInput(fileName.getText(), description.getText(), Main.system.now());
+        ((Applicant)Main.user).addDocument(coverLetter);
+        System.out.println("save successfully!");
     }
 
 
