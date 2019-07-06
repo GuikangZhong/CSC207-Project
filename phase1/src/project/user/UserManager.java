@@ -36,6 +36,10 @@ abstract public class UserManager<T extends User> implements Serializable {
         return users.get(username);
     }
 
+    public HashMap<String, T> getUsers() {
+        return users;
+    }
+
     public boolean containsUser(String name) {
         return users.containsKey(name);
     }
