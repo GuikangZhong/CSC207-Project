@@ -6,14 +6,13 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import project.application.Document;
-import project.user.Applicant;
-import project.user.HR;
-import project.user.User;
-import project.user.UserManager;
+import project.application.Job;
+import project.user.*;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.HashMap;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class AllApplicantsController implements Initializable {
@@ -60,6 +59,15 @@ public class AllApplicantsController implements Initializable {
         Applicant applicant = (Applicant)Main.system.getUser(applicants.getSelectionModel().getSelectedItem());
         for(Document document : applicant.getDocuments()){
             applicantDocuments.getItems().add(document.getName());
+        }
+
+        applicantAppliedJobs.getItems().clear();
+        ApplicantHistory applicantHistory = applicant.getApplicantHistory();
+        List<Job> jobsApplied = applicantHistory.getJobApplied();
+        for (Job job: jobsApplied){
+            if (job.getCompany().getName().equals(Main.user.getCompany())){
+                applicantAppliedJobs.getItems().add(job.getTitle());
+            }
         }
     }
 
