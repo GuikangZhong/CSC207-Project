@@ -38,6 +38,17 @@ public class Applicant extends User implements Serializable {
         return Collections.unmodifiableList(documents);
     }
 
+    public Document getDocument(String name){
+        if (documents.size() != 0) {
+            for (Document document: documents){
+                if (document.getName().equals(name)){
+                    return document;
+                }
+            }
+        }
+        return null;
+    }
+
     public Collection<Application> getApplications() {
         return applications;
     }

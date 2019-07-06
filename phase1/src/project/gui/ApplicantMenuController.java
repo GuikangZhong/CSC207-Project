@@ -32,10 +32,6 @@ public class ApplicantMenuController implements Initializable {
 
 
         option.getChildren().addAll(dashboard, document, jobPosting, application, history);
-
-        TreeItem<String> coverLetter = new TreeItem<>("Cover letter");
-        TreeItem<String> cv = new TreeItem<>("CV");
-        document.getChildren().addAll(coverLetter, cv);
         option.setExpanded(true);
 
 
@@ -45,10 +41,7 @@ public class ApplicantMenuController implements Initializable {
     public void selectItems(MouseEvent event) throws IOException{
         TreeItem<String> item = options.getSelectionModel().getSelectedItem();
         if (item != null){
-            if (item.getValue().equals("Cover letter")){
-                SceneSwitcher.switchScene(this.getClass(), event, "Document.fxml");
-            }
-            else if (item.getValue().equals("CV")){
+            if (item.getValue().equals("Document")){
                 SceneSwitcher.switchScene(this.getClass(), event, "Document.fxml");
             }
             else if (item.getValue().equals("Job posting")){
@@ -75,7 +68,6 @@ public class ApplicantMenuController implements Initializable {
         if (selectedFile != null) {
             CoverLetter coverLetter = CoverLetter.createByFileName(selectedFile.getName(), selectedFile.getAbsolutePath(), Main.system.now());
             ((Applicant)Main.user).addDocument(coverLetter);
-            System.out.println(selectedFile.getName());
         }
         else{
             System.out.println("file not exist");

@@ -23,7 +23,7 @@ public abstract class Document implements Serializable {
         this.content = content;
     }
 
-    public String getApplicantName() {
+    public String getName() {
         return name;
     }
 
