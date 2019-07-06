@@ -7,11 +7,6 @@ public class CoverLetter extends Document implements Serializable{
 
     private static final long serialVersionUID = 4089162745833731740L;
 
-    @Override
-    public final Type getType() {
-        return Type.COVERLETTER;
-    }
-
     public static CoverLetter createByDirectInput(String name, String input, LocalDateTime dateTime) {
         return new CoverLetter(name, input, dateTime);
     }

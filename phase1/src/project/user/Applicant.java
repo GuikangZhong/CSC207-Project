@@ -47,23 +47,7 @@ public class Applicant extends User implements Serializable {
     }
 
     public void addDocument(Document newDocument) {
-        boolean added = false;
-        if (documents.size() == 0) {
-            documents.add(newDocument);
-        }
-        else {
-            int index = 0;
-            for (Document document: documents){
-                if (document.getType() == newDocument.getType()){
-                    documents.set(index, newDocument);
-                    added = true;
-                }
-                index ++;
-            }
-            if (added == false){
-                documents.add(newDocument);
-            }
-        }
+        documents.add(newDocument);
     }
 
     public boolean checkIfExpired() {

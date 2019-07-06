@@ -7,11 +7,6 @@ public class CV extends Document implements Serializable{
 
     private static final long serialVersionUID = 6736238269987565017L;
 
-    @Override
-    public final Type getType() {
-        return Type.CV;
-    }
-
     public static CV createByDirectInput(String name, String input, LocalDateTime dateTime) {
         return new CV(name, input, dateTime);
     }
