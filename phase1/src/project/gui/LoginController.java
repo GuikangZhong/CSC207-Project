@@ -41,7 +41,7 @@ public class LoginController {
             correct = user.verifyPassword(passwordInput.getText());
         }
 
-        if (user == null || correct == false){
+        if (user == null || !correct){
             Stage window = new Stage();
 
             //Block events to other windows
