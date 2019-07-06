@@ -36,6 +36,7 @@ public class Interview implements Serializable {
             applicants.add(application.getApplicant().getUsername());
         }
         round = 0;
+        observers = new ArrayList<>();
     }
 
     public String getHR() {
@@ -82,8 +83,12 @@ public class Interview implements Serializable {
             throw new RuntimeException("You have overflowed the rounds or skipped a round");
         }
         round++;
+        filterPassed();
     }
 
+    void filterPassed(){
+        applicants = getRoundInProgress().getApplicantsNamePassed();
+    }
     public void assignRound(InterviewGroupAssignmentStrategy strategy, List<Interviewer> interviewers) {
         getRoundInProgress().setGroups(strategy.select(applicants, interviewers));
     }
