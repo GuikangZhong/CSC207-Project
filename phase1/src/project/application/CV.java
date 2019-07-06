@@ -27,4 +27,9 @@ public class CV extends Document implements Serializable{
     private CV(String applicantName, String content, LocalDateTime date) {
         super(applicantName, content, date);
     }
+
+    @Override
+    public String type(){
+        return "CV";
+    }
 }

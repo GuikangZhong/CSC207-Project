@@ -30,4 +30,6 @@ public abstract class Document implements Serializable {
     public LocalDateTime getCreatedDate() {
         return createdDate;
     }
+
+    public abstract String type();
 }

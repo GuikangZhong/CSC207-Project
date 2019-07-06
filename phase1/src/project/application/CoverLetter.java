@@ -27,4 +27,9 @@ public class CoverLetter extends Document implements Serializable{
     private CoverLetter(String name, String content, LocalDateTime date) {
         super(name, content, date);
     }
+
+    @Override
+    public String type(){
+        return "CoverLetter";
+    }
 }
