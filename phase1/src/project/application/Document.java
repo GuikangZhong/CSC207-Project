@@ -15,6 +15,12 @@ public abstract class Document implements Serializable {
         this.createdDate = date;
     }
 
+    public enum Type {
+        COVERLETTER, CV
+    }
+
+    public abstract Type getType();
+
     public String getContent() {
         return content;
     }
