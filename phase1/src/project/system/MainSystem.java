@@ -69,6 +69,10 @@ public class MainSystem implements Serializable {
         return companies.get(name);
     }
 
+    public ApplicantManager getApplicants() {
+        return applicants;
+    }
+
     public Collection<Company> getCompanies() {
         return companies.values();
     }
