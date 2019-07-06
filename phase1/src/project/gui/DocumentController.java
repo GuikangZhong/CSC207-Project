@@ -1,47 +1,68 @@
 package project.gui;
 
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
+import project.application.CV;
 import project.application.CoverLetter;
 import project.application.Document;
 import project.user.Applicant;
 
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
-public class ApplicantMenuController implements Initializable {
+public class DocumentController implements Initializable {
     @FXML
     private TreeView<String> options;
+    @FXML
+    private ListView<String> documentList;
+    @FXML
+    private TextArea description;
+    @FXML
+    private TextArea fileName;
+
+    private FileChooser fc = new FileChooser();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        // menu
         TreeItem<String> option = new TreeItem<>("Option");
         TreeItem<String> dashboard = new TreeItem<>("Dashboard");
         TreeItem<String> document = new TreeItem<>("Document");
         TreeItem<String> jobPosting = new TreeItem<>("Job posting");
         TreeItem<String> application = new TreeItem<>("Application");
         TreeItem<String> history = new TreeItem<>("Your history");
-
-
         option.getChildren().addAll(dashboard, document, jobPosting, application, history);
         option.setExpanded(true);
-
-
         options.setRoot(option);
+
+        // fill the document list
+        List<Document> documents = ((Applicant)Main.user).getDocuments();
+        if (documents.size() != 0) {
+            for (Document document1: documents){
+                documentList.getItems().add(document1.getName());
+            }
+        }
+
+
     }
 
     public void selectItems(MouseEvent event) throws IOException{
         TreeItem<String> item = options.getSelectionModel().getSelectedItem();
         if (item != null){
-            if (item.getValue().equals("Document")){
+            if (item.getValue().equals("Document")) {
                 SceneSwitcher.switchScene(this.getClass(), event, "Document.fxml");
             }
             else if (item.getValue().equals("Job posting")){
@@ -60,8 +81,16 @@ public class ApplicantMenuController implements Initializable {
 
     }
 
+    public void selectDocument(MouseEvent event) throws IOException {
+        String documentName = documentList.getSelectionModel().getSelectedItem();
+        Document document = ((Applicant)Main.user).getDocument(documentName);
+        if (document != null) {
+            fileName.setText(document.getName());
+            description.setText(document.getContent());
+        }
+    }
+
     public void uploadButton(ActionEvent event) throws IOException{
-        FileChooser fc = new FileChooser();
         fc.setInitialDirectory(new File("."));
         fc.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Text Document", "*.txt"));
         File selectedFile = fc.showOpenDialog(null);
@@ -70,9 +99,14 @@ public class ApplicantMenuController implements Initializable {
             ((Applicant)Main.user).addDocument(coverLetter);
         }
         else{
-            System.out.println("file not exist");
+            System.out.println("File not selected");
         }
     }
+
+    public void saveButton(ActionEvent event) throws IOException{
+
+    }
+
 
     public void exit(Event event) throws IOException{
         SceneSwitcher.switchScene(this.getClass(), event, "Main.fxml");

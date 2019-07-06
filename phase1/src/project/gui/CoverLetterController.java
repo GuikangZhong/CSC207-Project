@@ -35,40 +35,31 @@ public class CoverLetterController implements Initializable {
         TreeItem<String> application = new TreeItem<>("Application");
         TreeItem<String> history = new TreeItem<>("Your history");
         option.getChildren().addAll(dashboard, document, jobPosting, application, history);
-        TreeItem<String> coverLetter = new TreeItem<>("Cover letter");
-        TreeItem<String> cv = new TreeItem<>("CV");
-        document.getChildren().addAll(coverLetter, cv);
         option.setExpanded(true);
         options.setRoot(option);
-
-        //cover letter content
-        List<Document> documents = ((Applicant)Main.user).getDocuments();
-        String content = CoverLetterController.content(documents);
-        coverLetterContent.setText(content);
+        
     }
 
-    private static String content(List<Document> documents){
-        if (documents.size() == 0){
-            return "No cover letter uploaded";
-        }
-        else{
-            for (Document document: documents){
-                if (document instanceof CoverLetter) {
-                    return document.getContent();
-                }
-            }
-            return "No cover letter uploaded";
-        }
-    }
+//    private static String content(List<Document> documents){
+//        if (documents.size() == 0){
+//            return "No cover letter uploaded";
+//        }
+//        else{
+//            for (Document document: documents){
+//                if (document.getType() == Document.Type.COVERLETTER) {
+//                    System.out.println(documents.size());
+//                    return document.getContent();
+//                }
+//            }
+//            return "No cover letter uploaded";
+//        }
+//    }
 
     public void selectItems(MouseEvent event) throws IOException{
         TreeItem<String> item = options.getSelectionModel().getSelectedItem();
         if (item != null){
-            if (item.getValue().equals("Cover letter")){
-                SceneSwitcher.switchScene(this.getClass(), event, "CoverLetter.fxml");
-            }
-            else if (item.getValue().equals("CV")){
-                SceneSwitcher.switchScene(this.getClass(), event, "CV.fxml");
+            if (item.getValue().equals("Document")) {
+                SceneSwitcher.switchScene(this.getClass(), event, "Document.fxml");
             }
             else if (item.getValue().equals("Job posting")){
                 SceneSwitcher.switchScene(this.getClass(), event, "JobPosting.fxml");
@@ -94,7 +85,6 @@ public class CoverLetterController implements Initializable {
         if (selectedFile != null) {
             CoverLetter coverLetter = CoverLetter.createByFileName(selectedFile.getName(), selectedFile.getAbsolutePath(), Main.system.now());
             ((Applicant)Main.user).addDocument(coverLetter);
-            System.out.println(selectedFile.getName());
         }
         else{
             System.out.println("file not exist");

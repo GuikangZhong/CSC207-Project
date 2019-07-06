@@ -1,34 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.effect.*?>
-<?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.gui.CoverLetterController">
-   <left>
-      <TreeView fx:id="options" onContextMenuRequested="#selectItems" onMouseClicked="#selectItems" prefHeight="400.0" prefWidth="139.0" BorderPane.alignment="CENTER" />
-   </left>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.gui.DocumentController">
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Label alignment="CENTER" layoutX="161.0" layoutY="14.0" text="Cover Letter" AnchorPane.leftAnchor="161.0" AnchorPane.rightAnchor="161.0" AnchorPane.topAnchor="14.0">
+            <Label alignment="CENTER" layoutX="161.0" layoutY="14.0" text="Document" AnchorPane.leftAnchor="161.0" AnchorPane.rightAnchor="161.0" AnchorPane.topAnchor="14.0">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label fx:id="coverLetterContent" alignment="TOP_LEFT" layoutX="14.0" layoutY="44.0" prefHeight="239.0" prefWidth="432.0" text="Label" />
             <HBox alignment="CENTER" layoutX="306.0" layoutY="306.0" prefHeight="52.0" prefWidth="141.0" spacing="10.0" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0">
                <children>
-                  <Button mnemonicParsing="false" onAction="#editButton" text="Edit" />
+                  <Button mnemonicParsing="false" onAction="#saveButton" text="Save" />
                   <Button mnemonicParsing="false" onAction="#uploadButton" text="Upload" />
                </children>
             </HBox>
+            <ListView fx:id="documentList" layoutX="14.0" layoutY="64.0" onContextMenuRequested="#selectDocument" onMouseClicked="#selectDocument" prefHeight="209.0" prefWidth="126.0" />
+            <TextArea fx:id="description" layoutX="177.0" layoutY="101.0" prefHeight="168.0" prefWidth="220.0" />
+            <VBox prefHeight="45.0" prefWidth="175.0" />
+            <TextArea fx:id="fileName" layoutX="177.0" layoutY="57.0" prefHeight="41.0" prefWidth="220.0" />
          </children>
       </AnchorPane>
    </center>
+   <left>
+      <TreeView fx:id="options" onContextMenuRequested="#selectItems" onMouseClicked="#selectItems" prefHeight="400.0" prefWidth="139.0" BorderPane.alignment="CENTER" />
+   </left>
    <top>
       <AnchorPane prefHeight="23.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>

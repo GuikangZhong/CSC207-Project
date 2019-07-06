@@ -23,7 +23,6 @@ public class SignUpController {
                     realNameInput.getText(), null));
         }
         if (added){
-            System.out.println(TypeController.typeName);
             SceneSwitcher.switchScene(this.getClass(), event, "SignUpSuccess.fxml");
         }
         else
