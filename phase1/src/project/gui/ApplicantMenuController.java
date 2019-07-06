@@ -21,24 +21,30 @@ public class ApplicantMenuController implements Initializable {
     @FXML
     private TreeView<String> options;
 
+    static private TreeItem<String> option = null;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        TreeItem<String> option = new TreeItem<>("Option");
-        TreeItem<String> dashboard = new TreeItem<>("Dashboard");
-        TreeItem<String> document = new TreeItem<>("Document");
-        TreeItem<String> jobPosting = new TreeItem<>("Job posting");
-        TreeItem<String> application = new TreeItem<>("Application");
-        TreeItem<String> history = new TreeItem<>("Your history");
+        if(option == null) {
+            option = new TreeItem<>("Option");
+            TreeItem<String> dashboard = new TreeItem<>("Dashboard");
+            TreeItem<String> document = new TreeItem<>("Document");
+            TreeItem<String> jobPosting = new TreeItem<>("Job posting");
+            TreeItem<String> application = new TreeItem<>("Application");
+            TreeItem<String> history = new TreeItem<>("Your history");
 
 
-        option.getChildren().addAll(dashboard, document, jobPosting, application, history);
+            option.getChildren().addAll(dashboard, document, jobPosting, application, history);
 
-        TreeItem<String> coverLetter = new TreeItem<>("Cover letter");
-        TreeItem<String> cv = new TreeItem<>("CV");
-        document.getChildren().addAll(coverLetter, cv);
-        option.setExpanded(true);
+            TreeItem<String> coverLetter = new TreeItem<>("Cover letter");
+            TreeItem<String> cv = new TreeItem<>("CV");
+            document.getChildren().addAll(coverLetter, cv);
+
+            option.setExpanded(true);
 
 
+            System.out.println("init");
+        }
         options.setRoot(option);
     }
 
