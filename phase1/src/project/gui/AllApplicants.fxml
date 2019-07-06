@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.gui.HRMenuController">
+    <left>
+        <TreeView fx:id="options" onContextMenuRequested="#selectItems" onMouseClicked="#selectItems" prefHeight="400.0" prefWidth="158.0" BorderPane.alignment="CENTER" />
+    </left>
+    <top>
+        <AnchorPane prefHeight="32.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+            <children>
+                <Label fx:id="companyName" alignment="CENTER" layoutX="14.0" layoutY="6.0" text="Label" />
+                <Button alignment="CENTER" layoutX="534.0" layoutY="2.0" mnemonicParsing="false" onAction="#exit" text="Sign out" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="2.0" />
+            </children>
+        </AnchorPane>
+    </top>
+</BorderPane>
