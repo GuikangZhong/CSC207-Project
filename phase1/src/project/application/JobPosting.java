@@ -14,6 +14,7 @@ public class JobPosting implements Serializable, SystemObserver {
     private static final long serialVersionUID = 726794651891649767L;
     private Job job;
     private Status status;
+    private String description;
     private Requirement requirement;
     private int nApplicantNeeded;
     private Collection<Application> applications;
@@ -21,7 +22,7 @@ public class JobPosting implements Serializable, SystemObserver {
     private HireResult hireResult;
     private List<JobPostingObserver> observers;
 
-    public JobPosting(Job job, LocalDateTime begin, LocalDateTime end, Requirement requirement, int nApplicantNeeded) {
+    public JobPosting(Job job, LocalDateTime begin, LocalDateTime end, Requirement requirement, int nApplicantNeeded, String description) {
         status = Status.OPEN;
         this.requirement = requirement;
         this.openDate = begin;
@@ -31,12 +32,21 @@ public class JobPosting implements Serializable, SystemObserver {
         this.nApplicantNeeded = nApplicantNeeded;
         this.applications = new ArrayList<>();
         this.observers = new ArrayList<>();
+        this.description = description;
     }
 
     public enum Status {
         OPEN,
         CLOSED,
         FILLED
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public void addObserver(JobPostingObserver observer){

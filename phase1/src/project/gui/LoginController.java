@@ -63,15 +63,15 @@ public class LoginController {
             window.setScene(scene);
             window.showAndWait();
         }
-        else if (user instanceof Applicant){
+        else if (user.getType() == User.Type.APPLICANT){
             Main.user = user;
             SceneSwitcher.switchScene(this.getClass(), event, "ApplicantMenu.fxml");
         }
-        else if (user instanceof HR){
+        else if (user.getType() == User.Type.HR){
             Main.user = user;
             SceneSwitcher.switchScene(this.getClass(), event, "HRMenu.fxml");
         }
-        else if (user instanceof Interviewer){
+        else if (user.getType() == User.Type.INTERVIEWER){
             Main.user = user;
             SceneSwitcher.switchScene(this.getClass(), event, "InterviewerMenu.fxml");
         }
