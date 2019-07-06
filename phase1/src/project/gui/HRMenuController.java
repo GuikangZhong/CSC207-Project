@@ -40,13 +40,13 @@ public class HRMenuController implements Initializable {
 
     public void selectItems(MouseEvent event) throws IOException {
         TreeItem<String> item = options.getSelectionModel().getSelectedItem();
-        if (item.getValue().equals("Sign out")){
-            Parent main = FXMLLoader.load(getClass().getResource("Main.fxml"));
-            Scene mainScene = new Scene(main);
-            Stage loginWindow = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            loginWindow.setScene(mainScene);
-            loginWindow.show();
-        }
+//        if (item.getValue().equals("Sign out")){
+//            Parent main = FXMLLoader.load(getClass().getResource("Main.fxml"));
+//            Scene mainScene = new Scene(main);
+//            Stage loginWindow = (Stage) ((Node) event.getSource()).getScene().getWindow();
+//            loginWindow.setScene(mainScene);
+//            loginWindow.show();
+//        }
     }
 
     public void exit(Event event) throws IOException{
