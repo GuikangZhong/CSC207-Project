@@ -6,10 +6,7 @@ import project.user.*;
 
 import java.io.*;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 
 
 public class MainSystem implements Serializable {
@@ -69,8 +66,8 @@ public class MainSystem implements Serializable {
         return companies.get(name);
     }
 
-    public ApplicantManager getApplicants() {
-        return applicants;
+    public HashMap<String, Applicant> getApplicants() {
+        return applicants.getUsers();
     }
 
     public Collection<Company> getCompanies() {
