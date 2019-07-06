@@ -12,7 +12,7 @@ import java.util.HashMap;
 abstract public class UserManager<T extends User> implements Serializable {
     private static final long serialVersionUID = -3896729601031943756L;
 
-    protected HashMap<String, T> users;
+    HashMap<String, T> users;
     private MainSystem system;
 
     public UserManager(MainSystem system) {
