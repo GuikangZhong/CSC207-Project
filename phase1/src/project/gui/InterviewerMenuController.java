@@ -28,9 +28,10 @@ public class InterviewerMenuController implements Initializable {
         TreeItem<String> option = new TreeItem<>("Option");
         TreeItem<String> interview = new TreeItem<>("Upcoming interviews");
         TreeItem<String> history = new TreeItem<>("Your history");
-        companyName.setText(Main.user.getCompany());
+        TreeItem<String> dashboard = new TreeItem<>("Dashboard");
+        // companyName.setText(Main.user.getCompany());
 
-        option.getChildren().addAll(interview, history);
+        option.getChildren().addAll(interview, history, dashboard);
         option.setExpanded(true);
         options.setRoot(option);
     }
@@ -46,7 +47,7 @@ public class InterviewerMenuController implements Initializable {
         }
     }
 
-    public void exit(Event event) throws IOException{
+    public void exit(Event event) throws IOException {
         SceneSwitcher.switchScene(this.getClass(), event, "Main.fxml");
     }
 }
