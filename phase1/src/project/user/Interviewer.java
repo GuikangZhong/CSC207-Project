@@ -12,7 +12,7 @@ public class Interviewer extends User {
 
     private List<InterviewGroup> interviews;
 
-    Interviewer(UserHistory history,
+    public Interviewer(UserHistory history,
        String username,
        String password,
        String realName,

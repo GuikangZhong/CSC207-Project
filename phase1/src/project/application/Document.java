@@ -5,12 +5,12 @@ import java.time.LocalDateTime;
 
 public abstract class Document implements Serializable {
     private static final long serialVersionUID = -5700647472647007254L;
-    protected String applicantName;
+    protected String name;
     protected String content;
     protected LocalDateTime createdDate;
 
-    Document(String applicantName, String content, LocalDateTime date) {
-        this.applicantName = applicantName;
+    Document(String name, String content, LocalDateTime date) {
+        this.name = name;
         this.content = content;
         this.createdDate = date;
     }
@@ -24,7 +24,7 @@ public abstract class Document implements Serializable {
     }
 
     public String getApplicantName() {
-        return applicantName;
+        return name;
     }
 
     public LocalDateTime getCreatedDate() {

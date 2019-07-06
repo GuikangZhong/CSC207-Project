@@ -42,29 +42,29 @@ public class Applicant extends User implements Serializable {
         return applications;
     }
 
-    void removeDocument(int index) {
+    public void removeDocument(int index) {
         documents.remove(index);
     }
 
-    void addDocument(Document document) {
+    public void addDocument(Document document) {
         documents.add(document);
     }
 
-    void updateDocument(int index, Document document) {
+    public void updateDocument(int index, Document document) {
         documents.set(index, document);
     }
 
-    boolean checkIfExpired() {
+    public boolean checkIfExpired() {
         return false;
     }
 
-    void removeIfExpired() {
+    public void removeIfExpired() {
         // TODO:
     }
 
     // tries to apply for a job
     // throws RuntimeException if requirement not met
-    Application apply(JobPosting jobPosting) {
+    public Application apply(JobPosting jobPosting) {
         Application application = new Application(this, getDocuments(), jobPosting.getJob());
         jobPosting.addApplication(application);
         applications.add(application);
@@ -72,7 +72,7 @@ public class Applicant extends User implements Serializable {
         return application;
     }
 
-    void withdraw(String jobName) {
+   public void withdraw(String jobName) {
         for (Application application : applications) {
             if (application.getJob().getTitle().equals(jobName)) {
                 applications.remove(application);

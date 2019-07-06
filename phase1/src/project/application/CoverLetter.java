@@ -7,11 +7,11 @@ public class CoverLetter extends Document implements Serializable{
 
     private static final long serialVersionUID = 4089162745833731740L;
 
-    public static CoverLetter createByDirectInput(String applicantName, String input, LocalDateTime dateTime) {
-        return new CoverLetter(applicantName, input, dateTime);
+    public static CoverLetter createByDirectInput(String name, String input, LocalDateTime dateTime) {
+        return new CoverLetter(name, input, dateTime);
     }
 
-    public static CoverLetter createByFileName(String applicantName, String path, LocalDateTime dateTime) throws IOException {
+    public static CoverLetter createByFileName(String name, String path, LocalDateTime dateTime) throws IOException {
         StringBuilder content = new StringBuilder();
         try (BufferedReader in = new BufferedReader(new FileReader(path))) {
             String s = in.readLine();
@@ -21,10 +21,10 @@ public class CoverLetter extends Document implements Serializable{
                 s = in.readLine();
             }
         }
-        return new CoverLetter(applicantName, content.toString(), dateTime);
+        return new CoverLetter(name, content.toString(), dateTime);
     }
 
-    private CoverLetter(String applicantName, String content, LocalDateTime date) {
-        super(applicantName, content, date);
+    private CoverLetter(String name, String content, LocalDateTime date) {
+        super(name, content, date);
     }
 }

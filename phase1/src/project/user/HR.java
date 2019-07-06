@@ -16,7 +16,7 @@ public class HR extends User {
     private List<String> jobsHired;
 
     // TODO: check with piazza / prof if this is really what it wants
-    HR(UserHistory history,
+    public HR(UserHistory history,
        String username,
        String password,
        String realName,

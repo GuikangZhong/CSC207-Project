@@ -7,11 +7,11 @@ public class CV extends Document implements Serializable{
 
     private static final long serialVersionUID = 6736238269987565017L;
 
-    public static CV createByDirectInput(String applicantName, String input, LocalDateTime dateTime) {
-        return new CV(applicantName, input, dateTime);
+    public static CV createByDirectInput(String name, String input, LocalDateTime dateTime) {
+        return new CV(name, input, dateTime);
     }
 
-    public static CV createByFileName(String applicantName, String path, LocalDateTime dateTime) throws IOException {
+    public static CV createByFileName(String name, String path, LocalDateTime dateTime) throws IOException {
         StringBuilder content = new StringBuilder();
         try (BufferedReader in = new BufferedReader(new FileReader(path))) {
             String s = in.readLine();
@@ -21,7 +21,7 @@ public class CV extends Document implements Serializable{
                 s = in.readLine();
             }
         }
-        return new CV(applicantName, content.toString(), dateTime);
+        return new CV(name, content.toString(), dateTime);
     }
 
     private CV(String applicantName, String content, LocalDateTime date) {
