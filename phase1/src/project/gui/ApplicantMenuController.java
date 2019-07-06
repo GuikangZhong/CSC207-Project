@@ -77,9 +77,7 @@ public class ApplicantMenuController implements Initializable {
             ((Applicant)Main.user).addDocument(coverLetter);
             System.out.println(selectedFile.getName());
         }
-        else{
-            System.out.println("file not exist");
-        }
+
     }
 
     public void exit(Event event) throws IOException{
