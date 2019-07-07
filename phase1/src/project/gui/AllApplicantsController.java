@@ -11,10 +11,8 @@ import project.application.Job;
 import project.user.*;
 
 import java.io.IOException;
-import java.net.URL;
 import java.util.HashMap;
 import java.util.List;
-import java.util.ResourceBundle;
 
 public class AllApplicantsController extends ApplicationController{
 
@@ -61,6 +59,7 @@ public class AllApplicantsController extends ApplicationController{
 
     public void applicantsViewClicked(MouseEvent event){
         applicantDocuments.getItems().clear();
+        documentContent.clear();
         applicant = (Applicant)getSystem().getUser(applicants.getSelectionModel().getSelectedItem());
         for(Document document : applicant.getDocuments()){
             applicantDocuments.getItems().add(document.getName());
