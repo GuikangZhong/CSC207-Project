@@ -24,11 +24,12 @@ public class ApplicationViewController extends ApplicationController {
 
     void pollApplications() {
         applications.getItems().clear();
-        ;
         Applicant applicant = (Applicant) getUser();
         for (Application application : applicant.getApplications()) {
             applications.getItems().add(application);
         }
+        applications.getSelectionModel().clearSelection();
+        applications.refresh();
     }
 
     @Override
@@ -47,6 +48,8 @@ public class ApplicationViewController extends ApplicationController {
                         super.updateItem(t, bln);
                         if (t != null) {
                             setText(t.getJob().getTitle());
+                        }else{
+                            setText("");
                         }
                     }
 
