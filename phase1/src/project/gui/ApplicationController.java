@@ -18,6 +18,7 @@ import project.user.User;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.function.Consumer;
 
 public abstract class ApplicationController implements Initializable {
     @FXML
@@ -86,31 +87,36 @@ public abstract class ApplicationController implements Initializable {
         assert system != null;
     }
 
+    static void showModal(Consumer<Stage> consumer){
+        Stage window = new Stage();
+        consumer.accept(window);
+        window.showAndWait();
+    }
     static void showModal(String text) {
         showModal("Warning", text);
     }
 
     static void showModal(String title, String text) {
-        Stage window = new Stage();
+        showModal(window -> {
+            //Block events to other windows
+            window.initModality(Modality.APPLICATION_MODAL);
+            window.setTitle(title);
+            window.setHeight(100.0);
+            window.setWidth(300.0);
 
-        //Block events to other windows
-        window.initModality(Modality.APPLICATION_MODAL);
-        window.setTitle(title);
-        window.setHeight(100.0);
-        window.setWidth(300.0);
+            Label label = new Label(text);
+            Button closeButton = new Button("Close");
+            closeButton.setOnAction(e -> window.close());
 
-        Label label = new Label(text);
-        Button closeButton = new Button("Close");
-        closeButton.setOnAction(e -> window.close());
+            VBox layout = new VBox(10);
+            layout.getChildren().addAll(label, closeButton);
+            layout.setAlignment(Pos.CENTER);
 
-        VBox layout = new VBox(10);
-        layout.getChildren().addAll(label, closeButton);
-        layout.setAlignment(Pos.CENTER);
+            //Display window and wait for it to be closed before returning
+            Scene scene = new Scene(layout);
+            window.setScene(scene);
 
-        //Display window and wait for it to be closed before returning
-        Scene scene = new Scene(layout);
-        window.setScene(scene);
-        window.showAndWait();
+        });
     }
 
     static void Assert(boolean value) {
