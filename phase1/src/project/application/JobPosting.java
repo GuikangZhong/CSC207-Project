@@ -130,4 +130,8 @@ public class JobPosting implements Serializable, SystemObserver {
     public Company getCompany() {
         return job.getCompany();
     }
+
+    public String toString(){
+        return getJobTitle();
+    }
 }

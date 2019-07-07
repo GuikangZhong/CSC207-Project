@@ -27,7 +27,7 @@ public class DocumentController implements Initializable {
     @FXML
     private TreeView<String> options;
     @FXML
-    private ListView<String> documentList;
+    private ListView<Document> documentList;
     @FXML
     private TextArea description;
     @FXML
@@ -52,11 +52,9 @@ public class DocumentController implements Initializable {
         List<Document> documents = ((Applicant)Main.user).getDocuments();
         if (documents.size() != 0) {
             for (Document document1: documents){
-                documentList.getItems().add(document1.getName());
+                documentList.getItems().add(document1);
             }
         }
-
-
     }
 
     public void selectItems(MouseEvent event) throws IOException{
@@ -82,8 +80,7 @@ public class DocumentController implements Initializable {
     }
 
     public void selectDocument(MouseEvent event) throws IOException {
-        String documentName = documentList.getSelectionModel().getSelectedItem();
-        Document document = ((Applicant)Main.user).getDocument(documentName);
+        Document document = documentList.getSelectionModel().getSelectedItem();
         if (document != null) {
             fileName.setText(document.getName());
             description.setText(document.getContent());

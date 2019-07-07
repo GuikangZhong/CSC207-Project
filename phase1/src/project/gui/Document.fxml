@@ -23,7 +23,6 @@
             </HBox>
             <ListView fx:id="documentList" layoutX="14.0" layoutY="64.0" onContextMenuRequested="#selectDocument" onMouseClicked="#selectDocument" prefHeight="209.0" prefWidth="126.0" />
             <TextArea fx:id="description" layoutX="177.0" layoutY="101.0" prefHeight="168.0" prefWidth="220.0" />
-            <VBox prefHeight="45.0" prefWidth="175.0" />
             <TextArea fx:id="fileName" layoutX="177.0" layoutY="57.0" prefHeight="41.0" prefWidth="220.0" />
          </children>
       </AnchorPane>
