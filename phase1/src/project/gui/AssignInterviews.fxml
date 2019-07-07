@@ -18,7 +18,7 @@
          <children>
             <Button layoutX="873.0" layoutY="537.0" mnemonicParsing="false" onAction="#returnButton" text="Return" />
             <Button layoutX="761.0" layoutY="537.0" mnemonicParsing="false" onAction="#submitButton" text="Submit" />
-            <HBox layoutX="43.0" layoutY="76.0" prefHeight="456.0" prefWidth="809.0">
+            <HBox layoutX="95.0" layoutY="76.0" prefHeight="456.0" prefWidth="809.0">
                <children>
                   <ListView fx:id="applicants" prefHeight="456.0" prefWidth="478.0" />
                   <ListView fx:id="interviewers" prefHeight="456.0" prefWidth="470.0" />

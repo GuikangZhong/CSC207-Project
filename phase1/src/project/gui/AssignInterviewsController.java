@@ -5,6 +5,7 @@ import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
+import javafx.scene.input.*;
 import javafx.util.Callback;
 import project.application.Application;
 import project.application.Company;
@@ -13,7 +14,7 @@ import project.application.JobPostingManager;
 import project.interview.Interview;
 import project.interview.InterviewGroup;
 import project.user.Applicant;
-import project.user.HR;
+import project.user.User;
 import project.user.Interviewer;
 import project.user.InterviewerManager;
 
@@ -27,7 +28,7 @@ public class AssignInterviewsController extends ApplicationController {
     @FXML
     ListView<Interviewer> interviewers;
     @FXML
-    ListView<InterviewGroup> interviewGroup;
+    ListView<User> interviewGroup;
 
     static JobPosting jobPosting = null;
 
@@ -45,7 +46,7 @@ public class AssignInterviewsController extends ApplicationController {
                     protected void updateItem(Applicant t, boolean bln) {
                         super.updateItem(t, bln);
                         if (t != null) {
-                            setText(t.getUsername());
+                            setText(t.getRealName());
                         }
                     }
                 };
@@ -65,7 +66,7 @@ public class AssignInterviewsController extends ApplicationController {
                     protected void updateItem(Interviewer t, boolean bln) {
                         super.updateItem(t, bln);
                         if (t != null) {
-                            setText(t.getUsername());
+                            setText(t.getRealName());
                         }
                     }
                 };
@@ -73,7 +74,78 @@ public class AssignInterviewsController extends ApplicationController {
             }
         });
         pollInterviewers();
+
+        interviewGroup.setCellFactory(new Callback<ListView<User>, ListCell<User>>() {
+
+            @Override
+            public ListCell<User> call(ListView<User> p) {
+
+                ListCell<User> cell = new ListCell<User>() {
+
+                    @Override
+                    protected void updateItem(User t, boolean bln) {
+                        super.updateItem(t, bln);
+                        if (t != null) {
+                            setText(t.getRealName());
+                        }
+                    }
+                };
+                return cell;
+            }
+        });
+
+        applicants.setOnDragDetected((MouseEvent event) -> {
+            //We want the textArea to be dragged. Could also be copied.
+            Dragboard db = applicants.startDragAndDrop(TransferMode.MOVE);
+
+            // Put a string on a dragboard as an identifier
+            ClipboardContent content = new ClipboardContent();
+            content.putString(applicants.getId());
+            db.setContent(content);
+
+            //Consume the event
+            event.consume();
+        });
+
+        interviewers.setOnDragDetected((MouseEvent event) -> {
+            //We want the textArea to be dragged. Could also be copied.
+            Dragboard db = interviewers.startDragAndDrop(TransferMode.MOVE);
+
+            // Put a string on a dragboard as an identifier
+            ClipboardContent content = new ClipboardContent();
+            content.putString(interviewers.getId());
+            db.setContent(content);
+
+            //Consume the event
+            event.consume();
+        });
+
+        interviewGroup.addEventHandler(DragEvent.DRAG_OVER, (DragEvent event) -> {
+            if (event.getGestureSource() != interviewGroup
+                    && event.getDragboard().hasString()) {
+                event.acceptTransferModes(TransferMode.COPY_OR_MOVE);
+            }
+            event.consume();
+        });
+
+        interviewGroup.addEventHandler(DragEvent.DRAG_DROPPED, (DragEvent event) -> {
+            //Get the dragboard back
+            Dragboard db = event.getDragboard();
+            boolean success = false;
+            //Could have some more thorough checks of course.
+            if (db.hasString()) {
+                //Get the textarea and place it into flowPane2 instead
+                interviewGroup.getItems().add(applicants.getSelectionModel().getSelectedItem());
+                interviewGroup.getItems().add(interviewers.getSelectionModel().getSelectedItem());
+                success = true;
+            }
+            //Complete and consume the event.
+            event.setDropCompleted(success);
+            event.consume();
+        });
     }
+
+
 
     private void pollApplicants(){
         if (jobPosting != null){
@@ -81,6 +153,23 @@ public class AssignInterviewsController extends ApplicationController {
                 applicants.getItems().add(application.getApplicant());
             }
         }
+    }
+
+    public void addUser(User user){
+        interviewGroup.addEventHandler(DragEvent.DRAG_DROPPED, (DragEvent event) -> {
+            //Get the dragboard back
+            Dragboard db = event.getDragboard();
+            boolean success = false;
+            //Could have some more thorough checks of course.
+            if (db.hasString()) {
+                //Get the textarea and place it into flowPane2 instead
+                interviewGroup.getItems().add(user);
+                success = true;
+            }
+            //Complete and consume the event.
+            event.setDropCompleted(success);
+            event.consume();
+        });
     }
 
     private void pollInterviewers(){
