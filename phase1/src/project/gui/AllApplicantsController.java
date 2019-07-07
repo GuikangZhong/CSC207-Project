@@ -1,6 +1,7 @@
 package project.gui;
 
 import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -29,7 +30,12 @@ public class AllApplicantsController implements Initializable {
     private ListView<String> applicantAppliedJobs;
 
     @FXML
+    private TextField documentContent;
+
+    @FXML
     private Label companyName;
+
+//    private Applicant applicant;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -69,7 +75,18 @@ public class AllApplicantsController implements Initializable {
                 applicantAppliedJobs.getItems().add(job.getTitle());
             }
         }
+//        applicantDocuments.setOnMouseClicked(new EventHandler<MouseEvent>() {
+////            @Override
+////            public void handle(MouseEvent event) {
+////                documentContent.setText(applicant.getDocument(applicantDocuments.getSelectionModel().getSelectedItem()).getContent());
+////            }
+////        });
+        applicantDocuments.setOnMouseClicked
+                (e -> documentContent.setText(applicant.
+                        getDocument(applicantDocuments.getSelectionModel().getSelectedItem()).getContent()));
     }
+
+
 
     public void exit(Event event) throws IOException{
         SceneSwitcher.switchScene(this.getClass(), event, "Main.fxml");
