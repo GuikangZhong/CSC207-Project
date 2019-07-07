@@ -89,6 +89,7 @@ public abstract class ApplicationController implements Initializable {
 
     static void showModal(Consumer<Stage> consumer){
         Stage window = new Stage();
+        window.initModality(Modality.APPLICATION_MODAL);
         consumer.accept(window);
         window.showAndWait();
     }
@@ -99,7 +100,7 @@ public abstract class ApplicationController implements Initializable {
     static void showModal(String title, String text) {
         showModal(window -> {
             //Block events to other windows
-            window.initModality(Modality.APPLICATION_MODAL);
+
             window.setTitle(title);
             window.setHeight(100.0);
             window.setWidth(300.0);
