@@ -19,15 +19,18 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public abstract class ApplicationController implements Initializable  {
+public abstract class ApplicationController implements Initializable {
     @FXML
     protected TreeView<String> options;
-    public ApplicationController(){
+
+    public ApplicationController() {
 
     }
-    public ApplicationController(ApplicationController other){
+
+    public ApplicationController(ApplicationController other) {
         initFromController(other);
     }
+
     public MainSystem getSystem() {
         return system;
     }
@@ -49,46 +52,50 @@ public abstract class ApplicationController implements Initializable  {
     protected User user;
     protected Menu menu;
 
-    void initFromController(ApplicationController other){
+    void initFromController(ApplicationController other) {
         system = other.system;
         user = other.user;
         menu = other.menu;
-        if(getMenu()!=null && options != null)
+        if (getMenu() != null && options != null)
             options.setRoot(getMenu().getOptions());
     }
 
     // Don't ever call it outside main
-    void setSystem(MainSystem system){
+    void setSystem(MainSystem system) {
         this.system = system;
     }
 
-    void setMenu(Menu menu){
+    void setMenu(Menu menu) {
         this.menu = menu;
     }
 
     public void selectItems(MouseEvent event) throws IOException {
         TreeItem<String> item = options.getSelectionModel().getSelectedItem();
-        if(item!=null)
-            getMenu().switchScene(this,event, item.getValue());
+        if (item != null)
+            getMenu().switchScene(this, event, item.getValue());
     }
 
     @Override
     public final void initialize(URL location, ResourceBundle resources) {
-        if(getMenu()!=null)
+        if (getMenu() != null)
             options.setRoot(getMenu().getOptions());
 
     }
 
-    void postInit(){
+    void postInit() {
         assert system != null;
     }
 
-    static void showModal(String text){
+    static void showModal(String text) {
+        showModal("Warning", text);
+    }
+
+    static void showModal(String title, String text) {
         Stage window = new Stage();
 
         //Block events to other windows
         window.initModality(Modality.APPLICATION_MODAL);
-        window.setTitle("Warning");
+        window.setTitle(title);
         window.setHeight(100.0);
         window.setWidth(300.0);
 
@@ -106,8 +113,8 @@ public abstract class ApplicationController implements Initializable  {
         window.showAndWait();
     }
 
-    static void Assert(boolean value){
-        if(!value){
+    static void Assert(boolean value) {
+        if (!value) {
             throw new RuntimeException("");
         }
     }

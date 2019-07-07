@@ -98,6 +98,7 @@ public class CreateJobController extends ApplicationController {
             JobPostingManager jobPostingManager = company.getJobPostingManager();
             if (jobPostingManager.addJobPosting(jobPosting)) {
                 System.out.println("job added successfully");
+                showModal("Great","job added successfully");
             }
         }else{
             showModal("Cannot create job post.");

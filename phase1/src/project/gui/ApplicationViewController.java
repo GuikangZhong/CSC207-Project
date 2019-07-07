@@ -67,5 +67,6 @@ public class ApplicationViewController extends ApplicationController {
         JobPosting jobPosting = company.getJobPostingManager().getJobPosting(application.getJob().getTitle());
         applicant.withdraw(jobPosting, application);
         pollApplications();
+        showModal("Great", "withdrawed");
     }
 }

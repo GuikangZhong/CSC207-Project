@@ -72,6 +72,7 @@ public class ViewJobPostingController extends ApplicationController implements I
             showModal("Cannot apply");
         }else{
             System.out.println("Applied");
+            showModal("Great","Applied");
         }
     }
 
