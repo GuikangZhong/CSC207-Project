@@ -4,10 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TreeItem;
-import javafx.scene.control.TreeView;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import project.application.Application;
 import project.application.JobPosting;
@@ -15,6 +12,9 @@ import project.user.Applicant;
 
 import java.io.IOException;
 import java.net.URL;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -24,6 +24,11 @@ public class ViewJobPostingController extends ApplicationController implements I
     @FXML
     private TextArea description;
 
+    @FXML
+    private Label nNeeded;
+
+    @FXML
+    private Label openDays;
 
     @Override
     void postInit(){
@@ -42,6 +47,13 @@ public class ViewJobPostingController extends ApplicationController implements I
         if (jobPosting != null) {
             description.setText(jobPosting.getDescription());
         }
+        String pattern = "MM/dd/yyyy HH:mm:ss";
+
+
+        DateFormat df = new SimpleDateFormat(pattern);
+        openDays.setText(String.format("From %s to %s", jobPosting.getOpenDate().toLocalDate(),
+                jobPosting.getCloseDate().toLocalDate()));
+        nNeeded.setText(Integer.valueOf(jobPosting.getnApplicantNeeded()).toString());
     }
 
     public void applyButton(ActionEvent event){
