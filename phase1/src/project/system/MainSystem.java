@@ -1,6 +1,8 @@
 package project.system;
 
 import project.application.Company;
+import project.application.JobPosting;
+import project.application.JobPostingManager;
 import project.observer.SystemObserver;
 import project.user.*;
 
@@ -72,6 +74,19 @@ public class MainSystem implements Serializable {
 
     public Collection<Company> getCompanies() {
         return companies.values();
+    }
+
+    public List<JobPosting> getAllJobPostings() {
+        Collection<Company> companies = getCompanies();
+        List<JobPosting> jobPostings = new ArrayList<>();
+        for (Company company: companies){
+            JobPostingManager jobPostingManager = company.getJobPostingManager();
+            Collection<JobPosting> jp = jobPostingManager.getJobPostings().values();
+            if (jp.size() != 0) {
+                jobPostings.addAll(jp);
+            }
+        }
+        return jobPostings;
     }
 
     public void serializeToFile(String filename) throws IOException {
