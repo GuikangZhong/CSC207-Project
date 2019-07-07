@@ -25,7 +25,7 @@ public class AllApplicantsController extends ApplicationController{
     private ListView<String> applicantDocuments;
 
     @FXML
-    private ListView<String> applicantAppliedJobs;
+    private ListView<String> applicantApplyingJobs;
 
     @FXML
     private TextArea documentContent;
@@ -49,7 +49,7 @@ public class AllApplicantsController extends ApplicationController{
         }
     }
 
-    public void applicantDocumentViewClocked(MouseEvent event){
+    public void applicantDocumentViewClicked(MouseEvent event){
         String item = applicantDocuments.getSelectionModel().getSelectedItem();
         for(Document document : applicant.getDocuments()){
             if(document.getName().equals(item)){
@@ -66,13 +66,13 @@ public class AllApplicantsController extends ApplicationController{
             applicantDocuments.getItems().add(document.getName());
         }
 
-        applicantAppliedJobs.getItems().clear();
+        applicantApplyingJobs.getItems().clear();
         ApplicantHistory applicantHistory = applicant.getApplicantHistory();
-        List<Job> jobsApplied = applicantHistory.getJobApplied();
+        List<Job> jobsApplied = applicantHistory.getJobApplying();
         for (Job job: jobsApplied){
-            if (job.getCompany().getName().equals(getUser().getCompany())){
-                applicantAppliedJobs.getItems().add(job.getTitle());
-            }
+            //if (job.getCompany().getName().equals(getUser().getCompany())){
+            applicantApplyingJobs.getItems().add(job.getTitle());
+           // }
         }
     }
 

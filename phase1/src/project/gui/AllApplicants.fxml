@@ -15,7 +15,7 @@
               <content>
                 <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                   <children>
-                    <ListView fx:id="applicantDocuments" layoutX="22.0" layoutY="32.0" onMouseClicked="#applicantDocumentViewClocked" prefHeight="464.0" prefWidth="200.00009999999747" />
+                    <ListView fx:id="applicantDocuments" layoutX="22.0" layoutY="32.0" onMouseClicked="#applicantDocumentViewClicked" prefHeight="464.0" prefWidth="200.00009999999747" />
                     <TextArea fx:id="documentContent" layoutX="249.0" layoutY="34.0" prefHeight="463.0" prefWidth="200.0" />
                   </children>
                 </AnchorPane>
@@ -25,7 +25,7 @@
               <content>
                 <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                   <children>
-                    <ListView fx:id="applicantAppliedJobs" layoutX="14.0" layoutY="14.0" prefHeight="546.0" prefWidth="253.0" />
+                    <ListView id="applicantAppliedJobs" fx:id="applicantApplyingJobs" layoutX="14.0" layoutY="14.0" prefHeight="546.0" prefWidth="253.0" />
                   </children>
                 </AnchorPane>
               </content>
