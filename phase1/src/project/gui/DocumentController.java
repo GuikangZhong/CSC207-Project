@@ -35,6 +35,15 @@ public class DocumentController implements Initializable {
 
     private FileChooser fc = new FileChooser();
 
+    private void pollDocuments(){
+        // fill the document list
+        List<Document> documents = ((Applicant)Main.user).getDocuments();
+        if (documents.size() != 0) {
+            for (Document document1: documents){
+                documentList.getItems().add(document1);
+            }
+        }
+    }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         // menu
@@ -48,13 +57,7 @@ public class DocumentController implements Initializable {
         option.setExpanded(true);
         options.setRoot(option);
 
-        // fill the document list
-        List<Document> documents = ((Applicant)Main.user).getDocuments();
-        if (documents.size() != 0) {
-            for (Document document1: documents){
-                documentList.getItems().add(document1);
-            }
-        }
+        pollDocuments();
     }
 
     public void selectItems(MouseEvent event) throws IOException{
@@ -94,6 +97,7 @@ public class DocumentController implements Initializable {
         if (selectedFile != null) {
             CoverLetter coverLetter = CoverLetter.createByFileName(selectedFile.getName(), selectedFile.getAbsolutePath(), Main.system.now());
             ((Applicant)Main.user).addDocument(coverLetter);
+            pollDocuments();
         }
         else{
             System.out.println("File not selected");

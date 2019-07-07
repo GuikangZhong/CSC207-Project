@@ -10,6 +10,7 @@ import project.application.Company;
 import project.user.Applicant;
 import project.user.HR;
 import project.user.Interviewer;
+import project.user.UserHistory;
 
 import java.io.IOException;
 import java.net.URL;
@@ -40,11 +41,11 @@ public class StaffSignUpController implements Initializable {
     public void signUpButton(ActionEvent event) throws IOException {
         boolean added = false;
         if (TypeController.typeName.equals("HR")){
-            added = Main.system.addUser(new HR(null, usernameInput.getText(),passwordInput.getText(),
+            added = Main.system.addUser(new HR(new UserHistory(Main.system.now()), usernameInput.getText(),passwordInput.getText(),
                     realNameInput.getText(), companyName));
         }
         else if (TypeController.typeName.equals("Interviewer")){
-            added = Main.system.addUser(new Interviewer(null, usernameInput.getText(),passwordInput.getText(),
+            added = Main.system.addUser(new Interviewer(new UserHistory(Main.system.now()), usernameInput.getText(),passwordInput.getText(),
                     realNameInput.getText(), companyName));
         }
         if (added){

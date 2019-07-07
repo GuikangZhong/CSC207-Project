@@ -15,8 +15,8 @@ public class ApplicantHistory extends UserHistory {
     private LocalDateTime lastApplicationClosed;
     private List<Job> jobApplying;
 
-    public ApplicantHistory(SystemClock clock) {
-        super(clock);
+    public ApplicantHistory(LocalDateTime now) {
+        super(now);
         jobApplied = new ArrayList<>();
         jobApplying = new ArrayList<>();
         lastApplicationClosed = null;

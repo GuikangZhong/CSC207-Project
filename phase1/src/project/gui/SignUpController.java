@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
 import project.user.Applicant;
+import project.user.ApplicantHistory;
 
 import java.io.IOException;
 
@@ -19,7 +20,8 @@ public class SignUpController {
     public void signUpButton(ActionEvent event) throws IOException {
         boolean added = false;
         if (TypeController.typeName.equals("Applicant")){
-            added = Main.system.addUser(new Applicant(null, usernameInput.getText(),passwordInput.getText(),
+            added = Main.system.addUser(new Applicant(new ApplicantHistory(Main.system.now()),
+                    usernameInput.getText(),passwordInput.getText(),
                     realNameInput.getText(), null));
         }
         if (added){

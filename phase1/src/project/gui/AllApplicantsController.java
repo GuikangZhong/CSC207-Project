@@ -54,7 +54,6 @@ public class AllApplicantsController implements Initializable {
     }
 
     public void selectItems(MouseEvent event) throws IOException {
-        System.out.println("b");
         TreeItem<String> item = options.getSelectionModel().getSelectedItem();
         HRMenuController.getMenu().selectItem(this.getClass(),event, item);
     }
@@ -67,7 +66,6 @@ public class AllApplicantsController implements Initializable {
                 break;
             }
         }
-        //ocumentContent.setText();
     }
 
     public void applicantsViewClicked(MouseEvent event){
