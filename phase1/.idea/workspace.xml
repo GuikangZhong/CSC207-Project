@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="591d482d-6f65-4466-88a8-53d1ab9be688" name="Default Changelist" comment="working on login and signup page">
-      <change beforePath="$PROJECT_DIR$/src/project/gui/ApplicationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/ApplicationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/project/gui/ApplicationViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/ApplicationViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/gui/CreateJobController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/CreateJobController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/gui/ViewJobPostingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/ViewJobPostingController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,8 +42,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/project/gui/ApplicationViewController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="69" column="38" selection-start-line="69" selection-start-column="38" selection-end-line="69" selection-end-column="38" />
+            <state relative-caret-position="212">
+              <caret line="69" column="37" selection-start-line="69" selection-start-column="37" selection-end-line="69" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -353,7 +350,7 @@
     <frame x="-7" y="-7" width="1295" height="735" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49753696" visible="true" weight="0.1956346" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49753696" visible="true" weight="0.1956346" />
       <window_info id="Structure" order="1" sideWeight="0.50246304" side_tool="true" weight="0.2586904" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -362,7 +359,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32669982" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.497979" weight="0.32669982" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.497979" visible="true" weight="0.32669982" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39966834" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -908,8 +905,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/project/gui/ApplicationViewController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="69" column="38" selection-start-line="69" selection-start-column="38" selection-end-line="69" selection-end-column="38" />
+        <state relative-caret-position="212">
+          <caret line="69" column="37" selection-start-line="69" selection-start-column="37" selection-end-line="69" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
