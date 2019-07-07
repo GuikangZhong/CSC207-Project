@@ -107,6 +107,9 @@ public class JobPosting implements Serializable, SystemObserver {
     public boolean addApplication(Application application) {
         if (status == Status.OPEN) {
             if (requirement.satisfies(application)) {
+                if(applications.stream().anyMatch(app -> app.getJob() == application.getJob())){
+                    return false;
+                }
                 applications.add(application);
                 return true;
             } else {
