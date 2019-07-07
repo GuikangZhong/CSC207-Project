@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="591d482d-6f65-4466-88a8-53d1ab9be688" name="Default Changelist" comment="working on login and signup page">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/user/Applicant.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/phase1/project/user/Applicant.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/application/CV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/application/CV.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/application/CoverLetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/application/CoverLetter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/application/Document.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/application/Document.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/application/JobPostingManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/application/JobPostingManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/project/gui/Document.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/Document.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/project/gui/DocumentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/DocumentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/user/Applicant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/user/Applicant.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -69,8 +62,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/project/gui/DocumentController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="81" column="46" selection-start-line="81" selection-start-column="46" selection-end-line="81" selection-end-column="46" />
+            <state relative-caret-position="171">
+              <caret line="71" column="28" selection-start-line="71" selection-start-column="28" selection-end-line="71" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -450,7 +443,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32669982" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.497979" visible="true" weight="0.39303482" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.497979" weight="0.39303482" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39966834" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -994,8 +987,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/project/gui/DocumentController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="81" column="46" selection-start-line="81" selection-start-column="46" selection-end-line="81" selection-end-column="46" />
+        <state relative-caret-position="171">
+          <caret line="71" column="28" selection-start-line="71" selection-start-column="28" selection-end-line="71" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

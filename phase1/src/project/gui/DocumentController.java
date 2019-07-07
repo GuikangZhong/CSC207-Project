@@ -38,11 +38,9 @@ public class DocumentController extends ApplicationController implements Initial
     private void pollDocuments() {
         // fill the document list
         List<Document> documents = ((Applicant) getUser()).getDocuments();
-        if (documents.size() != 0) {
-            documentList.getItems().clear();
-            for (Document document1 : documents) {
-                documentList.getItems().add(document1);
-            }
+        documentList.getItems().clear();
+        for (Document document1 : documents) {
+            documentList.getItems().add(document1);
         }
     }
 
@@ -71,6 +69,7 @@ public class DocumentController extends ApplicationController implements Initial
             if (!((Applicant) getUser()).addDocument(coverLetter)) {
                 showModal("Cannot add document");
             }
+            pollDocuments();
         } else {
             System.out.println("File not selected");
         }
@@ -86,12 +85,18 @@ public class DocumentController extends ApplicationController implements Initial
             if (!((Applicant) getUser()).addDocument(cv)) {
                 showModal("Cannot add document");
             }
+            pollDocuments();
         } else {
             System.out.println("File not selected");
         }
     }
 
-
+    public void removeDocument(ActionEvent event){
+        int index = documentList.getSelectionModel().getSelectedIndex();
+        Applicant applicant = (Applicant)getUser();
+        applicant.removeDocument(index);
+        pollDocuments();
+    }
     public void exit(Event event) throws IOException {
         SceneSwitcher.switchScene(this, event, "Main.fxml");
     }
