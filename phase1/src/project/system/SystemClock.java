@@ -3,6 +3,7 @@ package project.system;
 import java.io.Serializable;
 import java.time.Clock;
 import java.time.Duration;
+import java.time.LocalDateTime;
 
 // A reference to MainSystem's clock
 // It's lifetime is as long as that of MainSystem
@@ -21,5 +22,9 @@ public class SystemClock implements Serializable {
 
     void offset(Duration duration) {
         clock = Clock.offset(clock, duration);
+    }
+
+    public LocalDateTime calculateFutureTime(LocalDateTime start, int gap){
+        return start.plusDays(gap);
     }
 }

@@ -36,7 +36,7 @@ public class HRMenuController implements Initializable {
             menu = new HRMenu();
         }
         companyName.setText(Main.user.getCompany());
-        options.setRoot(menu.getOption());
+        options.setRoot(menu.getOptions());
     }
 
     public void selectItems(MouseEvent event) throws IOException {
