@@ -20,8 +20,9 @@ public class SceneSwitcher {
         Stage loginWindow = (Stage) ((Node) event.getSource()).getScene().getWindow();
         loginWindow.setScene(mainScene);
         loginWindow.show();
-        while(controller.getSystem() == null)
-            controller.initFromController(current);
+        controller.initFromController(current);
+//        while(controller.getSystem() == null)
+//            controller.initFromController(current);
         controller.postInit();
         ApplicationController.Assert(controller.getSystem()!=null);
     }
