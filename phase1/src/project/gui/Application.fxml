@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="465.0" prefWidth="705.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="project.gui.ApplicationViewController">
+  <center>
+    <AnchorPane prefHeight="200.0" prefWidth="200.0">
+      <children>
+        <ListView id="Application" fx:id="applications" layoutX="0.0" layoutY="0.0" prefHeight="435.0" prefWidth="216.0" />
+        <Button layoutX="343.0" layoutY="371.0" mnemonicParsing="false" onAction="#withdraw" text="Withdraw" />
+      </children>
+    </AnchorPane>
+  </center>
+  <left>
+    <TreeView fx:id="options" onContextMenuRequested="#selectItems" onMouseClicked="#selectItems" prefHeight="400.0" prefWidth="139.0" BorderPane.alignment="CENTER" />
+  </left>
+  <top>
+    <AnchorPane prefHeight="23.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <children>
+        <Label prefHeight="27.0" prefWidth="111.0" text="Applicant" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="475.0" AnchorPane.topAnchor="1.0">
+          <font>
+            <Font size="18.0" />
+          </font>
+        </Label>
+        <Button alignment="CENTER" mnemonicParsing="false" onAction="#exit" text="Sign Out" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="7.0" />
+      </children>
+      <effect>
+        <ColorAdjust />
+      </effect>
+    </AnchorPane>
+  </top>
+</BorderPane>

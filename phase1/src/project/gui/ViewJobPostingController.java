@@ -47,10 +47,7 @@ public class ViewJobPostingController extends ApplicationController implements I
         if (jobPosting != null) {
             description.setText(jobPosting.getDescription());
         }
-        String pattern = "MM/dd/yyyy HH:mm:ss";
 
-
-        DateFormat df = new SimpleDateFormat(pattern);
         openDays.setText(String.format("From %s to %s", jobPosting.getOpenDate().toLocalDate(),
                 jobPosting.getCloseDate().toLocalDate()));
         nNeeded.setText(Integer.valueOf(jobPosting.getnApplicantNeeded()).toString());

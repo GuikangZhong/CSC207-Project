@@ -25,16 +25,32 @@ public class MainSystem implements Serializable {
     private HashMap<String, Company> companies;
     private ApplicantManager applicants;
 
+    private void test() {
+        String[] companies = {"UofT", "Microsoft", "Google"};
+        String names = "abcdefghijklmnopqrstuvwxyz";
+        int index = 0;
+        for (String c : companies) {
+            addCompany(c);
+            for (int i = 0; i < 8; i++) {
+                addUser(new Applicant(new ApplicantHistory(now()),
+                        "" + names.charAt(index),
+                        "a", "a", c));
+                index++;
+            }
+        }
+    }
+
     public MainSystem() {
         clock = new SystemClock();
         companies = new HashMap<>();
         applicants = new ApplicantManager(this);
         observers = new ArrayList<>();
         addObserver(applicants);
+        test();
     }
 
     public boolean addCompany(String name) {
-        if (getCompany(name) == null){
+        if (getCompany(name) == null) {
             Company company = new Company(name, this);
             companies.put(name, company);
             addObserver(company);
@@ -79,7 +95,7 @@ public class MainSystem implements Serializable {
     public List<JobPosting> getAllJobPostings() {
         Collection<Company> companies = getCompanies();
         List<JobPosting> jobPostings = new ArrayList<>();
-        for (Company company: companies){
+        for (Company company : companies) {
             JobPostingManager jobPostingManager = company.getJobPostingManager();
             Collection<JobPosting> jp = jobPostingManager.getJobPostings().values();
             if (jp.size() != 0) {

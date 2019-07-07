@@ -6,6 +6,7 @@ import project.system.SystemClock;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
 public class ApplicantHistory extends UserHistory {
@@ -51,10 +52,6 @@ public class ApplicantHistory extends UserHistory {
     }
 
     void removeJobApplying(String name) {
-        for (Job job : jobApplying) {
-            if (job.getTitle().equals(name)) {
-                jobApplying.remove(job);
-            }
-        }
+        jobApplying.removeIf(job -> job.getTitle().equals(name));
     }
 }

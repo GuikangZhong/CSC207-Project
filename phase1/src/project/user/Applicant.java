@@ -5,6 +5,7 @@ import project.system.SystemClock;
 
 import java.io.Serializable;
 import java.util.*;
+import java.util.stream.Collectors;
 
 // TODO: When InterviewAssignment.submit is called, applicants will be notified whether 
 //they passed the interview of not.
@@ -38,10 +39,10 @@ public class Applicant extends User implements Serializable {
         return Collections.unmodifiableList(documents);
     }
 
-    public Document getDocument(String name){
+    public Document getDocument(String name) {
         if (documents.size() != 0) {
-            for (Document document: documents){
-                if (document.getName().equals(name)){
+            for (Document document : documents) {
+                if (document.getName().equals(name)) {
                     return document;
                 }
             }
@@ -73,20 +74,18 @@ public class Applicant extends User implements Serializable {
     // throws RuntimeException if requirement not met
     public Application apply(JobPosting jobPosting) {
         Application application = new Application(this, getDocuments(), jobPosting.getJob());
-        if(jobPosting.addApplication(application)) {
+        if (jobPosting.addApplication(application)) {
             applications.add(application);
             getApplicantHistory().addJobApplying(jobPosting.getJob());
             return application;
-        }return null;
+        }
+        return null;
     }
 
-   public void withdraw(String jobName) {
-        for (Application application : applications) {
-            if (application.getJob().getTitle().equals(jobName)) {
-                applications.remove(application);
-                this.getApplicantHistory().removeJobApplying(jobName);
-            }
-        }
+    public void withdraw(JobPosting jobPosting, Application application) {
+        this.getApplicantHistory().removeJobApplying(jobPosting.getJobTitle());
+        applications.remove(application);
+        jobPosting.removeApplication(application);
     }
 
     @Override
