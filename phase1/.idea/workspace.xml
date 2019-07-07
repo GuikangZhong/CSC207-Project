@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="591d482d-6f65-4466-88a8-53d1ab9be688" name="Default Changelist" comment="working on login and signup page">
-      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/AddCompany.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/AddCompany.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/AllApplicantsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/AllApplicantsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/TypeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/TypeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/gui/AddCompany.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/AddCompany.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/gui/AllApplicantsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/AllApplicantsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/project/gui/ApplicationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/ApplicationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/gui/CreateJobController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/CreateJobController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/gui/DocumentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/DocumentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/gui/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/MainWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/gui/StaffSignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/StaffSignUpController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/gui/TypeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/TypeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/gui/ViewJobPostingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/ViewJobPostingController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,23 +19,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/project/gui/TypeController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="23" selection-start-line="23" selection-end-line="23" />
-              <folding>
-                <element signature="e#629#630#0" expanded="true" />
-                <element signature="e#701#702#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/project/gui/AllApplicantsController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="75" column="5" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
+            <state relative-caret-position="84">
+              <caret line="29" column="9" lean-forward="true" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -54,11 +30,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/project/gui/ApplicationController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="72" column="45" selection-start-line="72" selection-start-column="45" selection-end-line="72" selection-end-column="45" />
+            <state relative-caret-position="105">
+              <caret line="49" column="52" selection-start-line="49" selection-start-column="52" selection-end-line="49" selection-end-column="52" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#565#566#0" expanded="true" />
@@ -71,11 +47,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/project/gui/MainWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
+            <state relative-caret-position="137">
               <caret line="26" column="22" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/project/gui/LoginController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="361">
+              <caret line="80" column="31" selection-start-line="80" selection-start-column="31" selection-end-line="80" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -102,8 +87,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/project/gui/ViewJobPostingController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="24" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="208">
+              <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -111,8 +96,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/project/gui/SceneSwitcher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="14" column="62" lean-forward="true" selection-start-line="14" selection-start-column="62" selection-end-line="14" selection-end-column="62" />
+            <state relative-caret-position="240">
+              <caret line="15" column="36" lean-forward="true" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#540#563#0" expanded="true" />
@@ -207,7 +192,6 @@
         <option value="$PROJECT_DIR$/src/project/gui/Menu.java" />
         <option value="$PROJECT_DIR$/src/project/gui/ApplicantMenuController.java" />
         <option value="$PROJECT_DIR$/src/project/gui/LoginController.java" />
-        <option value="$PROJECT_DIR$/src/project/gui/SceneSwitcher.java" />
         <option value="$PROJECT_DIR$/src/project/gui/TypeController.java" />
         <option value="$PROJECT_DIR$/src/project/gui/DocumentController.java" />
         <option value="$PROJECT_DIR$/src/project/gui/CreateJobController.java" />
@@ -215,8 +199,9 @@
         <option value="$PROJECT_DIR$/src/project/gui/MainWindow.java" />
         <option value="$PROJECT_DIR$/src/project/gui/StaffSignUpController.java" />
         <option value="$PROJECT_DIR$/src/project/gui/AddCompany.fxml" />
-        <option value="$PROJECT_DIR$/src/project/gui/ApplicationController.java" />
         <option value="$PROJECT_DIR$/src/project/gui/AllApplicantsController.java" />
+        <option value="$PROJECT_DIR$/src/project/gui/SceneSwitcher.java" />
+        <option value="$PROJECT_DIR$/src/project/gui/ApplicationController.java" />
       </list>
     </option>
   </component>
@@ -438,7 +423,7 @@
     <frame x="-7" y="-7" width="1295" height="735" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49753696" visible="true" weight="0.1956346" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49753696" visible="true" weight="0.1956346" />
       <window_info id="Structure" order="1" sideWeight="0.50246304" side_tool="true" weight="0.2586904" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -447,7 +432,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32669982" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4987874" visible="true" weight="0.32669982" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4987874" weight="0.32669982" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39966834" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -833,13 +818,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/gui/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="70">
-          <caret line="70" column="35" selection-start-line="70" selection-start-column="35" selection-end-line="70" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/project/gui/SignUpController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-96">
@@ -885,38 +863,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/gui/ViewJobPostingController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/project/gui/StaffSignUpController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="86">
           <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/gui/SceneSwitcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="14" column="62" lean-forward="true" selection-start-line="14" selection-start-column="62" selection-end-line="14" selection-end-column="62" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#540#563#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/gui/MainWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="26" column="22" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -928,24 +878,59 @@
       </provider>
       <provider editor-type-id="JavaFX-Scene-Builder" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/gui/ApplicationController.java">
+    <entry file="file://$PROJECT_DIR$/src/project/gui/AllApplicantsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="72" column="45" selection-start-line="72" selection-start-column="45" selection-end-line="72" selection-end-column="45" />
+        <state relative-caret-position="84">
+          <caret line="29" column="9" lean-forward="true" selection-start-line="29" selection-start-column="9" selection-end-line="29" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#565#566#0" expanded="true" />
-            <element signature="e#606#607#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/gui/AllApplicantsController.java">
+    <entry file="file://$PROJECT_DIR$/src/project/gui/MainWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="75" column="5" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
+        <state relative-caret-position="137">
+          <caret line="26" column="22" selection-start-line="26" selection-start-column="22" selection-end-line="26" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/gui/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="80" column="31" selection-start-line="80" selection-start-column="31" selection-end-line="80" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/gui/SceneSwitcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="15" column="36" lean-forward="true" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#540#563#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/gui/ViewJobPostingController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/gui/ApplicationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="49" column="52" selection-start-line="49" selection-start-column="52" selection-end-line="49" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#565#566#0" expanded="true" />
+            <element signature="e#606#607#0" expanded="true" />
           </folding>
         </state>
       </provider>

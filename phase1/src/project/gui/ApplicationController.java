@@ -46,6 +46,8 @@ public abstract class ApplicationController implements Initializable  {
         system = other.system;
         user = other.user;
         menu = other.menu;
+        if(getMenu()!=null && options != null)
+            options.setRoot(getMenu().getOptions());
     }
 
     // Don't ever call it outside main
@@ -70,7 +72,6 @@ public abstract class ApplicationController implements Initializable  {
     }
 
     void postInit(){
-        if(getMenu()!=null && options != null)
-            options.setRoot(getMenu().getOptions());
+
     }
 }
