@@ -70,8 +70,6 @@ public class CreateJobController extends ApplicationController {
 
     public void submitJobPos(ActionEvent event) throws IOException {
         String title1 = title.getText();
-//        String openDate = dateOpened.getText();
-//        String closeDate = dateClosed.getText();
         Integer openYear = openedYear.getSelectionModel().getSelectedItem();
         Integer openMonth = openedMonth.getSelectionModel().getSelectedItem();
         Integer openDay = openedDay.getSelectionModel().getSelectedItem();
@@ -86,19 +84,23 @@ public class CreateJobController extends ApplicationController {
 
         LocalDateTime openTime = LocalDateTime.of(openDate, timeNow);
         LocalDateTime closeTime = LocalDateTime.of(closedDate, timeNow);
+        if(openTime.isBefore(closeTime)) {
 
-        String numOpen = numOpenings.getText();
-        String description_ = jobDescription.getText();
-        String comName = companyName.getText();
-        Company company = getSystem().getCompany(comName);
-        Job job = new Job(title1, company);
-        Requirement requirement = new BasicRequirement();
-        JobPosting jobPosting = new JobPosting(job, openTime,
-                closeTime
-                , requirement, Integer.parseInt(numOpen), description_);
-        JobPostingManager jobPostingManager = company.getJobPostingManager();
-        if(jobPostingManager.addJobPosting(jobPosting)){
-            System.out.println("job added successfully");
+            String numOpen = numOpenings.getText();
+            String description_ = jobDescription.getText();
+            String comName = companyName.getText();
+            Company company = getSystem().getCompany(comName);
+            Job job = new Job(title1, company);
+            Requirement requirement = new BasicRequirement();
+            JobPosting jobPosting = new JobPosting(job, openTime,
+                    closeTime
+                    , requirement, Integer.parseInt(numOpen), description_);
+            JobPostingManager jobPostingManager = company.getJobPostingManager();
+            if (jobPostingManager.addJobPosting(jobPosting)) {
+                System.out.println("job added successfully");
+            }
+        }else{
+            showModal("Cannot create job post.");
         }
 
     }
