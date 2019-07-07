@@ -30,12 +30,12 @@ public class AllApplicantsController implements Initializable {
     private ListView<String> applicantAppliedJobs;
 
     @FXML
-    private TextField documentContent;
+    private TextArea documentContent;
 
     @FXML
     private Label companyName;
 
-//    private Applicant applicant;
+    private Applicant applicant;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -62,7 +62,7 @@ public class AllApplicantsController implements Initializable {
 
     public void applicantsViewClicked(MouseEvent event){
         applicantDocuments.getItems().clear();
-        Applicant applicant = (Applicant)Main.system.getUser(applicants.getSelectionModel().getSelectedItem());
+        applicant = (Applicant)Main.system.getUser(applicants.getSelectionModel().getSelectedItem());
         for(Document document : applicant.getDocuments()){
             applicantDocuments.getItems().add(document.getName());
         }
