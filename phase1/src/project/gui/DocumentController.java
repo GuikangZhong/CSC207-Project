@@ -102,7 +102,7 @@ public class DocumentController extends ApplicationController implements Initial
         Applicant applicant = (Applicant)getUser();
         applicant.removeDocument(index);
         pollDocuments();
-        showSelectedDoucment();
+        showSelectedDocument();
     }
     public void exit(Event event) throws IOException {
         SceneSwitcher.switchScene(this, event, "Main.fxml");
