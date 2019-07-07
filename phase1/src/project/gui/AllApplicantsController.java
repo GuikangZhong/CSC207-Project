@@ -70,9 +70,9 @@ public class AllApplicantsController extends ApplicationController{
         ApplicantHistory applicantHistory = applicant.getApplicantHistory();
         List<Job> jobsApplied = applicantHistory.getJobApplying();
         for (Job job: jobsApplied){
-            //if (job.getCompany().getName().equals(getUser().getCompany())){
-            applicantApplyingJobs.getItems().add(job.getTitle());
-           // }
+            if (job.getCompany().getName().equals(getUser().getCompany())){
+                applicantApplyingJobs.getItems().add(job.getTitle());
+           }
         }
     }
 
