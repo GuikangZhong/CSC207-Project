@@ -16,9 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class AllApplicantsController implements Initializable {
-    @FXML
-    private TreeView<String> options;
+public class AllApplicantsController extends ApplicationController{
 
     @FXML
     private ListView<String> applicants;
@@ -37,25 +35,11 @@ public class AllApplicantsController implements Initializable {
 
     private Applicant applicant;
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-
-        companyName.setText(Main.user.getCompany());
-        options.setRoot(HRMenuController.getMenu().getOptions());
-
-        this.initializeApplicants();
-    }
-
     private void initializeApplicants(){
-        HashMap<String, Applicant> applicants = Main.system.getApplicants();  // Potential problem??
+        HashMap<String, Applicant> applicants = getSystem().getApplicants();  // Potential problem??
         for(String name: applicants.keySet()){
             this.applicants.getItems().add(name);
         }
-    }
-
-    public void selectItems(MouseEvent event) throws IOException {
-        TreeItem<String> item = options.getSelectionModel().getSelectedItem();
-        HRMenuController.getMenu().selectItem(this.getClass(),event, item);
     }
 
     public void applicantDocumentViewClocked(MouseEvent event){
@@ -70,7 +54,7 @@ public class AllApplicantsController implements Initializable {
 
     public void applicantsViewClicked(MouseEvent event){
         applicantDocuments.getItems().clear();
-        applicant = (Applicant)Main.system.getUser(applicants.getSelectionModel().getSelectedItem());
+        applicant = (Applicant)getSystem().getUser(applicants.getSelectionModel().getSelectedItem());
         for(Document document : applicant.getDocuments()){
             applicantDocuments.getItems().add(document.getName());
         }
@@ -79,7 +63,7 @@ public class AllApplicantsController implements Initializable {
         ApplicantHistory applicantHistory = applicant.getApplicantHistory();
         List<Job> jobsApplied = applicantHistory.getJobApplied();
         for (Job job: jobsApplied){
-            if (job.getCompany().getName().equals(Main.user.getCompany())){
+            if (job.getCompany().getName().equals(getUser().getCompany())){
                 applicantAppliedJobs.getItems().add(job.getTitle());
             }
         }
@@ -88,6 +72,6 @@ public class AllApplicantsController implements Initializable {
 
 
     public void exit(Event event) throws IOException{
-        SceneSwitcher.switchScene(this.getClass(), event, "Main.fxml");
+        SceneSwitcher.switchScene(this, event, "Main.fxml");
     }
 }

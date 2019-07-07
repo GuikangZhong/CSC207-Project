@@ -23,7 +23,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class DocumentController implements Initializable {
+public class DocumentController  extends ApplicationController implements Initializable {
     @FXML
     private TreeView<String> options;
     @FXML

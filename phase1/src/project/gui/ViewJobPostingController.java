@@ -16,7 +16,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class ViewJobPostingController implements Initializable {
+public class ViewJobPostingController extends ApplicationController implements Initializable{
     @FXML
     private TreeView<String> options;
     @FXML
@@ -38,7 +38,7 @@ public class ViewJobPostingController implements Initializable {
         options.setRoot(option);
 
         // fill the document list
-        List<JobPosting> jobPostings = Main.system.getAllJobPostings();
+        List<JobPosting> jobPostings = getSystem().getAllJobPostings();
         if (jobPostings.size() != 0) {
             for (JobPosting jp : jobPostings){
                 jobList.getItems().add(jp);

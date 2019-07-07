@@ -8,7 +8,7 @@ import project.user.ApplicantHistory;
 
 import java.io.IOException;
 
-public class SignUpController {
+public class SignUpController extends ApplicationController{
 
     @FXML
     private TextField usernameInput;
@@ -20,7 +20,7 @@ public class SignUpController {
     public void signUpButton(ActionEvent event) throws IOException {
         boolean added = false;
         if (TypeController.typeName.equals("Applicant")){
-            added = Main.system.addUser(new Applicant(new ApplicantHistory(Main.system.now()),
+            added = getSystem().addUser(new Applicant(new ApplicantHistory(getSystem().now()),
                     usernameInput.getText(),passwordInput.getText(),
                     realNameInput.getText(), null));
         }

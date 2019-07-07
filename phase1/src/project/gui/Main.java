@@ -14,15 +14,16 @@ import project.user.*;
 
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
 
 public class Main extends Application {
 
-    static MainSystem system;
-    static String autoSaveFileName = "auto.ser";
-    @FXML
-    private TextField companyName;
-    static User user = null;
 
+    static String autoSaveFileName = "auto.ser";
+
+    private static MainSystem system;
     public static void main(String[] args) throws IOException, ClassNotFoundException{
         try {
             system = MainSystem.loadFromFile(autoSaveFileName);
@@ -37,41 +38,11 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Main.fxml"));
+        Parent root = loader.load();
+        loader.<ApplicationController>getController().setSystem(system);
         primaryStage.setTitle("App");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
     }
-
-    public void loginButton(ActionEvent event) throws IOException {
-        SceneSwitcher.switchScene(this.getClass(), event, "LoginPage.fxml");
-
-    }
-
-    public void signUpButton(ActionEvent event) throws IOException{
-        SceneSwitcher.switchScene(this.getClass(), event, "Type.fxml");
-    }
-
-    public void addCompanyButton(ActionEvent event) throws IOException{
-        SceneSwitcher.switchScene(this.getClass(), event, "AddCompany.fxml");
-    }
-
-    public void addCompanyConfirmButton(ActionEvent event) throws IOException{
-        if (companyName.getText() != null) {
-            String name = companyName.getText().toLowerCase();
-            boolean added = system.addCompany(name);
-            if (added){
-                System.out.println("Successfully added");
-                SceneSwitcher.switchScene(this.getClass(), event, "Main.fxml");
-            }
-            else{
-                System.out.println("Company already exist");
-            }
-        }
-    }
-
-    public void returnButton(ActionEvent event) throws IOException{
-        SceneSwitcher.switchScene(this.getClass(), event, "Main.fxml");
-    }
-
 }

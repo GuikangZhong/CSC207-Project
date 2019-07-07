@@ -18,7 +18,7 @@ import project.user.User;
 
 import java.io.IOException;
 
-public class LoginController {
+public class LoginController extends ApplicationController{
 
     @FXML
     private TextField usernameInput;
@@ -35,7 +35,7 @@ public class LoginController {
 
     public void loginButton(ActionEvent event) throws IOException {
         boolean correct = false;
-        User user = Main.system.getUser(usernameInput.getText());
+        User user = getSystem().getUser(usernameInput.getText());
 
         if (user != null){
             correct = user.verifyPassword(passwordInput.getText());
@@ -64,16 +64,38 @@ public class LoginController {
             window.showAndWait();
         }
         else if (user.getType() == User.Type.APPLICANT){
-            Main.user = user;
-            SceneSwitcher.switchScene(this.getClass(), event, "ApplicantMenu.fxml");
+            setUser(user);
+            Menu menu = new Menu();
+            menu.addOption("Documents","Document.fxml")
+            .addOption("Dashboard","ApplicantMenu.fxml")
+            .addOption("Document","ViewJobPosting.fxml")
+            .addOption("Job posting","ViewJobPosting.fxml")
+            .addOption("Application","Application.fxml")
+            .addOption("Your history","ApplicantHistory.fxml");
+            setMenu(menu);
+            SceneSwitcher.switchScene(this, event, "ApplicantMenu.fxml");
         }
         else if (user.getType() == User.Type.HR){
-            Main.user = user;
-            SceneSwitcher.switchScene(this.getClass(), event, "HRMenu.fxml");
+            setUser(user);
+            Menu menu = new Menu();
+            menu.addOption("View all applicants","AllApplicants.fxml")
+                    .addOption("View applicants for a job posting","PostingApplicants.fxml")
+                    .addOption("Inspect interviewers","Miscellaneous.fxml")
+                    .addOption("Create Job Posting","CreateJobPos.fxml");
+            setMenu(menu);
+            SceneSwitcher.switchScene(this, event, "HRMenu.fxml");
         }
         else if (user.getType() == User.Type.INTERVIEWER){
-            Main.user = user;
-            SceneSwitcher.switchScene(this.getClass(), event, "InterviewerMenu.fxml");
+            setUser(user);
+            Menu menu = new Menu();
+            menu.addOption("View all applicants","Document.fxml")
+                    .addOption("Dashboard","ApplicantMenu.fxml")
+                    .addOption("Document","ViewJobPosting.fxml")
+                    .addOption("Job posting","ViewJobPosting.fxml")
+                    .addOption("Application","Application.fxml")
+                    .addOption("Your history","ApplicantHistory.fxml");
+            setMenu(menu);
+            SceneSwitcher.switchScene(this, event, "InterviewerMenu.fxml");
         }
 
     }

@@ -13,7 +13,7 @@ import java.util.ResourceBundle;
 
 
 
-public class TypeController implements Initializable {
+public class TypeController extends ApplicationController implements Initializable {
 
     @FXML
     ChoiceBox<String> type;
@@ -28,15 +28,15 @@ public class TypeController implements Initializable {
     }
 
     public void returnButton(ActionEvent event) throws IOException {
-        SceneSwitcher.switchScene(this.getClass(), event, "Main.fxml");
+        SceneSwitcher.switchScene(this, event, "Main.fxml");
     }
 
     public void confirmButton(ActionEvent event) throws IOException {
         if (typeName != null){
             if (typeName.equals("Applicant"))
-                SceneSwitcher.switchScene(this.getClass(), event, "SignUpPage.fxml");
+                SceneSwitcher.switchScene(this, event, "SignUpPage.fxml");
             else if (typeName.equals("Interviewer") || typeName.equals("HR"))
-                SceneSwitcher.switchScene(this.getClass(), event, "StaffSignUpPage.fxml");
+                SceneSwitcher.switchScene(this, event, "StaffSignUpPage.fxml");
         }
     }
 

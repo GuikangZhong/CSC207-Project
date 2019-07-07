@@ -18,7 +18,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class StaffSignUpController implements Initializable {
+public class StaffSignUpController extends ApplicationController implements Initializable {
 
     @FXML
     private TextField usernameInput;
@@ -32,7 +32,7 @@ public class StaffSignUpController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        Collection<Company> companies = Main.system.getCompanies();
+        Collection<Company> companies = getSystem().getCompanies();
         for (Company company: companies){
             companyNameInput.getItems().add(company.getName());
         }
@@ -41,23 +41,23 @@ public class StaffSignUpController implements Initializable {
     public void signUpButton(ActionEvent event) throws IOException {
         boolean added = false;
         if (TypeController.typeName.equals("HR")){
-            added = Main.system.addUser(new HR(new UserHistory(Main.system.now()), usernameInput.getText(),passwordInput.getText(),
+            added = getSystem().addUser(new HR(new UserHistory(getSystem().now()), usernameInput.getText(),passwordInput.getText(),
                     realNameInput.getText(), companyName));
         }
         else if (TypeController.typeName.equals("Interviewer")){
-            added = Main.system.addUser(new Interviewer(new UserHistory(Main.system.now()), usernameInput.getText(),passwordInput.getText(),
+            added = getSystem().addUser(new Interviewer(new UserHistory(getSystem().now()), usernameInput.getText(),passwordInput.getText(),
                     realNameInput.getText(), companyName));
         }
         if (added){
             System.out.println(TypeController.typeName);
-            SceneSwitcher.switchScene(this.getClass(), event, "SignUpSuccess.fxml");
+            SceneSwitcher.switchScene(this, event, "SignUpSuccess.fxml");
         }
         else
             System.out.println("Username already exists");
     }
 
     public void returnToTypeButton(ActionEvent event) throws IOException {
-        SceneSwitcher.switchScene(this.getClass(), event, "Type.fxml");
+        SceneSwitcher.switchScene(this, event, "Type.fxml");
     }
 
     public void companySelected(MouseEvent event) {
