@@ -3,16 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="591d482d-6f65-4466-88a8-53d1ab9be688" name="Default Changelist" comment="working on login and signup page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/AllApplicantsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/AllApplicantsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/system/MainSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/phase1/project/system/MainSystem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/system/SystemClock.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/phase1/project/system/SystemClock.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/user/ApplicantManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/phase1/project/user/ApplicantManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/application/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/application/Company.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/application/JobPostingManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/application/JobPostingManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/gui/ViewJobPosting.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/ViewJobPosting.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/gui/ViewJobPostingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/ViewJobPostingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/system/MainSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/system/MainSystem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/user/ApplicantManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/user/ApplicantManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/gui/ApplicationViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/ApplicationViewController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,15 +19,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/project/gui/CreateJobController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="49" column="39" selection-start-line="49" selection-start-column="39" selection-end-line="49" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/project/gui/MainWindow.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -61,8 +43,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/project/system/SystemClock.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+            <state relative-caret-position="68">
+              <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
               <folding>
                 <element signature="e#795#796#0" expanded="true" />
                 <element signature="e#837#838#0" expanded="true" />
@@ -74,8 +56,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/project/system/MainSystem.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
+            <state relative-caret-position="116">
+              <caret line="140" column="29" lean-forward="true" selection-start-line="140" selection-start-column="29" selection-end-line="140" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2812#2813#0" expanded="true" />
@@ -83,6 +65,18 @@
                 <element signature="e#3003#3004#0" expanded="true" />
                 <element signature="e#4116#4117#0" expanded="true" />
                 <element signature="e#4211#4212#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/project/gui/ApplicationViewController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="148">
+              <caret line="64" column="52" lean-forward="true" selection-start-line="64" selection-start-column="52" selection-end-line="64" selection-end-column="52" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -100,11 +94,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/project/application/JobPostingManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="164">
-              <caret line="83" column="50" selection-start-line="83" selection-start-column="50" selection-end-line="83" selection-end-column="50" />
+            <state relative-caret-position="660">
+              <caret line="87" column="5" lean-forward="true" selection-start-line="87" selection-start-column="5" selection-end-line="87" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -203,7 +197,6 @@
         <option value="$PROJECT_DIR$/src/project/gui/Application.fxml" />
         <option value="$PROJECT_DIR$/src/project/user/ApplicantHistory.java" />
         <option value="$PROJECT_DIR$/src/project/user/Applicant.java" />
-        <option value="$PROJECT_DIR$/src/project/gui/ApplicationViewController.java" />
         <option value="$PROJECT_DIR$/src/project/gui/AllApplicantsController.java" />
         <option value="$PROJECT_DIR$/src/project/gui/PostingApplicants.fxml" />
         <option value="$PROJECT_DIR$/src/project/gui/PostingApplicantsController.java" />
@@ -215,6 +208,7 @@
         <option value="$PROJECT_DIR$/src/project/system/MainSystem.java" />
         <option value="$PROJECT_DIR$/src/project/application/Company.java" />
         <option value="$PROJECT_DIR$/src/project/application/JobPostingManager.java" />
+        <option value="$PROJECT_DIR$/src/project/gui/ApplicationViewController.java" />
       </list>
     </option>
   </component>
@@ -438,7 +432,7 @@
     <frame x="-7" y="-7" width="1295" height="735" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49753696" visible="true" weight="0.1956346" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49753696" visible="true" weight="0.1956346" />
       <window_info id="Structure" order="1" sideWeight="0.50246304" side_tool="true" weight="0.2586904" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -447,7 +441,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32669982" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.497979" visible="true" weight="0.32669982" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.497979" visible="true" weight="0.32669982" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39966834" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -754,18 +748,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/gui/ApplicationViewController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="67" column="52" lean-forward="true" selection-start-line="67" selection-start-column="52" selection-end-line="67" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#914#1278#0" expanded="true" />
-            <element signature="e#1277#1278#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/project/application/Application.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
@@ -905,19 +887,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/project/gui/CreateJobController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="49" column="39" selection-start-line="49" selection-start-column="39" selection-end-line="49" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/system/SystemClock.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
-          <folding>
-            <element signature="e#795#796#0" expanded="true" />
-            <element signature="e#837#838#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="894">
+          <caret line="96" column="25" selection-start-line="96" selection-start-column="25" selection-end-line="96" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -970,18 +941,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/system/MainSystem.java">
+    <entry file="file://$PROJECT_DIR$/src/project/application/JobPostingManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2812#2813#0" expanded="true" />
-            <element signature="e#2913#2914#0" expanded="true" />
-            <element signature="e#3003#3004#0" expanded="true" />
-            <element signature="e#4116#4117#0" expanded="true" />
-            <element signature="e#4211#4212#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="660">
+          <caret line="87" column="5" lean-forward="true" selection-start-line="87" selection-start-column="5" selection-end-line="87" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -995,10 +958,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/application/JobPostingManager.java">
+    <entry file="file://$PROJECT_DIR$/src/project/system/SystemClock.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="164">
-          <caret line="83" column="50" selection-start-line="83" selection-start-column="50" selection-end-line="83" selection-end-column="50" />
+        <state relative-caret-position="68">
+          <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
+          <folding>
+            <element signature="e#795#796#0" expanded="true" />
+            <element signature="e#837#838#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/system/MainSystem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="140" column="29" lean-forward="true" selection-start-line="140" selection-start-column="29" selection-end-line="140" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2812#2813#0" expanded="true" />
+            <element signature="e#2913#2914#0" expanded="true" />
+            <element signature="e#3003#3004#0" expanded="true" />
+            <element signature="e#4116#4117#0" expanded="true" />
+            <element signature="e#4211#4212#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/gui/ApplicationViewController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="64" column="52" lean-forward="true" selection-start-line="64" selection-start-column="52" selection-end-line="64" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

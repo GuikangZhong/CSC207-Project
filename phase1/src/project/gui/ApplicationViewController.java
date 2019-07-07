@@ -63,7 +63,7 @@ public class ApplicationViewController extends ApplicationController {
     public void withdraw(ActionEvent event) {
         Application application = applications.getSelectionModel().getSelectedItem();
         Applicant applicant = (Applicant) getUser();
-        Company company = getSystem().getCompany(applicant.getCompany());
+        Company company = application.getJob().getCompany();
         JobPosting jobPosting = company.getJobPostingManager().getJobPosting(application.getJob().getTitle());
         applicant.withdraw(jobPosting, application);
         pollApplications();
