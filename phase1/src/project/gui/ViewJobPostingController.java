@@ -46,11 +46,11 @@ public class ViewJobPostingController extends ApplicationController implements I
         JobPosting jobPosting = jobList.getSelectionModel().getSelectedItem();
         if (jobPosting != null) {
             description.setText(jobPosting.getDescription());
+            openDays.setText(String.format("From %s to %s", jobPosting.getOpenDate().toLocalDate(),
+                    jobPosting.getCloseDate().toLocalDate()));
+            nNeeded.setText(Integer.valueOf(jobPosting.getnApplicantNeeded()).toString());
         }
 
-        openDays.setText(String.format("From %s to %s", jobPosting.getOpenDate().toLocalDate(),
-                jobPosting.getCloseDate().toLocalDate()));
-        nNeeded.setText(Integer.valueOf(jobPosting.getnApplicantNeeded()).toString());
     }
 
     public void applyButton(ActionEvent event){
