@@ -80,6 +80,10 @@ public class JobPostingManager implements InterviewObserver, Serializable, Syste
 
     @Override
     public void updateOnTime(LocalDateTime now) {
-
+        for(JobPosting jobPosting:jobPostings.values()){
+            if(jobPosting.getCloseDate().isBefore(now)){
+                jobPosting.setStatus(JobPosting.Status.CLOSED);
+            }
+        }
     }
 }

@@ -1,8 +1,6 @@
 package project.system;
 
-import project.application.Company;
-import project.application.JobPosting;
-import project.application.JobPostingManager;
+import project.application.*;
 import project.observer.SystemObserver;
 import project.user.*;
 
@@ -30,6 +28,7 @@ public class MainSystem implements Serializable {
     private void test() {
         String[] companies = {"UofT", "Microsoft", "Google"};
         String names = "abcdefghijklmnopqrstuvwxyz";
+
         int index = 0;
         for (String c : companies) {
             addCompany(c);
@@ -38,6 +37,15 @@ public class MainSystem implements Serializable {
                         "" + names.charAt(index),
                         "a", "" + names.charAt(index), c));
                 index++;
+            }
+            Company company = getCompany(c);
+            JobPostingManager manager = company.getJobPostingManager();
+            String [] jobs = {"-A","-B","-C","-D","-E","-F"};
+            for(String job:jobs)
+            {
+                JobPosting jobPosting = new JobPosting(new Job(c + job,company),now(),
+                        now().plusDays(3),new BasicRequirement(),1,c + job + "--");
+                manager.addJobPosting(jobPosting);
             }
         }
     }

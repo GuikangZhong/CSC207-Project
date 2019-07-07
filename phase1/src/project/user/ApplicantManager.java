@@ -14,8 +14,12 @@ public class ApplicantManager extends UserManager<Applicant> implements SystemOb
     }
 
     void checkExpiredDocument(LocalDateTime now) {
+
         for (Applicant applicant : users.values()) {
             LocalDateTime last = applicant.getApplicantHistory().getLastApplicationClosed();
+            if(last == null){
+                continue;
+            }
             LocalDateTime deleteTime = last.plusDays(Applicant.getDocumentsAutoDeleteDays());
             if (deleteTime.isAfter(now)) {
                 // TODO:

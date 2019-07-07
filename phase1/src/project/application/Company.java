@@ -65,6 +65,7 @@ public class Company implements Serializable, SystemObserver {
 
     @Override
     public void updateOnTime(LocalDateTime now) {
+        System.out.println("Update on " + now);
         jobPostingManager.updateOnTime(now);
     }
 }
