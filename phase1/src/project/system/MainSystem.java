@@ -7,7 +7,9 @@ import project.observer.SystemObserver;
 import project.user.*;
 
 import java.io.*;
+import java.time.Duration;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.*;
 
 
@@ -34,7 +36,7 @@ public class MainSystem implements Serializable {
             for (int i = 0; i < 8; i++) {
                 addUser(new Applicant(new ApplicantHistory(now()),
                         "" + names.charAt(index),
-                        "a", "a", c));
+                        "a", "" + names.charAt(index), c));
                 index++;
             }
         }
@@ -123,6 +125,12 @@ public class MainSystem implements Serializable {
 
     public void addObserver(SystemObserver observer) {
         observers.add(observer);
+    }
+
+    public void setSystemClockTime(LocalDateTime time){
+        Duration duration = Duration.between(now(), time);
+        getClock().offset(duration);
+        notifyOnTimeUpdate();
     }
 
     void notifyOnTimeUpdate() {

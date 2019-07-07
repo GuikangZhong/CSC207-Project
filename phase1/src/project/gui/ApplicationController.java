@@ -105,6 +105,7 @@ public abstract class ApplicationController implements Initializable  {
         window.setScene(scene);
         window.showAndWait();
     }
+
     static void Assert(boolean value){
         if(!value){
             throw new RuntimeException("");

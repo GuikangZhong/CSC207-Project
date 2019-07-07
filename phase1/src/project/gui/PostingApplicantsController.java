@@ -58,7 +58,7 @@ public class PostingApplicantsController extends ApplicationController {
                     protected void updateItem(Application t, boolean bln) {
                         super.updateItem(t, bln);
                         if (t != null) {
-                            setText(t.getJob().getTitle());
+                            setText(t.getApplicant().getRealName());
                         }
                     }
 
