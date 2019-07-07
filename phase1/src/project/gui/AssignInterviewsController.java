@@ -19,8 +19,29 @@ import project.user.Interviewer;
 import project.user.InterviewerManager;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.LinkedHashSet;
 import java.util.List;
 
+class Group{
+    Interviewer interviewer;
+    LinkedHashSet<Applicant> applicants;
+    Group(){
+        applicants = new LinkedHashSet<>();
+    }
+    void add(Applicant applicant){
+        applicants.add(applicant);
+    }
+    void add(Interviewer interviewer){
+        this.interviewer = interviewer;
+    }
+    void remove(Applicant applicant){
+        applicants.remove(applicant);
+    }
+    List<Applicant> toList(){
+        return new ArrayList<>(applicants);
+    }
+}
 public class AssignInterviewsController extends ApplicationController {
 
     @FXML
@@ -30,6 +51,7 @@ public class AssignInterviewsController extends ApplicationController {
     @FXML
     ListView<User> interviewGroup;
 
+    private Group group = new Group();
     static JobPosting jobPosting = null;
 
 
@@ -86,7 +108,10 @@ public class AssignInterviewsController extends ApplicationController {
                     protected void updateItem(User t, boolean bln) {
                         super.updateItem(t, bln);
                         if (t != null) {
-                            setText(t.getRealName());
+                            setText(t.getRealName() + (t.getType() == User.Type.INTERVIEWER ? "(Interviewer)"
+                                    : "(Applicant)"));
+                        }else{
+                            setText("");
                         }
                     }
                 };
@@ -135,9 +160,15 @@ public class AssignInterviewsController extends ApplicationController {
             //Could have some more thorough checks of course.
             if (db.hasString()) {
                 //Get the textarea and place it into flowPane2 instead
-                interviewGroup.getItems().add(applicants.getSelectionModel().getSelectedItem());
-                interviewGroup.getItems().add(interviewers.getSelectionModel().getSelectedItem());
+                group.add(applicants.getSelectionModel().getSelectedItem());
+                group.add(interviewers.getSelectionModel().getSelectedItem());
                 success = true;
+                interviewGroup.getItems().clear();
+                if(group.interviewer != null)
+                    interviewGroup.getItems().add(group.interviewer);
+                for(Applicant applicant : group.toList()){
+                    interviewGroup.getItems().add(applicant);
+                }
             }
             //Complete and consume the event.
             event.setDropCompleted(success);

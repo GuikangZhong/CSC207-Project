@@ -93,4 +93,16 @@ public class Applicant extends User implements Serializable {
         return Type.APPLICANT;
     }
 
+    @Override
+    public int hashCode() {
+        return getUsername().hashCode();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(obj == null)return false;
+        if(getClass() != obj.getClass())
+            return false;
+        return getUsername().equals(((Applicant)obj).getUsername());
+    }
 }
