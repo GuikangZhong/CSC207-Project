@@ -20,7 +20,7 @@ public class Company implements Serializable, SystemObserver {
     public Company(String name, MainSystem system) {
         this.name = name;
         this.system = system;
-        jobPostingManager = new JobPostingManager(system.getClock());
+        jobPostingManager = new JobPostingManager(system,this);
         hrManager = new HRManager(system, this);
         interviewerManager = new InterviewerManager(system, this);
     }

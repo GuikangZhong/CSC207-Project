@@ -3,6 +3,7 @@ package project.application;
 import project.interview.Interview;
 import project.observer.InterviewObserver;
 import project.observer.SystemObserver;
+import project.system.MainSystem;
 import project.system.SystemClock;
 import project.user.Applicant;
 
@@ -15,11 +16,18 @@ import java.util.List;
 public class JobPostingManager implements InterviewObserver, Serializable, SystemObserver {
     private static final long serialVersionUID = -9197333240356088957L;
     private HashMap<String, JobPosting> jobPostings;
-    private SystemClock clock;
 
-    public JobPostingManager(SystemClock clock) {
+    public Company getCompany() {
+        return company;
+    }
+
+    private Company company;
+    private MainSystem system;
+
+    public JobPostingManager(MainSystem system, Company company) {
         jobPostings = new HashMap<>();
-        this.clock = clock;
+        this.company = company;
+        this.system = system;
     }
 
     public HashMap<String, JobPosting> getJobPostings() {
@@ -35,6 +43,7 @@ public class JobPostingManager implements InterviewObserver, Serializable, Syste
         String jobName = jobPosting.getJob().getTitle();
         if (!jobPostings.containsKey(jobName)) {
             jobPostings.put(jobName, jobPosting);
+            jobPosting.addObserver(company.getHrManager());
             return true;
         }
         return false;
@@ -81,9 +90,7 @@ public class JobPostingManager implements InterviewObserver, Serializable, Syste
     @Override
     public void updateOnTime(LocalDateTime now) {
         for(JobPosting jobPosting:jobPostings.values()){
-            if(jobPosting.getCloseDate().isBefore(now)){
-                jobPosting.setStatus(JobPosting.Status.CLOSED);
-            }
+            jobPosting.updateOnTime(now);
         }
     }
 }
