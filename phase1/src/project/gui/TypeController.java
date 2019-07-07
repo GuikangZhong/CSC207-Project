@@ -24,7 +24,7 @@ public class TypeController extends ApplicationController implements Initializab
 
     @Override
     void postInit(){
-        type.getItems().addAll("Applicant", "HR", "Interviewer");
+        super.postInit();type.getItems().addAll("Applicant", "HR", "Interviewer");
     }
     public void returnButton(ActionEvent event) throws IOException {
         SceneSwitcher.switchScene(this, event, "Main.fxml");

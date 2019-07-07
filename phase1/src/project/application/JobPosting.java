@@ -104,15 +104,16 @@ public class JobPosting implements Serializable, SystemObserver {
         return getJob().getTitle();
     }
 
-    public void addApplication(Application application) {
+    public boolean addApplication(Application application) {
         if (status == Status.OPEN) {
             if (requirement.satisfies(application)) {
                 applications.add(application);
+                return true;
             } else {
-                throw new RuntimeException("Requirement not satisfied");
+                return false;
             }
         } else {
-            throw new RuntimeException("The job posting is closed");
+            return false;
         }
     }
 

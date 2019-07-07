@@ -9,7 +9,9 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.input.MouseEvent;
+import project.application.Application;
 import project.application.JobPosting;
+import project.user.Applicant;
 
 import java.io.IOException;
 import java.net.URL;
@@ -43,7 +45,14 @@ public class ViewJobPostingController extends ApplicationController implements I
     }
 
     public void applyButton(ActionEvent event){
-
+        JobPosting jobPosting = jobList.getSelectionModel().getSelectedItem();
+        Applicant applicant = (Applicant)getUser();
+        Application application = applicant.apply(jobPosting);
+        if(application == null){
+            showModal("Cannot apply");
+        }else{
+            System.out.println("Applied");
+        }
     }
 
     public void exit(Event event) throws IOException{

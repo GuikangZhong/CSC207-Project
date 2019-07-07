@@ -39,6 +39,7 @@ public class DocumentController  extends ApplicationController implements Initia
         // fill the document list
         List<Document> documents = ((Applicant)getUser()).getDocuments();
         if (documents.size() != 0) {
+            documentList.getItems().clear();
             for (Document document1: documents){
                 documentList.getItems().add(document1);
             }

@@ -42,26 +42,7 @@ public class LoginController extends ApplicationController{
         }
 
         if (user == null || !correct){
-            Stage window = new Stage();
-
-            //Block events to other windows
-            window.initModality(Modality.APPLICATION_MODAL);
-            window.setTitle("Warning");
-            window.setHeight(100.0);
-            window.setWidth(300.0);
-
-            Label label = new Label("Username or password does not exist");
-            Button closeButton = new Button("Close");
-            closeButton.setOnAction(e -> window.close());
-
-            VBox layout = new VBox(10);
-            layout.getChildren().addAll(label, closeButton);
-            layout.setAlignment(Pos.CENTER);
-
-            //Display window and wait for it to be closed before returning
-            Scene scene = new Scene(layout);
-            window.setScene(scene);
-            window.showAndWait();
+            showModal("Username or password does not exist");
         }
         else if (user.getType() == User.Type.APPLICANT){
             setUser(user);

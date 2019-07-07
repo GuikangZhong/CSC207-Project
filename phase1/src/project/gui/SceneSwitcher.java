@@ -15,13 +15,14 @@ public class SceneSwitcher {
         FXMLLoader loader = new FXMLLoader(current.getClass().getResource(sceneName));
         Parent main = loader.load();
         ApplicationController controller = loader.<ApplicationController>getController();
-
+        ApplicationController.Assert(current.getSystem()!=null);
         Scene mainScene = new Scene(main);
         Stage loginWindow = (Stage) ((Node) event.getSource()).getScene().getWindow();
         loginWindow.setScene(mainScene);
         loginWindow.show();
-        controller.initFromController(current);
+        while(controller.getSystem() == null)
+            controller.initFromController(current);
         controller.postInit();
-        assert controller.getSystem()!=null;
+        ApplicationController.Assert(controller.getSystem()!=null);
     }
 }

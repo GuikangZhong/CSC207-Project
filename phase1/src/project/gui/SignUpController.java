@@ -17,6 +17,11 @@ public class SignUpController extends ApplicationController{
     @FXML
     private TextField realNameInput;
 
+    @Override
+    void postInit(){
+        super.postInit();
+        assert system != null;
+    }
     public void signUpButton(ActionEvent event) throws IOException {
         boolean added = false;
         if (TypeController.typeName.equals("Applicant")){

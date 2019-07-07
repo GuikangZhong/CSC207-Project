@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.SubScene;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import project.application.Company;
@@ -29,6 +30,8 @@ public class Main extends Application {
             system = MainSystem.loadFromFile(autoSaveFileName);
         } catch (IOException e){
             system = new MainSystem();
+            System.out.println("New system");
+            e.printStackTrace();
         } catch (ClassNotFoundException e){
             throw new ClassNotFoundException("Class not found");
         }

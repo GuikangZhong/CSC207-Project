@@ -73,10 +73,11 @@ public class Applicant extends User implements Serializable {
     // throws RuntimeException if requirement not met
     public Application apply(JobPosting jobPosting) {
         Application application = new Application(this, getDocuments(), jobPosting.getJob());
-        jobPosting.addApplication(application);
-        applications.add(application);
-        getApplicantHistory().addJobApplying(jobPosting.getJob());
-        return application;
+        if(jobPosting.addApplication(application)) {
+            applications.add(application);
+            getApplicantHistory().addJobApplying(jobPosting.getJob());
+            return application;
+        }return null;
     }
 
    public void withdraw(String jobName) {
