@@ -4,12 +4,13 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="732.0" prefWidth="1255.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="project.gui.PostingApplicantsController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="732.0" prefWidth="1255.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.gui.PostingApplicantsController">
   <center>
     <AnchorPane prefHeight="200.0" prefWidth="200.0">
       <children>
-        <ListView fx:id="jobPostings" layoutX="14.0" layoutY="14.0" onMouseClicked="#jobPostingClicked" prefHeight="672.0" prefWidth="190.0" />
-        <ListView fx:id="applications" layoutX="224.0" layoutY="14.0" onMouseClicked="#applicationClicked" prefHeight="672.0" prefWidth="209.0" />
+        <ListView fx:id="jobPostings" layoutX="34.0" layoutY="7.0" onMouseClicked="#jobPostingClicked" prefHeight="672.0" prefWidth="190.0" />
+        <ListView fx:id="applications" layoutX="224.0" layoutY="6.0" onMouseClicked="#applicationClicked" prefHeight="675.0" prefWidth="209.0" />
+            <Button fx:id="assignment" layoutX="503.0" layoutY="331.0" mnemonicParsing="false" onAction="#assignmentButton" text="Assign Interview" />
       </children>
     </AnchorPane>
   </center>
