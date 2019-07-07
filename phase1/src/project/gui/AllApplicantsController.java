@@ -38,6 +38,7 @@ public class AllApplicantsController extends ApplicationController{
 
     @Override
     void postInit(){
+        super.postInit();
         initializeApplicants();
     }
 
@@ -74,8 +75,6 @@ public class AllApplicantsController extends ApplicationController{
             }
         }
     }
-
-
 
     public void exit(Event event) throws IOException{
         SceneSwitcher.switchScene(this, event, "Main.fxml");

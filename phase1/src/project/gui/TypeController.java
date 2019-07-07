@@ -23,10 +23,9 @@ public class TypeController extends ApplicationController implements Initializab
     static String typeName;
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    void postInit(){
         type.getItems().addAll("Applicant", "HR", "Interviewer");
     }
-
     public void returnButton(ActionEvent event) throws IOException {
         SceneSwitcher.switchScene(this, event, "Main.fxml");
     }

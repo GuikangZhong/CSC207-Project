@@ -31,7 +31,7 @@ public class StaffSignUpController extends ApplicationController implements Init
     private String companyName;
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void postInit() {
         Collection<Company> companies = getSystem().getCompanies();
         for (Company company: companies){
             companyNameInput.getItems().add(company.getName());

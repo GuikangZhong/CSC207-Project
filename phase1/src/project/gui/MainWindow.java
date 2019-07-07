@@ -13,10 +13,6 @@ public class MainWindow extends ApplicationController implements Initializable {
     @FXML
     private TextField companyName;
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-
-    }
 
     public void loginButton(ActionEvent event) throws IOException {
         SceneSwitcher.switchScene(this, event, "LoginPage.fxml");

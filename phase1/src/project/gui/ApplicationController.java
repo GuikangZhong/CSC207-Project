@@ -64,13 +64,13 @@ public abstract class ApplicationController implements Initializable  {
     }
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public final void initialize(URL location, ResourceBundle resources) {
         if(getMenu()!=null)
             options.setRoot(getMenu().getOptions());
     }
 
     void postInit(){
-        if(getMenu()!=null)
+        if(getMenu()!=null && options != null)
             options.setRoot(getMenu().getOptions());
     }
 }

@@ -22,12 +22,7 @@ public class ViewJobPostingController extends ApplicationController implements I
     @FXML
     private TextArea description;
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-       super.initialize(location,resources);
 
-
-    }
     @Override
     void postInit(){
         super.postInit();

@@ -44,11 +44,7 @@ public class DocumentController  extends ApplicationController implements Initia
             }
         }
     }
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-        super.initialize(location,resources);
 
-    }
 
     @Override
     public void postInit(){

@@ -31,11 +31,7 @@ public class CreateJobController extends ApplicationController {
     @FXML
     private Label companyName;
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
 
-        super.initialize(location,resources);
-    }
 
     @Override
     void postInit(){
