@@ -61,7 +61,7 @@ public class LoginController extends ApplicationController{
             menu.addOption("View all applicants","AllApplicants.fxml")
                     .addOption("View applicants for a job posting","PostingApplicants.fxml")
                     .addOption("Inspect interviewers","Miscellaneous.fxml")
-                    .addOption("Create Job Posting","CreateJobPos.fxml");
+                    .addOption("Create Job Posting","CreateJobPost.fxml");
             setMenu(menu);
             SceneSwitcher.switchScene(this, event, "HRMenu.fxml");
         }

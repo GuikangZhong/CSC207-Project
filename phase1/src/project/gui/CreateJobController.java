@@ -16,8 +16,6 @@ import java.time.LocalDateTime;
 import java.util.ResourceBundle;
 
 public class CreateJobController extends ApplicationController {
-    @FXML
-    private TreeView<String> options = new TreeView<>();
 
     @FXML
     private TextField title = null;
@@ -26,7 +24,7 @@ public class CreateJobController extends ApplicationController {
     @FXML
     private TextField numOpenings = null;
     @FXML
-    private TextArea desp = null;
+    private TextArea jobDescription = null;
 
     @FXML
     private Label companyName;
@@ -43,14 +41,14 @@ public class CreateJobController extends ApplicationController {
         String title1 = title.getText();
         String days = openDays.getText();
         String numOpen = numOpenings.getText();
-        String description = desp.getText();
+        String description_ = jobDescription.getText();
         String comName = companyName.getText();
         Company company = getSystem().getCompany(comName);
         Job job = new Job(title1, company);
         Requirement requirement = new BasicRequirement();
         JobPosting jobPosting = new JobPosting(job,  getSystem().now(),
                 getSystem().getClock().calculateFutureTime( getSystem().now(), Integer.parseInt(days))
-                , requirement, Integer.parseInt(numOpen), description);
+                , requirement, Integer.parseInt(numOpen), description_);
         JobPostingManager jobPostingManager = company.getJobPostingManager();
         if(jobPostingManager.addJobPosting(jobPosting)){
             System.out.println("job added successfully");

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="654.0" prefWidth="998.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="project.gui.CreateJobController">
+  <center>
+    <AnchorPane prefHeight="200.0" prefWidth="200.0">
+      <children>
+        <TextField fx:id="title" layoutX="153.0" layoutY="43.0" prefHeight="38.0" prefWidth="538.0" />
+        <TextField fx:id="openDays" layoutX="229.0" layoutY="124.0" prefWidth="200.0" />
+        <TextField fx:id="numOpenings" layoutX="229.0" layoutY="202.0" prefWidth="200.0" />
+        <TextArea id="description" fx:id="jobDescription" layoutX="35.0" layoutY="254.0" prefHeight="289.0" prefWidth="623.0" />
+        <Button layoutX="645.0" layoutY="551.0" mnemonicParsing="false" onAction="#submitJobPos" text="Submit" />
+        <Label layoutX="54.0" layoutY="50.0" text="Title" />
+        <Label layoutX="50.0" layoutY="130.0" prefWidth="147.0" text="Open Days" />
+        <Label layoutX="35.0" layoutY="205.0" text="Num Openings" />
+      </children>
+    </AnchorPane>
+  </center>
+  <left>
+    <TreeView fx:id="options" onContextMenuRequested="#selectItems" onMouseClicked="#selectItems" prefHeight="400.0" prefWidth="158.0" BorderPane.alignment="CENTER" />
+  </left>
+  <top>
+    <AnchorPane prefHeight="32.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <children>
+        <Label fx:id="companyName" alignment="CENTER" layoutX="14.0" layoutY="6.0" text="Label" />
+        <Button alignment="CENTER" mnemonicParsing="false" onAction="#exit" text="Sign out" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="2.0" />
+      </children>
+    </AnchorPane>
+  </top>
+</BorderPane>
