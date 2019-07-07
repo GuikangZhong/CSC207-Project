@@ -45,7 +45,7 @@ public class ApplicantMenuController implements Initializable {
                 SceneSwitcher.switchScene(this.getClass(), event, "Document.fxml");
             }
             else if (item.getValue().equals("Job posting")){
-                SceneSwitcher.switchScene(this.getClass(), event, "JobPosting.fxml");
+                SceneSwitcher.switchScene(this.getClass(), event, "ViewJobPosting.fxml");
             }
             else if (item.getValue().equals("Application")){
                 SceneSwitcher.switchScene(this.getClass(), event, "Application.fxml");
