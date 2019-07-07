@@ -40,4 +40,8 @@ public class InterviewGroup implements Serializable {
         }
         return result;
     }
+
+    public void setApplicantPassed(String name, boolean passed){
+        applicantsStatus.put(name, passed);
+    }
 }
