@@ -23,7 +23,7 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class DocumentController  extends ApplicationController implements Initializable {
+public class DocumentController extends ApplicationController implements Initializable {
     @FXML
     private TreeView<String> options;
     @FXML
@@ -35,12 +35,12 @@ public class DocumentController  extends ApplicationController implements Initia
 
     private FileChooser fc = new FileChooser();
 
-    private void pollDocuments(){
+    private void pollDocuments() {
         // fill the document list
-        List<Document> documents = ((Applicant)getUser()).getDocuments();
+        List<Document> documents = ((Applicant) getUser()).getDocuments();
         if (documents.size() != 0) {
             documentList.getItems().clear();
-            for (Document document1: documents){
+            for (Document document1 : documents) {
                 documentList.getItems().add(document1);
             }
         }
@@ -48,7 +48,7 @@ public class DocumentController  extends ApplicationController implements Initia
 
 
     @Override
-    public void postInit(){
+    public void postInit() {
         super.postInit();
         pollDocuments();
     }
@@ -62,28 +62,37 @@ public class DocumentController  extends ApplicationController implements Initia
         }
     }
 
-    public void uploadButton(ActionEvent event) throws IOException{
+    public void uploadCoverLetter(ActionEvent event) throws IOException {
         fc.setInitialDirectory(new File("."));
         fc.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Text Document", "*.txt"));
         File selectedFile = fc.showOpenDialog(null);
         if (selectedFile != null) {
             CoverLetter coverLetter = CoverLetter.createByFileName(selectedFile.getName(), selectedFile.getAbsolutePath(), getSystem().now());
-            ((Applicant)getUser()).addDocument(coverLetter);
-            SceneSwitcher.switchScene(this, event, "Document.fxml");
-        }
-        else{
+            if (!((Applicant) getUser()).addDocument(coverLetter)) {
+                showModal("Cannot add document");
+            }
+        } else {
             System.out.println("File not selected");
         }
     }
 
-    public void saveButton(ActionEvent event) throws IOException{
-        CoverLetter coverLetter = CoverLetter.createByDirectInput(fileName.getText(), description.getText(), getSystem().now());
-        ((Applicant)getUser()).addDocument(coverLetter);
-        System.out.println("save successfully!");
+    public void uploadCV(ActionEvent event) throws IOException {
+        fc.setInitialDirectory(new File("."));
+        fc.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Text Document", "*.txt"));
+        File selectedFile = fc.showOpenDialog(null);
+        if (selectedFile != null) {
+            CV cv = CV.createByFileName(selectedFile.getName(), selectedFile.getAbsolutePath(), getSystem().now());
+
+            if (!((Applicant) getUser()).addDocument(cv)) {
+                showModal("Cannot add document");
+            }
+        } else {
+            System.out.println("File not selected");
+        }
     }
 
 
-    public void exit(Event event) throws IOException{
+    public void exit(Event event) throws IOException {
         SceneSwitcher.switchScene(this, event, "Main.fxml");
     }
 }

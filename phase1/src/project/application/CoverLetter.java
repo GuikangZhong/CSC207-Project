@@ -3,7 +3,7 @@ package project.application;
 import java.io.*;
 import java.time.LocalDateTime;
 
-public class CoverLetter extends Document implements Serializable{
+public class CoverLetter extends Document implements Serializable {
 
     private static final long serialVersionUID = 4089162745833731740L;
 
@@ -29,7 +29,12 @@ public class CoverLetter extends Document implements Serializable{
     }
 
     @Override
-    public String type(){
+    public String type() {
         return "CoverLetter";
+    }
+
+    @Override
+    public int maxNumber() {
+        return 1;
     }
 }

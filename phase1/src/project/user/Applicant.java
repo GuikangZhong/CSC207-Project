@@ -58,8 +58,15 @@ public class Applicant extends User implements Serializable {
         documents.remove(index);
     }
 
-    public void addDocument(Document newDocument) {
-        documents.add(newDocument);
+    public boolean addDocument(Document newDocument) {
+        if (documents.stream()
+                .filter(document -> document.type().equals(newDocument.type()))
+                .count() + 1
+                <= newDocument.maxNumber()) {
+            documents.add(newDocument);
+            return true;
+        }
+        return false;
     }
 
     public boolean checkIfExpired() {
@@ -100,9 +107,9 @@ public class Applicant extends User implements Serializable {
 
     @Override
     public boolean equals(Object obj) {
-        if(obj == null)return false;
-        if(getClass() != obj.getClass())
+        if (obj == null) return false;
+        if (getClass() != obj.getClass())
             return false;
-        return getUsername().equals(((Applicant)obj).getUsername());
+        return getUsername().equals(((Applicant) obj).getUsername());
     }
 }

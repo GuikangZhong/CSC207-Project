@@ -32,4 +32,9 @@ public class CV extends Document implements Serializable{
     public String type(){
         return "CV";
     }
+
+    @Override
+    public int maxNumber(){
+        return 1;
+    }
 }

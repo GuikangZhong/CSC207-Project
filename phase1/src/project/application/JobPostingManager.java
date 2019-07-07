@@ -77,7 +77,6 @@ public class JobPostingManager implements InterviewObserver, Serializable, Syste
     public void updateOnInterviewRoundFinished(Interview interview) {
 
     }
-
     @Override
     public void updateOnHireResult(List<Applicant> applicants, Job job) {
         String name = job.getTitle();
@@ -89,7 +88,7 @@ public class JobPostingManager implements InterviewObserver, Serializable, Syste
 
     @Override
     public void updateOnTime(LocalDateTime now) {
-        for(JobPosting jobPosting:jobPostings.values()){
+        for (JobPosting jobPosting : jobPostings.values()) {
             jobPosting.updateOnTime(now);
         }
     }

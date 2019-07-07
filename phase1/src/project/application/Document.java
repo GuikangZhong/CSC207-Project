@@ -36,4 +36,6 @@ public abstract class Document implements Serializable {
     }
 
     public abstract String type();
+
+    public abstract int maxNumber();
 }
