@@ -97,7 +97,7 @@ public class DocumentController implements Initializable {
         if (selectedFile != null) {
             CoverLetter coverLetter = CoverLetter.createByFileName(selectedFile.getName(), selectedFile.getAbsolutePath(), Main.system.now());
             ((Applicant)Main.user).addDocument(coverLetter);
-            pollDocuments();
+            SceneSwitcher.switchScene(this.getClass(), event, "Document.fxml");
         }
         else{
             System.out.println("File not selected");
