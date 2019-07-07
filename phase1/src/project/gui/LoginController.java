@@ -68,8 +68,7 @@ public class LoginController extends ApplicationController{
             Menu menu = new Menu();
             menu.addOption("Documents","Document.fxml")
             .addOption("Dashboard","ApplicantMenu.fxml")
-            .addOption("Document","ViewJobPosting.fxml")
-            .addOption("Job posting","ViewJobPosting.fxml")
+            .addOption("Job Posting","ViewJobPosting.fxml")
             .addOption("Application","Application.fxml")
             .addOption("Your history","ApplicantHistory.fxml");
             setMenu(menu);

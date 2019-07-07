@@ -19,16 +19,16 @@ public class MainWindow extends ApplicationController implements Initializable {
     }
 
     public void loginButton(ActionEvent event) throws IOException {
-        SceneSwitcher.switchScene(this.getClass(), event, "LoginPage.fxml");
+        SceneSwitcher.switchScene(this, event, "LoginPage.fxml");
 
     }
 
     public void signUpButton(ActionEvent event) throws IOException{
-        SceneSwitcher.switchScene(this.getClass(), event, "Type.fxml");
+        SceneSwitcher.switchScene(this, event, "Type.fxml");
     }
 
     public void addCompanyButton(ActionEvent event) throws IOException{
-        SceneSwitcher.switchScene(this.getClass(), event, "AddCompany.fxml");
+        SceneSwitcher.switchScene(this, event, "AddCompany.fxml");
     }
 
     public void addCompanyConfirmButton(ActionEvent event) throws IOException{
@@ -37,7 +37,7 @@ public class MainWindow extends ApplicationController implements Initializable {
             boolean added = getSystem().addCompany(name);
             if (added){
                 System.out.println("Successfully added");
-                SceneSwitcher.switchScene(this.getClass(), event, "Main.fxml");
+                SceneSwitcher.switchScene(this, event, "Main.fxml");
             }
             else{
                 System.out.println("Company already exist");
@@ -46,6 +46,6 @@ public class MainWindow extends ApplicationController implements Initializable {
     }
 
     public void returnButton(ActionEvent event) throws IOException{
-        SceneSwitcher.switchScene(this.getClass(), event, "Main.fxml");
+        SceneSwitcher.switchScene(this, event, "Main.fxml");
     }
 }

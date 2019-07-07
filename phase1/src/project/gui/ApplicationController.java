@@ -14,8 +14,13 @@ import java.util.ResourceBundle;
 
 public abstract class ApplicationController implements Initializable  {
     @FXML
-    private TreeView<String> options;
+    protected TreeView<String> options;
+    public ApplicationController(){
 
+    }
+    public ApplicationController(ApplicationController other){
+        initFromController(other);
+    }
     public MainSystem getSystem() {
         return system;
     }
@@ -40,6 +45,7 @@ public abstract class ApplicationController implements Initializable  {
     void initFromController(ApplicationController other){
         system = other.system;
         user = other.user;
+        menu = other.menu;
     }
 
     // Don't ever call it outside main
@@ -53,11 +59,18 @@ public abstract class ApplicationController implements Initializable  {
 
     public void selectItems(MouseEvent event) throws IOException {
         TreeItem<String> item = options.getSelectionModel().getSelectedItem();
-        getMenu().switchScene(this,event, item.getValue());
+        if(item!=null)
+            getMenu().switchScene(this,event, item.getValue());
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        options.setRoot(getMenu().getOptions());
+        if(getMenu()!=null)
+            options.setRoot(getMenu().getOptions());
+    }
+
+    void postInit(){
+        if(getMenu()!=null)
+            options.setRoot(getMenu().getOptions());
     }
 }

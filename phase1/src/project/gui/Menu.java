@@ -16,6 +16,8 @@ public class Menu {
     private TreeItem<String> options;
 
     public Menu() {
+        itemToResource = new HashMap<>();
+        options = new TreeItem<>();
         options.setExpanded(true);
     }
 

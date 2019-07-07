@@ -35,6 +35,12 @@ public class AllApplicantsController extends ApplicationController{
 
     private Applicant applicant;
 
+
+    @Override
+    void postInit(){
+        initializeApplicants();
+    }
+
     private void initializeApplicants(){
         HashMap<String, Applicant> applicants = getSystem().getApplicants();  // Potential problem??
         for(String name: applicants.keySet()){

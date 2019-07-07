@@ -25,17 +25,17 @@ public class SignUpController extends ApplicationController{
                     realNameInput.getText(), null));
         }
         if (added){
-            SceneSwitcher.switchScene(this.getClass(), event, "SignUpSuccess.fxml");
+            SceneSwitcher.switchScene(this, event, "SignUpSuccess.fxml");
         }
         else
             System.out.println("Username already exists");
     }
 
     public void returnToTypeButton(ActionEvent event) throws IOException {
-        SceneSwitcher.switchScene(this.getClass(), event, "Type.fxml");
+        SceneSwitcher.switchScene(this, event, "Type.fxml");
     }
 
     public void confirmButton(ActionEvent event) throws IOException {
-        SceneSwitcher.switchScene(this.getClass(), event, "Main.fxml");
+        SceneSwitcher.switchScene(this, event, "Main.fxml");
     }
 }

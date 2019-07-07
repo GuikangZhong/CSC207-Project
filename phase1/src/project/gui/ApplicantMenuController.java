@@ -20,6 +20,8 @@ import java.util.ResourceBundle;
 public class ApplicantMenuController extends ApplicationController {
 
 
+
+
     public void uploadButton(ActionEvent event) throws IOException {
         FileChooser fc = new FileChooser();
         fc.setInitialDirectory(new File("."));
@@ -37,4 +39,6 @@ public class ApplicantMenuController extends ApplicationController {
     public void exit(Event event) throws IOException {
         SceneSwitcher.switchScene(this, event, "Main.fxml");
     }
+
+
 }

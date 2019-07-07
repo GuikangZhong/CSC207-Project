@@ -37,7 +37,7 @@ public class DocumentController  extends ApplicationController implements Initia
 
     private void pollDocuments(){
         // fill the document list
-        List<Document> documents = ((Applicant)Main.user).getDocuments();
+        List<Document> documents = ((Applicant)getUser()).getDocuments();
         if (documents.size() != 0) {
             for (Document document1: documents){
                 documentList.getItems().add(document1);
@@ -46,41 +46,16 @@ public class DocumentController  extends ApplicationController implements Initia
     }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        // menu
-        TreeItem<String> option = new TreeItem<>("Option");
-        TreeItem<String> dashboard = new TreeItem<>("Dashboard");
-        TreeItem<String> document = new TreeItem<>("Document");
-        TreeItem<String> jobPosting = new TreeItem<>("Job posting");
-        TreeItem<String> application = new TreeItem<>("Application");
-        TreeItem<String> history = new TreeItem<>("Your history");
-        option.getChildren().addAll(dashboard, document, jobPosting, application, history);
-        option.setExpanded(true);
-        options.setRoot(option);
+        super.initialize(location,resources);
 
+    }
+
+    @Override
+    public void postInit(){
+        super.postInit();
         pollDocuments();
     }
 
-    public void selectItems(MouseEvent event) throws IOException{
-        TreeItem<String> item = options.getSelectionModel().getSelectedItem();
-        if (item != null){
-            if (item.getValue().equals("Document")) {
-                SceneSwitcher.switchScene(this.getClass(), event, "Document.fxml");
-            }
-            else if (item.getValue().equals("Job posting")){
-                SceneSwitcher.switchScene(this.getClass(), event, "JobPosting.fxml");
-            }
-            else if (item.getValue().equals("Application")){
-                SceneSwitcher.switchScene(this.getClass(), event, "Application.fxml");
-            }
-            else if (item.getValue().equals("Your history")){
-                SceneSwitcher.switchScene(this.getClass(), event, "YourHistory.fxml");
-            }
-            else if (item.getValue().equals("Dashboard")){
-                SceneSwitcher.switchScene(this.getClass(), event, "ApplicantMenu.fxml");
-            }
-        }
-
-    }
 
     public void selectDocument(MouseEvent event) throws IOException {
         Document document = documentList.getSelectionModel().getSelectedItem();
@@ -95,9 +70,9 @@ public class DocumentController  extends ApplicationController implements Initia
         fc.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Text Document", "*.txt"));
         File selectedFile = fc.showOpenDialog(null);
         if (selectedFile != null) {
-            CoverLetter coverLetter = CoverLetter.createByFileName(selectedFile.getName(), selectedFile.getAbsolutePath(), Main.system.now());
-            ((Applicant)Main.user).addDocument(coverLetter);
-            SceneSwitcher.switchScene(this.getClass(), event, "Document.fxml");
+            CoverLetter coverLetter = CoverLetter.createByFileName(selectedFile.getName(), selectedFile.getAbsolutePath(), getSystem().now());
+            ((Applicant)getUser()).addDocument(coverLetter);
+            SceneSwitcher.switchScene(this, event, "Document.fxml");
         }
         else{
             System.out.println("File not selected");
@@ -105,13 +80,13 @@ public class DocumentController  extends ApplicationController implements Initia
     }
 
     public void saveButton(ActionEvent event) throws IOException{
-        CoverLetter coverLetter = CoverLetter.createByDirectInput(fileName.getText(), description.getText(), Main.system.now());
-        ((Applicant)Main.user).addDocument(coverLetter);
+        CoverLetter coverLetter = CoverLetter.createByDirectInput(fileName.getText(), description.getText(), getSystem().now());
+        ((Applicant)getUser()).addDocument(coverLetter);
         System.out.println("save successfully!");
     }
 
 
     public void exit(Event event) throws IOException{
-        SceneSwitcher.switchScene(this.getClass(), event, "Main.fxml");
+        SceneSwitcher.switchScene(this, event, "Main.fxml");
     }
 }

@@ -15,7 +15,7 @@ import java.net.URL;
 import java.time.LocalDateTime;
 import java.util.ResourceBundle;
 
-public class CreateJobController implements Initializable {
+public class CreateJobController extends ApplicationController {
     @FXML
     private TreeView<String> options = new TreeView<>();
 
@@ -33,13 +33,14 @@ public class CreateJobController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        companyName.setText(Main.user.getCompany());
-        options.setRoot(HRMenuController.getMenu().getOptions());
+
+        super.initialize(location,resources);
     }
 
-    public void selectItems(MouseEvent event) throws IOException {
-        TreeItem<String> item = options.getSelectionModel().getSelectedItem();
-        HRMenu.selectItem(this.getClass(), event, item);
+    @Override
+    void postInit(){
+        super.postInit();
+        companyName.setText(getUser().getCompany());
     }
 
     public void submitJobPos(ActionEvent event) throws IOException {
@@ -48,11 +49,11 @@ public class CreateJobController implements Initializable {
         String numOpen = numOpenings.getText();
         String description = desp.getText();
         String comName = companyName.getText();
-        Company company = Main.system.getCompany(comName);
+        Company company = getSystem().getCompany(comName);
         Job job = new Job(title1, company);
         Requirement requirement = new BasicRequirement();
-        JobPosting jobPosting = new JobPosting(job, Main.system.now(),
-                Main.system.getClock().calculateFutureTime(Main.system.now(), Integer.parseInt(days))
+        JobPosting jobPosting = new JobPosting(job,  getSystem().now(),
+                getSystem().getClock().calculateFutureTime( getSystem().now(), Integer.parseInt(days))
                 , requirement, Integer.parseInt(numOpen), description);
         JobPostingManager jobPostingManager = company.getJobPostingManager();
         if(jobPostingManager.addJobPosting(jobPosting)){
@@ -62,6 +63,6 @@ public class CreateJobController implements Initializable {
     }
 
     public void exit(Event event) throws IOException{
-        SceneSwitcher.switchScene(this.getClass(), event, "Main.fxml");
+        SceneSwitcher.switchScene(this, event, "Main.fxml");
     }
 }
