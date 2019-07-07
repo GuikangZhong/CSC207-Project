@@ -26,11 +26,7 @@ public class LoginController extends ApplicationController{
     private TextField passwordInput;
 
     public void returnButton(ActionEvent event) throws IOException {
-        Parent main = FXMLLoader.load(getClass().getResource("Main.fxml"));
-        Scene mainScene = new Scene(main);
-        Stage loginWindow = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        loginWindow.setScene(mainScene);
-        loginWindow.show();
+        SceneSwitcher.switchScene(this, event, "Main.fxml");
     }
 
     public void loginButton(ActionEvent event) throws IOException {
