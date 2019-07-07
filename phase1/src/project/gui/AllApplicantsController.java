@@ -59,6 +59,16 @@ public class AllApplicantsController implements Initializable {
         HRMenuController.getMenu().selectItem(this.getClass(),event, item);
     }
 
+    public void applicantDocumentViewClocked(MouseEvent event){
+        String item = applicantDocuments.getSelectionModel().getSelectedItem();
+        for(Document document : applicant.getDocuments()){
+            if(document.getName().equals(item)){
+                documentContent.setText(document.getContent());
+                break;
+            }
+        }
+        //ocumentContent.setText();
+    }
 
     public void applicantsViewClicked(MouseEvent event){
         applicantDocuments.getItems().clear();
@@ -75,15 +85,6 @@ public class AllApplicantsController implements Initializable {
                 applicantAppliedJobs.getItems().add(job.getTitle());
             }
         }
-//        applicantDocuments.setOnMouseClicked(new EventHandler<MouseEvent>() {
-////            @Override
-////            public void handle(MouseEvent event) {
-////                documentContent.setText(applicant.getDocument(applicantDocuments.getSelectionModel().getSelectedItem()).getContent());
-////            }
-////        });
-        applicantDocuments.setOnMouseClicked
-                (e -> documentContent.setText(applicant.
-                        getDocument(applicantDocuments.getSelectionModel().getSelectedItem()).getContent()));
     }
 
 
