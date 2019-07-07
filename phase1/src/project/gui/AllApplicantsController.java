@@ -41,7 +41,7 @@ public class AllApplicantsController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
         companyName.setText(Main.user.getCompany());
-        options.setRoot(HRMenuController.getMenu().getOption());
+        options.setRoot(HRMenuController.getMenu().getOptions());
 
         this.initializeApplicants();
     }
