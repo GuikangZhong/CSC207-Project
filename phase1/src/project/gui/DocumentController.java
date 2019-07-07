@@ -51,13 +51,19 @@ public class DocumentController extends ApplicationController implements Initial
         pollDocuments();
     }
 
-
-    public void selectDocument(MouseEvent event) throws IOException {
+    private void showSelectedDocument(){
         Document document = documentList.getSelectionModel().getSelectedItem();
         if (document != null) {
             fileName.setText(document.getName());
             description.setText(document.getContent());
+        }else{
+            fileName.clear();
+            description.clear();
         }
+    }
+
+    public void selectDocument(MouseEvent event) throws IOException {
+        showSelectedDocument();
     }
 
     public void uploadCoverLetter(ActionEvent event) throws IOException {
@@ -96,6 +102,7 @@ public class DocumentController extends ApplicationController implements Initial
         Applicant applicant = (Applicant)getUser();
         applicant.removeDocument(index);
         pollDocuments();
+        showSelectedDoucment();
     }
     public void exit(Event event) throws IOException {
         SceneSwitcher.switchScene(this, event, "Main.fxml");
