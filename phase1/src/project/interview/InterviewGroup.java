@@ -1,6 +1,7 @@
 package project.interview;
 
 import project.application.Company;
+import project.application.Job;
 import project.observer.InterviewGroupObserver;
 import project.user.Applicant;
 import project.user.Interviewer;
@@ -21,7 +22,8 @@ public class InterviewGroup implements Serializable {
 
     private List<Applicant> applicants;
     private boolean submitted = false;
-    private Interview interview;
+//    private Interview interview;
+    private Job job;
     private List<InterviewGroupObserver> observers;
     static private Logger logger = Logging.getLogger();
 
@@ -30,14 +32,14 @@ public class InterviewGroup implements Serializable {
         observers.add(observer);
     }
 
-    public InterviewGroup(Interview interview, Interviewer interviewer, List<Applicant> applicants) {
+    public InterviewGroup(Job job, Interviewer interviewer, List<Applicant> applicants) {
         this.interviewer = interviewer;
         this.applicants = applicants;
         applicantsStatus = new HashMap<>();
         for (Applicant applicant : applicants) {
             applicantsStatus.put(applicant.getUsername(), false);
         }
-        this.interview = interview;
+        this.job = job;
         observers = new ArrayList<>();
     }
 
@@ -71,13 +73,13 @@ public class InterviewGroup implements Serializable {
         applicantsStatus.put(name, passed);
     }
 
-    public Interview getInterview() {
-        return interview;
+    public Job getJob() {
+        return job;
     }
 
     @Override
     public String toString() {
-        StringBuilder builder = new StringBuilder(getInterview().getJobPosting().getJobTitle() + " [");
+        StringBuilder builder = new StringBuilder(getJob().getTitle() + " [");
         for (Applicant applicant : applicants) {
             builder.append(applicant.getUsername() + " ");
         }

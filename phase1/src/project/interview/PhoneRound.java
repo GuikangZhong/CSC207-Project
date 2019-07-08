@@ -1,9 +1,12 @@
 package project.interview;
 
+import project.application.Job;
+
 public class PhoneRound extends Round {
     private static final long serialVersionUID = -9131759850246001085L;
 
-    public PhoneRound(){
+    public PhoneRound(Job job){
+        super(job);
 
     }
     @Override

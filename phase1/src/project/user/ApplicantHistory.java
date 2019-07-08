@@ -4,22 +4,21 @@ import project.application.Job;
 import project.system.SystemClock;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 public class ApplicantHistory extends UserHistory {
     private static final long serialVersionUID = -3949731953506050255L;
 
     private List<Job> jobApplied;
     private LocalDateTime lastApplicationClosed;
+//    private List<Job> jobApplying;
     private List<Job> jobApplying;
 
     public ApplicantHistory(LocalDateTime now) {
         super(now);
         jobApplied = new ArrayList<>();
         jobApplying = new ArrayList<>();
+//        jobApplying = new HashMap<>();
         lastApplicationClosed = null;
     }
 
@@ -50,8 +49,11 @@ public class ApplicantHistory extends UserHistory {
     void addJobApplying(Job job) {
         jobApplying.add(job);
     }
+//    void addJobApplying(Job job){
+//        jobApplying.put(job, "Submitted");
+//    }
 
     void removeJobApplying(String name) {
-        jobApplying.removeIf(job -> job.getTitle().equals(name));
+        jobApplying.removeIf(e -> e.getTitle().equals(name));
     }
 }

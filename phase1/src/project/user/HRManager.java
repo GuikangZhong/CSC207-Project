@@ -49,10 +49,11 @@ public class HRManager extends UserManager<HR> implements InterviewObserver, Job
         Optional<HR> hr = selectionStrategy.select(jobPosting, users.values());
         if (hr.isPresent()) {
             InterviewSetup setup = new InterviewSetup();
-            setup.addRound(new PhoneRound());
-            setup.addRound(new InPersonRound());
-            setup.addRound(new InPersonRound());
-            setup.addRound(new InPersonRound());
+            Job job = jobPosting.getJob();
+            setup.addRound(new PhoneRound(job));
+            setup.addRound(new InPersonRound(job));
+            setup.addRound(new InPersonRound(job));
+            setup.addRound(new InPersonRound(job));
             Interview interview = new Interview(hr.get().getUsername(), jobPosting, setup);
             company.getInterviewManager().addInterview(jobPosting.getJobTitle(), interview);
             interview.addObserver(this);
@@ -66,7 +67,7 @@ public class HRManager extends UserManager<HR> implements InterviewObserver, Job
     @Override
     public void updateOnInterviewRoundFinished(Interview interview) {
         HR hr = getUser(interview.getHR());
-        hr.addInterviewRoundFinished(interview.getJobPosting().getJobTitle());
+        hr.addInterviewRoundFinished(interview.getJob().getTitle());
     }
 
     @Override

@@ -1,5 +1,6 @@
 package project.interview;
 
+import project.application.Job;
 import project.observer.InterviewGroupObserver;
 import project.observer.RoundObserver;
 import project.user.Applicant;
@@ -16,6 +17,7 @@ public abstract class Round implements Serializable, InterviewGroupObserver {
     private List<InterviewGroup> groups;
     private List<RoundObserver> observers;
     static private Logger logger = Logging.getLogger();
+    private Job job;
 
     public abstract String roundType();
 
@@ -85,7 +87,8 @@ public abstract class Round implements Serializable, InterviewGroupObserver {
         return names;
     }
 
-    public Round() {
+    public Round(Job job) {
+        this.job = job;
         number = -1;
         observers = new ArrayList<>();
     }

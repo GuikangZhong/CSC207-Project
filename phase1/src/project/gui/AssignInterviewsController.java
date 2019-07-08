@@ -103,7 +103,7 @@ public class AssignInterviewsController extends ApplicationController {
 
             @Override
             public List<InterviewGroup> select(List<Applicant> _applicants, List<Interviewer> _interviewers) {
-                InterviewGroup group = new InterviewGroup(interview,
+                InterviewGroup group = new InterviewGroup(interview.getJob(),
                         selectedInterviewers.getItems().get(0),
                         new ArrayList<>(selectedApplicants.getItems()));
                 List<InterviewGroup> groups = new ArrayList<>();

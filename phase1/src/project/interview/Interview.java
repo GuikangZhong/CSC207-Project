@@ -1,6 +1,7 @@
 package project.interview;
 
 import project.application.Application;
+import project.application.Job;
 import project.application.JobPosting;
 import project.observer.InterviewObserver;
 import project.observer.RoundObserver;
@@ -22,18 +23,18 @@ public class Interview implements Serializable, RoundObserver {
     private InterviewSetup setup;
     private int round;
 
-    public JobPosting getJobPosting() {
-        return jobPosting;
+    public Job getJob() {
+        return job;
     }
 
-    private JobPosting jobPosting;
+    private Job job;
 
     public Interview(String HR,
                      JobPosting jobPosting,
                      InterviewSetup setup) {
         this.HR = HR;
         this.setup = setup;
-        this.jobPosting = jobPosting;
+        this.job = jobPosting.getJob();
         applicants = new ArrayList<>();
         for (Application application : jobPosting.getApplications()) {
             applicants.add(application.getApplicant());
@@ -72,14 +73,14 @@ public class Interview implements Serializable, RoundObserver {
 
     private void notifyHireResult(List<Applicant> applicants) {
         for (InterviewObserver observer : observers) {
-            observer.updateOnHireResult(applicants, jobPosting.getJob());
+            observer.updateOnHireResult(applicants, job);
         }
     }
 
     private static Logger logger = Logging.getLogger();
 
     public void addObserver(InterviewObserver observer) {
-        logger.info("Interview: " + getJobPosting().getJobTitle() + " added observer " + observer);
+        logger.info("Interview: " + job.getTitle() + " added observer " + observer);
         observers.add(observer);
     }
 
@@ -100,7 +101,7 @@ public class Interview implements Serializable, RoundObserver {
     }
 
     public void assignRound(InterviewGroupAssignmentStrategy strategy, List<Interviewer> interviewers) {
-        logger.info("Job" + getJobPosting().getJobTitle() + " Round: " + getRoundInProgress() + " assigned");
+        logger.info("Job" + job.getTitle() + " Round: " + getRoundInProgress() + " assigned");
         List<InterviewGroup> groups = strategy.select(applicants, interviewers);
         for (InterviewGroup group : groups) {
             logger.info(group.toString());
@@ -113,7 +114,7 @@ public class Interview implements Serializable, RoundObserver {
     @Override
     public String toString() {
         StringBuilder s = new StringBuilder();
-        s.append("Set Interview for " + jobPosting.getJobTitle() + " HR: " + getHR() + '\n');
+        s.append("Set Interview for " + job.getTitle() + " HR: " + getHR() + '\n');
         for (Round round : setup.getRounds()) {
             s.append(round + "\n");
         }
@@ -122,7 +123,7 @@ public class Interview implements Serializable, RoundObserver {
 
     @Override
     public void updateOnRoundFinished(Round round) {
-        logger.info("Interview for " + jobPosting.getJobTitle() + "round finished");
+        logger.info("Interview for " + job.getTitle() + "round finished");
         updateOnRoundFinished();
     }
 }

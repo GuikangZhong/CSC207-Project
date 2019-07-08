@@ -1,10 +1,12 @@
 package project.interview;
 
+import project.application.Job;
+
 public class InPersonRound extends Round {
     private static final long serialVersionUID = -466488373417479710L;
 
-    public InPersonRound(){
-        super();
+    public InPersonRound(Job job){
+        super(job);
     }
     @Override
     public String roundType() {

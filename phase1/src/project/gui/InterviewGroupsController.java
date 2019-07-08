@@ -42,7 +42,7 @@ public class InterviewGroupsController extends ApplicationController implements 
         interviewGroups.getItems().clear();
         for (JobPosting jobPosting : manager.getJobPostings().values()) {
             for (InterviewGroup interviewGroup : interviewer.getInterviews())
-                if (interviewGroup.getInterview().getJobPosting() == jobPosting) {
+                if (interviewGroup.getJob() == jobPosting.getJob()) {
                     interviewGroups.getItems().add(interviewGroup);
                 }
         }
