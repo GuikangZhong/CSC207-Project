@@ -3,6 +3,7 @@ package project.interview;
 import project.application.Application;
 import project.application.JobPosting;
 import project.observer.InterviewObserver;
+import project.observer.RoundObserver;
 import project.user.Applicant;
 import project.user.Interviewer;
 import project.utils.Logging;
@@ -14,7 +15,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.logging.Logger;
 
-public class Interview implements Serializable {
+public class Interview implements Serializable, RoundObserver {
     private static final long serialVersionUID = -5626906039736330402L;
     private Collection<InterviewObserver> observers;
     private List<Applicant> applicants;
@@ -89,6 +90,7 @@ public class Interview implements Serializable {
         }
         filterPassed();
         round++;
+        getRoundInProgress().addObserver(this);
 
     }
 
@@ -98,7 +100,7 @@ public class Interview implements Serializable {
 
     public void assignRound(InterviewGroupAssignmentStrategy strategy, List<Interviewer> interviewers) {
         List<InterviewGroup> groups = strategy.select(applicants, interviewers);
-        for(InterviewGroup group: groups){
+        for (InterviewGroup group : groups) {
             Interviewer interviewer = group.getInterviewer();
             interviewer.addInterviewGroup(group);
         }
@@ -113,5 +115,10 @@ public class Interview implements Serializable {
             s.append(round + "\n");
         }
         return s.toString();
+    }
+
+    @Override
+    public void updateOnRoundFinished(Round round) {
+
     }
 }

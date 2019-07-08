@@ -1,6 +1,7 @@
 package project.interview;
 
 import project.application.Company;
+import project.observer.InterviewGroupObserver;
 import project.user.Applicant;
 import project.user.Interviewer;
 
@@ -12,9 +13,13 @@ public class InterviewGroup implements Serializable {
     private Interviewer interviewer;
     private Map<String, Boolean> applicantsStatus;
     private List<Applicant> applicants;
-    private Round round;
     private boolean submitted = false;
     private Interview interview;
+    private List<InterviewGroupObserver> observers;
+
+    public void addObserver(InterviewGroupObserver observer) {
+        observers.add(observer);
+    }
 
     InterviewGroup(Interview interview, Interviewer interviewer, List<Applicant> applicants) {
         this.interviewer = interviewer;
@@ -28,8 +33,11 @@ public class InterviewGroup implements Serializable {
 
     public void submit() {
         submitted = true;
-        round.updateOnGroupSubmitted();
-        interviewer.removeInterviewGroup(this);
+        for (InterviewGroupObserver observer : observers) {
+            observer.updateOnGroupSubmitted(this);
+        }
+//
+//                interviewer.removeInterviewGroup(this);
     }
 
     public Interviewer getInterviewer() {

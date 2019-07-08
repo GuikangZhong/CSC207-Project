@@ -1,20 +1,26 @@
 package project.interview;
 
+import project.observer.InterviewGroupObserver;
+import project.observer.RoundObserver;
 import project.user.Applicant;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Round implements Serializable {
+public abstract class Round implements Serializable, InterviewGroupObserver {
     private static final long serialVersionUID = 8042645594070245259L;
     private int number;
     private List<InterviewGroup> groups;
-    private Interview interview = null;
+    private List<RoundObserver> observers;
 
     public abstract String roundType();
 
     public abstract int getMaxRoundNumber();
+
+    public void addObserver(RoundObserver observer) {
+        observers.add(observer);
+    }
 
     public void setNumber(int number) {
         if (number > getMaxRoundNumber()) {
@@ -32,22 +38,17 @@ public abstract class Round implements Serializable {
         if (this.groups != null) {
             throw new RuntimeException("You have already assigned groups!!!");
         }
+        for (InterviewGroup group : groups) {
+            group.addObserver(this);
+        }
         this.groups = groups;
     }
 
     public List<InterviewGroup> getGroups() {
-        if(!assigned()){
+        if (!assigned()) {
             throw new RuntimeException("You must assigned the group first!!");
         }
         return groups;
-    }
-
-    public Interview getInterview() {
-        return interview;
-    }
-
-    public void setInterview(Interview interview) {
-        this.interview = interview;
     }
 
     public boolean isAllGroupsSubmitted() {
@@ -58,9 +59,12 @@ public abstract class Round implements Serializable {
         return true;
     }
 
-    void updateOnGroupSubmitted() {
+    @Override
+    public void updateOnGroupSubmitted(InterviewGroup group) {
         if (isAllGroupsSubmitted()) {
-            interview.updateOnRoundFinished();
+            for (RoundObserver observer : observers) {
+                observer.updateOnRoundFinished(this);
+            }
         }
     }
 
