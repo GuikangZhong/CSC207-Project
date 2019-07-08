@@ -9,6 +9,7 @@ import javafx.scene.input.MouseEvent;
 import project.application.Application;
 import project.application.JobPosting;
 import project.user.Applicant;
+import project.utils.Logging;
 
 import java.io.IOException;
 import java.net.URL;
@@ -17,6 +18,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Logger;
 
 public class ViewJobPostingController extends ApplicationController implements Initializable{
     @FXML
@@ -63,7 +65,7 @@ public class ViewJobPostingController extends ApplicationController implements I
         }
 
     }
-
+    static private Logger logger = Logging.getLogger();
     public void applyButton(ActionEvent event){
         JobPosting jobPosting = jobList.getSelectionModel().getSelectedItem();
         Applicant applicant = (Applicant)getUser();
@@ -71,7 +73,7 @@ public class ViewJobPostingController extends ApplicationController implements I
         if(application == null){
             showModal("Cannot apply");
         }else{
-            System.out.println("Applied");
+            logger.info(applicant.getUsername() + " applied for " + jobPosting.getJobTitle());
             showModal("Great","Applied");
         }
     }

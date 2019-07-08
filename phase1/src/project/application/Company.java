@@ -4,9 +4,11 @@ import project.observer.JobPostingObserver;
 import project.observer.SystemObserver;
 import project.system.MainSystem;
 import project.user.*;
+import project.utils.Logging;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.logging.Logger;
 
 public class Company implements Serializable, SystemObserver {
     private static final long serialVersionUID = 2088083308860080279L;
@@ -62,10 +64,10 @@ public class Company implements Serializable, SystemObserver {
         }
         return null;
     }
-
+    static private Logger logger = Logging.getLogger();
     @Override
     public void updateOnTime(LocalDateTime now) {
-        System.out.println("Update on " + now);
+        logger.info("Update on " + now);
         jobPostingManager.updateOnTime(now);
     }
 }

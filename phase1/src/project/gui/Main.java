@@ -12,26 +12,29 @@ import javafx.stage.Stage;
 import project.application.Company;
 import project.system.MainSystem;
 import project.user.*;
+import project.utils.Logging;
 
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Logger;
 
 
 public class Main extends Application {
 
 
     static String autoSaveFileName = "auto.ser";
-
+    static private Logger logger = Logging.getLogger();
     private static MainSystem system;
     public static void main(String[] args) throws IOException, ClassNotFoundException{
         try {
             system = MainSystem.loadFromFile(autoSaveFileName);
         } catch (IOException e){
+            logger.info("New system");
             system = new MainSystem();
-            System.out.println("New system");
-            e.printStackTrace();
+
+
         } catch (ClassNotFoundException e){
             throw new ClassNotFoundException("Class not found");
         }

@@ -12,6 +12,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import project.utils.Logging;
 
 import java.awt.event.MouseEvent;
 import java.io.IOException;
@@ -21,6 +22,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ResourceBundle;
+import java.util.logging.Logger;
 
 public class MainWindow extends ApplicationController implements Initializable {
     @FXML
@@ -40,15 +42,16 @@ public class MainWindow extends ApplicationController implements Initializable {
         SceneSwitcher.switchScene(this, event, "AddCompany.fxml");
     }
 
+    static private Logger logger = Logging.getLogger();
     public void addCompanyConfirmButton(ActionEvent event) throws IOException {
         if (companyName.getText() != null) {
             String name = companyName.getText().toLowerCase();
             boolean added = getSystem().addCompany(name);
             if (added) {
-                System.out.println("Successfully added");
+                logger.info("Successfully added");
                 SceneSwitcher.switchScene(this, event, "Main.fxml");
             } else {
-                System.out.println("Company already exist");
+                logger.warning("Company already exist");
             }
         }
     }
@@ -75,7 +78,7 @@ public class MainWindow extends ApplicationController implements Initializable {
                     Integer.parseInt(day.getText()));
             LocalDateTime dateTime = LocalDateTime.of(date, getSystem().now().toLocalTime());
             getSystem().setSystemClockTime(dateTime);
-            System.out.println("Set time to " + getSystem().now().toString());
+
             window.close();
         });
 

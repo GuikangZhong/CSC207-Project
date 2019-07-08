@@ -3,12 +3,14 @@ package project.system;
 import project.application.*;
 import project.observer.SystemObserver;
 import project.user.*;
+import project.utils.Logging;
 
 import java.io.*;
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.*;
+import java.util.logging.Logger;
 
 
 public class MainSystem implements Serializable {
@@ -39,15 +41,14 @@ public class MainSystem implements Serializable {
                 index++;
             }
             Company company = getCompany(c);
-            HR hr = new HR(new UserHistory(now()),c + "-HR","a"
-                    ,"Diane Horton", c);
+            HR hr = new HR(new UserHistory(now()), c + "-HR", "a"
+                    , "Diane Horton", c);
             company.getHrManager().addUser(hr);
             JobPostingManager manager = company.getJobPostingManager();
-            String [] jobs = {"-A","-B","-C","-D","-E","-F"};
-            for(String job:jobs)
-            {
-                JobPosting jobPosting = new JobPosting(hr.getUsername(), new Job(c + job,company),now(),
-                        now().plusDays(3),new BasicRequirement(),1,c + job + "--");
+            String[] jobs = {"-A", "-B", "-C", "-D", "-E", "-F"};
+            for (String job : jobs) {
+                JobPosting jobPosting = new JobPosting(hr.getUsername(), new Job(c + job, company), now(),
+                        now().plusDays(3), new BasicRequirement(), 1, c + job + "--");
                 manager.addJobPosting(jobPosting);
             }
         }
@@ -63,9 +64,10 @@ public class MainSystem implements Serializable {
     }
 
     public boolean addCompany(String name) {
-        if (getCompany(name) == null) {
+        if (!companies.containsKey(name)) {
             Company company = new Company(name, this);
             companies.put(name, company);
+            logger.info("added company " + name);
             addObserver(company);
             return true;
         }
@@ -85,6 +87,7 @@ public class MainSystem implements Serializable {
     }
 
     public boolean addUser(User user) {
+        logger.info("Added user : " + user.getUsername() +" type: "+ user.getType() + " company: "+ user.getCompany());
         if (user.getType() == User.Type.APPLICANT) {
             return applicants.addUser((Applicant) user);
         } else {
@@ -135,10 +138,14 @@ public class MainSystem implements Serializable {
     }
 
     public void addObserver(SystemObserver observer) {
+        logger.info("Added SystemObserver "+ observer);
         observers.add(observer);
     }
 
-    public void setSystemClockTime(LocalDateTime time){
+    static private Logger logger = Logging.getLogger();
+
+    public void setSystemClockTime(LocalDateTime time) {
+        logger.info("Set time to " + now().toString());
         Duration duration = Duration.between(now(), time);
         getClock().offset(duration);
         notifyOnTimeUpdate();

@@ -9,6 +9,7 @@ import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import project.application.*;
 import project.user.HR;
+import project.utils.Logging;
 
 import java.io.IOException;
 import java.net.URL;
@@ -16,6 +17,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ResourceBundle;
+import java.util.logging.Logger;
 
 public class CreateJobController extends ApplicationController {
 
@@ -67,7 +69,7 @@ public class CreateJobController extends ApplicationController {
             closedMonth.getItems().add(m);
         }
     }
-
+    static private Logger logger = Logging.getLogger();
     public void submitJobPos(ActionEvent event) throws IOException {
         String title1 = title.getText();
         Integer openYear = openedYear.getSelectionModel().getSelectedItem();
@@ -97,7 +99,7 @@ public class CreateJobController extends ApplicationController {
                     , requirement, Integer.parseInt(numOpen), description_);
             JobPostingManager jobPostingManager = company.getJobPostingManager();
             if (jobPostingManager.addJobPosting(jobPosting)) {
-                System.out.println("job added successfully");
+                logger.info("job added successfully");
                 showModal("Great","job added successfully");
             }
         }else{

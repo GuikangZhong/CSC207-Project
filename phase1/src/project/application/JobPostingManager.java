@@ -6,12 +6,14 @@ import project.observer.SystemObserver;
 import project.system.MainSystem;
 import project.system.SystemClock;
 import project.user.Applicant;
+import project.utils.Logging;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.logging.Logger;
 
 public class JobPostingManager implements InterviewObserver, Serializable, SystemObserver {
     private static final long serialVersionUID = -9197333240356088957L;
@@ -42,13 +44,14 @@ public class JobPostingManager implements InterviewObserver, Serializable, Syste
     public boolean addJobPosting(JobPosting jobPosting) {
         String jobName = jobPosting.getJob().getTitle();
         if (!jobPostings.containsKey(jobName)) {
+            logger.info("Added job " + jobPosting.getJobTitle());
             jobPostings.put(jobName, jobPosting);
             jobPosting.addObserver(company.getHrManager());
             return true;
         }
         return false;
     }
-
+    static private Logger logger = Logging.getLogger();
     public void removeJobPosting(String name) {
         jobPostings.remove(name);
     }

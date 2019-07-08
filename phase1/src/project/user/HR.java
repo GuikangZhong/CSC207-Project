@@ -3,9 +3,11 @@ package project.user;
 import project.application.*;
 import project.interview.*;
 import project.system.SystemClock;
+import project.utils.Logging;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 public class HR extends User {
     private static final long serialVersionUID = 6752053563376828029L;
@@ -17,10 +19,10 @@ public class HR extends User {
 
     // TODO: check with piazza / prof if this is really what it wants
     public HR(UserHistory history,
-       String username,
-       String password,
-       String realName,
-       String company) {
+              String username,
+              String password,
+              String realName,
+              String company) {
         super(history, username, password, realName, company);
         recommendationLists = new ArrayList<>();
 
@@ -64,8 +66,10 @@ public class HR extends User {
         interviewsRoundFinished.add(jobTitle);
     }
 
+    static private Logger logger = Logging.getLogger();
+
     void addInterviewsToBeScheduled(String jobTitle) {
-        System.out.println("Added " + jobTitle + " for " + getUsername());
+        logger.info("Added " + jobTitle + " for " + getUsername());
         interviewsToBeScheduled.add(jobTitle);
     }
 
