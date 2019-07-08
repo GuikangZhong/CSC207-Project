@@ -57,7 +57,7 @@ public class ViewJobPostingController extends ApplicationController implements I
                 postStatus.setText("OPEN");
             }
             description.setText(jobPosting.getDescription());
-            openDays.setText(String.format("From %s to %s", jobPosting.getOpenDate().toLocalDate(),
+            openDays.setText(String.format(" %s to %s", jobPosting.getOpenDate().toLocalDate(),
                     jobPosting.getCloseDate().toLocalDate()));
             nNeeded.setText(Integer.valueOf(jobPosting.getnApplicantNeeded()).toString());
         }
