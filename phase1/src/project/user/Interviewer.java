@@ -2,6 +2,7 @@ package project.user;
 
 import project.application.Company;
 import project.interview.InterviewGroup;
+import project.interview.InterviewGroupAssignmentStrategy;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -18,6 +19,7 @@ public class Interviewer extends User {
        String realName,
        String company) {
         super(history, username, password, realName, company);
+        interviews = new ArrayList<>();
     }
 
     @Override
@@ -29,7 +31,10 @@ public class Interviewer extends User {
         return Collections.unmodifiableList(interviews);
     }
 
-    public void setInterviews(List<InterviewGroup> interviews) {
-        this.interviews = interviews;
+    public void addInterviewGroup(InterviewGroup group){
+        interviews.add(group);
+    }
+    public void removeInterviewGroup(InterviewGroup group){
+        interviews.remove(group);
     }
 }
