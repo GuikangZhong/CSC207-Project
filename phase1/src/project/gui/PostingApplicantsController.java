@@ -89,10 +89,11 @@ public class PostingApplicantsController extends ApplicationController {
     private void pollApplicants(){
         JobPosting jobPosting = jobPostings.getSelectionModel().getSelectedItem();
         applications.getItems().clear();
-        for(Application application : jobPosting.getApplications()){
-            applications.getItems().add(application);
+        if (jobPosting != null) {
+            for(Application application : jobPosting.getApplications()){
+                applications.getItems().add(application);
+            }
         }
-
     }
     public void exit(Event event) throws IOException {
         SceneSwitcher.switchScene(this, event, "Main.fxml");

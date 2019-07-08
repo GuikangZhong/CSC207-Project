@@ -16,15 +16,20 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="873.0" layoutY="537.0" mnemonicParsing="false" onAction="#returnButton" text="Return" />
-            <Button layoutX="761.0" layoutY="537.0" mnemonicParsing="false" onAction="#submitButton" text="Submit" />
-            <HBox layoutX="95.0" layoutY="76.0" prefHeight="456.0" prefWidth="809.0">
+            <Button layoutX="847.0" layoutY="562.0" mnemonicParsing="false" onAction="#returnButton" text="Return" />
+            <Button layoutX="760.0" layoutY="562.0" mnemonicParsing="false" onAction="#submitButton" text="Submit" />
+            <HBox layoutX="95.0" layoutY="76.0" prefHeight="456.0" prefWidth="493.0">
                <children>
-                  <ListView fx:id="applicants" prefHeight="456.0" prefWidth="478.0" />
+                  <ListView fx:id="applicants" prefHeight="456.0" prefWidth="451.0" />
                   <ListView fx:id="interviewers" prefHeight="456.0" prefWidth="470.0" />
-                  <ListView fx:id="interviewGroup" prefHeight="456.0" prefWidth="468.0" />
                </children>
             </HBox>
+            <Label layoutX="195.0" layoutY="44.0" text="Applicant" />
+            <Label layoutX="430.0" layoutY="44.0" text="Interviewer" />
+            <ListView fx:id="selectedApplicants" layoutX="673.0" layoutY="76.0" prefHeight="200.0" prefWidth="200.0" />
+            <ListView fx:id="selectedInterviewers" layoutX="673.0" layoutY="332.0" prefHeight="200.0" prefWidth="200.0" />
+            <Label layoutX="724.0" layoutY="44.0" text="Applicant Selected" />
+            <Label layoutX="720.0" layoutY="303.0" text="Interviewer Selected" />
          </children>
       </AnchorPane>
    </center>
