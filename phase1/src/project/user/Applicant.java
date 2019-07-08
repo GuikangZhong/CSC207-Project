@@ -50,6 +50,10 @@ public class Applicant extends User implements Serializable {
         return null;
     }
 
+    public Optional<Application> getApplicationOf(String jobTitle) {
+        return getApplications().stream().filter(application -> application.getJob().getTitle().equals(jobTitle)).findAny();
+    }
+
     public Collection<Application> getApplications() {
         return applications;
     }

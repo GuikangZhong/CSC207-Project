@@ -1,5 +1,7 @@
 package project.interview;
 
+import project.user.Applicant;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -62,10 +64,10 @@ public abstract class Round implements Serializable {
         }
     }
 
-    public List<String> getApplicantsNamePassed() {
-        List<String> names = new ArrayList<>();
+    public List<Applicant> getApplicantsPassed() {
+        List<Applicant> names = new ArrayList<>();
         for (InterviewGroup group : groups) {
-            names.addAll(group.getApplicantsNamePassed());
+            names.addAll(group.getApplicantsPassed());
         }
         return names;
     }

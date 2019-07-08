@@ -27,9 +27,8 @@ public class HRManager extends UserManager<HR> implements InterviewObserver, Job
         private static final long serialVersionUID = 4067923033790808132L;
 
         @Override
-        public Optional<HR> select(String jobTitle, Collection<HR> hrList) {
-            JobPosting jobPosting = company.getJobPostingManager().getJobPosting(jobTitle);
-            return Optional.of((HR)company.getUser(jobPosting.getHrName()));
+        public Optional<HR> select(JobPosting jobPosting, Collection<HR> hrList) {
+            return Optional.of(jobPosting.getHr());
         }
     }
 
@@ -44,11 +43,10 @@ public class HRManager extends UserManager<HR> implements InterviewObserver, Job
     }
 
     @Override
-    public void updateOnJobPostingClosure(String jobTitle) {
+    public void updateOnJobPostingClosure(JobPosting jobPosting) {
         // select an HR
-        Optional<HR> hr = selectionStrategy.select(jobTitle, users.values());
+        Optional<HR> hr = selectionStrategy.select(jobPosting, users.values());
         if (hr.isPresent()) {
-            JobPosting jobPosting = company.getJobPostingManager().getJobPosting(jobTitle);
             InterviewSetup setup = new InterviewSetup();
             setup.addRound(new PhoneRound());
             setup.addRound(new InPersonRound());
@@ -58,7 +56,7 @@ public class HRManager extends UserManager<HR> implements InterviewObserver, Job
             jobPosting.setInterview(interview);
             interview.addObserver(this);
             interview.addObserver(company.getJobPostingManager());
-            hr.get().addInterviewsToBeScheduled(jobTitle);
+            hr.get().addInterviewsToBeScheduled(jobPosting.getJobTitle());
         } else {
             throw new RuntimeException("No HR !!!!!");
         }

@@ -45,13 +45,13 @@ public class JobPosting implements Serializable, SystemObserver {
 
     private Interview interview;
 
-    public String getHrName() {
-        return hrName;
+    public HR getHr() {
+        return hr;
     }
 
-    private String hrName;
+    private HR hr;
 
-    public JobPosting(String hrName, Job job, LocalDateTime begin, LocalDateTime end, Requirement requirement, int nApplicantNeeded,
+    public JobPosting(HR hr, Job job, LocalDateTime begin, LocalDateTime end, Requirement requirement, int nApplicantNeeded,
                       String description) {
         status = Status.OPEN;
         this.requirement = requirement;
@@ -63,7 +63,7 @@ public class JobPosting implements Serializable, SystemObserver {
         this.applications = new ArrayList<>();
         this.observers = new ArrayList<>();
         this.description = description;
-        this.hrName = hrName;
+        this.hr = hr;
     }
 
     public enum Status {
@@ -97,7 +97,7 @@ public class JobPosting implements Serializable, SystemObserver {
         if (now.isAfter(closeDate) && getStatus() == Status.OPEN) {
             setStatus(Status.CLOSED);
             for (JobPostingObserver observer : observers) {
-                observer.updateOnJobPostingClosure(getJobTitle());
+                observer.updateOnJobPostingClosure(this);
             }
         }
     }

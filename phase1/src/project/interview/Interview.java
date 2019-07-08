@@ -17,7 +17,7 @@ import java.util.logging.Logger;
 public class Interview implements Serializable {
     private static final long serialVersionUID = -5626906039736330402L;
     private Collection<InterviewObserver> observers;
-    private List<String> applicants;
+    private List<Applicant> applicants;
     private InterviewSetup setup;
     private int round;
 
@@ -35,7 +35,7 @@ public class Interview implements Serializable {
         this.jobPosting = jobPosting;
         applicants = new ArrayList<>();
         for (Application application : jobPosting.getApplications()) {
-            applicants.add(application.getApplicant().getUsername());
+            applicants.add(application.getApplicant());
         }
         round = 0;
         observers = new ArrayList<>();
@@ -93,13 +93,13 @@ public class Interview implements Serializable {
     }
 
     void filterPassed() {
-        applicants = getRoundInProgress().getApplicantsNamePassed();
+        applicants = getRoundInProgress().getApplicantsPassed();
     }
 
     public void assignRound(InterviewGroupAssignmentStrategy strategy, List<Interviewer> interviewers) {
         List<InterviewGroup> groups = strategy.select(applicants, interviewers);
         for(InterviewGroup group: groups){
-            Interviewer interviewer = (Interviewer)jobPosting.getCompany().getUser(group.getInterviewer());
+            Interviewer interviewer = group.getInterviewer();
             interviewer.addInterviewGroup(group);
         }
         getRoundInProgress().setGroups(groups);

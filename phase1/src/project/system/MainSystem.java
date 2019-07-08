@@ -51,7 +51,7 @@ public class MainSystem implements Serializable {
             JobPostingManager manager = company.getJobPostingManager();
             String[] jobs = {"-A", "-B", "-C", "-D", "-E", "-F"};
             for (String job : jobs) {
-                JobPosting jobPosting = new JobPosting(hr.getUsername(), new Job(c + job, company), now(),
+                JobPosting jobPosting = new JobPosting(hr, new Job(c + job, company), now(),
                         now().plusDays(3), new BasicRequirement(), 1, c + job + "--");
                 manager.addJobPosting(jobPosting);
             }

@@ -1,5 +1,7 @@
 package project.observer;
 
+import project.application.JobPosting;
+
 public interface JobPostingObserver {
-    void updateOnJobPostingClosure(String jobTitle);
+    void updateOnJobPostingClosure(JobPosting jobPosting);
 }
