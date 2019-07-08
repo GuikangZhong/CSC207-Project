@@ -14,6 +14,11 @@ public class InterviewGroup implements Serializable {
     private static final long serialVersionUID = 4355176965416536403L;
     private Interviewer interviewer;
     private Map<String, Boolean> applicantsStatus;
+
+    public List<Applicant> getApplicants() {
+        return Collections.unmodifiableList(applicants);
+    }
+
     private List<Applicant> applicants;
     private boolean submitted = false;
     private Interview interview;
@@ -25,7 +30,7 @@ public class InterviewGroup implements Serializable {
         observers.add(observer);
     }
 
-    InterviewGroup(Interview interview, Interviewer interviewer, List<Applicant> applicants) {
+    public InterviewGroup(Interview interview, Interviewer interviewer, List<Applicant> applicants) {
         this.interviewer = interviewer;
         this.applicants = applicants;
         applicantsStatus = new HashMap<>();
@@ -33,15 +38,15 @@ public class InterviewGroup implements Serializable {
             applicantsStatus.put(applicant.getUsername(), false);
         }
         this.interview = interview;
+        observers = new ArrayList<>();
     }
 
     public void submit() {
+        logger.info(this + "submitted");
         submitted = true;
         for (InterviewGroupObserver observer : observers) {
             observer.updateOnGroupSubmitted(this);
         }
-//
-//                interviewer.removeInterviewGroup(this);
     }
 
     public Interviewer getInterviewer() {
@@ -68,5 +73,15 @@ public class InterviewGroup implements Serializable {
 
     public Interview getInterview() {
         return interview;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder(getInterview().getJobPosting().getJobTitle() + " [");
+        for (Applicant applicant : applicants) {
+            builder.append(applicant.getUsername() + " ");
+        }
+        builder.append("]");
+        return builder.toString();
     }
 }

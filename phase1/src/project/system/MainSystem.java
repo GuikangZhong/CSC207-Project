@@ -44,7 +44,7 @@ public class MainSystem implements Serializable {
             Company company = getCompany(c);
             HR hr = new HR(new UserHistory(now()), c + "-HR", "a"
                     , "Diane Horton", c);
-            Interviewer interviewer= new Interviewer(new UserHistory(now()), c + "-I", "a"
+            Interviewer interviewer = new Interviewer(new UserHistory(now()), c + "-I", "a"
                     , "Diane Horton", c);
             company.getHrManager().addUser(hr);
             company.getInterviewerManager().addUser(interviewer);
@@ -54,6 +54,16 @@ public class MainSystem implements Serializable {
                 JobPosting jobPosting = new JobPosting(hr, new Job(c + job, company), now(),
                         now().plusDays(3), new BasicRequirement(), 1, c + job + "--");
                 manager.addJobPosting(jobPosting);
+            }
+        }
+
+
+        for (JobPosting jobPosting : getAllJobPostings()) {
+            int i =0;
+            for (Applicant applicant : getApplicants().values()) {
+                applicant.apply(jobPosting);
+                if(i++ > 5)
+                    break;
             }
         }
     }
@@ -91,7 +101,7 @@ public class MainSystem implements Serializable {
     }
 
     public boolean addUser(User user) {
-        logger.info("Added user : " + user.getUsername() +" type: "+ user.getType() + " company: "+ user.getCompany());
+        logger.info("Added user : " + user.getUsername() + " type: " + user.getType() + " company: " + user.getCompany());
         if (user.getType() == User.Type.APPLICANT) {
             return applicants.addUser((Applicant) user);
         } else {
@@ -142,7 +152,7 @@ public class MainSystem implements Serializable {
     }
 
     public void addObserver(SystemObserver observer) {
-        logger.info("Added SystemObserver "+ observer);
+        logger.info("Added SystemObserver " + observer);
         observers.add(observer);
     }
 

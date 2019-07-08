@@ -65,7 +65,9 @@ public abstract class Round implements Serializable, InterviewGroupObserver {
 
     @Override
     public void updateOnGroupSubmitted(InterviewGroup group) {
+        logger.info(this + " one group submitted");
         if (isAllGroupsSubmitted()) {
+            logger.info("All submitted");
             for (RoundObserver observer : observers) {
                 observer.updateOnRoundFinished(this);
             }
@@ -82,6 +84,7 @@ public abstract class Round implements Serializable, InterviewGroupObserver {
 
     public Round() {
         number = -1;
+        observers = new ArrayList<>();
     }
 
     public String toString() {

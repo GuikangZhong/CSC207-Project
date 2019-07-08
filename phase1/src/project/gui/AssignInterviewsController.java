@@ -14,15 +14,14 @@ import project.application.JobPosting;
 import project.application.JobPostingManager;
 import project.interview.Interview;
 import project.interview.InterviewGroup;
-import project.user.Applicant;
-import project.user.User;
-import project.user.Interviewer;
-import project.user.InterviewerManager;
+import project.interview.InterviewGroupAssignmentStrategy;
+import project.user.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class AssignInterviewsController extends ApplicationController {
 
@@ -40,89 +39,15 @@ public class AssignInterviewsController extends ApplicationController {
 
     @Override
     void postInit() {
-        applicants.setCellFactory(new Callback<ListView<Applicant>, ListCell<Applicant>>() {
-
-            @Override
-            public ListCell<Applicant> call(ListView<Applicant> p) {
-
-                ListCell<Applicant> cell = new ListCell<Applicant>() {
-
-                    @Override
-                    protected void updateItem(Applicant t, boolean bln) {
-                        super.updateItem(t, bln);
-                        if (t != null) {
-                            setText(t.getRealName());
-                        } else {
-                            setText("");
-                        }
-                    }
-                };
-                return cell;
-            }
-        });
+        applicants.setCellFactory(CellFactoryFactory.getCellFactoryForApplicant());
         pollApplicants();
 
-        interviewers.setCellFactory(new Callback<ListView<Interviewer>, ListCell<Interviewer>>() {
-
-            @Override
-            public ListCell<Interviewer> call(ListView<Interviewer> p) {
-
-                ListCell<Interviewer> cell = new ListCell<Interviewer>() {
-
-                    @Override
-                    protected void updateItem(Interviewer t, boolean bln) {
-                        super.updateItem(t, bln);
-                        if (t != null) {
-                            setText(t.getRealName());
-                        } else {
-                            setText("");
-                        }
-                    }
-                };
-                return cell;
-            }
-        });
+        interviewers.setCellFactory(CellFactoryFactory.getCellFactoryForInterviewer());
         pollInterviewers();
 
-        selectedApplicants.setCellFactory(new Callback<ListView<Applicant>, ListCell<Applicant>>() {
-            @Override
-            public ListCell<Applicant> call(ListView<Applicant> p) {
+        selectedApplicants.setCellFactory(CellFactoryFactory.getCellFactoryForApplicant());
 
-                ListCell<Applicant> cell = new ListCell<Applicant>() {
-
-                    @Override
-                    protected void updateItem(Applicant t, boolean bln) {
-                        super.updateItem(t, bln);
-                        if (t != null) {
-                            setText(t.getRealName());
-                        } else {
-                            setText("");
-                        }
-                    }
-                };
-                return cell;
-            }
-        });
-
-        selectedInterviewers.setCellFactory(new Callback<ListView<Interviewer>, ListCell<Interviewer>>() {
-            @Override
-            public ListCell<Interviewer> call(ListView<Interviewer> p) {
-
-                ListCell<Interviewer> cell = new ListCell<Interviewer>() {
-
-                    @Override
-                    protected void updateItem(Interviewer t, boolean bln) {
-                        super.updateItem(t, bln);
-                        if (t != null) {
-                            setText(t.getRealName());
-                        } else {
-                            setText("");
-                        }
-                    }
-                };
-                return cell;
-            }
-        });
+        selectedInterviewers.setCellFactory(CellFactoryFactory.getCellFactoryForInterviewer());
 
         applicants.setOnMouseClicked((MouseEvent click) -> {
             addItemToOther(click, applicants, selectedApplicants);
@@ -141,9 +66,9 @@ public class AssignInterviewsController extends ApplicationController {
         });
     }
 
-    private void addItemToOther(MouseEvent click, ListView source, ListView destination){
+    private void addItemToOther(MouseEvent click, ListView source, ListView destination) {
         if (click.getClickCount() == 2) {
-            User user = (User)source.getSelectionModel().getSelectedItem();
+            User user = (User) source.getSelectionModel().getSelectedItem();
             destination.getItems().add(user);
             source.getItems().remove(user);
         }
@@ -168,7 +93,29 @@ public class AssignInterviewsController extends ApplicationController {
         }
     }
 
+
     public void submitButton(ActionEvent event) throws IOException {
+
+        HR hr = (HR) getUser();
+        Company company = getSystem().getCompany(hr.getCompany());
+        Interview interview = company.getInterviewManager().getInterview(jobPosting.getJobTitle());
+        class UISelectionStrategy implements InterviewGroupAssignmentStrategy {
+
+            @Override
+            public List<InterviewGroup> select(List<Applicant> _applicants, List<Interviewer> _interviewers) {
+                InterviewGroup group = new InterviewGroup(interview,
+                        selectedInterviewers.getItems().get(0),
+                        new ArrayList<>(selectedApplicants.getItems()));
+                List<InterviewGroup> groups = new ArrayList<>();
+                groups.add(group);
+                return groups;
+            }
+        }
+
+
+        interview.assignRound(new UISelectionStrategy(),
+                new ArrayList<>(company.getInterviewerManager().getUsers().values()));
+
         SceneSwitcher.switchScene(this, event, "PostingApplicants.fxml");
     }
 

@@ -40,6 +40,7 @@ public class Interview implements Serializable, RoundObserver {
         }
         round = 0;
         observers = new ArrayList<>();
+        getRoundInProgress().addObserver(this);
     }
 
     public String getHR() {
@@ -99,8 +100,10 @@ public class Interview implements Serializable, RoundObserver {
     }
 
     public void assignRound(InterviewGroupAssignmentStrategy strategy, List<Interviewer> interviewers) {
+        logger.info("Job" + getJobPosting().getJobTitle() + " Round: " + getRoundInProgress() + " assigned");
         List<InterviewGroup> groups = strategy.select(applicants, interviewers);
         for (InterviewGroup group : groups) {
+            logger.info(group.toString());
             Interviewer interviewer = group.getInterviewer();
             interviewer.addInterviewGroup(group);
         }
@@ -120,5 +123,6 @@ public class Interview implements Serializable, RoundObserver {
     @Override
     public void updateOnRoundFinished(Round round) {
         logger.info("Interview for " + jobPosting.getJobTitle() + "round finished");
+        updateOnRoundFinished();
     }
 }
