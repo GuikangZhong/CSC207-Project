@@ -52,6 +52,8 @@ public class AssignInterviewsController extends ApplicationController {
                         super.updateItem(t, bln);
                         if (t != null) {
                             setText(t.getRealName());
+                        } else {
+                            setText("");
                         }
                     }
                 };
@@ -72,6 +74,8 @@ public class AssignInterviewsController extends ApplicationController {
                         super.updateItem(t, bln);
                         if (t != null) {
                             setText(t.getRealName());
+                        } else {
+                            setText("");
                         }
                     }
                 };
@@ -91,6 +95,8 @@ public class AssignInterviewsController extends ApplicationController {
                         super.updateItem(t, bln);
                         if (t != null) {
                             setText(t.getRealName());
+                        } else {
+                            setText("");
                         }
                     }
                 };
@@ -109,6 +115,8 @@ public class AssignInterviewsController extends ApplicationController {
                         super.updateItem(t, bln);
                         if (t != null) {
                             setText(t.getRealName());
+                        } else {
+                            setText("");
                         }
                     }
                 };

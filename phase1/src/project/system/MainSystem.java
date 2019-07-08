@@ -1,6 +1,7 @@
 package project.system;
 
 import project.application.*;
+import project.interview.Interview;
 import project.observer.SystemObserver;
 import project.user.*;
 import project.utils.Logging;
@@ -43,7 +44,10 @@ public class MainSystem implements Serializable {
             Company company = getCompany(c);
             HR hr = new HR(new UserHistory(now()), c + "-HR", "a"
                     , "Diane Horton", c);
+            Interviewer interviewer= new Interviewer(new UserHistory(now()), c + "-I", "a"
+                    , "Diane Horton", c);
             company.getHrManager().addUser(hr);
+            company.getInterviewerManager().addUser(interviewer);
             JobPostingManager manager = company.getJobPostingManager();
             String[] jobs = {"-A", "-B", "-C", "-D", "-E", "-F"};
             for (String job : jobs) {

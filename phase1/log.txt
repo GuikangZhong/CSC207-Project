@@ -1,5 +1,5 @@
 ======================================================================
-Application session on 2019-07-07T21:56:44.195
+Application session on 2019-07-07T23:15:48.529
 ======================================================================
 New system
 Added SystemObserver project.user.ApplicantManager@ba8a1dc
@@ -51,32 +51,9 @@ Added job Google-C
 Added job Google-D
 Added job Google-E
 Added job Google-F
-======================================================================
-Application session on 2019-07-07T21:56:51.841
-======================================================================
 a applied for UofT-F
-a applied for Google-A
-a applied for UofT-C
-a applied for UofT-E
-Set time to 2019-07-07T21:57:07.012
-Update on 2019-07-20T21:57:07.013
-Added UofT-F for UofT-HR
-Added UofT-E for UofT-HR
-Added UofT-D for UofT-HR
-Added UofT-C for UofT-HR
-Added UofT-B for UofT-HR
-Added UofT-A for UofT-HR
-Update on 2019-07-20T21:57:07.015
-Added Microsoft-B for Microsoft-HR
-Added Microsoft-A for Microsoft-HR
-Added Microsoft-F for Microsoft-HR
-Added Microsoft-E for Microsoft-HR
-Added Microsoft-D for Microsoft-HR
-Added Microsoft-C for Microsoft-HR
-Update on 2019-07-20T21:57:07.017
-Added Google-C for Google-HR
-Added Google-B for Google-HR
-Added Google-A for Google-HR
-Added Google-F for Google-HR
-Added Google-E for Google-HR
-Added Google-D for Google-HR
+b applied for UofT-F
+c applied for UofT-F
+======================================================================
+Application session on 2019-07-07T23:18:15.638
+======================================================================
