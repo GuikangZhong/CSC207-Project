@@ -125,37 +125,28 @@ public class AssignInterviewsController extends ApplicationController {
         });
 
         applicants.setOnMouseClicked((MouseEvent click) -> {
-            if (click.getClickCount() == 2) {
-                Applicant applicant = applicants.getSelectionModel().getSelectedItem();
-                selectedApplicants.getItems().add(applicant);
-                applicants.getItems().remove(applicant);
-            }
+            addItemToOther(click, applicants, selectedApplicants);
         });
 
         selectedApplicants.setOnMouseClicked((MouseEvent click) -> {
-            if (click.getClickCount() == 2) {
-                Applicant applicant = selectedApplicants.getSelectionModel().getSelectedItem();
-                applicants.getItems().add(applicant);
-                selectedApplicants.getItems().remove(applicant);
-            }
+            addItemToOther(click, selectedApplicants, applicants);
         });
 
         interviewers.setOnMouseClicked((MouseEvent click) -> {
-            if (click.getClickCount() == 2) {
-                Interviewer interviewer = interviewers.getSelectionModel().getSelectedItem();
-                selectedInterviewers.getItems().add(interviewer);
-                interviewers.getItems().remove(interviewer);
-            }
+            addItemToOther(click, interviewers, selectedInterviewers);
         });
 
         selectedInterviewers.setOnMouseClicked((MouseEvent click) -> {
-            if (click.getClickCount() == 2) {
-                Interviewer interviewer = selectedInterviewers.getSelectionModel().getSelectedItem();
-                interviewers.getItems().add(interviewer);
-                selectedInterviewers.getItems().remove(interviewer);
-            }
+            addItemToOther(click, selectedInterviewers, interviewers);
         });
+    }
 
+    private void addItemToOther(MouseEvent click, ListView source, ListView destination){
+        if (click.getClickCount() == 2) {
+            User user = (User)source.getSelectionModel().getSelectedItem();
+            destination.getItems().add(user);
+            source.getItems().remove(user);
+        }
     }
 
     private void pollApplicants() {
