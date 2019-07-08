@@ -1,9 +1,14 @@
 package project.interview;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ApplicationStatus {
     private List<String> finishedRound;
+
+    public ApplicationStatus() {
+        finishedRound = new ArrayList<>();
+    }
 
     @Override
     public String toString() {
