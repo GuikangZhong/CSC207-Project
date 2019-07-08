@@ -3,22 +3,26 @@ package project.interview;
 import project.observer.InterviewGroupObserver;
 import project.observer.RoundObserver;
 import project.user.Applicant;
+import project.utils.Logging;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 public abstract class Round implements Serializable, InterviewGroupObserver {
     private static final long serialVersionUID = 8042645594070245259L;
     private int number;
     private List<InterviewGroup> groups;
     private List<RoundObserver> observers;
+    static private Logger logger = Logging.getLogger();
 
     public abstract String roundType();
 
     public abstract int getMaxRoundNumber();
 
     public void addObserver(RoundObserver observer) {
+        logger.info(this + " addObserver " + observer);
         observers.add(observer);
     }
 

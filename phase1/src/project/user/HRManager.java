@@ -22,7 +22,8 @@ public class HRManager extends UserManager<HR> implements InterviewObserver, Job
 
     private Company company;
     private HRSelectionStrategy selectionStrategy;
-    class DefaultSelectionStrategy implements HRSelectionStrategy{
+
+    class DefaultSelectionStrategy implements HRSelectionStrategy {
 
         private static final long serialVersionUID = 4067923033790808132L;
 
@@ -52,8 +53,8 @@ public class HRManager extends UserManager<HR> implements InterviewObserver, Job
             setup.addRound(new InPersonRound());
             setup.addRound(new InPersonRound());
             setup.addRound(new InPersonRound());
-            Interview interview = new Interview(hr.get().getUsername(),jobPosting, setup);
-            jobPosting.setInterview(interview);
+            Interview interview = new Interview(hr.get().getUsername(), jobPosting, setup);
+            company.getInterviewManager().addInterview(jobPosting.getJobTitle(), interview);
             interview.addObserver(this);
             interview.addObserver(company.getJobPostingManager());
             hr.get().addInterviewsToBeScheduled(jobPosting.getJobTitle());

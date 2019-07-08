@@ -4,9 +4,11 @@ import project.application.Company;
 import project.observer.InterviewGroupObserver;
 import project.user.Applicant;
 import project.user.Interviewer;
+import project.utils.Logging;
 
 import java.io.Serializable;
 import java.util.*;
+import java.util.logging.Logger;
 
 public class InterviewGroup implements Serializable {
     private static final long serialVersionUID = 4355176965416536403L;
@@ -16,8 +18,10 @@ public class InterviewGroup implements Serializable {
     private boolean submitted = false;
     private Interview interview;
     private List<InterviewGroupObserver> observers;
+    static private Logger logger = Logging.getLogger();
 
     public void addObserver(InterviewGroupObserver observer) {
+        logger.info(this + "add observer " + observer);
         observers.add(observer);
     }
 

@@ -119,6 +119,6 @@ public class Interview implements Serializable, RoundObserver {
 
     @Override
     public void updateOnRoundFinished(Round round) {
-
+        logger.info("Interview for " + jobPosting.getJobTitle() + "round finished");
     }
 }

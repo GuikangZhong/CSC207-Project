@@ -28,22 +28,9 @@ public class JobPosting implements Serializable, SystemObserver {
     private HireResult hireResult;
     private List<JobPostingObserver> observers;
 
-    public Interview getInterview() {
-        return interview;
-    }
-
     static private Logger logger = Logging.getLogger();
 
-    public void setInterview(Interview interview) {
-        if (interview == null) {
-            throw new RuntimeException("Cannot re-set an interview");
-        } else {
-            logger.info(interview.toString());
-            this.interview = interview;
-        }
-    }
 
-    private Interview interview;
 
     public HR getHr() {
         return hr;

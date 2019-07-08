@@ -1,5 +1,6 @@
 package project.application;
 
+import project.interview.InterviewManager;
 import project.observer.JobPostingObserver;
 import project.observer.SystemObserver;
 import project.system.MainSystem;
@@ -17,6 +18,12 @@ public class Company implements Serializable, SystemObserver {
     private JobPostingManager jobPostingManager;
     private HRManager hrManager;
     private InterviewerManager interviewerManager;
+
+    public InterviewManager getInterviewManager() {
+        return interviewManager;
+    }
+
+    private InterviewManager interviewManager;
     private MainSystem system;
 
     public Company(String name, MainSystem system) {
@@ -25,6 +32,7 @@ public class Company implements Serializable, SystemObserver {
         jobPostingManager = new JobPostingManager(system,this);
         hrManager = new HRManager(system, this);
         interviewerManager = new InterviewerManager(system, this);
+        interviewManager = new InterviewManager();
     }
 
     public MainSystem getSystem() {
