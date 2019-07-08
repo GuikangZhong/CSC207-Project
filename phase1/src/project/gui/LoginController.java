@@ -56,6 +56,7 @@ public class LoginController extends ApplicationController{
             Menu menu = new Menu();
             menu.addOption("View all applicants","AllApplicants.fxml")
                     .addOption("Job Postings","PostingApplicants.fxml")
+                    .addOption("Assign round", "RoundApplicants.fxml")
                     .addOption("Inspect interviewers","Miscellaneous.fxml")
                     .addOption("Create Job Posting","CreateJobPost.fxml");
             setMenu(menu);
