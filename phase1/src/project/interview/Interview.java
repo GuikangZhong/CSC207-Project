@@ -48,10 +48,6 @@ public class Interview implements Serializable, RoundObserver {
 
     private String HR;
 
-    InterviewStatus getStatus() {
-        // TODO:
-        return null;
-    }
 
     List<Round> getRoundsFinished() {
         return Collections.unmodifiableList(setup.getRounds().subList(0, round));
@@ -62,6 +58,9 @@ public class Interview implements Serializable, RoundObserver {
     }
 
     Round getRoundInProgress() {
+        if (round == -1) {
+            throw new RuntimeException("You haven't started this interview yet");
+        }
         return setup.getRounds().get(round);
     }
 
@@ -85,7 +84,7 @@ public class Interview implements Serializable, RoundObserver {
     }
 
     public void toNextRound() {
-        if(round != -1) {
+        if (round != -1) {
             if (!getRoundInProgress().isAllGroupsSubmitted() || round == setup.getRounds().size() - 1) {
                 throw new RuntimeException("You have overflowed the rounds or skipped a round");
             }
