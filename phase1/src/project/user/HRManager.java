@@ -2,11 +2,13 @@ package project.user;
 
 import project.application.Company;
 import project.application.Job;
+import project.application.JobPosting;
 import project.interview.Interview;
 import project.observer.InterviewObserver;
 import project.observer.JobPostingObserver;
 import project.system.MainSystem;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -15,10 +17,21 @@ public class HRManager extends UserManager<HR> implements InterviewObserver, Job
 
     private Company company;
     private HRSelectionStrategy selectionStrategy;
+    class DefaultSelectionStrategy implements HRSelectionStrategy{
+
+        private static final long serialVersionUID = 4067923033790808132L;
+
+        @Override
+        public Optional<HR> select(String jobTitle, Collection<HR> hrList) {
+            JobPosting jobPosting = company.getJobPostingManager().getJobPosting(jobTitle);
+            return Optional.of((HR)company.getUser(jobPosting.getHrName()));
+        }
+    }
 
     public HRManager(MainSystem system, Company company) {
         super(system);
         this.company = company;
+        useSelectionStrategy(new DefaultSelectionStrategy());
     }
 
     public void useSelectionStrategy(HRSelectionStrategy strategy) {
@@ -28,7 +41,7 @@ public class HRManager extends UserManager<HR> implements InterviewObserver, Job
     @Override
     public void updateOnJobPostingClosure(String jobTitle) {
         // select an HR
-        Optional<HR> hr = selectionStrategy.select(users.values());
+        Optional<HR> hr = selectionStrategy.select(jobTitle, users.values());
         if (hr.isPresent()) {
             hr.get().addInterviewsToBeScheduled(jobTitle);
         } else {

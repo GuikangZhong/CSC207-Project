@@ -35,15 +35,18 @@ public class MainSystem implements Serializable {
             for (int i = 0; i < 8; i++) {
                 addUser(new Applicant(new ApplicantHistory(now()),
                         "" + names.charAt(index),
-                        "a", "" + names.charAt(index), c));
+                        "a", "David Liu " + names.charAt(index), c));
                 index++;
             }
             Company company = getCompany(c);
+            HR hr = new HR(new UserHistory(now()),c + "-HR","a"
+                    ,"Diane Horton", c);
+            company.getHrManager().addUser(hr);
             JobPostingManager manager = company.getJobPostingManager();
             String [] jobs = {"-A","-B","-C","-D","-E","-F"};
             for(String job:jobs)
             {
-                JobPosting jobPosting = new JobPosting(new Job(c + job,company),now(),
+                JobPosting jobPosting = new JobPosting(hr.getUsername(), new Job(c + job,company),now(),
                         now().plusDays(3),new BasicRequirement(),1,c + job + "--");
                 manager.addJobPosting(jobPosting);
             }

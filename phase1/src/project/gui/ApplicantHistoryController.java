@@ -17,6 +17,12 @@ public class ApplicantHistoryController extends ApplicationController {
     @FXML
     private Label createDate;
 
+    @FXML
+    private Label realname;
+
+    @FXML
+    private Label username;
+
     public void exit(Event event) throws IOException {
         SceneSwitcher.switchScene(this, event, "Main.fxml");
     }
@@ -26,7 +32,7 @@ public class ApplicantHistoryController extends ApplicationController {
         super.postInit();
         Applicant applicant = (Applicant)getUser();
         ApplicantHistory history = applicant.getApplicantHistory();
-        appliedJobs.getItems().clear();;
+        appliedJobs.getItems().clear();
         applyingJobs.getItems().clear();
         for(Job job:history.getJobApplied()){
             appliedJobs.getItems().add(job.getTitle());
@@ -35,5 +41,7 @@ public class ApplicantHistoryController extends ApplicationController {
             applyingJobs.getItems().add(job.getTitle());
         }
         createDate.setText(history.getDateCreated().toString());
+        username.setText(applicant.getUsername());
+        realname.setText(applicant.getRealName());
     }
 }

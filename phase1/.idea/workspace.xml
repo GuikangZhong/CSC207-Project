@@ -2,7 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="591d482d-6f65-4466-88a8-53d1ab9be688" name="Default Changelist" comment="working on login and signup page">
-      <change beforePath="$PROJECT_DIR$/src/project/gui/DocumentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/DocumentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/application/JobPosting.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/phase1/project/application/JobPosting.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/system/MainSystem.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/phase1/project/system/MainSystem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/application/JobPosting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/application/JobPosting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/gui/ApplicantHistory.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/ApplicantHistory.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/gui/ApplicantHistoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/ApplicantHistoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/gui/CreateJobController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/CreateJobController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/system/MainSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/system/MainSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/user/HR.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/user/HR.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/user/HRManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/user/HRManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/user/HRSelectionStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/user/HRSelectionStrategy.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,52 +29,98 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/project/interview/Interview.java">
+        <entry file="file://$PROJECT_DIR$/src/project/gui/DocumentController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="72" column="21" selection-start-line="72" selection-start-column="21" selection-end-line="72" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/project/application/JobPostingManager.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="71" column="35" selection-start-line="71" selection-start-column="35" selection-end-line="71" selection-end-column="35" />
+            <state relative-caret-position="206">
+              <caret line="110" lean-forward="true" selection-start-line="110" selection-end-line="110" />
               <folding>
-                <element signature="e#639#640#0" expanded="true" />
-                <element signature="e#669#670#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/project/observer/JobPostingObserver.java">
+        <entry file="file://$PROJECT_DIR$/src/project/gui/ApplicantHistoryController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="32">
-              <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/project/observer/SystemObserver.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+            <state relative-caret-position="140">
+              <caret line="39" column="46" lean-forward="true" selection-start-line="39" selection-start-column="46" selection-end-line="39" selection-end-column="46" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/project/gui/DocumentController.java">
+        <entry file="file://$PROJECT_DIR$/src/project/user/HRManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="110" lean-forward="true" selection-start-line="110" selection-end-line="110" />
+            <state relative-caret-position="128">
+              <caret line="19" column="23" lean-forward="true" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+              <folding>
+                <element signature="e#1337#1338#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/project/user/HRSelectionStrategy.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="64">
+              <caret line="9" column="57" selection-start-line="9" selection-start-column="57" selection-end-line="9" selection-end-column="57" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/project/gui/CreateJobController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="169">
+              <caret line="94" column="82" selection-start-line="94" selection-start-column="82" selection-end-line="94" selection-end-column="82" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/project/system/MainSystem.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="353">
+              <caret line="48" column="73" selection-start-line="48" selection-start-column="73" selection-end-line="48" selection-end-column="73" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2770#2771#0" expanded="true" />
+                <element signature="e#2812#2813#0" expanded="true" />
+                <element signature="e#2869#2870#0" expanded="true" />
+                <element signature="e#2913#2914#0" expanded="true" />
+                <element signature="e#2962#2963#0" expanded="true" />
+                <element signature="e#3003#3004#0" expanded="true" />
+                <element signature="e#4058#4059#0" expanded="true" />
+                <element signature="e#4116#4117#0" expanded="true" />
+                <element signature="e#4172#4173#0" expanded="true" />
+                <element signature="e#4211#4212#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/project/user/HR.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="22" column="24" lean-forward="true" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/project/application/JobPosting.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="321">
+              <caret line="42" column="39" lean-forward="true" selection-start-line="42" selection-start-column="39" selection-end-line="42" selection-end-column="39" />
+              <folding>
+                <element signature="e#810#811#0" expanded="true" />
+                <element signature="e#839#840#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -80,49 +136,15 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/project/application/CV.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="36" column="11" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
-              <folding>
-                <element signature="e#1107#1108#0" expanded="true" />
-                <element signature="e#1131#1132#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/project/user/Applicant.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
+            <state relative-caret-position="449">
               <caret line="66" column="24" selection-start-line="66" selection-start-column="24" selection-end-line="66" selection-end-column="24" />
               <folding>
                 <element signature="e#2121#2122#0" expanded="true" />
                 <element signature="e#2994#2995#0" expanded="true" />
                 <element signature="e#3084#3085#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/project/application/CoverLetter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="512">
-              <caret line="36" column="11" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
-              <folding>
-                <element signature="e#1173#1174#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/project/observer/InterviewObserver.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="64">
-              <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -152,9 +174,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/project/interview/InterviewGroupSelectionStrategy.java" />
-        <option value="$PROJECT_DIR$/src/project/interview/InPersonRound.java" />
-        <option value="$PROJECT_DIR$/src/project/interview/PhoneRound.java" />
         <option value="$PROJECT_DIR$/src/project/user/UserManager.java" />
         <option value="$PROJECT_DIR$/src/project/interview/InterviewGroupAssignmentStrategy.java" />
         <option value="$PROJECT_DIR$/src/project/interview/Round.java" />
@@ -176,7 +195,6 @@
         <option value="$PROJECT_DIR$/src/project/application/Requirement.java" />
         <option value="$PROJECT_DIR$/src/project/gui/Main.java" />
         <option value="$PROJECT_DIR$/src/project/gui/SceneSwitcher.java" />
-        <option value="$PROJECT_DIR$/src/project/gui/ApplicantHistoryController.java" />
         <option value="$PROJECT_DIR$/out/production/phase1/project/gui/CreateJobPost.fxml" />
         <option value="$PROJECT_DIR$/src/project/gui/CreateJobPost.fxml" />
         <option value="$PROJECT_DIR$/src/project/gui/Application.fxml" />
@@ -186,15 +204,12 @@
         <option value="$PROJECT_DIR$/src/project/system/SystemClock.java" />
         <option value="$PROJECT_DIR$/src/project/gui/MainWindow.java" />
         <option value="$PROJECT_DIR$/src/project/user/ApplicantManager.java" />
-        <option value="$PROJECT_DIR$/src/project/system/MainSystem.java" />
-        <option value="$PROJECT_DIR$/src/project/gui/CreateJobController.java" />
         <option value="$PROJECT_DIR$/src/project/gui/ViewJobPostingController.java" />
         <option value="$PROJECT_DIR$/src/project/gui/ApplicationViewController.java" />
         <option value="$PROJECT_DIR$/src/project/gui/ApplicationController.java" />
         <option value="$PROJECT_DIR$/src/project/gui/PostingApplicantsController.java" />
         <option value="$PROJECT_DIR$/src/project/gui/LoginController.java" />
         <option value="$PROJECT_DIR$/src/project/gui/CellRefactor.java" />
-        <option value="$PROJECT_DIR$/src/project/application/JobPosting.java" />
         <option value="$PROJECT_DIR$/src/project/gui/AssignInterviewsController.java" />
         <option value="$PROJECT_DIR$/src/project/application/Company.java" />
         <option value="$PROJECT_DIR$/src/project/application/JobPostingManager.java" />
@@ -203,6 +218,13 @@
         <option value="$PROJECT_DIR$/src/project/application/CoverLetter.java" />
         <option value="$PROJECT_DIR$/src/project/user/Applicant.java" />
         <option value="$PROJECT_DIR$/src/project/gui/DocumentController.java" />
+        <option value="$PROJECT_DIR$/src/project/gui/ApplicantHistoryController.java" />
+        <option value="$PROJECT_DIR$/src/project/application/JobPosting.java" />
+        <option value="$PROJECT_DIR$/src/project/system/MainSystem.java" />
+        <option value="$PROJECT_DIR$/src/project/gui/CreateJobController.java" />
+        <option value="$PROJECT_DIR$/src/project/user/HR.java" />
+        <option value="$PROJECT_DIR$/src/project/user/HRSelectionStrategy.java" />
+        <option value="$PROJECT_DIR$/src/project/user/HRManager.java" />
       </list>
     </option>
   </component>
@@ -451,7 +473,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3283582" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.4987874" visible="true" weight="0.32669982" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.4987874" weight="0.32669982" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5012126" side_tool="true" weight="0.32669982" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49946696" weight="0.06394316" />
       <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.4989339" weight="0.32669982" />
@@ -548,15 +570,6 @@
     <SUITE FILE_PATH="coverage/phase1$Test.ic" NAME="Test Coverage Results" MODIFIED="1561861388098" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/project/gui/CreateJobPos.fxml" />
-    <entry file="file://$PROJECT_DIR$/src/project/gui/CreateJobPost.fxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="14" column="56" lean-forward="true" selection-start-line="14" selection-start-column="56" selection-end-line="14" selection-end-column="56" />
-        </state>
-      </provider>
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/out/production/phase1/project/gui/CreateJobPost.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
@@ -607,16 +620,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="321">
           <caret line="34" column="49" selection-start-line="34" selection-start-column="49" selection-end-line="34" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/gui/ApplicantHistoryController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="20" column="60" lean-forward="true" selection-start-line="20" selection-start-column="60" selection-end-line="20" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -699,28 +702,6 @@
             <element signature="e#795#796#0" expanded="true" />
             <element signature="e#837#838#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/system/MainSystem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="140" column="29" lean-forward="true" selection-start-line="140" selection-start-column="29" selection-end-line="140" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2812#2813#0" expanded="true" />
-            <element signature="e#2913#2914#0" expanded="true" />
-            <element signature="e#3003#3004#0" expanded="true" />
-            <element signature="e#4116#4117#0" expanded="true" />
-            <element signature="e#4211#4212#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/gui/CreateJobController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="100" column="60" lean-forward="true" selection-start-line="100" selection-start-column="16" selection-end-line="100" selection-end-column="60" />
         </state>
       </provider>
     </entry>
@@ -895,20 +876,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/application/JobPosting.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="548">
-          <caret line="65" column="28" selection-start-line="65" selection-start-column="16" selection-end-line="65" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/user/HRManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="34" column="54" lean-forward="true" selection-start-line="34" selection-start-column="54" selection-end-line="34" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/project/observer/JobPostingObserver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="32">
@@ -948,13 +915,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/application/Document.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="39" column="11" selection-start-line="39" selection-start-column="11" selection-end-line="39" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/project/application/CV.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="448">
@@ -962,18 +922,6 @@
           <folding>
             <element signature="e#1107#1108#0" expanded="true" />
             <element signature="e#1131#1132#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/user/Applicant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="66" column="24" selection-start-line="66" selection-start-column="24" selection-end-line="66" selection-end-column="24" />
-          <folding>
-            <element signature="e#2121#2122#0" expanded="true" />
-            <element signature="e#2994#2995#0" expanded="true" />
-            <element signature="e#3084#3085#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -990,10 +938,101 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/project/gui/DocumentController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
+        <state relative-caret-position="206">
           <caret line="110" lean-forward="true" selection-start-line="110" selection-end-line="110" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/gui/ApplicantHistoryController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="39" column="46" lean-forward="true" selection-start-line="39" selection-start-column="46" selection-end-line="39" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/application/Document.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="39" column="11" selection-start-line="39" selection-start-column="11" selection-end-line="39" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/user/Applicant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="449">
+          <caret line="66" column="24" selection-start-line="66" selection-start-column="24" selection-end-line="66" selection-end-column="24" />
+          <folding>
+            <element signature="e#2121#2122#0" expanded="true" />
+            <element signature="e#2994#2995#0" expanded="true" />
+            <element signature="e#3084#3085#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/application/JobPosting.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="42" column="39" lean-forward="true" selection-start-line="42" selection-start-column="39" selection-end-line="42" selection-end-column="39" />
+          <folding>
+            <element signature="e#810#811#0" expanded="true" />
+            <element signature="e#839#840#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/system/MainSystem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="48" column="73" selection-start-line="48" selection-start-column="73" selection-end-line="48" selection-end-column="73" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2770#2771#0" expanded="true" />
+            <element signature="e#2812#2813#0" expanded="true" />
+            <element signature="e#2869#2870#0" expanded="true" />
+            <element signature="e#2913#2914#0" expanded="true" />
+            <element signature="e#2962#2963#0" expanded="true" />
+            <element signature="e#3003#3004#0" expanded="true" />
+            <element signature="e#4058#4059#0" expanded="true" />
+            <element signature="e#4116#4117#0" expanded="true" />
+            <element signature="e#4172#4173#0" expanded="true" />
+            <element signature="e#4211#4212#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/gui/CreateJobController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="94" column="82" selection-start-line="94" selection-start-column="82" selection-end-line="94" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/user/HR.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="22" column="24" lean-forward="true" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/user/HRSelectionStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="9" column="57" selection-start-line="9" selection-start-column="57" selection-end-line="9" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/user/HRManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="19" column="23" lean-forward="true" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
+          <folding>
+            <element signature="e#1337#1338#0" expanded="true" />
           </folding>
         </state>
       </provider>

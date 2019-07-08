@@ -23,23 +23,21 @@ public class HR extends User {
        String company) {
         super(history, username, password, realName, company);
         recommendationLists = new ArrayList<>();
+
+        interviewsRoundFinished = new ArrayList<>();
+        interviewsToBeScheduled = new ArrayList<>();
+
     }
 
     public List<String> getInterviewsRoundFinished() {
         return interviewsRoundFinished;
     }
 
-    public void setInterviewsRoundFinished(List<String> interviewsRoundFinished) {
-        this.interviewsRoundFinished = interviewsRoundFinished;
-    }
 
     public List<String> getInterviewsToBeScheduled() {
         return interviewsToBeScheduled;
     }
 
-    public void setInterviewsToBeScheduled(List<String> interviewsToBeScheduled) {
-        this.interviewsToBeScheduled = interviewsToBeScheduled;
-    }
 
     public List<String> getJobsHired() {
         return jobsHired;
@@ -67,6 +65,7 @@ public class HR extends User {
     }
 
     void addInterviewsToBeScheduled(String jobTitle) {
+        System.out.println("Added " + jobTitle + " for " + getUsername());
         interviewsToBeScheduled.add(jobTitle);
     }
 

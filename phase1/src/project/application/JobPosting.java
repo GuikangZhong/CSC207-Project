@@ -3,6 +3,7 @@ package project.application;
 import project.observer.JobPostingObserver;
 import project.observer.SystemObserver;
 import project.user.Applicant;
+import project.user.HR;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -22,7 +23,13 @@ public class JobPosting implements Serializable, SystemObserver {
     private HireResult hireResult;
     private List<JobPostingObserver> observers;
 
-    public JobPosting(Job job, LocalDateTime begin, LocalDateTime end, Requirement requirement, int nApplicantNeeded,
+    public String getHrName() {
+        return hrName;
+    }
+
+    private String hrName;
+
+    public JobPosting(String hrName, Job job, LocalDateTime begin, LocalDateTime end, Requirement requirement, int nApplicantNeeded,
                       String description) {
         status = Status.OPEN;
         this.requirement = requirement;
@@ -34,6 +41,7 @@ public class JobPosting implements Serializable, SystemObserver {
         this.applications = new ArrayList<>();
         this.observers = new ArrayList<>();
         this.description = description;
+        this.hrName = hrName;
     }
 
     public enum Status {

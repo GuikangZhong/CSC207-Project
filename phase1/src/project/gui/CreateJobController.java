@@ -92,7 +92,7 @@ public class CreateJobController extends ApplicationController {
             Company company = getSystem().getCompany(comName);
             Job job = new Job(title1, company);
             Requirement requirement = new BasicRequirement();
-            JobPosting jobPosting = new JobPosting(job, openTime,
+            JobPosting jobPosting = new JobPosting(((HR)getUser()).getUsername(), job, openTime,
                     closeTime
                     , requirement, Integer.parseInt(numOpen), description_);
             JobPostingManager jobPostingManager = company.getJobPostingManager();
