@@ -34,6 +34,9 @@ public abstract class Round implements Serializable {
     }
 
     public List<InterviewGroup> getGroups() {
+        if(!assigned()){
+            throw new RuntimeException("You must assigned the group first!!");
+        }
         return groups;
     }
 
@@ -73,5 +76,9 @@ public abstract class Round implements Serializable {
 
     public String toString() {
         return roundType() + "#" + number;
+    }
+
+    boolean assigned() {
+        return groups != null;
     }
 }

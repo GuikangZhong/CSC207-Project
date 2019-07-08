@@ -5,12 +5,14 @@ import project.application.JobPosting;
 import project.observer.InterviewObserver;
 import project.user.Applicant;
 import project.user.Interviewer;
+import project.utils.Logging;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+import java.util.logging.Logger;
 
 public class Interview implements Serializable {
     private static final long serialVersionUID = -5626906039736330402L;
@@ -32,7 +34,7 @@ public class Interview implements Serializable {
         this.setup = setup;
         this.jobPosting = jobPosting;
         applicants = new ArrayList<>();
-        for(Application application : jobPosting.getApplications()){
+        for (Application application : jobPosting.getApplications()) {
             applicants.add(application.getApplicant().getUsername());
         }
         round = 0;
@@ -74,12 +76,15 @@ public class Interview implements Serializable {
         }
     }
 
+    private static Logger logger = Logging.getLogger();
+
     public void addObserver(InterviewObserver observer) {
+        logger.info("Interview: " + getJobPosting().getJobTitle() + " added observer " + observer);
         observers.add(observer);
     }
 
-    public void toNextRound(){
-        if(!getRoundInProgress().isAllGroupsSubmitted() || round == setup.getRounds().size() - 1){
+    public void toNextRound() {
+        if (!getRoundInProgress().isAllGroupsSubmitted() || round == setup.getRounds().size() - 1) {
             throw new RuntimeException("You have overflowed the rounds or skipped a round");
         }
         filterPassed();
@@ -87,18 +92,19 @@ public class Interview implements Serializable {
 
     }
 
-    void filterPassed(){
+    void filterPassed() {
         applicants = getRoundInProgress().getApplicantsNamePassed();
     }
+
     public void assignRound(InterviewGroupAssignmentStrategy strategy, List<Interviewer> interviewers) {
         getRoundInProgress().setGroups(strategy.select(applicants, interviewers));
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         StringBuilder s = new StringBuilder();
         s.append("Set Interview for " + jobPosting.getJobTitle() + " HR: " + getHR() + '\n');
-        for(Round round: setup.getRounds()){
+        for (Round round : setup.getRounds()) {
             s.append(round + "\n");
         }
         return s.toString();

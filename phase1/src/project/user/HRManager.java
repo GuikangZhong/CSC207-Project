@@ -54,7 +54,10 @@ public class HRManager extends UserManager<HR> implements InterviewObserver, Job
             setup.addRound(new InPersonRound());
             setup.addRound(new InPersonRound());
             setup.addRound(new InPersonRound());
-            jobPosting.setInterview(new Interview(hr.get().getUsername(),jobPosting, setup));
+            Interview interview = new Interview(hr.get().getUsername(),jobPosting, setup);
+            jobPosting.setInterview(interview);
+            interview.addObserver(this);
+            interview.addObserver(company.getJobPostingManager());
             hr.get().addInterviewsToBeScheduled(jobTitle);
         } else {
             throw new RuntimeException("No HR !!!!!");
