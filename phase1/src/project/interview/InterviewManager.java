@@ -1,9 +1,11 @@
 package project.interview;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
-public class InterviewManager {
+public class InterviewManager implements Serializable {
+    private static final long serialVersionUID = 8861388530518635925L;
     private Map<String, Interview> interviews;
 
     public InterviewManager() {
