@@ -3,7 +3,10 @@ package project.user;
 import project.application.Company;
 import project.application.Job;
 import project.application.JobPosting;
+import project.interview.InPersonRound;
 import project.interview.Interview;
+import project.interview.InterviewSetup;
+import project.interview.PhoneRound;
 import project.observer.InterviewObserver;
 import project.observer.JobPostingObserver;
 import project.system.MainSystem;
@@ -45,6 +48,13 @@ public class HRManager extends UserManager<HR> implements InterviewObserver, Job
         // select an HR
         Optional<HR> hr = selectionStrategy.select(jobTitle, users.values());
         if (hr.isPresent()) {
+            JobPosting jobPosting = company.getJobPostingManager().getJobPosting(jobTitle);
+            InterviewSetup setup = new InterviewSetup();
+            setup.addRound(new PhoneRound());
+            setup.addRound(new InPersonRound());
+            setup.addRound(new InPersonRound());
+            setup.addRound(new InPersonRound());
+            jobPosting.setInterview(new Interview(hr.get().getUsername(),jobPosting, setup));
             hr.get().addInterviewsToBeScheduled(jobTitle);
         } else {
             throw new RuntimeException("No HR !!!!!");

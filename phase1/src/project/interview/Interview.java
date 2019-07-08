@@ -93,4 +93,14 @@ public class Interview implements Serializable {
     public void assignRound(InterviewGroupAssignmentStrategy strategy, List<Interviewer> interviewers) {
         getRoundInProgress().setGroups(strategy.select(applicants, interviewers));
     }
+
+    @Override
+    public String toString(){
+        StringBuilder s = new StringBuilder();
+        s.append("Set Interview for " + jobPosting.getJobTitle() + " HR: " + getHR() + '\n');
+        for(Round round: setup.getRounds()){
+            s.append(round + "\n");
+        }
+        return s.toString();
+    }
 }

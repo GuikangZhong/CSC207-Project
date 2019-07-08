@@ -11,9 +11,13 @@ public abstract class Round implements Serializable {
     private Interview interview = null;
 
     public abstract String roundType();
+
     public abstract int getMaxRoundNumber();
 
     public void setNumber(int number) {
+        if (number > getMaxRoundNumber()) {
+            throw new RuntimeException("No you cannot add more rounds !!!");
+        }
         this.number = number;
     }
 
@@ -23,7 +27,7 @@ public abstract class Round implements Serializable {
     }
 
     void setGroups(List<InterviewGroup> groups) {
-        if(this.groups != null){
+        if (this.groups != null) {
             throw new RuntimeException("You have already assigned groups!!!");
         }
         this.groups = groups;
@@ -41,32 +45,33 @@ public abstract class Round implements Serializable {
         this.interview = interview;
     }
 
-    public boolean isAllGroupsSubmitted(){
-        for(InterviewGroup group : groups){
-            if(!group.isSubmitted())
+    public boolean isAllGroupsSubmitted() {
+        for (InterviewGroup group : groups) {
+            if (!group.isSubmitted())
                 return false;
         }
         return true;
     }
 
-    void updateOnGroupSubmitted(){
-        if(isAllGroupsSubmitted()){
+    void updateOnGroupSubmitted() {
+        if (isAllGroupsSubmitted()) {
             interview.updateOnRoundFinished();
         }
     }
 
-    public List<String> getApplicantsNamePassed(){
+    public List<String> getApplicantsNamePassed() {
         List<String> names = new ArrayList<>();
-        for(InterviewGroup group: groups){
+        for (InterviewGroup group : groups) {
             names.addAll(group.getApplicantsNamePassed());
         }
         return names;
     }
 
-    public Round(int number){
-        if(number > getMaxRoundNumber()){
-            throw new RuntimeException("No you cannot add more rounds !!!");
-        }
-        this.number = number;
+    public Round() {
+        number = -1;
+    }
+
+    public String toString() {
+        return roundType() + "#" + number;
     }
 }

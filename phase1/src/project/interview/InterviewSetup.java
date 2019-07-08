@@ -25,6 +25,8 @@ public class InterviewSetup implements Serializable {
             return false;
         }
         record.put(round.roundType(), n + 1);
+        round.setNumber(n + 1);
+        rounds.add(round);
         return true;
     }
 

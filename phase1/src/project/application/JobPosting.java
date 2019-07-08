@@ -1,15 +1,20 @@
 package project.application;
 
+import project.interview.Interview;
+import project.interview.InterviewSetup;
+import project.interview.Round;
 import project.observer.JobPostingObserver;
 import project.observer.SystemObserver;
 import project.user.Applicant;
 import project.user.HR;
+import project.utils.Logging;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.logging.Logger;
 
 public class JobPosting implements Serializable, SystemObserver {
     private static final long serialVersionUID = 726794651891649767L;
@@ -22,6 +27,23 @@ public class JobPosting implements Serializable, SystemObserver {
     private LocalDateTime openDate, closeDate;
     private HireResult hireResult;
     private List<JobPostingObserver> observers;
+
+    public Interview getInterview() {
+        return interview;
+    }
+
+    static private Logger logger = Logging.getLogger();
+
+    public void setInterview(Interview interview) {
+        if (interview == null) {
+            throw new RuntimeException("Cannot re-set an interview");
+        } else {
+            logger.info(interview.toString());
+            this.interview = interview;
+        }
+    }
+
+    private Interview interview;
 
     public String getHrName() {
         return hrName;
@@ -58,7 +80,7 @@ public class JobPosting implements Serializable, SystemObserver {
         this.description = description;
     }
 
-    public void addObserver(JobPostingObserver observer){
+    public void addObserver(JobPostingObserver observer) {
         observers.add(observer);
     }
 
@@ -74,7 +96,7 @@ public class JobPosting implements Serializable, SystemObserver {
     public void updateOnTime(LocalDateTime now) {
         if (now.isAfter(closeDate) && getStatus() == Status.OPEN) {
             setStatus(Status.CLOSED);
-            for(JobPostingObserver observer : observers){
+            for (JobPostingObserver observer : observers) {
                 observer.updateOnJobPostingClosure(getJobTitle());
             }
         }
@@ -115,7 +137,7 @@ public class JobPosting implements Serializable, SystemObserver {
     public boolean addApplication(Application application) {
         if (status == Status.OPEN) {
             if (requirement.satisfies(application)) {
-                if(applications.stream().anyMatch(app -> app.getApplicant() == application.getApplicant())){
+                if (applications.stream().anyMatch(app -> app.getApplicant() == application.getApplicant())) {
                     return false;
                 }
                 applications.add(application);
@@ -143,7 +165,7 @@ public class JobPosting implements Serializable, SystemObserver {
         return job.getCompany();
     }
 
-    public String toString(){
+    public String toString() {
         return getJobTitle();
     }
 }
