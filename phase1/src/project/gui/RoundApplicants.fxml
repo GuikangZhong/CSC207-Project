@@ -4,15 +4,15 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="732.0" prefWidth="1255.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.gui.RoundApplicantsController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="732.0" prefWidth="836.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.gui.RoundApplicantsController">
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
-            <ListView fx:id="jobPostings" layoutX="34.0" layoutY="80.0" onMouseClicked="#jobPostingClicked" prefHeight="600.0" prefWidth="190.0" />
-            <ListView fx:id="applications" layoutX="224.0" layoutY="80.0" onMouseClicked="#applicationClicked" prefHeight="600.0" prefWidth="190.0" />
-            <Button fx:id="assignment" layoutX="497.0" layoutY="655.0" mnemonicParsing="false" onAction="#assignmentButton" text="Assign Interview" />
-            <Label layoutX="98.0" layoutY="52.0" text="Job Postings" />
-            <Label layoutX="291.0" layoutY="52.0" text="Applicants" />
+            <ListView fx:id="jobPostings" layoutX="35.0" layoutY="50.0" onMouseClicked="#jobPostingClicked" prefHeight="600.0" prefWidth="190.0" />
+            <ListView fx:id="applications" layoutX="224.0" layoutY="50.0" onMouseClicked="#applicationClicked" prefHeight="600.0" prefWidth="190.0" />
+            <Button fx:id="assignment" layoutX="497.0" layoutY="655.0" mnemonicParsing="false" onAction="#assignmentButton" text="Promote" />
+            <Label layoutX="96.0" layoutY="6.0" text="Job Postings" />
+            <Label layoutX="291.0" layoutY="6.0" text="Applicants" />
          </children>
       </AnchorPane>
    </center>

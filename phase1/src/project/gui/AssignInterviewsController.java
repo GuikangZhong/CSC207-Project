@@ -15,6 +15,7 @@ import project.application.JobPostingManager;
 import project.interview.Interview;
 import project.interview.InterviewGroup;
 import project.interview.InterviewGroupAssignmentStrategy;
+import project.interview.InterviewSetup;
 import project.user.*;
 
 import java.io.IOException;
@@ -95,9 +96,17 @@ public class AssignInterviewsController extends ApplicationController {
 
 
     public void submitButton(ActionEvent event) throws IOException {
-
         HR hr = (HR) getUser();
         Company company = getSystem().getCompany(hr.getCompany());
+        for (String name: hr.getInterviewsToBeScheduled()){
+            if (jobPosting.getJobTitle().equals(name)) {
+                // remove this job posting off the schedule list
+                hr.getInterviewsToBeScheduled().remove(name);
+                break;
+            }
+        }
+
+        // set up the interview
         Interview interview = company.getInterviewManager().getInterview(jobPosting.getJobTitle());
         class UISelectionStrategy implements InterviewGroupAssignmentStrategy {
 
@@ -112,10 +121,9 @@ public class AssignInterviewsController extends ApplicationController {
             }
         }
 
-
         interview.assignRound(new UISelectionStrategy(),
                 new ArrayList<>(company.getInterviewerManager().getUsers().values()));
-
+        showModal("Assign successfully");
         SceneSwitcher.switchScene(this, event, "PostingApplicants.fxml");
     }
 
