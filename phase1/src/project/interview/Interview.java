@@ -38,9 +38,8 @@ public class Interview implements Serializable, RoundObserver {
         for (Application application : jobPosting.getApplications()) {
             applicants.add(application.getApplicant());
         }
-        round = 0;
+        round = -1;
         observers = new ArrayList<>();
-        getRoundInProgress().addObserver(this);
     }
 
     public String getHR() {
@@ -86,10 +85,12 @@ public class Interview implements Serializable, RoundObserver {
     }
 
     public void toNextRound() {
-        if (!getRoundInProgress().isAllGroupsSubmitted() || round == setup.getRounds().size() - 1) {
-            throw new RuntimeException("You have overflowed the rounds or skipped a round");
+        if(round != -1) {
+            if (!getRoundInProgress().isAllGroupsSubmitted() || round == setup.getRounds().size() - 1) {
+                throw new RuntimeException("You have overflowed the rounds or skipped a round");
+            }
+            filterPassed();
         }
-        filterPassed();
         round++;
         getRoundInProgress().addObserver(this);
 
