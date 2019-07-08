@@ -13,6 +13,7 @@ import project.interview.InterviewGroup;
 import project.user.*;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 
 public class InterviewGroupsController extends ApplicationController implements Initializable {
@@ -72,6 +73,15 @@ public class InterviewGroupsController extends ApplicationController implements 
 
     public void promoteButton(ActionEvent event) throws IOException {
         InterviewGroup interviewGroup = interviewGroups.getSelectionModel().getSelectedItem();
+        HashMap<String, String> map = new HashMap<>();
+        for (Applicant applicant : applicantList) {
+            map.put(applicant.getRealName(), applicant.getUsername());
+        }
+        for (CheckBox box : applicantCheckBoxs.getItems()) {
+            if (box.isSelected()) {
+                interviewGroup.setApplicantPassed(map.get(box.getText()), true);
+            }
+        }
         interviewGroup.submit();
         SceneSwitcher.switchScene(this, event, "InterviewerMenu.fxml");
     }

@@ -361,3 +361,23 @@ Interview for UofT-Fround finished
 ======================================================================
 Application session on 2019-07-08T13:09:38.606
 ======================================================================
+======================================================================
+Application session on 2019-07-08T13:12:44.670
+======================================================================
+JobUofT-E Round: Phone#1 assigned
+UofT-E [e c a d b f g ]
+UofT-E [e c a d b f g ]add observer Phone#1
+UofT-E [e c a d b f g ]submitted
+Phone#1 one group submitted
+All submitted
+Interview for UofT-Eround finished
+======================================================================
+Application session on 2019-07-08T13:17:01.386
+======================================================================
+UofT-F [b d c a g e f ]submitted
+Phone#1 one group submitted
+All submitted
+d : David Liu d passed
+c : David Liu c passed
+g : David Liu g passed
+Interview for UofT-Fround finished

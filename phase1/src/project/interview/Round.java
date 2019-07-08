@@ -68,6 +68,9 @@ public abstract class Round implements Serializable, InterviewGroupObserver {
         logger.info(this + " one group submitted");
         if (isAllGroupsSubmitted()) {
             logger.info("All submitted");
+            for(Applicant applicant : getApplicantsPassed()){
+                logger.info(applicant.getUsername() + " : " + applicant.getRealName() + " passed");
+            }
             for (RoundObserver observer : observers) {
                 observer.updateOnRoundFinished(this);
             }
