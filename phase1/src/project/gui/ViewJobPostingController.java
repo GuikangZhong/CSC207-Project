@@ -25,13 +25,10 @@ public class ViewJobPostingController extends ApplicationController implements I
     private ListView<JobPosting> jobList;
     @FXML
     private TextArea description;
-
     @FXML
     private Label nNeeded;
-
     @FXML
     private Label openDays;
-
     @FXML
     private Label postStatus;
 
@@ -47,7 +44,7 @@ public class ViewJobPostingController extends ApplicationController implements I
         }
     }
 
-    public void selectJobPosting(MouseEvent event) throws IOException {
+    public void selectJobPosting(MouseEvent event) {
         JobPosting jobPosting = jobList.getSelectionModel().getSelectedItem();
         if (jobPosting != null) {
             JobPosting.Status status = jobPosting.getStatus();

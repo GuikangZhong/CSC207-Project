@@ -19,6 +19,7 @@ import project.user.Applicant;
 import project.user.HR;
 
 import java.io.IOException;
+import java.util.List;
 
 public class PostingApplicantsController extends ApplicationController {
     @FXML
@@ -44,7 +45,10 @@ public class PostingApplicantsController extends ApplicationController {
                     protected void updateItem(JobPosting t, boolean bln) {
                         super.updateItem(t, bln);
                         if (t != null) {
-                            setText(t.getJob().getTitle());
+                            if (isJobPostingDue(t)) {
+                                setText(t.getJob().getTitle() + " (Closed)");
+                            } else
+                                setText(t.getJob().getTitle() + " (Open)");
                         }
                     }
 
@@ -73,6 +77,13 @@ public class PostingApplicantsController extends ApplicationController {
             }
         });
         pollJobPostings();
+    }
+
+    private boolean isJobPostingDue(JobPosting jobPosting){
+        if (jobPosting.getStatus() == JobPosting.Status.CLOSED){
+            return true;
+        }
+        return false;
     }
 
     private void pollJobPostings(){
@@ -108,8 +119,13 @@ public class PostingApplicantsController extends ApplicationController {
     }
 
     public void assignmentButton(ActionEvent event) throws IOException{
-        AssignInterviewsController.jobPosting = jobPostings.getSelectionModel().getSelectedItem();
-        SceneSwitcher.switchScene(this, event, "AssignInterviews.fxml");
+        JobPosting jobPosting = this.jobPostings.getSelectionModel().getSelectedItem();
+        if (!isJobPostingDue(jobPosting)) {
+            ApplicationController.showModal("The job posting is still open");
+        } else {
+            AssignInterviewsController.jobPosting = jobPostings.getSelectionModel().getSelectedItem();
+            SceneSwitcher.switchScene(this, event, "AssignInterviews.fxml");
+        }
     }
 
 }

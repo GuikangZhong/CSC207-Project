@@ -22,6 +22,12 @@ public class HRMenuController  extends ApplicationController implements Initiali
     @FXML
     private Label companyName;
 
+    @Override
+    void postInit(){
+        super.postInit();
+        companyName.setText(getUser().getCompany());
+    }
+
     public void exit(Event event) throws IOException{
         SceneSwitcher.switchScene(this, event, "Main.fxml");
     }
