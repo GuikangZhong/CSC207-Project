@@ -124,27 +124,36 @@ public class AssignInterviewsController extends ApplicationController {
             }
         });
 
-        // Add mouse event handlers for the source
-        applicants.setOnDragDetected((MouseEvent event) -> {
-            dragDetected(event, applicants);
+        applicants.setOnMouseClicked((MouseEvent click) -> {
+            if (click.getClickCount() == 2) {
+                Applicant applicant = applicants.getSelectionModel().getSelectedItem();
+                selectedApplicants.getItems().add(applicant);
+                applicants.getItems().remove(applicant);
+            }
         });
-        applicants.setOnDragDone((DragEvent event) -> {
-            dragDone(event, applicants);
+
+        selectedApplicants.setOnMouseClicked((MouseEvent click) -> {
+            if (click.getClickCount() == 2) {
+                Applicant applicant = selectedApplicants.getSelectionModel().getSelectedItem();
+                applicants.getItems().add(applicant);
+                selectedApplicants.getItems().remove(applicant);
+            }
         });
-        interviewers.setOnDragDetected((MouseEvent event) -> {
-            dragDetected(event, interviewers);
+
+        interviewers.setOnMouseClicked((MouseEvent click) -> {
+            if (click.getClickCount() == 2) {
+                Interviewer interviewer = interviewers.getSelectionModel().getSelectedItem();
+                selectedInterviewers.getItems().add(interviewer);
+                interviewers.getItems().remove(interviewer);
+            }
         });
-        selectedApplicants.setOnDragOver((DragEvent event) -> {
-            dragOver(event, selectedApplicants);
-        });
-        selectedApplicants.setOnDragDropped((DragEvent event) -> {
-            dragApplicantDropped(event, selectedApplicants);
-        });
-        selectedInterviewers.setOnDragOver((DragEvent event) -> {
-            dragOver(event, selectedInterviewers);
-        });
-        selectedInterviewers.setOnDragDropped((DragEvent event) -> {
-            dragInterviewerDropped(event, selectedInterviewers);
+
+        selectedInterviewers.setOnMouseClicked((MouseEvent click) -> {
+            if (click.getClickCount() == 2) {
+                Interviewer interviewer = selectedInterviewers.getSelectionModel().getSelectedItem();
+                interviewers.getItems().add(interviewer);
+                selectedInterviewers.getItems().remove(interviewer);
+            }
         });
 
     }
@@ -178,84 +187,5 @@ public class AssignInterviewsController extends ApplicationController {
 
     public void exit(Event event) throws IOException {
         SceneSwitcher.switchScene(this, event, "Main.fxml");
-    }
-
-    private void dragDetected(MouseEvent event, ListView listView) {
-        // Make sure at least one item is selected
-        int selectedCount = listView.getSelectionModel().getSelectedIndices().size();
-
-        if (selectedCount == 0) {
-            event.consume();
-            return;
-        }
-
-        Dragboard db = listView.startDragAndDrop(TransferMode.MOVE);
-
-        // Put a string on a dragboard as an identifier
-        ClipboardContent content = new ClipboardContent();
-        content.putString(listView.getId());
-        db.setContent(content);
-
-        //Consume the event
-        event.consume();
-    }
-
-    private void dragOver(DragEvent event, ListView listView) {
-        // If drag board has an ITEM_LIST and it is not being dragged
-        // over itself, we accept the MOVE transfer mode
-        Dragboard dragboard = event.getDragboard();
-
-        if (event.getGestureSource() != listView && event.getDragboard().hasString()) {
-            event.acceptTransferModes(TransferMode.COPY_OR_MOVE);
-        }
-        event.consume();
-    }
-
-    @SuppressWarnings("unchecked")
-    private void dragApplicantDropped(DragEvent event, ListView listView) {
-        Dragboard db = event.getDragboard();
-        boolean success = false;
-        //Could have some more thorough checks of course.
-        if (db.hasString()) {
-            //Get the textarea and place it into flowPane2 instead
-            listView.getItems().add(applicants.getSelectionModel().getSelectedItem());
-            success = true;
-        }
-        //Complete and consume the event.
-        event.setDropCompleted(success);
-        event.consume();
-    }
-
-    @SuppressWarnings("unchecked")
-    private void dragInterviewerDropped(DragEvent event, ListView listView) {
-        Dragboard db = event.getDragboard();
-        boolean success = false;
-        //Could have some more thorough checks of course.
-        if (db.hasString()) {
-            //Get the textarea and place it into flowPane2 instead
-            listView.getItems().add(interviewers.getSelectionModel().getSelectedItem());
-            success = true;
-        }
-        //Complete and consume the event.
-        event.setDropCompleted(success);
-        event.consume();
-    }
-
-    private void dragDone(DragEvent event, ListView listView) {
-        // Check how data was transfered to the target
-        // If it was moved, clear the selected items
-        TransferMode tm = event.getTransferMode();
-        if (tm == TransferMode.MOVE) {
-            removeApplicant(listView);
-        }
-        event.consume();
-    }
-
-    private void removeApplicant(ListView<Applicant> listView) {
-        Applicant applicant = listView.getSelectionModel().getSelectedItem();
-        // Clear the selection
-        listView.getSelectionModel().clearSelection();
-        // Remove items from the selected list
-        listView.getItems().remove(applicant);
     }
 }
