@@ -16,7 +16,7 @@ import java.io.IOException;
 
 public class InterviewGroupsController extends ApplicationController implements Initializable {
     @FXML
-    private ListView<Interview> interviews;
+    private ListView<InterviewGroup> interviewGroups;
 
     @FXML
     private ListView<Application> applications;
@@ -24,18 +24,18 @@ public class InterviewGroupsController extends ApplicationController implements 
     @Override
     void postInit(){
         super.postInit();
-        interviews.setCellFactory(new Callback<ListView<Interview>, ListCell<Interview>>() {
+        interviewGroups.setCellFactory(new Callback<ListView<InterviewGroup>, ListCell<InterviewGroup>>() {
 
             @Override
-            public ListCell<Interview> call(ListView<Interview> p) {
+            public ListCell<InterviewGroup> call(ListView<InterviewGroup> p) {
 
-                ListCell<Interview> cell = new ListCell<Interview>() {
+                ListCell<InterviewGroup> cell = new ListCell<InterviewGroup>() {
 
                     @Override
-                    protected void updateItem(Interview t, boolean bln) {
+                    protected void updateItem(InterviewGroup t, boolean bln) {
                         super.updateItem(t, bln);
                         if (t != null) {
-                            setText(t.getJobPosting().getJobTitle());
+                            setText(t.getInterview().getJobPosting().getJobTitle());
                         }
                     }
 
@@ -63,39 +63,40 @@ public class InterviewGroupsController extends ApplicationController implements 
                 return cell;
             }
         });
-        pollJobPostings();
+        pollInterviewGroups();
     }
 
-    private void pollJobPostings(){
+    private void pollInterviewGroups(){
         Interviewer interviewer = (Interviewer) getUser();
         Company company = getSystem().getCompany(interviewer.getCompany());
         JobPostingManager manager = company.getJobPostingManager();
         //InterviewerManager manager = company.getInterviewerManager();
-        interviews.getItems().clear();
+        interviewGroups.getItems().clear();
         for(JobPosting jobPosting: manager.getJobPostings().values()){
             for(InterviewGroup interviewGroup : interviewer.getInterviews())
-                if(interviewGroup.getRound().getInterview().getJobPosting() == jobPosting) {
-                    interviews.getItems().add(interviewGroup.getRound().getInterview());
+                if(interviewGroup.getInterview().getJobPosting() == jobPosting) {
+                    interviewGroups.getItems().add(interviewGroup);
                 }
         }
 
     }
 
     private void pollApplicants(){
-        Interview interview = interviews.getSelectionModel().getSelectedItem();
+        InterviewGroup interviewGroup = interviewGroups.getSelectionModel().getSelectedItem();
         applications.getItems().clear();
-        if (interview != null) {
-            for(Application application : interview.getJobPosting().getApplications()){
+        if (interviewGroup != null) {
+            for(Application application : interviewGroup.getInterview().getJobPosting().getApplications()){
                 applications.getItems().add(application);
             }
         }
     }
 
-    public void applicationClicked(MouseEvent event){
+    public void interviewGroupClicked(MouseEvent event){
+        pollInterviewGroups();
 
     }
 
-    public void jobPostingClicked(MouseEvent event){
+    public void interviewClicked(MouseEvent event){
         pollApplicants();
     }
 

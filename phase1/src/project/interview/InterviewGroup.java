@@ -66,7 +66,7 @@ public class InterviewGroup implements Serializable {
         applicantsStatus.put(name, passed);
     }
 
-    public Round getRound() {
-        return round;
+    public Interview getInterview() {
+        return interview;
     }
 }
