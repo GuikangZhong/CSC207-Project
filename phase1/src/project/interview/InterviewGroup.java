@@ -1,5 +1,6 @@
 package project.interview;
 
+import project.application.Application;
 import project.application.Company;
 import project.application.Job;
 import project.observer.InterviewGroupObserver;
@@ -24,6 +25,7 @@ public class InterviewGroup implements Serializable {
     private boolean submitted = false;
 //    private Interview interview;
     private Job job;
+    private Round round;
     private List<InterviewGroupObserver> observers;
     static private Logger logger = Logging.getLogger();
 
@@ -46,9 +48,14 @@ public class InterviewGroup implements Serializable {
     public void submit() {
         logger.info(this + "submitted");
         submitted = true;
+        Application application;
         for (InterviewGroupObserver observer : observers) {
             observer.updateOnGroupSubmitted(this);
         }
+//        for (Applicant applicant: applicants){
+//            application = applicant.getApplicationOf(job.getTitle()).get();
+//            application.getStatus().currentRoundFinished();
+//        }
     }
 
     public Interviewer getInterviewer() {
@@ -67,6 +74,10 @@ public class InterviewGroup implements Serializable {
             }
         }
         return result;
+    }
+
+    void setRound(Round round){
+        this.round = round;
     }
 
     public void setApplicantPassed(String name, boolean passed) {

@@ -1,5 +1,6 @@
 package project.interview;
 
+import project.application.Application;
 import project.application.Job;
 import project.observer.InterviewGroupObserver;
 import project.observer.RoundObserver;
@@ -46,6 +47,11 @@ public abstract class Round implements Serializable, InterviewGroupObserver {
         }
         for (InterviewGroup group : groups) {
             group.addObserver(this);
+            group.setRound(this);
+            for(Applicant applicant:group.getApplicants()){
+                Application application = applicant.getApplicationOf(job.getTitle()).get();
+                group.addObserver(application.getStatus());
+            }
         }
         this.groups = groups;
     }
@@ -63,6 +69,11 @@ public abstract class Round implements Serializable, InterviewGroupObserver {
                 return false;
         }
         return true;
+    }
+
+    @Override
+    public void updateOnGroupAssigned(InterviewGroup group) {
+
     }
 
     @Override

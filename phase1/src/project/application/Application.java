@@ -1,5 +1,6 @@
 package project.application;
 
+import project.interview.ApplicationStatus;
 import project.interview.Interview;
 import project.user.Applicant;
 
@@ -13,6 +14,7 @@ public class Application implements Serializable {
     private Applicant applicant;
     private List<Document> documents;
     private Job job;
+    private ApplicationStatus status;
 
     public Application(Applicant applicant, List<Document> documents, Job job) {
         this.applicant = applicant;
@@ -30,5 +32,9 @@ public class Application implements Serializable {
 
     public Job getJob() {
         return job;
+    }
+
+    public ApplicationStatus getStatus(){
+        return status;
     }
 }

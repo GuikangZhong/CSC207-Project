@@ -25,6 +25,10 @@ public class Interviewer extends User implements InterviewGroupObserver {
         interviews = new ArrayList<>();
     }
 
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
     @Override
     public final Type getType() {
         return Type.INTERVIEWER;
@@ -42,6 +46,11 @@ public class Interviewer extends User implements InterviewGroupObserver {
 
     public void removeInterviewGroup(InterviewGroup group) {
         interviews.remove(group);
+    }
+
+    @Override
+    public void updateOnGroupAssigned(InterviewGroup group) {
+
     }
 
     @Override

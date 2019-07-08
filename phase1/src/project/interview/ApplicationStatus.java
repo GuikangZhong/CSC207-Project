@@ -1,10 +1,15 @@
 package project.interview;
 
+import project.observer.InterviewGroupObserver;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ApplicationStatus {
+public class ApplicationStatus implements Serializable, InterviewGroupObserver {
+    private static final long serialVersionUID = 8468246521663599935L;
     private List<String> finishedRound;
+    private String startedRound;
 
     public ApplicationStatus() {
         finishedRound = new ArrayList<>();
@@ -19,7 +24,20 @@ public class ApplicationStatus {
         return stringBuilder.toString();
     }
 
-    public void addFinishedFound(Round round) {
-        finishedRound.add(round.toString());
+    private void startRound(Round round){
+
+    }
+    private void currentRoundFinished(){
+
+    }
+
+    @Override
+    public void updateOnGroupAssigned(InterviewGroup group) {
+
+    }
+
+    @Override
+    public void updateOnGroupSubmitted(InterviewGroup group) {
+        currentRoundFinished();
     }
 }
