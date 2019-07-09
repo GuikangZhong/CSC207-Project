@@ -42,6 +42,9 @@ public abstract class Round implements Serializable, InterviewGroupObserver {
     }
 
     void setGroups(List<InterviewGroup> groups) {
+        if(groups == null){
+            throw new RuntimeException("You assigned a null");
+        }
         if (this.groups != null) {
             throw new RuntimeException("You have already assigned groups!!!");
         }

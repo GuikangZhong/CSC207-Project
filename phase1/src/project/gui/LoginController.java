@@ -64,8 +64,7 @@ public class LoginController extends ApplicationController{
         else if (user.getType() == User.Type.INTERVIEWER){
             setUser(user);
             Menu menu = new Menu();
-            menu.addOption("View all applicants","InterviewGroups.fxml")
-                    .addOption("Your history","ApplicantHistory.fxml");
+            menu.addOption("View all applicants","InterviewGroups.fxml");
             setMenu(menu);
             SceneSwitcher.switchScene(this, event, "InterviewerMenu.fxml");
         }

@@ -90,7 +90,7 @@ public class Interview implements Serializable, RoundObserver {
                 observer.updateOnInterviewRoundFinished(this);
             }
             toNextRound();
-        }else{
+        } else {
             for (InterviewObserver observer : observers) {
                 observer.updateOnNoMoreRounds(this);
             }
@@ -99,6 +99,7 @@ public class Interview implements Serializable, RoundObserver {
     }
 
     private void notifyHireResult() {
+        logger.info("Hire result for " + getJob().getTitle());
         for (InterviewObserver observer : observers) {
             observer.updateOnHireResult(this);
         }
@@ -116,7 +117,7 @@ public class Interview implements Serializable, RoundObserver {
             if (!getRoundInProgress().isAllGroupsSubmitted() || round == setup.getRounds().size() - 1) {
                 throw new RuntimeException("You have overflowed the rounds or skipped a round");
             }
-            filterPassed();
+
         }
         round++;
         getRoundInProgress().addObserver(this);
@@ -153,6 +154,8 @@ public class Interview implements Serializable, RoundObserver {
     @Override
     public void updateOnRoundFinished(Round round) {
         logger.info("Interview for " + job.getTitle() + "round finished");
+        filterPassed();
         updateOnRoundFinished();
+
     }
 }

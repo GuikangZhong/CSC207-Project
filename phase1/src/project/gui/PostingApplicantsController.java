@@ -44,10 +44,13 @@ public class PostingApplicantsController extends ApplicationController {
                     protected void updateItem(JobPosting t, boolean bln) {
                         super.updateItem(t, bln);
                         if (t != null) {
-                            if (isJobPostingDue(t)) {
+                            if (t.getStatus() == JobPosting.Status.CLOSED) {
                                 setText(t.getJob().getTitle() + " (Closed)");
-                            } else
+                            } else if(t.getStatus() == JobPosting.Status.OPEN)
                                 setText(t.getJob().getTitle() + " (Open)");
+                            else{
+                                setText(t.getJobTitle() + "(Filled)");
+                            }
                         }
                     }
 
@@ -76,13 +79,6 @@ public class PostingApplicantsController extends ApplicationController {
             }
         });
         pollJobPostings();
-    }
-
-    private boolean isJobPostingDue(JobPosting jobPosting){
-        if (jobPosting.getStatus() == JobPosting.Status.CLOSED){
-            return true;
-        }
-        return false;
     }
 
     private void pollJobPostings(){

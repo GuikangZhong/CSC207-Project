@@ -147,6 +147,7 @@ public class JobPosting implements Serializable, SystemObserver {
         hireResult.addHiredApplicant(applicant);
         if (hireResult.getHired().size() == nApplicantNeeded) {
             status = Status.FILLED;
+            logger.info(getJobTitle() + " is filled");
         }
     }
 
