@@ -33,6 +33,7 @@ public class Interview implements Serializable, RoundObserver {
     }
 
     private Job job;
+    private int numberNeeded;
 
     public Interview(String HR,
                      JobPosting jobPosting,
@@ -40,6 +41,7 @@ public class Interview implements Serializable, RoundObserver {
         this.HR = HR;
         this.setup = setup;
         this.job = jobPosting.getJob();
+        numberNeeded = jobPosting.getnApplicantNeeded();
         applicants = new ArrayList<>();
         for (Application application : jobPosting.getApplications()) {
             applicants.add(application.getApplicant());
@@ -80,8 +82,14 @@ public class Interview implements Serializable, RoundObserver {
     }
 
     void updateOnRoundFinished() {
-        for (InterviewObserver observer : observers) {
-            observer.updateOnInterviewRoundFinished(this);
+        if (applicants.size() <= numberNeeded) {
+            for (InterviewObserver observer : observers) {
+                observer.updateOnHireResult(applicants, job);
+            }
+        } else {
+            for (InterviewObserver observer : observers) {
+                observer.updateOnInterviewRoundFinished(this);
+            }
         }
         if (hasNextRound()) {
             toNextRound();
