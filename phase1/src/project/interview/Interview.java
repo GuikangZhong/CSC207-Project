@@ -135,6 +135,7 @@ public class Interview implements Serializable, RoundObserver {
             logger.info(group.toString());
             Interviewer interviewer = group.getInterviewer();
             interviewer.addInterviewGroup(group);
+            group.addObserver(interviewer);
         }
         getRoundInProgress().setGroups(groups);
     }

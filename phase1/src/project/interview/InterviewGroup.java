@@ -48,8 +48,6 @@ public class InterviewGroup implements Serializable {
     public void submit() {
         logger.info(this + "submitted");
         submitted = true;
-        interviewer.removeInterviewGroup(this);
-        Application application;
         for (InterviewGroupObserver observer : observers) {
             observer.updateOnGroupSubmitted(this);
         }
