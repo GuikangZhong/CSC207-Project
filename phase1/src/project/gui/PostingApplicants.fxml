@@ -10,7 +10,6 @@
       <children>
         <ListView fx:id="jobPostings" layoutX="35.0" layoutY="50.0" onMouseClicked="#jobPostingClicked" prefHeight="600.0" prefWidth="190.0" />
         <ListView fx:id="applications" layoutX="224.0" layoutY="50.0" onMouseClicked="#applicationClicked" prefHeight="600.0" prefWidth="190.0" />
-            <Button fx:id="assignment" layoutX="497.0" layoutY="655.0" mnemonicParsing="false" onAction="#assignmentButton" text="Assign Interview" />
             <Label layoutX="96.0" layoutY="6.0" text="Job Postings" />
             <Label layoutX="291.0" layoutY="6.0" text="Applicants" />
       </children>
