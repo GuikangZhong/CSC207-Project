@@ -17,11 +17,15 @@ public class ApplicationStatus implements Serializable, InterviewGroupObserver {
 
     @Override
     public String toString() {
+        if (finishedRound.size() == 0){
+            return "Submitted";
+        }
+        else{
         StringBuilder stringBuilder = new StringBuilder("Finished rounds:\n");
         for (String s : finishedRound) {
             stringBuilder.append(s + "\n");
         }
-        return stringBuilder.toString();
+        return stringBuilder.toString();}
     }
 
     private void startRound(Round round){
