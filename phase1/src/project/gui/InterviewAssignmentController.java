@@ -24,7 +24,7 @@ import java.util.List;
 
 public class InterviewAssignmentController extends ApplicationController {
     @FXML
-    private ListView<JobPosting> jobPostings;
+    private ListView<Interview> interviews;
 
     @FXML
     private ListView<Application> applications;
@@ -35,21 +35,20 @@ public class InterviewAssignmentController extends ApplicationController {
     @Override
     void postInit(){
         super.postInit();
-        jobPostings.setCellFactory(new Callback<ListView<JobPosting>, ListCell<JobPosting>>() {
+        interviews.setCellFactory(new Callback<ListView<Interview>, ListCell<Interview>>() {
 
             @Override
-            public ListCell<JobPosting> call(ListView<JobPosting> p) {
+            public ListCell<Interview> call(ListView<Interview> p) {
 
-                ListCell<JobPosting> cell = new ListCell<JobPosting>() {
+                ListCell<Interview> cell = new ListCell<Interview>() {
 
                     @Override
-                    protected void updateItem(JobPosting t, boolean bln) {
+                    protected void updateItem(Interview t, boolean bln) {
                         super.updateItem(t, bln);
                         if (t != null) {
-                            if (isJobPostingDue(t)) {
-                                setText(t.getJob().getTitle() + " (Closed)");
-                            } else
-                                setText(t.getJob().getTitle() + " (Open)");
+                            setText(t.getJob().getTitle());
+                        }else{
+                            setText("");
                         }
                     }
 
@@ -122,27 +121,24 @@ public class InterviewAssignmentController extends ApplicationController {
     }
 
     public void assignmentButton(ActionEvent event) throws IOException{
-        JobPosting jobPosting = this.jobPostings.getSelectionModel().getSelectedItem();
-        if (!isJobPostingDue(jobPosting)) {
-            ApplicationController.showModal("The job posting is still open");
-        } else {
-            AssignInterviewsController.jobPosting = jobPostings.getSelectionModel().getSelectedItem();
-            HR hr = (HR) getUser();
-            Company company = getSystem().getCompany(hr.getCompany());
-            Interview interview = company.getInterviewManager().getInterview(jobPosting.getJobTitle());
-            SceneSwitcher.<AssignInterviewsController, InterviewAssignmentController>switchScene(this, event, "AssignInterviews.fxml", (next, current) -> {
-                if (interview.getRound() == -1){
-                    next.company = company;
-                    next.listOfInterviews = hr.getInterviewsToBeScheduled();
-                    next.interview = interview;
-                } else {
-                    next.company = company;
-                    next.listOfInterviews = hr.getInterviewsRoundFinished();
-                    next.interview = interview;
-                }
-            });
+        Interview jobPosting = this.interviews.getSelectionModel().getSelectedItem();
 
-        }
+        HR hr = (HR) getUser();
+        Company company = getSystem().getCompany(hr.getCompany());
+        Interview interview = company.getInterviewManager().getInterview(jobPosting.getJobTitle());
+        SceneSwitcher.<AssignInterviewsController, InterviewAssignmentController>switchScene(this, event, "AssignInterviews.fxml", (next, current) -> {
+            if (interview.getRound() == -1){
+                next.company = company;
+                next.listOfInterviews = hr.getInterviewsToBeScheduled();
+                next.interview = interview;
+            } else {
+                next.company = company;
+                next.listOfInterviews = hr.getInterviewsRoundFinished();
+                next.interview = interview;
+            }
+        });
+
+
     }
 
 }

@@ -13,8 +13,8 @@ public class HR extends User {
     private static final long serialVersionUID = 6752053563376828029L;
 
     private List<List<Application>> recommendationLists;
-    private List<String> interviewsRoundFinished;
-    private List<String> interviewsToBeScheduled;
+    private List<Interview> interviewsRoundFinished;
+    private List<Interview> interviewsToBeScheduled;
     private List<String> jobsHired;  // How to store the name of the applicant hired??
 
     // TODO: check with piazza / prof if this is really what it wants
@@ -29,12 +29,12 @@ public class HR extends User {
         interviewsToBeScheduled = new ArrayList<>();
     }
 
-    public List<String> getInterviewsRoundFinished() {
+    public List<Interview> getInterviewsRoundFinished() {
         return interviewsRoundFinished;
     }
 
 
-    public List<String> getInterviewsToBeScheduled() {
+    public List<Interview> getInterviewsToBeScheduled() {
         return interviewsToBeScheduled;
     }
 
@@ -60,15 +60,15 @@ public class HR extends User {
         jobsHired.add(title);
     }
 
-    void addInterviewRoundFinished(String jobTitle) {
-        interviewsRoundFinished.add(jobTitle);
+    void addInterviewRoundFinished(Interview interview) {
+        interviewsRoundFinished.add(interview);
     }
 
     static private Logger logger = Logging.getLogger();
 
-    void addInterviewsToBeScheduled(String jobTitle) {
-        logger.info("Added " + jobTitle + " for " + getUsername());
-        interviewsToBeScheduled.add(jobTitle);
+    void addInterviewsToBeScheduled(Interview interview) {
+        logger.info("Added " + interview.getJob().getTitle() + " for " + getUsername());
+        interviewsToBeScheduled.add(interview);
     }
 
 }

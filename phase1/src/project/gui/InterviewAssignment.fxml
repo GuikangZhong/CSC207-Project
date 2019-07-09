@@ -4,27 +4,27 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="732.0" prefWidth="836.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.gui.InterviewAssignmentController">
-   <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0">
-         <children>
-            <ListView fx:id="jobPostings" layoutX="35.0" layoutY="50.0" onMouseClicked="#jobPostingClicked" prefHeight="600.0" prefWidth="190.0" />
-            <ListView fx:id="applications" layoutX="224.0" layoutY="50.0" onMouseClicked="#applicationClicked" prefHeight="600.0" prefWidth="190.0" />
-            <Button fx:id="assignment" layoutX="497.0" layoutY="655.0" mnemonicParsing="false" onAction="#assignmentButton" text="Assign Interview" />
-            <Label layoutX="96.0" layoutY="6.0" text="Job Postings" />
-            <Label layoutX="291.0" layoutY="6.0" text="Applicants" />
-         </children>
-      </AnchorPane>
-   </center>
-   <left>
-      <TreeView fx:id="options" onContextMenuRequested="#selectItems" onMouseClicked="#selectItems" prefHeight="400.0" prefWidth="158.0" BorderPane.alignment="CENTER" />
-   </left>
-   <top>
-      <AnchorPane prefHeight="32.0" prefWidth="600.0" BorderPane.alignment="CENTER">
-         <children>
-            <Label fx:id="companyName" alignment="CENTER" layoutX="14.0" layoutY="6.0" text="Label" />
-            <Button alignment="CENTER" mnemonicParsing="false" onAction="#exit" text="Sign out" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="2.0" />
-         </children>
-      </AnchorPane>
-   </top>
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="704.0" prefWidth="836.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="project.gui.InterviewAssignmentController">
+  <center>
+    <AnchorPane prefHeight="200.0" prefWidth="200.0">
+      <children>
+        <ListView id="jobPostings" fx:id="interviews" layoutX="35.0" layoutY="50.0" onMouseClicked="#jobPostingClicked" prefHeight="569.0" prefWidth="190.0" />
+        <ListView fx:id="applications" layoutX="224.0" layoutY="50.0" onMouseClicked="#applicationClicked" prefHeight="569.0" prefWidth="190.0" />
+        <Button fx:id="assignment" layoutX="493.0" layoutY="619.0" mnemonicParsing="false" onAction="#assignmentButton" text="Assign Interview" />
+        <Label layoutX="96.0" layoutY="6.0" text="Interviews" />
+        <Label layoutX="291.0" layoutY="6.0" text="Applicants" />
+      </children>
+    </AnchorPane>
+  </center>
+  <left>
+    <TreeView fx:id="options" onContextMenuRequested="#selectItems" onMouseClicked="#selectItems" prefHeight="400.0" prefWidth="158.0" BorderPane.alignment="CENTER" />
+  </left>
+  <top>
+    <AnchorPane prefHeight="32.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <children>
+        <Label fx:id="companyName" alignment="CENTER" layoutX="14.0" layoutY="6.0" text="Label" />
+        <Button alignment="CENTER" mnemonicParsing="false" onAction="#exit" text="Sign out" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="2.0" />
+      </children>
+    </AnchorPane>
+  </top>
 </BorderPane>

@@ -35,11 +35,11 @@ public class AssignInterviewsController extends ApplicationController {
     @FXML
     private ListView<Interviewer> selectedInterviewers = new ListView<>();
 
-    static List<String> listOfInterviews = null;
-    static Interview interview = null;
-    static Company company = null;
+    List<Interview> listOfInterviews = null;
+    Interview interview = null;
+    Company company = null;
 
-    static JobPosting jobPosting = null;
+    JobPosting jobPosting = null;
 
 
     @Override
@@ -100,13 +100,7 @@ public class AssignInterviewsController extends ApplicationController {
 
 
     public void submitButton(ActionEvent event) throws IOException {
-        for (String name: listOfInterviews){
-            if (jobPosting.getJobTitle().equals(name)) {
-                // remove this job posting off the schedule list
-                listOfInterviews.remove(name);
-                break;
-            }
-        }
+        listOfInterviews.remove(interview);
 
         class UISelectionStrategy implements InterviewGroupAssignmentStrategy {
 
@@ -125,7 +119,7 @@ public class AssignInterviewsController extends ApplicationController {
         interview.assignRound(new UISelectionStrategy(),
                 new ArrayList<>(company.getInterviewerManager().getUsers().values()));
         // for those unselected, they are not qualified to the next round
-        showModal("Assign successfully");
+        showModal("Great","Assign successfully");
         SceneSwitcher.switchScene(this, event, "PostingApplicants.fxml");
     }
 

@@ -58,7 +58,7 @@ public class HRManager extends UserManager<HR> implements InterviewObserver, Job
             company.getInterviewManager().addInterview(jobPosting.getJobTitle(), interview);
             interview.addObserver(this);
             interview.addObserver(company.getJobPostingManager());
-            hr.get().addInterviewsToBeScheduled(jobPosting.getJobTitle());
+            hr.get().addInterviewsToBeScheduled(interview);
         } else {
             throw new RuntimeException("No HR !!!!!");
         }
@@ -67,7 +67,7 @@ public class HRManager extends UserManager<HR> implements InterviewObserver, Job
     @Override
     public void updateOnInterviewRoundFinished(Interview interview) {
         HR hr = getUser(interview.getHR());
-        hr.addInterviewRoundFinished(interview.getJob().getTitle());
+        hr.addInterviewRoundFinished(interview);
     }
 
     @Override
