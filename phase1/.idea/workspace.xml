@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="591d482d-6f65-4466-88a8-53d1ab9be688" name="Default Changelist" comment="working on login and signup page">
-      <change beforePath="$PROJECT_DIR$/src/project/interview/ApplicationStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/interview/ApplicationStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/interview/Round.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/interview/Round.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/InterviewerMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/InterviewerMenuController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/interview/Interview.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/phase1/project/interview/Interview.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/interview/InterviewGroup.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/phase1/project/interview/InterviewGroup.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/interview/Round.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/phase1/project/interview/Round.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/user/HR.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/phase1/project/user/HR.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/user/Interviewer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/phase1/project/user/Interviewer.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,14 +25,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/project/interview/Round.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="24" column="37" lean-forward="true" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
+            <state relative-caret-position="206">
+              <caret line="52" column="52" lean-forward="true" selection-start-line="52" selection-start-column="52" selection-end-line="52" selection-end-column="52" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/project/application/Application.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="226">
+              <caret line="36" column="29" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
               <folding>
-                <element signature="e#2737#2738#0" expanded="true" />
-                <element signature="e#2800#2801#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#977#978#0" expanded="true" />
+                <element signature="e#1006#1007#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -35,40 +51,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/project/interview/Interview.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="52" column="8" lean-forward="true" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="8" />
-              <folding>
-                <element signature="e#782#783#0" expanded="true" />
-                <element signature="e#815#816#0" expanded="true" />
-                <element signature="e#2986#2987#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/project/interview/InterviewGroup.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
-              <folding>
-                <element signature="e#547#548#0" expanded="true" />
-                <element signature="e#609#610#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/project/interview/ApplicationStatus.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#234#235#0" expanded="true" />
-                <element signature="e#601#602#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="167">
+              <caret line="114" column="33" selection-start-line="114" selection-start-column="33" selection-end-line="114" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -76,8 +60,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/project/observer/InterviewGroupObserver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+            <state relative-caret-position="128">
+              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/project/gui/PostingApplicantsController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-373">
+              <caret line="82" column="59" lean-forward="true" selection-start-line="82" selection-start-column="59" selection-end-line="82" selection-end-column="59" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -85,8 +81,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/log.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4943">
-              <caret line="21" column="23" lean-forward="true" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+            <state relative-caret-position="336">
+              <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -94,7 +90,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/project/gui/InterviewGroupsController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
+            <state relative-caret-position="1056">
               <caret line="82" column="13" selection-start-line="82" selection-start-column="13" selection-end-line="82" selection-end-column="13" />
             </state>
           </provider>
@@ -103,8 +99,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/project/gui/AssignInterviewsController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="25" column="39" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="39" />
+            <state relative-caret-position="400">
+              <caret line="25" selection-start-line="25" selection-end-line="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -115,8 +111,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/project/gui/SceneSwitcher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="24" column="49" lean-forward="true" selection-start-line="24" selection-start-column="49" selection-end-line="24" selection-end-column="49" />
+            <state relative-caret-position="256">
+              <caret line="24" column="49" selection-start-line="24" selection-start-column="49" selection-end-line="24" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -124,8 +120,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/project/user/HR.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+            <state relative-caret-position="96">
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
               <folding>
                 <element signature="e#1675#1676#0" expanded="true" />
                 <element signature="e#1728#1729#0" expanded="true" />
@@ -158,6 +154,7 @@
       <find>ListCell&lt;Applicant&gt;</find>
       <find>updateOnJobPostingClosure</find>
       <find>round</find>
+      <find>add</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -240,6 +237,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -305,7 +303,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -449,17 +446,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="735" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49753696" visible="true" weight="0.20210186" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49753696" visible="true" weight="0.20533548" />
       <window_info id="Structure" order="1" sideWeight="0.50246304" side_tool="true" weight="0.2586904" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Dependency Viewer" weight="0.6849088" />
-      <window_info anchor="bottom" id="Inspection Results" weight="0.69983417" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Database Changes" order="2" />
@@ -473,6 +467,8 @@
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5012126" side_tool="true" weight="0.32669982" />
       <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.4989339" weight="0.32669982" />
       <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.49946696" weight="0.5737977" />
+      <window_info anchor="bottom" id="Dependency Viewer" order="13" weight="0.6849088" />
+      <window_info anchor="bottom" id="Inspection Results" order="14" weight="0.69983417" />
       <window_info anchor="right" id="Database" order="0" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
@@ -554,30 +550,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/application/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/project/gui/ApplicationViewController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
           <caret line="70" column="18" selection-start-line="70" selection-start-column="18" selection-end-line="70" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/gui/PostingApplicantsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="82" column="70" lean-forward="true" selection-start-line="82" selection-start-column="70" selection-end-line="82" selection-end-column="70" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -671,72 +647,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="uml://JAVA/project.application">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>project.application</OriginalElement>
-          <nodes>
-            <node x="" y="">project.application.HireResult</node>
-            <node x="" y="">project.application.Company</node>
-            <node x="" y="">project.application.Application</node>
-            <node x="" y="">project.application.Requirement</node>
-            <node x="" y="">project.application.JobPostingManager</node>
-            <node x="" y="">project.application.CV</node>
-            <node x="" y="">project.application.Job</node>
-            <node x="" y="">project.application.JobPosting</node>
-            <node x="" y="">project.application.CoverLetter</node>
-            <node x="" y="">project.application.BasicRequirement</node>
-            <node x="" y="">project.application.Document</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="0.8" x="242.875" y="299.625" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/project.application.Application">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>project.application.Application</OriginalElement>
-          <nodes>
-            <node x="" y="">project.application.Application</node>
-            <node x="" y="">java.io.Serializable</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="63.0" y="51.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/project.system">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>project.system</OriginalElement>
-          <nodes>
-            <node x="" y="">project.system.MainSystem</node>
-            <node x="" y="">project.system.SystemClock</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="59.5" y="48.5" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
+    <entry file="uml://JAVA/project.application" />
+    <entry file="uml://JAVA/project.application.Application" />
+    <entry file="uml://JAVA/project.system" />
     <entry file="file://$PROJECT_DIR$/src/project/interview/PhoneRound.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -744,242 +657,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="uml://JAVA/project.user">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>project.user</OriginalElement>
-          <nodes>
-            <node x="240.15773809523813" y="182.0">project.user.Applicant</node>
-            <node x="5.299933862433875" y="374.0">project.user.InterviewerManager</node>
-            <node x="371.7999338624339" y="374.0">project.user.HRManager</node>
-            <node x="242.25826719576716" y="0.0">project.user.UserHistory</node>
-            <node x="301.7582671957672" y="86.0">project.user.ApplicantHistory</node>
-            <node x="190.29993386243387" y="374.0">project.user.ApplicantManager</node>
-            <node x="209.7582671957672" y="86.0">project.user.User</node>
-            <node x="423.6332671957672" y="182.0">project.user.HR</node>
-            <node x="415.3832671957672" y="258.0">project.user.HRSelectionStrategy</node>
-            <node x="0.0" y="182.0">project.user.Interviewer</node>
-            <node x="137.15773809523813" y="258.0">project.user.UserManager</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="project.user.User" target="project.user.UserHistory">
-              <point x="17.99999999999997" y="-13.0" />
-              <point x="263.75826719576713" y="66.0" />
-              <point x="291.84160052910045" y="66.0" />
-              <point x="-9.916666666666686" y="13.0" />
-            </edge>
-            <edge source="project.user.InterviewerManager" target="project.user.Interviewer">
-              <point x="-55.0" y="-13.0" />
-              <point x="32.799933862433875" y="354.0" />
-              <point x="59.5" y="354.0" />
-              <point x="0.0" y="13.0" />
-            </edge>
-            <edge source="project.user.UserManager" target="project.user.User">
-              <point x="0.0" y="-13.0" />
-              <point x="196.65773809523813" y="162.0" />
-              <point x="235.4725529100529" y="162.0" />
-              <point x="-10.285714285714278" y="13.0" />
-            </edge>
-            <edge source="project.user.HRManager" target="project.user.HRSelectionStrategy">
-              <point x="44.166666666666686" y="-13.0" />
-              <point x="468.96660052910056" y="354.0" />
-              <point x="544.3832671957672" y="354.0" />
-              <point x="43.0" y="13.0" />
-            </edge>
-            <edge source="project.user.ApplicantManager" target="project.user.Applicant">
-              <point x="50.666666666666686" y="-13.0" />
-              <point x="316.96660052910056" y="354.0" />
-              <point x="281.61805555555554" y="354.0" />
-              <point x="281.61805555555554" y="233.0" />
-              <point x="266.65773809523813" y="233.0" />
-              <point x="-26.5" y="13.0" />
-            </edge>
-            <edge source="project.user.HRSelectionStrategy" target="project.user.HR">
-              <point x="0.0" y="-13.0" />
-              <point x="501.3832671957672" y="233.0" />
-              <point x="467.8832671957672" y="233.0" />
-              <point x="14.75" y="13.0" />
-            </edge>
-            <edge source="project.user.Applicant" target="project.user.ApplicantHistory">
-              <point x="35.333333333333314" y="-13.0" />
-              <point x="328.49107142857144" y="162.0" />
-              <point x="377.7582671957672" y="162.0" />
-              <point x="0.0" y="13.0" />
-            </edge>
-            <edge source="project.user.HR" target="project.user.User">
-              <point x="0.0" y="-13.0" />
-              <point x="453.1332671957672" y="132.0" />
-              <point x="276.61541005291" y="132.0" />
-              <point x="30.85714285714286" y="13.0" />
-            </edge>
-            <edge source="project.user.HRManager" target="project.user.Applicant">
-              <point x="-8.833333333333314" y="-13.0" />
-              <point x="415.96660052910056" y="314.0" />
-              <point x="367.21660052910056" y="314.0" />
-              <point x="367.21660052910056" y="233.0" />
-              <point x="319.65773809523813" y="233.0" />
-              <point x="26.5" y="13.0" />
-            </edge>
-            <edge source="project.user.Interviewer" target="project.user.User">
-              <point x="7.105427357601002E-15" y="-13.0" />
-              <point x="59.5" y="142.0" />
-              <point x="214.9011243386243" y="142.0" />
-              <point x="-30.85714285714286" y="13.0" />
-            </edge>
-            <edge source="project.user.HRManager" target="project.user.HR">
-              <point x="8.833333333333314" y="-13.0" />
-              <point x="433.6332671957672" y="304.0" />
-              <point x="404.8832671957672" y="304.0" />
-              <point x="404.8832671957672" y="233.0" />
-              <point x="438.3832671957672" y="233.0" />
-              <point x="-14.75" y="13.0" />
-            </edge>
-            <edge source="project.user.HR" target="project.user.UserHistory">
-              <point x="19.666666666666686" y="-13.0" />
-              <point x="472.7999338624339" y="46.0" />
-              <point x="351.34160052910045" y="46.0" />
-              <point x="49.583333333333314" y="13.0" />
-            </edge>
-            <edge source="project.user.Applicant" target="project.user.User">
-              <point x="-35.33333333333337" y="-13.0" />
-              <point x="257.82440476190476" y="162.0" />
-              <point x="245.7582671957672" y="162.0" />
-              <point x="0.0" y="13.0" />
-            </edge>
-            <edge source="project.user.InterviewerManager" target="project.user.UserManager">
-              <point x="55.0" y="-13.0" />
-              <point x="142.79993386243387" y="354.0" />
-              <point x="166.90773809523813" y="354.0" />
-              <point x="-29.75" y="13.0" />
-            </edge>
-            <edge source="project.user.Interviewer" target="project.user.UserHistory">
-              <point x="-39.666666666666686" y="-13.0" />
-              <point x="19.833333333333314" y="132.0" />
-              <point x="54.75992063492066" y="132.0" />
-              <point x="54.75992063492066" y="46.0" />
-              <point x="252.17493386243385" y="46.0" />
-              <point x="-49.583333333333314" y="13.0" />
-            </edge>
-            <edge source="project.user.ApplicantHistory" target="project.user.UserHistory">
-              <point x="-38.0" y="-13.0" />
-              <point x="339.7582671957672" y="66.0" />
-              <point x="311.6749338624338" y="66.0" />
-              <point x="9.916666666666686" y="13.0" />
-            </edge>
-            <edge source="project.user.HRManager" target="project.user.UserManager">
-              <point x="-44.166666666666686" y="-13.0" />
-              <point x="380.6332671957672" y="334.0" />
-              <point x="226.40773809523813" y="334.0" />
-              <point x="29.75" y="13.0" />
-            </edge>
-            <edge source="project.user.ApplicantManager" target="project.user.UserManager">
-              <point x="0.0" y="-13.0" />
-              <point x="266.2999338624339" y="344.0" />
-              <point x="206.57440476190482" y="344.0" />
-              <point x="9.916666666666686" y="13.0" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="1.0" x="61.0" y="127.0" />
-          <SelectedNodes>
-            <node>project.user.UserManager</node>
-          </SelectedNodes>
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/project.interview">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>project.interview</OriginalElement>
-          <nodes>
-            <node x="" y="">project.interview.Round</node>
-            <node x="" y="">project.interview.InterviewManager</node>
-            <node x="" y="">project.interview.InterviewSetup</node>
-            <node x="" y="">project.interview.Interview</node>
-            <node x="" y="">project.interview.InterviewGroupAssignmentStrategy</node>
-            <node x="" y="">project.interview.InterviewGroup</node>
-            <node x="" y="">project.interview.InPersonRound</node>
-            <node x="" y="">project.interview.InterviewStatus</node>
-            <node x="" y="">project.interview.PhoneRound</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.1" x="325.6363636363636" y="193.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JavaScript-modules-diagram/C:/Users/xiaoc/Documents/repos/group_0002/phase1/src/project">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JavaScript-modules-diagram</ID>
-          <OriginalElement>$PROJECT_DIR$/src/project</OriginalElement>
-          <nodes />
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="493.5" y="275.5" />
-          <SelectedNodes />
-          <Categories>
-            <Category>All</Category>
-          </Categories>
-          <VISIBILITY>Details</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/project.system.MainSystem">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>project.system.MainSystem</OriginalElement>
-          <nodes>
-            <node x="" y="">project.system.MainSystem</node>
-            <node x="" y="">java.io.Serializable</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="63.0" y="51.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://JAVA/project">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>JAVA</ID>
-          <OriginalElement>project</OriginalElement>
-          <nodes>
-            <node x="" y="">project.gui</node>
-            <node x="" y="">project.utils</node>
-            <node x="" y="">project.interview</node>
-            <node x="" y="">project.application</node>
-            <node x="" y="">project.system</node>
-            <node x="" y="">project..idea</node>
-            <node x="" y="">project.user</node>
-            <node x="" y="">project.observer</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="0.7999999999999996" x="596.8750000000003" y="300.37500000000017" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Inner Classes</Category>
-          </Categories>
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>private</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
+    <entry file="uml://JAVA/project.user" />
+    <entry file="uml://JAVA/project.interview" />
+    <entry file="uml://JavaScript-modules-diagram/C:/Users/xiaoc/Documents/repos/group_0002/phase1/src/project" />
+    <entry file="uml://JAVA/project.system.MainSystem" />
+    <entry file="uml://JAVA/project" />
     <entry file="file://$PROJECT_DIR$/src/project/interview/InterviewManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -1109,21 +791,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/user/HR.java">
+    <entry file="file://$PROJECT_DIR$/src/project/interview/InterviewGroup.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        <state relative-caret-position="240">
+          <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/interview/ApplicationStatus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
           <folding>
-            <element signature="e#1675#1676#0" expanded="true" />
-            <element signature="e#1728#1729#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/gui/InterviewGroupsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1056">
+          <caret line="82" column="13" selection-start-line="82" selection-start-column="13" selection-end-line="82" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/project/gui/AssignInterviewsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="25" column="39" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="39" />
+        <state relative-caret-position="400">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1132,74 +834,61 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/project/gui/SceneSwitcher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="24" column="49" lean-forward="true" selection-start-line="24" selection-start-column="49" selection-end-line="24" selection-end-column="49" />
+        <state relative-caret-position="256">
+          <caret line="24" column="49" selection-start-line="24" selection-start-column="49" selection-end-line="24" selection-end-column="49" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/gui/InterviewGroupsController.java">
+    <entry file="file://$PROJECT_DIR$/src/project/user/HR.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="82" column="13" selection-start-line="82" selection-start-column="13" selection-end-line="82" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/log.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4943">
-          <caret line="21" column="23" lean-forward="true" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/interview/ApplicationStatus.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+        <state relative-caret-position="96">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#234#235#0" expanded="true" />
-            <element signature="e#601#602#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/observer/InterviewGroupObserver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/interview/InterviewGroup.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
-          <folding>
-            <element signature="e#547#548#0" expanded="true" />
-            <element signature="e#609#610#0" expanded="true" />
+            <element signature="e#1675#1676#0" expanded="true" />
+            <element signature="e#1728#1729#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/project/interview/Interview.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="52" column="8" lean-forward="true" selection-start-line="52" selection-start-column="8" selection-end-line="52" selection-end-column="8" />
-          <folding>
-            <element signature="e#782#783#0" expanded="true" />
-            <element signature="e#815#816#0" expanded="true" />
-            <element signature="e#2986#2987#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="167">
+          <caret line="114" column="33" selection-start-line="114" selection-start-column="33" selection-end-line="114" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/project/interview/Round.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="24" column="37" lean-forward="true" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
+        <state relative-caret-position="206">
+          <caret line="52" column="52" lean-forward="true" selection-start-line="52" selection-start-column="52" selection-end-line="52" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/application/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="36" column="29" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
           <folding>
-            <element signature="e#2737#2738#0" expanded="true" />
-            <element signature="e#2800#2801#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#977#978#0" expanded="true" />
+            <element signature="e#1006#1007#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/observer/InterviewGroupObserver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/gui/PostingApplicantsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-373">
+          <caret line="82" column="59" lean-forward="true" selection-start-line="82" selection-start-column="59" selection-end-line="82" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

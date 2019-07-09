@@ -128,15 +128,15 @@ public class PostingApplicantsController extends ApplicationController {
             HR hr = (HR) getUser();
             Company company = getSystem().getCompany(hr.getCompany());
             Interview interview = company.getInterviewManager().getInterview(jobPosting.getJobTitle());
-            SceneSwitcher.switchScene(this, event, "AssignInterviews.fxml", (next, current) -> {
+            SceneSwitcher.<AssignInterviewsController, PostingApplicantsController>switchScene(this, event, "AssignInterviews.fxml", (next, current) -> {
                 if (interview.getRound() == -1){
-                    ((AssignInterviewsController)next).company = company;
-                    ((AssignInterviewsController)next).listOfInterviews = hr.getInterviewsToBeScheduled();
-                    ((AssignInterviewsController)next).interview = interview;
+                    next.company = company;
+                    next.listOfInterviews = hr.getInterviewsToBeScheduled();
+                    next.interview = interview;
                 } else {
-                    ((AssignInterviewsController)next).company = company;
-                    ((AssignInterviewsController)next).listOfInterviews = hr.getInterviewsRoundFinished();
-                    ((AssignInterviewsController)next).interview = interview;
+                    next.company = company;
+                    next.listOfInterviews = hr.getInterviewsRoundFinished();
+                    next.interview = interview;
                 }
             });
 
