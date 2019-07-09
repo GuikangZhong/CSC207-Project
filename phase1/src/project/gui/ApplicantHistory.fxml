@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="472.0" prefWidth="704.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="project.gui.ApplicantHistoryController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="472.0" prefWidth="704.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.gui.ApplicantHistoryController">
   <center>
     <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
       <children>
@@ -19,10 +19,24 @@
             <Label layoutX="252.0" layoutY="9.0" text="Applied" />
           </children>
         </Pane>
-        <Label layoutX="47.0" layoutY="49.0" prefWidth="114.0" text="Created on:" />
-        <Label fx:id="createDate" layoutX="186.0" layoutY="49.0" prefWidth="236.0" text="" />
-        <Label fx:id="username" layoutX="47.0" layoutY="14.0" prefWidth="179.0" text="" />
-        <Label fx:id="realname" layoutX="237.0" layoutY="14.0" prefWidth="216.0" text="" />
+        <Label layoutX="47.0" layoutY="55.0" prefHeight="17.0" prefWidth="158.0" text="Last application closed: " />
+        <Label fx:id="lastApplicationClosed" layoutX="276.0" layoutY="55.0" prefHeight="17.0" prefWidth="172.0" />
+        <HBox layoutX="47.0" prefHeight="20.0" prefWidth="458.0">
+          <children>
+            <Label fx:id="username" prefHeight="17.0" prefWidth="68.0" />
+            <Label fx:id="realname" alignment="BASELINE_RIGHT" prefHeight="17.0" prefWidth="246.0" textAlignment="RIGHT" />
+          </children>
+        </HBox>
+        <HBox layoutX="47.0" layoutY="29.0" prefHeight="20.0" prefWidth="458.0">
+          <children>
+            <HBox prefHeight="20.0" prefWidth="458.0">
+              <children>
+                <Label prefHeight="17.0" prefWidth="102.0" text="Created On: " />
+                <Label fx:id="createDate" alignment="BASELINE_RIGHT" prefHeight="17.0" prefWidth="293.0" textAlignment="RIGHT" />
+              </children>
+            </HBox>
+          </children>
+        </HBox>
       </children>
     </AnchorPane>
   </center>
