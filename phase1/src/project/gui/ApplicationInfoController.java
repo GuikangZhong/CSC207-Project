@@ -29,7 +29,7 @@ public class ApplicationInfoController implements Initializable {
         applicantName.setText(application.getApplicant().getRealName());
         documents.getItems().clear();
         documents.getItems().addAll(application.getDocument());
-        content.setDisable(true);
+        content.setEditable(false);
 
     }
 
