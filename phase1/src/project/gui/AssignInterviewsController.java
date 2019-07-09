@@ -97,7 +97,14 @@ public class AssignInterviewsController extends ApplicationController {
 
 
     public void submitButton(ActionEvent event) throws IOException {
-
+        if (selectedInterviewers.getItems().isEmpty()) {
+            showModal("Bad", "You must select one interviewer");
+            return;
+        }
+        if (!applicants.getItems().isEmpty()) {
+            showModal("Bad", "You must select all of them");
+            return;
+        }
 
         class UISelectionStrategy implements InterviewGroupAssignmentStrategy {
 
