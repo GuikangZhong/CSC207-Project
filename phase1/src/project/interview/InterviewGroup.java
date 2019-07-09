@@ -48,6 +48,7 @@ public class InterviewGroup implements Serializable {
     public void submit() {
         logger.info(this + "submitted");
         submitted = true;
+        interviewer.removeInterviewGroup(this);
         Application application;
         for (InterviewGroupObserver observer : observers) {
             observer.updateOnGroupSubmitted(this);
@@ -76,11 +77,11 @@ public class InterviewGroup implements Serializable {
         return result;
     }
 
-    public Round getRound(){
+    public Round getRound() {
         return round;
     }
 
-    void setRound(Round round){
+    void setRound(Round round) {
         this.round = round;
     }
 
