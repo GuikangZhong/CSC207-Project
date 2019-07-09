@@ -58,6 +58,10 @@ public class Interview implements Serializable, RoundObserver {
         return Collections.unmodifiableList(setup.getRounds().subList(round + 1, setup.getRounds().size()));
     }
 
+    public int getRound(){
+        return round;
+    }
+
     Round getRoundInProgress() {
         if (round == -1) {
             throw new RuntimeException("You haven't started this interview yet");

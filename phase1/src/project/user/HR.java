@@ -25,10 +25,8 @@ public class HR extends User {
               String company) {
         super(history, username, password, realName, company);
         recommendationLists = new ArrayList<>();
-
         interviewsRoundFinished = new ArrayList<>();
         interviewsToBeScheduled = new ArrayList<>();
-
     }
 
     public List<String> getInterviewsRoundFinished() {

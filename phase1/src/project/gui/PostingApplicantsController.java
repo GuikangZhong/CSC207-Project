@@ -15,6 +15,7 @@ import project.application.Application;
 import project.application.Company;
 import project.application.JobPosting;
 import project.application.JobPostingManager;
+import project.interview.Interview;
 import project.user.Applicant;
 import project.user.HR;
 
@@ -124,7 +125,21 @@ public class PostingApplicantsController extends ApplicationController {
             ApplicationController.showModal("The job posting is still open");
         } else {
             AssignInterviewsController.jobPosting = jobPostings.getSelectionModel().getSelectedItem();
-            SceneSwitcher.switchScene(this, event, "AssignInterviews.fxml");
+            HR hr = (HR) getUser();
+            Company company = getSystem().getCompany(hr.getCompany());
+            Interview interview = company.getInterviewManager().getInterview(jobPosting.getJobTitle());
+            SceneSwitcher.switchScene(this, event, "AssignInterviews.fxml", (next, current) -> {
+                if (interview.getRound() == -1){
+                    ((AssignInterviewsController)next).company = company;
+                    ((AssignInterviewsController)next).listOfInterviews = hr.getInterviewsToBeScheduled();
+                    ((AssignInterviewsController)next).interview = interview;
+                } else {
+                    ((AssignInterviewsController)next).company = company;
+                    ((AssignInterviewsController)next).listOfInterviews = hr.getInterviewsRoundFinished();
+                    ((AssignInterviewsController)next).interview = interview;
+                }
+            });
+
         }
     }
 
