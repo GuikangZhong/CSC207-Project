@@ -44,8 +44,9 @@ public class Interview implements Serializable, RoundObserver {
         for (Application application : jobPosting.getApplications()) {
             applicants.add(application.getApplicant());
         }
-        round = -1;
+        round = 0;
         observers = new ArrayList<>();
+        getRoundInProgress().addObserver(this);
     }
 
     public String getHR() {
@@ -63,13 +64,14 @@ public class Interview implements Serializable, RoundObserver {
         return Collections.unmodifiableList(setup.getRounds().subList(round + 1, setup.getRounds().size()));
     }
 
-    public int getRound(){
+    public int getRound() {
         return round;
     }
 
-    public boolean hasInterviewBegun(){
-        return round != -1;
+    public boolean hasNextRound() {
+        return round + 1 < setup.getTotalRoundCount();
     }
+
     public Round getRoundInProgress() {
         if (round == -1) {
             throw new RuntimeException("You haven't started this interview yet");
@@ -80,6 +82,9 @@ public class Interview implements Serializable, RoundObserver {
     void updateOnRoundFinished() {
         for (InterviewObserver observer : observers) {
             observer.updateOnInterviewRoundFinished(this);
+        }
+        if (hasNextRound()) {
+            toNextRound();
         }
     }
 
@@ -96,7 +101,7 @@ public class Interview implements Serializable, RoundObserver {
         observers.add(observer);
     }
 
-    public void toNextRound() {
+    private void toNextRound() {
         if (round != -1) {
             if (!getRoundInProgress().isAllGroupsSubmitted() || round == setup.getRounds().size() - 1) {
                 throw new RuntimeException("You have overflowed the rounds or skipped a round");
@@ -115,6 +120,7 @@ public class Interview implements Serializable, RoundObserver {
     public void assignRound(InterviewGroupAssignmentStrategy strategy, List<Interviewer> interviewers) {
         logger.info("Job" + job.getTitle() + " Round: " + getRoundInProgress() + " assigned");
         List<InterviewGroup> groups = strategy.select(applicants, interviewers);
+        logger.info("Job" + job.getTitle() + " Round: " + getRoundInProgress() + " assigned successful");
         for (InterviewGroup group : groups) {
             logger.info(group.toString());
             Interviewer interviewer = group.getInterviewer();

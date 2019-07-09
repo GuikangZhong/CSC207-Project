@@ -679,3 +679,546 @@ Application session on 2019-07-09T13:15:38.829
 ======================================================================
 Application session on 2019-07-09T13:16:31.499
 ======================================================================
+======================================================================
+Application session on 2019-07-09T13:31:58.794
+======================================================================
+======================================================================
+Application session on 2019-07-09T13:32:43.287
+======================================================================
+======================================================================
+Application session on 2019-07-09T13:36:46.831
+======================================================================
+======================================================================
+Application session on 2019-07-09T13:37:45.112
+======================================================================
+======================================================================
+Application session on 2019-07-09T13:38:30.796
+======================================================================
+======================================================================
+Application session on 2019-07-09T13:39:26.156
+======================================================================
+======================================================================
+Application session on 2019-07-09T13:39:45.609
+======================================================================
+======================================================================
+Application session on 2019-07-09T13:41:27.739
+======================================================================
+======================================================================
+Application session on 2019-07-09T13:41:46.107
+======================================================================
+======================================================================
+Application session on 2019-07-09T13:42:55.648
+======================================================================
+======================================================================
+Application session on 2019-07-09T13:45:13.309
+======================================================================
+======================================================================
+Application session on 2019-07-09T13:45:23.122
+======================================================================
+======================================================================
+Application session on 2019-07-09T13:52:26.598
+======================================================================
+======================================================================
+Application session on 2019-07-09T13:59:16.191
+======================================================================
+======================================================================
+Application session on 2019-07-09T14:14:46.721
+======================================================================
+======================================================================
+Application session on 2019-07-09T14:17:02.713
+======================================================================
+New system
+Added SystemObserver project.user.ApplicantManager@ba8a1dc
+added company UofT
+Added SystemObserver project.application.Company@4f8e5cde
+Added user : a type: APPLICANT company: UofT
+Added user : b type: APPLICANT company: UofT
+Added user : c type: APPLICANT company: UofT
+Added user : d type: APPLICANT company: UofT
+Added user : e type: APPLICANT company: UofT
+Added user : f type: APPLICANT company: UofT
+Added user : g type: APPLICANT company: UofT
+Added user : h type: APPLICANT company: UofT
+Added job UofT-A
+Added job UofT-B
+Added job UofT-C
+Added job UofT-D
+Added job UofT-E
+Added job UofT-F
+added company Microsoft
+Added SystemObserver project.application.Company@504bae78
+Added user : i type: APPLICANT company: Microsoft
+Added user : j type: APPLICANT company: Microsoft
+Added user : k type: APPLICANT company: Microsoft
+Added user : l type: APPLICANT company: Microsoft
+Added user : m type: APPLICANT company: Microsoft
+Added user : n type: APPLICANT company: Microsoft
+Added user : o type: APPLICANT company: Microsoft
+Added user : p type: APPLICANT company: Microsoft
+Added job Microsoft-A
+Added job Microsoft-B
+Added job Microsoft-C
+Added job Microsoft-D
+Added job Microsoft-E
+Added job Microsoft-F
+added company Google
+Added SystemObserver project.application.Company@484b61fc
+Added user : q type: APPLICANT company: Google
+Added user : r type: APPLICANT company: Google
+Added user : s type: APPLICANT company: Google
+Added user : t type: APPLICANT company: Google
+Added user : u type: APPLICANT company: Google
+Added user : v type: APPLICANT company: Google
+Added user : w type: APPLICANT company: Google
+Added user : x type: APPLICANT company: Google
+Added job Google-A
+Added job Google-B
+Added job Google-C
+Added job Google-D
+Added job Google-E
+Added job Google-F
+Set time to 2019-07-09T14:17:09.417
+Update on 2019-07-30T14:17:09.418
+Interview: UofT-F added observer project.user.HRManager@3af57b4b
+Interview: UofT-F added observer project.application.JobPostingManager@32c48fcd
+Added UofT-F for UofT-HR
+Interview: UofT-E added observer project.user.HRManager@3af57b4b
+Interview: UofT-E added observer project.application.JobPostingManager@32c48fcd
+Added UofT-E for UofT-HR
+Interview: UofT-D added observer project.user.HRManager@3af57b4b
+Interview: UofT-D added observer project.application.JobPostingManager@32c48fcd
+Added UofT-D for UofT-HR
+Interview: UofT-C added observer project.user.HRManager@3af57b4b
+Interview: UofT-C added observer project.application.JobPostingManager@32c48fcd
+Added UofT-C for UofT-HR
+Interview: UofT-B added observer project.user.HRManager@3af57b4b
+Interview: UofT-B added observer project.application.JobPostingManager@32c48fcd
+Added UofT-B for UofT-HR
+Interview: UofT-A added observer project.user.HRManager@3af57b4b
+Interview: UofT-A added observer project.application.JobPostingManager@32c48fcd
+Added UofT-A for UofT-HR
+Update on 2019-07-30T14:17:09.426
+Interview: Microsoft-B added observer project.user.HRManager@23e653ec
+Interview: Microsoft-B added observer project.application.JobPostingManager@48890667
+Added Microsoft-B for Microsoft-HR
+Interview: Microsoft-A added observer project.user.HRManager@23e653ec
+Interview: Microsoft-A added observer project.application.JobPostingManager@48890667
+Added Microsoft-A for Microsoft-HR
+Interview: Microsoft-F added observer project.user.HRManager@23e653ec
+Interview: Microsoft-F added observer project.application.JobPostingManager@48890667
+Added Microsoft-F for Microsoft-HR
+Interview: Microsoft-E added observer project.user.HRManager@23e653ec
+Interview: Microsoft-E added observer project.application.JobPostingManager@48890667
+Added Microsoft-E for Microsoft-HR
+Interview: Microsoft-D added observer project.user.HRManager@23e653ec
+Interview: Microsoft-D added observer project.application.JobPostingManager@48890667
+Added Microsoft-D for Microsoft-HR
+Interview: Microsoft-C added observer project.user.HRManager@23e653ec
+Interview: Microsoft-C added observer project.application.JobPostingManager@48890667
+Added Microsoft-C for Microsoft-HR
+Update on 2019-07-30T14:17:09.432
+Interview: Google-C added observer project.user.HRManager@59b7031e
+Interview: Google-C added observer project.application.JobPostingManager@4f9b5502
+Added Google-C for Google-HR
+Interview: Google-B added observer project.user.HRManager@59b7031e
+Interview: Google-B added observer project.application.JobPostingManager@4f9b5502
+Added Google-B for Google-HR
+Interview: Google-A added observer project.user.HRManager@59b7031e
+Interview: Google-A added observer project.application.JobPostingManager@4f9b5502
+Added Google-A for Google-HR
+Interview: Google-F added observer project.user.HRManager@59b7031e
+Interview: Google-F added observer project.application.JobPostingManager@4f9b5502
+Added Google-F for Google-HR
+Interview: Google-E added observer project.user.HRManager@59b7031e
+Interview: Google-E added observer project.application.JobPostingManager@4f9b5502
+Added Google-E for Google-HR
+Interview: Google-D added observer project.user.HRManager@59b7031e
+Interview: Google-D added observer project.application.JobPostingManager@4f9b5502
+Added Google-D for Google-HR
+JobUofT-F Round: Phone#1 assigned
+======================================================================
+Application session on 2019-07-09T14:19:06.133
+======================================================================
+JobUofT-F Round: Phone#1 assigned
+JobUofT-F Round: Phone#1 assigned
+UofT-F [d e a c g f b ]
+UofT-F [d e a c g f b ]add observer Phone#1
+UofT-F [d e a c g f b ]add observer Submitted
+UofT-F [d e a c g f b ]add observer Submitted
+UofT-F [d e a c g f b ]add observer Submitted
+UofT-F [d e a c g f b ]add observer Submitted
+UofT-F [d e a c g f b ]add observer Submitted
+UofT-F [d e a c g f b ]add observer Submitted
+UofT-F [d e a c g f b ]add observer Submitted
+======================================================================
+Application session on 2019-07-09T14:21:19.366
+======================================================================
+New system
+Added SystemObserver project.user.ApplicantManager@ba8a1dc
+added company UofT
+Added SystemObserver project.application.Company@4f8e5cde
+Added user : a type: APPLICANT company: UofT
+Added user : b type: APPLICANT company: UofT
+Added user : c type: APPLICANT company: UofT
+Added user : d type: APPLICANT company: UofT
+Added user : e type: APPLICANT company: UofT
+Added user : f type: APPLICANT company: UofT
+Added user : g type: APPLICANT company: UofT
+Added user : h type: APPLICANT company: UofT
+Added job UofT-A
+Added job UofT-B
+Added job UofT-C
+Added job UofT-D
+Added job UofT-E
+Added job UofT-F
+added company Microsoft
+Added SystemObserver project.application.Company@504bae78
+Added user : i type: APPLICANT company: Microsoft
+Added user : j type: APPLICANT company: Microsoft
+Added user : k type: APPLICANT company: Microsoft
+Added user : l type: APPLICANT company: Microsoft
+Added user : m type: APPLICANT company: Microsoft
+Added user : n type: APPLICANT company: Microsoft
+Added user : o type: APPLICANT company: Microsoft
+Added user : p type: APPLICANT company: Microsoft
+Added job Microsoft-A
+Added job Microsoft-B
+Added job Microsoft-C
+Added job Microsoft-D
+Added job Microsoft-E
+Added job Microsoft-F
+added company Google
+Added SystemObserver project.application.Company@484b61fc
+Added user : q type: APPLICANT company: Google
+Added user : r type: APPLICANT company: Google
+Added user : s type: APPLICANT company: Google
+Added user : t type: APPLICANT company: Google
+Added user : u type: APPLICANT company: Google
+Added user : v type: APPLICANT company: Google
+Added user : w type: APPLICANT company: Google
+Added user : x type: APPLICANT company: Google
+Added job Google-A
+Added job Google-B
+Added job Google-C
+Added job Google-D
+Added job Google-E
+Added job Google-F
+Set time to 2019-07-09T14:21:24.853
+Update on 2019-07-30T14:21:24.853
+Interview: UofT-F added observer project.user.HRManager@6910297f
+Interview: UofT-F added observer project.application.JobPostingManager@3f73f880
+Added UofT-F for UofT-HR
+Interview: UofT-E added observer project.user.HRManager@6910297f
+Interview: UofT-E added observer project.application.JobPostingManager@3f73f880
+Added UofT-E for UofT-HR
+Interview: UofT-D added observer project.user.HRManager@6910297f
+Interview: UofT-D added observer project.application.JobPostingManager@3f73f880
+Added UofT-D for UofT-HR
+Interview: UofT-C added observer project.user.HRManager@6910297f
+Interview: UofT-C added observer project.application.JobPostingManager@3f73f880
+Added UofT-C for UofT-HR
+Interview: UofT-B added observer project.user.HRManager@6910297f
+Interview: UofT-B added observer project.application.JobPostingManager@3f73f880
+Added UofT-B for UofT-HR
+Interview: UofT-A added observer project.user.HRManager@6910297f
+Interview: UofT-A added observer project.application.JobPostingManager@3f73f880
+Added UofT-A for UofT-HR
+Update on 2019-07-30T14:21:24.862
+Interview: Microsoft-B added observer project.user.HRManager@48144df4
+Interview: Microsoft-B added observer project.application.JobPostingManager@eb47b0
+Added Microsoft-B for Microsoft-HR
+Interview: Microsoft-A added observer project.user.HRManager@48144df4
+Interview: Microsoft-A added observer project.application.JobPostingManager@eb47b0
+Added Microsoft-A for Microsoft-HR
+Interview: Microsoft-F added observer project.user.HRManager@48144df4
+Interview: Microsoft-F added observer project.application.JobPostingManager@eb47b0
+Added Microsoft-F for Microsoft-HR
+Interview: Microsoft-E added observer project.user.HRManager@48144df4
+Interview: Microsoft-E added observer project.application.JobPostingManager@eb47b0
+Added Microsoft-E for Microsoft-HR
+Interview: Microsoft-D added observer project.user.HRManager@48144df4
+Interview: Microsoft-D added observer project.application.JobPostingManager@eb47b0
+Added Microsoft-D for Microsoft-HR
+Interview: Microsoft-C added observer project.user.HRManager@48144df4
+Interview: Microsoft-C added observer project.application.JobPostingManager@eb47b0
+Added Microsoft-C for Microsoft-HR
+Update on 2019-07-30T14:21:24.868
+Interview: Google-C added observer project.user.HRManager@68d8dd03
+Interview: Google-C added observer project.application.JobPostingManager@48cf8f60
+Added Google-C for Google-HR
+Interview: Google-B added observer project.user.HRManager@68d8dd03
+Interview: Google-B added observer project.application.JobPostingManager@48cf8f60
+Added Google-B for Google-HR
+Interview: Google-A added observer project.user.HRManager@68d8dd03
+Interview: Google-A added observer project.application.JobPostingManager@48cf8f60
+Added Google-A for Google-HR
+Interview: Google-F added observer project.user.HRManager@68d8dd03
+Interview: Google-F added observer project.application.JobPostingManager@48cf8f60
+Added Google-F for Google-HR
+Interview: Google-E added observer project.user.HRManager@68d8dd03
+Interview: Google-E added observer project.application.JobPostingManager@48cf8f60
+Added Google-E for Google-HR
+Interview: Google-D added observer project.user.HRManager@68d8dd03
+Interview: Google-D added observer project.application.JobPostingManager@48cf8f60
+Added Google-D for Google-HR
+JobUofT-A Round: Phone#1 assigned
+JobUofT-A Round: Phone#1 assigned
+JobUofT-A Round: Phone#1 assigned successful
+UofT-A [b e d f a g c ]
+UofT-A [b e d f a g c ]add observer Phone#1
+UofT-A [b e d f a g c ]add observer Submitted
+UofT-A [b e d f a g c ]add observer Submitted
+UofT-A [b e d f a g c ]add observer Submitted
+UofT-A [b e d f a g c ]add observer Submitted
+UofT-A [b e d f a g c ]add observer Submitted
+UofT-A [b e d f a g c ]add observer Submitted
+UofT-A [b e d f a g c ]add observer Submitted
+UofT-A [b e d f a g c ]submitted
+Phone#1 one group submitted
+All submitted
+e : David Liu e passed
+f : David Liu f passed
+======================================================================
+Application session on 2019-07-09T14:23:18.637
+======================================================================
+======================================================================
+Application session on 2019-07-09T14:25:53.889
+======================================================================
+New system
+Added SystemObserver project.user.ApplicantManager@ba8a1dc
+added company UofT
+Added SystemObserver project.application.Company@4f8e5cde
+Added user : a type: APPLICANT company: UofT
+Added user : b type: APPLICANT company: UofT
+Added user : c type: APPLICANT company: UofT
+Added user : d type: APPLICANT company: UofT
+Added user : e type: APPLICANT company: UofT
+Added user : f type: APPLICANT company: UofT
+Added user : g type: APPLICANT company: UofT
+Added user : h type: APPLICANT company: UofT
+Added job UofT-A
+Added job UofT-B
+Added job UofT-C
+Added job UofT-D
+Added job UofT-E
+Added job UofT-F
+added company Microsoft
+Added SystemObserver project.application.Company@504bae78
+Added user : i type: APPLICANT company: Microsoft
+Added user : j type: APPLICANT company: Microsoft
+Added user : k type: APPLICANT company: Microsoft
+Added user : l type: APPLICANT company: Microsoft
+Added user : m type: APPLICANT company: Microsoft
+Added user : n type: APPLICANT company: Microsoft
+Added user : o type: APPLICANT company: Microsoft
+Added user : p type: APPLICANT company: Microsoft
+Added job Microsoft-A
+Added job Microsoft-B
+Added job Microsoft-C
+Added job Microsoft-D
+Added job Microsoft-E
+Added job Microsoft-F
+added company Google
+Added SystemObserver project.application.Company@484b61fc
+Added user : q type: APPLICANT company: Google
+Added user : r type: APPLICANT company: Google
+Added user : s type: APPLICANT company: Google
+Added user : t type: APPLICANT company: Google
+Added user : u type: APPLICANT company: Google
+Added user : v type: APPLICANT company: Google
+Added user : w type: APPLICANT company: Google
+Added user : x type: APPLICANT company: Google
+Added job Google-A
+Added job Google-B
+Added job Google-C
+Added job Google-D
+Added job Google-E
+Added job Google-F
+Set time to 2019-07-09T14:25:59.666
+Update on 2019-07-30T14:25:59.666
+Phone#1 addObserver Set Interview for UofT-F HR: UofT-HR
+Phone#1
+In Person#1
+In Person#2
+In Person#3
+
+Interview: UofT-F added observer project.user.HRManager@de45d26
+Interview: UofT-F added observer project.application.JobPostingManager@5b32a5fe
+Added UofT-F for UofT-HR
+Phone#1 addObserver Set Interview for UofT-E HR: UofT-HR
+Phone#1
+In Person#1
+In Person#2
+In Person#3
+
+Interview: UofT-E added observer project.user.HRManager@de45d26
+Interview: UofT-E added observer project.application.JobPostingManager@5b32a5fe
+Added UofT-E for UofT-HR
+Phone#1 addObserver Set Interview for UofT-D HR: UofT-HR
+Phone#1
+In Person#1
+In Person#2
+In Person#3
+
+Interview: UofT-D added observer project.user.HRManager@de45d26
+Interview: UofT-D added observer project.application.JobPostingManager@5b32a5fe
+Added UofT-D for UofT-HR
+Phone#1 addObserver Set Interview for UofT-C HR: UofT-HR
+Phone#1
+In Person#1
+In Person#2
+In Person#3
+
+Interview: UofT-C added observer project.user.HRManager@de45d26
+Interview: UofT-C added observer project.application.JobPostingManager@5b32a5fe
+Added UofT-C for UofT-HR
+Phone#1 addObserver Set Interview for UofT-B HR: UofT-HR
+Phone#1
+In Person#1
+In Person#2
+In Person#3
+
+Interview: UofT-B added observer project.user.HRManager@de45d26
+Interview: UofT-B added observer project.application.JobPostingManager@5b32a5fe
+Added UofT-B for UofT-HR
+Phone#1 addObserver Set Interview for UofT-A HR: UofT-HR
+Phone#1
+In Person#1
+In Person#2
+In Person#3
+
+Interview: UofT-A added observer project.user.HRManager@de45d26
+Interview: UofT-A added observer project.application.JobPostingManager@5b32a5fe
+Added UofT-A for UofT-HR
+Update on 2019-07-30T14:25:59.682
+Phone#1 addObserver Set Interview for Microsoft-B HR: Microsoft-HR
+Phone#1
+In Person#1
+In Person#2
+In Person#3
+
+Interview: Microsoft-B added observer project.user.HRManager@4be3880a
+Interview: Microsoft-B added observer project.application.JobPostingManager@4dad662d
+Added Microsoft-B for Microsoft-HR
+Phone#1 addObserver Set Interview for Microsoft-A HR: Microsoft-HR
+Phone#1
+In Person#1
+In Person#2
+In Person#3
+
+Interview: Microsoft-A added observer project.user.HRManager@4be3880a
+Interview: Microsoft-A added observer project.application.JobPostingManager@4dad662d
+Added Microsoft-A for Microsoft-HR
+Phone#1 addObserver Set Interview for Microsoft-F HR: Microsoft-HR
+Phone#1
+In Person#1
+In Person#2
+In Person#3
+
+Interview: Microsoft-F added observer project.user.HRManager@4be3880a
+Interview: Microsoft-F added observer project.application.JobPostingManager@4dad662d
+Added Microsoft-F for Microsoft-HR
+Phone#1 addObserver Set Interview for Microsoft-E HR: Microsoft-HR
+Phone#1
+In Person#1
+In Person#2
+In Person#3
+
+Interview: Microsoft-E added observer project.user.HRManager@4be3880a
+Interview: Microsoft-E added observer project.application.JobPostingManager@4dad662d
+Added Microsoft-E for Microsoft-HR
+Phone#1 addObserver Set Interview for Microsoft-D HR: Microsoft-HR
+Phone#1
+In Person#1
+In Person#2
+In Person#3
+
+Interview: Microsoft-D added observer project.user.HRManager@4be3880a
+Interview: Microsoft-D added observer project.application.JobPostingManager@4dad662d
+Added Microsoft-D for Microsoft-HR
+Phone#1 addObserver Set Interview for Microsoft-C HR: Microsoft-HR
+Phone#1
+In Person#1
+In Person#2
+In Person#3
+
+Interview: Microsoft-C added observer project.user.HRManager@4be3880a
+Interview: Microsoft-C added observer project.application.JobPostingManager@4dad662d
+Added Microsoft-C for Microsoft-HR
+Update on 2019-07-30T14:25:59.692
+Phone#1 addObserver Set Interview for Google-C HR: Google-HR
+Phone#1
+In Person#1
+In Person#2
+In Person#3
+
+Interview: Google-C added observer project.user.HRManager@620f0fd3
+Interview: Google-C added observer project.application.JobPostingManager@2cdc5b39
+Added Google-C for Google-HR
+Phone#1 addObserver Set Interview for Google-B HR: Google-HR
+Phone#1
+In Person#1
+In Person#2
+In Person#3
+
+Interview: Google-B added observer project.user.HRManager@620f0fd3
+Interview: Google-B added observer project.application.JobPostingManager@2cdc5b39
+Added Google-B for Google-HR
+Phone#1 addObserver Set Interview for Google-A HR: Google-HR
+Phone#1
+In Person#1
+In Person#2
+In Person#3
+
+Interview: Google-A added observer project.user.HRManager@620f0fd3
+Interview: Google-A added observer project.application.JobPostingManager@2cdc5b39
+Added Google-A for Google-HR
+Phone#1 addObserver Set Interview for Google-F HR: Google-HR
+Phone#1
+In Person#1
+In Person#2
+In Person#3
+
+Interview: Google-F added observer project.user.HRManager@620f0fd3
+Interview: Google-F added observer project.application.JobPostingManager@2cdc5b39
+Added Google-F for Google-HR
+Phone#1 addObserver Set Interview for Google-E HR: Google-HR
+Phone#1
+In Person#1
+In Person#2
+In Person#3
+
+Interview: Google-E added observer project.user.HRManager@620f0fd3
+Interview: Google-E added observer project.application.JobPostingManager@2cdc5b39
+Added Google-E for Google-HR
+Phone#1 addObserver Set Interview for Google-D HR: Google-HR
+Phone#1
+In Person#1
+In Person#2
+In Person#3
+
+Interview: Google-D added observer project.user.HRManager@620f0fd3
+Interview: Google-D added observer project.application.JobPostingManager@2cdc5b39
+Added Google-D for Google-HR
+JobUofT-F Round: Phone#1 assigned
+JobUofT-F Round: Phone#1 assigned successful
+UofT-F [c a e b f d g ]
+UofT-F [c a e b f d g ]add observer Phone#1
+UofT-F [c a e b f d g ]add observer Submitted
+UofT-F [c a e b f d g ]add observer Submitted
+UofT-F [c a e b f d g ]add observer Submitted
+UofT-F [c a e b f d g ]add observer Submitted
+UofT-F [c a e b f d g ]add observer Submitted
+UofT-F [c a e b f d g ]add observer Submitted
+UofT-F [c a e b f d g ]add observer Submitted
+UofT-F [c a e b f d g ]submitted
+Phone#1 one group submitted
+All submitted
+f : David Liu f passed
+Interview for UofT-Fround finished
+In Person#1 addObserver Set Interview for UofT-F HR: UofT-HR
+Phone#1
+In Person#1
+In Person#2
+In Person#3
+

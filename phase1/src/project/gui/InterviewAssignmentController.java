@@ -48,9 +48,7 @@ public class InterviewAssignmentController extends ApplicationController {
                         super.updateItem(t, bln);
                         if (t != null) {
                             String s = t.getJob().getTitle();
-                            if(t.hasInterviewBegun()){
-                                s += "("+ t.getRoundInProgress() + ")";
-                            }
+                            s += "(" + t.getRoundInProgress() + ")";
                             setText(s);
                         } else {
                             setText("");
@@ -106,15 +104,12 @@ public class InterviewAssignmentController extends ApplicationController {
         }
         final Interview interview = selected;
         final List<Interview> interviews = _interviews;
-        SceneSwitcher.<AssignInterviewsController, InterviewAssignmentController>switchScene(this, event, "AssignInterviews.fxml", (next, current) -> {
-            if (!interview.hasInterviewBegun()) {
-                next.listOfInterviews = interviews;
-                next.interview = interview;
-            } else {
-                next.listOfInterviews = interviews;
-                next.interview = interview;
-            }
-        });
+        SceneSwitcher.<AssignInterviewsController, InterviewAssignmentController>switchScene(
+                this, event, "AssignInterviews.fxml", (next, current) -> {
+                    next.listOfInterviews = interviews;
+                    next.interview = interview;
+
+                });
 
 
     }
