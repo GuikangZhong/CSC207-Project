@@ -24,8 +24,12 @@ public class ApplicationInfoController implements Initializable {
     private TextArea content;
     Application application;
 
-    ApplicationInfoController(Application application) {
+    void setApplication(Application application) {
         this.application = application;
+        applicantName.setText(application.getApplicant().getRealName());
+        documents.getItems().clear();
+        documents.getItems().addAll(application.getDocument());
+        content.setDisable(true);
 
     }
 
@@ -39,9 +43,6 @@ public class ApplicationInfoController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        applicantName.setText(application.getApplicant().getRealName());
-        documents.getItems().clear();
-        documents.getItems().addAll(application.getDocument());
-        content.setDisable(true);
+
     }
 }

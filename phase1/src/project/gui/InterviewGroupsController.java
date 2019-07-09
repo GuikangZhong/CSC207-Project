@@ -1,12 +1,16 @@
 package project.gui;
 
+import com.sun.org.apache.xerces.internal.impl.xs.SchemaNamespaceSupport;
 import javafx.beans.binding.Bindings;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.util.Callback;
 import project.application.*;
 import project.interview.Interview;
@@ -38,17 +42,10 @@ public class InterviewGroupsController extends ApplicationController implements 
 
     private void pollInterviewGroups() {
         Interviewer interviewer = (Interviewer) getUser();
-        Company company = getSystem().getCompany(interviewer.getCompany());
-        JobPostingManager manager = company.getJobPostingManager();
-        //InterviewerManager manager = company.getInterviewerManager();
         interviewGroups.getItems().clear();
-        for (JobPosting jobPosting : manager.getJobPostings().values()) {
-            for (InterviewGroup interviewGroup : interviewer.getInterviews())
-                if (interviewGroup.getJob() == jobPosting.getJob()) {
-                    interviewGroups.getItems().add(interviewGroup);
-                }
+        for (InterviewGroup interviewGroup : interviewer.getInterviews()) {
+            interviewGroups.getItems().add(interviewGroup);
         }
-
     }
 
     private void pollApplicants() {
@@ -88,10 +85,24 @@ public class InterviewGroupsController extends ApplicationController implements 
         SceneSwitcher.switchScene(this, event, "InterviewerMenu.fxml");
     }
 
-    public void viewApplicant(ActionEvent event) {
+    public void viewApplicant(ActionEvent event){
         int index = applicantCheckBoxs.getSelectionModel().getSelectedIndex();
         if (index >= 0) {
-            Applicant applicant = applicantList.get(index);
+            final Applicant applicant = applicantList.get(index);
+            final InterviewGroup interviewGroup = interviewGroups.getSelectionModel().getSelectedItem();
+            showModal(stage -> {
+                try {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("ApplicationInfo.fxml"));
+                    AnchorPane pane = (AnchorPane) loader.load();
+                    ApplicationInfoController controller = loader.<ApplicationInfoController>getController();
+                    Application application = applicant.getApplicationOf(interviewGroup.getJob().getTitle()).get();
+                    controller.setApplication(application);
+                    Scene scene = new Scene(pane);
+                    stage.setScene(scene);
+                }catch(IOException e){
+                    e.printStackTrace();
+                }
+            });
         }
 
     }

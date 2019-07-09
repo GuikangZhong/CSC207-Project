@@ -29,6 +29,7 @@ public class Applicant extends User implements Serializable {
         super(history, username, password, realName, company);
         applications = new ArrayList<>();
         documents = new ArrayList<>();
+        observers = new ArrayList<>();
     }
 
     public void addObserver(ApplicantObserver observer) {
