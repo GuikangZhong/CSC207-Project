@@ -26,7 +26,6 @@ public class InterviewerMenuController extends ApplicationController {
     @Override
     void postInit(){
         super.postInit();
-        companyName.setText(getUser().getCompany());
     }
 
     public void exit(Event event) throws IOException {

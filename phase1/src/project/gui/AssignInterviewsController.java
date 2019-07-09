@@ -120,7 +120,8 @@ public class AssignInterviewsController extends ApplicationController {
                 return groups;
             }
         }
-
+        //start the first round of interview
+        interview.toNextRound();
         interview.assignRound(new UISelectionStrategy(),
                 new ArrayList<>(company.getInterviewerManager().getUsers().values()));
         showModal("Assign successfully");
