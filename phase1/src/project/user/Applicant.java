@@ -85,6 +85,7 @@ public class Applicant extends User implements Serializable {
     // throws RuntimeException if requirement not met
     public Application apply(JobPosting jobPosting) {
         Application application = new Application(this, getDocuments(), jobPosting.getJob());
+        jobPosting.addObserver(this.getApplicantHistory());
         if (jobPosting.addApplication(application)) {
             applications.add(application);
             getApplicantHistory().addJobApplying(jobPosting.getJob());
