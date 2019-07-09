@@ -71,10 +71,10 @@ public abstract class Round implements Serializable, InterviewGroupObserver {
         return true;
     }
 
-    @Override
-    public void updateOnGroupAssigned(InterviewGroup group) {
-
-    }
+//    @Override
+//    public void updateOnGroupAssigned(InterviewGroup group) {
+//
+//    }
 
     @Override
     public void updateOnGroupSubmitted(InterviewGroup group) {

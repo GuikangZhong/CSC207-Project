@@ -48,10 +48,10 @@ public class Interviewer extends User implements InterviewGroupObserver {
         interviews.remove(group);
     }
 
-    @Override
-    public void updateOnGroupAssigned(InterviewGroup group) {
-
-    }
+//    @Override
+//    public void updateOnGroupAssigned(InterviewGroup group) {
+//
+//    }
 
     @Override
     public void updateOnGroupSubmitted(InterviewGroup group) {

@@ -23,7 +23,6 @@ public class InterviewGroup implements Serializable {
 
     private List<Applicant> applicants;
     private boolean submitted = false;
-//    private Interview interview;
     private Job job;
     private Round round;
     private List<InterviewGroupObserver> observers;
@@ -38,6 +37,7 @@ public class InterviewGroup implements Serializable {
         this.interviewer = interviewer;
         this.applicants = applicants;
         applicantsStatus = new HashMap<>();
+        observers = new ArrayList<>();
         for (Applicant applicant : applicants) {
             applicantsStatus.put(applicant.getUsername(), false);
         }
@@ -52,10 +52,10 @@ public class InterviewGroup implements Serializable {
         for (InterviewGroupObserver observer : observers) {
             observer.updateOnGroupSubmitted(this);
         }
-        for (Applicant applicant: applicants){
-            application = applicant.getApplicationOf(job.getTitle()).get();
-            application.getStatus().currentRoundFinished(round);
-        }
+//        for (Applicant applicant: applicants){
+//            application = applicant.getApplicationOf(job.getTitle()).get();
+//            application.getStatus().currentRoundFinished(round);
+//        }
     }
 
     public Interviewer getInterviewer() {
@@ -74,6 +74,10 @@ public class InterviewGroup implements Serializable {
             }
         }
         return result;
+    }
+
+    public Round getRound(){
+        return round;
     }
 
     void setRound(Round round){
