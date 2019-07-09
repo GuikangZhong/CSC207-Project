@@ -71,7 +71,13 @@ public class HRManager extends UserManager<HR> implements InterviewObserver, Job
     }
 
     @Override
-    public void updateOnHireResult(List<Applicant> applicants, Job job) {
-        // TODO:
+    public void updateOnHireResult(Interview interview) {
+
     }
+
+    @Override
+    public void updateOnNoMoreRounds(Interview interview) {
+
+    }
+
 }

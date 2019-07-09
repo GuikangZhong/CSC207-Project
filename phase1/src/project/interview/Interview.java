@@ -83,22 +83,23 @@ public class Interview implements Serializable, RoundObserver {
 
     void updateOnRoundFinished() {
         if (applicants.size() <= numberNeeded) {
-            for (InterviewObserver observer : observers) {
-                observer.updateOnHireResult(applicants, job);
-            }
-        } else {
+            notifyHireResult();
+        } else if (hasNextRound()) {
             for (InterviewObserver observer : observers) {
                 observer.updateOnInterviewRoundFinished(this);
             }
-        }
-        if (hasNextRound()) {
             toNextRound();
+        }else{
+            for (InterviewObserver observer : observers) {
+                observer.updateOnNoMoreRounds(this);
+            }
         }
+
     }
 
-    private void notifyHireResult(List<Applicant> applicants) {
+    private void notifyHireResult() {
         for (InterviewObserver observer : observers) {
-            observer.updateOnHireResult(applicants, job);
+            observer.updateOnHireResult(this);
         }
     }
 

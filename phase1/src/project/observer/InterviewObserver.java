@@ -8,5 +8,6 @@ import java.util.List;
 
 public interface InterviewObserver {
     void updateOnInterviewRoundFinished(Interview interview);
-    void updateOnHireResult(List<Applicant> applicants, Job job);
+    void updateOnHireResult(Interview interview);
+    void updateOnNoMoreRounds(Interview interview);
 }

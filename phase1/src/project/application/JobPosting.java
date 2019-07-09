@@ -31,7 +31,6 @@ public class JobPosting implements Serializable, SystemObserver {
     static private Logger logger = Logging.getLogger();
 
 
-
     public HR getHr() {
         return hr;
     }
@@ -142,7 +141,7 @@ public class JobPosting implements Serializable, SystemObserver {
     }
 
     public void addHired(Applicant applicant) {
-        if(status == Status.FILLED){
+        if (status == Status.FILLED) {
             throw new RuntimeException("Cannot hire more applicants");
         }
         hireResult.addHiredApplicant(applicant);

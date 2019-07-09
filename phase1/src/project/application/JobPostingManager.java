@@ -90,14 +90,21 @@ public class JobPostingManager implements InterviewObserver, Serializable, Syste
     public void updateOnInterviewRoundFinished(Interview interview) {
 
     }
+
     @Override
-    public void updateOnHireResult(List<Applicant> applicants, Job job) {
-        String name = job.getTitle();
+    public void updateOnHireResult(Interview interview) {
+        String name = interview.getJob().getTitle();
         JobPosting jobPosting = getJobPosting(name);
-        for (Applicant applicant : applicants) {
+        for (Applicant applicant :  interview.getApplicants()) {
             jobPosting.addHired(applicant);
         }
     }
+
+    @Override
+    public void updateOnNoMoreRounds(Interview interview) {
+
+    }
+
 
     @Override
     public void updateOnTime(LocalDateTime now) {
