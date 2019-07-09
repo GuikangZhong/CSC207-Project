@@ -5,6 +5,13 @@ public class BasicRequirement implements Requirement {
 
     @Override
     public boolean satisfies(Application application) {
-        return application.getDocument() != null;
+        int cnt = 0;
+        for (Document document : application.getDocument()) {
+            if (document.type().equals(CV.createEmpty().type())
+                    || document.type().equals(CoverLetter.createEmpty().type())) {
+                cnt++;
+            }
+        }
+        return cnt == 2;
     }
 }

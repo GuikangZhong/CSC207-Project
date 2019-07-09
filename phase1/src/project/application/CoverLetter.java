@@ -6,7 +6,9 @@ import java.time.LocalDateTime;
 public class CoverLetter extends Document implements Serializable {
 
     private static final long serialVersionUID = 4089162745833731740L;
-
+    public static CoverLetter createEmpty(){
+        return new CoverLetter(null,null,null);
+    }
     public static CoverLetter createByDirectInput(String name, String input, LocalDateTime dateTime) {
         return new CoverLetter(name, input, dateTime);
     }
