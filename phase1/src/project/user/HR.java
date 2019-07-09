@@ -15,7 +15,7 @@ public class HR extends User {
     private List<List<Application>> recommendationLists;
     private List<String> interviewsRoundFinished;
     private List<String> interviewsToBeScheduled;
-    private List<String> jobsHired;
+    private List<String> jobsHired;  // How to store the name of the applicant hired??
 
     // TODO: check with piazza / prof if this is really what it wants
     public HR(UserHistory history,

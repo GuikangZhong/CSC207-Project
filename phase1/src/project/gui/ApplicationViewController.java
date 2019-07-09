@@ -5,6 +5,8 @@ import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextArea;
+import javafx.scene.input.MouseEvent;
 import javafx.util.Callback;
 import project.application.Application;
 import project.application.Company;
@@ -17,6 +19,9 @@ import java.util.List;
 public class ApplicationViewController extends ApplicationController {
     @FXML
     private ListView<Application> applications;
+
+    @FXML
+    private TextArea applicationStatus;
 
     public void exit(Event event) throws IOException {
         SceneSwitcher.switchScene(this, event, "Main.fxml");
@@ -61,6 +66,12 @@ public class ApplicationViewController extends ApplicationController {
         pollApplications();
 
 
+
+    }
+
+    public void applicationClicked(MouseEvent event){
+        Application application = applications.getSelectionModel().getSelectedItem();
+        applicationStatus.setText(application.getStatus().toString());
     }
 
     public void withdraw(ActionEvent event) {

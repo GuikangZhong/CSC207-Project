@@ -4,6 +4,7 @@ import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.input.MouseEvent;
 import project.application.Job;
 import project.user.Applicant;
 import project.user.ApplicantHistory;
@@ -44,4 +45,8 @@ public class ApplicantHistoryController extends ApplicationController {
         username.setText(applicant.getUsername());
         realname.setText(applicant.getRealName());
     }
+
+//    public void applyingjobClicked(MouseEvent event){
+//        String jobTitle = applyingJobs.getSelectionModel().getSelectedItem();
+//    }
 }
