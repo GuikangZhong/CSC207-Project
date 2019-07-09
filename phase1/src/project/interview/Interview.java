@@ -84,6 +84,14 @@ public class Interview implements Serializable, RoundObserver, ApplicantObserver
         return setup.getRounds().get(round);
     }
 
+    public void hireFromRecommendation(List<Applicant> applicants) {
+        if (hasNextRound()) {
+            throw new RuntimeException("You shouldn't use recommendation lst now");
+        }
+        this.applicants = applicants;
+        notifyHireResult();
+    }
+
 
     private void notifyHireResult() {
         logger.info("Hire result for " + getJob().getTitle());
