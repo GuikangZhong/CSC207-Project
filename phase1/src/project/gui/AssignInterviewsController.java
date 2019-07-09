@@ -76,7 +76,8 @@ public class AssignInterviewsController extends ApplicationController {
         });
 
         interviewers.setOnMouseClicked((MouseEvent click) -> {
-            addItemToOther(click, interviewers, selectedInterviewers);
+            if(selectedInterviewers.getItems().isEmpty())
+                addItemToOther(click, interviewers, selectedInterviewers);
         });
 
         selectedInterviewers.setOnMouseClicked((MouseEvent click) -> {
