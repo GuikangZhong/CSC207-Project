@@ -13,6 +13,7 @@
       <children>
         <ListView id="Application" fx:id="applications" layoutX="0.0" layoutY="0.0" onMouseClicked="#applicationClicked" prefHeight="435.0" prefWidth="216.0" />
         <Button layoutX="343.0" layoutY="371.0" mnemonicParsing="false" onAction="#withdraw" text="Withdraw" />
+            <TextArea fx:id="applicationStatus" layoutX="263.0" layoutY="18.0" prefHeight="200.0" prefWidth="200.0" />
       </children>
     </AnchorPane>
   </center>
