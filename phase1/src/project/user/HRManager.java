@@ -80,5 +80,4 @@ public class HRManager extends UserManager<HR> implements InterviewObserver, Job
         HR hr = interview.getHR();
         hr.addRecommendationListForJob(interview.getJob(), interview.getApplicants());
     }
-
 }
