@@ -78,6 +78,6 @@ public class HRManager extends UserManager<HR> implements InterviewObserver, Job
     @Override
     public void updateOnNoMoreRounds(Interview interview) {
         HR hr = interview.getHR();
-        hr.addRecommendationListForJob(interview.getJob(), interview.getApplicants());
+        hr.addRecommendationList(interview);
     }
 }

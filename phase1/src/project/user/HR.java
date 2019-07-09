@@ -14,7 +14,7 @@ import java.util.logging.Logger;
 public class HR extends User {
     private static final long serialVersionUID = 6752053563376828029L;
 
-    private Map<String, List<Applicant>> recommendationLists;
+    private Map<String, Interview> recommendationLists;
     private List<Interview> interviewsRoundFinished;
     private List<Interview> interviewsToBeScheduled;
     private List<String> jobsHired;  // How to store the name of the applicant hired??
@@ -54,12 +54,12 @@ public class HR extends User {
         return Type.HR;
     }
 
-    public Map<String, List<Applicant>> getRecommendationLists() {
+    public Map<String, Interview> getRecommendationLists() {
         return recommendationLists;
     }
 
-    public void addRecommendationListForJob(Job job, List<Applicant> applicants) {
-        recommendationLists.put(job.getTitle(), applicants);
+    public void addRecommendationList(Interview interview) {
+        recommendationLists.put(interview.getJob().getTitle(), interview);
     }
 
     void addJobsHired(String title) {
