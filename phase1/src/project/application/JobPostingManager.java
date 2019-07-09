@@ -72,6 +72,16 @@ public class JobPostingManager implements InterviewObserver, Serializable, Syste
         return applicants;
     }
 
+    public List<JobPosting> getJobPostingsForHR(String hr) {
+        List<JobPosting> jobPostingList = new ArrayList<>();
+        for (JobPosting jobPosting: jobPostings.values()) {
+            if (jobPosting.getHr().getUsername().equals(hr)) {
+                jobPostingList.add(jobPosting);
+            }
+        }
+        return jobPostingList;
+    }
+
     public JobPosting getJobPosting(String title) {
         return jobPostings.get(title);
     }
