@@ -1,5 +1,6 @@
 package project.gui;
 
+import javafx.beans.binding.Bindings;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -12,6 +13,7 @@ import project.interview.Interview;
 import project.interview.InterviewGroup;
 import project.user.*;
 
+import javax.naming.Context;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
@@ -84,6 +86,14 @@ public class InterviewGroupsController extends ApplicationController implements 
         }
         interviewGroup.submit();
         SceneSwitcher.switchScene(this, event, "InterviewerMenu.fxml");
+    }
+
+    public void viewApplicant(ActionEvent event) {
+        int index = applicantCheckBoxs.getSelectionModel().getSelectedIndex();
+        if (index >= 0) {
+            Applicant applicant = applicantList.get(index);
+        }
+
     }
 
     public void exit(Event event) throws IOException {

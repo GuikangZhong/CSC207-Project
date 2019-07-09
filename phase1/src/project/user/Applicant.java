@@ -1,10 +1,13 @@
 package project.user;
 
 import project.application.*;
+import project.observer.ApplicantObserver;
 import project.system.SystemClock;
+import project.utils.Logging;
 
 import java.io.Serializable;
 import java.util.*;
+import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 // TODO: When InterviewAssignment.submit is called, applicants will be notified whether 
@@ -14,7 +17,9 @@ public class Applicant extends User implements Serializable {
 
     private Collection<Application> applications;
     private List<Document> documents;
+    private List<ApplicantObserver> observers;
     private static int DocumentsAutoDeleteDays = 30;
+    private static Logger logger = Logging.getLogger();
 
     public Applicant(ApplicantHistory history,
                      String username,
@@ -24,6 +29,18 @@ public class Applicant extends User implements Serializable {
         super(history, username, password, realName, company);
         applications = new ArrayList<>();
         documents = new ArrayList<>();
+    }
+
+    public void addObserver(ApplicantObserver observer) {
+        observers.add(observer);
+    }
+
+    public void removeObserver(ApplicantObserver observer) {
+        if (!observers.remove(observer)) {
+            throw new RuntimeException("You removed an observer that is not in the list");
+        } else {
+            logger.info("Applicant " + getUsername() + " Removed observer" + observer);
+        }
     }
 
     public static int getDocumentsAutoDeleteDays() {
@@ -98,6 +115,9 @@ public class Applicant extends User implements Serializable {
         this.getApplicantHistory().removeJobApplying(jobPosting.getJobTitle());
         applications.remove(application);
         jobPosting.removeApplication(application);
+        for (ApplicantObserver observer : observers) {
+            observer.updateOnApplicationWithdraw(application);
+        }
     }
 
     @Override

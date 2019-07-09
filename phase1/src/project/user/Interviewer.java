@@ -1,9 +1,11 @@
 package project.user;
 
 import project.application.Company;
+import project.interview.Interview;
 import project.interview.InterviewGroup;
 import project.interview.InterviewGroupAssignmentStrategy;
 import project.observer.InterviewGroupObserver;
+import project.observer.InterviewObserver;
 import project.utils.Logging;
 
 import java.util.ArrayList;
@@ -11,7 +13,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.logging.Logger;
 
-public class Interviewer extends User implements InterviewGroupObserver {
+public class Interviewer extends User implements InterviewGroupObserver, InterviewObserver {
     private static final long serialVersionUID = 6252452179878258209L;
 
     private List<InterviewGroup> interviews;
@@ -57,5 +59,22 @@ public class Interviewer extends User implements InterviewGroupObserver {
     public void updateOnGroupSubmitted(InterviewGroup group) {
         logger.info("Removed " + group + "on submitted");
         interviews.remove(group);
+    }
+
+    @Override
+    public void updateOnInterviewRoundFinished(Interview interview) {
+
+    }
+
+    @Override
+    public void updateOnHireResult(Interview interview) {
+        if (interviews.removeIf(group -> group.getJob() == interview.getJob())) {
+            logger.info("Removed interview " + interview);
+        }
+    }
+
+    @Override
+    public void updateOnNoMoreRounds(Interview interview) {
+
     }
 }

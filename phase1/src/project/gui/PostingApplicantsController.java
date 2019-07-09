@@ -31,7 +31,7 @@ public class PostingApplicantsController extends ApplicationController {
 
 
     @Override
-    void postInit(){
+    void postInit() {
         super.postInit();
         jobPostings.setCellFactory(new Callback<ListView<JobPosting>, ListCell<JobPosting>>() {
 
@@ -46,10 +46,10 @@ public class PostingApplicantsController extends ApplicationController {
                         if (t != null) {
                             if (t.getStatus() == JobPosting.Status.CLOSED) {
                                 setText(t.getJob().getTitle() + " (Closed)");
-                            } else if(t.getStatus() == JobPosting.Status.OPEN)
+                            } else if (t.getStatus() == JobPosting.Status.OPEN)
                                 setText(t.getJob().getTitle() + " (Open)");
-                            else{
-                                setText(t.getJobTitle() + "(Filled)");
+                            else {
+                                setText(t.getJobTitle() + " (Filled)");
                             }
                         }
                     }
@@ -81,35 +81,36 @@ public class PostingApplicantsController extends ApplicationController {
         pollJobPostings();
     }
 
-    private void pollJobPostings(){
-        HR hr = (HR)getUser();
+    private void pollJobPostings() {
+        HR hr = (HR) getUser();
         Company company = getSystem().getCompany(hr.getCompany());
         JobPostingManager manager = company.getJobPostingManager();
         jobPostings.getItems().clear();
-        for(JobPosting jobPosting: manager.getJobPostings().values()){
+        for (JobPosting jobPosting : manager.getJobPostings().values()) {
             jobPostings.getItems().add(jobPosting);
         }
 
     }
 
-    private void pollApplicants(){
+    private void pollApplicants() {
         JobPosting jobPosting = jobPostings.getSelectionModel().getSelectedItem();
         applications.getItems().clear();
         if (jobPosting != null) {
-            for(Application application : jobPosting.getApplications()){
+            for (Application application : jobPosting.getApplications()) {
                 applications.getItems().add(application);
             }
         }
     }
+
     public void exit(Event event) throws IOException {
         SceneSwitcher.switchScene(this, event, "Main.fxml");
     }
 
-    public void applicationClicked(MouseEvent event){
+    public void applicationClicked(MouseEvent event) {
 
     }
 
-    public void jobPostingClicked(MouseEvent event){
+    public void jobPostingClicked(MouseEvent event) {
         pollApplicants();
     }
 

@@ -18,13 +18,14 @@
                     <ListView fx:id="interviewGroups" layoutX="22.0" layoutY="32.0" onMouseClicked="#interviewGroupClicked" prefHeight="464.0" prefWidth="200.00009999999747" />
                     <Label layoutX="22.0" layoutY="14.0" text="Interview Groups" />
                     <Label layoutX="249.0" layoutY="14.0" text="Applicants" />
-                    <Button layoutX="378.0" layoutY="509.0" mnemonicParsing="false" onAction="#promoteButton" text="Promote" />
+                    <Button layoutX="450.0" layoutY="509.0" mnemonicParsing="false" onAction="#promoteButton" text="Submit" />
                     <Label layoutX="232.0" layoutY="230.0" text="&gt;">
                       <font>
                         <Font size="18.0" fx:id="x1" />
                       </font>
                     </Label>
                     <ListView id="applications" fx:id="applicantCheckBoxs" layoutX="249.0" layoutY="33.0" prefHeight="464.0" prefWidth="200.00009999999747" />
+                    <Button layoutX="467.0" layoutY="71.0" mnemonicParsing="false" onAction="#viewApplicant" text="View Applicant" />
                   </children>
                 </AnchorPane>
               </content>

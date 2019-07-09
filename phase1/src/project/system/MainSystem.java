@@ -48,6 +48,9 @@ public class MainSystem implements Serializable {
                     , "Diane Horton", c);
             company.getHrManager().addUser(hr);
             company.getInterviewerManager().addUser(interviewer);
+            interviewer = new Interviewer(new UserHistory(now()), c + "-II", "a"
+                    , "Danny Heap", c);
+            company.getInterviewerManager().addUser(interviewer);
             JobPostingManager manager = company.getJobPostingManager();
             String[] jobs = {"-A", "-B", "-C", "-D", "-E", "-F"};
             for (String job : jobs) {

@@ -3,6 +3,7 @@ package project.interview;
 import project.application.Application;
 import project.application.Job;
 import project.application.JobPosting;
+import project.observer.ApplicantObserver;
 import project.observer.InterviewObserver;
 import project.observer.RoundObserver;
 import project.user.Applicant;
@@ -17,7 +18,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.logging.Logger;
 
-public class Interview implements Serializable, RoundObserver {
+public class Interview implements Serializable, RoundObserver, ApplicantObserver {
     private static final long serialVersionUID = -5626906039736330402L;
     private Collection<InterviewObserver> observers;
 
@@ -46,6 +47,7 @@ public class Interview implements Serializable, RoundObserver {
         applicants = new ArrayList<>();
         for (Application application : jobPosting.getApplications()) {
             applicants.add(application.getApplicant());
+            application.getApplicant().addObserver(this);
         }
         round = 0;
         observers = new ArrayList<>();
@@ -82,26 +84,14 @@ public class Interview implements Serializable, RoundObserver {
         return setup.getRounds().get(round);
     }
 
-    void updateOnRoundFinished() {
-        if (applicants.size() <= numberNeeded) {
-            notifyHireResult();
-        } else if (hasNextRound()) {
-            for (InterviewObserver observer : observers) {
-                observer.updateOnInterviewRoundFinished(this);
-            }
-            toNextRound();
-        } else {
-            for (InterviewObserver observer : observers) {
-                observer.updateOnNoMoreRounds(this);
-            }
-        }
-
-    }
 
     private void notifyHireResult() {
         logger.info("Hire result for " + getJob().getTitle());
         for (InterviewObserver observer : observers) {
             observer.updateOnHireResult(this);
+        }
+        for (Applicant applicant : applicants) {
+            applicant.removeObserver(this);
         }
     }
 
@@ -136,6 +126,7 @@ public class Interview implements Serializable, RoundObserver {
             logger.info(group.toString());
             Interviewer interviewer = group.getInterviewer();
             interviewer.addInterviewGroup(group);
+            addObserver(interviewer);
             group.addObserver(interviewer);
         }
         getRoundInProgress().setGroups(groups);
@@ -151,11 +142,38 @@ public class Interview implements Serializable, RoundObserver {
         return s.toString();
     }
 
+    void updateOnRoundFinished() {
+        if (applicants.size() <= numberNeeded) {
+            notifyHireResult();
+        } else if (hasNextRound()) {
+            for (InterviewObserver observer : observers) {
+                observer.updateOnInterviewRoundFinished(this);
+            }
+            toNextRound();
+        } else {
+            for (InterviewObserver observer : observers) {
+                observer.updateOnNoMoreRounds(this);
+            }
+        }
+
+    }
+
     @Override
     public void updateOnRoundFinished(Round round) {
         logger.info("Interview for " + job.getTitle() + "round finished");
         filterPassed();
         updateOnRoundFinished();
 
+    }
+
+    @Override
+    public void updateOnApplicationWithdraw(Application application) {
+        if (!applicants.remove(application.getApplicant())) {
+            throw new RuntimeException("You have removed someone doesn't exists!!!");
+        }
+        getRoundInProgress().withdraw(application.getApplicant());
+        if (applicants.size() <= numberNeeded) {
+            notifyHireResult();
+        }
     }
 }

@@ -100,4 +100,10 @@ public class InterviewGroup implements Serializable {
         builder.append("]");
         return builder.toString();
     }
+
+    void withdraw(Applicant applicant) {
+        if (applicants.remove(applicant)) {
+            logger.info("Removed " + applicant.getUsername());
+        }
+    }
 }

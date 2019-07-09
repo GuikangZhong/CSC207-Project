@@ -1,7 +1,7 @@
 package project.gui;
 
-import javafx.scene.control.ListCell;
-import javafx.scene.control.ListView;
+import javafx.beans.binding.Bindings;
+import javafx.scene.control.*;
 import javafx.util.Callback;
 import project.interview.InterviewGroup;
 import project.user.Applicant;
@@ -13,7 +13,6 @@ public class CellFactoryFactory {
 
             @Override
             public ListCell<Applicant> call(ListView<Applicant> p) {
-
                 ListCell<Applicant> cell = new ListCell<Applicant>() {
 
                     @Override
@@ -27,10 +26,16 @@ public class CellFactoryFactory {
                     }
 
                 };
+                ContextMenu contextMenu = new ContextMenu();
+                MenuItem showInfo = new MenuItem();
+                showInfo.textProperty().bind(Bindings.format("Show info \"%s\"", cell.itemProperty()));
+                contextMenu.getItems().addAll(showInfo);
+                cell.setContextMenu(contextMenu);
                 return cell;
             }
         };
     }
+
     static Callback<ListView<Interviewer>, ListCell<Interviewer>>  getCellFactoryForInterviewer(){
         return new Callback<ListView<Interviewer>, ListCell<Interviewer>>() {
 
