@@ -6,13 +6,15 @@ import project.system.SystemClock;
 import project.utils.Logging;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Logger;
 
 public class HR extends User {
     private static final long serialVersionUID = 6752053563376828029L;
 
-    private List<List<Application>> recommendationLists;
+    private Map<String, List<Applicant>> recommendationLists;
     private List<Interview> interviewsRoundFinished;
     private List<Interview> interviewsToBeScheduled;
     private List<String> jobsHired;  // How to store the name of the applicant hired??
@@ -24,7 +26,7 @@ public class HR extends User {
               String realName,
               String company) {
         super(history, username, password, realName, company);
-        recommendationLists = new ArrayList<>();
+        recommendationLists = new HashMap<>();
         interviewsRoundFinished = new ArrayList<>();
         interviewsToBeScheduled = new ArrayList<>();
     }
@@ -52,8 +54,12 @@ public class HR extends User {
         return Type.HR;
     }
 
-    public List<List<Application>> getRecommendationLists() {
+    public Map<String, List<Applicant>> getRecommendationLists() {
         return recommendationLists;
+    }
+
+    public void addRecommendationListForJob(Job job, List<Applicant> applicants) {
+        recommendationLists.put(job.getTitle(), applicants);
     }
 
     void addJobsHired(String title) {

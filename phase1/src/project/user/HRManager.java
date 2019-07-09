@@ -54,7 +54,7 @@ public class HRManager extends UserManager<HR> implements InterviewObserver, Job
             setup.addRound(new InPersonRound(job));
             setup.addRound(new InPersonRound(job));
             setup.addRound(new InPersonRound(job));
-            Interview interview = new Interview(hr.get().getUsername(), jobPosting, setup);
+            Interview interview = new Interview(hr.get(), jobPosting, setup);
             company.getInterviewManager().addInterview(jobPosting.getJobTitle(), interview);
             interview.addObserver(this);
             interview.addObserver(company.getJobPostingManager());
@@ -66,7 +66,7 @@ public class HRManager extends UserManager<HR> implements InterviewObserver, Job
 
     @Override
     public void updateOnInterviewRoundFinished(Interview interview) {
-        HR hr = getUser(interview.getHR());
+        HR hr = interview.getHR();
         hr.addInterviewRoundFinished(interview);
     }
 
@@ -77,7 +77,8 @@ public class HRManager extends UserManager<HR> implements InterviewObserver, Job
 
     @Override
     public void updateOnNoMoreRounds(Interview interview) {
-
+        HR hr = interview.getHR();
+        hr.addRecommendationListForJob(interview.getJob(), interview.getApplicants());
     }
 
 }

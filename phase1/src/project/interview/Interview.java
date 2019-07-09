@@ -6,6 +6,7 @@ import project.application.JobPosting;
 import project.observer.InterviewObserver;
 import project.observer.RoundObserver;
 import project.user.Applicant;
+import project.user.HR;
 import project.user.Interviewer;
 import project.utils.Logging;
 
@@ -35,10 +36,10 @@ public class Interview implements Serializable, RoundObserver {
     private Job job;
     private int numberNeeded;
 
-    public Interview(String HR,
+    public Interview(HR hr,
                      JobPosting jobPosting,
                      InterviewSetup setup) {
-        this.HR = HR;
+        this.hr = hr;
         this.setup = setup;
         this.job = jobPosting.getJob();
         numberNeeded = jobPosting.getnApplicantNeeded();
@@ -51,11 +52,11 @@ public class Interview implements Serializable, RoundObserver {
         getRoundInProgress().addObserver(this);
     }
 
-    public String getHR() {
-        return HR;
+    public HR getHR() {
+        return hr;
     }
 
-    private String HR;
+    private HR hr;
 
 
     public List<Round> getRoundsFinished() {
