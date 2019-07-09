@@ -24,18 +24,19 @@ import java.util.List;
 
 public class InterviewAssignmentController extends ApplicationController {
     @FXML
-    private ListView<Interview> interviews;
+    private ListView<Interview> newInterviews;
 
     @FXML
-    private ListView<Application> applications;
+    private ListView<Interview> interviewsRoundFinished;
+
     @FXML
     private Button assignment;
 
 
     @Override
-    void postInit(){
+    void postInit() {
         super.postInit();
-        interviews.setCellFactory(new Callback<ListView<Interview>, ListCell<Interview>>() {
+        Callback<ListView<Interview>, ListCell<Interview>> factory = new Callback<ListView<Interview>, ListCell<Interview>>() {
 
             @Override
             public ListCell<Interview> call(ListView<Interview> p) {
@@ -47,7 +48,7 @@ public class InterviewAssignmentController extends ApplicationController {
                         super.updateItem(t, bln);
                         if (t != null) {
                             setText(t.getJob().getTitle());
-                        }else{
+                        } else {
                             setText("");
                         }
                     }
@@ -56,84 +57,57 @@ public class InterviewAssignmentController extends ApplicationController {
 
                 return cell;
             }
-        });
-        applications.setCellFactory(new Callback<ListView<Application>, ListCell<Application>>() {
-
-            @Override
-            public ListCell<Application> call(ListView<Application> p) {
-
-                ListCell<Application> cell = new ListCell<Application>() {
-
-                    @Override
-                    protected void updateItem(Application t, boolean bln) {
-                        super.updateItem(t, bln);
-                        if (t != null) {
-                            setText(t.getApplicant().getRealName());
-                        }
-                    }
-
-                };
-                return cell;
-            }
-        });
+        };
+        newInterviews.setCellFactory(factory);
+        interviewsRoundFinished.setCellFactory(factory);
         pollJobPostings();
     }
 
-    private boolean isJobPostingDue(JobPosting jobPosting){
-        if (jobPosting.getStatus() == JobPosting.Status.CLOSED){
-            return true;
+    private void pollJobPostings() {
+        HR hr = (HR) getUser();
+        newInterviews.getItems().clear();
+        for (Interview interview : hr.getInterviewsToBeScheduled()) {
+            newInterviews.getItems().add(interview);
         }
-        return false;
-    }
-
-    private void pollJobPostings(){
-        HR hr = (HR)getUser();
-        Company company = getSystem().getCompany(hr.getCompany());
-        JobPostingManager manager = company.getJobPostingManager();
-        // get the job postings managed by the HR
-        List<JobPosting> jobPostingList = manager.getJobPostingsForHR(hr.getUsername());
-        jobPostings.getItems().clear();
-        for(JobPosting jobPosting: jobPostingList){
-            jobPostings.getItems().add(jobPosting);
+        interviewsRoundFinished.getItems().clear();
+        for (Interview interview : hr.getInterviewsRoundFinished()) {
+            interviewsRoundFinished.getItems().add(interview);
         }
 
     }
 
-    private void pollApplicants(){
-        JobPosting jobPosting = jobPostings.getSelectionModel().getSelectedItem();
-        applications.getItems().clear();
-        if (jobPosting != null) {
-            for(Application application : jobPosting.getApplications()){
-                applications.getItems().add(application);
-            }
-        }
-    }
     public void exit(Event event) throws IOException {
         SceneSwitcher.switchScene(this, event, "Main.fxml");
     }
 
-    public void applicationClicked(MouseEvent event){
-
+    public void newInterviewsClicked(MouseEvent event) {
+        interviewsRoundFinished.getSelectionModel().clearSelection();
     }
 
-    public void jobPostingClicked(MouseEvent event){
-        pollApplicants();
+    public void roundFinishedClicked(MouseEvent event) {
+        newInterviews.getSelectionModel().clearSelection();
     }
 
-    public void assignmentButton(ActionEvent event) throws IOException{
-        Interview jobPosting = this.interviews.getSelectionModel().getSelectedItem();
-
+    public void assignmentButton(ActionEvent event) throws IOException {
         HR hr = (HR) getUser();
-        Company company = getSystem().getCompany(hr.getCompany());
-        Interview interview = company.getInterviewManager().getInterview(jobPosting.getJobTitle());
+        Interview selected = this.newInterviews.getSelectionModel().getSelectedItem();
+        List<Interview> _interviews = hr.getInterviewsToBeScheduled();
+        if (selected == null) {
+            selected = this.interviewsRoundFinished.getSelectionModel().getSelectedItem();
+            _interviews = hr.getInterviewsRoundFinished();
+        }
+        if (selected == null) {
+            showModal("You have to select an interview first");
+            return;
+        }
+        final Interview interview = selected;
+        final List<Interview> interviews = _interviews;
         SceneSwitcher.<AssignInterviewsController, InterviewAssignmentController>switchScene(this, event, "AssignInterviews.fxml", (next, current) -> {
-            if (interview.getRound() == -1){
-                next.company = company;
-                next.listOfInterviews = hr.getInterviewsToBeScheduled();
+            if (!interview.hasInterviewBegun()) {
+                next.listOfInterviews = interviews;
                 next.interview = interview;
             } else {
-                next.company = company;
-                next.listOfInterviews = hr.getInterviewsRoundFinished();
+                next.listOfInterviews = interviews;
                 next.interview = interview;
             }
         });

@@ -13,7 +13,8 @@ import java.util.function.BiConsumer;
 public class SceneSwitcher {
 
     public static void switchScene(ApplicationController current, Event event, String sceneName) throws IOException {
-        switchHelper(current, event, sceneName);
+        switchScene(current, event, sceneName, (a, b) -> {
+        });
 
     }
 
@@ -29,7 +30,6 @@ public class SceneSwitcher {
         loginWindow.setScene(mainScene);
         loginWindow.show();
         controller.initFromController((U) current);
-        controller.postInit();
         ApplicationController.Assert(controller.getSystem() != null);
         return controller;
     }
@@ -39,6 +39,7 @@ public class SceneSwitcher {
                      BiConsumer<NextT, CurrentT> callback) throws IOException {
         NextT controller = switchHelper(current, event, sceneName);
         callback.accept(controller, current);
+        controller.postInit();
         ApplicationController.Assert(controller.getSystem() != null);
     }
 }

@@ -19,6 +19,11 @@ import java.util.logging.Logger;
 public class Interview implements Serializable, RoundObserver {
     private static final long serialVersionUID = -5626906039736330402L;
     private Collection<InterviewObserver> observers;
+
+    public List<Applicant> getApplicants() {
+        return Collections.unmodifiableList(applicants);
+    }
+
     private List<Applicant> applicants;
     private InterviewSetup setup;
     private int round;
