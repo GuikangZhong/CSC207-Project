@@ -37,7 +37,8 @@ public class ApplicantHistory extends UserHistory implements JobPostingObserver 
     }
 
     void addJobApplied(Job job) {
-        jobApplied.add(job);
+        if(!jobApplied.contains(job))
+            jobApplied.add(job);
     }
 
     void removeJobApplied(String name) {
@@ -49,11 +50,9 @@ public class ApplicantHistory extends UserHistory implements JobPostingObserver 
     }
 
     void addJobApplying(Job job) {
+        if(!jobApplied.contains(job))
         jobApplying.add(job);
     }
-//    void addJobApplying(Job job){
-//        jobApplying.put(job, "Submitted");
-//    }
 
     void removeJobApplying(String name) {
         jobApplying.removeIf(e -> e.getTitle().equals(name));
@@ -61,11 +60,6 @@ public class ApplicantHistory extends UserHistory implements JobPostingObserver 
 
     @Override
     public void updateOnJobPostingClosure(JobPosting jobPosting) {
-//        if (lastApplicationClosed == null){
-//            lastApplicationClosed = jobPosting.getCloseDate();
-//        }
-//        else if (lastApplicationClosed.isBefore(jobPosting.getCloseDate()))
-//            lastApplicationClosed = jobPosting.getCloseDate();
         lastApplicationClosed = jobPosting.getCloseDate();
     }
 }

@@ -4,6 +4,7 @@ import project.application.Application;
 import project.application.Company;
 import project.application.Job;
 import project.observer.InterviewGroupObserver;
+import project.observer.InterviewResultObserver;
 import project.user.Applicant;
 import project.user.Interviewer;
 import project.utils.Logging;
@@ -51,10 +52,11 @@ public class InterviewGroup implements Serializable {
         for (InterviewGroupObserver observer : observers) {
             observer.updateOnGroupSubmitted(this);
         }
-//        for (Applicant applicant: applicants){
-//            application = applicant.getApplicationOf(job.getTitle()).get();
-//            application.getStatus().currentRoundFinished(round);
-//        }
+        for (Applicant applicant : applicants) {
+            if (!applicantsStatus.get(applicant.getUsername())) {
+                applicant.updateOnFailed(getJob());
+            }
+        }
     }
 
     public Interviewer getInterviewer() {

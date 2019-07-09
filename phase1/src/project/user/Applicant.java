@@ -1,8 +1,7 @@
 package project.user;
 
 import project.application.*;
-import project.observer.ApplicantObserver;
-import project.observer.SystemObserver;
+import project.observer.*;
 import project.system.SystemClock;
 import project.utils.Logging;
 
@@ -14,7 +13,9 @@ import java.util.stream.Collectors;
 
 // TODO: When InterviewAssignment.submit is called, applicants will be notified whether 
 //they passed the interview of not.
-public class Applicant extends User implements Serializable, SystemObserver {
+public class Applicant
+        extends User implements Serializable,
+        SystemObserver{
     private static final long serialVersionUID = 6591554659403402970L;
 
     private Collection<Application> applications;
@@ -113,6 +114,7 @@ public class Applicant extends User implements Serializable, SystemObserver {
         for (ApplicantObserver observer : observers) {
             observer.updateOnApplicationWithdraw(application);
         }
+        jobPosting.removeObserver(this.getApplicantHistory());
     }
 
     @Override
@@ -136,13 +138,30 @@ public class Applicant extends User implements Serializable, SystemObserver {
     @Override
     public void updateOnTime(LocalDateTime now) {
         ApplicantHistory history = getApplicantHistory();
-        if(history!=null){
+        if (history != null) {
             LocalDateTime close = history.getLastApplicationClosed();
-            if(close!=null){
-                if(close.plusDays(getDocumentsAutoDeleteDays()).isBefore(now)){
+            if (close != null) {
+                if (close.plusDays(getDocumentsAutoDeleteDays()).isBefore(now)) {
                     documents.removeIf(document -> document.getCreatedDate().isBefore(close));
                 }
             }
         }
+    }
+
+    private void moveToApplied(Job job) {
+        ApplicantHistory history = getApplicantHistory();
+        history.removeJobApplying(job.getTitle());
+        history.addJobApplied(job);
+
+    }
+
+
+    public void updateOnPassed(Job job) {
+        moveToApplied(job);
+    }
+
+
+    public void updateOnFailed(Job job) {
+        moveToApplied(job);
     }
 }

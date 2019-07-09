@@ -70,6 +70,10 @@ public class JobPosting implements Serializable, SystemObserver {
         observers.add(observer);
     }
 
+    public void removeObserver(JobPostingObserver observer) {
+        observers.remove(observer);
+    }
+
     public LocalDateTime getOpenDate() {
         return openDate;
     }
