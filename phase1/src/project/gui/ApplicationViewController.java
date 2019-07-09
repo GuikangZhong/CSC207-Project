@@ -5,6 +5,7 @@ import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
+import javafx.scene.input.MouseEvent;
 import javafx.util.Callback;
 import project.application.Application;
 import project.application.Company;
@@ -61,6 +62,11 @@ public class ApplicationViewController extends ApplicationController {
         pollApplications();
 
 
+    }
+
+    public void applicationClicked(MouseEvent event){
+        Application application = applications.getSelectionModel().getSelectedItem();
+        showModal("Status", application.getStatus().toString());
     }
 
     public void withdraw(ActionEvent event) {

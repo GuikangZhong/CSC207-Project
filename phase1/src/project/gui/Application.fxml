@@ -7,11 +7,11 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="465.0" prefWidth="705.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="project.gui.ApplicationViewController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="465.0" prefWidth="705.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.gui.ApplicationViewController">
   <center>
     <AnchorPane prefHeight="200.0" prefWidth="200.0">
       <children>
-        <ListView id="Application" fx:id="applications" layoutX="0.0" layoutY="0.0" prefHeight="435.0" prefWidth="216.0" />
+        <ListView id="Application" fx:id="applications" layoutX="0.0" layoutY="0.0" onMouseClicked="#applicationClicked" prefHeight="435.0" prefWidth="216.0" />
         <Button layoutX="343.0" layoutY="371.0" mnemonicParsing="false" onAction="#withdraw" text="Withdraw" />
       </children>
     </AnchorPane>

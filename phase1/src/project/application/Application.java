@@ -20,6 +20,7 @@ public class Application implements Serializable {
         this.applicant = applicant;
         this.documents = new ArrayList<>(documents);
         this.job = job;
+        this.status = new ApplicationStatus();
     }
 
     public Applicant getApplicant() {

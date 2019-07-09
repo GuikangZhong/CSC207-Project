@@ -227,3 +227,71 @@ Added Google-D for Google-HR
 ======================================================================
 Application session on 2019-07-09T00:24:19.311
 ======================================================================
+======================================================================
+Application session on 2019-07-09T09:50:24.622
+======================================================================
+======================================================================
+Application session on 2019-07-09T11:20:14.729
+======================================================================
+======================================================================
+Application session on 2019-07-09T11:33:38.884
+======================================================================
+======================================================================
+Application session on 2019-07-09T11:34:44.579
+======================================================================
+======================================================================
+Application session on 2019-07-09T11:36:59.605
+======================================================================
+======================================================================
+Application session on 2019-07-09T11:41:54.488
+======================================================================
+New system
+Added SystemObserver project.user.ApplicantManager@4f8e5cde
+added company UofT
+Added SystemObserver project.application.Company@504bae78
+Added user : a type: APPLICANT company: UofT
+Added user : b type: APPLICANT company: UofT
+Added user : c type: APPLICANT company: UofT
+Added user : d type: APPLICANT company: UofT
+Added user : e type: APPLICANT company: UofT
+Added user : f type: APPLICANT company: UofT
+Added user : g type: APPLICANT company: UofT
+Added user : h type: APPLICANT company: UofT
+Added job UofT-A
+Added job UofT-B
+Added job UofT-C
+Added job UofT-D
+Added job UofT-E
+Added job UofT-F
+added company Microsoft
+Added SystemObserver project.application.Company@3b764bce
+Added user : i type: APPLICANT company: Microsoft
+Added user : j type: APPLICANT company: Microsoft
+Added user : k type: APPLICANT company: Microsoft
+Added user : l type: APPLICANT company: Microsoft
+Added user : m type: APPLICANT company: Microsoft
+Added user : n type: APPLICANT company: Microsoft
+Added user : o type: APPLICANT company: Microsoft
+Added user : p type: APPLICANT company: Microsoft
+Added job Microsoft-A
+Added job Microsoft-B
+Added job Microsoft-C
+Added job Microsoft-D
+Added job Microsoft-E
+Added job Microsoft-F
+added company Google
+Added SystemObserver project.application.Company@45fe3ee3
+Added user : q type: APPLICANT company: Google
+Added user : r type: APPLICANT company: Google
+Added user : s type: APPLICANT company: Google
+Added user : t type: APPLICANT company: Google
+Added user : u type: APPLICANT company: Google
+Added user : v type: APPLICANT company: Google
+Added user : w type: APPLICANT company: Google
+Added user : x type: APPLICANT company: Google
+Added job Google-A
+Added job Google-B
+Added job Google-C
+Added job Google-D
+Added job Google-E
+Added job Google-F
