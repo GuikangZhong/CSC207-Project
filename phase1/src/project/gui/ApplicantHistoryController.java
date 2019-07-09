@@ -24,6 +24,9 @@ public class ApplicantHistoryController extends ApplicationController {
     @FXML
     private Label username;
 
+    @FXML
+    private Label lastApplicationClosed;
+
     public void exit(Event event) throws IOException {
         SceneSwitcher.switchScene(this, event, "Main.fxml");
     }
@@ -44,6 +47,12 @@ public class ApplicantHistoryController extends ApplicationController {
         createDate.setText(history.getDateCreated().toString());
         username.setText(applicant.getUsername());
         realname.setText(applicant.getRealName());
+        if (history.getLastApplicationClosed() == null){
+            lastApplicationClosed.setText("None");
+        }
+        else{
+            lastApplicationClosed.setText(history.getLastApplicationClosed().toString());
+        }
     }
 
 //    public void applyingjobClicked(MouseEvent event){
