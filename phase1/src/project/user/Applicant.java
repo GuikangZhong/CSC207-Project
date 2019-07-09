@@ -156,13 +156,4 @@ public class Applicant
 
     }
 
-
-    public void updateOnPassed(Job job) {
-        moveToApplied(job);
-    }
-
-
-    public void updateOnFailed(Job job) {
-        moveToApplied(job);
-    }
 }

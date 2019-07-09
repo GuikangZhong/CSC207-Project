@@ -52,11 +52,6 @@ public class InterviewGroup implements Serializable {
         for (InterviewGroupObserver observer : observers) {
             observer.updateOnGroupSubmitted(this);
         }
-        for (Applicant applicant : applicants) {
-            if (!applicantsStatus.get(applicant.getUsername())) {
-                applicant.updateOnFailed(getJob());
-            }
-        }
     }
 
     public Interviewer getInterviewer() {
