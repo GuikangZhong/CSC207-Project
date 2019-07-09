@@ -88,6 +88,9 @@ public class Interview implements Serializable, RoundObserver, ApplicantObserver
         if (hasNextRound()) {
             throw new RuntimeException("You shouldn't use recommendation lst now");
         }
+        if(applicants.size() > numberNeeded){
+            throw new RuntimeException("You cannot assign more than needed");
+        }
         this.applicants = applicants;
         notifyHireResult();
     }
