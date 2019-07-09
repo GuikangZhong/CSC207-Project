@@ -1,17 +1,19 @@
 package project.user;
 
 import project.application.Job;
+import project.application.JobPosting;
+import project.observer.JobPostingObserver;
 import project.system.SystemClock;
 
 import java.time.LocalDateTime;
 import java.util.*;
 
-public class ApplicantHistory extends UserHistory {
+public class ApplicantHistory extends UserHistory implements JobPostingObserver {
     private static final long serialVersionUID = -3949731953506050255L;
 
     private List<Job> jobApplied;
     private LocalDateTime lastApplicationClosed;
-//    private List<Job> jobApplying;
+    //    private List<Job> jobApplying;
     private List<Job> jobApplying;
 
     public ApplicantHistory(LocalDateTime now) {
@@ -55,5 +57,15 @@ public class ApplicantHistory extends UserHistory {
 
     void removeJobApplying(String name) {
         jobApplying.removeIf(e -> e.getTitle().equals(name));
+    }
+
+    @Override
+    public void updateOnJobPostingClosure(JobPosting jobPosting) {
+//        if (lastApplicationClosed == null){
+//            lastApplicationClosed = jobPosting.getCloseDate();
+//        }
+//        else if (lastApplicationClosed.isBefore(jobPosting.getCloseDate()))
+//            lastApplicationClosed = jobPosting.getCloseDate();
+        lastApplicationClosed = jobPosting.getCloseDate();
     }
 }
