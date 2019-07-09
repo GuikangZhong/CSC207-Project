@@ -62,6 +62,9 @@ public class Interview implements Serializable, RoundObserver {
         return round;
     }
 
+    public boolean hasInterviewBegun(){
+        return round != -1;
+    }
     Round getRoundInProgress() {
         if (round == -1) {
             throw new RuntimeException("You haven't started this interview yet");

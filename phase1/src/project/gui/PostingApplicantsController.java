@@ -129,7 +129,7 @@ public class PostingApplicantsController extends ApplicationController {
             Company company = getSystem().getCompany(hr.getCompany());
             Interview interview = company.getInterviewManager().getInterview(jobPosting.getJobTitle());
             SceneSwitcher.<AssignInterviewsController, PostingApplicantsController>switchScene(this, event, "AssignInterviews.fxml", (next, current) -> {
-                if (interview.getRound() == -1){
+                if (!interview.hasInterviewBegun()){
                     next.company = company;
                     next.listOfInterviews = hr.getInterviewsToBeScheduled();
                     next.interview = interview;
