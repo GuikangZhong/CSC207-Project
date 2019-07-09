@@ -110,6 +110,7 @@ public class MainSystem implements Serializable {
     public boolean addUser(User user) {
         logger.info("Added user : " + user.getUsername() + " type: " + user.getType() + " company: " + user.getCompany());
         if (user.getType() == User.Type.APPLICANT) {
+            addObserver((Applicant) user);
             return applicants.addUser((Applicant) user);
         } else {
             Company company = getCompany(user.getCompany());
@@ -172,7 +173,7 @@ public class MainSystem implements Serializable {
         notifyOnTimeUpdate();
     }
 
-    void notifyOnTimeUpdate() {
+    public void notifyOnTimeUpdate() {
         for (SystemObserver observer : observers) {
             observer.updateOnTime(now());
         }

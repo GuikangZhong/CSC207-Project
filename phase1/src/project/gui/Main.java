@@ -33,11 +33,10 @@ public class Main extends Application {
         } catch (IOException e){
             logger.info("New system");
             system = new MainSystem();
-
-
         } catch (ClassNotFoundException e){
             throw new ClassNotFoundException("Class not found");
         }
+        system.notifyOnTimeUpdate();
         launch(args);
         system.serializeToFile(autoSaveFileName);
     }
