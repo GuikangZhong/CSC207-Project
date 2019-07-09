@@ -55,11 +55,11 @@ public class Interview implements Serializable, RoundObserver {
     private String HR;
 
 
-    List<Round> getRoundsFinished() {
+    public List<Round> getRoundsFinished() {
         return Collections.unmodifiableList(setup.getRounds().subList(0, round));
     }
 
-    List<Round> getRoundsInFuture() {
+    public List<Round> getRoundsInFuture() {
         return Collections.unmodifiableList(setup.getRounds().subList(round + 1, setup.getRounds().size()));
     }
 
@@ -70,7 +70,7 @@ public class Interview implements Serializable, RoundObserver {
     public boolean hasInterviewBegun(){
         return round != -1;
     }
-    Round getRoundInProgress() {
+    public Round getRoundInProgress() {
         if (round == -1) {
             throw new RuntimeException("You haven't started this interview yet");
         }

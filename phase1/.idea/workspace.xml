@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="591d482d-6f65-4466-88a8-53d1ab9be688" name="Default Changelist" comment="working on login and signup page">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/interview/Interview.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/phase1/project/interview/Interview.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/user/HR.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/phase1/project/user/HR.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/user/HRManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/phase1/project/user/HRManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/gui/AssignInterviewsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/AssignInterviewsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/gui/InterviewAssignment.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/InterviewAssignment.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/project/gui/InterviewAssignmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/InterviewAssignmentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/gui/SceneSwitcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/SceneSwitcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/interview/Interview.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/interview/Interview.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +34,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/project/interview/Interview.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
+            <state relative-caret-position="-336">
               <caret line="23" column="55" selection-start-line="23" selection-start-column="55" selection-end-line="23" selection-end-column="55" />
               <folding>
                 <element signature="e#722#723#0" expanded="true" />
@@ -59,16 +51,14 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/project/gui/InterviewAssignmentController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="73" column="35" selection-start-line="73" selection-start-column="35" selection-end-line="73" selection-end-column="35" />
+            <state relative-caret-position="368">
+              <caret line="55" column="37" selection-start-line="55" selection-start-column="37" selection-end-line="55" selection-end-column="37" />
               <folding>
-                <element signature="e#1326#1748#0" expanded="true" />
-                <element signature="e#1747#1748#0" expanded="true" />
-                <element signature="e#3229#3230#0" expanded="true" />
-                <element signature="e#3305#3306#0" expanded="true" />
-                <element signature="e#3363#3364#0" expanded="true" />
-                <element signature="e#3429#3430#0" expanded="true" />
-                <element signature="e#4472#4531#0" expanded="true" />
+                <element signature="e#1270#1814#0" expanded="true" />
+                <element signature="e#1813#1814#0" expanded="true" />
+                <element signature="e#2867#2868#0" expanded="true" />
+                <element signature="e#2991#2992#0" expanded="true" />
+                <element signature="e#3542#3601#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -862,21 +852,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/interview/Interview.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="23" column="55" selection-start-line="23" selection-start-column="55" selection-end-line="23" selection-end-column="55" />
-          <folding>
-            <element signature="e#722#723#0" expanded="true" />
-            <element signature="e#784#785#0" expanded="true" />
-            <element signature="e#1690#1691#0" expanded="true" />
-            <element signature="e#1718#1719#0" expanded="true" />
-            <element signature="e#1759#1760#0" expanded="true" />
-            <element signature="e#1793#1794#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/project/user/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-7">
@@ -898,18 +873,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/interview/Interview.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-336">
+          <caret line="23" column="55" selection-start-line="23" selection-start-column="55" selection-end-line="23" selection-end-column="55" />
+          <folding>
+            <element signature="e#722#723#0" expanded="true" />
+            <element signature="e#784#785#0" expanded="true" />
+            <element signature="e#1690#1691#0" expanded="true" />
+            <element signature="e#1718#1719#0" expanded="true" />
+            <element signature="e#1759#1760#0" expanded="true" />
+            <element signature="e#1793#1794#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/project/gui/InterviewAssignmentController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="73" column="35" selection-start-line="73" selection-start-column="35" selection-end-line="73" selection-end-column="35" />
+        <state relative-caret-position="368">
+          <caret line="55" column="37" selection-start-line="55" selection-start-column="37" selection-end-line="55" selection-end-column="37" />
           <folding>
-            <element signature="e#1326#1748#0" expanded="true" />
-            <element signature="e#1747#1748#0" expanded="true" />
-            <element signature="e#3229#3230#0" expanded="true" />
-            <element signature="e#3305#3306#0" expanded="true" />
-            <element signature="e#3363#3364#0" expanded="true" />
-            <element signature="e#3429#3430#0" expanded="true" />
-            <element signature="e#4472#4531#0" expanded="true" />
+            <element signature="e#1270#1814#0" expanded="true" />
+            <element signature="e#1813#1814#0" expanded="true" />
+            <element signature="e#2867#2868#0" expanded="true" />
+            <element signature="e#2991#2992#0" expanded="true" />
+            <element signature="e#3542#3601#0" expanded="true" />
           </folding>
         </state>
       </provider>

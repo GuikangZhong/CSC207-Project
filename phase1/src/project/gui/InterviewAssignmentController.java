@@ -47,7 +47,11 @@ public class InterviewAssignmentController extends ApplicationController {
                     protected void updateItem(Interview t, boolean bln) {
                         super.updateItem(t, bln);
                         if (t != null) {
-                            setText(t.getJob().getTitle());
+                            String s = t.getJob().getTitle();
+                            if(t.hasInterviewBegun()){
+                                s += "("+ t.getRoundInProgress() + ")";
+                            }
+                            setText(s);
                         } else {
                             setText("");
                         }
