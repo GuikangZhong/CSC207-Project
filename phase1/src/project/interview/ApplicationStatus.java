@@ -27,8 +27,8 @@ public class ApplicationStatus implements Serializable, InterviewGroupObserver {
     private void startRound(Round round){
 
     }
-    private void currentRoundFinished(){
-
+     void currentRoundFinished(Round round){
+        finishedRound.add(round.toString());
     }
 
     @Override
@@ -38,6 +38,5 @@ public class ApplicationStatus implements Serializable, InterviewGroupObserver {
 
     @Override
     public void updateOnGroupSubmitted(InterviewGroup group) {
-        currentRoundFinished();
     }
 }

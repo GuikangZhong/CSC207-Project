@@ -52,10 +52,10 @@ public class InterviewGroup implements Serializable {
         for (InterviewGroupObserver observer : observers) {
             observer.updateOnGroupSubmitted(this);
         }
-//        for (Applicant applicant: applicants){
-//            application = applicant.getApplicationOf(job.getTitle()).get();
-//            application.getStatus().currentRoundFinished();
-//        }
+        for (Applicant applicant: applicants){
+            application = applicant.getApplicationOf(job.getTitle()).get();
+            application.getStatus().currentRoundFinished(round);
+        }
     }
 
     public Interviewer getInterviewer() {
