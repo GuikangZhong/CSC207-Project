@@ -56,7 +56,7 @@ public class ApplicationViewController extends ApplicationController {
                         super.updateItem(t, bln);
                         if (t != null) {
                             setText(t.getJob().getTitle());
-                        }else{
+                        } else {
                             setText("");
                         }
                     }
@@ -69,11 +69,11 @@ public class ApplicationViewController extends ApplicationController {
         pollApplications();
 
 
-
     }
 
-    public void applicationClicked(MouseEvent event){
+    public void applicationClicked(MouseEvent event) {
         Application application = applications.getSelectionModel().getSelectedItem();
+        if (application == null) return;
         if (event.getClickCount() == 2) {
             showModal(stage -> {
                 try {
@@ -83,11 +83,11 @@ public class ApplicationViewController extends ApplicationController {
                     controller.setApplication(application);
                     Scene scene = new Scene(pane);
                     stage.setScene(scene);
-                }catch(IOException e){
+                } catch (IOException e) {
                     e.printStackTrace();
                 }
             });
-        }else {
+        } else {
             applicationStatus.setText(application.getStatus().toString());
         }
     }

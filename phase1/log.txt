@@ -2809,3 +2809,109 @@ Added Google-D for Google-HR
 ======================================================================
 Application session on 2019-07-09T17:49:11.768
 ======================================================================
+======================================================================
+Application session on 2019-07-09T17:53:09.998
+======================================================================
+New system
+Added SystemObserver project.user.ApplicantManager@4e515669
+added company UofT
+Added SystemObserver project.application.Company@17d10166
+Added user : a type: APPLICANT company: UofT
+Added user : b type: APPLICANT company: UofT
+Added user : c type: APPLICANT company: UofT
+Added user : d type: APPLICANT company: UofT
+Added user : e type: APPLICANT company: UofT
+Added user : f type: APPLICANT company: UofT
+Added user : g type: APPLICANT company: UofT
+Added user : h type: APPLICANT company: UofT
+Added job UofT-A
+Added job UofT-B
+Added job UofT-C
+Added job UofT-D
+Added job UofT-E
+Added job UofT-F
+added company Microsoft
+Added SystemObserver project.application.Company@1b9e1916
+Added user : i type: APPLICANT company: Microsoft
+Added user : j type: APPLICANT company: Microsoft
+Added user : k type: APPLICANT company: Microsoft
+Added user : l type: APPLICANT company: Microsoft
+Added user : m type: APPLICANT company: Microsoft
+Added user : n type: APPLICANT company: Microsoft
+Added user : o type: APPLICANT company: Microsoft
+Added user : p type: APPLICANT company: Microsoft
+Added job Microsoft-A
+Added job Microsoft-B
+Added job Microsoft-C
+Added job Microsoft-D
+Added job Microsoft-E
+Added job Microsoft-F
+added company Google
+Added SystemObserver project.application.Company@504bae78
+Added user : q type: APPLICANT company: Google
+Added user : r type: APPLICANT company: Google
+Added user : s type: APPLICANT company: Google
+Added user : t type: APPLICANT company: Google
+Added user : u type: APPLICANT company: Google
+Added user : v type: APPLICANT company: Google
+Added user : w type: APPLICANT company: Google
+Added user : x type: APPLICANT company: Google
+Added job Google-A
+Added job Google-B
+Added job Google-C
+Added job Google-D
+Added job Google-E
+Added job Google-F
+======================================================================
+Application session on 2019-07-09T17:55:33.653
+======================================================================
+New system
+Added SystemObserver project.user.ApplicantManager@ba8a1dc
+added company UofT
+Added SystemObserver project.application.Company@4f8e5cde
+Added user : a type: APPLICANT company: UofT
+Added user : b type: APPLICANT company: UofT
+Added user : c type: APPLICANT company: UofT
+Added user : d type: APPLICANT company: UofT
+Added user : e type: APPLICANT company: UofT
+Added user : f type: APPLICANT company: UofT
+Added user : g type: APPLICANT company: UofT
+Added user : h type: APPLICANT company: UofT
+Added job UofT-A
+Added job UofT-B
+Added job UofT-C
+Added job UofT-D
+Added job UofT-E
+Added job UofT-F
+added company Microsoft
+Added SystemObserver project.application.Company@ea30797
+Added user : i type: APPLICANT company: Microsoft
+Added user : j type: APPLICANT company: Microsoft
+Added user : k type: APPLICANT company: Microsoft
+Added user : l type: APPLICANT company: Microsoft
+Added user : m type: APPLICANT company: Microsoft
+Added user : n type: APPLICANT company: Microsoft
+Added user : o type: APPLICANT company: Microsoft
+Added user : p type: APPLICANT company: Microsoft
+Added job Microsoft-A
+Added job Microsoft-B
+Added job Microsoft-C
+Added job Microsoft-D
+Added job Microsoft-E
+Added job Microsoft-F
+added company Google
+Added SystemObserver project.application.Company@aec6354
+Added user : q type: APPLICANT company: Google
+Added user : r type: APPLICANT company: Google
+Added user : s type: APPLICANT company: Google
+Added user : t type: APPLICANT company: Google
+Added user : u type: APPLICANT company: Google
+Added user : v type: APPLICANT company: Google
+Added user : w type: APPLICANT company: Google
+Added user : x type: APPLICANT company: Google
+Added job Google-A
+Added job Google-B
+Added job Google-C
+Added job Google-D
+Added job Google-E
+Added job Google-F

@@ -36,9 +36,13 @@ public class MainSystem implements Serializable {
         for (String c : companies) {
             addCompany(c);
             for (int i = 0; i < 8; i++) {
-                addUser(new Applicant(new ApplicantHistory(now()),
+                Applicant applicant = new Applicant(new ApplicantHistory(now()),
                         "" + names.charAt(index),
-                        "a", "David Liu " + names.charAt(index), c));
+                        "a", "David Liu " + names.charAt(index), c);
+                applicant.addDocument(CV.createByDirectInput("CV", "CV", now()));
+                applicant.addDocument(CoverLetter.createByDirectInput("CoverLetter",
+                        "Cover Letter", now()));
+                addUser(applicant);
                 index++;
             }
             Company company = getCompany(c);
@@ -62,10 +66,10 @@ public class MainSystem implements Serializable {
 
 
         for (JobPosting jobPosting : getAllJobPostings()) {
-            int i =0;
+            int i = 0;
             for (Applicant applicant : getApplicants().values()) {
                 applicant.apply(jobPosting);
-                if(i++ > 5)
+                if (i++ > 5)
                     break;
             }
         }
