@@ -49,11 +49,10 @@ public class StaffSignUpController extends ApplicationController implements Init
                     realNameInput.getText(), companyName));
         }
         if (added){
-            System.out.println(TypeController.typeName);
             SceneSwitcher.switchScene(this, event, "SignUpSuccess.fxml");
         }
         else
-            System.out.println("Username already exists");
+            showModal("User already exists");
     }
 
     public void returnToTypeButton(ActionEvent event) throws IOException {
