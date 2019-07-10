@@ -60,13 +60,19 @@ public class MainSystem implements Serializable {
     }
 
     public boolean addUser(User user) {
-        logger.info("Added user : " + user.getUsername() + " type: " + user.getType() + " company: " + user.getCompany());
-        if (user.getType() == User.Type.APPLICANT) {
-            addObserver((Applicant) user);
-            return applicants.addUser((Applicant) user);
+        // check if the user name exists
+        User temp = getUser(user.getUsername());
+        if (temp != null) {
+            return false;
         } else {
-            Company company = getCompany(user.getCompany());
-            return company.addUser(user);
+            logger.info("Added user : " + user.getUsername() + " type: " + user.getType() + " company: " + user.getCompany());
+            if (user.getType() == User.Type.APPLICANT) {
+                addObserver((Applicant) user);
+                return applicants.addUser((Applicant) user);
+            } else {
+                Company company = getCompany(user.getCompany());
+                return company.addUser(user);
+            }
         }
     }
 
