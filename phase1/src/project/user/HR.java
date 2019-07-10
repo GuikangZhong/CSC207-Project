@@ -19,7 +19,7 @@ public class HR extends User {
     private List<Interview> interviewsToBeScheduled;
     private List<String> jobsHired;  // How to store the name of the applicant hired??
 
-    // TODO: check with piazza / prof if this is really what it wants
+
     public HR(UserHistory history,
               String username,
               String password,

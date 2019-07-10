@@ -11,7 +11,6 @@ import java.util.*;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
-// TODO: When InterviewAssignment.submit is called, applicants will be notified whether 
 //they passed the interview of not.
 public class Applicant
         extends User implements Serializable,
@@ -95,7 +94,6 @@ public class Applicant
     }
 
     // tries to apply for a job
-    // throws RuntimeException if requirement not met
     public Application apply(JobPosting jobPosting) {
         Application application = new Application(this, getDocuments(), jobPosting.getJob());
         jobPosting.addObserver(this.getApplicantHistory());
