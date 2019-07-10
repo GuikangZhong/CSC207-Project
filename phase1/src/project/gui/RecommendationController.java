@@ -98,14 +98,11 @@ public class RecommendationController extends ApplicationController {
 
     public void hireButton(ActionEvent event) {
         Interview interview = interviewList.getSelectionModel().getSelectedItem();
-        StringBuilder text = new StringBuilder();
         if (selectedApplicants.getItems().size() == interview.getNumberNeeded()) {
             interview.hireFromRecommendation(selectedApplicants.getItems());
-            for (Applicant applicant: selectedApplicants.getItems()){
+            for (Applicant applicant: applicantList.getItems()){
                 applicant.moveToApplied(interview.getJob());
-                text.append(applicant.getRealName()).append("\n");
             }
-//            setText
             showModal("Great", "Hired successfully");
         } else {
             showModal("Bad", "You have selected too many or too few applicants");
