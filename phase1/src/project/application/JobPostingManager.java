@@ -95,9 +95,13 @@ public class JobPostingManager implements InterviewObserver, Serializable, Syste
     public void updateOnHireResult(Interview interview) {
         String name = interview.getJob().getTitle();
         JobPosting jobPosting = getJobPosting(name);
-        for (Applicant applicant :  interview.getApplicants()) {
-            jobPosting.addHired(applicant);
-
+        // if the size is 0, it means no one is hired for this posting
+        if (interview.getApplicants().size() == 0) {
+            jobPosting.addHired(null);
+        } else {
+            for (Applicant applicant :  interview.getApplicants()) {
+                jobPosting.addHired(applicant);
+            }
         }
     }
 

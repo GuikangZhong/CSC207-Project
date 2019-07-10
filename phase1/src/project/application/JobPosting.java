@@ -149,12 +149,15 @@ public class JobPosting implements Serializable, SystemObserver {
         if (status == Status.FILLED) {
             throw new RuntimeException("Cannot hire more applicants");
         }
-        hireResult.addHiredApplicant(applicant);
-        if (hireResult.getHired().size() == nApplicantNeeded) {
-            setStatus(Status.FILLED);
-            logger.info(getJobTitle() + " is filled");
-        } else {
+        if (applicant == null) {
+            logger.info(getJobTitle() + " is unfilled");
             setStatus(Status.UNFILLED);
+        } else {
+            hireResult.addHiredApplicant(applicant);
+            if (hireResult.getHired().size() == nApplicantNeeded) {
+                setStatus(Status.FILLED);
+                logger.info(getJobTitle() + " is filled");
+            }
         }
     }
 
