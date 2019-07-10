@@ -148,7 +148,7 @@ public class Applicant
         }
     }
 
-    private void moveToApplied(Job job) {
+    public void moveToApplied(Job job) {
         ApplicantHistory history = getApplicantHistory();
         history.removeJobApplying(job.getTitle());
         history.addJobApplied(job);
