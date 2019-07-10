@@ -106,6 +106,14 @@ public class PostingApplicantsController extends ApplicationController {
 
     public void jobPostingClicked(MouseEvent event) {
         pollApplicants();
+        JobPosting jobPosting = jobPostings.getSelectionModel().getSelectedItem();
+        if (event.getClickCount() == 2 && (jobPosting.getStatus() == JobPosting.Status.FILLED)){
+            StringBuilder builder = new StringBuilder();
+            for (Applicant hiredApplicant: jobPosting.getHireResult().getHired()){
+                builder.append(hiredApplicant.getRealName()).append("\n");
+            }
+            showModal("Hired Applicant(s)", builder.toString());
+        }
     }
 
 }
