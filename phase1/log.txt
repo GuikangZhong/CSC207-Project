@@ -3857,3 +3857,210 @@ In Person#1
 In Person#2
 In Person#3
 
+======================================================================
+Application session on 2019-07-09T22:13:33.163
+======================================================================
+Update on 2019-07-23T22:13:33.558
+Update on 2019-07-23T22:13:33.605
+Update on 2019-07-23T22:13:33.618
+JobUofT-E Round: Phone#1 assigned
+JobUofT-E Round: Phone#1 assigned successful
+UofT-E [a c b e d f g ]
+Interview: UofT-E added observer project.user.Interviewer@4a4888fe
+UofT-E [a c b e d f g ]add observer project.user.Interviewer@4a4888fe
+UofT-E [a c b e d f g ]add observer Phone#1
+UofT-E [a c b e d f g ]add observer Submitted
+UofT-E [a c b e d f g ]add observer Submitted
+UofT-E [a c b e d f g ]add observer Submitted
+UofT-E [a c b e d f g ]add observer Submitted
+UofT-E [a c b e d f g ]add observer Submitted
+UofT-E [a c b e d f g ]add observer Submitted
+UofT-E [a c b e d f g ]add observer Submitted
+UofT-E [a c b e d f g ]submitted
+Removed UofT-E [a c b e d f g ]on submitted
+Phone#1 one group submitted
+All submitted
+a : David Liu a passed
+c : David Liu c passed
+Interview for UofT-Eround finished
+In Person#1 addObserver Set Interview for UofT-E HR: project.user.HR@71dd786c
+Phone#1
+In Person#1
+In Person#2
+In Person#3
+
+JobUofT-E Round: In Person#1 assigned
+JobUofT-E Round: In Person#1 assigned successful
+UofT-E [a c ]
+Interview: UofT-E added observer project.user.Interviewer@4a4888fe
+UofT-E [a c ]add observer project.user.Interviewer@4a4888fe
+UofT-E [a c ]add observer In Person#1
+UofT-E [a c ]add observer Finished rounds:
+Phone#1
+
+UofT-E [a c ]add observer Finished rounds:
+Phone#1
+
+UofT-E [a c ]submitted
+Removed UofT-E [a c ]on submitted
+In Person#1 one group submitted
+All submitted
+a : David Liu a passed
+c : David Liu c passed
+Interview for UofT-Eround finished
+In Person#2 addObserver Set Interview for UofT-E HR: project.user.HR@71dd786c
+Phone#1
+In Person#1
+In Person#2
+In Person#3
+
+JobUofT-E Round: In Person#2 assigned
+JobUofT-E Round: In Person#2 assigned successful
+UofT-E [a c ]
+Interview: UofT-E added observer project.user.Interviewer@4a4888fe
+UofT-E [a c ]add observer project.user.Interviewer@4a4888fe
+UofT-E [a c ]add observer In Person#2
+UofT-E [a c ]add observer Finished rounds:
+Phone#1
+In Person#1
+
+UofT-E [a c ]add observer Finished rounds:
+Phone#1
+In Person#1
+
+UofT-E [a c ]submitted
+Removed UofT-E [a c ]on submitted
+In Person#2 one group submitted
+All submitted
+a : David Liu a passed
+c : David Liu c passed
+Interview for UofT-Eround finished
+In Person#3 addObserver Set Interview for UofT-E HR: project.user.HR@71dd786c
+Phone#1
+In Person#1
+In Person#2
+In Person#3
+
+JobUofT-E Round: In Person#3 assigned
+JobUofT-E Round: In Person#3 assigned successful
+UofT-E [a c ]
+Interview: UofT-E added observer project.user.Interviewer@4a4888fe
+UofT-E [a c ]add observer project.user.Interviewer@4a4888fe
+UofT-E [a c ]add observer In Person#3
+UofT-E [a c ]add observer Finished rounds:
+Phone#1
+In Person#1
+In Person#2
+
+UofT-E [a c ]add observer Finished rounds:
+Phone#1
+In Person#1
+In Person#2
+
+UofT-E [a c ]submitted
+Removed UofT-E [a c ]on submitted
+In Person#3 one group submitted
+All submitted
+a : David Liu a passed
+c : David Liu c passed
+Interview for UofT-Eround finished
+Hire result for UofT-E
+UofT-E is filled
+Applicant a Removed observerSet Interview for UofT-E HR: project.user.HR@71dd786c
+Phone#1
+In Person#1
+In Person#2
+In Person#3
+
+======================================================================
+Application session on 2019-07-09T22:25:09.497
+======================================================================
+New system
+Added SystemObserver project.user.ApplicantManager@6f75e721
+added company UofT
+Added SystemObserver project.application.Company@69222c14
+Added user : a type: APPLICANT company: UofT
+Added SystemObserver project.user.Applicant@61
+Added user : b type: APPLICANT company: UofT
+Added SystemObserver project.user.Applicant@62
+Added user : c type: APPLICANT company: UofT
+Added SystemObserver project.user.Applicant@63
+Added user : d type: APPLICANT company: UofT
+Added SystemObserver project.user.Applicant@64
+Added user : e type: APPLICANT company: UofT
+Added SystemObserver project.user.Applicant@65
+Added user : f type: APPLICANT company: UofT
+Added SystemObserver project.user.Applicant@66
+Added user : g type: APPLICANT company: UofT
+Added SystemObserver project.user.Applicant@67
+Added user : h type: APPLICANT company: UofT
+Added SystemObserver project.user.Applicant@68
+Added job UofT-A
+Added job UofT-B
+Added job UofT-C
+Added job UofT-D
+Added job UofT-E
+Added job UofT-F
+added company Microsoft
+Added SystemObserver project.application.Company@5fdef03a
+Added user : i type: APPLICANT company: Microsoft
+Added SystemObserver project.user.Applicant@69
+Added user : j type: APPLICANT company: Microsoft
+Added SystemObserver project.user.Applicant@6a
+Added user : k type: APPLICANT company: Microsoft
+Added SystemObserver project.user.Applicant@6b
+Added user : l type: APPLICANT company: Microsoft
+Added SystemObserver project.user.Applicant@6c
+Added user : m type: APPLICANT company: Microsoft
+Added SystemObserver project.user.Applicant@6d
+Added user : n type: APPLICANT company: Microsoft
+Added SystemObserver project.user.Applicant@6e
+Added user : o type: APPLICANT company: Microsoft
+Added SystemObserver project.user.Applicant@6f
+Added user : p type: APPLICANT company: Microsoft
+Added SystemObserver project.user.Applicant@70
+Added job Microsoft-A
+Added job Microsoft-B
+Added job Microsoft-C
+Added job Microsoft-D
+Added job Microsoft-E
+Added job Microsoft-F
+added company Google
+Added SystemObserver project.application.Company@1e81f4dc
+Added user : q type: APPLICANT company: Google
+Added SystemObserver project.user.Applicant@71
+Added user : r type: APPLICANT company: Google
+Added SystemObserver project.user.Applicant@72
+Added user : s type: APPLICANT company: Google
+Added SystemObserver project.user.Applicant@73
+Added user : t type: APPLICANT company: Google
+Added SystemObserver project.user.Applicant@74
+Added user : u type: APPLICANT company: Google
+Added SystemObserver project.user.Applicant@75
+Added user : v type: APPLICANT company: Google
+Added SystemObserver project.user.Applicant@76
+Added user : w type: APPLICANT company: Google
+Added SystemObserver project.user.Applicant@77
+Added user : x type: APPLICANT company: Google
+Added SystemObserver project.user.Applicant@78
+Added job Google-A
+Added job Google-B
+Added job Google-C
+Added job Google-D
+Added job Google-E
+Added job Google-F
+Update on 2019-07-09T22:25:10.233
+Update on 2019-07-09T22:25:10.235
+Update on 2019-07-09T22:25:10.236
+======================================================================
+Application session on 2019-07-09T22:25:48
+======================================================================
+Update on 2019-07-09T22:25:48.100
+Update on 2019-07-09T22:25:48.116
+Update on 2019-07-09T22:25:48.120
+======================================================================
+Application session on 2019-07-09T22:26:27.309
+======================================================================
+Update on 2019-07-09T22:26:27.451
+Update on 2019-07-09T22:26:27.473
+Update on 2019-07-09T22:26:27.477

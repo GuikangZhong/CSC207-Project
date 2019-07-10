@@ -44,13 +44,7 @@ public class PostingApplicantsController extends ApplicationController {
                     protected void updateItem(JobPosting t, boolean bln) {
                         super.updateItem(t, bln);
                         if (t != null) {
-                            if (t.getStatus() == JobPosting.Status.CLOSED) {
-                                setText(t.getJob().getTitle() + " (Closed)");
-                            } else if (t.getStatus() == JobPosting.Status.OPEN)
-                                setText(t.getJob().getTitle() + " (Open)");
-                            else {
-                                setText(t.getJobTitle() + " (Filled)");
-                            }
+                            setText(t.getJobTitle() + " (" + t.getStatus()+")");
                         }
                     }
 

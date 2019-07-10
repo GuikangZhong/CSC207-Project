@@ -55,6 +55,7 @@ public class JobPosting implements Serializable, SystemObserver {
     public enum Status {
         OPEN,
         CLOSED,
+        UNFILLED,
         FILLED
     }
 
@@ -96,7 +97,7 @@ public class JobPosting implements Serializable, SystemObserver {
         return job;
     }
 
-    public void setStatus(Status status) {
+    private void setStatus(Status status) {
         this.status = status;
     }
 
@@ -150,8 +151,10 @@ public class JobPosting implements Serializable, SystemObserver {
         }
         hireResult.addHiredApplicant(applicant);
         if (hireResult.getHired().size() == nApplicantNeeded) {
-            status = Status.FILLED;
+            setStatus(Status.FILLED);
             logger.info(getJobTitle() + " is filled");
+        } else {
+            setStatus(Status.UNFILLED);
         }
     }
 

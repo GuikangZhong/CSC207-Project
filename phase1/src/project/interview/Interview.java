@@ -35,6 +35,11 @@ public class Interview implements Serializable, RoundObserver, ApplicantObserver
     }
 
     private Job job;
+
+    public int getNumberNeeded() {
+        return numberNeeded;
+    }
+
     private int numberNeeded;
 
     public Interview(HR hr,
@@ -88,7 +93,7 @@ public class Interview implements Serializable, RoundObserver, ApplicantObserver
         if (hasNextRound()) {
             throw new RuntimeException("You shouldn't use recommendation lst now");
         }
-        if(applicants.size() > numberNeeded){
+        if (applicants.size() > numberNeeded) {
             throw new RuntimeException("You cannot assign more than needed");
         }
         this.applicants = applicants;

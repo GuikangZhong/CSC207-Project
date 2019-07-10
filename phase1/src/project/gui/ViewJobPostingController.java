@@ -48,13 +48,7 @@ public class ViewJobPostingController extends ApplicationController implements I
         JobPosting jobPosting = jobList.getSelectionModel().getSelectedItem();
         if (jobPosting != null) {
             JobPosting.Status status = jobPosting.getStatus();
-            if(status == JobPosting.Status.CLOSED){
-                postStatus.setText("CLOSED");
-            }else if(status == JobPosting.Status.FILLED){
-                postStatus.setText("FILLED");
-            }else if(status == JobPosting.Status.OPEN){
-                postStatus.setText("OPEN");
-            }
+            postStatus.setText(status.toString());
             description.setText(jobPosting.getDescription());
             openDays.setText(String.format(" %s to %s", jobPosting.getOpenDate().toLocalDate(),
                     jobPosting.getCloseDate().toLocalDate()));

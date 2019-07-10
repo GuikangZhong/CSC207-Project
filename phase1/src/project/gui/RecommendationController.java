@@ -59,16 +59,16 @@ public class RecommendationController extends ApplicationController {
         pollInterviews();
     }
 
-    private void pollInterviews(){
-        Map<String, Interview> interviewMap = ((HR)user).getRecommendationLists();
-        if (interviewMap != null){
-            for (Interview interview: interviewMap.values()){
+    private void pollInterviews() {
+        Map<String, Interview> interviewMap = ((HR) user).getRecommendationLists();
+        if (interviewMap != null) {
+            for (Interview interview : interviewMap.values()) {
                 interviewList.getItems().add(interview);
             }
         }
     }
 
-    public void pollApplicants(){
+    public void pollApplicants() {
         Interview interview = interviewList.getSelectionModel().getSelectedItem();
         System.out.println(interview);
         applicantList.getItems().clear();
@@ -96,9 +96,14 @@ public class RecommendationController extends ApplicationController {
         }
     }
 
-    public void hireButton(ActionEvent event){
-        interviewList.getSelectionModel().getSelectedItem().hireFromRecommendation(selectedApplicants.getItems());
-        showModal("Hired successfully");
+    public void hireButton(ActionEvent event) {
+        Interview interview = interviewList.getSelectionModel().getSelectedItem();
+        if (selectedApplicants.getItems().size() <= interview.getNumberNeeded()) {
+            interview.hireFromRecommendation(selectedApplicants.getItems());
+            showModal("Great", "Hired successfully");
+        } else {
+            showModal("Bad", "You have selected too many applicants");
+        }
     }
 
     public void exit(Event event) throws IOException {
