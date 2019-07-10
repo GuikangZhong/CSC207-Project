@@ -1,6 +1,7 @@
 package project.user;
 
 import project.application.*;
+import project.interview.Interview;
 import project.observer.*;
 import project.system.SystemClock;
 import project.utils.Logging;
@@ -108,7 +109,11 @@ public class Applicant
         applications.remove(application);
         jobPosting.removeApplication(application);
         for (ApplicantObserver observer : observers) {
-            observer.updateOnApplicationWithdraw(application);
+            if (((Interview) observer).getJob() == jobPosting.getJob()){
+                observer.updateOnApplicationWithdraw(application);
+                observers.remove(observer);
+                break;
+            }
         }
         jobPosting.removeObserver(this.getApplicantHistory());
     }
