@@ -190,7 +190,7 @@ public class AssignInterviewsController extends ApplicationController {
         SceneSwitcher.switchScene(this, event, "PostingApplicants.fxml");
     }
 
-    public void saveGroup(){
+    private void saveGroup(){
         if (previousSelectedGroup != null) {
             previousSelectedGroup.applicants = new ArrayList<>();
             if (!selectedInterviewers.getItems().isEmpty()) {

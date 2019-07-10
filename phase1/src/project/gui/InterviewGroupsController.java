@@ -27,7 +27,7 @@ public class InterviewGroupsController extends ApplicationController implements 
     private ListView<InterviewGroup> interviewGroups;
 
     @FXML
-    private ListView<CheckBox> applicantCheckBoxs;
+    private ListView<CheckBox> applicantCheckBoxes;
 
 
     private List<Applicant> applicantList;
@@ -50,10 +50,10 @@ public class InterviewGroupsController extends ApplicationController implements 
 
     private void pollApplicants() {
         InterviewGroup interviewGroup = interviewGroups.getSelectionModel().getSelectedItem();
-        applicantCheckBoxs.getItems().clear();
+        applicantCheckBoxes.getItems().clear();
         if (interviewGroup != null) {
             for (Applicant applicant : interviewGroup.getApplicants()) {
-                applicantCheckBoxs.getItems().add(new CheckBox(applicant.getRealName()));
+                applicantCheckBoxes.getItems().add(new CheckBox(applicant.getRealName()));
             }
             applicantList = interviewGroup.getApplicants();
         } else {
@@ -76,17 +76,17 @@ public class InterviewGroupsController extends ApplicationController implements 
         for (Applicant applicant : applicantList) {
             map.put(applicant.getRealName(), applicant.getUsername());
         }
-        for (CheckBox box : applicantCheckBoxs.getItems()) {
+        for (CheckBox box : applicantCheckBoxes.getItems()) {
             if (box.isSelected()) {
                 interviewGroup.setApplicantPassed(map.get(box.getText()), true);
             }
         }
         interviewGroup.submit();
-        SceneSwitcher.switchScene(this, event, "InterviewerMenu.fxml");
+        SceneSwitcher.switchScene(this, event, "InterviewGroups.fxml");
     }
 
     public void viewApplicant(ActionEvent event){
-        int index = applicantCheckBoxs.getSelectionModel().getSelectedIndex();
+        int index = applicantCheckBoxes.getSelectionModel().getSelectedIndex();
         if (index >= 0) {
             final Applicant applicant = applicantList.get(index);
             final InterviewGroup interviewGroup = interviewGroups.getSelectionModel().getSelectedItem();

@@ -44,12 +44,11 @@ public class LoginController extends ApplicationController{
             setUser(user);
             Menu menu = new Menu();
             menu.addOption("Documents","Document.fxml")
-            .addOption("Dashboard","ApplicantMenu.fxml")
             .addOption("Job Posting","ViewJobPosting.fxml")
             .addOption("Application","Application.fxml")
             .addOption("Your history","ApplicantHistory.fxml");
             setMenu(menu);
-            SceneSwitcher.switchScene(this, event, "ApplicantMenu.fxml");
+            SceneSwitcher.switchScene(this, event, "ViewJobPosting.fxml");
         }
         else if (user.getType() == User.Type.HR){
             setUser(user);
@@ -57,16 +56,17 @@ public class LoginController extends ApplicationController{
             menu.addOption("View all applicants","AllApplicants.fxml")
                     .addOption("Job Postings","PostingApplicants.fxml")
                     .addOption("Create Job Posting","CreateJobPost.fxml")
-                    .addOption("Interview Assignment", "InterviewAssignment.fxml");
+                    .addOption("Interview Assignment", "InterviewAssignment.fxml")
+                    .addOption("Recommendation list", "RecommendationList.fxml");
             setMenu(menu);
-            SceneSwitcher.switchScene(this, event, "HRMenu.fxml");
+            SceneSwitcher.switchScene(this, event, "AllApplicants.fxml");
         }
         else if (user.getType() == User.Type.INTERVIEWER){
             setUser(user);
             Menu menu = new Menu();
             menu.addOption("View all applicants","InterviewGroups.fxml");
             setMenu(menu);
-            SceneSwitcher.switchScene(this, event, "InterviewerMenu.fxml");
+            SceneSwitcher.switchScene(this, event, "InterviewGroups.fxml");
         }
 
     }

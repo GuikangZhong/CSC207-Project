@@ -24,7 +24,7 @@
                         <Font size="18.0" fx:id="x1" />
                       </font>
                     </Label>
-                    <ListView id="applications" fx:id="applicantCheckBoxs" layoutX="249.0" layoutY="33.0" prefHeight="464.0" prefWidth="200.00009999999747" />
+                    <ListView id="applications" fx:id="applicantCheckBoxes" layoutX="249.0" layoutY="33.0" prefHeight="464.0" prefWidth="200.00009999999747" />
                     <Button layoutX="467.0" layoutY="71.0" mnemonicParsing="false" onAction="#viewApplicant" text="View Applicant" />
                   </children>
                 </AnchorPane>
