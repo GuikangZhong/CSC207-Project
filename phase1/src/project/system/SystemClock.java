@@ -19,12 +19,8 @@ public class SystemClock implements Serializable {
         return clock;
     }
 
-
     void offset(Duration duration) {
         clock = Clock.offset(clock, duration);
     }
 
-    public LocalDateTime calculateFutureTime(LocalDateTime start, int gap){
-        return start.plusDays(gap);
-    }
 }

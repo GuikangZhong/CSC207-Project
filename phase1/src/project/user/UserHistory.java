@@ -1,6 +1,5 @@
 package project.user;
 
-import project.system.SystemClock;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 

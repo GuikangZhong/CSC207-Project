@@ -1,13 +1,16 @@
 package project.application;
 
 import project.interview.ApplicationStatus;
-import project.interview.Interview;
 import project.user.Applicant;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
+/**
+ * Application is the material the applicant sends for the job posting
+ */
 
 public class Application implements Serializable {
     private static final long serialVersionUID = -8550792289386170705L;
@@ -35,7 +38,7 @@ public class Application implements Serializable {
         return job;
     }
 
-    public ApplicationStatus getStatus(){
+    public ApplicationStatus getStatus() {
         return status;
     }
 }

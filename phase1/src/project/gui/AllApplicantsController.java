@@ -41,7 +41,7 @@ public class AllApplicantsController extends ApplicationController{
     }
 
     private void initializeApplicants(){
-        HashMap<String, Applicant> applicants = getSystem().getApplicants();  // Potential problem??
+        HashMap<String, Applicant> applicants = getSystem().getApplicants();
         for(String name: applicants.keySet()){
             this.applicants.getItems().add(name);
         }

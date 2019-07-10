@@ -10,12 +10,9 @@ import project.interview.PhoneRound;
 import project.observer.InterviewObserver;
 import project.observer.JobPostingObserver;
 import project.system.MainSystem;
-import project.utils.Logging;
 
 import java.util.Collection;
-import java.util.List;
 import java.util.Optional;
-import java.util.logging.Logger;
 
 public class HRManager extends UserManager<HR> implements InterviewObserver, JobPostingObserver {
     private static final long serialVersionUID = 5741768326107391635L;

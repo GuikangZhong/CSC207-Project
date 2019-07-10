@@ -1,7 +1,6 @@
 package project.system;
 
 import project.application.*;
-import project.interview.Interview;
 import project.observer.SystemObserver;
 import project.user.*;
 import project.utils.Logging;
@@ -9,7 +8,6 @@ import project.utils.Logging;
 import java.io.*;
 import java.time.Duration;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.util.*;
 import java.util.logging.Logger;
 
@@ -23,7 +21,7 @@ public class MainSystem implements Serializable {
     }
 
     private SystemClock clock;
-
+    static private Logger logger = Logging.getLogger();
     private List<SystemObserver> observers;
     private HashMap<String, Company> companies;
     private ApplicantManager applicants;
@@ -121,8 +119,6 @@ public class MainSystem implements Serializable {
         logger.info("Added SystemObserver " + observer);
         observers.add(observer);
     }
-
-    static private Logger logger = Logging.getLogger();
 
     public void setSystemClockTime(LocalDateTime time) {
         logger.info("Set time to " + now().toString());

@@ -18,29 +18,19 @@ import java.util.Collections;
 import java.util.List;
 import java.util.logging.Logger;
 
+/**
+ * Interview contains many rounds. Such as one phone and three in person rounds.
+ */
 public class Interview implements Serializable, RoundObserver, ApplicantObserver {
     private static final long serialVersionUID = -5626906039736330402L;
     private Collection<InterviewObserver> observers;
-
-    public List<Applicant> getApplicants() {
-        return Collections.unmodifiableList(applicants);
-    }
-
+    private HR hr;
     private List<Applicant> applicants;
     private InterviewSetup setup;
     private int round;
-
-    public Job getJob() {
-        return job;
-    }
-
     private Job job;
-
-    public int getNumberNeeded() {
-        return numberNeeded;
-    }
-
     private int numberNeeded;
+    private static Logger logger = Logging.getLogger();
 
     public Interview(HR hr,
                      JobPosting jobPosting,
@@ -63,15 +53,16 @@ public class Interview implements Serializable, RoundObserver, ApplicantObserver
         return hr;
     }
 
-    private HR hr;
-
-
-    public List<Round> getRoundsFinished() {
-        return Collections.unmodifiableList(setup.getRounds().subList(0, round));
+    public Job getJob() {
+        return job;
     }
 
-    public List<Round> getRoundsInFuture() {
-        return Collections.unmodifiableList(setup.getRounds().subList(round + 1, setup.getRounds().size()));
+    public int getNumberNeeded() {
+        return numberNeeded;
+    }
+
+    public List<Applicant> getApplicants() {
+        return Collections.unmodifiableList(applicants);
     }
 
     public int getRound() {
@@ -89,6 +80,10 @@ public class Interview implements Serializable, RoundObserver, ApplicantObserver
         return setup.getRounds().get(round);
     }
 
+    /**
+     * this function is called when the max round is finished, there are still a few applicants left
+     * @param applicants
+     */
     public void hireFromRecommendation(List<Applicant> applicants) {
         if (hasNextRound()) {
             throw new RuntimeException("You shouldn't use recommendation lst now");
@@ -100,7 +95,6 @@ public class Interview implements Serializable, RoundObserver, ApplicantObserver
         notifyHireResult();
     }
 
-
     private void notifyHireResult() {
         logger.info("Hire result for " + getJob().getTitle());
         for (InterviewObserver observer : observers) {
@@ -110,8 +104,6 @@ public class Interview implements Serializable, RoundObserver, ApplicantObserver
             applicant.removeObserver(this);
         }
     }
-
-    private static Logger logger = Logging.getLogger();
 
     public void addObserver(InterviewObserver observer) {
         logger.info("Interview: " + job.getTitle() + " added observer " + observer);
@@ -127,7 +119,6 @@ public class Interview implements Serializable, RoundObserver, ApplicantObserver
         }
         round++;
         getRoundInProgress().addObserver(this);
-
     }
 
     void filterPassed() {
@@ -171,7 +162,6 @@ public class Interview implements Serializable, RoundObserver, ApplicantObserver
                 observer.updateOnNoMoreRounds(this);
             }
         }
-
     }
 
     @Override

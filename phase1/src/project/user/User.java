@@ -1,8 +1,5 @@
 package project.user;
 
-import project.system.SystemClock;
-import project.user.UserHistory;
-
 import java.io.Serializable;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -16,13 +13,6 @@ public abstract class User implements Serializable {
     private String realName;
     private String company;
     private byte[] password;
-
-    public enum Type {
-        NONE,
-        APPLICANT,
-        HR,
-        INTERVIEWER
-    }
 
     public User(UserHistory history,
                 String username,
@@ -40,6 +30,12 @@ public abstract class User implements Serializable {
         }
     }
 
+    private static byte[] getMD5ForPassword(String password) throws NoSuchAlgorithmException {
+        String salt = password + "ytv0cfj56t7890f3whntcw39v8v 6789";
+        MessageDigest md = MessageDigest.getInstance("MD5");
+        return md.digest(salt.getBytes());
+    }
+
     public String getCompany() {
         return company;
     }
@@ -50,12 +46,6 @@ public abstract class User implements Serializable {
 
     public String getRealName() {
         return realName;
-    }
-
-    private static byte[] getMD5ForPassword(String password) throws NoSuchAlgorithmException {
-        String salt = password + "ytv0cfj56t7890f3whntcw39v8v 6789";
-        MessageDigest md = MessageDigest.getInstance("MD5");
-        return md.digest(salt.getBytes());
     }
 
     public abstract Type getType();
@@ -75,6 +65,13 @@ public abstract class User implements Serializable {
         } catch (NoSuchAlgorithmException e) {
             throw new RuntimeException("Are you kidding me?");
         }
+    }
+
+    public enum Type {
+        NONE,
+        APPLICANT,
+        HR,
+        INTERVIEWER
     }
 
 }

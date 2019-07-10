@@ -18,18 +18,18 @@ import java.util.logging.Logger;
 public class JobPostingManager implements InterviewObserver, Serializable, SystemObserver {
     private static final long serialVersionUID = -9197333240356088957L;
     private HashMap<String, JobPosting> jobPostings;
-
-    public Company getCompany() {
-        return company;
-    }
-
     private Company company;
     private MainSystem system;
+    static private Logger logger = Logging.getLogger();
 
     public JobPostingManager(MainSystem system, Company company) {
         jobPostings = new HashMap<>();
         this.company = company;
         this.system = system;
+    }
+
+    public Company getCompany() {
+        return company;
     }
 
     public HashMap<String, JobPosting> getJobPostings() {
@@ -51,36 +51,6 @@ public class JobPostingManager implements InterviewObserver, Serializable, Syste
         }
         return false;
     }
-    static private Logger logger = Logging.getLogger();
-    public void removeJobPosting(String name) {
-        jobPostings.remove(name);
-    }
-
-    public void removeApplication(Application application) {
-        String name = application.getJob().getTitle();
-        JobPosting jobPosting = getJobPostings().get(name);
-        jobPosting.removeApplication(application);
-    }
-
-    public List<Applicant> getAllApplicants() {
-        List<Applicant> applicants = new ArrayList<>();
-        for (JobPosting jobPosting : jobPostings.values()) {
-            for (Application application : jobPosting.getApplications()) {
-                applicants.add(application.getApplicant());
-            }
-        }
-        return applicants;
-    }
-
-    public List<JobPosting> getJobPostingsForHR(String hr) {
-        List<JobPosting> jobPostingList = new ArrayList<>();
-        for (JobPosting jobPosting: jobPostings.values()) {
-            if (jobPosting.getHr().getUsername().equals(hr)) {
-                jobPostingList.add(jobPosting);
-            }
-        }
-        return jobPostingList;
-    }
 
     public JobPosting getJobPosting(String title) {
         return jobPostings.get(title);
@@ -99,7 +69,7 @@ public class JobPostingManager implements InterviewObserver, Serializable, Syste
         if (interview.getApplicants().size() == 0) {
             jobPosting.addHired(null);
         } else {
-            for (Applicant applicant :  interview.getApplicants()) {
+            for (Applicant applicant : interview.getApplicants()) {
                 jobPosting.addHired(applicant);
                 applicant.moveToApplied(interview.getJob());
             }
@@ -110,7 +80,6 @@ public class JobPostingManager implements InterviewObserver, Serializable, Syste
     public void updateOnNoMoreRounds(Interview interview) {
 
     }
-
 
     @Override
     public void updateOnTime(LocalDateTime now) {

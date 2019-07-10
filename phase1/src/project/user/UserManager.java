@@ -1,12 +1,8 @@
 package project.user;
 
 import project.system.MainSystem;
-import project.system.SystemClock;
 
 import java.io.Serializable;
-import java.time.Clock;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.HashMap;
 
 abstract public class UserManager<T extends User> implements Serializable {

@@ -1,8 +1,5 @@
 package project.application;
 
-import project.interview.Interview;
-import project.interview.InterviewSetup;
-import project.interview.Round;
 import project.observer.JobPostingObserver;
 import project.observer.SystemObserver;
 import project.user.Applicant;
@@ -27,14 +24,7 @@ public class JobPosting implements Serializable, SystemObserver {
     private LocalDateTime openDate, closeDate;
     private HireResult hireResult;
     private List<JobPostingObserver> observers;
-
     static private Logger logger = Logging.getLogger();
-
-
-    public HR getHr() {
-        return hr;
-    }
-
     private HR hr;
 
     public JobPosting(HR hr, Job job, LocalDateTime begin, LocalDateTime end, Requirement requirement, int nApplicantNeeded,
@@ -57,6 +47,10 @@ public class JobPosting implements Serializable, SystemObserver {
         CLOSED,
         UNFILLED,
         FILLED
+    }
+
+    public HR getHr() {
+        return hr;
     }
 
     public String getDescription() {
@@ -83,6 +77,10 @@ public class JobPosting implements Serializable, SystemObserver {
         return closeDate;
     }
 
+    /**
+     * @param now for checking if the time passes the closed date
+     *            if so, set the job status to closed
+     */
     @Override
     public void updateOnTime(LocalDateTime now) {
         if (now.isAfter(closeDate) && getStatus() == Status.OPEN) {
@@ -125,6 +123,12 @@ public class JobPosting implements Serializable, SystemObserver {
         return getJob().getTitle();
     }
 
+    /**
+     * @param application from an applicant
+     * @return true if the application is added in the job posting
+     * false if 1. the posting is closed. 2. same applicant sends application twice
+     * 3. the application is not met the requirement
+     */
     public boolean addApplication(Application application) {
         if (status == Status.OPEN) {
             if (requirement.satisfies(application)) {

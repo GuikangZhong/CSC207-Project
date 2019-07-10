@@ -31,7 +31,7 @@ public abstract class Document implements Serializable {
         return createdDate;
     }
 
-    public String toString(){
+    public String toString() {
         return name;
     }
 

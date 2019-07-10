@@ -14,14 +14,13 @@ import java.util.stream.Collectors;
 //they passed the interview of not.
 public class Applicant
         extends User implements Serializable,
-        SystemObserver{
+        SystemObserver {
     private static final long serialVersionUID = 6591554659403402970L;
-
+    private static int DocumentsAutoDeleteDays = 30;
+    private static Logger logger = Logging.getLogger();
     private Collection<Application> applications;
     private List<Document> documents;
     private List<ApplicantObserver> observers;
-    private static int DocumentsAutoDeleteDays = 30;
-    private static Logger logger = Logging.getLogger();
 
     public Applicant(ApplicantHistory history,
                      String username,
@@ -32,6 +31,10 @@ public class Applicant
         applications = new ArrayList<>();
         documents = new ArrayList<>();
         observers = new ArrayList<>();
+    }
+
+    public static int getDocumentsAutoDeleteDays() {
+        return DocumentsAutoDeleteDays;
     }
 
     public void addObserver(ApplicantObserver observer) {
@@ -45,11 +48,6 @@ public class Applicant
             logger.info("Applicant " + getUsername() + " Removed observer" + observer);
         }
     }
-
-    public static int getDocumentsAutoDeleteDays() {
-        return DocumentsAutoDeleteDays;
-    }
-
 
     public ApplicantHistory getApplicantHistory() {
         return (ApplicantHistory) getHistory();
@@ -140,7 +138,7 @@ public class Applicant
             LocalDateTime close = history.getLastApplicationClosed();
             if (close != null) {
                 if (close.plusDays(getDocumentsAutoDeleteDays()).isBefore(now)) {
-                    documents.removeIf(document -> document.getCreatedDate().isBefore(close));
+                    System.out.println(documents.removeIf(document -> document.getCreatedDate().isBefore(close)));
                 }
             }
         }

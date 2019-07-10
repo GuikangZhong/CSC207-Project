@@ -3,13 +3,13 @@ package project.application;
 import java.io.*;
 import java.time.LocalDateTime;
 
-public class CV extends Document implements Serializable{
-
+public class CV extends Document implements Serializable {
     private static final long serialVersionUID = 6736238269987565017L;
 
-    public static CV createEmpty(){
-        return new CV(null,null,null);
+    public static CV createEmpty() {
+        return new CV(null, null, null);
     }
+
     public static CV createByDirectInput(String name, String input, LocalDateTime dateTime) {
         return new CV(name, input, dateTime);
     }
@@ -32,12 +32,12 @@ public class CV extends Document implements Serializable{
     }
 
     @Override
-    public String type(){
+    public String type() {
         return "CV";
     }
 
     @Override
-    public int maxNumber(){
+    public int maxNumber() {
         return 1;
     }
 }

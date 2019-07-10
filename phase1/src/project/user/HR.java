@@ -1,8 +1,6 @@
 package project.user;
 
-import project.application.*;
 import project.interview.*;
-import project.system.SystemClock;
 import project.utils.Logging;
 
 import java.util.ArrayList;
@@ -17,8 +15,7 @@ public class HR extends User {
     private Map<String, Interview> recommendationLists;
     private List<Interview> interviewsRoundFinished;
     private List<Interview> interviewsToBeScheduled;
-    private List<String> jobsHired;  // How to store the name of the applicant hired??
-
+    static private Logger logger = Logging.getLogger();
 
     public HR(UserHistory history,
               String username,
@@ -40,15 +37,6 @@ public class HR extends User {
         return interviewsToBeScheduled;
     }
 
-
-    public List<String> getJobsHired() {
-        return jobsHired;
-    }
-
-    public void setJobsHired(List<String> jobsHired) {
-        this.jobsHired = jobsHired;
-    }
-
     @Override
     public final Type getType() {
         return Type.HR;
@@ -62,19 +50,12 @@ public class HR extends User {
         recommendationLists.put(interview.getJob().getTitle(), interview);
     }
 
-    void addJobsHired(String title) {
-        jobsHired.add(title);
-    }
-
     void addInterviewRoundFinished(Interview interview) {
         interviewsRoundFinished.add(interview);
     }
-
-    static private Logger logger = Logging.getLogger();
 
     void addInterviewsToBeScheduled(Interview interview) {
         logger.info("Added " + interview.getJob().getTitle() + " for " + getUsername());
         interviewsToBeScheduled.add(interview);
     }
-
 }

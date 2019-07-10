@@ -20,6 +20,12 @@ public abstract class Round implements Serializable, InterviewGroupObserver {
     static private Logger logger = Logging.getLogger();
     private Job job;
 
+    public Round(Job job) {
+        this.job = job;
+        number = -1;
+        observers = new ArrayList<>();
+    }
+
     public abstract String roundType();
 
     public abstract int getMaxRoundNumber();
@@ -74,11 +80,6 @@ public abstract class Round implements Serializable, InterviewGroupObserver {
         return true;
     }
 
-//    @Override
-//    public void updateOnGroupAssigned(InterviewGroup group) {
-//
-//    }
-
     @Override
     public void updateOnGroupSubmitted(InterviewGroup group) {
         logger.info(this + " one group submitted");
@@ -99,12 +100,6 @@ public abstract class Round implements Serializable, InterviewGroupObserver {
             names.addAll(group.getApplicantsPassed());
         }
         return names;
-    }
-
-    public Round(Job job) {
-        this.job = job;
-        number = -1;
-        observers = new ArrayList<>();
     }
 
     public String toString() {

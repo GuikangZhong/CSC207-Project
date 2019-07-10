@@ -18,15 +18,6 @@ public class ApplicantManager extends UserManager<Applicant> implements SystemOb
 
     @Override
     public void updateOnTime(LocalDateTime now) {
-        // move the applying job to applied job after the posting closed
-        List<JobPosting> jobPostingList = getSystem().getAllJobPostings();
-        for (JobPosting jobPosting: jobPostingList) {
-            for (Application application: jobPosting.getApplications()){
-                Applicant applicant = application.getApplicant();
-                if (now.isAfter(jobPosting.getCloseDate())){
-                    applicant.moveToApplied(jobPosting.getJob());
-                }
-            }
-        }
+
     }
 }

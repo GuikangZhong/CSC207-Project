@@ -1,10 +1,7 @@
 package project.interview;
 
-import project.application.Application;
-import project.application.Company;
 import project.application.Job;
 import project.observer.InterviewGroupObserver;
-import project.observer.InterviewResultObserver;
 import project.user.Applicant;
 import project.user.Interviewer;
 import project.utils.Logging;
@@ -13,15 +10,13 @@ import java.io.Serializable;
 import java.util.*;
 import java.util.logging.Logger;
 
+/**
+ * An interview group means in a round, a group with multiple applicants and one interviewers
+ */
 public class InterviewGroup implements Serializable {
     private static final long serialVersionUID = 4355176965416536403L;
     private Interviewer interviewer;
     private Map<String, Boolean> applicantsStatus;
-
-    public List<Applicant> getApplicants() {
-        return Collections.unmodifiableList(applicants);
-    }
-
     private List<Applicant> applicants;
     private boolean submitted = false;
     private Job job;
@@ -46,6 +41,14 @@ public class InterviewGroup implements Serializable {
         observers = new ArrayList<>();
     }
 
+    public List<Applicant> getApplicants() {
+        return Collections.unmodifiableList(applicants);
+    }
+
+    /**
+     * This function will be called if interviewer finished promoting applicants
+     * to the next round
+     */
     public void submit() {
         logger.info(this + "submitted");
         submitted = true;
