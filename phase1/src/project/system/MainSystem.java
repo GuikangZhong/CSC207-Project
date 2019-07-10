@@ -28,60 +28,12 @@ public class MainSystem implements Serializable {
     private HashMap<String, Company> companies;
     private ApplicantManager applicants;
 
-    private void test() {
-        String[] companies = {"UofT", "Microsoft", "Google"};
-        String names = "abcdefghijklmnopqrstuvwxyz";
-
-        int index = 0;
-        for (String c : companies) {
-            addCompany(c);
-            for (int i = 0; i < 8; i++) {
-                Applicant applicant = new Applicant(new ApplicantHistory(now()),
-                        "" + names.charAt(index),
-                        "a", "David Liu " + names.charAt(index), c);
-                applicant.addDocument(CV.createByDirectInput("CV", "CV", now()));
-                applicant.addDocument(CoverLetter.createByDirectInput("CoverLetter",
-                        "Cover Letter", now()));
-                addUser(applicant);
-                index++;
-            }
-            Company company = getCompany(c);
-            HR hr = new HR(new UserHistory(now()), c + "-HR", "a"
-                    , "Diane Horton", c);
-            Interviewer interviewer = new Interviewer(new UserHistory(now()), c + "-I", "a"
-                    , "Diane Horton", c);
-            company.getHrManager().addUser(hr);
-            company.getInterviewerManager().addUser(interviewer);
-            interviewer = new Interviewer(new UserHistory(now()), c + "-II", "a"
-                    , "Danny Heap", c);
-            company.getInterviewerManager().addUser(interviewer);
-            JobPostingManager manager = company.getJobPostingManager();
-            String[] jobs = {"-A", "-B", "-C", "-D", "-E", "-F"};
-            for (String job : jobs) {
-                JobPosting jobPosting = new JobPosting(hr, new Job(c + job, company), now(),
-                        now().plusDays(3), new BasicRequirement(), 1, c + job + "--");
-                manager.addJobPosting(jobPosting);
-            }
-        }
-
-
-        for (JobPosting jobPosting : getAllJobPostings()) {
-            int i = 0;
-            for (Applicant applicant : getApplicants().values()) {
-                applicant.apply(jobPosting);
-                if (i++ > 5)
-                    break;
-            }
-        }
-    }
-
     public MainSystem() {
         clock = new SystemClock();
         companies = new HashMap<>();
         applicants = new ApplicantManager(this);
         observers = new ArrayList<>();
         addObserver(applicants);
-        test();
     }
 
     public boolean addCompany(String name) {
