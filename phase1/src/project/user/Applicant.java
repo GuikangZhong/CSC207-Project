@@ -109,7 +109,6 @@ public class Applicant
 
     public void withdraw(JobPosting jobPosting, Application application) {
         moveToApplied(jobPosting.getJob());
-//        this.getApplicantHistory().removeJobApplying(jobPosting.getJobTitle());
         applications.remove(application);
         jobPosting.removeApplication(application);
         for (ApplicantObserver observer : observers) {

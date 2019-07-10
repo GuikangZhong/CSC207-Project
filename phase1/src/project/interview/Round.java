@@ -114,9 +114,12 @@ public abstract class Round implements Serializable, InterviewGroupObserver {
     boolean assigned() {
         return groups != null;
     }
+
     void withdraw(Applicant applicant){
-        for(InterviewGroup group: groups){
-            group.withdraw(applicant);
+        if (groups != null) {
+            for(InterviewGroup group: groups){
+                group.withdraw(applicant);
+            }
         }
     }
 }
