@@ -104,7 +104,11 @@ public class Applicant
         return null;
     }
 
-    public void withdraw(JobPosting jobPosting, Application application) {
+    public boolean withdraw(JobPosting jobPosting, Application application) {
+        // you can't withdraw if someone is hired for the job posting
+        if (jobPosting.getStatus() == JobPosting.Status.FILLED || jobPosting.getStatus() == JobPosting.Status.UNFILLED){
+            return false;
+        }
         moveToApplied(jobPosting.getJob());
         applications.remove(application);
         jobPosting.removeApplication(application);
@@ -116,6 +120,7 @@ public class Applicant
             }
         }
         jobPosting.removeObserver(this.getApplicantHistory());
+        return true;
     }
 
     @Override

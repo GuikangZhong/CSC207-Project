@@ -97,8 +97,11 @@ public class ApplicationViewController extends ApplicationController {
         Applicant applicant = (Applicant) getUser();
         Company company = application.getJob().getCompany();
         JobPosting jobPosting = company.getJobPostingManager().getJobPosting(application.getJob().getTitle());
-        applicant.withdraw(jobPosting, application);
+        boolean withdraw = applicant.withdraw(jobPosting, application);
         pollApplications();
-        showModal("Great", "withdrawn");
+        if (withdraw)
+            showModal("Great", "withdrawn");
+        else
+            showModal("Bad", "Unable to withdrawn");
     }
 }
