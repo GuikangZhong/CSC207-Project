@@ -42,8 +42,8 @@ public class AllApplicantsController extends ApplicationController{
 
     private void initializeApplicants(){
         HashMap<String, Applicant> applicants = getSystem().getApplicants();
-        for(String name: applicants.keySet()){
-            this.applicants.getItems().add(name);
+        for (Applicant applicant: applicants.values()){
+            this.applicants.getItems().add(applicant.getRealName());
         }
     }
 
@@ -67,11 +67,17 @@ public class AllApplicantsController extends ApplicationController{
 
         applicantApplyingJobs.getItems().clear();
         ApplicantHistory applicantHistory = applicant.getApplicantHistory();
-        List<Job> jobsApplied = applicantHistory.getJobApplying();
-        for (Job job: jobsApplied){
+        List<Job> jobsApplying = applicantHistory.getJobApplying();
+        for (Job job: jobsApplying){
             if (job.getCompany().getName().equals(getUser().getCompany())){
                 applicantApplyingJobs.getItems().add(job.getTitle());
            }
+        }
+        List<Job> jobsApplied = applicantHistory.getJobApplied();
+        for (Job job: jobsApplied){
+            if (job.getCompany().getName().equals(getUser().getCompany())){
+                applicantApplyingJobs.getItems().add(job.getTitle());
+            }
         }
     }
 
