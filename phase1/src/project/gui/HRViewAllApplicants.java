@@ -30,10 +30,7 @@ public class HRViewAllApplicants extends ApplicationController{
 
     @FXML
     private TextArea documentContent;
-
-    @FXML
-    private Label companyName;
-
+    
     private Applicant applicant;
 
 
@@ -41,29 +38,7 @@ public class HRViewAllApplicants extends ApplicationController{
     void postInit(){
         super.postInit();
         initializeApplicants();
-
-        applicants.setCellFactory(new Callback<ListView<Applicant>, ListCell<Applicant>>() {
-
-            @Override
-            public ListCell<Applicant> call(ListView<Applicant> p) {
-
-                ListCell<Applicant> cell = new ListCell<Applicant>() {
-
-                    @Override
-                    protected void updateItem(Applicant t, boolean bln) {
-                        super.updateItem(t, bln);
-                        if (t != null) {
-                            setText(t.getRealName());
-                        } else {
-                            setText("");
-                        }
-                    }
-
-                };
-
-                return cell;
-            }
-        });
+        applicants.setCellFactory(CellFactoryFactory.getCellFactoryForApplicant());
     }
 
     private void initializeApplicants(){
