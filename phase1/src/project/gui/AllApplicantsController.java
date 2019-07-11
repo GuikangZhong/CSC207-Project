@@ -15,6 +15,7 @@ import project.user.*;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Set;
 
 public class AllApplicantsController extends ApplicationController{
 
@@ -92,7 +93,7 @@ public class AllApplicantsController extends ApplicationController{
 
         applicantApplyingJobs.getItems().clear();
         ApplicantHistory applicantHistory = applicant.getApplicantHistory();
-        List<Job> jobsApplying = applicantHistory.getJobApplying();
+        Set<Job> jobsApplying = applicantHistory.getJobApplying();
         for (Job job: jobsApplying){
             if (job.getCompany().getName().equals(getUser().getCompany())){
                 applicantApplyingJobs.getItems().add(job.getTitle());

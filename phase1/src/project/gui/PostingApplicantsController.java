@@ -105,6 +105,7 @@ public class PostingApplicantsController extends ApplicationController {
     }
 
     public void jobPostingClicked(MouseEvent event) {
+        applications.getItems().clear();
         pollApplicants();
         JobPosting jobPosting = jobPostings.getSelectionModel().getSelectedItem();
         if (event.getClickCount() == 2 && (jobPosting.getStatus() == JobPosting.Status.FILLED)){

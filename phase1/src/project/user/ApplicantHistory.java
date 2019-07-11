@@ -11,12 +11,13 @@ public class ApplicantHistory extends UserHistory implements JobPostingObserver 
 
     private List<Job> jobApplied;
     private LocalDateTime lastApplicationClosed;
-    private List<Job> jobApplying;
+//    private List<Job> jobApplying;
+    private HashMap<Job, Boolean> jobApplying;
 
     public ApplicantHistory(LocalDateTime now) {
         super(now);
         jobApplied = new ArrayList<>();
-        jobApplying = new ArrayList<>();
+        jobApplying = new HashMap<>();
         lastApplicationClosed = null;
     }
 
@@ -24,8 +25,8 @@ public class ApplicantHistory extends UserHistory implements JobPostingObserver 
         return Collections.unmodifiableList(jobApplied);
     }
 
-    public List<Job> getJobApplying() {
-        return Collections.unmodifiableList(jobApplying);
+    public Set<Job> getJobApplying() {
+        return Collections.unmodifiableSet(jobApplying.keySet());
     }
 
     public LocalDateTime getLastApplicationClosed() {
@@ -39,15 +40,26 @@ public class ApplicantHistory extends UserHistory implements JobPostingObserver 
 
     void addJobApplying(Job job) {
         jobApplied.remove(job);
-        jobApplying.add(job);
+//        jobApplying.add(job);
+        jobApplying.put(job, false);
+        lastApplicationClosed = null;
     }
 
-    void removeJobApplying(String name) {
-        jobApplying.removeIf(e -> e.getTitle().equals(name));
+    void removeJobApplying(Job job) {
+//        jobApplying.removeIf(e -> e.getTitle().equals(name));
+        jobApplying.remove(job);
+    }
+
+    private boolean allApplicationClosed(){
+        return (!(jobApplying.values().contains(false)));
     }
 
     @Override
     public void updateOnJobPostingClosure(JobPosting jobPosting) {
-        lastApplicationClosed = jobPosting.getCloseDate();
+//        lastApplicationClosed = jobPosting.getCloseDate();
+        jobApplying.put(jobPosting.getJob(), true);
+        if (allApplicationClosed()){
+            lastApplicationClosed = jobPosting.getCloseDate();
+        }
     }
 }
