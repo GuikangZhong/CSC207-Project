@@ -1,16 +1,13 @@
 package project.user;
 
 import project.application.*;
-import project.interview.Interview;
 import project.observer.*;
-import project.system.SystemClock;
 import project.utils.Logging;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.*;
 import java.util.logging.Logger;
-import java.util.stream.Collectors;
 
 //they passed the interview of not.
 public class Applicant
@@ -34,7 +31,7 @@ public class Applicant
         observers = new ArrayList<>();
     }
 
-    public static int getDocumentsAutoDeleteDays() {
+    private static int getDocumentsAutoDeleteDays() {
         return DocumentsAutoDeleteDays;
     }
 
@@ -113,11 +110,7 @@ public class Applicant
         applications.remove(application);
         jobPosting.removeApplication(application);
         for (ApplicantObserver observer : observers) {
-            if (((Interview) observer).getJob() == jobPosting.getJob()){
-                observer.updateOnApplicationWithdraw(application);
-                observers.remove(observer);
-                break;
-            }
+            observer.updateOnApplicationWithdraw(application);
         }
         jobPosting.removeObserver(this.getApplicantHistory());
         return true;
