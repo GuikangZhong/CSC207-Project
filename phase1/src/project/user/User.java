@@ -26,14 +26,12 @@ public abstract class User implements Serializable {
         try {
             this.password = getMD5ForPassword(password);
         } catch (NoSuchAlgorithmException e) {
-            throw new RuntimeException("Are you kidding me?");
+            throw new RuntimeException("No MD5 algorithm found");
         }
     }
-
     private static byte[] getMD5ForPassword(String password) throws NoSuchAlgorithmException {
-        String salt = password + "ytv0cfj56t7890f3whntcw39v8v 6789";
         MessageDigest md = MessageDigest.getInstance("MD5");
-        return md.digest(salt.getBytes());
+        return md.digest(password.getBytes());
     }
 
     public String getCompany() {
@@ -63,12 +61,11 @@ public abstract class User implements Serializable {
             byte[] digest = getMD5ForPassword(password);
             return Arrays.equals(this.password, digest);
         } catch (NoSuchAlgorithmException e) {
-            throw new RuntimeException("Are you kidding me?");
+            throw new RuntimeException("No MD5 algorithm found");
         }
     }
 
     public enum Type {
-        NONE,
         APPLICANT,
         HR,
         INTERVIEWER
