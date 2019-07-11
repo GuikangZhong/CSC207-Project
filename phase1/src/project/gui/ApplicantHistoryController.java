@@ -10,6 +10,10 @@ import project.user.Applicant;
 import project.user.ApplicantHistory;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
+import static java.time.temporal.ChronoUnit.DAYS;
 
 public class ApplicantHistoryController extends ApplicationController {
     @FXML
@@ -51,7 +55,11 @@ public class ApplicantHistoryController extends ApplicationController {
             lastApplicationClosed.setText("None");
         }
         else{
-            lastApplicationClosed.setText(history.getLastApplicationClosed().toString());
+            LocalDateTime systemTime = LocalDateTime.now(getSystem().getClock().getClock());
+            LocalDateTime closedTime = history.getLastApplicationClosed();
+            LocalDate systemDate = systemTime.toLocalDate();
+            LocalDate closedDate = closedTime.toLocalDate();
+            lastApplicationClosed.setText(Long.toString((DAYS.between(closedDate, systemDate))));
         }
     }
 
