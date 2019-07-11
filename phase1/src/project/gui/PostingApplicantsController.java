@@ -48,6 +48,8 @@ public class PostingApplicantsController extends ApplicationController {
                         super.updateItem(t, bln);
                         if (t != null) {
                             setText(t.getJobTitle() + " (" + t.getStatus()+")");
+                        }else{
+                            setText("");
                         }
                     }
 
@@ -68,6 +70,8 @@ public class PostingApplicantsController extends ApplicationController {
                         super.updateItem(t, bln);
                         if (t != null) {
                             setText(t.getApplicant().getRealName());
+                        } else {
+                            setText("");
                         }
                     }
 

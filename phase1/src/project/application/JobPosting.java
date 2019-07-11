@@ -162,6 +162,9 @@ public class JobPosting implements Serializable, SystemObserver {
                 setStatus(Status.FILLED);
                 logger.info(getJobTitle() + " is filled");
             }
+            else {
+                setStatus(Status.UNFILLED);
+            }
         }
     }
 
