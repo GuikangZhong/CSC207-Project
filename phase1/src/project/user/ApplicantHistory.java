@@ -38,7 +38,7 @@ public class ApplicantHistory extends UserHistory implements JobPostingObserver 
     }
 
     void addJobApplying(Job job) {
-        if(!jobApplied.contains(job))
+        jobApplied.remove(job);
         jobApplying.add(job);
     }
 
