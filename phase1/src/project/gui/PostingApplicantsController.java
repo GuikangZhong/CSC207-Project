@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
@@ -16,6 +17,7 @@ import project.application.Company;
 import project.application.JobPosting;
 import project.application.JobPostingManager;
 import project.interview.Interview;
+import project.interview.InterviewGroup;
 import project.user.Applicant;
 import project.user.HR;
 
@@ -101,7 +103,24 @@ public class PostingApplicantsController extends ApplicationController {
     }
 
     public void applicationClicked(MouseEvent event) {
-
+//        final Applicant applicant = applicantList.get(index);
+//        final InterviewGroup interviewGroup = interviewGroups.getSelectionModel().getSelectedItem();
+        if (event.getClickCount() == 2) {
+            showModal(stage -> {
+                try {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("ApplicationInfo.fxml"));
+                    AnchorPane pane = (AnchorPane) loader.load();
+                    ApplicationInfoController controller = loader.<ApplicationInfoController>getController();
+//                Application application = applicant.getApplicationOf(interviewGroup.getJob().getTitle()).get();
+                    Application application = applications.getSelectionModel().getSelectedItem();
+                    controller.setApplication(application);
+                    Scene scene = new Scene(pane);
+                    stage.setScene(scene);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
+        }
     }
 
     public void jobPostingClicked(MouseEvent event) {

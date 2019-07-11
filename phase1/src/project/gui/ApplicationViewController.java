@@ -102,6 +102,6 @@ public class ApplicationViewController extends ApplicationController {
         if (withdraw)
             showModal("Great", "withdrawn");
         else
-            showModal("Bad", "Unable to withdrawn");
+            showModal("Bad", "Unable to withdraw");
     }
 }
