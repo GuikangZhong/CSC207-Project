@@ -32,6 +32,7 @@ public class PostingApplicantsController extends ApplicationController {
     private ListView<Application> applications;
 
 
+
     @Override
     void postInit() {
         super.postInit();
