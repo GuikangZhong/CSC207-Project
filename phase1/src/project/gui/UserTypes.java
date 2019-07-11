@@ -13,7 +13,7 @@ import java.util.ResourceBundle;
 
 
 
-public class TypeController extends ApplicationController implements Initializable {
+public class UserTypes extends ApplicationController implements Initializable {
 
     @FXML
     ChoiceBox<String> type;

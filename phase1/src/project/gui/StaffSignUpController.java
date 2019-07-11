@@ -7,16 +7,12 @@ import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
 import javafx.scene.input.MouseEvent;
 import project.application.Company;
-import project.user.Applicant;
 import project.user.HR;
 import project.user.Interviewer;
 import project.user.UserHistory;
 
 import java.io.IOException;
-import java.net.URL;
 import java.util.Collection;
-import java.util.List;
-import java.util.ResourceBundle;
 
 public class StaffSignUpController extends ApplicationController implements Initializable {
 
@@ -40,11 +36,11 @@ public class StaffSignUpController extends ApplicationController implements Init
 
     public void signUpButton(ActionEvent event) throws IOException {
         boolean added = false;
-        if (TypeController.typeName.equals("HR")){
+        if (UserTypes.typeName.equals("HR")){
             added = getSystem().addUser(new HR(new UserHistory(getSystem().now()), usernameInput.getText(),passwordInput.getText(),
                     realNameInput.getText(), companyName));
         }
-        else if (TypeController.typeName.equals("Interviewer")){
+        else if (UserTypes.typeName.equals("Interviewer")){
             added = getSystem().addUser(new Interviewer(new UserHistory(getSystem().now()), usernameInput.getText(),passwordInput.getText(),
                     realNameInput.getText(), companyName));
         }
@@ -56,7 +52,7 @@ public class StaffSignUpController extends ApplicationController implements Init
     }
 
     public void returnToTypeButton(ActionEvent event) throws IOException {
-        SceneSwitcher.switchScene(this, event, "Type.fxml");
+        SceneSwitcher.switchScene(this, event, "UserTypes.fxml");
     }
 
     public void companySelected(MouseEvent event) {

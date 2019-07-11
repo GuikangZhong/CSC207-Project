@@ -19,7 +19,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class RecommendationController extends ApplicationController {
+public class HRSeeFinalCandidates extends ApplicationController {
     @FXML
     private ListView<Interview> interviewList = new ListView<>();
     @FXML

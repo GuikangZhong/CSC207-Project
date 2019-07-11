@@ -19,7 +19,7 @@ import project.user.Applicant;
 import java.io.IOException;
 import java.util.List;
 
-public class ApplicationViewController extends ApplicationController {
+public class ApplicantViewApplications extends ApplicationController {
     @FXML
     private ListView<Application> applications;
 

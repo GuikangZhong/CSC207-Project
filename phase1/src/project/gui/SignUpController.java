@@ -27,7 +27,7 @@ public class SignUpController extends ApplicationController{
     static private Logger logger = Logging.getLogger();
     public void signUpButton(ActionEvent event) throws IOException {
         boolean added = false;
-        if (TypeController.typeName.equals("Applicant")){
+        if (UserTypes.typeName.equals("Applicant")){
             added = getSystem().addUser(new Applicant(new ApplicantHistory(getSystem().now()),
                     usernameInput.getText(),passwordInput.getText(),
                     realNameInput.getText(), null));
@@ -40,7 +40,7 @@ public class SignUpController extends ApplicationController{
     }
 
     public void returnToTypeButton(ActionEvent event) throws IOException {
-        SceneSwitcher.switchScene(this, event, "Type.fxml");
+        SceneSwitcher.switchScene(this, event, "UserTypes.fxml");
     }
 
     public void confirmButton(ActionEvent event) throws IOException {

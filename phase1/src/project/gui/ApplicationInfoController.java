@@ -13,7 +13,7 @@ import javax.print.Doc;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ApplicationInfoController implements Initializable {
+public class ApplicationInfoController {
     @FXML
     private Label applicantName;
     @FXML
@@ -39,10 +39,5 @@ public class ApplicationInfoController implements Initializable {
             documentName.setText(document.getName());
             content.setText(document.getContent());
         }
-    }
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
-
     }
 }

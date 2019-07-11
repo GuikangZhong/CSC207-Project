@@ -45,28 +45,28 @@ public class LoginController extends ApplicationController{
             if (user.getType() == User.Type.APPLICANT) {
                 setUser(user);
                 Menu menu = new Menu();
-                menu.addOption("Documents", "Document.fxml")
-                        .addOption("Job Posting", "ViewJobPosting.fxml")
-                        .addOption("Application", "Application.fxml")
-                        .addOption("Your history", "ApplicantHistory.fxml");
+                menu.addOption("Documents", "ApplicantViewOrUpdateDocument.fxml")
+                        .addOption("Job Posting", "ApplicantViewJobPostings.fxml")
+                        .addOption("Application", "ApplicantViewApplications.fxml")
+                        .addOption("Your history", "ApplicantViewHistory.fxml");
                 setMenu(menu);
-                SceneSwitcher.switchScene(this, event, "ViewJobPosting.fxml");
+                SceneSwitcher.switchScene(this, event, "ApplicantViewJobPostings.fxml");
             } else if (user.getType() == User.Type.HR) {
                 setUser(user);
                 Menu menu = new Menu();
-                menu.addOption("View all applicants", "AllApplicants.fxml")
-                        .addOption("Job Postings", "PostingApplicants.fxml")
-                        .addOption("Create Job Posting", "CreateJobPost.fxml")
-                        .addOption("Interview Assignment", "InterviewAssignment.fxml")
-                        .addOption("Recommendation list", "RecommendationList.fxml");
+                menu.addOption("View all applicants", "HRViewAllApplicants.fxml")
+                        .addOption("Job Postings", "HRSeeApplicantsForJobPostings.fxml")
+                        .addOption("Create Job Posting", "HRCreateJobPosting.fxml")
+                        .addOption("Interview Assignment", "HRSeeScheduledInterviews.fxml")
+                        .addOption("Recommendation list", "HRSeeFinalCandidates.fxml");
                 setMenu(menu);
-                SceneSwitcher.switchScene(this, event, "AllApplicants.fxml");
+                SceneSwitcher.switchScene(this, event, "HRViewAllApplicants.fxml");
             } else if (user.getType() == User.Type.INTERVIEWER) {
                 setUser(user);
                 Menu menu = new Menu();
-                menu.addOption("View all applicants", "InterviewGroups.fxml");
+                menu.addOption("View all applicants", "InterviewerSeeInterviewGroups.fxml");
                 setMenu(menu);
-                SceneSwitcher.switchScene(this, event, "InterviewGroups.fxml");
+                SceneSwitcher.switchScene(this, event, "InterviewerSeeInterviewGroups.fxml");
             }
         }
     }

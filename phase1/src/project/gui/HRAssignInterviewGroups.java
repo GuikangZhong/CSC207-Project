@@ -22,7 +22,7 @@ import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class AssignInterviewsController extends ApplicationController {
+public class HRAssignInterviewGroups extends ApplicationController {
 
     @FXML
     private ListView<Applicant> applicants = new ListView<>();
@@ -179,7 +179,7 @@ public class AssignInterviewsController extends ApplicationController {
                     new ArrayList<>(company.getInterviewerManager().getUsers().values()));
             showModal("Great", "Assign successfully");
             listOfInterviews.remove(interview);
-            SceneSwitcher.switchScene(this, event, "PostingApplicants.fxml");
+            SceneSwitcher.switchScene(this, event, "HRSeeApplicantsForJobPostings.fxml");
         } catch (SelectionException e) {
             showModal("Bad", e.getMessage());
         }
@@ -187,7 +187,7 @@ public class AssignInterviewsController extends ApplicationController {
     }
 
     public void returnButton(ActionEvent event) throws IOException {
-        SceneSwitcher.switchScene(this, event, "PostingApplicants.fxml");
+        SceneSwitcher.switchScene(this, event, "HRSeeApplicantsForJobPostings.fxml");
     }
 
     private void saveGroup(){

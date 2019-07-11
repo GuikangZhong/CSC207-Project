@@ -24,7 +24,7 @@ import project.user.HR;
 import java.io.IOException;
 import java.util.List;
 
-public class PostingApplicantsController extends ApplicationController {
+public class HRSeeApplicantsForJobPostings extends ApplicationController {
     @FXML
     private ListView<JobPosting> jobPostings;
 

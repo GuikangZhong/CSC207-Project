@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 
 import static java.time.temporal.ChronoUnit.DAYS;
 
-public class ApplicantHistoryController extends ApplicationController {
+public class ApplicantViewHistory extends ApplicationController {
     @FXML
     private ListView<String> applyingJobs, appliedJobs;
 

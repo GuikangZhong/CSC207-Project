@@ -19,7 +19,7 @@ import java.time.LocalTime;
 import java.util.ResourceBundle;
 import java.util.logging.Logger;
 
-public class CreateJobController extends ApplicationController {
+public class HRCreateJobPosting extends ApplicationController {
 
     @FXML
     private TextField title;

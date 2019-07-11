@@ -35,7 +35,7 @@ public class MainWindow extends ApplicationController implements Initializable {
     }
 
     public void signUpButton(ActionEvent event) throws IOException {
-        SceneSwitcher.switchScene(this, event, "Type.fxml");
+        SceneSwitcher.switchScene(this, event, "UserTypes.fxml");
     }
 
     public void addCompanyButton(ActionEvent event) throws IOException {

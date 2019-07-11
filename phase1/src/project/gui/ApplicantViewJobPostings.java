@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Logger;
 
-public class ViewJobPostingController extends ApplicationController implements Initializable{
+public class ApplicantViewJobPostings extends ApplicationController implements Initializable{
     @FXML
     private ListView<JobPosting> jobList;
     @FXML

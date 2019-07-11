@@ -22,7 +22,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 
-public class InterviewGroupsController extends ApplicationController implements Initializable {
+public class InterviewerSeeInterviewGroup extends ApplicationController implements Initializable {
     @FXML
     private ListView<InterviewGroup> interviewGroups;
 
@@ -56,8 +56,6 @@ public class InterviewGroupsController extends ApplicationController implements 
                 applicantCheckBoxes.getItems().add(new CheckBox(applicant.getRealName()));
             }
             applicantList = interviewGroup.getApplicants();
-        } else {
-            throw new RuntimeException("Null InterviewGroup");
         }
     }
 
@@ -65,11 +63,7 @@ public class InterviewGroupsController extends ApplicationController implements 
         pollApplicants();
 
     }
-
-    public void interviewClicked(MouseEvent event) {
-        pollApplicants();
-    }
-
+    
     public void promoteButton(ActionEvent event) throws IOException {
         InterviewGroup interviewGroup = interviewGroups.getSelectionModel().getSelectedItem();
         HashMap<String, String> map = new HashMap<>();
@@ -82,7 +76,7 @@ public class InterviewGroupsController extends ApplicationController implements 
             }
         }
         interviewGroup.submit();
-        SceneSwitcher.switchScene(this, event, "InterviewGroups.fxml");
+        SceneSwitcher.switchScene(this, event, "InterviewerSeeInterviewGroups.fxml");
     }
 
     public void viewApplicant(ActionEvent event){
