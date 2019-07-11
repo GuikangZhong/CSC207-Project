@@ -63,7 +63,7 @@ public class InterviewerSeeInterviewGroup extends ApplicationController implemen
         pollApplicants();
 
     }
-    
+
     public void promoteButton(ActionEvent event) throws IOException {
         InterviewGroup interviewGroup = interviewGroups.getSelectionModel().getSelectedItem();
         HashMap<String, String> map = new HashMap<>();
