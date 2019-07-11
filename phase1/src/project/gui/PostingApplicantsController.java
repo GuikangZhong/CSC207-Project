@@ -108,7 +108,8 @@ public class PostingApplicantsController extends ApplicationController {
         applications.getItems().clear();
         pollApplicants();
         JobPosting jobPosting = jobPostings.getSelectionModel().getSelectedItem();
-        if (event.getClickCount() == 2 && (jobPosting.getStatus() == JobPosting.Status.FILLED)){
+        if (event.getClickCount() == 2 && ((jobPosting.getStatus() == JobPosting.Status.FILLED) ||
+                (jobPosting.getStatus() == JobPosting.Status.UNFILLED))){
             StringBuilder builder = new StringBuilder();
             for (Applicant hiredApplicant: jobPosting.getHireResult().getHired()){
                 builder.append(hiredApplicant.getRealName()).append("\n");
