@@ -32,6 +32,9 @@ public class ViewJobPostingController extends ApplicationController implements I
     @FXML
     private Label postStatus;
 
+    @FXML
+    private Label companyName;
+
     @Override
     void postInit(){
         super.postInit();
@@ -49,6 +52,7 @@ public class ViewJobPostingController extends ApplicationController implements I
         if (jobPosting != null) {
             JobPosting.Status status = jobPosting.getStatus();
             postStatus.setText(status.toString());
+            companyName.setText(jobPosting.getCompany().getName());
             description.setText(jobPosting.getDescription());
             openDays.setText(String.format(" %s to %s", jobPosting.getOpenDate().toLocalDate(),
                     jobPosting.getCloseDate().toLocalDate()));
