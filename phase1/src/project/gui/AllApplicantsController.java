@@ -43,7 +43,7 @@ public class AllApplicantsController extends ApplicationController{
     private void initializeApplicants(){
         HashMap<String, Applicant> applicants = getSystem().getApplicants();
         for (Applicant applicant: applicants.values()){
-            this.applicants.getItems().add(applicant.getRealName());
+            this.applicants.getItems().add(applicant.getUsername());
         }
     }
 
