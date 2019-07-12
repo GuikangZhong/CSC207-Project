@@ -48,7 +48,7 @@ public class ApplicantViewApplications extends ApplicationController {
             @Override
             public ListCell<Application> call(ListView<Application> p) {
 
-                ListCell<Application> cell = new ListCell<Application>() {
+                ListCell<Application> listCell = new ListCell<Application>() {
 
                     @Override
                     protected void updateItem(Application t, boolean bln) {
@@ -61,8 +61,7 @@ public class ApplicantViewApplications extends ApplicationController {
                     }
 
                 };
-
-                return cell;
+                return listCell;
             }
         });
         pollApplications();

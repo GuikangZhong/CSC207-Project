@@ -7,7 +7,7 @@ import project.interview.InterviewGroup;
 import project.user.Applicant;
 import project.user.Interviewer;
 
-public class CellFactoryFactory {
+class CellFactoryFactory {
     static Callback<ListView<Applicant>, ListCell<Applicant>>  getCellFactoryForApplicant(){
         return new Callback<ListView<Applicant>, ListCell<Applicant>>() {
 
