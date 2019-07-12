@@ -11,7 +11,6 @@ public class ApplicantHistory extends UserHistory implements JobPostingObserver 
 
     private List<Job> jobApplied;
     private LocalDateTime lastApplicationClosed;
-    private LocalDateTime closedDateBeforeWithdrawal;
     private HashMap<Job, Boolean> jobApplying;
 
     public ApplicantHistory(LocalDateTime now) {
@@ -19,7 +18,6 @@ public class ApplicantHistory extends UserHistory implements JobPostingObserver 
         jobApplied = new ArrayList<>();
         jobApplying = new HashMap<>();
         lastApplicationClosed = null;
-        closedDateBeforeWithdrawal = null;
     }
 
     public List<Job> getJobApplied() {
@@ -42,29 +40,19 @@ public class ApplicantHistory extends UserHistory implements JobPostingObserver 
     void addJobApplying(Job job) {
         jobApplied.remove(job);
         jobApplying.put(job, false);
-        closedDateBeforeWithdrawal = lastApplicationClosed;
         lastApplicationClosed = null;
     }
 
     void removeJobApplying(Job job) {
         jobApplying.remove(job);
-        if (jobApplying.isEmpty()){
-            lastApplicationClosed = null;
-            closedDateBeforeWithdrawal = null;
-        }
-        else if (allApplicationClosed() && lastApplicationClosed == null){
-            lastApplicationClosed = closedDateBeforeWithdrawal;
-            closedDateBeforeWithdrawal = null;
-        }
     }
 
     private boolean allApplicationClosed(){
-        return (!(jobApplying.values().contains(false)));
+        return ((!jobApplying.isEmpty()) && !(jobApplying.values().contains(false)));
     }
 
     @Override
     public void updateOnJobPostingClosure(JobPosting jobPosting) {
-//        lastApplicationClosed = jobPosting.getCloseDate();
         jobApplying.put(jobPosting.getJob(), true);
         if (allApplicationClosed()){
             lastApplicationClosed = jobPosting.getCloseDate();

@@ -55,17 +55,6 @@ public class Applicant
         return Collections.unmodifiableList(documents);
     }
 
-    public Document getDocument(String name) {
-        if (documents.size() != 0) {
-            for (Document document : documents) {
-                if (document.getName().equals(name)) {
-                    return document;
-                }
-            }
-        }
-        return null;
-    }
-
     public Optional<Application> getApplicationOf(String jobTitle) {
         return getApplications().stream().filter(application -> application.getJob().getTitle().equals(jobTitle)).findAny();
     }
@@ -151,7 +140,6 @@ public class Applicant
         ApplicantHistory history = getApplicantHistory();
         history.removeJobApplying(job);
         history.addJobApplied(job);
-
     }
 
 }
