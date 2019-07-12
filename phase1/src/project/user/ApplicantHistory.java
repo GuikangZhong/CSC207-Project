@@ -52,7 +52,7 @@ public class ApplicantHistory extends UserHistory implements JobPostingObserver 
             lastApplicationClosed = null;
             closedDateBeforeWithdrawal = null;
         }
-        if (allApplicationClosed() && lastApplicationClosed == null){
+        else if (allApplicationClosed() && lastApplicationClosed == null){
             lastApplicationClosed = closedDateBeforeWithdrawal;
             closedDateBeforeWithdrawal = null;
         }
