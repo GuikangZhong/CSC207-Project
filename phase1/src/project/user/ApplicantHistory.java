@@ -50,7 +50,8 @@ public class ApplicantHistory extends UserHistory implements JobPostingObserver 
 
     void removeJobApplying(Job job) {
         jobApplying.remove(job);
-        if (allApplicationClosed() && latestClosedDate != null) {
+        if ((allApplicationClosed() && latestClosedDate != null) &&
+                (lastApplicationClosed == null || lastApplicationClosed.isBefore(latestClosedDate))) {
             lastApplicationClosed = latestClosedDate;
         }
     }
@@ -62,6 +63,8 @@ public class ApplicantHistory extends UserHistory implements JobPostingObserver 
     @Override
     public void updateOnJobPostingClosure(JobPosting jobPosting) {
         jobApplying.put(jobPosting.getJob(), true);
+        if (latestClosedDate == null || latestClosedDate.isBefore(jobPosting.getCloseDate()))
+            latestClosedDate = jobPosting.getCloseDate();
         if (allApplicationClosed()) {
             if (lastApplicationClosed == null || lastApplicationClosed.isBefore(jobPosting.getCloseDate()))
                 lastApplicationClosed = jobPosting.getCloseDate();
