@@ -54,8 +54,9 @@ public class ApplicantHistory extends UserHistory implements JobPostingObserver 
     @Override
     public void updateOnJobPostingClosure(JobPosting jobPosting) {
         jobApplying.put(jobPosting.getJob(), true);
-        if (allApplicationClosed() && lastApplicationClosed.isBefore(jobPosting.getCloseDate())){
-            lastApplicationClosed = jobPosting.getCloseDate();
+        if (allApplicationClosed()){
+            if (lastApplicationClosed == null || lastApplicationClosed.isBefore(jobPosting.getCloseDate()))
+                lastApplicationClosed = jobPosting.getCloseDate();
         }
     }
 }
