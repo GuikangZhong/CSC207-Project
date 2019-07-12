@@ -2,7 +2,117 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="591d482d-6f65-4466-88a8-53d1ab9be688" name="Default Changelist" comment="working on login and signup page">
-      <change beforePath="$PROJECT_DIR$/src/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/application/Application.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/application/BasicRequirement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/application/CV.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/application/Company.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/application/CoverLetter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/application/Document.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/application/DocumentCreator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/application/HireResult.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/application/Job.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/application/JobPosting$Status.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/application/JobPosting.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/application/JobPostingManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/application/Requirement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/AddCompany.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/ApplicantViewApplications$1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/ApplicantViewApplications$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/ApplicantViewApplications.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/ApplicantViewApplications.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/ApplicantViewHistory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/ApplicantViewHistory.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/ApplicantViewJobPostings.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/ApplicantViewJobPostings.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/ApplicantViewOrUpdateDocument.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/ApplicantViewOrUpdateDocument.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/ApplicationController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/ApplicationInfo.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/ApplicationInfoController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/CellFactoryFactory$1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/CellFactoryFactory$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/CellFactoryFactory$2$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/CellFactoryFactory$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/CellFactoryFactory$3$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/CellFactoryFactory$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/CellFactoryFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/CellRefactor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/HRAssignInterviewGroups$1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/HRAssignInterviewGroups$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/HRAssignInterviewGroups$1SelectionException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/HRAssignInterviewGroups$1UISelectionStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/HRAssignInterviewGroups$Group.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/HRAssignInterviewGroups.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/HRAssignInterviewGroups.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/HRCreateJobPosting.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/HRCreateJobPosting.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/HRSeeApplicantsForJobPostings$1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/HRSeeApplicantsForJobPostings$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/HRSeeApplicantsForJobPostings$2$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/HRSeeApplicantsForJobPostings$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/HRSeeApplicantsForJobPostings.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/HRSeeApplicantsForJobPostings.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/HRSeeFinalCandidates$1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/HRSeeFinalCandidates$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/HRSeeFinalCandidates.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/HRSeeFinalCandidates.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/HRSeeScheduledInterviews$1$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/HRSeeScheduledInterviews$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/HRSeeScheduledInterviews.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/HRSeeScheduledInterviews.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/HRViewAllApplicants.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/HRViewAllApplicants.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/InterviewerSeeInterviewGroup.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/InterviewerSeeInterviewGroups.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/LoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/LoginPage.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/Main.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/MainWindow.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/Menu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/SceneSwitcher.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/SignUpController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/SignUpPage.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/SignUpSuccess.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/StaffSignUpController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/StaffSignUpPage.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/UserTypes.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/gui/UserTypes.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/interview/ApplicationStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/interview/InPersonRound.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/interview/Interview.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/interview/InterviewGroup.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/interview/InterviewGroupAssignmentStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/interview/InterviewManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/interview/InterviewSetup.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/interview/PhoneRound.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/interview/Round.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/observer/ApplicantObserver.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/observer/InterviewGroupObserver.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/observer/InterviewObserver.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/observer/InterviewResultObserver.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/observer/JobPostingObserver.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/observer/RoundObserver.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/observer/SystemObserver.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/system/MainSystem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/system/SystemClock.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/user/Applicant.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/user/ApplicantHistory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/user/ApplicantManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/user/HR.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/user/HRManager$DefaultSelectionStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/user/HRManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/user/HRSelectionStrategy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/user/Interviewer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/user/InterviewerManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/user/User$Type.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/user/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/user/UserHistory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/user/UserManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/utils/Logging$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/phase1/project/utils/Logging.class" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -77,7 +187,7 @@
         <entry file="file://$PROJECT_DIR$/src/project/gui/ApplicantViewHistory.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="297">
-              <caret line="61" column="61" lean-forward="true" selection-start-line="61" selection-start-column="61" selection-end-line="61" selection-end-column="61" />
+              <caret line="61" column="61" selection-start-line="61" selection-start-column="61" selection-end-line="61" selection-end-column="61" />
             </state>
           </provider>
         </entry>
@@ -372,7 +482,7 @@
     <frame x="-7" y="-7" width="1295" height="735" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49753696" visible="true" weight="0.22473727" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49753696" visible="true" weight="0.22473727" />
       <window_info id="Structure" order="1" sideWeight="0.50246304" side_tool="true" weight="0.2586904" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -390,8 +500,8 @@
       <window_info anchor="bottom" id="TODO" order="8" weight="0.3283582" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5012126" side_tool="true" weight="0.32669982" />
       <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.4989339" weight="0.32669982" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.4987874" weight="0.65008295" />
-      <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.49946696" weight="0.57284766" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.4987874" visible="true" weight="0.7711443" />
+      <window_info anchor="bottom" id="Version Control" order="12" sideWeight="0.49946696" weight="0.5721393" />
       <window_info anchor="bottom" id="Dependency Viewer" order="13" weight="0.6849088" />
       <window_info anchor="bottom" id="Inspection Results" order="14" weight="0.69983417" />
       <window_info anchor="right" id="Database" order="0" />
@@ -873,7 +983,7 @@
     <entry file="file://$PROJECT_DIR$/src/project/gui/ApplicantViewHistory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
-          <caret line="61" column="61" lean-forward="true" selection-start-line="61" selection-start-column="61" selection-end-line="61" selection-end-column="61" />
+          <caret line="61" column="61" selection-start-line="61" selection-start-column="61" selection-end-line="61" selection-end-column="61" />
         </state>
       </provider>
     </entry>
