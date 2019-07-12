@@ -55,7 +55,7 @@ public class ApplicantHistory extends UserHistory implements JobPostingObserver 
     }
 
     private boolean allApplicationClosed(){
-        return ((!jobApplying.isEmpty()) && !(jobApplying.values().contains(false)));
+        return (!(jobApplying.values().contains(false)));
     }
 
     @Override
