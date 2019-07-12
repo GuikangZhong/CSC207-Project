@@ -43,10 +43,6 @@ public abstract class Round implements Serializable, InterviewGroupObserver {
     }
 
 
-    public int getNumber() {
-        return number;
-    }
-
     void setGroups(List<InterviewGroup> groups) {
         if(groups == null){
             throw new RuntimeException("You assigned a null");
@@ -65,14 +61,7 @@ public abstract class Round implements Serializable, InterviewGroupObserver {
         this.groups = groups;
     }
 
-    public List<InterviewGroup> getGroups() {
-        if (!assigned()) {
-            throw new RuntimeException("You must assigned the group first!!");
-        }
-        return groups;
-    }
-
-    public boolean isAllGroupsSubmitted() {
+    boolean isAllGroupsSubmitted() {
         for (InterviewGroup group : groups) {
             if (!group.isSubmitted())
                 return false;
@@ -94,7 +83,7 @@ public abstract class Round implements Serializable, InterviewGroupObserver {
         }
     }
 
-    public List<Applicant> getApplicantsPassed() {
+    List<Applicant> getApplicantsPassed() {
         List<Applicant> names = new ArrayList<>();
         for (InterviewGroup group : groups) {
             names.addAll(group.getApplicantsPassed());

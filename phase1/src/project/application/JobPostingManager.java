@@ -4,15 +4,12 @@ import project.interview.Interview;
 import project.observer.InterviewObserver;
 import project.observer.SystemObserver;
 import project.system.MainSystem;
-import project.system.SystemClock;
 import project.user.Applicant;
 import project.utils.Logging;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.logging.Logger;
 
 public class JobPostingManager implements InterviewObserver, Serializable, SystemObserver {

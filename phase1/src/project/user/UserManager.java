@@ -11,7 +11,7 @@ abstract public class UserManager<T extends User> implements Serializable {
     HashMap<String, T> users;
     private MainSystem system;
 
-    public UserManager(MainSystem system) {
+    UserManager(MainSystem system) {
         this.system = system;
         users = new HashMap<>();
     }

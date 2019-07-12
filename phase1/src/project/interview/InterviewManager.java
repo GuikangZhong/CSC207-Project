@@ -12,10 +12,6 @@ public class InterviewManager implements Serializable {
         interviews = new HashMap<>();
     }
 
-    public Interview getInterview(String jobTitle) {
-        return interviews.get(jobTitle);
-    }
-
     public void addInterview(String jobTitle, Interview interview) {
         interviews.put(jobTitle, interview);
     }

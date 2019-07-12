@@ -3,7 +3,6 @@ package project.user;
 import project.application.JobPosting;
 
 import java.io.Serializable;
-import java.util.Collections;
 import java.util.Collection;
 import java.util.Optional;
 
