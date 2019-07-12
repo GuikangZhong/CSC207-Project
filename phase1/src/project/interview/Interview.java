@@ -84,7 +84,7 @@ public class Interview implements Serializable, RoundObserver, ApplicantObserver
      * this function is called when the max round is finished, there are still a few applicants left
      * @param applicants
      */
-    public void hireFromRecommendation(List<Applicant> applicants) {
+    public void hireFromFinalCandidates(List<Applicant> applicants) {
         if (hasNextRound()) {
             throw new RuntimeException("You shouldn't use recommendation lst now");
         }
@@ -121,7 +121,7 @@ public class Interview implements Serializable, RoundObserver, ApplicantObserver
         getRoundInProgress().addObserver(this);
     }
 
-    void filterPassed() {
+    private void filterPassed() {
         applicants = getRoundInProgress().getApplicantsPassed();
     }
 
@@ -149,7 +149,7 @@ public class Interview implements Serializable, RoundObserver, ApplicantObserver
         return s.toString();
     }
 
-    void updateOnRoundFinished() {
+    private void updateOnRoundFinished() {
         if (applicants.size() <= numberNeeded) {
             notifyHireResult();
         } else if (hasNextRound()) {

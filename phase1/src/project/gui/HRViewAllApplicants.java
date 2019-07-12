@@ -30,7 +30,7 @@ public class HRViewAllApplicants extends ApplicationController{
 
     @FXML
     private TextArea documentContent;
-    
+
     private Applicant applicant;
 
 

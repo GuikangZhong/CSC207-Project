@@ -7,16 +7,12 @@ import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.util.Callback;
-import project.application.Application;
-import project.application.JobPosting;
 import project.interview.Interview;
 import project.user.Applicant;
 import project.user.HR;
 import project.user.User;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class HRSeeFinalCandidates extends ApplicationController {
@@ -60,7 +56,7 @@ public class HRSeeFinalCandidates extends ApplicationController {
     }
 
     private void pollInterviews() {
-        Map<String, Interview> interviewMap = ((HR) user).getRecommendationLists();
+        Map<String, Interview> interviewMap = ((HR) user).getFinalCandidates();
         if (interviewMap != null) {
             for (Interview interview : interviewMap.values()) {
                 interviewList.getItems().add(interview);
@@ -99,7 +95,7 @@ public class HRSeeFinalCandidates extends ApplicationController {
     public void hireButton(ActionEvent event) {
         Interview interview = interviewList.getSelectionModel().getSelectedItem();
         if (selectedApplicants.getItems().size() == interview.getNumberNeeded()) {
-            interview.hireFromRecommendation(selectedApplicants.getItems());
+            interview.hireFromFinalCandidates(selectedApplicants.getItems());
             for (Applicant applicant: applicantList.getItems()){
                 applicant.moveToApplied(interview.getJob());
             }

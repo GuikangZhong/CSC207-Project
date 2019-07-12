@@ -12,7 +12,7 @@ import java.util.logging.Logger;
 public class HR extends User {
     private static final long serialVersionUID = 6752053563376828029L;
 
-    private Map<String, Interview> recommendationLists;
+    private Map<String, Interview> finalCandidates;
     private List<Interview> interviewsRoundFinished;
     private List<Interview> interviewsToBeScheduled;
     static private Logger logger = Logging.getLogger();
@@ -23,7 +23,7 @@ public class HR extends User {
               String realName,
               String company) {
         super(history, username, password, realName, company);
-        recommendationLists = new HashMap<>();
+        finalCandidates = new HashMap<>();
         interviewsRoundFinished = new ArrayList<>();
         interviewsToBeScheduled = new ArrayList<>();
     }
@@ -42,12 +42,12 @@ public class HR extends User {
         return Type.HR;
     }
 
-    public Map<String, Interview> getRecommendationLists() {
-        return recommendationLists;
+    public Map<String, Interview> getFinalCandidates() {
+        return finalCandidates;
     }
 
-    public void addRecommendationList(Interview interview) {
-        recommendationLists.put(interview.getJob().getTitle(), interview);
+    public void addFinalCandidates(Interview interview) {
+        finalCandidates.put(interview.getJob().getTitle(), interview);
     }
 
     void addInterviewRoundFinished(Interview interview) {
