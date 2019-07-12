@@ -1,27 +1,22 @@
 package project.gui;
 
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
-import javafx.stage.Stage;
 import project.application.CV;
 import project.application.CoverLetter;
 import project.application.Document;
+import project.application.DocumentCreator;
 import project.user.Applicant;
 
 
 import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.net.URL;
 import java.util.List;
-import java.util.ResourceBundle;
 
 public class ApplicantViewOrUpdateDocument extends ApplicationController implements Initializable {
     @FXML
@@ -67,28 +62,25 @@ public class ApplicantViewOrUpdateDocument extends ApplicationController impleme
     }
 
     public void uploadCoverLetter(ActionEvent event) throws IOException {
-        fc.setInitialDirectory(new File("."));
-        fc.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Text Document", "*.txt"));
-        File selectedFile = fc.showOpenDialog(null);
-        if (selectedFile != null) {
-            CoverLetter coverLetter = CoverLetter.createByFileName(selectedFile.getName(), selectedFile.getAbsolutePath(), getSystem().now());
-            if (!((Applicant) getUser()).addDocument(coverLetter)) {
-                showModal("Cannot add document");
-            }
-            pollDocuments();
-        } else {
-            System.out.println("File not selected");
-        }
+        uploadHelper(new CoverLetter().type());
     }
 
     public void uploadCV(ActionEvent event) throws IOException {
+        uploadHelper(new CV().type());
+    }
+
+    private void uploadHelper(String type) throws IOException{
+        Document document;
         fc.setInitialDirectory(new File("."));
         fc.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Text Document", "*.txt"));
         File selectedFile = fc.showOpenDialog(null);
         if (selectedFile != null) {
-            CV cv = CV.createByFileName(selectedFile.getName(), selectedFile.getAbsolutePath(), getSystem().now());
-
-            if (!((Applicant) getUser()).addDocument(cv)) {
+            if (type.equals("CV")){
+                document = DocumentCreator.createByFileName(selectedFile.getName(), selectedFile.getAbsolutePath(), getSystem().now(), "CV");
+            } else {
+                document = DocumentCreator.createByFileName(selectedFile.getName(), selectedFile.getAbsolutePath(), getSystem().now(), "CoverLetter");
+            }
+            if (!((Applicant) getUser()).addDocument(document)) {
                 showModal("Cannot add document");
             }
             pollDocuments();

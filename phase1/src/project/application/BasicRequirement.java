@@ -7,8 +7,8 @@ public class BasicRequirement implements Requirement {
     public boolean satisfies(Application application) {
         int cnt = 0;
         for (Document document : application.getDocument()) {
-            if (document.type().equals(CV.createEmpty().type())
-                    || document.type().equals(CoverLetter.createEmpty().type())) {
+            if (document.type().equals(new CV().type())
+                    || document.type().equals(new CoverLetter().type())) {
                 cnt++;
             }
         }

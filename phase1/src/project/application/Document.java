@@ -9,7 +9,9 @@ public abstract class Document implements Serializable {
     protected String content;
     protected LocalDateTime createdDate;
 
-    Document(String name, String content, LocalDateTime date) {
+    public Document(){}
+
+    public Document(String name, String content, LocalDateTime date) {
         this.name = name;
         this.content = content;
         this.createdDate = date;
@@ -17,10 +19,6 @@ public abstract class Document implements Serializable {
 
     public String getContent() {
         return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
     }
 
     public String getName() {
