@@ -145,11 +145,11 @@ public class JobPosting implements Serializable, SystemObserver {
         }
     }
 
-    public boolean removeApplication(Application application) {
-        return applications.remove(application);
+    public void removeApplication(Application application) {
+        applications.remove(application);
     }
 
-    public void addHired(Applicant applicant) {
+    void addHired(Applicant applicant) {
         if (status == Status.FILLED) {
             throw new RuntimeException("Cannot hire more applicants");
         }

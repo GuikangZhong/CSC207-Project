@@ -50,7 +50,7 @@ public class ApplicantHistory extends UserHistory implements JobPostingObserver 
 
     void removeJobApplying(Job job) {
         jobApplying.remove(job);
-        if (allApplicationClosed()) {
+        if (allApplicationClosed() && lastApplicationClosed == null) {
             lastApplicationClosed = latestClosedDate;
         }
     }
