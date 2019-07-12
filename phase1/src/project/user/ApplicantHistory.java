@@ -11,6 +11,7 @@ public class ApplicantHistory extends UserHistory implements JobPostingObserver 
 
     private List<Job> jobApplied;
     private LocalDateTime lastApplicationClosed;
+    private LocalDateTime latestClosedDate;
     private HashMap<Job, Boolean> jobApplying;
 
     public ApplicantHistory(LocalDateTime now) {
@@ -18,6 +19,7 @@ public class ApplicantHistory extends UserHistory implements JobPostingObserver 
         jobApplied = new ArrayList<>();
         jobApplying = new HashMap<>();
         lastApplicationClosed = null;
+        latestClosedDate = null;
     }
 
     public List<Job> getJobApplied() {
@@ -40,11 +42,16 @@ public class ApplicantHistory extends UserHistory implements JobPostingObserver 
     void addJobApplying(Job job) {
         jobApplied.remove(job);
         jobApplying.put(job, false);
+        latestClosedDate = lastApplicationClosed;
         lastApplicationClosed = null;
+
     }
 
     void removeJobApplying(Job job) {
         jobApplying.remove(job);
+        if (allApplicationClosed()){
+            lastApplicationClosed = latestClosedDate;
+        }
     }
 
     private boolean allApplicationClosed(){
