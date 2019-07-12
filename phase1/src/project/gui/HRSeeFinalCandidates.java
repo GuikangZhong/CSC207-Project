@@ -94,14 +94,14 @@ public class HRSeeFinalCandidates extends ApplicationController {
 
     public void hireButton(ActionEvent event) {
         Interview interview = interviewList.getSelectionModel().getSelectedItem();
-        if (selectedApplicants.getItems().size() == interview.getNumberNeeded()) {
+        if (selectedApplicants.getItems().size() <= interview.getNumberNeeded()) {
             interview.hireFromFinalCandidates(selectedApplicants.getItems());
             for (Applicant applicant: applicantList.getItems()){
                 applicant.moveToApplied(interview.getJob());
             }
             showModal("Great", "Hired successfully");
         } else {
-            showModal("Bad", "You have selected too many or too few applicants");
+            showModal("Bad", "You have selected too many applicants");
         }
     }
 
