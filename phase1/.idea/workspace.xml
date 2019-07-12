@@ -2,120 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="591d482d-6f65-4466-88a8-53d1ab9be688" name="Default Changelist" comment="working on login and signup page">
-      <change afterPath="$PROJECT_DIR$/log.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/application/Application.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/application/BasicRequirement.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/application/CV.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/application/Company.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/application/CoverLetter.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/application/Document.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/application/DocumentCreator.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/application/HireResult.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/application/Job.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/application/JobPosting$Status.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/application/JobPosting.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/application/JobPostingManager.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/application/Requirement.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/AddCompany.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/ApplicantViewApplications$1$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/ApplicantViewApplications$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/ApplicantViewApplications.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/ApplicantViewApplications.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/ApplicantViewHistory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/ApplicantViewHistory.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/ApplicantViewJobPostings.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/ApplicantViewJobPostings.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/ApplicantViewOrUpdateDocument.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/ApplicantViewOrUpdateDocument.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/ApplicationController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/ApplicationInfo.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/ApplicationInfoController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/CellFactoryFactory$1$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/CellFactoryFactory$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/CellFactoryFactory$2$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/CellFactoryFactory$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/CellFactoryFactory$3$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/CellFactoryFactory$3.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/CellFactoryFactory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/CellRefactor.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/HRAssignInterviewGroups$1$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/HRAssignInterviewGroups$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/HRAssignInterviewGroups$1SelectionException.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/HRAssignInterviewGroups$1UISelectionStrategy.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/HRAssignInterviewGroups$Group.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/HRAssignInterviewGroups.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/HRAssignInterviewGroups.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/HRCreateJobPosting.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/HRCreateJobPosting.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/HRSeeApplicantsForJobPostings$1$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/HRSeeApplicantsForJobPostings$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/HRSeeApplicantsForJobPostings$2$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/HRSeeApplicantsForJobPostings$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/HRSeeApplicantsForJobPostings.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/HRSeeApplicantsForJobPostings.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/HRSeeFinalCandidates$1$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/HRSeeFinalCandidates$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/HRSeeFinalCandidates.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/HRSeeFinalCandidates.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/HRSeeScheduledInterviews$1$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/HRSeeScheduledInterviews$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/HRSeeScheduledInterviews.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/HRSeeScheduledInterviews.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/HRViewAllApplicants.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/HRViewAllApplicants.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/InterviewerSeeInterviewGroup.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/InterviewerSeeInterviewGroups.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/LoginController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/LoginPage.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/Main.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/Main.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/MainWindow.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/Menu.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/SceneSwitcher.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/SignUpController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/SignUpPage.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/SignUpSuccess.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/StaffSignUpController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/StaffSignUpPage.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/UserTypes.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/gui/UserTypes.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/interview/ApplicationStatus.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/interview/InPersonRound.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/interview/Interview.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/interview/InterviewGroup.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/interview/InterviewGroupAssignmentStrategy.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/interview/InterviewManager.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/interview/InterviewSetup.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/interview/PhoneRound.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/interview/Round.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/observer/ApplicantObserver.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/observer/InterviewGroupObserver.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/observer/InterviewObserver.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/observer/InterviewResultObserver.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/observer/JobPostingObserver.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/observer/RoundObserver.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/observer/SystemObserver.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/system/MainSystem.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/system/SystemClock.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/user/Applicant.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/user/ApplicantHistory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/user/ApplicantManager.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/user/HR.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/user/HRManager$DefaultSelectionStrategy.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/user/HRManager.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/user/HRSelectionStrategy.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/user/Interviewer.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/user/InterviewerManager.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/user/User$Type.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/user/User.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/user/UserHistory.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/user/UserManager.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/utils/Logging$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/phase1/project/utils/Logging.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/gui/ApplicantViewHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/ApplicantViewHistory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/system/MainSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/system/MainSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/src/.gitignore" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -185,7 +72,7 @@
         <entry file="file://$PROJECT_DIR$/src/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="32">
-              <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
+              <caret line="2" column="8" lean-forward="true" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -486,7 +373,7 @@
     <frame x="-7" y="-7" width="1295" height="735" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49753696" visible="true" weight="0.22473727" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49753696" visible="true" weight="0.22473727" />
       <window_info id="Structure" order="1" sideWeight="0.50246304" side_tool="true" weight="0.2586904" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -994,7 +881,7 @@
     <entry file="file://$PROJECT_DIR$/src/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="32">
-          <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
+          <caret line="2" column="8" lean-forward="true" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
         </state>
       </provider>
     </entry>
