@@ -38,28 +38,30 @@ public class ApplicantViewHistory extends ApplicationController {
     @Override
     void postInit() {
         super.postInit();
-        Applicant applicant = (Applicant)getUser();
+        Applicant applicant = (Applicant) getUser();
         ApplicantHistory history = applicant.getApplicantHistory();
         appliedJobs.getItems().clear();
         applyingJobs.getItems().clear();
-        for(Job job:history.getJobApplied()){
+        for (Job job : history.getJobApplied()) {
             appliedJobs.getItems().add(job.getTitle());
         }
-        for(Job job:history.getJobApplying()){
+        for (Job job : history.getJobApplying()) {
             applyingJobs.getItems().add(job.getTitle());
         }
         createDate.setText(history.getDateCreated().toString());
         username.setText(applicant.getUsername());
         realname.setText(applicant.getRealName());
-        if (history.getLastApplicationClosed() == null){
+        if (history.getLastApplicationClosed() == null) {
             lastApplicationClosed.setText("None");
-        }
-        else{
+        } else {
             LocalDateTime systemTime = getSystem().now();
             LocalDateTime closedTime = history.getLastApplicationClosed();
             LocalDate systemDate = systemTime.toLocalDate();
             LocalDate closedDate = closedTime.toLocalDate();
-            lastApplicationClosed.setText(Long.toString((DAYS.between(closedDate, systemDate))));
+            lastApplicationClosed.setText(
+                    String.format("%s (%d days)", closedDate,
+                            DAYS.between(closedDate,systemDate))
+            );
         }
     }
 
