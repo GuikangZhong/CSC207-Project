@@ -3,6 +3,7 @@ package project.user;
 import project.application.Job;
 import project.application.JobPosting;
 import project.observer.JobPostingObserver;
+
 import java.time.LocalDateTime;
 import java.util.*;
 
@@ -35,7 +36,7 @@ public class ApplicantHistory extends UserHistory implements JobPostingObserver 
     }
 
     void addJobApplied(Job job) {
-        if(!jobApplied.contains(job))
+        if (!jobApplied.contains(job))
             jobApplied.add(job);
     }
 
@@ -49,19 +50,19 @@ public class ApplicantHistory extends UserHistory implements JobPostingObserver 
 
     void removeJobApplying(Job job) {
         jobApplying.remove(job);
-        if (allApplicationClosed()){
+        if (allApplicationClosed()) {
             lastApplicationClosed = latestClosedDate;
         }
     }
 
-    private boolean allApplicationClosed(){
-        return (!(jobApplying.values().contains(false)));
+    private boolean allApplicationClosed() {
+        return ((jobApplying.isEmpty()) || !(jobApplying.values().contains(false)));
     }
 
     @Override
     public void updateOnJobPostingClosure(JobPosting jobPosting) {
         jobApplying.put(jobPosting.getJob(), true);
-        if (allApplicationClosed()){
+        if (allApplicationClosed()) {
             if (lastApplicationClosed == null || lastApplicationClosed.isBefore(jobPosting.getCloseDate()))
                 lastApplicationClosed = jobPosting.getCloseDate();
         }
