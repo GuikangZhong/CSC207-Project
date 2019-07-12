@@ -6,6 +6,10 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This class serves only for display purpose
+ */
+
 public class ApplicationStatus implements Serializable, InterviewGroupObserver {
     private static final long serialVersionUID = 8468246521663599935L;
     private List<String> finishedRound;

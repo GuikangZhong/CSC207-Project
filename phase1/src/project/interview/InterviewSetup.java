@@ -6,6 +6,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Holds a setup of a interview.
+ * That is it contains all possible rounds.
+ */
 public class InterviewSetup implements Serializable {
     private static final long serialVersionUID = -1939537566544034408L;
     private List<Round> rounds;
@@ -16,6 +20,10 @@ public class InterviewSetup implements Serializable {
         record = new HashMap<>();
     }
 
+    /**
+     * @param round
+     * @return if given round can be added to the setup
+     */
     public boolean addRound(Round round) {
         if (!record.containsKey(round.roundType())) {
             record.put(round.roundType(), 0);

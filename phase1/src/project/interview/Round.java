@@ -43,6 +43,12 @@ public abstract class Round implements Serializable, InterviewGroupObserver {
     }
 
 
+    /**
+     * Set the round with given group
+     * Can be called only once
+     * Further calling attempts results in RuntimeException
+     * @param groups
+     */
     void setGroups(List<InterviewGroup> groups) {
         if(groups == null){
             throw new RuntimeException("You assigned a null");
