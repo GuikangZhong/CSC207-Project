@@ -17,7 +17,6 @@ import project.application.JobPosting;
 import project.user.Applicant;
 
 import java.io.IOException;
-import java.util.List;
 
 public class ApplicantViewApplications extends ApplicationController {
     @FXML

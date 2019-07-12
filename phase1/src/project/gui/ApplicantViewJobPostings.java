@@ -12,12 +12,7 @@ import project.user.Applicant;
 import project.utils.Logging;
 
 import java.io.IOException;
-import java.net.URL;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
 import java.util.List;
-import java.util.ResourceBundle;
 import java.util.logging.Logger;
 
 public class ApplicantViewJobPostings extends ApplicationController implements Initializable{

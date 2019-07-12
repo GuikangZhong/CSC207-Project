@@ -126,7 +126,8 @@ public class HRSeeApplicantsForJobPostings extends ApplicationController {
         if (event.getClickCount() == 2 && ((jobPosting.getStatus() == JobPosting.Status.FILLED))){
             StringBuilder builder = new StringBuilder();
             for (Applicant hiredApplicant: jobPosting.getHireResult().getHired()){
-                builder.append(hiredApplicant.getRealName()).append("\n");
+                builder.append(hiredApplicant.getRealName()).append(" (").
+                        append(hiredApplicant.getUsername()).append(")").append("\n");
             }
             showModal("Hired Applicant(s)", builder.toString());
         }

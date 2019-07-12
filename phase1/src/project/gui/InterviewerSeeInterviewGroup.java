@@ -1,7 +1,5 @@
 package project.gui;
 
-import com.sun.org.apache.xerces.internal.impl.xs.SchemaNamespaceSupport;
-import javafx.beans.binding.Bindings;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -11,13 +9,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.util.Callback;
 import project.application.*;
-import project.interview.Interview;
 import project.interview.InterviewGroup;
 import project.user.*;
 
-import javax.naming.Context;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;

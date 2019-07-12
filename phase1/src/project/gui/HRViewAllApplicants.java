@@ -1,13 +1,9 @@
 package project.gui;
 
 import javafx.event.Event;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
-import javafx.util.Callback;
-import project.application.Application;
 import project.application.Document;
 import project.application.Job;
 import project.user.*;

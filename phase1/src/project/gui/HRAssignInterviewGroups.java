@@ -2,25 +2,19 @@ package project.gui;
 
 import javafx.event.ActionEvent;
 import javafx.event.Event;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.input.*;
 import javafx.util.Callback;
-import project.application.Application;
 import project.application.Company;
-import project.application.JobPosting;
-import project.application.JobPostingManager;
 import project.interview.Interview;
 import project.interview.InterviewGroup;
 import project.interview.InterviewGroupAssignmentStrategy;
-import project.interview.InterviewSetup;
 import project.user.*;
 
 import java.io.IOException;
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class HRAssignInterviewGroups extends ApplicationController {
 

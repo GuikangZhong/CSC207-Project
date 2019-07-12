@@ -1,19 +1,8 @@
 package project.gui;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.geometry.Pos;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.layout.VBox;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
-import project.user.Applicant;
-import project.user.HR;
-import project.user.Interviewer;
 import project.user.User;
 
 import java.io.IOException;
@@ -58,7 +47,7 @@ public class LoginController extends ApplicationController{
                         .addOption("Job Postings", "HRSeeApplicantsForJobPostings.fxml")
                         .addOption("Create Job Posting", "HRCreateJobPosting.fxml")
                         .addOption("Interview Assignment", "HRSeeScheduledInterviews.fxml")
-                        .addOption("Recommendation list", "HRSeeFinalCandidates.fxml");
+                        .addOption("Final Candidates", "HRSeeFinalCandidates.fxml");
                 setMenu(menu);
                 SceneSwitcher.switchScene(this, event, "HRViewAllApplicants.fxml");
             } else if (user.getType() == User.Type.INTERVIEWER) {

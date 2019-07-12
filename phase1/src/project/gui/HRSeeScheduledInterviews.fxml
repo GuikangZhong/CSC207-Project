@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
@@ -19,7 +18,7 @@
         <AnchorPane prefHeight="465.0" prefWidth="461.0" BorderPane.alignment="CENTER">
             <children>
                 <Label layoutX="74.0" layoutY="23.0" text="New Interviews" />
-                <Label layoutX="215.0" layoutY="23.0" text="Round Finished" />
+                <Label layoutX="215.0" layoutY="23.0" text="In Progress" />
                 <Button fx:id="assignment" layoutX="414.0" layoutY="221.0" mnemonicParsing="false" onAction="#assignmentButton" text="Assign Interview" />
                 <ListView fx:id="newInterviews" layoutX="44.0" layoutY="57.0" onMouseClicked="#newInterviewsClicked" prefHeight="350.0" prefWidth="141.0" />
                 <ListView fx:id="interviewsRoundFinished" layoutX="185.0" layoutY="57.0" onMouseClicked="#roundFinishedClicked" prefHeight="350.0" prefWidth="141.0" />

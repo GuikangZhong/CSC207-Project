@@ -1,17 +1,12 @@
 package project.gui;
 
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.MouseEvent;
 import project.application.Application;
 import project.application.Document;
-
-import javax.print.Doc;
-import java.net.URL;
-import java.util.ResourceBundle;
 
 public class ApplicationInfoController {
     @FXML

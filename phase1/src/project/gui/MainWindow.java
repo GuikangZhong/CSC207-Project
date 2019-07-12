@@ -6,7 +6,6 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -14,14 +13,9 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import project.utils.Logging;
 
-import java.awt.event.MouseEvent;
 import java.io.IOException;
-import java.net.URL;
-import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.util.ResourceBundle;
 import java.util.logging.Logger;
 
 public class MainWindow extends ApplicationController implements Initializable {
@@ -89,7 +83,6 @@ public class MainWindow extends ApplicationController implements Initializable {
         layout.getChildren().addAll(hBox, closeButton);
         layout.setAlignment(Pos.CENTER);
 
-        //Display window and wait for it to be closed before returning
         Scene scene = new Scene(layout);
         window.setScene(scene);
         window.showAndWait();

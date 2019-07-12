@@ -71,7 +71,6 @@ public class CellFactoryFactory {
                     protected void updateItem(InterviewGroup t, boolean bln) {
                         super.updateItem(t, bln);
                         if (t != null) {
-//                            setText(t.getInterview().getJobPosting().getJobTitle());
                             setText(t.getJob().getTitle());
                         }else{
                             setText("");
