@@ -47,8 +47,11 @@ public class ApplicantHistory extends UserHistory implements JobPostingObserver 
     }
 
     void removeJobApplying(Job job) {
-//        jobApplying.removeIf(e -> e.getTitle().equals(name));
         jobApplying.remove(job);
+        if (jobApplying.isEmpty()){
+            lastApplicationClosed = null;
+            closedDateBeforeWithdrawal = null;
+        }
         if (allApplicationClosed() && lastApplicationClosed == null){
             lastApplicationClosed = closedDateBeforeWithdrawal;
             closedDateBeforeWithdrawal = null;

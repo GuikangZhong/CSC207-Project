@@ -176,7 +176,7 @@ public class Interview implements Serializable, RoundObserver, ApplicantObserver
     public void updateOnApplicationWithdraw(Application application) {
         if(application.getJob() != getJob())return;
         if (!applicants.remove(application.getApplicant())) {
-            throw new RuntimeException("You have removed someone doesn't exists!!!");
+            throw new RuntimeException("You have removed someone doesn't exist!!!");
         }
         getRoundInProgress().withdraw(application.getApplicant());
         if (applicants.size() <= numberNeeded) {
