@@ -1,28 +1,22 @@
 package project.gui;
 
-import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.BorderPane;
 import javafx.util.Callback;
 import project.application.Application;
 import project.application.Company;
 import project.application.JobPosting;
 import project.application.JobPostingManager;
-import project.interview.Interview;
-import project.interview.InterviewGroup;
 import project.user.Applicant;
 import project.user.HR;
 
 import java.io.IOException;
-import java.util.List;
 
 public class HRSeeApplicantsForJobPostings extends ApplicationController {
     @FXML
@@ -108,15 +102,12 @@ public class HRSeeApplicantsForJobPostings extends ApplicationController {
     }
 
     public void applicationClicked(MouseEvent event) {
-//        final Applicant applicant = applicantList.get(index);
-//        final InterviewGroup interviewGroup = interviewGroups.getSelectionModel().getSelectedItem();
         if (event.getClickCount() == 2) {
             showModal(stage -> {
                 try {
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("ApplicationInfo.fxml"));
                     AnchorPane pane = (AnchorPane) loader.load();
                     ApplicationInfoController controller = loader.<ApplicationInfoController>getController();
-//                Application application = applicant.getApplicationOf(interviewGroup.getJob().getTitle()).get();
                     Application application = applications.getSelectionModel().getSelectedItem();
                     controller.setApplication(application);
                     Scene scene = new Scene(pane);
@@ -132,8 +123,7 @@ public class HRSeeApplicantsForJobPostings extends ApplicationController {
         applications.getItems().clear();
         pollApplicants();
         JobPosting jobPosting = jobPostings.getSelectionModel().getSelectedItem();
-        if (event.getClickCount() == 2 && ((jobPosting.getStatus() == JobPosting.Status.FILLED) ||
-                (jobPosting.getStatus() == JobPosting.Status.UNFILLED))){
+        if (event.getClickCount() == 2 && ((jobPosting.getStatus() == JobPosting.Status.FILLED))){
             StringBuilder builder = new StringBuilder();
             for (Applicant hiredApplicant: jobPosting.getHireResult().getHired()){
                 builder.append(hiredApplicant.getRealName()).append("\n");
