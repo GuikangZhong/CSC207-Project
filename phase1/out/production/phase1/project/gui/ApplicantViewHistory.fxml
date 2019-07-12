@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="472.0" prefWidth="704.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.gui.ApplicantViewHistory">
+  <center>
+    <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <children>
+        <Pane layoutX="23.0" layoutY="72.0" prefHeight="363.0" prefWidth="447.0">
+          <children>
+            <ListView fx:id="applyingJobs" layoutX="24.0" layoutY="32.0" prefHeight="317.0" prefWidth="191.0" />
+            <ListView fx:id="appliedJobs" layoutX="212.0" layoutY="32.0" prefHeight="317.0" prefWidth="216.0" />
+            <Label layoutX="24.0" layoutY="9.0" prefWidth="139.0" text="Applying" />
+            <Label layoutX="252.0" layoutY="9.0" text="Applied" />
+          </children>
+        </Pane>
+        <Label layoutX="47.0" layoutY="55.0" prefHeight="17.0" prefWidth="158.0" text="Last application closed: " />
+        <Label fx:id="lastApplicationClosed" layoutX="276.0" layoutY="55.0" prefHeight="17.0" prefWidth="172.0" />
+        <HBox layoutX="47.0" prefHeight="20.0" prefWidth="458.0">
+          <children>
+            <Label fx:id="username" prefHeight="17.0" prefWidth="68.0" />
+            <Label fx:id="realname" alignment="BASELINE_RIGHT" prefHeight="17.0" prefWidth="246.0" textAlignment="RIGHT" />
+          </children>
+        </HBox>
+        <HBox layoutX="47.0" layoutY="29.0" prefHeight="20.0" prefWidth="458.0">
+          <children>
+            <HBox prefHeight="20.0" prefWidth="458.0">
+              <children>
+                <Label prefHeight="17.0" prefWidth="102.0" text="Created On: " />
+                <Label fx:id="createDate" alignment="BASELINE_RIGHT" prefHeight="17.0" prefWidth="293.0" textAlignment="RIGHT" />
+              </children>
+            </HBox>
+          </children>
+        </HBox>
+      </children>
+    </AnchorPane>
+  </center>
+  <left>
+    <TreeView fx:id="options" onContextMenuRequested="#selectItems" onMouseClicked="#selectItems" prefHeight="400.0" prefWidth="139.0" BorderPane.alignment="CENTER" />
+  </left>
+  <top>
+    <AnchorPane prefHeight="23.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <children>
+        <Label prefHeight="27.0" prefWidth="111.0" text="Applicant" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="475.0" AnchorPane.topAnchor="1.0">
+          <font>
+            <Font size="18.0" />
+          </font>
+        </Label>
+        <Button alignment="CENTER" mnemonicParsing="false" onAction="#exit" text="Sign Out" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="2.0" />
+      </children>
+      <effect>
+        <ColorAdjust />
+      </effect>
+    </AnchorPane>
+  </top>
+</BorderPane>

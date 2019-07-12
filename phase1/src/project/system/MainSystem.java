@@ -16,10 +16,6 @@ public class MainSystem implements Serializable {
 
     private static final long serialVersionUID = 8741196022318228487L;
 
-    public SystemClock getClock() {
-        return clock;
-    }
-
     private SystemClock clock;
     static private Logger logger = Logging.getLogger();
     private List<SystemObserver> observers;
@@ -123,7 +119,7 @@ public class MainSystem implements Serializable {
     public void setSystemClockTime(LocalDateTime time) {
         logger.info("Set time to " + now().toString());
         Duration duration = Duration.between(now(), time);
-        getClock().offset(duration);
+        clock.offset(duration);
         notifyOnTimeUpdate();
     }
 

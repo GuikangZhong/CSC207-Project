@@ -1,0 +1,79 @@
+======================================================================
+Application session on 2019-07-12T01:35:53.959
+======================================================================
+New system
+Added SystemObserver project.user.ApplicantManager@ba8a1dc
+added company ut
+Added SystemObserver project.application.Company@1a49872c
+Successfully added
+Added user : a type: APPLICANT company: null
+Added SystemObserver project.user.Applicant@61
+Added user : b type: HR company: ut
+Update on 2019-07-12T01:36:16.120
+Added job a
+job added successfully
+Added job b
+job added successfully
+Update on 2019-07-12T01:37:03.148
+a applied for a
+a applied for b
+Set time to 2019-07-12T01:37:45.061
+Update on 2019-11-01T01:37:45.061
+Phone#1 addObserver Set Interview for a HR: project.user.HR@9a3bb27
+Phone#1
+In Person#1
+In Person#2
+In Person#3
+
+Interview: a added observer project.user.HRManager@279a554
+Interview: a added observer project.application.JobPostingManager@1e8eec17
+Added a for b
+Phone#1 addObserver Set Interview for b HR: project.user.HR@9a3bb27
+Phone#1
+In Person#1
+In Person#2
+In Person#3
+
+Interview: b added observer project.user.HRManager@279a554
+Interview: b added observer project.application.JobPostingManager@1e8eec17
+Added b for b
+Update on 2019-11-01T01:37:46.772
+======================================================================
+Application session on 2019-07-12T01:39:17.644
+======================================================================
+New system
+Added SystemObserver project.user.ApplicantManager@6f1fba17
+added company ut
+Added SystemObserver project.application.Company@4945bb25
+Successfully added
+Added user : a type: APPLICANT company: null
+Added SystemObserver project.user.Applicant@61
+Added user : b type: HR company: ut
+Update on 2019-07-12T01:39:38.059
+Added job 1
+job added successfully
+Added job 2
+job added successfully
+Update on 2019-07-12T01:39:56.684
+a applied for 1
+a applied for 2
+Set time to 2019-07-12T01:40:14.836
+Update on 2019-11-01T01:40:14.837
+Phone#1 addObserver Set Interview for 1 HR: project.user.HR@e5f3d69
+Phone#1
+In Person#1
+In Person#2
+In Person#3
+
+Interview: 1 added observer project.user.HRManager@756ca26b
+Interview: 1 added observer project.application.JobPostingManager@3b747ea7
+Added 1 for b
+Phone#1 addObserver Set Interview for 2 HR: project.user.HR@e5f3d69
+Phone#1
+In Person#1
+In Person#2
+In Person#3
+
+Interview: 2 added observer project.user.HRManager@756ca26b
+Interview: 2 added observer project.application.JobPostingManager@3b747ea7
+Added 2 for b

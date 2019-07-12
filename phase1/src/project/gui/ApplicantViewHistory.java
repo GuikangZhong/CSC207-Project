@@ -55,7 +55,7 @@ public class ApplicantViewHistory extends ApplicationController {
             lastApplicationClosed.setText("None");
         }
         else{
-            LocalDateTime systemTime = LocalDateTime.now(getSystem().getClock().getClock());
+            LocalDateTime systemTime = getSystem().now();
             LocalDateTime closedTime = history.getLastApplicationClosed();
             LocalDate systemDate = systemTime.toLocalDate();
             LocalDate closedDate = closedTime.toLocalDate();
