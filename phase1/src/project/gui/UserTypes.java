@@ -8,10 +8,6 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
-
-
 
 public class UserTypes extends ApplicationController implements Initializable {
 

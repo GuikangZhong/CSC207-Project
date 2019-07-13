@@ -106,6 +106,10 @@ public class InterviewGroup implements Serializable {
         return builder.toString();
     }
 
+    /**
+     * Remove the applicant withdrawing the application from the applicants group.
+     * @param applicant: the applicant that has withdrawn from the job that this interview group correspond to
+     */
     void withdraw(Applicant applicant) {
         if (applicants.remove(applicant)) {
             logger.info("Removed " + applicant.getUsername());

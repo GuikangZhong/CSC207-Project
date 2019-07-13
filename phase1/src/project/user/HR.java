@@ -46,7 +46,13 @@ public class HR extends User {
         return finalCandidates;
     }
 
-    public void addFinalCandidates(Interview interview) {
+
+    /**
+     * When the interview has ended whereas there are still multiple applicants, these applicants will be added to
+     * finalCandidates.
+     * @param interview: The ended interview where there are still multiple applicants remaining.
+     */
+    void addFinalCandidates(Interview interview) {
         finalCandidates.put(interview.getJob().getTitle(), interview);
     }
 

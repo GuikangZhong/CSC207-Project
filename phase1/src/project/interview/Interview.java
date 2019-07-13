@@ -82,7 +82,7 @@ public class Interview implements Serializable, RoundObserver, ApplicantObserver
 
     /**
      * this function is called when the max round is finished, there are still a few applicants left
-     * @param applicants
+     * @param applicants: The final applicants left after the max number of rounds has been reached.
      */
     public void hireFromFinalCandidates(List<Applicant> applicants) {
         if (hasNextRound()) {
@@ -121,6 +121,10 @@ public class Interview implements Serializable, RoundObserver, ApplicantObserver
         getRoundInProgress().addObserver(this);
     }
 
+    /**
+     * filter all the applicants who have been forwarded to the future rounds from the current round of interview
+     * in progress.
+     */
     private void filterPassed() {
         applicants = getRoundInProgress().getApplicantsPassed();
     }

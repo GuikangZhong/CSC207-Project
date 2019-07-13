@@ -24,6 +24,11 @@ public class HRManager extends UserManager<HR> implements InterviewObserver, Job
         this.company = company;
     }
 
+
+    /**
+     * Enable HR Manager to schedule future interview when the job posting has been closed.
+     * @param jobPosting: The closed job posting.
+     */
     @Override
     public void updateOnJobPostingClosure(JobPosting jobPosting) {
         // select an HR

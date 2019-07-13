@@ -90,6 +90,13 @@ public class Applicant
         return null;
     }
 
+    /**
+     *
+     * @param jobPosting: The job posting the applicant is withdrawing from
+     * @param application: The application the applicant associated with the job posting.
+     * @return: true if and only if the withdrawal has been successful.
+     */
+
     public boolean withdraw(JobPosting jobPosting, Application application) {
         // you can't withdraw if someone is hired for the job posting
         if (jobPosting.getStatus() == JobPosting.Status.FILLED || jobPosting.getStatus() == JobPosting.Status.UNFILLED){
@@ -135,6 +142,11 @@ public class Applicant
             }
         }
     }
+
+    /**
+     * Move the job from jobApplying to jobApplied.
+     * @param job: The job being moved.
+     */
 
     public void moveToApplied(Job job) {
         ApplicantHistory history = getApplicantHistory();

@@ -13,6 +13,7 @@ public class ApplicantHistory extends UserHistory implements JobPostingObserver 
     private List<Job> jobApplied;
     private LocalDateTime lastApplicationClosed;
     private LocalDateTime latestClosedDate;
+    // the Boolean values indicate whether the job posting has been closed (true) or not,
     private HashMap<Job, Boolean> jobApplying;
 
     public ApplicantHistory(LocalDateTime now) {

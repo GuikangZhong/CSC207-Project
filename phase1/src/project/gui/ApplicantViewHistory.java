@@ -63,8 +63,4 @@ public class ApplicantViewHistory extends ApplicationController {
             );
         }
     }
-
-//    public void applyingjobClicked(MouseEvent event){
-//        String jobTitle = applyingJobs.getSelectionModel().getSelectedItem();
-//    }
 }
