@@ -22,7 +22,7 @@ public class JobPosting implements Serializable, SystemObserver {
     private int nApplicantNeeded;
     private Collection<Application> applications;
     private LocalDateTime openDate, closeDate;
-    private HireResult hireResult;
+    private List<Applicant> hiredApplicants;
     private List<JobPostingObserver> observers;
     static private Logger logger = Logging.getLogger();
     private HR hr;
@@ -34,7 +34,7 @@ public class JobPosting implements Serializable, SystemObserver {
         this.openDate = begin;
         this.closeDate = end;
         this.job = job;
-        this.hireResult = new HireResult();
+        this.hiredApplicants = new ArrayList<>();
         this.nApplicantNeeded = nApplicantNeeded;
         this.applications = new ArrayList<>();
         this.observers = new ArrayList<>();
@@ -103,9 +103,7 @@ public class JobPosting implements Serializable, SystemObserver {
         return status;
     }
 
-    public Requirement getRequirement() {
-        return requirement;
-    }
+    public List<Applicant> getHiredApplicants(){return this.hiredApplicants;}
 
     public int getnApplicantNeeded() {
         return nApplicantNeeded;
@@ -113,10 +111,6 @@ public class JobPosting implements Serializable, SystemObserver {
 
     public Collection<Application> getApplications() {
         return applications;
-    }
-
-    public HireResult getHireResult() {
-        return hireResult;
     }
 
     public String getJobTitle() {
@@ -157,8 +151,8 @@ public class JobPosting implements Serializable, SystemObserver {
             logger.info(getJobTitle() + " is unfilled");
             setStatus(Status.UNFILLED);
         } else {
-            hireResult.addHiredApplicant(applicant);
-            if (hireResult.getHired().size() == nApplicantNeeded) {
+            hiredApplicants.add(applicant);
+            if (hiredApplicants.size() == nApplicantNeeded) {
                 setStatus(Status.FILLED);
                 logger.info(getJobTitle() + " is filled");
             }

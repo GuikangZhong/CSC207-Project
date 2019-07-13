@@ -21,7 +21,7 @@ public class InterviewSetup implements Serializable {
     }
 
     /**
-     * @param round
+     * @param round: The round to be added.
      * @return if given round can be added to the setup
      */
     public boolean addRound(Round round) {
