@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
-public class DocumentCreator implements Serializable {
+public class DocumentFactory implements Serializable {
     private static final long serialVersionUID = -5864681886578805239L;
 
     public static Document createByFileName(String name, String path, LocalDateTime dateTime, String type) throws IOException {

@@ -10,7 +10,7 @@ import javafx.stage.FileChooser;
 import project.application.CV;
 import project.application.CoverLetter;
 import project.application.Document;
-import project.application.DocumentCreator;
+import project.application.DocumentFactory;
 import project.user.Applicant;
 
 
@@ -76,9 +76,9 @@ public class ApplicantViewOrUpdateDocument extends ApplicationController impleme
         File selectedFile = fc.showOpenDialog(null);
         if (selectedFile != null) {
             if (type.equals("CV")){
-                document = DocumentCreator.createByFileName(selectedFile.getName(), selectedFile.getAbsolutePath(), getSystem().now(), "CV");
+                document = DocumentFactory.createByFileName(selectedFile.getName(), selectedFile.getAbsolutePath(), getSystem().now(), "CV");
             } else {
-                document = DocumentCreator.createByFileName(selectedFile.getName(), selectedFile.getAbsolutePath(), getSystem().now(), "CoverLetter");
+                document = DocumentFactory.createByFileName(selectedFile.getName(), selectedFile.getAbsolutePath(), getSystem().now(), "CoverLetter");
             }
             if (!((Applicant) getUser()).addDocument(document)) {
                 showModal("Cannot add document");
