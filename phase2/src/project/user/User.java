@@ -68,7 +68,8 @@ public abstract class User implements Serializable {
     public enum Type {
         APPLICANT,
         HR,
-        INTERVIEWER
+        INTERVIEWER,
+        REFEREE
     }
 
 }
