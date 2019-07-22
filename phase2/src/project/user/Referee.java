@@ -14,6 +14,14 @@ public class Referee extends User implements Serializable {
         letterList = new ArrayList<>();
     }
 
+    public void addLetter(ReferenceLetter letter) {
+        letterList.add(letter);
+    }
+
+    public List<ReferenceLetter> getLetterList(){
+        return letterList;
+    }
+
     @Override
     public Type getType() {
         return Type.REFEREE;
