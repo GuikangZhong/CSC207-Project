@@ -18,15 +18,27 @@ public abstract class Round implements Serializable, InterviewGroupObserver {
     private List<InterviewGroup> groups;
     private List<RoundObserver> observers;
     static private Logger logger = Logging.getLogger();
+
+    public void setJob(Job job) {
+        this.job = job;
+    }
+
     private Job job;
 
-    public Round(Job job) {
-        this.job = job;
+    public Round() {
         number = -1;
         observers = new ArrayList<>();
     }
 
-    public abstract String roundType();
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        if(groups != null || observers != null){
+            throw new RuntimeException("You cannot clone this round by now!!!");
+        }
+        return super.clone();
+    }
+
+    public abstract String getRoundType();
 
     public abstract int getMaxRoundNumber();
 
@@ -98,7 +110,7 @@ public abstract class Round implements Serializable, InterviewGroupObserver {
     }
 
     public String toString() {
-        return roundType() + "#" + number;
+        return getRoundType() + "#" + number;
     }
 
     boolean assigned() {

@@ -5,13 +5,13 @@ import project.application.Job;
 public class PhoneRound extends Round {
     private static final long serialVersionUID = -9131759850246001085L;
 
-    public PhoneRound(Job job) {
-        super(job);
-    }
 
-    @Override
-    public String roundType() {
+    public static String roundType(){
         return "Phone";
+    }
+    @Override
+    public String getRoundType() {
+        return roundType();
     }
 
     @Override

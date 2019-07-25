@@ -5,13 +5,12 @@ import project.application.Job;
 public class InPersonRound extends Round {
     private static final long serialVersionUID = -466488373417479710L;
 
-    public InPersonRound(Job job) {
-        super(job);
-    }
-
-    @Override
-    public String roundType() {
+    public static String roundType(){
         return "In Person";
+    }
+    @Override
+    public String getRoundType() {
+        return roundType();
     }
 
     @Override
