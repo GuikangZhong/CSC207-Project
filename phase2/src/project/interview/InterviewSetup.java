@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
  * Holds a setup of a interview.
  * That is it contains all possible rounds.
  */
-public class InterviewSetup implements Serializable, Cloneable {
+public class InterviewSetup implements Serializable {
     private static final long serialVersionUID = -1939537566544034408L;
     private List<Round> rounds;
     private Map<String, Integer> record;
@@ -21,12 +21,9 @@ public class InterviewSetup implements Serializable, Cloneable {
         record = new HashMap<>();
     }
 
-    @Override
-    protected Object clone() throws CloneNotSupportedException {
-        InterviewSetup clone = new InterviewSetup();
-        clone.rounds = new ArrayList<>(rounds);
-        clone.record = new HashMap<>(record);
-        return clone;
+    public InterviewSetup(InterviewSetup setup)  {
+        rounds = new ArrayList<>(setup.rounds);
+        record = new HashMap<>(setup.record);
     }
 
     /**
