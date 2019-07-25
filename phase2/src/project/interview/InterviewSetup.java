@@ -15,9 +15,16 @@ public class InterviewSetup implements Serializable, Cloneable {
     private List<Round> rounds;
     private Map<String, Integer> record;
 
+    protected boolean isTemplate() {
+        return isTemplate;
+    }
+
+    private boolean isTemplate;
+
     public InterviewSetup() {
         this.rounds = new ArrayList<>();
         record = new HashMap<>();
+        isTemplate = true;
     }
 
     @Override
@@ -27,6 +34,7 @@ public class InterviewSetup implements Serializable, Cloneable {
         for(Round round: rounds){
             setup.rounds.add((Round)round.clone());
         }
+        setup.isTemplate = false;
         return setup;
     }
 

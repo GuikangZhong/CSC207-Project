@@ -19,9 +19,13 @@ public class ReferenceLetter extends Document implements Serializable {
         toApplicant = applicant;
     }
 
-    @Override
-    public String type() {
+    static String documentType() {
         return "ReferenceLetter";
+    }
+
+    @Override
+    public String getDocumentType() {
+        return documentType();
     }
 
     @Override

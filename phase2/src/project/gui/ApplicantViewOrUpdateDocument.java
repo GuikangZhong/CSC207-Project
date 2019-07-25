@@ -62,11 +62,11 @@ public class ApplicantViewOrUpdateDocument extends ApplicationController impleme
     }
 
     public void uploadCoverLetter(ActionEvent event) throws IOException {
-        uploadHelper(new CoverLetter().type());
+        uploadHelper(new CoverLetter().getDocumentType());
     }
 
     public void uploadCV(ActionEvent event) throws IOException {
-        uploadHelper(new CV().type());
+        uploadHelper(new CV().getDocumentType());
     }
 
     private void uploadHelper(String type) throws IOException{

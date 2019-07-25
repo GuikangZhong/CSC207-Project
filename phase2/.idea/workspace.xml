@@ -4,13 +4,19 @@
     <list default="true" id="45a278f9-5571-4e1f-9dc9-870d68a3e170" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/../phase1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../phase1/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../phase1/README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../phase1/README.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/interview/InPersonRound.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/interview/InPersonRound.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/application/BasicRequirement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/application/BasicRequirement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/application/CV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/application/CV.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/application/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/application/Company.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/application/CoverLetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/application/CoverLetter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/application/Document.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/application/Document.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/application/DocumentFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/application/DocumentFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/application/ReferenceLetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/application/ReferenceLetter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/gui/ApplicantViewOrUpdateDocument.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/ApplicantViewOrUpdateDocument.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/interview/Interview.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/interview/Interview.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/project/interview/InterviewSetup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/interview/InterviewSetup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/interview/PhoneRound.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/interview/PhoneRound.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/interview/Round.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/interview/Round.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/project/user/HRManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/user/HRManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/system/MainSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/system/MainSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/user/Applicant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/user/Applicant.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,22 +31,33 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+        <entry file="file://$PROJECT_DIR$/src/project/interview/InterviewSetup.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="4" selection-start-column="4" selection-end-column="4" />
+            <state relative-caret-position="112">
+              <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+              <folding>
+                <element signature="e#485#486#0" expanded="true" />
+                <element signature="e#518#519#0" expanded="true" />
+                <element signature="e#1647#1648#0" expanded="true" />
+                <element signature="e#1722#1723#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/project/interview/InterviewSetup.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/project/interview/Interview.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+            <state relative-caret-position="256">
+              <caret line="38" column="86" selection-start-line="38" selection-start-column="86" selection-end-line="38" selection-end-column="86" />
               <folding>
-                <element signature="e#1482#1483#0" expanded="true" />
-                <element signature="e#1557#1558#0" expanded="true" />
+                <element signature="e#1865#1866#0" expanded="true" />
+                <element signature="e#1918#1919#0" expanded="true" />
+                <element signature="e#1989#1990#0" expanded="true" />
+                <element signature="e#2098#2099#0" expanded="true" />
+                <element signature="e#2155#2156#0" expanded="true" />
+                <element signature="e#2253#2254#0" expanded="true" />
+                <element signature="e#4206#4207#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -60,36 +77,77 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/project/interview/PhoneRound.java">
+        <entry file="file://$PROJECT_DIR$/src/project/application/Document.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
+            <state relative-caret-position="409">
+              <caret line="41" column="29" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/project/application/CoverLetter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="208">
+              <caret line="18" column="5" lean-forward="true" selection-start-line="15" selection-end-line="18" selection-end-column="5" />
               <folding>
-                <element signature="e#270#271#0" expanded="true" />
-                <element signature="e#294#295#0" expanded="true" />
+                <element signature="e#424#425#0" expanded="true" />
+                <element signature="e#448#449#0" expanded="true" />
+                <element signature="e#498#499#0" expanded="true" />
+                <element signature="e#535#536#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/project/interview/InPersonRound.java">
+        <entry file="file://$PROJECT_DIR$/src/project/application/CV.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
+            <state relative-caret-position="224">
+              <caret line="18" column="5" lean-forward="true" selection-start-line="16" selection-start-column="2" selection-end-line="18" selection-end-column="5" />
               <folding>
-                <element signature="e#273#274#0" expanded="true" />
-                <element signature="e#303#304#0" expanded="true" />
+                <element signature="e#422#423#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/project/user/HRManager.java">
+        <entry file="file://$PROJECT_DIR$/src/project/application/ReferenceLetter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="41" column="41" selection-start-line="41" selection-start-column="41" selection-end-line="41" selection-end-column="41" />
+            <state relative-caret-position="336">
+              <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
+              <folding>
+                <element signature="e#565#566#0" expanded="true" />
+                <element signature="e#592#593#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/project/application/Requirement.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="80">
+              <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/project/application/BasicRequirement.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="208">
+              <caret line="13" column="85" selection-start-line="13" selection-start-column="85" selection-end-line="13" selection-end-column="85" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/project/application/DocumentFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="19" column="13" lean-forward="true" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -107,7 +165,15 @@
         <option value="$PROJECT_DIR$/src/project/interview/InPersonRound.java" />
         <option value="$PROJECT_DIR$/src/project/user/HRManager.java" />
         <option value="$PROJECT_DIR$/src/project/interview/Round.java" />
+        <option value="$PROJECT_DIR$/src/project/application/Company.java" />
         <option value="$PROJECT_DIR$/src/project/interview/InterviewSetup.java" />
+        <option value="$PROJECT_DIR$/src/project/interview/Interview.java" />
+        <option value="$PROJECT_DIR$/src/project/application/Document.java" />
+        <option value="$PROJECT_DIR$/src/project/application/CoverLetter.java" />
+        <option value="$PROJECT_DIR$/src/project/application/CV.java" />
+        <option value="$PROJECT_DIR$/src/project/application/ReferenceLetter.java" />
+        <option value="$PROJECT_DIR$/src/project/application/DocumentFactory.java" />
+        <option value="$PROJECT_DIR$/src/project/application/BasicRequirement.java" />
       </list>
     </option>
   </component>
@@ -150,6 +216,13 @@
               <item name="phase2" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="project" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="phase2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="phase2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="application" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="phase2" type="b2602c69:ProjectViewProjectNode" />
@@ -251,13 +324,13 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Messages" weight="0.3283582" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3283582" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3283582" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3283582" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="right" id="Maven" />
@@ -309,6 +382,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/application/Company.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="38" column="48" selection-start-line="38" selection-start-column="48" selection-end-line="38" selection-end-column="48" />
+          <folding>
+            <element signature="e#1172#1173#0" expanded="true" />
+            <element signature="e#1188#1189#0" expanded="true" />
+            <element signature="e#1300#1301#0" expanded="true" />
+            <element signature="e#1334#1335#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/interview/InterviewSetup.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+          <folding>
+            <element signature="e#485#486#0" expanded="true" />
+            <element signature="e#518#519#0" expanded="true" />
+            <element signature="e#1647#1648#0" expanded="true" />
+            <element signature="e#1722#1723#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/interview/Interview.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="38" column="86" selection-start-line="38" selection-start-column="86" selection-end-line="38" selection-end-column="86" />
+          <folding>
+            <element signature="e#1865#1866#0" expanded="true" />
+            <element signature="e#1918#1919#0" expanded="true" />
+            <element signature="e#1989#1990#0" expanded="true" />
+            <element signature="e#2098#2099#0" expanded="true" />
+            <element signature="e#2155#2156#0" expanded="true" />
+            <element signature="e#2253#2254#0" expanded="true" />
+            <element signature="e#4206#4207#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/project/interview/Round.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
@@ -320,14 +435,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/interview/InterviewSetup.java">
+    <entry file="file://$PROJECT_DIR$/src/project/application/CV.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+        <state relative-caret-position="224">
+          <caret line="18" column="5" lean-forward="true" selection-start-line="16" selection-start-column="2" selection-end-line="18" selection-end-column="5" />
           <folding>
-            <element signature="e#1482#1483#0" expanded="true" />
-            <element signature="e#1557#1558#0" expanded="true" />
+            <element signature="e#422#423#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/application/Document.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="409">
+          <caret line="41" column="29" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/application/CoverLetter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="18" column="5" lean-forward="true" selection-start-line="15" selection-end-line="18" selection-end-column="5" />
+          <folding>
+            <element signature="e#424#425#0" expanded="true" />
+            <element signature="e#448#449#0" expanded="true" />
+            <element signature="e#498#499#0" expanded="true" />
+            <element signature="e#535#536#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/application/DocumentFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="19" column="13" lean-forward="true" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/application/ReferenceLetter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
+          <folding>
+            <element signature="e#565#566#0" expanded="true" />
+            <element signature="e#592#593#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/application/Requirement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/application/BasicRequirement.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="13" column="85" selection-start-line="13" selection-start-column="85" selection-end-line="13" selection-end-column="85" />
         </state>
       </provider>
     </entry>

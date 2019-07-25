@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 public class CV extends Document implements Serializable {
     private static final long serialVersionUID = 6736238269987565017L;
 
-    public CV(){
+    public CV() {
         super();
     }
 
@@ -14,9 +14,13 @@ public class CV extends Document implements Serializable {
         super(name, content, date);
     }
 
-    @Override
-    public String type() {
+    static String documentType() {
         return "CV";
+    }
+
+    @Override
+    public String getDocumentType() {
+        return documentType();
     }
 
     @Override

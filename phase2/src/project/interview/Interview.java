@@ -35,6 +35,9 @@ public class Interview implements Serializable, RoundObserver, ApplicantObserver
     public Interview(HR hr,
                      JobPosting jobPosting,
                      InterviewSetup setup) {
+        if(setup.isTemplate()){
+            throw new RuntimeException("You need to call InterviewSetup.clone() !!!");
+        }
         this.hr = hr;
         this.setup = setup;
         this.job = jobPosting.getJob();

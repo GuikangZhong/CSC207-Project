@@ -59,7 +59,7 @@ public class MainSystem implements Serializable {
         if (temp != null) {
             return false;
         } else {
-            logger.info("Added user : " + user.getUsername() + " type: " + user.getType() + " company: " + user.getCompany());
+            logger.info("Added user : " + user.getUsername() + " getDocumentType: " + user.getType() + " company: " + user.getCompany());
             if (user.getType() == User.Type.APPLICANT) {
                 addObserver((Applicant) user);
                 return applicants.addUser((Applicant) user);

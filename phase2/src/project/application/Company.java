@@ -1,5 +1,6 @@
 package project.application;
 
+import project.interview.InterviewSetup;
 import project.observer.SystemObserver;
 import project.system.MainSystem;
 import project.user.*;
@@ -7,6 +8,7 @@ import project.utils.Logging;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.HashMap;
 import java.util.logging.Logger;
 
 public class Company implements Serializable, SystemObserver {
@@ -18,6 +20,7 @@ public class Company implements Serializable, SystemObserver {
     private InterviewerManager interviewerManager;
     static private Logger logger = Logging.getLogger();
     private MainSystem system;
+    private HashMap<String, InterviewSetup> interviewFormats;
 
 
     public Company(String name, MainSystem system) {
@@ -26,7 +29,16 @@ public class Company implements Serializable, SystemObserver {
         jobPostingManager = new JobPostingManager(system, this);
         hrManager = new HRManager(system, this);
         interviewerManager = new InterviewerManager(system, this);
+        interviewFormats = new HashMap<>();
     }
+
+    public InterviewSetup getInterviewFormat(String formatName){
+        return interviewFormats.get(formatName);
+    }
+    public void addInterviewFormat(String formatName, InterviewSetup setup){
+        interviewFormats.put(formatName, setup);
+    }
+
 
     public MainSystem getSystem() {
         return system;

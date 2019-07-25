@@ -69,7 +69,7 @@ public class Applicant
 
     public boolean addDocument(Document newDocument) {
         if (documents.stream()
-                .filter(document -> document.type().equals(newDocument.type()))
+                .filter(document -> document.getDocumentType().equals(newDocument.getDocumentType()))
                 .count() + 1
                 <= newDocument.maxNumber()) {
             documents.add(newDocument);

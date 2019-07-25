@@ -19,7 +19,7 @@ public class DocumentFactory implements Serializable {
                 s = in.readLine();
             }
         }
-        if (type.equals("CoverLetter")) {
+        if (type.equals(CoverLetter.documentType())) {
             return new CoverLetter(name, content.toString(), dateTime);
         } else {
             return new CV(name, content.toString(), dateTime);

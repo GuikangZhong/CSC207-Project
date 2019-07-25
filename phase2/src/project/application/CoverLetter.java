@@ -14,9 +14,13 @@ public class CoverLetter extends Document implements Serializable {
         super(name, content, date);
     }
 
-    @Override
-    public String type() {
+    static String documentType(){
         return "CoverLetter";
+    }
+
+    @Override
+    public String getDocumentType() {
+        return documentType();
     }
 
     @Override
