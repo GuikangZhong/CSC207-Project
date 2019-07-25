@@ -5,12 +5,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * Holds a setup of a interview.
  * That is it contains all possible rounds.
  */
-public class InterviewSetup implements Serializable {
+public class InterviewSetup implements Serializable, Cloneable {
     private static final long serialVersionUID = -1939537566544034408L;
     private List<Round> rounds;
     private Map<String, Integer> record;
@@ -18,6 +19,14 @@ public class InterviewSetup implements Serializable {
     public InterviewSetup() {
         this.rounds = new ArrayList<>();
         record = new HashMap<>();
+    }
+
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        InterviewSetup clone = new InterviewSetup();
+        clone.rounds = new ArrayList<>(rounds);
+        clone.record = new HashMap<>(record);
+        return clone;
     }
 
     /**
