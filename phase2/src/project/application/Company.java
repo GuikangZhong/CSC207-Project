@@ -16,7 +16,6 @@ public class Company implements Serializable, SystemObserver {
 
     private String name;
     private JobPostingManager jobPostingManager;
-    private HRManager hrManager;
     private InterviewerManager interviewerManager;
     static private Logger logger = Logging.getLogger();
     private MainSystem system;
@@ -27,7 +26,6 @@ public class Company implements Serializable, SystemObserver {
         this.name = name;
         this.system = system;
         jobPostingManager = new JobPostingManager(system, this);
-        hrManager = new HRManager(system, this);
         interviewerManager = new InterviewerManager(system, this);
         interviewFormats = new HashMap<>();
     }
@@ -53,7 +51,7 @@ public class Company implements Serializable, SystemObserver {
     }
 
     public HRManager getHrManager() {
-        return hrManager;
+        return system.getHrManager();
     }
 
     public InterviewerManager getInterviewerManager() {
@@ -61,18 +59,14 @@ public class Company implements Serializable, SystemObserver {
     }
 
     public boolean addUser(User user) {
-        if (user.getType() == User.Type.HR) {
-            return hrManager.addUser((HR) user);
-        } else if (user.getType() == User.Type.INTERVIEWER) {
+        if (user.getType() == User.Type.INTERVIEWER) {
             return interviewerManager.addUser((Interviewer) user);
         }
         return false;
     }
 
     public User getUser(String username) {
-        if (hrManager.containsUser(username)) {
-            return hrManager.getUser(username);
-        } else if (interviewerManager.containsUser(username)) {
+         if (interviewerManager.containsUser(username)) {
             return interviewerManager.getUser(username);
         }
         return null;
