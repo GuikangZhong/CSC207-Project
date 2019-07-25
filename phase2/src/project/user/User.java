@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
+import java.util.List;
 
 public abstract class User implements Serializable {
     private static final long serialVersionUID = -5007096129053697211L;
@@ -11,14 +12,14 @@ public abstract class User implements Serializable {
     private UserHistory history;
     private String username;
     private String realName;
-    private String company;
+    private List<String> company;
     private byte[] password;
 
     public User(UserHistory history,
                 String username,
                 String password,
                 String realName,
-                String company) {
+                List<String> company) {
         this.history = history;
         this.realName = realName;
         this.username = username;
@@ -34,11 +35,11 @@ public abstract class User implements Serializable {
         return md.digest(password.getBytes());
     }
 
-    public String getCompany() {
+    public List<String> getCompany() {
         return company;
     }
 
-    public void setCompany(String company) {
+    public void setCompany(List<String> company) {
         this.company = company;
     }
 

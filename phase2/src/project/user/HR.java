@@ -21,7 +21,7 @@ public class HR extends User {
               String username,
               String password,
               String realName,
-              String company) {
+              List<String> company) {
         super(history, username, password, realName, company);
         finalCandidates = new HashMap<>();
         interviewsRoundFinished = new ArrayList<>();

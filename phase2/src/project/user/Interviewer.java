@@ -20,7 +20,7 @@ public class Interviewer extends User implements InterviewGroupObserver, Intervi
                        String username,
                        String password,
                        String realName,
-                       String company) {
+                       List<String> company) {
         super(history, username, password, realName, company);
         interviews = new ArrayList<>();
     }

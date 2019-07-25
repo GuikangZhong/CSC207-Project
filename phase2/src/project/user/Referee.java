@@ -9,7 +9,7 @@ public class Referee extends User implements Serializable {
     private static final long serialVersionUID = -5182837267201535114L;
     private List<ReferenceLetter> letterList;
 
-    public Referee(UserHistory history, String username, String password, String realName, String company){
+    public Referee(UserHistory history, String username, String password, String realName, List<String> company){
         super(history, username, password, realName, company);
         letterList = new ArrayList<>();
     }
