@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 public class ReferenceLetter extends Document implements Serializable {
     private static final long serialVersionUID = -8264798408812116962L;
 
-    Applicant toApplicant;
+    private Applicant toApplicant;
 
     public ReferenceLetter(){
         super();
