@@ -2,6 +2,7 @@ package project.user;
 
 import project.application.Job;
 import project.application.JobPosting;
+import project.interview.Round;
 import project.observer.JobPostingObserver;
 
 import java.time.LocalDateTime;
@@ -14,7 +15,10 @@ public class ApplicantHistory extends UserHistory implements JobPostingObserver 
     private LocalDateTime lastApplicationClosed;
     private LocalDateTime latestClosedDate;
     // the Boolean values indicate whether the job posting has been closed (true) or not,
-    private HashMap<Job, Boolean> jobApplying;
+    private Map<Job, Boolean> jobApplying;
+    private Map<Job, Round> applicationsInProgress;
+    private List<Job> applicationsRejected;
+    private List<Job> hiredPositions;
 
     public ApplicantHistory(LocalDateTime now) {
         super(now);
@@ -22,6 +26,9 @@ public class ApplicantHistory extends UserHistory implements JobPostingObserver 
         jobApplying = new HashMap<>();
         lastApplicationClosed = null;
         latestClosedDate = null;
+        applicationsInProgress = new HashMap<>();
+        applicationsRejected = new ArrayList<>();
+        hiredPositions = new ArrayList<>();
     }
 
     public List<Job> getJobApplied() {
@@ -55,6 +62,18 @@ public class ApplicantHistory extends UserHistory implements JobPostingObserver 
                 (lastApplicationClosed == null || lastApplicationClosed.isBefore(latestClosedDate))) {
             lastApplicationClosed = latestClosedDate;
         }
+    }
+
+    void addApplicationInProgress(Job job, Round round){
+        applicationsInProgress.put(job, round);
+    }
+
+    void addApplicationRejected(Job job){
+        applicationsRejected.add(job);
+    }
+
+    void addHiredPositions(Job job){
+        hiredPositions.add(job);
     }
 
     private boolean allApplicationClosed() {

@@ -1,6 +1,7 @@
 package project.user;
 
 import project.application.*;
+import project.interview.Round;
 import project.observer.*;
 import project.utils.Logging;
 
@@ -152,6 +153,21 @@ public class Applicant
         ApplicantHistory history = getApplicantHistory();
         history.removeJobApplying(job);
         history.addJobApplied(job);
+    }
+
+    public void addHired(Job job){
+        ApplicantHistory history = getApplicantHistory();
+        history.addHiredPositions(job);
+    }
+
+    public void updateInterviewProgress(Job job, Round round){
+        ApplicantHistory history = getApplicantHistory();
+        history.addApplicationInProgress(job, round);
+    }
+
+    public void addRejected(Job job){
+        ApplicantHistory history = getApplicantHistory();
+        history.addApplicationRejected(job);
     }
 
 }

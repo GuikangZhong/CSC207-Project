@@ -69,6 +69,7 @@ public class JobPostingManager implements InterviewObserver, Serializable, Syste
             for (Applicant applicant : interview.getApplicants()) {
                 jobPosting.addHired(applicant);
                 applicant.moveToApplied(interview.getJob());
+                applicant.addHired(interview.getJob());
             }
         }
     }

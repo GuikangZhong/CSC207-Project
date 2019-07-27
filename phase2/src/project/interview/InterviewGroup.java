@@ -58,6 +58,10 @@ public class InterviewGroup implements Serializable {
         for (Applicant applicant : applicants) {
             if (!applicantsStatus.get(applicant.getUsername())) {
                 applicant.moveToApplied(getJob());
+                applicant.addRejected(getJob());
+            }
+            else {
+                applicant.updateInterviewProgress(getJob(), getRound());
             }
         }
     }
