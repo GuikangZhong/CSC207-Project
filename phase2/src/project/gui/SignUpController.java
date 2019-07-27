@@ -5,6 +5,8 @@ import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
 import project.user.Applicant;
 import project.user.ApplicantHistory;
+import project.user.Referee;
+import project.user.UserHistory;
 import project.utils.Logging;
 
 import java.io.IOException;
@@ -26,9 +28,13 @@ public class SignUpController extends ApplicationController{
     }
     static private Logger logger = Logging.getLogger();
     public void signUpButton(ActionEvent event) throws IOException {
-        boolean added = false;
+        boolean added;
         if (UserTypes.typeName.equals("Applicant")){
             added = getSystem().addUser(new Applicant(new ApplicantHistory(getSystem().now()),
+                    usernameInput.getText(),passwordInput.getText(),
+                    realNameInput.getText(), null));
+        } else {
+            added = getSystem().addUser(new Referee(new UserHistory(getSystem().now()),
                     usernameInput.getText(),passwordInput.getText(),
                     realNameInput.getText(), null));
         }

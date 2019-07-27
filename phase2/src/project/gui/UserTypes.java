@@ -21,7 +21,7 @@ public class UserTypes extends ApplicationController implements Initializable {
     @Override
     void postInit(){
         super.postInit();
-        type.getItems().addAll("Applicant", "HR", "Interviewer");
+        type.getItems().addAll("Applicant", "HR", "Interviewer", "Referee");
     }
     public void returnButton(ActionEvent event) throws IOException {
         SceneSwitcher.switchScene(this, event, "Main.fxml");
@@ -29,7 +29,7 @@ public class UserTypes extends ApplicationController implements Initializable {
 
     public void confirmButton(ActionEvent event) throws IOException {
         if (typeName != null){
-            if (typeName.equals("Applicant"))
+            if (typeName.equals("Applicant") || type.equals("Referee"))
                 SceneSwitcher.switchScene(this, event, "SignUpPage.fxml");
             else if (typeName.equals("Interviewer") || typeName.equals("HR"))
                 SceneSwitcher.switchScene(this, event, "StaffSignUpPage.fxml");
