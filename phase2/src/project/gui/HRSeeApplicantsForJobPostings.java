@@ -78,7 +78,7 @@ public class HRSeeApplicantsForJobPostings extends ApplicationController {
 
     private void pollJobPostings() {
         HR hr = (HR) getUser();
-        Company company = getSystem().getCompany(hr.getCompany());
+        Company company = getSystem().getCompany(hr.getSignedInCompany());
         JobPostingManager manager = company.getJobPostingManager();
         jobPostings.getItems().clear();
         for (JobPosting jobPosting : manager.getJobPostings().values()) {

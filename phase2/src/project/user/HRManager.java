@@ -35,7 +35,7 @@ public class HRManager extends UserManager<HR> implements InterviewObserver, Job
         HR hr = jobPosting.getHr();
 
         InterviewSetup setup = new InterviewSetup();
-        Job job = jobPosting.getJob();
+//        Job job = jobPosting.getJob();
         setup.addRound(new PhoneRound());
         setup.addRound(new InPersonRound());
         setup.addRound(new InPersonRound());

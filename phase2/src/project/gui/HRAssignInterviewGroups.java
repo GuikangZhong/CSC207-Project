@@ -120,7 +120,7 @@ public class HRAssignInterviewGroups extends ApplicationController {
 
     private void pollInterviewers() {
         if (getUser() != null) {
-            String companyName = getUser().getCompany();
+            String companyName = getUser().getSignedInCompany();
             Company company = getSystem().getCompany(companyName);
             InterviewerManager interviewerManager = company.getInterviewerManager();
             for (Interviewer interviewer : interviewerManager.getUsers().values()) {
@@ -168,7 +168,7 @@ public class HRAssignInterviewGroups extends ApplicationController {
             }
         }
         try {
-            company = getSystem().getCompany((getUser()).getCompany());
+            company = getSystem().getCompany((getUser()).getSignedInCompany());
             interview.assignRound(new UISelectionStrategy(),
                     new ArrayList<>(company.getInterviewerManager().getUsers().values()));
             showModal("Great", "Assign successfully");

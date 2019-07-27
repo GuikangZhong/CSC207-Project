@@ -2,7 +2,13 @@ package project.gui;
 
 import javafx.fxml.FXML;
 import javafx.event.ActionEvent;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import project.user.User;
 
 import java.io.IOException;
@@ -42,6 +48,12 @@ public class LoginController extends ApplicationController{
                 SceneSwitcher.switchScene(this, event, "ApplicantViewJobPostings.fxml");
             } else if (user.getType() == User.Type.HR) {
                 setUser(user);
+                if (user.getCompany().size() > 1){
+                    promptChooseCompany();
+                }
+                else{
+                    user.setSignedInCompany(user.getCompany().get(0));
+                }
                 Menu menu = new Menu();
                 menu.addOption("View all applicants", "HRViewAllApplicants.fxml")
                         .addOption("Job Postings", "HRSeeApplicantsForJobPostings.fxml")
@@ -52,11 +64,35 @@ public class LoginController extends ApplicationController{
                 SceneSwitcher.switchScene(this, event, "HRViewAllApplicants.fxml");
             } else if (user.getType() == User.Type.INTERVIEWER) {
                 setUser(user);
+                user.setSignedInCompany(user.getCompany().get(0));
                 Menu menu = new Menu();
                 menu.addOption("View all applicants", "InterviewerSeeInterviewGroups.fxml");
                 setMenu(menu);
                 SceneSwitcher.switchScene(this, event, "InterviewerSeeInterviewGroups.fxml");
             }
         }
+    }
+
+    private void promptChooseCompany(){
+        Stage stage = new Stage();
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setTitle("Choose a company to sign in");
+        ComboBox<String> companies = new ComboBox<>();
+        for (String company: user.getCompany())
+            companies.getItems().add(company);
+        Button okButton = new Button("OK");
+//        okButton.setOnAction(e -> {user.setSignedInCompany(companies.getSelectionModel().getSelectedItem()));
+        okButton.setOnAction(e -> {
+            user.setSignedInCompany(companies.getSelectionModel().getSelectedItem());
+            stage.close();
+        });
+        HBox hBox = new HBox();
+        hBox.getChildren().add(companies);
+        hBox.setAlignment(Pos.CENTER);
+        VBox layout = new VBox();
+        layout.getChildren().addAll(hBox, okButton);
+        Scene stageScene = new Scene(layout, 300, 300);
+        stage.setScene(stageScene);
+        stage.showAndWait();
     }
 }

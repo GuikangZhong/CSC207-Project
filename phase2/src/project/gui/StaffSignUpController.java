@@ -12,6 +12,8 @@ import project.user.Interviewer;
 import project.user.UserHistory;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 
 public class StaffSignUpController extends ApplicationController implements Initializable {
@@ -37,12 +39,18 @@ public class StaffSignUpController extends ApplicationController implements Init
     public void signUpButton(ActionEvent event) throws IOException {
         boolean added = false;
         if (UserTypes.typeName.equals("HR")){
-            added = getSystem().addUser(new HR(new UserHistory(getSystem().now()), usernameInput.getText(),passwordInput.getText(),
-                    realNameInput.getText(), companyName));
+            added = getSystem().addUser(new HR(new UserHistory(getSystem().now()),
+                    usernameInput.getText(),
+                    passwordInput.getText(),
+                    realNameInput.getText(),
+                    new ArrayList<String>(Arrays.asList(companyName))));
         }
         else if (UserTypes.typeName.equals("Interviewer")){
-            added = getSystem().addUser(new Interviewer(new UserHistory(getSystem().now()), usernameInput.getText(),passwordInput.getText(),
-                    realNameInput.getText(), companyName));
+            added = getSystem().addUser(new Interviewer(new UserHistory(getSystem().now()),
+                    usernameInput.getText(),
+                    passwordInput.getText(),
+                    realNameInput.getText(),
+                    new ArrayList<>(Arrays.asList(companyName))));
         }
         if (added){
             SceneSwitcher.switchScene(this, event, "SignUpSuccess.fxml");

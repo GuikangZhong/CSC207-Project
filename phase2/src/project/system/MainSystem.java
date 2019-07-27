@@ -70,7 +70,7 @@ public class MainSystem implements Serializable {
                 addObserver((Applicant) user);
                 return applicants.addUser((Applicant) user);
             } else {
-                Company company = getCompany(user.getCompany());
+                Company company = getCompany(user.getCompany().get(0));
                 return company.addUser(user);
             }
         }

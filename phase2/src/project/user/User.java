@@ -13,6 +13,7 @@ public abstract class User implements Serializable {
     private String username;
     private String realName;
     private List<String> company;
+    private String signedInCompany;
     private byte[] password;
 
     public User(UserHistory history,
@@ -37,6 +38,14 @@ public abstract class User implements Serializable {
 
     public List<String> getCompany() {
         return company;
+    }
+
+    public String getSignedInCompany(){
+        return signedInCompany;
+    }
+
+    public void setSignedInCompany(String signedInCompany){
+        this.signedInCompany = signedInCompany;
     }
 
     public void setCompany(List<String> company) {
@@ -65,6 +74,8 @@ public abstract class User implements Serializable {
             throw new RuntimeException("No MD5 algorithm found");
         }
     }
+
+
 
     public enum Type {
         APPLICANT,

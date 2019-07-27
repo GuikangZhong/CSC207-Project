@@ -51,7 +51,7 @@ public class HRCreateJobPosting extends ApplicationController {
     @Override
     void postInit(){
         super.postInit();
-        companyName.setText(getUser().getCompany());
+        companyName.setText(getUser().getSignedInCompany());
         for (int y = 2019; y <= 2022; y++){
             openedYear.getItems().add(y);
             closedYear.getItems().add(y);
