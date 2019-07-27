@@ -39,6 +39,18 @@ public class ApplicantHistory extends UserHistory implements JobPostingObserver 
         return Collections.unmodifiableSet(jobApplying.keySet());
     }
 
+    public List<Job> getApplicationsRejected(){
+        return Collections.unmodifiableList(applicationsRejected);
+    }
+
+    public List<Job> getHiredPositions(){
+        return Collections.unmodifiableList(hiredPositions);
+    }
+
+    public Map<Job, Round> getApplicationsInProgress(){
+        return Collections.unmodifiableMap(applicationsInProgress);
+    }
+
     public LocalDateTime getLastApplicationClosed() {
         return lastApplicationClosed;
     }

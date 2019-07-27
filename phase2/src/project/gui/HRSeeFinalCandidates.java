@@ -26,7 +26,8 @@ public class HRSeeFinalCandidates extends ApplicationController {
     @Override
     void postInit() {
         super.postInit();
-        Callback<ListView<Interview>, ListCell<Interview>> factory = new Callback<ListView<Interview>, ListCell<Interview>>() {
+        Callback<ListView<Interview>, ListCell<Interview>> factory =
+                new Callback<ListView<Interview>, ListCell<Interview>>() {
 
             @Override
             public ListCell<Interview> call(ListView<Interview> p) {
@@ -97,6 +98,12 @@ public class HRSeeFinalCandidates extends ApplicationController {
         if (selectedApplicants.getItems().size() <= interview.getNumberNeeded()) {
             interview.hireFromFinalCandidates(selectedApplicants.getItems());
             for (Applicant applicant: applicantList.getItems()){
+                if (selectedApplicants.getItems().contains(applicant)){
+                    applicant.addHired(interview.getJob());
+                }
+                else{
+                    applicant.addRejected(interview.getJob());
+                }
                 applicant.moveToApplied(interview.getJob());
             }
             showModal("Great", "Hired successfully");

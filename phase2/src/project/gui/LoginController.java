@@ -43,9 +43,10 @@ public class LoginController extends ApplicationController{
                 menu.addOption("Documents", "ApplicantViewOrUpdateDocument.fxml")
                         .addOption("Job Posting", "ApplicantViewJobPostings.fxml")
                         .addOption("Application", "ApplicantViewApplications.fxml")
-                        .addOption("Your history", "ApplicantViewHistory.fxml");
+                        .addOption("Your history", "ApplicantViewHistory.fxml")
+                        .addOption("Notifications", "ApplicantViewNotifications.fxml");
                 setMenu(menu);
-                SceneSwitcher.switchScene(this, event, "ApplicantViewJobPostings.fxml");
+                SceneSwitcher.switchScene(this, event, "ApplicantViewNotifications.fxml");
             } else if (user.getType() == User.Type.HR) {
                 setUser(user);
                 if (user.getCompany().size() > 1){
