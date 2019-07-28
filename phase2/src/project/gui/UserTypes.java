@@ -29,7 +29,7 @@ public class UserTypes extends ApplicationController implements Initializable {
 
     public void confirmButton(ActionEvent event) throws IOException {
         if (typeName != null){
-            if (typeName.equals("Applicant") || type.equals("Referee"))
+            if (typeName.equals("Applicant") || typeName.equals("Referee"))
                 SceneSwitcher.switchScene(this, event, "SignUpPage.fxml");
             else if (typeName.equals("Interviewer") || typeName.equals("HR"))
                 SceneSwitcher.switchScene(this, event, "StaffSignUpPage.fxml");
