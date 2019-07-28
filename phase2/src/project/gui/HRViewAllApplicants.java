@@ -66,13 +66,13 @@ public class HRViewAllApplicants extends ApplicationController {
         ApplicantHistory applicantHistory = applicant.getApplicantHistory();
         Set<Job> jobsApplying = applicantHistory.getJobApplying();
         for (Job job: jobsApplying){
-            if (job.getCompany().getName().equals(getUser().getCompany())){
+            if (job.getCompany().getName().equals(getUser().getSignedInCompany())){
                 applicantApplyingJobs.getItems().add(job.getTitle());
            }
         }
         List<Job> jobsApplied = applicantHistory.getJobApplied();
         for (Job job: jobsApplied){
-            if (job.getCompany().getName().equals(getUser().getCompany())){
+            if (job.getCompany().getName().equals(getUser().getSignedInCompany())){
                 applicantApplyingJobs.getItems().add(job.getTitle());
             }
         }

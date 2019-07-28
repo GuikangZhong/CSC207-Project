@@ -61,7 +61,7 @@ public class MainSystem implements Serializable {
         if (temp != null) {
             return false;
         } else {
-            logger.info("Added user : " + user.getUsername() + " getDocumentType: " + user.getType() + " company: " + user.getCompany());
+            logger.info("Added user : " + user.getUsername() + " getDocumentType: " + user.getType() + " company: " + user.getCompanies());
             if (user.getType() == User.Type.APPLICANT) {
                 addObserver((Applicant) user);
                 return applicants.addUser((Applicant) user);
@@ -69,7 +69,7 @@ public class MainSystem implements Serializable {
                 addObserver((Referee) user);
                 return referees.addUser((Referee) user);
             } else {
-                Company company = getCompany(user.getCompany().get(0));
+                Company company = getCompany(user.getCompanies().get(0));
                 return company.addUser(user);
             }
         }

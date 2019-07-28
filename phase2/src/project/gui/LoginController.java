@@ -49,11 +49,11 @@ public class LoginController extends ApplicationController {
                 SceneSwitcher.switchScene(this, event, "ApplicantViewNotifications.fxml");
             } else if (user.getType() == User.Type.HR) {
                 setUser(user);
-                if (user.getCompany().size() > 1){
+                if (user.getCompanies().size() > 1){
                     promptChooseCompany();
                 }
                 else{
-                    user.setSignedInCompany(user.getCompany().get(0));
+                    user.setSignedInCompany(user.getCompanies().get(0));
                 }
                 Menu menu = new Menu();
                 menu.addOption("View all applicants", "HRViewAllApplicants.fxml")
@@ -67,7 +67,7 @@ public class LoginController extends ApplicationController {
                 SceneSwitcher.switchScene(this, event, "HRSetInterviewFormats.fxml");
             } else if (user.getType() == User.Type.INTERVIEWER) {
                 setUser(user);
-                user.setSignedInCompany(user.getCompany().get(0));
+                user.setSignedInCompany(user.getCompanies().get(0));
                 Menu menu = new Menu();
                 menu.addOption("View all applicants", "InterviewerSeeInterviewGroups.fxml");
                 setMenu(menu);
@@ -81,7 +81,7 @@ public class LoginController extends ApplicationController {
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setTitle("Choose a company to sign in");
         ComboBox<String> companies = new ComboBox<>();
-        for (String company: user.getCompany())
+        for (String company: user.getCompanies())
             companies.getItems().add(company);
         Button okButton = new Button("OK");
 //        okButton.setOnAction(e -> {user.setSignedInCompany(companies.getSelectionModel().getSelectedItem()));

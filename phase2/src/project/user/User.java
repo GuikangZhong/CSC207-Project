@@ -1,5 +1,6 @@
 package project.user;
 
+
 import java.io.Serializable;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -12,7 +13,7 @@ public abstract class User implements Serializable {
     private UserHistory history;
     private String username;
     private String realName;
-    private List<String> company;
+    private List<String> companies;
     private String signedInCompany;
     private byte[] password;
 
@@ -20,11 +21,11 @@ public abstract class User implements Serializable {
                 String username,
                 String password,
                 String realName,
-                List<String> company) {
+                List<String> companies) {
         this.history = history;
         this.realName = realName;
         this.username = username;
-        this.company = company;
+        this.companies = companies;
         try {
             this.password = getMD5ForPassword(password);
         } catch (NoSuchAlgorithmException e) {
@@ -36,8 +37,8 @@ public abstract class User implements Serializable {
         return md.digest(password.getBytes());
     }
 
-    public List<String> getCompany() {
-        return company;
+    public List<String> getCompanies() {
+        return companies;
     }
 
     public String getSignedInCompany(){
@@ -48,8 +49,8 @@ public abstract class User implements Serializable {
         this.signedInCompany = signedInCompany;
     }
 
-    public void setCompany(List<String> company) {
-        this.company = company;
+    public void setCompanies(List<String> companies) {
+        this.companies = companies;
     }
 
     public String getRealName() {
