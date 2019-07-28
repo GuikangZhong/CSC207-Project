@@ -7,6 +7,9 @@ public class PhoneRound extends Round implements Cloneable{
 
     public PhoneRound(){super();}
 
+    public PhoneRound(Job job){
+        super(job);
+    }
 
     public static String roundType(){
         return "Phone";
