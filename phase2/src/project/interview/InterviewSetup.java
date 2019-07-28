@@ -1,5 +1,7 @@
 package project.interview;
 
+import project.application.Job;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -35,6 +37,22 @@ public class InterviewSetup implements Serializable, Cloneable {
             setup.rounds.add((Round)round.clone());
         }
         setup.isTemplate = false;
+        return setup;
+    }
+
+    public InterviewSetup createSetupWithJob(Job job){
+        InterviewSetup setup = new InterviewSetup();
+        for (Round round: rounds){
+//            Round temp = (Round) round.clone();
+            try{
+                Round temp = (Round) round.clone();
+                temp.setJob(job);
+                setup.rounds.add(temp);
+            }
+            catch (CloneNotSupportedException c){
+                c.printStackTrace();
+            }
+        }
         return setup;
     }
 
