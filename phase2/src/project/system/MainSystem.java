@@ -21,11 +21,13 @@ public class MainSystem implements Serializable {
     private List<SystemObserver> observers;
     private HashMap<String, Company> companies;
     private ApplicantManager applicants;
+    private RefereeManager referees;
 
     public MainSystem() {
         clock = new SystemClock();
         companies = new HashMap<>();
         applicants = new ApplicantManager(this);
+        referees = new RefereeManager(this);
         observers = new ArrayList<>();
         addObserver(applicants);
     }
@@ -63,6 +65,9 @@ public class MainSystem implements Serializable {
             if (user.getType() == User.Type.APPLICANT) {
                 addObserver((Applicant) user);
                 return applicants.addUser((Applicant) user);
+            } else if (user.getType() == User.Type.REFEREE) {
+                addObserver((Referee) user);
+                return referees.addUser((Referee) user);
             } else {
                 Company company = getCompany(user.getCompany().get(0));
                 return company.addUser(user);
