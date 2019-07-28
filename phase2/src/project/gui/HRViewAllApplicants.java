@@ -13,7 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Set;
 
-public class HRViewAllApplicants extends ApplicationController{
+public class HRViewAllApplicants extends ApplicationController {
 
     @FXML
     private ListView<Applicant> applicants;

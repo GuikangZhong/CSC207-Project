@@ -7,9 +7,9 @@ public class InPersonRound extends Round implements Cloneable{
 
     public InPersonRound(){super();}
 
-    public InPersonRound(Job job){
-        super(job);
-    }
+//    public InPersonRound(Job job){
+//        super(job);
+//    }
 
     public static String roundType(){
         return "In Person";

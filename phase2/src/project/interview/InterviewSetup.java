@@ -81,7 +81,7 @@ public class InterviewSetup implements Serializable, Cloneable {
             return false;
         }
         for (int i = 0; i < rounds.size(); i++){
-            if (!(rounds.get(0).getRoundType().equals(other.getRounds().get(0).getRoundType()))){
+            if (!(rounds.get(i).getRoundType().equals(other.getRounds().get(i).getRoundType()))){
                 return false;
             }
         }

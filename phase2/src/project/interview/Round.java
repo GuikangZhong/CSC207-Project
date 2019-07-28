@@ -30,11 +30,11 @@ public abstract class Round implements Serializable, InterviewGroupObserver, Clo
         observers = new ArrayList<>();
     }
 
-    public Round(Job job){
-        number = -1;
-        observers = new ArrayList<>();
-        setJob(job);
-    }
+//    public Round(Job job){
+//        number = -1;
+//        observers = new ArrayList<>();
+//        setJob(job);
+//    }
 
     @Override
     public Object clone() throws CloneNotSupportedException {

@@ -102,4 +102,8 @@ public class ApplicantHistory extends UserHistory implements JobPostingObserver 
                 lastApplicationClosed = jobPosting.getCloseDate();
         }
     }
+
+    void removeInProgress(Job job){
+        applicationsInProgress.remove(job);
+    }
 }

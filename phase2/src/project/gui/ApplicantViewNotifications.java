@@ -3,12 +3,8 @@ package project.gui;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
-import javafx.scene.control.TextArea;
-import javafx.util.Callback;
 import project.application.Job;
-import project.interview.Interview;
 import project.user.Applicant;
 import project.user.ApplicantHistory;
 

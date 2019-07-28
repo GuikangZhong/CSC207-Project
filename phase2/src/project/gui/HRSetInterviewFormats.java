@@ -18,7 +18,7 @@ import project.user.HR;
 import java.io.IOException;
 
 
-public class HRSetInterviewFormats extends ApplicationController{
+public class HRSetInterviewFormats extends ApplicationController {
     @FXML
     private ListView<JobPosting> jobPostings;
 
@@ -87,6 +87,7 @@ public class HRSetInterviewFormats extends ApplicationController{
 
     public void submitClicked(ActionEvent event){
         JobPosting selectedPosting = jobPostings.getSelectionModel().getSelectedItem();
+        int indexSelected = jobPostings.getSelectionModel().getSelectedIndex();
         String formatName = formats.getSelectionModel().getSelectedItem();
         InterviewSetup tempFormat = company.getInterviewFormat(formatName);
         try {
@@ -96,6 +97,7 @@ public class HRSetInterviewFormats extends ApplicationController{
             interview.addObserver(company.getJobPostingManager());
             hr.addInterviewsToBeScheduled(interview);
             hr.postingAssignedFormat(selectedPosting);
+            jobPostings.getItems().remove(indexSelected);
         }
         catch (CloneNotSupportedException e){
             e.printStackTrace();

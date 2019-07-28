@@ -12,7 +12,7 @@ import project.utils.Logging;
 import java.io.IOException;
 import java.util.logging.Logger;
 
-public class SignUpController extends ApplicationController{
+public class SignUpController extends ApplicationController {
 
     @FXML
     private TextField usernameInput;

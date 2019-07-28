@@ -13,7 +13,7 @@ import project.user.User;
 
 import java.io.IOException;
 
-public class LoginController extends ApplicationController{
+public class LoginController extends ApplicationController {
 
     @FXML
     private TextField usernameInput;

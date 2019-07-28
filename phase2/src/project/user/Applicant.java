@@ -158,6 +158,7 @@ public class Applicant
     public void addHired(Job job){
         ApplicantHistory history = getApplicantHistory();
         history.addHiredPositions(job);
+//        history.removeInProgress(job);
     }
 
     public void updateInterviewProgress(Job job, Round round){
@@ -168,6 +169,7 @@ public class Applicant
     public void addRejected(Job job){
         ApplicantHistory history = getApplicantHistory();
         history.addApplicationRejected(job);
+        history.removeInProgress(job);
     }
 
 }
