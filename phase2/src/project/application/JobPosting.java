@@ -26,6 +26,7 @@ public class JobPosting implements Serializable, SystemObserver {
     private List<JobPostingObserver> observers;
     static private Logger logger = Logging.getLogger();
     private HR hr;
+    private List<String> tags;
 
     public JobPosting(HR hr, Job job, LocalDateTime begin, LocalDateTime end, Requirement requirement, int nApplicantNeeded,
                       String description) {
@@ -40,6 +41,19 @@ public class JobPosting implements Serializable, SystemObserver {
         this.observers = new ArrayList<>();
         this.description = description;
         this.hr = hr;
+        this.tags = new ArrayList<>();
+    }
+
+    public List<String> getTags() {
+        return tags;
+    }
+
+    public void addTag(String tag) {
+        if(!this.tags.contains(tag)) this.tags.add(tag);
+    }
+
+    public void removeTag(String tag){
+        this.tags.remove(tag);
     }
 
     public enum Status {
