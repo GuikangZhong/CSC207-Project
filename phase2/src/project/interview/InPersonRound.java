@@ -5,6 +5,8 @@ import project.application.Job;
 public class InPersonRound extends Round implements Cloneable{
     private static final long serialVersionUID = -466488373417479710L;
 
+    public InPersonRound(){super();}
+
     public InPersonRound(Job job){
         super(job);
     }
