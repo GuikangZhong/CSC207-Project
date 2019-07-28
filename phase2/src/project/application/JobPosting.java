@@ -28,8 +28,8 @@ public class JobPosting implements Serializable, SystemObserver {
     private HR hr;
     private List<String> tags;
 
-    public JobPosting(HR hr, Job job, LocalDateTime begin, LocalDateTime end, Requirement requirement, int nApplicantNeeded,
-                      String description) {
+    public JobPosting(HR hr, Job job, LocalDateTime begin, LocalDateTime end, Requirement requirement,
+                      int nApplicantNeeded, String description, List<String> tags) {
         status = Status.OPEN;
         this.requirement = requirement;
         this.openDate = begin;
@@ -41,7 +41,7 @@ public class JobPosting implements Serializable, SystemObserver {
         this.observers = new ArrayList<>();
         this.description = description;
         this.hr = hr;
-        this.tags = new ArrayList<>();
+        this.tags = tags;
     }
 
     public List<String> getTags() {
