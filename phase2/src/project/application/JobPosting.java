@@ -44,8 +44,11 @@ public class JobPosting implements Serializable, SystemObserver {
         this.tags = tags;
     }
 
-    public List<String> getTags() {
-        return tags;
+    public String getTags() {
+        String str = "";
+        for (String tag:tags
+             ) {str = str + tag + "; ";}
+        return str;
     }
 
     public void addTag(String tag) {
