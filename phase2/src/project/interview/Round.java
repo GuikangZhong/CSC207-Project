@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
-public abstract class Round implements Serializable, InterviewGroupObserver {
+public abstract class Round implements Serializable, InterviewGroupObserver, Cloneable {
     private static final long serialVersionUID = 8042645594070245259L;
     private int number;
     private List<InterviewGroup> groups;
@@ -30,9 +30,15 @@ public abstract class Round implements Serializable, InterviewGroupObserver {
         observers = new ArrayList<>();
     }
 
+    public Round(Job job){
+        number = -1;
+        observers = new ArrayList<>();
+        setJob(job);
+    }
+
     @Override
     public Object clone() throws CloneNotSupportedException {
-        if(groups != null || observers != null){
+        if(groups != null || observers.size() > 0){
             throw new RuntimeException("You cannot clone this round by now!!!");
         }
         return super.clone();

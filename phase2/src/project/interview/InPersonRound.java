@@ -2,8 +2,12 @@ package project.interview;
 
 import project.application.Job;
 
-public class InPersonRound extends Round {
+public class InPersonRound extends Round implements Cloneable{
     private static final long serialVersionUID = -466488373417479710L;
+
+    public InPersonRound(Job job){
+        super(job);
+    }
 
     public static String roundType(){
         return "In Person";

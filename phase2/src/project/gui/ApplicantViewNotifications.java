@@ -50,7 +50,7 @@ public class ApplicantViewNotifications extends ApplicationController implements
             info.append(passedApplication.getTitle()).append(" at ").append(passedApplication.getCompany().getName())
                     .append(": ").append("Passed ").append(history.getApplicationsInProgress().get(passedApplication))
                     .append("\n");
-            hired.getItems().add(info.toString());
+            passed.getItems().add(info.toString());
         }
     }
 }

@@ -8,7 +8,9 @@ import project.utils.Logging;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.logging.Logger;
 
 public class Company implements Serializable, SystemObserver {
@@ -17,23 +19,30 @@ public class Company implements Serializable, SystemObserver {
     private String name;
     private JobPostingManager jobPostingManager;
     private InterviewerManager interviewerManager;
+    private HRManager hrManager;
     static private Logger logger = Logging.getLogger();
     private MainSystem system;
     private HashMap<String, InterviewSetup> interviewFormats;
+    private List<Company> subsidiaries;
+    private Company parentCompany;
 
 
     public Company(String name, MainSystem system) {
         this.name = name;
         this.system = system;
         jobPostingManager = new JobPostingManager(system, this);
+        hrManager = new HRManager(system, this);
         interviewerManager = new InterviewerManager(system, this);
         interviewFormats = new HashMap<>();
+        subsidiaries = new ArrayList<>();
+        parentCompany = null;
     }
 
-    public InterviewSetup getInterviewFormat(String formatName){
+    public InterviewSetup getInterviewFormat(String formatName) {
         return interviewFormats.get(formatName);
     }
-    public void addInterviewFormat(String formatName, InterviewSetup setup){
+
+    public void addInterviewFormat(String formatName, InterviewSetup setup) {
         interviewFormats.put(formatName, setup);
     }
 
@@ -51,22 +60,39 @@ public class Company implements Serializable, SystemObserver {
     }
 
     public HRManager getHrManager() {
-        return system.getHrManager();
+        return hrManager;
     }
 
     public InterviewerManager getInterviewerManager() {
         return interviewerManager;
     }
 
+    //    public boolean addUser(User user) {
+//        if (user.getType() == User.Type.INTERVIEWER) {
+//            return interviewerManager.addUser((Interviewer) user);
+//        }
+//        return false;
+//    }
+//
+//    public User getUser(String username) {
+//         if (interviewerManager.containsUser(username)) {
+//            return interviewerManager.getUser(username);
+//        }
+//        return null;
+//    }
     public boolean addUser(User user) {
-        if (user.getType() == User.Type.INTERVIEWER) {
+        if (user.getType() == User.Type.HR) {
+            return hrManager.addUser((HR) user);
+        } else if (user.getType() == User.Type.INTERVIEWER) {
             return interviewerManager.addUser((Interviewer) user);
         }
         return false;
     }
 
     public User getUser(String username) {
-         if (interviewerManager.containsUser(username)) {
+        if (hrManager.containsUser(username)) {
+            return hrManager.getUser(username);
+        } else if (interviewerManager.containsUser(username)) {
             return interviewerManager.getUser(username);
         }
         return null;

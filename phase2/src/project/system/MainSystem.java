@@ -22,12 +22,6 @@ public class MainSystem implements Serializable {
     private HashMap<String, Company> companies;
     private ApplicantManager applicants;
 
-    public HRManager getHrManager() {
-        return hrManager;
-    }
-
-    private HRManager hrManager;
-
     public MainSystem() {
         clock = new SystemClock();
         companies = new HashMap<>();

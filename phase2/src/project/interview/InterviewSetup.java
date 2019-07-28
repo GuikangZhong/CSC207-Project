@@ -28,7 +28,7 @@ public class InterviewSetup implements Serializable, Cloneable {
     }
 
     @Override
-    protected Object clone() throws CloneNotSupportedException {
+    public Object clone() throws CloneNotSupportedException {
         InterviewSetup setup  = (InterviewSetup)super.clone();
         setup.rounds = new ArrayList<>();
         for(Round round: rounds){
