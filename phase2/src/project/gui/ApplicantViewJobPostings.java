@@ -30,6 +30,9 @@ public class ApplicantViewJobPostings extends ApplicationController implements I
     @FXML
     private Label companyName;
 
+    @FXML
+    private Label tags;
+
     @Override
     void postInit(){
         super.postInit();
@@ -52,6 +55,7 @@ public class ApplicantViewJobPostings extends ApplicationController implements I
             openDays.setText(String.format(" %s to %s", jobPosting.getOpenDate().toLocalDate(),
                     jobPosting.getCloseDate().toLocalDate()));
             nNeeded.setText(Integer.valueOf(jobPosting.getnApplicantNeeded()).toString());
+            tags.setText(jobPosting.getTags());
         }
 
     }

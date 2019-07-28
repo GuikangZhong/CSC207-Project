@@ -22,28 +22,39 @@
             <Button mnemonicParsing="false" onAction="#applyButton" text="Apply" />
           </children>
         </HBox>
-        <ListView fx:id="jobList" layoutX="14.0" layoutY="46.0" onContextMenuRequested="#selectJobPosting" onMouseClicked="#selectJobPosting" prefHeight="330.0" prefWidth="134.0" />
-        <TextArea fx:id="description" layoutX="188.0" layoutY="166.0" prefHeight="207.0" prefWidth="220.0" />
-            <HBox layoutX="157.0" layoutY="35.0" prefHeight="33.0" prefWidth="355.0">
+        <ListView fx:id="jobList" layoutX="14.0" layoutY="45.0" onContextMenuRequested="#selectJobPosting" onMouseClicked="#selectJobPosting" prefHeight="355.0" prefWidth="134.0" />
+        <TextArea fx:id="description" layoutX="157.0" layoutY="195.0" prefHeight="207.0" prefWidth="220.0" />
+            <HBox layoutX="157.0" layoutY="45.0" prefHeight="33.0" prefWidth="355.0">
                <children>
-                  <Label prefHeight="33.0" prefWidth="114.0" text="Status" />
-                  <Label fx:id="postStatus" prefHeight="33.0" prefWidth="212.0" />
+                  <Label prefHeight="15.0" prefWidth="150.0" text="Status : " />
+                  <Label fx:id="postStatus" prefHeight="15.0" prefWidth="100.0" />
                </children>
             </HBox>
-            <HBox layoutX="157.0" layoutY="84.0" prefHeight="33.0" prefWidth="355.0">
+            <HBox layoutX="157.0" layoutY="75.0" prefHeight="17.0" prefWidth="150.0">
+              <children>
+                  <Label prefHeight="15.0" prefWidth="150.0" text="Company : " />
+                  <Label fx:id="companyName" prefHeight="15.0" prefWidth="100.0" />
+              </children>
+            </HBox>
+            <HBox layoutX="157.0" layoutY="105.0" prefHeight="33.0" prefWidth="355.0">
                <children>
-                  <Label prefHeight="33.0" prefWidth="97.0" text="Open From" />
-                  <Label fx:id="openDays" prefHeight="33.0" prefWidth="286.0" />
+                  <Label prefHeight="15.0" prefWidth="150.0" text="Open From : " />
+                  <Label fx:id="openDays" prefHeight="15.0" prefWidth="205.0" />
                </children>
             </HBox>
-            <HBox layoutX="167.0" layoutY="124.0" prefHeight="33.0" prefWidth="355.0">
+            <HBox layoutX="157.0" layoutY="135.0" prefHeight="33.0" prefWidth="355.0">
                <children>
-                  <Label prefHeight="33.0" prefWidth="155.0" text="# of openings" />
-                  <Label fx:id="nNeeded" prefHeight="33.0" prefWidth="313.0" />
+                  <Label prefHeight="15.0" prefWidth="275.0" text="Number of openings : " />
+                  <Label fx:id="nNeeded" prefHeight="15.0" prefWidth="280.0" />
                </children>
             </HBox>
-            <Label layoutX="157.0" layoutY="68.0" prefHeight="17.0" prefWidth="75.0" text="Company" />
-            <Label fx:id="companyName" layoutX="311.0" layoutY="68.0" prefHeight="17.0" prefWidth="136.0" />
+           <HBox layoutX="157.0" layoutY="165.0" prefHeight="33.0" prefWidth="355.0">
+               <children>
+                  <Label prefHeight="15.0" prefWidth="50.0" text="Tags : " />
+                  <Label fx:id="tags" prefHeight="15.0" prefWidth="280.0" />
+               </children>
+           </HBox>
+
       </children>
     </AnchorPane>
   </center>
