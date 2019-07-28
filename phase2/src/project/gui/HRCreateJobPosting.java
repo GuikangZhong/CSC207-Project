@@ -13,6 +13,8 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Logger;
 
 public class HRCreateJobPosting extends ApplicationController {
@@ -23,6 +25,9 @@ public class HRCreateJobPosting extends ApplicationController {
     private TextField numOpenings;
     @FXML
     private TextArea jobDescription;
+
+    @FXML
+    private ChoiceBox<String> jobTag;
 
     @FXML
     private ChoiceBox<Integer> openedYear;
@@ -74,6 +79,9 @@ public class HRCreateJobPosting extends ApplicationController {
         Integer closeYear = closedYear.getSelectionModel().getSelectedItem();
         Integer closeMonth = closedMonth.getSelectionModel().getSelectedItem();
         Integer closeDay = closedDay.getSelectionModel().getSelectedItem();
+        String tag = jobTag.getSelectionModel().getSelectedItem();
+        List<String> tags = new ArrayList<>();
+        tags.add(tag);
 
         LocalDate openDate = LocalDate.of(openYear, openMonth, openDay);
         LocalDate closedDate = LocalDate.of(closeYear, closeMonth, closeDay);
@@ -91,8 +99,7 @@ public class HRCreateJobPosting extends ApplicationController {
             Job job = new Job(title1, company);
             Requirement requirement = new BasicRequirement();
             JobPosting jobPosting = new JobPosting(((HR)getUser()), job, openTime,
-                    closeTime
-                    , requirement, Integer.parseInt(numOpen), description_);
+                    closeTime, requirement, Integer.parseInt(numOpen), description_, tags);
             JobPostingManager jobPostingManager = company.getJobPostingManager();
             if (jobPostingManager.addJobPosting(jobPosting)) {
                 logger.info("job added successfully");
