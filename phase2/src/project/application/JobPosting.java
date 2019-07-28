@@ -28,7 +28,7 @@ public class JobPosting implements Serializable, SystemObserver {
     private HR hr;
     private List<String> tags;
 
-    public JobPosting(HR hr, Job job, LocalDateTime begin, LocalDateTime end, Requirement requirement,
+    public JobPosting(HR hr, Job job, LocalDateTime begin, LocalDateTime end, Requirement requirement, 
                       int nApplicantNeeded, String description, List<String> tags) {
         status = Status.OPEN;
         this.requirement = requirement;
