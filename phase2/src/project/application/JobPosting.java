@@ -1,5 +1,6 @@
 package project.application;
 
+import project.interview.InterviewSetup;
 import project.observer.JobPostingObserver;
 import project.observer.SystemObserver;
 import project.user.Applicant;
@@ -24,6 +25,7 @@ public class JobPosting implements Serializable, SystemObserver {
     private LocalDateTime openDate, closeDate;
     private List<Applicant> hiredApplicants;
     private List<JobPostingObserver> observers;
+    private InterviewSetup interviewFormat;
     static private Logger logger = Logging.getLogger();
     private HR hr;
     private List<String> tags;
@@ -92,6 +94,14 @@ public class JobPosting implements Serializable, SystemObserver {
 
     public LocalDateTime getCloseDate() {
         return closeDate;
+    }
+
+    public InterviewSetup getInterviewFormat() {
+        return interviewFormat;
+    }
+
+    public void setInterviewFormat(InterviewSetup interviewFormat) {
+        this.interviewFormat = interviewFormat;
     }
 
     /**

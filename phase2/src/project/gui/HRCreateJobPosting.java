@@ -4,17 +4,27 @@ package project.gui;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import project.application.*;
+import project.interview.Interview;
+import project.interview.InterviewSetup;
 import project.user.HR;
 import project.utils.Logging;
 
+import javax.xml.ws.Holder;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
+
 import java.util.List;
+
 import java.util.logging.Logger;
 
 public class HRCreateJobPosting extends ApplicationController {
@@ -50,6 +60,8 @@ public class HRCreateJobPosting extends ApplicationController {
 
     @FXML
     private Label companyName;
+
+
 
 
 
@@ -101,6 +113,7 @@ public class HRCreateJobPosting extends ApplicationController {
             JobPosting jobPosting = new JobPosting(((HR)getUser()), job, openTime,
                     closeTime, requirement, Integer.parseInt(numOpen), description_, tags);
             JobPostingManager jobPostingManager = company.getJobPostingManager();
+//            InterviewSetup format = promptInterviewFormat(company, job);
             if (jobPostingManager.addJobPosting(jobPosting)) {
                 logger.info("job added successfully");
                 showModal("Great","job added successfully");
@@ -108,8 +121,48 @@ public class HRCreateJobPosting extends ApplicationController {
         }else{
             showModal("Cannot create job post.");
         }
-
     }
+
+//    private InterviewSetup promptInterviewFormat(Company company, Job job){
+//        Stage stage = new Stage();
+//        InterviewSetup format = new InterviewSetup();
+//        stage.initModality(Modality.APPLICATION_MODAL);
+//        stage.setTitle("Set the interview format");
+//        Button selectButton = new Button("Select format");
+//        Button createButton = new Button("New format");
+//        selectButton.setOnAction(e -> {
+//            selectFormat(format, company);
+//            stage.close();
+//        });
+//        createButton.setOnAction(e -> {
+//            createFormat(format, company);
+//            stage.close();
+//                }
+//        );
+//        HBox hBox = new HBox();
+//        hBox.getChildren().addAll(selectButton, createButton);
+//        VBox layout = new VBox();
+//        layout.getChildren().add(hBox);
+//        Scene stageScene = new Scene(layout, 300, 300);
+//        stage.setScene(stageScene);
+//        stage.showAndWait();
+//        return format.createSetupWithJob(job);
+//    }
+
+//    private void selectFormat(InterviewSetup format, Company company){
+//        Stage stage = new Stage();
+//        stage.initModality(Modality.APPLICATION_MODAL);
+//        stage.setTitle("Choose an interview format");
+//        ListView<String> availableFormats = new ListView<>();
+//        for (String formatName: company.getFormatNames()){
+//            availableFormats.getItems().add(formatName);
+//        }
+//
+//    }
+//
+//    private void createFormat(InterviewSetup format, Company company){
+//
+//    }
 
     public void exit(Event event) throws IOException{
         SceneSwitcher.switchScene(this, event, "Main.fxml");

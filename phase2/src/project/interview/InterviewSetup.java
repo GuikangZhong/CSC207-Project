@@ -40,18 +40,11 @@ public class InterviewSetup implements Serializable, Cloneable {
         return setup;
     }
 
-    public InterviewSetup createSetupWithJob(Job job){
-        InterviewSetup setup = new InterviewSetup();
-        for (Round round: rounds){
+    public InterviewSetup createSetupWithJob(Job job) throws CloneNotSupportedException{
+        InterviewSetup setup = (InterviewSetup)this.clone();
+        for (Round round: setup.getRounds()){
 //            Round temp = (Round) round.clone();
-            try{
-                Round temp = (Round) round.clone();
-                temp.setJob(job);
-                setup.rounds.add(temp);
-            }
-            catch (CloneNotSupportedException c){
-                c.printStackTrace();
-            }
+            round.setJob(job);
         }
         return setup;
     }
@@ -81,5 +74,17 @@ public class InterviewSetup implements Serializable, Cloneable {
 
     public int getTotalRoundCount() {
         return rounds.size();
+    }
+
+    public boolean equalSetup(InterviewSetup other){
+        if (rounds.size() != other.getRounds().size()){
+            return false;
+        }
+        for (int i = 0; i < rounds.size(); i++){
+            if (!(rounds.get(0).getRoundType().equals(other.getRounds().get(0).getRoundType()))){
+                return false;
+            }
+        }
+        return true;
     }
 }

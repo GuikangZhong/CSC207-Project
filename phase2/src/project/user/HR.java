@@ -1,5 +1,6 @@
 package project.user;
 
+import project.application.JobPosting;
 import project.interview.*;
 import project.utils.Logging;
 
@@ -15,6 +16,7 @@ public class HR extends User {
     private Map<String, Interview> finalCandidates;
     private List<Interview> interviewsRoundFinished;
     private List<Interview> interviewsToBeScheduled;
+    private List<JobPosting> postingsToAssignformat;
     static private Logger logger = Logging.getLogger();
 
     public HR(UserHistory history,
@@ -26,6 +28,7 @@ public class HR extends User {
         finalCandidates = new HashMap<>();
         interviewsRoundFinished = new ArrayList<>();
         interviewsToBeScheduled = new ArrayList<>();
+        postingsToAssignformat = new ArrayList<>();
     }
 
     public List<Interview> getInterviewsRoundFinished() {
@@ -35,6 +38,20 @@ public class HR extends User {
 
     public List<Interview> getInterviewsToBeScheduled() {
         return interviewsToBeScheduled;
+    }
+
+    public List<JobPosting> getPostingsToAssignformat() {
+        return postingsToAssignformat;
+    }
+
+    public void addPostingToAssignFormat(JobPosting posting){
+        if (!(postingsToAssignformat.contains(posting))){
+            postingsToAssignformat.add(posting);
+        }
+    }
+
+    public void postingAssignedFormat(JobPosting posting){
+        postingsToAssignformat.remove(posting);
     }
 
     @Override
@@ -52,15 +69,15 @@ public class HR extends User {
      * finalCandidates.
      * @param interview: The ended interview where there are still multiple applicants remaining.
      */
-    void addFinalCandidates(Interview interview) {
+   public  void addFinalCandidates(Interview interview) {
         finalCandidates.put(interview.getJob().getTitle(), interview);
     }
 
-    void addInterviewRoundFinished(Interview interview) {
+   public  void addInterviewRoundFinished(Interview interview) {
         interviewsRoundFinished.add(interview);
     }
 
-    void addInterviewsToBeScheduled(Interview interview) {
+   public  void addInterviewsToBeScheduled(Interview interview) {
         logger.info("Added " + interview.getJob().getTitle() + " for " + getUsername());
         interviewsToBeScheduled.add(interview);
     }

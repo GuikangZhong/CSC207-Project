@@ -8,9 +8,7 @@ import project.utils.Logging;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
+import java.util.*;
 import java.util.logging.Logger;
 
 public class Company implements Serializable, SystemObserver {
@@ -42,7 +40,21 @@ public class Company implements Serializable, SystemObserver {
         return interviewFormats.get(formatName);
     }
 
+    public Set<String> getFormatNames(){
+        return Collections.unmodifiableSet(interviewFormats.keySet());
+    }
+
     public void addInterviewFormat(String formatName, InterviewSetup setup) {
+
+//        interviewFormats.put(formatName, setup)
+        if (interviewFormats.keySet().contains(formatName)){
+            throw new RuntimeException();
+        }
+        for (InterviewSetup format: interviewFormats.values()){
+            if (format.equalSetup(setup)){
+                throw new RuntimeException();
+            }
+        }
         interviewFormats.put(formatName, setup);
     }
 
