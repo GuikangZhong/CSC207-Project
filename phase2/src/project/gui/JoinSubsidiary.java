@@ -21,16 +21,7 @@ public class JoinSubsidiary extends ApplicationController {
                 availableSubsidiaries.getItems().add(subsidiary.getName());
             }
         }
-
-        for (Company company : system.getCompanies()) {
-            if ((company.getParentCompany() == currentCompany.getParentCompany()) &&
-                    !(availableSubsidiaries.getItems().contains(company.getName())) &&
-                    (company.getParentCompany() != null) &&
-                    (company != currentCompany)
-            ) {
-                availableSubsidiaries.getItems().add(company.getName());
-            }
-        }
+        initializeSiblingCompanies(currentCompany);
     }
 
     public void confirmButton(ActionEvent event) throws IOException {
@@ -42,5 +33,22 @@ public class JoinSubsidiary extends ApplicationController {
 
     public void returnButton(ActionEvent event) throws  IOException{
         SceneSwitcher.switchScene(this, event, "HRSetInterviewFormats.fxml");
+    }
+
+    /**
+     * to fully initialize the ChoiceBox availableSubsidiaries such that it contains the names of all the
+     * companies that share the same parent company as currentCompany
+     * @param currentCompany: The company that the user currently signs in.
+     */
+    private void initializeSiblingCompanies(Company currentCompany){
+        for (Company company : system.getCompanies()) {
+            if ((company.getParentCompany() == currentCompany.getParentCompany()) &&
+                    !(availableSubsidiaries.getItems().contains(company.getName())) &&
+                    (company.getParentCompany() != null) &&
+                    (company != currentCompany)
+            ) {
+                availableSubsidiaries.getItems().add(company.getName());
+            }
+        }
     }
 }

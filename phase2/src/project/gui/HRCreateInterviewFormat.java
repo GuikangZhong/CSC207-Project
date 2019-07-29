@@ -8,8 +8,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import project.application.Company;
-import project.interview.InterviewSetup;
-import project.interview.RoundFactory;
+import project.interview.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -19,10 +18,10 @@ import java.util.Arrays;
 public class HRCreateInterviewFormat extends ApplicationController {
     private ArrayList<String> interviewFormats =
             new ArrayList<>(Arrays.asList(
-                    "Take-home test",
-                    "In-person Interview",
-                    "Phone Interview",
-                    "Group Interview"
+                    TakeHomeTest.roundType(),
+                    InPersonRound.roundType(),
+                    PhoneRound.roundType(),
+                    GroupRound.roundType()
             ));
 
     @FXML
