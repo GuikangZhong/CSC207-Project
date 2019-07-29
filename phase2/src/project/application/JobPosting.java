@@ -19,7 +19,7 @@ public class JobPosting implements Serializable, SystemObserver {
     private Job job;
     private Status status;
     private String description;
-    private Requirement requirement;
+    private VerificationStrategy requirement;
     private int nApplicantNeeded;
     private Collection<Application> applications;
     private LocalDateTime openDate, closeDate;
@@ -30,7 +30,7 @@ public class JobPosting implements Serializable, SystemObserver {
     private HR hr;
     private List<String> tags;
 
-    public JobPosting(HR hr, Job job, LocalDateTime begin, LocalDateTime end, Requirement requirement, 
+    public JobPosting(HR hr, Job job, LocalDateTime begin, LocalDateTime end, VerificationStrategy requirement,
                       int nApplicantNeeded, String description, List<String> tags) {
         status = Status.OPEN;
         this.requirement = requirement;

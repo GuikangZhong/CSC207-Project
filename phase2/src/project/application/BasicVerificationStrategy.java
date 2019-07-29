@@ -3,7 +3,7 @@ package project.application;
 /**
  * Checks if given application contains a CV and a CoverLetter
  */
-public class BasicRequirement implements Requirement {
+public class BasicVerificationStrategy implements VerificationStrategy {
     private static final long serialVersionUID = 7376917471657116219L;
 
     @Override
