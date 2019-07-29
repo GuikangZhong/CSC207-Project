@@ -16,7 +16,9 @@ import java.util.logging.Logger;
 
 public class JobPosting implements Serializable, SystemObserver {
     private static final long serialVersionUID = 726794651891649767L;
-    private Job job;
+//    private Job job;
+    private Company company;
+    private String jobTitle;
     private Status status;
     private String description;
     private VerificationStrategy requirement;
@@ -30,13 +32,14 @@ public class JobPosting implements Serializable, SystemObserver {
     private HR hr;
     private List<String> tags;
 
-    public JobPosting(HR hr, Job job, LocalDateTime begin, LocalDateTime end, VerificationStrategy requirement,
+    public JobPosting(HR hr, String jobTitle, Company company,  LocalDateTime begin, LocalDateTime end, VerificationStrategy requirement,
                       int nApplicantNeeded, String description, List<String> tags) {
         status = Status.OPEN;
         this.requirement = requirement;
         this.openDate = begin;
         this.closeDate = end;
-        this.job = job;
+        this.jobTitle = jobTitle;
+        this.company = company;
         this.hiredApplicants = new ArrayList<>();
         this.nApplicantNeeded = nApplicantNeeded;
         this.applications = new ArrayList<>();
@@ -67,6 +70,12 @@ public class JobPosting implements Serializable, SystemObserver {
         UNFILLED,
         FILLED
     }
+
+    public String getJobTitle() {
+        return jobTitle;
+    }
+
+
 
     public HR getHr() {
         return hr;
@@ -118,10 +127,6 @@ public class JobPosting implements Serializable, SystemObserver {
         }
     }
 
-    public Job getJob() {
-        return job;
-    }
-
     private void setStatus(Status status) {
         this.status = status;
     }
@@ -138,10 +143,6 @@ public class JobPosting implements Serializable, SystemObserver {
 
     public Collection<Application> getApplications() {
         return applications;
-    }
-
-    public String getJobTitle() {
-        return getJob().getTitle();
     }
 
     /**
@@ -190,7 +191,7 @@ public class JobPosting implements Serializable, SystemObserver {
     }
 
     public Company getCompany() {
-        return job.getCompany();
+        return company;
     }
 
     public String toString() {

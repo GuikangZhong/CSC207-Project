@@ -1,7 +1,7 @@
 package project.interview;
 
 import project.application.Application;
-import project.application.Job;
+import project.application.JobPosting;
 import project.observer.InterviewGroupObserver;
 import project.observer.RoundObserver;
 import project.user.Applicant;
@@ -19,11 +19,11 @@ public abstract class Round implements Serializable, InterviewGroupObserver, Clo
     private List<RoundObserver> observers;
     static private Logger logger = Logging.getLogger();
 
-    public void setJob(Job job) {
-        this.job = job;
+    public void setJobPosting(JobPosting jobPosting) {
+        this.jobPosting = jobPosting;
     }
 
-    private Job job;
+    private JobPosting jobPosting;
 
     public Round() {
         number = -1;
@@ -78,7 +78,7 @@ public abstract class Round implements Serializable, InterviewGroupObserver, Clo
             group.addObserver(this);
             group.setRound(this);
             for(Applicant applicant:group.getApplicants()){
-                Application application = applicant.getApplicationOf(job.getTitle()).get();
+                Application application = applicant.getApplicationOf(jobPosting.getJobTitle()).get();
                 group.addObserver(application.getStatus());
             }
         }

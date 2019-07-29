@@ -54,7 +54,7 @@ public class ApplicantViewApplications extends ApplicationController {
                     protected void updateItem(Application t, boolean bln) {
                         super.updateItem(t, bln);
                         if (t != null) {
-                            setText(t.getJob().getTitle());
+                            setText(t.getJob().getJobTitle());
                         } else {
                             setText("");
                         }
@@ -94,7 +94,7 @@ public class ApplicantViewApplications extends ApplicationController {
         Application application = applications.getSelectionModel().getSelectedItem();
         Applicant applicant = (Applicant) getUser();
         Company company = application.getJob().getCompany();
-        JobPosting jobPosting = company.getJobPostingManager().getJobPosting(application.getJob().getTitle());
+        JobPosting jobPosting = company.getJobPostingManager().getJobPosting(application.getJob().getJobTitle());
         boolean withdraw = applicant.withdraw(jobPosting, application);
         pollApplications();
         if (withdraw)

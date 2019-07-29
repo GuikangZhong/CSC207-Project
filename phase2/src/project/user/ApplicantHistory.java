@@ -1,6 +1,5 @@
 package project.user;
 
-import project.application.Job;
 import project.application.JobPosting;
 import project.interview.Round;
 import project.observer.JobPostingObserver;
@@ -11,14 +10,14 @@ import java.util.*;
 public class ApplicantHistory extends UserHistory implements JobPostingObserver {
     private static final long serialVersionUID = -3949731953506050255L;
 
-    private List<Job> jobApplied;
+    private List<JobPosting> jobApplied;
     private LocalDateTime lastApplicationClosed;
     private LocalDateTime latestClosedDate;
     // the Boolean values indicate whether the job posting has been closed (true) or not,
-    private Map<Job, Boolean> jobApplying;
-    private Map<Job, Round> applicationsInProgress;
-    private List<Job> applicationsRejected;
-    private List<Job> hiredPositions;
+    private Map<JobPosting, Boolean> jobApplying;
+    private Map<JobPosting, Round> applicationsInProgress;
+    private List<JobPosting> applicationsRejected;
+    private List<JobPosting> hiredPositions;
 
     public ApplicantHistory(LocalDateTime now) {
         super(now);
@@ -31,23 +30,23 @@ public class ApplicantHistory extends UserHistory implements JobPostingObserver 
         hiredPositions = new ArrayList<>();
     }
 
-    public List<Job> getJobApplied() {
+    public List<JobPosting> getJobApplied() {
         return Collections.unmodifiableList(jobApplied);
     }
 
-    public Set<Job> getJobApplying() {
+    public Set<JobPosting> getJobApplying() {
         return Collections.unmodifiableSet(jobApplying.keySet());
     }
 
-    public List<Job> getApplicationsRejected(){
+    public List<JobPosting> getApplicationsRejected(){
         return Collections.unmodifiableList(applicationsRejected);
     }
 
-    public List<Job> getHiredPositions(){
+    public List<JobPosting> getHiredPositions(){
         return Collections.unmodifiableList(hiredPositions);
     }
 
-    public Map<Job, Round> getApplicationsInProgress(){
+    public Map<JobPosting, Round> getApplicationsInProgress(){
         return Collections.unmodifiableMap(applicationsInProgress);
     }
 
@@ -55,12 +54,12 @@ public class ApplicantHistory extends UserHistory implements JobPostingObserver 
         return lastApplicationClosed;
     }
 
-    void addJobApplied(Job job) {
+    void addJobApplied(JobPosting job) {
         if (!jobApplied.contains(job))
             jobApplied.add(job);
     }
 
-    void addJobApplying(Job job) {
+    void addJobApplying(JobPosting job) {
         jobApplied.remove(job);
         jobApplying.put(job, false);
         latestClosedDate = lastApplicationClosed;
@@ -68,7 +67,7 @@ public class ApplicantHistory extends UserHistory implements JobPostingObserver 
 
     }
 
-    void removeJobApplying(Job job) {
+    void removeJobApplying(JobPosting job) {
         jobApplying.remove(job);
         if ((allApplicationClosed() && latestClosedDate != null) &&
                 (lastApplicationClosed == null || lastApplicationClosed.isBefore(latestClosedDate))) {
@@ -76,15 +75,15 @@ public class ApplicantHistory extends UserHistory implements JobPostingObserver 
         }
     }
 
-    void addApplicationInProgress(Job job, Round round){
+    void addApplicationInProgress(JobPosting job, Round round){
         applicationsInProgress.put(job, round);
     }
 
-    void addApplicationRejected(Job job){
+    void addApplicationRejected(JobPosting job){
         applicationsRejected.add(job);
     }
 
-    void addHiredPositions(Job job){
+    void addHiredPositions(JobPosting job){
         hiredPositions.add(job);
     }
 
@@ -94,7 +93,7 @@ public class ApplicantHistory extends UserHistory implements JobPostingObserver 
 
     @Override
     public void updateOnJobPostingClosure(JobPosting jobPosting) {
-        jobApplying.put(jobPosting.getJob(), true);
+        jobApplying.put(jobPosting, true);
         if (latestClosedDate == null || latestClosedDate.isBefore(jobPosting.getCloseDate()))
             latestClosedDate = jobPosting.getCloseDate();
         if (allApplicationClosed()) {
@@ -103,7 +102,7 @@ public class ApplicantHistory extends UserHistory implements JobPostingObserver 
         }
     }
 
-    void removeInProgress(Job job){
+    void removeInProgress(JobPosting job){
         applicationsInProgress.remove(job);
     }
 }

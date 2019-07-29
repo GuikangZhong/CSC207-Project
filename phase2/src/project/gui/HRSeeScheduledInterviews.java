@@ -39,7 +39,7 @@ public class HRSeeScheduledInterviews extends ApplicationController {
                     protected void updateItem(Interview t, boolean bln) {
                         super.updateItem(t, bln);
                         if (t != null) {
-                            String s = t.getJob().getTitle();
+                            String s = t.getJobPosting().getJobTitle();
                             s += "(" + t.getRoundInProgress() + ")";
                             setText(s);
                         } else {

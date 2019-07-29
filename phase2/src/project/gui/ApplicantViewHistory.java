@@ -4,7 +4,7 @@ import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
-import project.application.Job;
+import project.application.JobPosting;
 import project.user.Applicant;
 import project.user.ApplicantHistory;
 
@@ -41,11 +41,11 @@ public class ApplicantViewHistory extends ApplicationController {
         ApplicantHistory history = applicant.getApplicantHistory();
         appliedJobs.getItems().clear();
         applyingJobs.getItems().clear();
-        for (Job job : history.getJobApplied()) {
-            appliedJobs.getItems().add(job.getTitle());
+        for (JobPosting job : history.getJobApplied()) {
+            appliedJobs.getItems().add(job.getJobTitle());
         }
-        for (Job job : history.getJobApplying()) {
-            applyingJobs.getItems().add(job.getTitle());
+        for (JobPosting job : history.getJobApplying()) {
+            applyingJobs.getItems().add(job.getJobTitle());
         }
         createDate.setText(history.getDateCreated().toString());
         username.setText(applicant.getUsername());

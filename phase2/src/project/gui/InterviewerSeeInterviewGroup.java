@@ -84,7 +84,8 @@ public class InterviewerSeeInterviewGroup extends ApplicationController implemen
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("ApplicationInfo.fxml"));
                     AnchorPane pane = (AnchorPane) loader.load();
                     ApplicationInfoController controller = loader.<ApplicationInfoController>getController();
-                    Application application = applicant.getApplicationOf(interviewGroup.getJob().getTitle()).get();
+                    Application application
+                            = applicant.getApplicationOf(interviewGroup.getJobPosting().getJobTitle()).get();
                     controller.setApplication(application);
                     Scene scene = new Scene(pane);
                     stage.setScene(scene);

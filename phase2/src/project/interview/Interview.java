@@ -1,7 +1,6 @@
 package project.interview;
 
 import project.application.Application;
-import project.application.Job;
 import project.application.JobPosting;
 import project.observer.ApplicantObserver;
 import project.observer.InterviewObserver;
@@ -28,7 +27,7 @@ public class Interview implements Serializable, RoundObserver, ApplicantObserver
     private List<Applicant> applicants;
     private InterviewSetup setup;
     private int round;
-    private Job job;
+    private JobPosting jobPosting;
     private int numberNeeded;
     private static Logger logger = Logging.getLogger();
 
@@ -40,7 +39,7 @@ public class Interview implements Serializable, RoundObserver, ApplicantObserver
         }
         this.hr = hr;
         this.setup = setup;
-        this.job = jobPosting.getJob();
+        this.jobPosting = jobPosting;
         numberNeeded = jobPosting.getnApplicantNeeded();
         applicants = new ArrayList<>();
         for (Application application : jobPosting.getApplications()) {
@@ -56,8 +55,8 @@ public class Interview implements Serializable, RoundObserver, ApplicantObserver
         return hr;
     }
 
-    public Job getJob() {
-        return job;
+    public JobPosting getJobPosting() {
+        return jobPosting;
     }
 
     public int getNumberNeeded() {
@@ -99,7 +98,7 @@ public class Interview implements Serializable, RoundObserver, ApplicantObserver
     }
 
     private void notifyHireResult() {
-        logger.info("Hire result for " + getJob().getTitle());
+        logger.info("Hire result for " + jobPosting.getJobTitle());
         for (InterviewObserver observer : observers) {
             observer.updateOnHireResult(this);
         }
@@ -109,7 +108,7 @@ public class Interview implements Serializable, RoundObserver, ApplicantObserver
     }
 
     public void addObserver(InterviewObserver observer) {
-        logger.info("Interview: " + job.getTitle() + " added observer " + observer);
+        logger.info("Interview: " + jobPosting.getJobTitle() + " added observer " + observer);
         observers.add(observer);
     }
 
@@ -133,9 +132,9 @@ public class Interview implements Serializable, RoundObserver, ApplicantObserver
     }
 
     public void assignRound(InterviewGroupAssignmentStrategy strategy, List<Interviewer> interviewers) {
-        logger.info("Job" + job.getTitle() + " Round: " + getRoundInProgress() + " assigned");
+        logger.info("Job" + jobPosting.getJobTitle() + " Round: " + getRoundInProgress() + " assigned");
         List<InterviewGroup> groups = strategy.select(applicants, interviewers);
-        logger.info("Job" + job.getTitle() + " Round: " + getRoundInProgress() + " assigned successful");
+        logger.info("Job" + jobPosting.getJobTitle() + " Round: " + getRoundInProgress() + " assigned successful");
         for (InterviewGroup group : groups) {
             logger.info(group.toString());
             Interviewer interviewer = group.getInterviewer();
@@ -149,7 +148,7 @@ public class Interview implements Serializable, RoundObserver, ApplicantObserver
     @Override
     public String toString() {
         StringBuilder s = new StringBuilder();
-        s.append("Set Interview for " + job.getTitle() + " HR: " + getHR() + '\n');
+        s.append("Set Interview for " + jobPosting.getJobTitle() + " HR: " + getHR() + '\n');
         for (Round round : setup.getRounds()) {
             s.append(round + "\n");
         }
@@ -173,7 +172,7 @@ public class Interview implements Serializable, RoundObserver, ApplicantObserver
 
     @Override
     public void updateOnRoundFinished(Round round) {
-        logger.info("Interview for " + job.getTitle() + "round finished");
+        logger.info("Interview for " + jobPosting.getJobTitle() + "round finished");
         filterPassed();
         updateOnRoundFinished();
 
@@ -181,7 +180,7 @@ public class Interview implements Serializable, RoundObserver, ApplicantObserver
 
     @Override
     public void updateOnApplicationWithdraw(Application application) {
-        if(application.getJob() != getJob())return;
+        if(application.getJob() != jobPosting)return;
         if (!applicants.remove(application.getApplicant())) {
             throw new RuntimeException("You have removed someone doesn't exist!!!");
         }

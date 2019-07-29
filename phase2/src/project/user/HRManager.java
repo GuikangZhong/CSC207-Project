@@ -1,7 +1,6 @@
 package project.user;
 
 import project.application.Company;
-import project.application.Job;
 import project.application.JobPosting;
 import project.interview.InPersonRound;
 import project.interview.Interview;

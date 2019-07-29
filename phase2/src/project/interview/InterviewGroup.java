@@ -1,6 +1,6 @@
 package project.interview;
 
-import project.application.Job;
+import project.application.JobPosting;
 import project.observer.InterviewGroupObserver;
 import project.user.Applicant;
 import project.user.Interviewer;
@@ -19,7 +19,7 @@ public class InterviewGroup implements Serializable {
     private Map<String, Boolean> applicantsStatus;
     private List<Applicant> applicants;
     private boolean submitted = false;
-    private Job job;
+    private JobPosting jobPosting;
     private Round round;
     private List<InterviewGroupObserver> observers;
     static private Logger logger = Logging.getLogger();
@@ -29,7 +29,7 @@ public class InterviewGroup implements Serializable {
         observers.add(observer);
     }
 
-    public InterviewGroup(Job job, Interviewer interviewer, List<Applicant> applicants) {
+    public InterviewGroup(JobPosting jobPosting, Interviewer interviewer, List<Applicant> applicants) {
         this.interviewer = interviewer;
         this.applicants = applicants;
         applicantsStatus = new HashMap<>();
@@ -37,7 +37,7 @@ public class InterviewGroup implements Serializable {
         for (Applicant applicant : applicants) {
             applicantsStatus.put(applicant.getUsername(), false);
         }
-        this.job = job;
+        this.jobPosting = jobPosting;
         observers = new ArrayList<>();
     }
 
@@ -57,11 +57,11 @@ public class InterviewGroup implements Serializable {
         }
         for (Applicant applicant : applicants) {
             if (!applicantsStatus.get(applicant.getUsername())) {
-                applicant.moveToApplied(getJob());
-                applicant.addRejected(getJob());
+                applicant.moveToApplied(getJobPosting());
+                applicant.addRejected(getJobPosting());
             }
             else {
-                applicant.updateInterviewProgress(getJob(), getRound());
+                applicant.updateInterviewProgress(getJobPosting(), getRound());
             }
         }
     }
@@ -96,13 +96,13 @@ public class InterviewGroup implements Serializable {
         applicantsStatus.put(name, passed);
     }
 
-    public Job getJob() {
-        return job;
+    public JobPosting getJobPosting() {
+        return jobPosting;
     }
 
     @Override
     public String toString() {
-        StringBuilder builder = new StringBuilder(getJob().getTitle() + " [");
+        StringBuilder builder = new StringBuilder(getJobPosting().getJobTitle() + " [");
         for (Applicant applicant : applicants) {
             builder.append(applicant.getUsername() + " ");
         }

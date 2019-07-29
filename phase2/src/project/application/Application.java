@@ -16,13 +16,13 @@ public class Application implements Serializable {
     private static final long serialVersionUID = -8550792289386170705L;
     private Applicant applicant;
     private List<Document> documents;
-    private Job job;
+    private JobPosting jobPosting;
     private ApplicationStatus status;
 
-    public Application(Applicant applicant, List<Document> documents, Job job) {
+    public Application(Applicant applicant, List<Document> documents, JobPosting job) {
         this.applicant = applicant;
         this.documents = new ArrayList<>(documents);
-        this.job = job;
+        this.jobPosting = job;
         this.status = new ApplicationStatus();
     }
 
@@ -34,8 +34,8 @@ public class Application implements Serializable {
         return Collections.unmodifiableList(documents);
     }
 
-    public Job getJob() {
-        return job;
+    public JobPosting getJob() {
+        return jobPosting;
     }
 
     public ApplicationStatus getStatus() {

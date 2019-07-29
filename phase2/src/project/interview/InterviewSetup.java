@@ -1,6 +1,7 @@
 package project.interview;
 
-import project.application.Job;
+
+import project.application.JobPosting;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -48,16 +49,16 @@ public class InterviewSetup implements Serializable, Cloneable {
 
     /**
      * Creates a concrete setup for the job based on the "template format".
-     * @param job: the job that the program need to set the interview format for.
+     * @param jobPosting: the job that the program need to set the interview format for.
      * @return The concrete setup of interview for job.
      * @throws CloneNotSupportedException
      */
 
-    public InterviewSetup createSetupWithJob(Job job) throws CloneNotSupportedException{
+    public InterviewSetup createSetupWithJob(JobPosting jobPosting) throws CloneNotSupportedException{
         InterviewSetup setup = (InterviewSetup)this.clone();
         for (Round round: setup.getRounds()){
 //            Round temp = (Round) round.clone();
-            round.setJob(job);
+            round.setJobPosting(jobPosting);
         }
         return setup;
     }

@@ -38,7 +38,7 @@ public class HRSeeFinalCandidates extends ApplicationController {
                     protected void updateItem(Interview t, boolean bln) {
                         super.updateItem(t, bln);
                         if (t != null) {
-                            String s = t.getJob().getTitle();
+                            String s = t.getJobPosting().getJobTitle();
                             setText(s);
                         } else {
                             setText("");
@@ -99,12 +99,12 @@ public class HRSeeFinalCandidates extends ApplicationController {
             interview.hireFromFinalCandidates(selectedApplicants.getItems());
             for (Applicant applicant: applicantList.getItems()){
                 if (selectedApplicants.getItems().contains(applicant)){
-                    applicant.addHired(interview.getJob());
+                    applicant.addHired(interview.getJobPosting());
                 }
                 else{
-                    applicant.addRejected(interview.getJob());
+                    applicant.addRejected(interview.getJobPosting());
                 }
-                applicant.moveToApplied(interview.getJob());
+                applicant.moveToApplied(interview.getJobPosting());
             }
             showModal("Great", "Hired successfully");
         } else {

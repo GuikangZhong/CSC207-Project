@@ -100,9 +100,9 @@ public class HRCreateJobPosting extends ApplicationController {
             String description_ = jobDescription.getText();
             String comName = companyName.getText();
             Company company = getSystem().getCompany(comName);
-            Job job = new Job(title1, company);
+//            Job job = new Job(title1, company);
             VerificationStrategy requirement = new BasicVerificationStrategy();
-            JobPosting jobPosting = new JobPosting(((HR)getUser()), job, openTime,
+            JobPosting jobPosting = new JobPosting(((HR)getUser()), title1, company, openTime,
                     closeTime, requirement, Integer.parseInt(numOpen), description_, tags);
             JobPostingManager jobPostingManager = company.getJobPostingManager();
 //            InterviewSetup format = promptInterviewFormat(company, job);

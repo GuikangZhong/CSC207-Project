@@ -70,7 +70,7 @@ public class HR extends User {
      * @param interview: The ended interview where there are still multiple applicants remaining.
      */
    public  void addFinalCandidates(Interview interview) {
-        finalCandidates.put(interview.getJob().getTitle(), interview);
+        finalCandidates.put(interview.getJobPosting().getJobTitle(), interview);
     }
 
    public  void addInterviewRoundFinished(Interview interview) {
@@ -78,7 +78,7 @@ public class HR extends User {
     }
 
    public  void addInterviewsToBeScheduled(Interview interview) {
-        logger.info("Added " + interview.getJob().getTitle() + " for " + getUsername());
+        logger.info("Added " + interview.getJobPosting().getJobTitle() + " for " + getUsername());
         interviewsToBeScheduled.add(interview);
     }
 }

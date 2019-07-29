@@ -57,7 +57,7 @@ public class Applicant
     }
 
     public Optional<Application> getApplicationOf(String jobTitle) {
-        return getApplications().stream().filter(application -> application.getJob().getTitle().equals(jobTitle)).findAny();
+        return getApplications().stream().filter(application -> application.getJob().getJobTitle().equals(jobTitle)).findAny();
     }
 
     public Collection<Application> getApplications() {
@@ -81,11 +81,11 @@ public class Applicant
 
     // tries to apply for a job
     public Application apply(JobPosting jobPosting) {
-        Application application = new Application(this, getDocuments(), jobPosting.getJob());
+        Application application = new Application(this, getDocuments(), jobPosting);
         jobPosting.addObserver(this.getApplicantHistory());
         if (jobPosting.addApplication(application)) {
             applications.add(application);
-            getApplicantHistory().addJobApplying(jobPosting.getJob());
+            getApplicantHistory().addJobApplying(jobPosting);
             return application;
         }
         return null;
@@ -103,7 +103,7 @@ public class Applicant
         if (jobPosting.getStatus() == JobPosting.Status.FILLED || jobPosting.getStatus() == JobPosting.Status.UNFILLED){
             return false;
         }
-        moveToApplied(jobPosting.getJob());
+        moveToApplied(jobPosting);
         applications.remove(application);
         jobPosting.removeApplication(application);
         for (ApplicantObserver observer : observers) {
@@ -149,24 +149,24 @@ public class Applicant
      * @param job: The job being moved.
      */
 
-    public void moveToApplied(Job job) {
+    public void moveToApplied(JobPosting job) {
         ApplicantHistory history = getApplicantHistory();
         history.removeJobApplying(job);
         history.addJobApplied(job);
     }
 
-    public void addHired(Job job){
+    public void addHired(JobPosting job){
         ApplicantHistory history = getApplicantHistory();
         history.addHiredPositions(job);
 //        history.removeInProgress(job);
     }
 
-    public void updateInterviewProgress(Job job, Round round){
+    public void updateInterviewProgress(JobPosting job, Round round){
         ApplicantHistory history = getApplicantHistory();
         history.addApplicationInProgress(job, round);
     }
 
-    public void addRejected(Job job){
+    public void addRejected(JobPosting job){
         ApplicantHistory history = getApplicantHistory();
         history.addApplicationRejected(job);
         history.removeInProgress(job);

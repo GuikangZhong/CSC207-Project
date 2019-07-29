@@ -5,7 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import project.application.Document;
-import project.application.Job;
+import project.application.JobPosting;
 import project.user.*;
 
 import java.io.IOException;
@@ -64,16 +64,16 @@ public class HRViewAllApplicants extends ApplicationController {
 
         applicantApplyingJobs.getItems().clear();
         ApplicantHistory applicantHistory = applicant.getApplicantHistory();
-        Set<Job> jobsApplying = applicantHistory.getJobApplying();
-        for (Job job: jobsApplying){
+        Set<JobPosting> jobsApplying = applicantHistory.getJobApplying();
+        for (JobPosting job: jobsApplying){
             if (job.getCompany().getName().equals(getUser().getSignedInCompany())){
-                applicantApplyingJobs.getItems().add(job.getTitle());
+                applicantApplyingJobs.getItems().add(job.getJobTitle());
            }
         }
-        List<Job> jobsApplied = applicantHistory.getJobApplied();
-        for (Job job: jobsApplied){
+        List<JobPosting> jobsApplied = applicantHistory.getJobApplied();
+        for (JobPosting job: jobsApplied){
             if (job.getCompany().getName().equals(getUser().getSignedInCompany())){
-                applicantApplyingJobs.getItems().add(job.getTitle());
+                applicantApplyingJobs.getItems().add(job.getJobTitle());
             }
         }
     }

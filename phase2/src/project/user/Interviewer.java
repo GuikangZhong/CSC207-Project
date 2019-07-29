@@ -55,7 +55,7 @@ public class Interviewer extends User implements InterviewGroupObserver, Intervi
 
     @Override
     public void updateOnHireResult(Interview interview) {
-        if (interviews.removeIf(group -> group.getJob() == interview.getJob())) {
+        if (interviews.removeIf(group -> group.getJobPosting() == interview.getJobPosting())) {
             logger.info("Removed interview " + interview);
         }
     }

@@ -91,7 +91,7 @@ public class HRSetInterviewFormats extends ApplicationController {
         String formatName = formats.getSelectionModel().getSelectedItem();
         InterviewSetup tempFormat = company.getInterviewFormat(formatName);
         try {
-            InterviewSetup setupAssigned = tempFormat.createSetupWithJob(selectedPosting.getJob());
+            InterviewSetup setupAssigned = tempFormat.createSetupWithJob(selectedPosting);
             Interview interview = new Interview(hr, selectedPosting, setupAssigned);
             interview.addObserver(company.getHrManager());
             interview.addObserver(company.getJobPostingManager());

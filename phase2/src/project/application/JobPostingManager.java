@@ -39,7 +39,7 @@ public class JobPostingManager implements InterviewObserver, Serializable, Syste
      * false if job posting already exists
      */
     public boolean addJobPosting(JobPosting jobPosting) {
-        String jobName = jobPosting.getJob().getTitle();
+        String jobName = jobPosting.getJobTitle();
         if (!jobPostings.containsKey(jobName)) {
             logger.info("Added job " + jobPosting.getJobTitle());
             jobPostings.put(jobName, jobPosting);
@@ -60,7 +60,7 @@ public class JobPostingManager implements InterviewObserver, Serializable, Syste
 
     @Override
     public void updateOnHireResult(Interview interview) {
-        String name = interview.getJob().getTitle();
+        String name = interview.getJobPosting().getJobTitle();
         JobPosting jobPosting = getJobPosting(name);
         // if the size is 0, it means no one is hired for this posting
         if (interview.getApplicants().size() == 0) {
@@ -68,8 +68,8 @@ public class JobPostingManager implements InterviewObserver, Serializable, Syste
         } else {
             for (Applicant applicant : interview.getApplicants()) {
                 jobPosting.addHired(applicant);
-                applicant.moveToApplied(interview.getJob());
-                applicant.addHired(interview.getJob());
+                applicant.moveToApplied(interview.getJobPosting());
+                applicant.addHired(interview.getJobPosting());
             }
         }
     }

@@ -156,7 +156,7 @@ public class HRAssignInterviewGroups extends ApplicationController {
                     for (Applicant applicant : group.applicants) {
                         set.remove(applicant.getUsername());
                     }
-                    InterviewGroup interviewGroup = new InterviewGroup(interview.getJob(),
+                    InterviewGroup interviewGroup = new InterviewGroup(interview.getJobPosting(),
                             group.interviewer,
                             group.applicants);
                     result.add(interviewGroup);

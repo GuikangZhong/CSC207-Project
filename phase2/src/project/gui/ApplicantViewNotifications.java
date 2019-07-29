@@ -4,7 +4,7 @@ import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ListView;
-import project.application.Job;
+import project.application.JobPosting;
 import project.user.Applicant;
 import project.user.ApplicantHistory;
 
@@ -28,22 +28,22 @@ public class ApplicantViewNotifications extends ApplicationController implements
         super.postInit();
         Applicant applicant = (Applicant)getUser();
         ApplicantHistory history = applicant.getApplicantHistory();
-        for (Job rejectedApplication: history.getApplicationsRejected()){
+        for (JobPosting rejectedApplication: history.getApplicationsRejected()){
             StringBuilder info = new StringBuilder();
-            info.append(rejectedApplication.getTitle()).append(" at ").
+            info.append(rejectedApplication.getJobTitle()).append(" at ").
                     append(rejectedApplication.getCompany().getName()).append("\n");
             failed.getItems().add(info.toString());
         }
 
-        for (Job hiredPos: history.getHiredPositions()){
+        for (JobPosting hiredPos: history.getHiredPositions()){
             StringBuilder info = new StringBuilder();
-            info.append(hiredPos.getTitle()).append(" at ").append(hiredPos.getCompany().getName()).append("\n");
+            info.append(hiredPos.getJobTitle()).append(" at ").append(hiredPos.getCompany().getName()).append("\n");
             hired.getItems().add(info.toString());
         }
 
-        for (Job passedApplication: history.getApplicationsInProgress().keySet()){
+        for (JobPosting passedApplication: history.getApplicationsInProgress().keySet()){
             StringBuilder info = new StringBuilder();
-            info.append(passedApplication.getTitle()).append(" at ").append(passedApplication.getCompany().getName())
+            info.append(passedApplication.getJobTitle()).append(" at ").append(passedApplication.getCompany().getName())
                     .append(": ").append("Passed ").append(history.getApplicationsInProgress().get(passedApplication))
                     .append("\n");
             passed.getItems().add(info.toString());
