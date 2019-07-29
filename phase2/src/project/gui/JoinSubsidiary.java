@@ -33,7 +33,7 @@ public class JoinSubsidiary extends ApplicationController {
         }
     }
 
-    public void comfirmButton(ActionEvent event) throws IOException {
+    public void confirmButton(ActionEvent event) throws IOException {
         String subsidiaryName = availableSubsidiaries.getSelectionModel().getSelectedItem();
 //        Company subsidiary = system.getCompany(subsidiaryName);
         user.addCompany(subsidiaryName);

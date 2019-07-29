@@ -117,6 +117,8 @@ public class Company implements Serializable, SystemObserver {
     public void setParentCompany(Company parent){
         if (parentCompany == null)
             parentCompany = parent;
+        else
+            throw new RuntimeException("You cannot set parent for the second time");
     }
 
     public Company getParentCompany() {
