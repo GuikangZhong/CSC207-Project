@@ -1,6 +1,8 @@
 package project.user;
 
 
+import project.application.Company;
+
 import java.io.Serializable;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -39,6 +41,10 @@ public abstract class User implements Serializable {
 
     public List<String> getCompanies() {
         return companies;
+    }
+
+    public void addCompany(String companyName){
+        companies.add(companyName);
     }
 
     public String getSignedInCompany(){

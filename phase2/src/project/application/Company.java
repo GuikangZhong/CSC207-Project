@@ -110,6 +110,23 @@ public class Company implements Serializable, SystemObserver {
         return null;
     }
 
+    public void addSubsidiary(Company subsidiary){
+        subsidiaries.add(subsidiary);
+    }
+
+    public void setParentCompany(Company parent){
+        if (parentCompany == null)
+            parentCompany = parent;
+    }
+
+    public Company getParentCompany() {
+        return parentCompany;
+    }
+
+    public List<Company> getSubsidiaries(){
+        return subsidiaries;
+    }
+
     @Override
     public void updateOnTime(LocalDateTime now) {
         logger.info("Update on " + now);

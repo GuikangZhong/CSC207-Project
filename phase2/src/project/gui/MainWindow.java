@@ -13,6 +13,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import project.utils.Logging;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -34,6 +35,10 @@ public class MainWindow extends ApplicationController implements Initializable {
 
     public void addCompanyButton(ActionEvent event) throws IOException {
         SceneSwitcher.switchScene(this, event, "AddCompany.fxml");
+    }
+
+    public void addSubsidiaryButton(ActionEvent event) throws IOException{
+        SceneSwitcher.switchScene(this, event, "AddSubsidiary.fxml");
     }
 
     static private Logger logger = Logging.getLogger();

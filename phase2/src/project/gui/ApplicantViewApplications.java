@@ -77,7 +77,7 @@ public class ApplicantViewApplications extends ApplicationController {
                 try {
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("ApplicationInfo.fxml"));
                     AnchorPane pane = (AnchorPane) loader.load();
-                    ApplicationInfoController controller = loader.<ApplicationInfoController>getController();
+                    ApplicationInfoController controller = loader.getController();
                     controller.setApplication(application);
                     Scene scene = new Scene(pane);
                     stage.setScene(scene);
