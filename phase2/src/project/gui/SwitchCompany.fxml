@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.gui.SwitchCompany">
+   <children>
+      <Label layoutX="137.0" layoutY="38.0" prefHeight="47.0" prefWidth="340.0" text="Please select the company you want to switch to">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="companies" layoutX="213.0" layoutY="121.0" prefWidth="150.0" />
+      <Button layoutX="122.0" layoutY="288.0" mnemonicParsing="false" onAction="#comfirmClicked" prefHeight="27.0" prefWidth="141.0" text="Confirm" />
+      <Button layoutX="363.0" layoutY="288.0" mnemonicParsing="false" onAction="#returnClicked" prefHeight="27.0" prefWidth="141.0" text="Return" />
+   </children>
+</AnchorPane>

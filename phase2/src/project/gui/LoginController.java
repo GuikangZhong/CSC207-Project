@@ -63,7 +63,8 @@ public class LoginController extends ApplicationController {
                         .addOption("Final Candidates", "HRSeeFinalCandidates.fxml")
                         .addOption("Set format for job postings", "HRSetInterviewFormats.fxml")
                         .addOption("New interview format", "HRCreateInterviewFormat.fxml")
-                        .addOption("Join new subsidiaries", "JoinSubsidiary.fxml");
+                        .addOption("Join new subsidiaries", "JoinSubsidiary.fxml")
+                        .addOption("Switch Company", "SwitchCompany.fxml");
                 setMenu(menu);
                 SceneSwitcher.switchScene(this, event, "HRSetInterviewFormats.fxml");
             } else if (user.getType() == User.Type.INTERVIEWER) {
