@@ -46,6 +46,8 @@ public class MainSystem implements Serializable {
     public User getUser(String username) {
         if (applicants.containsUser(username))
             return applicants.getUser(username);
+        else if (referees.containsUser(username))
+            return referees.getUser(username);
         for (Company company : getCompanies()) {
             User user = company.getUser(username);
             if (user != null) {
