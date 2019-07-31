@@ -25,6 +25,10 @@ public class ReferenceLetter extends Document implements Serializable {
         return "ReferenceLetter";
     }
 
+    public JobPosting getJobPosting() {
+        return jobPosting;
+    }
+
     @Override
     public String getDocumentType() {
         return documentType();

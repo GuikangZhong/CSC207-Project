@@ -4,7 +4,13 @@ package project.gui;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
 import project.application.*;
 import project.user.HR;
 import project.utils.Logging;
@@ -49,17 +55,21 @@ public class HRCreateJobPosting extends ApplicationController {
     @FXML
     private ChoiceBox<Integer> closedDay;
 
+    @FXML
+    private ChoiceBox<String> requirementsAvailable;
+
 
     @FXML
     private Label companyName;
 
 
-
+    private int numLetterRequired;
 
 
     @Override
     void postInit(){
         super.postInit();
+        requirementsAvailable.getItems().addAll("Basic", "Reference");
         companyName.setText(getUser().getSignedInCompany());
         for (int y = 2019; y <= 2022; y++){
             openedYear.getItems().add(y);
@@ -100,12 +110,27 @@ public class HRCreateJobPosting extends ApplicationController {
             String description_ = jobDescription.getText();
             String comName = companyName.getText();
             Company company = getSystem().getCompany(comName);
-//            Job job = new Job(title1, company);
-            VerificationStrategy requirement = new BasicVerificationStrategy();
+//            VerificationStrategy requirement = new BasicVerificationStrategy();
+//            VerificationStrategy requirement = null;
+            VerificationStrategyFactory factory = new VerificationStrategyFactory();
+//            if (requirementsAvailable.getSelectionModel().getSelectedItem().equals("Basic")){
+//                requirement = factory.getStrategy()
+//            }
+//            else{
+//                promptSetRefNum();
+//
+//            }
+            VerificationStrategy requirement = factory
+                    .getStrategy(requirementsAvailable
+                    .getSelectionModel()
+                    .getSelectedItem());
+            if (requirementsAvailable.getSelectionModel().getSelectedItem().equals("Reference")){
+                promptSetRefNum();
+                ((ReferenceVerificationStrategy) requirement).setReferenceLettersRequired(numLetterRequired);
+            }
             JobPosting jobPosting = new JobPosting(((HR)getUser()), title1, company, openTime,
                     closeTime, requirement, Integer.parseInt(numOpen), description_, tags);
             JobPostingManager jobPostingManager = company.getJobPostingManager();
-//            InterviewSetup format = promptInterviewFormat(company, job);
             if (jobPostingManager.addJobPosting(jobPosting)) {
                 logger.info("job added successfully");
                 showModal("Great","job added successfully");
@@ -115,46 +140,29 @@ public class HRCreateJobPosting extends ApplicationController {
         }
     }
 
-//    private InterviewSetup promptInterviewFormat(Company company, Job job){
-//        Stage stage = new Stage();
-//        InterviewSetup format = new InterviewSetup();
-//        stage.initModality(Modality.APPLICATION_MODAL);
-//        stage.setTitle("Set the interview format");
-//        Button selectButton = new Button("Select format");
-//        Button createButton = new Button("New format");
-//        selectButton.setOnAction(e -> {
-//            selectFormat(format, company);
-//            stage.close();
-//        });
-//        createButton.setOnAction(e -> {
-//            createFormat(format, company);
-//            stage.close();
-//                }
-//        );
-//        HBox hBox = new HBox();
-//        hBox.getChildren().addAll(selectButton, createButton);
-//        VBox layout = new VBox();
-//        layout.getChildren().add(hBox);
-//        Scene stageScene = new Scene(layout, 300, 300);
-//        stage.setScene(stageScene);
-//        stage.showAndWait();
-//        return format.createSetupWithJob(job);
-//    }
+    private void promptSetRefNum(){
+        Stage stage = new Stage();
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setTitle("Set required number of reference letters");
+//        ComboBox<String> companies = new ComboBox<>();
+        TextField numField = new TextField();
+        Button okButton = new Button("OK");
+//        okButton.setOnAction(e -> {user.setSignedInCompany(companies.getSelectionModel().getSelectedItem()));
+        okButton.setOnAction(e -> {
+            numLetterRequired = Integer.parseInt(numField.getText());
+            stage.close();
+        });
+        HBox hBox = new HBox();
+        hBox.getChildren().add(numField);
+        hBox.setAlignment(Pos.CENTER);
+        VBox layout = new VBox();
+        layout.getChildren().addAll(hBox, okButton);
+        Scene stageScene = new Scene(layout, 300, 300);
+        stage.setScene(stageScene);
+        stage.showAndWait();
+    }
 
-//    private void selectFormat(InterviewSetup format, Company company){
-//        Stage stage = new Stage();
-//        stage.initModality(Modality.APPLICATION_MODAL);
-//        stage.setTitle("Choose an interview format");
-//        ListView<String> availableFormats = new ListView<>();
-//        for (String formatName: company.getFormatNames()){
-//            availableFormats.getItems().add(formatName);
-//        }
-//
-//    }
-//
-//    private void createFormat(InterviewSetup format, Company company){
-//
-//    }
+
 
     public void exit(Event event) throws IOException{
         SceneSwitcher.switchScene(this, event, "Main.fxml");
