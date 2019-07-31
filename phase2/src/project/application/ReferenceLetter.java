@@ -9,14 +9,16 @@ public class ReferenceLetter extends Document implements Serializable {
     private static final long serialVersionUID = -8264798408812116962L;
 
     private Applicant toApplicant;
+    private JobPosting jobPosting;
 
     public ReferenceLetter(){
         super();
     }
 
-    public ReferenceLetter(String name, String content, LocalDateTime date, Applicant applicant) {
+    public ReferenceLetter(String name, String content, LocalDateTime date, Applicant applicant, JobPosting jobPosting) {
         super(name, content, date);
-        toApplicant = applicant;
+        this.toApplicant = applicant;
+        this.jobPosting = jobPosting;
     }
 
     static String documentType() {
