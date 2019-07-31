@@ -74,6 +74,12 @@ public class LoginController extends ApplicationController {
                 menu.addOption("View all applicants", "InterviewerSeeInterviewGroups.fxml");
                 setMenu(menu);
                 SceneSwitcher.switchScene(this, event, "InterviewerSeeInterviewGroups.fxml");
+            } else if (user.getType() == User.Type.REFEREE) {
+                setUser(user);
+                Menu menu = new Menu();
+                menu.addOption("Upload reference letters", "RefereeMenu.fxml");
+                setMenu(menu);
+                SceneSwitcher.switchScene(this, event, "RefereeMenu.fxml");
             }
         }
     }

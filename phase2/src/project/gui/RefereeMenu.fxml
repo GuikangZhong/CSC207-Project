@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="425.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.gui.RefereeMenu">
+   <children>
+      <TreeView fx:id="options" prefHeight="425.0" prefWidth="139.0" />
+      <Button layoutX="534.0" layoutY="14.0" mnemonicParsing="false" onAction="#exit" text="Sign Out" />
+      <ListView fx:id="jobPostings" layoutX="161.0" layoutY="52.0" prefHeight="353.0" prefWidth="139.0" />
+      <ListView fx:id="applications" layoutX="300.0" layoutY="52.0" prefHeight="353.0" prefWidth="139.0" />
+      <Label layoutX="197.0" layoutY="31.0" text="Job Postings" />
+      <Label layoutX="342.0" layoutY="31.0" text="Applicants" />
+      <Button layoutX="480.0" layoutY="200.0" mnemonicParsing="false" onAction="#uploadButton" text="Upload letter" />
+   </children>
+</AnchorPane>

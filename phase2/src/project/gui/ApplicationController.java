@@ -23,6 +23,9 @@ import java.util.function.Consumer;
 public abstract class ApplicationController implements Initializable {
     @FXML
     protected TreeView<String> options;
+    protected MainSystem system;
+    protected User user;
+    protected Menu menu;
 
     public ApplicationController() {
 
@@ -32,67 +35,13 @@ public abstract class ApplicationController implements Initializable {
         initFromController(other);
     }
 
-    public MainSystem getSystem() {
-        return system;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public Menu getMenu() {
-        return menu;
-    }
-
-    protected MainSystem system;
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    protected User user;
-    protected Menu menu;
-
-    void initFromController(ApplicationController other) {
-        system = other.system;
-        user = other.user;
-        menu = other.menu;
-        if (getMenu() != null && options != null)
-            options.setRoot(getMenu().getOptions());
-    }
-
-    // Don't ever call it outside main
-    void setSystem(MainSystem system) {
-        this.system = system;
-    }
-
-    void setMenu(Menu menu) {
-        this.menu = menu;
-    }
-
-    public void selectItems(MouseEvent event) throws IOException {
-        TreeItem<String> item = options.getSelectionModel().getSelectedItem();
-        if (item != null)
-            getMenu().switchScene(this, event, item.getValue());
-    }
-
-    @Override
-    public final void initialize(URL location, ResourceBundle resources) {
-        if (getMenu() != null)
-            options.setRoot(getMenu().getOptions());
-
-    }
-
-    void postInit() {
-        assert system != null;
-    }
-
-    static void showModal(Consumer<Stage> consumer){
+    static void showModal(Consumer<Stage> consumer) {
         Stage window = new Stage();
         window.initModality(Modality.APPLICATION_MODAL);
         consumer.accept(window);
         window.showAndWait();
     }
+
     static void showModal(String text) {
         showModal("Warning", text);
     }
@@ -124,5 +73,55 @@ public abstract class ApplicationController implements Initializable {
         if (!value) {
             throw new RuntimeException("");
         }
+    }
+
+    public MainSystem getSystem() {
+        return system;
+    }
+
+    // Don't ever call it outside main
+    void setSystem(MainSystem system) {
+        this.system = system;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Menu getMenu() {
+        return menu;
+    }
+
+    void setMenu(Menu menu) {
+        this.menu = menu;
+    }
+
+    void initFromController(ApplicationController other) {
+        system = other.system;
+        user = other.user;
+        menu = other.menu;
+        if (getMenu() != null && options != null)
+            options.setRoot(getMenu().getOptions());
+    }
+
+    public void selectItems(MouseEvent event) throws IOException {
+        TreeItem<String> item = options.getSelectionModel().getSelectedItem();
+        if (item != null)
+            getMenu().switchScene(this, event, item.getValue());
+    }
+
+    @Override
+    public final void initialize(URL location, ResourceBundle resources) {
+        if (getMenu() != null)
+            options.setRoot(getMenu().getOptions());
+
+    }
+
+    void postInit() {
+        assert system != null;
     }
 }
