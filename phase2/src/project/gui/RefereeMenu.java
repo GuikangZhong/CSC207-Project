@@ -54,26 +54,23 @@ public class RefereeMenu extends ApplicationController implements Serializable {
     }
 
     public void uploadButton(ActionEvent event) throws IOException {
-        //TODO: upload a letter for a applicant
-        // don't know how to use  applicantsClicked(MouseEvent event) to set this.applicant
-        if (applicant != null) {
-            System.out.println("no applicant specified");
-            return;
+        if (applicant == null) {
+            showModal("No applicant selected");
         }
 
-        Document document = null;
         fc.setInitialDirectory(new File("."));
         fc.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Text Document", "*.txt"));
         File selectedFile = fc.showOpenDialog(null);
         if (selectedFile != null) {
-            document = DocumentFactory.createByFileName(selectedFile.getName(), selectedFile.getAbsolutePath(), getSystem().now(), "ReferenceLetter");
-            if (!((Applicant) getUser()).addDocument(document)) {
+            Document document = DocumentFactory.createByFileName(selectedFile.getName(), selectedFile.getAbsolutePath(), getSystem().now(), "ReferenceLetter");
+            if (!(applicant.addDocument(document))) {
                 showModal("Cannot add document");
+            } else {
+                showModal("Successfully added");
             }
         } else {
-            System.out.println("File not selected");
+            showModal("File not selected");
         }
-        applicant.addDocument(document);
     }
 
 

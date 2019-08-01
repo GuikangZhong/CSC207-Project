@@ -17,19 +17,10 @@ public class ReferenceVerificationStrategy implements VerificationStrategy {
         if (letters.size() != referenceLettersRequired){
             return false;
         }
-        return checkReferenceMatch(letters, application);
+        return true;
     }
 
     public void setReferenceLettersRequired(int numRequired){
         referenceLettersRequired = numRequired;
-    }
-
-    private boolean checkReferenceMatch(List<ReferenceLetter> letters, Application application){
-        for (ReferenceLetter letter: letters){
-            if (letter.getJobPosting() != application.getJobPosting()){
-                return false;
-            }
-        }
-        return true;
     }
 }
