@@ -39,7 +39,7 @@ public class RefereeMenu extends ApplicationController implements Serializable {
                     protected void updateItem(Applicant t, boolean bln) {
                         super.updateItem(t, bln);
                         if (t != null) {
-                            setText(t.getRealName());
+                            setText(t.getUsername());
                         } else {
                             setText("");
                         }
