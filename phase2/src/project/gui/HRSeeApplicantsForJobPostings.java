@@ -86,18 +86,50 @@ public class HRSeeApplicantsForJobPostings extends ApplicationController {
 
     }
 
+    private void pollApplicants(ListView<JobPosting> jobPostings, ListView<Application> applications) {
+        JobPosting jobPosting = jobPostings.getSelectionModel().getSelectedItem();
+        applications.getItems().clear();
+        if (jobPosting != null) {
+            for (Application application : jobPosting.getApplications()) {
+                applications.getItems().add(application);
+            }
+        }
+    }
+
     public void exit(Event event) throws IOException {
         SceneSwitcher.switchScene(this, event, "Main.fxml");
     }
 
     public void applicationClicked(MouseEvent event) {
-        JobPostingsApplicantsLoader loader = new JobPostingsApplicantsLoader();
-        loader.applicationClicked(event, applications);
+        if (event.getClickCount() == 2) {
+            showModal(stage -> {
+                try {
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("ApplicationInfo.fxml"));
+                    AnchorPane pane = (AnchorPane) loader.load();
+                    ApplicationInfoController controller = loader.<ApplicationInfoController>getController();
+                    Application application = applications.getSelectionModel().getSelectedItem();
+                    controller.setApplication(application);
+                    Scene scene = new Scene(pane);
+                    stage.setScene(scene);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            });
+        }
     }
 
     public void jobPostingClicked(MouseEvent event) {
-        JobPostingsApplicantsLoader loader = new JobPostingsApplicantsLoader();
-        loader.jobPostingClicked(event, jobPostings, applications);
+        applications.getItems().clear();
+        pollApplicants(jobPostings,  applications);
+        JobPosting jobPosting = jobPostings.getSelectionModel().getSelectedItem();
+        if (event.getClickCount() == 2 && ((jobPosting.getStatus() == JobPosting.Status.FILLED))){
+            StringBuilder builder = new StringBuilder();
+            for (Applicant hiredApplicant: jobPosting.getHiredApplicants()){
+                builder.append(hiredApplicant.getRealName()).append(" (").
+                        append(hiredApplicant.getUsername()).append(")").append("\n");
+            }
+            showModal("Hired Applicant(s)", builder.toString());
+        }
     }
 
 }
