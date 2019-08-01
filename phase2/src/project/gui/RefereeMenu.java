@@ -6,14 +6,13 @@ import javafx.fxml.FXML;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.FileChooser;
 import javafx.util.Callback;
-import project.application.Application;
-import project.application.Company;
-import project.application.JobPosting;
-import project.application.JobPostingManager;
+import project.application.*;
 import project.user.Applicant;
 import project.user.HR;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.*;
@@ -24,6 +23,8 @@ public class RefereeMenu extends ApplicationController implements Serializable {
     @FXML
     ListView<Applicant> applicants;
     Applicant applicant;
+
+    private FileChooser fc = new FileChooser();
 
     @Override
     void postInit() {
@@ -52,14 +53,34 @@ public class RefereeMenu extends ApplicationController implements Serializable {
         pollApplicants();
     }
 
-    public void uploadButton(ActionEvent event) throws IOException{
+    public void uploadButton(ActionEvent event) throws IOException {
         //TODO: upload a letter for a applicant
+        // don't know how to use  applicantsClicked(MouseEvent event) to set this.applicant
+        if (applicant != null) {
+            System.out.println("no applicant specified");
+            return;
+        }
+
+        Document document = null;
+        fc.setInitialDirectory(new File("."));
+        fc.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Text Document", "*.txt"));
+        File selectedFile = fc.showOpenDialog(null);
+        if (selectedFile != null) {
+            document = DocumentFactory.createByFileName(selectedFile.getName(), selectedFile.getAbsolutePath(), getSystem().now(), "ReferenceLetter");
+            if (!((Applicant) getUser()).addDocument(document)) {
+                showModal("Cannot add document");
+            }
+        } else {
+            System.out.println("File not selected");
+        }
+        applicant.addDocument(document);
     }
+
 
     private void pollApplicants() {
         HashMap<String, Applicant> allPostings = getSystem().getApplicants();
         for (Map.Entry mapElement : allPostings.entrySet()) {
-            applicants.getItems().add((Applicant)mapElement.getValue());
+            applicants.getItems().add((Applicant) mapElement.getValue());
         }
     }
 
