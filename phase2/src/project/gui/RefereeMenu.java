@@ -11,6 +11,7 @@ import project.application.Application;
 import project.application.Company;
 import project.application.JobPosting;
 import project.application.JobPostingManager;
+import project.user.Applicant;
 import project.user.HR;
 
 import java.io.IOException;
@@ -21,47 +22,24 @@ public class RefereeMenu extends ApplicationController implements Serializable {
     private static final long serialVersionUID = -5054910626456091917L;
 
     @FXML
-    ListView<JobPosting> jobPostings;
-    @FXML
-    ListView<Application> applications;
+    ListView<Applicant> applicants;
+    Applicant applicant;
 
     @Override
     void postInit() {
         super.postInit();
-        jobPostings.setCellFactory(new Callback<ListView<JobPosting>, ListCell<JobPosting>>() {
+        applicants.setCellFactory(new Callback<ListView<Applicant>, ListCell<Applicant>>() {
 
             @Override
-            public ListCell<JobPosting> call(ListView<JobPosting> p) {
+            public ListCell<Applicant> call(ListView<Applicant> p) {
 
-                ListCell<JobPosting> cell = new ListCell<JobPosting>() {
-
-                    @Override
-                    protected void updateItem(JobPosting t, boolean bln) {
-                        super.updateItem(t, bln);
-                        if (t != null) {
-                            setText(t.getJobTitle() + " (" + t.getStatus()+")");
-                        }else{
-                            setText("");
-                        }
-                    }
-
-                };
-
-                return cell;
-            }
-        });
-        applications.setCellFactory(new Callback<ListView<Application>, ListCell<Application>>() {
-
-            @Override
-            public ListCell<Application> call(ListView<Application> p) {
-
-                ListCell<Application> cell = new ListCell<Application>() {
+                ListCell<Applicant> cell = new ListCell<Applicant>() {
 
                     @Override
-                    protected void updateItem(Application t, boolean bln) {
+                    protected void updateItem(Applicant t, boolean bln) {
                         super.updateItem(t, bln);
                         if (t != null) {
-                            setText(t.getApplicant().getRealName());
+                            setText(t.getRealName());
                         } else {
                             setText("");
                         }
@@ -71,29 +49,22 @@ public class RefereeMenu extends ApplicationController implements Serializable {
                 return cell;
             }
         });
-        pollJobPostings();
+        pollApplicants();
     }
 
     public void uploadButton(ActionEvent event) throws IOException{
         //TODO: upload a letter for a applicant
     }
 
-    private void pollJobPostings() {
-        List<JobPosting> allPostings = getSystem().getAllJobPostings();
-        jobPostings.getItems().clear();
-        for (JobPosting jobPosting : allPostings) {
-            jobPostings.getItems().add(jobPosting);
+    private void pollApplicants() {
+        HashMap<String, Applicant> allPostings = getSystem().getApplicants();
+        for (Map.Entry mapElement : allPostings.entrySet()) {
+            applicants.getItems().add((Applicant)mapElement.getValue());
         }
     }
 
-    public void applicationClicked(MouseEvent event) {
-        JobPostingsApplicantsLoader loader = new JobPostingsApplicantsLoader();
-        loader.applicationClicked(event, applications);
-    }
-
-    public void jobPostingClicked(MouseEvent event) {
-        JobPostingsApplicantsLoader loader = new JobPostingsApplicantsLoader();
-        loader.jobPostingClicked(event, jobPostings, applications);
+    public void applicantsClicked(MouseEvent event) {
+        applicant = applicants.getSelectionModel().getSelectedItem();
     }
 
     public void exit(Event event) throws IOException {
