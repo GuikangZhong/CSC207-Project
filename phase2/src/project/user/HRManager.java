@@ -35,7 +35,7 @@ public class HRManager extends UserManager<HR> implements InterviewObserver, Job
         hr.addPostingToAssignFormat(jobPosting);
 
 //        InterviewSetup setup = new InterviewSetup();
-//        Job job = jobPosting.getJob();
+//        Job job = jobPosting.getJobPosting();
 //        setup.addRound(new PhoneRound(job));
 //        setup.addRound(new InPersonRound(job));
 //        setup.addRound(new InPersonRound(job));

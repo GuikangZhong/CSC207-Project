@@ -57,7 +57,7 @@ public class Applicant
     }
 
     public Optional<Application> getApplicationOf(String jobTitle) {
-        return getApplications().stream().filter(application -> application.getJob().getJobTitle().equals(jobTitle)).findAny();
+        return getApplications().stream().filter(application -> application.getJobPosting().getJobTitle().equals(jobTitle)).findAny();
     }
 
     public Collection<Application> getApplications() {

@@ -34,7 +34,7 @@ public class Application implements Serializable {
         return Collections.unmodifiableList(documents);
     }
 
-    public JobPosting getJob() {
+    public JobPosting getJobPosting() {
         return jobPosting;
     }
 

@@ -26,7 +26,7 @@ public class ReferenceVerificationStrategy implements VerificationStrategy {
 
     private boolean checkReferenceMatch(List<ReferenceLetter> letters, Application application){
         for (ReferenceLetter letter: letters){
-            if (letter.getJobPosting() != application.getJob()){
+            if (letter.getJobPosting() != application.getJobPosting()){
                 return false;
             }
         }

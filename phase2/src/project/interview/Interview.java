@@ -180,7 +180,7 @@ public class Interview implements Serializable, RoundObserver, ApplicantObserver
 
     @Override
     public void updateOnApplicationWithdraw(Application application) {
-        if(application.getJob() != jobPosting)return;
+        if(application.getJobPosting() != jobPosting)return;
         if (!applicants.remove(application.getApplicant())) {
             throw new RuntimeException("You have removed someone doesn't exist!!!");
         }
