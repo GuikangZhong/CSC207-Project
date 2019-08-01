@@ -56,8 +56,8 @@ public class RefereeMenu extends ApplicationController implements Serializable {
     public void uploadButton(ActionEvent event) throws IOException {
         if (applicant == null) {
             showModal("No applicant selected");
+            return;
         }
-
         fc.setInitialDirectory(new File("."));
         fc.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Text Document", "*.txt"));
         File selectedFile = fc.showOpenDialog(null);
