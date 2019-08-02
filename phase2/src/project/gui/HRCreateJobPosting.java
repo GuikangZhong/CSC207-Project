@@ -35,7 +35,15 @@ public class HRCreateJobPosting extends ApplicationController {
     private TextArea jobDescription;
 
     @FXML
-    private ChoiceBox<String> jobTag;
+    private ChoiceBox<String> jobTag1;
+    @FXML
+    private ChoiceBox<String> jobTag2;
+    @FXML
+    private ChoiceBox<String> jobTag3;
+    @FXML
+    private ChoiceBox<String> jobTag4;
+    @FXML
+    private ChoiceBox<String> jobTag5;
 
     @FXML
     private ChoiceBox<Integer> openedYear;
@@ -83,8 +91,20 @@ public class HRCreateJobPosting extends ApplicationController {
             openedMonth.getItems().add(m);
             closedMonth.getItems().add(m);
         }
+        for (String tag:TagList.getTags()
+             ) {jobTag1.getItems().add(tag);
+            jobTag2.getItems().add(tag);
+            jobTag3.getItems().add(tag);
+            jobTag4.getItems().add(tag);
+            jobTag5.getItems().add(tag);
+        }
     }
     static private Logger logger = Logging.getLogger();
+
+//    public void addTag(ActionEvent event){
+//        String newTag =
+//    }
+
     public void submitJobPos(ActionEvent event) throws IOException {
         String title1 = title.getText();
         Integer openYear = openedYear.getSelectionModel().getSelectedItem();
@@ -93,9 +113,17 @@ public class HRCreateJobPosting extends ApplicationController {
         Integer closeYear = closedYear.getSelectionModel().getSelectedItem();
         Integer closeMonth = closedMonth.getSelectionModel().getSelectedItem();
         Integer closeDay = closedDay.getSelectionModel().getSelectedItem();
-        String tag = jobTag.getSelectionModel().getSelectedItem();
+        String tag1 = jobTag1.getSelectionModel().getSelectedItem();
+        String tag2 = jobTag1.getSelectionModel().getSelectedItem();
+        String tag3 = jobTag1.getSelectionModel().getSelectedItem();
+        String tag4 = jobTag1.getSelectionModel().getSelectedItem();
+        String tag5 = jobTag1.getSelectionModel().getSelectedItem();
         List<String> tags = new ArrayList<>();
-        tags.add(tag);
+        tags.add(tag1);
+        tags.add(tag2);
+        tags.add(tag3);
+        tags.add(tag5);
+        tags.add(tag4);
 
         LocalDate openDate = LocalDate.of(openYear, openMonth, openDay);
         LocalDate closedDate = LocalDate.of(closeYear, closeMonth, closeDay);

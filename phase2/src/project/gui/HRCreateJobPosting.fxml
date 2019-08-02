@@ -1,45 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="654.0" prefWidth="998.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.gui.HRCreateJobPosting">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="696.0" prefWidth="998.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.gui.HRCreateJobPosting">
   <center>
-    <AnchorPane prefHeight="200.0" prefWidth="200.0">
+    <AnchorPane prefHeight="674.0" prefWidth="840.0">
       <children>
-        <TextField fx:id="title" layoutX="153.0" layoutY="43.0" prefHeight="40.0" prefWidth="500.0" />
-        <TextField fx:id="numOpenings" layoutX="153.0" layoutY="202.0" prefHeight="35.0" prefWidth="80.0" />
+        <TextField fx:id="title" layoutX="150.0" layoutY="16.0" prefHeight="35.0" prefWidth="500.0" AnchorPane.leftAnchor="150.0" />
+        <TextField fx:id="numOpenings" layoutX="150.0" layoutY="173.0" prefHeight="35.0" prefWidth="80.0" AnchorPane.leftAnchor="150.0" />
 <!--        <Text-->
-        <TextArea id="description" fx:id="jobDescription" layoutX="35.0" layoutY="305.0" prefHeight="290.0" prefWidth="625.0" />
-        <Button layoutX="675.0" layoutY="550.0" mnemonicParsing="false" onAction="#submitJobPos" text="Submit" />
-        <Label layoutX="35.0" layoutY="55.0" text="Title" />
-        <Label layoutX="35.0" layoutY="205.0" text="Num Openings" />
-        <Label layoutX="35.0" layoutY="255.0" text="Tags" />
-          <HBox layoutX="155.0" layoutY="255.0" prefHeight="53.0" prefWidth="226.0">
-              <children>
-                  <ChoiceBox fx:id="jobTag" prefHeight="27.0" prefWidth="143.0" />
-              </children>
+        <TextArea id="description" fx:id="jobDescription" layoutX="34.0" layoutY="313.0" maxHeight="1.7976931348623157E308" prefHeight="281.0" prefWidth="626.0" />
+        <Button layoutX="272.0" layoutY="614.0" mnemonicParsing="false" onAction="#submitJobPos" prefHeight="35.0" prefWidth="150.0" text="Submit" />
+        <Label layoutX="35.0" layoutY="25.0" text="Title" AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="25.0" />
+        <Label layoutX="30.0" layoutY="182.0" text="Num Openings" AnchorPane.leftAnchor="35.0" />
+        <Label layoutX="34.0" layoutY="228.0" text="Tags" AnchorPane.leftAnchor="35.0" />
+          <HBox layoutX="149.0" layoutY="223.0" prefWidth="402.0" AnchorPane.leftAnchor="150.0">
+               <children>
+                  <ChoiceBox fx:id="jobTag1" prefHeight="27.0" prefWidth="80.0" />
+                  <ChoiceBox fx:id="jobTag2" layoutX="10.0" layoutY="10.0" prefHeight="27.0" prefWidth="80.0" />
+                  <ChoiceBox fx:id="jobTag3" layoutX="90.0" layoutY="10.0" prefHeight="27.0" prefWidth="80.0" />
+                  <ChoiceBox fx:id="jobTag4" layoutX="170.0" layoutY="10.0" prefHeight="27.0" prefWidth="80.0" />
+                  <ChoiceBox fx:id="jobTag5" layoutX="250.0" layoutY="10.0" prefHeight="27.0" prefWidth="80.0" />
+               </children>
           </HBox>
-        <Label layoutX="35.0" layoutY="105.0" text="Date Opened" />
-        <HBox layoutX="155.0" layoutY="103.0" prefHeight="53.0" prefWidth="341.0">
+        <Label layoutX="31.0" layoutY="79.0" text="Date Opened" AnchorPane.leftAnchor="35.0" />
+        <HBox layoutX="150.0" layoutY="70.0" AnchorPane.leftAnchor="150.0">
            <children>
-              <ChoiceBox fx:id="openedYear" prefHeight="27.0" prefWidth="80.0" />
-              <ChoiceBox fx:id="openedMonth" prefHeight="27.0" prefWidth="80.0" />
-              <ChoiceBox fx:id="openedDay" prefHeight="27.0" prefWidth="80.0" />
+              <ChoiceBox fx:id="openedYear" prefHeight="30.0" prefWidth="80.0" />
+              <ChoiceBox fx:id="openedMonth" prefHeight="30.0" prefWidth="80.0" />
+              <ChoiceBox fx:id="openedDay" prefHeight="30.0" prefWidth="80.0" />
            </children>
         </HBox>
-        <Label layoutX="35.0" layoutY="155.0" text="Date Closed" />
-        <HBox layoutX="155.0" layoutY="151.0" prefHeight="53.0" prefWidth="341.0">
+        <Label layoutX="39.0" layoutY="127.0" text="Date Closed" AnchorPane.leftAnchor="35.0" />
+        <HBox layoutX="150.0" layoutY="120.0" AnchorPane.leftAnchor="150.0">
            <children>
-              <ChoiceBox fx:id="closedYear" prefHeight="27.0" prefWidth="80.0" />
-              <ChoiceBox fx:id="closedMonth" prefHeight="27.0" prefWidth="80.0" />
-              <ChoiceBox fx:id="closedDay" prefHeight="27.0" prefWidth="80.0" />
+              <ChoiceBox fx:id="closedYear" prefHeight="30.0" prefWidth="80.0" />
+              <ChoiceBox fx:id="closedMonth" prefHeight="30.0" prefWidth="80.0" />
+              <ChoiceBox fx:id="closedDay" prefHeight="30.0" prefWidth="80.0" />
            </children>
         </HBox>
-            <Label layoutX="420.0" layoutY="264.0" prefHeight="17.0" prefWidth="97.0" text="Requirement" />
-            <ChoiceBox fx:id="requirementsAvailable" layoutX="525.0" layoutY="259.0" prefHeight="27.0" prefWidth="138.0" />
+            <Label layoutX="35.0" layoutY="273.0" prefHeight="17.0" prefWidth="97.0" text="Requirement" AnchorPane.leftAnchor="35.0" />
+            <ChoiceBox fx:id="requirementsAvailable" layoutX="150.0" layoutY="268.0" prefHeight="27.0" prefWidth="138.0" />
+        <Button alignment="CENTER" layoutX="765.0" layoutY="10.0" mnemonicParsing="false" onAction="#exit" text="Sign out" AnchorPane.bottomAnchor="624.0" AnchorPane.rightAnchor="14.200000000000045" AnchorPane.topAnchor="10.0" />
+            <Button layoutX="570.0" layoutY="223.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="80.0" text="Add Tag" />
       </children>
     </AnchorPane>
   </center>
@@ -49,8 +60,7 @@
   <top>
     <AnchorPane prefHeight="32.0" prefWidth="600.0" BorderPane.alignment="CENTER">
       <children>
-        <Label fx:id="companyName" alignment="CENTER" layoutX="14.0" layoutY="6.0" text="Label" />
-        <Button alignment="CENTER" mnemonicParsing="false" onAction="#exit" text="Sign out" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="2.0" />
+        <Label fx:id="companyName" alignment="CENTER" layoutX="14.0" layoutY="9.0" text="Label" />
       </children>
     </AnchorPane>
   </top>
