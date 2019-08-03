@@ -66,6 +66,9 @@ public class HRCreateJobPosting extends ApplicationController {
     @FXML
     private ChoiceBox<String> requirementsAvailable;
 
+    @FXML
+    private TextField newTag;
+
 
     @FXML
     private Label companyName;
@@ -79,6 +82,7 @@ public class HRCreateJobPosting extends ApplicationController {
         super.postInit();
         requirementsAvailable.getItems().addAll("Basic", "Reference");
         companyName.setText(getUser().getSignedInCompany());
+        List<String> tagList = getSystem().getCompany(companyName.getText()).getTags();
         for (int y = 2019; y <= 2022; y++){
             openedYear.getItems().add(y);
             closedYear.getItems().add(y);
@@ -91,19 +95,24 @@ public class HRCreateJobPosting extends ApplicationController {
             openedMonth.getItems().add(m);
             closedMonth.getItems().add(m);
         }
-        for (String tag:TagList.getTags()
-             ) {jobTag1.getItems().add(tag);
-            jobTag2.getItems().add(tag);
-            jobTag3.getItems().add(tag);
-            jobTag4.getItems().add(tag);
-            jobTag5.getItems().add(tag);
-        }
+        jobTag1.getItems().addAll(tagList);
+        jobTag2.getItems().addAll(tagList);
+        jobTag3.getItems().addAll(tagList);
+        jobTag4.getItems().addAll(tagList);
+        jobTag5.getItems().addAll(tagList);
+
     }
     static private Logger logger = Logging.getLogger();
 
-//    public void addTag(ActionEvent event){
-//        String newTag =
-//    }
+    public void addTag(ActionEvent event){
+        Company company = getSystem().getCompany(companyName.getText());
+        company.addTag(newTag.getText());
+        jobTag1.getItems().add(newTag.getText());
+        jobTag2.getItems().add(newTag.getText());
+        jobTag3.getItems().add(newTag.getText());
+        jobTag4.getItems().add(newTag.getText());
+        jobTag5.getItems().add(newTag.getText());
+    }
 
     public void submitJobPos(ActionEvent event) throws IOException {
         String title1 = title.getText();

@@ -10,13 +10,12 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="998.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.gui.HRCreateJobPosting">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="998.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.gui.HRCreateJobPosting">
   <center>
     <AnchorPane prefHeight="730.0" prefWidth="840.0">
       <children>
-        <TextField fx:id="title" layoutX="150.0" layoutY="16.0" prefHeight="35.0" prefWidth="500.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="190.0" />
-        <TextField fx:id="numOpenings" layoutX="150.0" layoutY="173.0" prefHeight="35.0" prefWidth="80.0" AnchorPane.leftAnchor="150.0" />
-<!--        <Text-->
+        <TextField fx:id="title" layoutX="150.0" layoutY="17.0" prefHeight="33.0" prefWidth="500.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="190.0" />
+        <TextField fx:id="numOpenings" layoutX="150.0" layoutY="173.0" prefHeight="30.0" prefWidth="80.0" AnchorPane.leftAnchor="150.0" />
         <TextArea id="description" fx:id="jobDescription" layoutX="37.0" layoutY="369.0" maxHeight="1.7976931348623157E308" prefHeight="282.0" prefWidth="621.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="190.0" />
         <Button layoutX="275.0" layoutY="668.0" mnemonicParsing="false" onAction="#submitJobPos" prefHeight="35.0" prefWidth="150.0" text="Submit" />
         <Label layoutX="35.0" layoutY="25.0" text="Title" AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="25.0" />
@@ -49,9 +48,13 @@
         </HBox>
             <Label layoutX="34.0" layoutY="323.0" prefHeight="17.0" prefWidth="97.0" text="Requirement" AnchorPane.leftAnchor="34.0" />
             <ChoiceBox fx:id="requirementsAvailable" layoutX="149.0" layoutY="318.0" prefHeight="30.0" prefWidth="160.0" AnchorPane.leftAnchor="150.0" />
-        <Button alignment="CENTER" layoutX="765.0" layoutY="10.0" mnemonicParsing="false" onAction="#exit" text="Sign out" AnchorPane.bottomAnchor="624.0" AnchorPane.rightAnchor="14.200000000000045" AnchorPane.topAnchor="10.0" />
-            <Button layoutX="330.0" layoutY="272.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="120.0" text="Add Tag" />
-            <TextField fx:id="numOpenings1" layoutX="150.0" layoutY="272.0" prefHeight="30.0" prefWidth="160.0" AnchorPane.leftAnchor="150.0" />
+            <Button layoutX="330.0" layoutY="272.0" mnemonicParsing="false" onAction="#addTag" prefHeight="30.0" prefWidth="120.0" text="Add Tag" />
+        <Button alignment="CENTER" layoutX="765.0" layoutY="18.0" mnemonicParsing="false" onAction="#exit" prefHeight="30.0" prefWidth="100.0" text="Sign out" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="18.0" />
+            <HBox layoutX="150.0" layoutY="273.0">
+               <children>
+                  <TextField fx:id="newTag" prefHeight="30.0" prefWidth="160.0" />
+               </children>
+            </HBox>
       </children>
     </AnchorPane>
   </center>

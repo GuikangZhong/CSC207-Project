@@ -23,6 +23,7 @@ public class Company implements Serializable, SystemObserver {
     private HashMap<String, InterviewSetup> interviewFormats;
     private List<Company> subsidiaries;
     private Company parentCompany;
+    private List<String> tags;
 
 
     public Company(String name, MainSystem system) {
@@ -34,6 +35,7 @@ public class Company implements Serializable, SystemObserver {
         interviewFormats = new HashMap<>();
         subsidiaries = new ArrayList<>();
         parentCompany = null;
+        tags = new ArrayList<>();
     }
 
     public InterviewSetup getInterviewFormat(String formatName) {
@@ -108,6 +110,14 @@ public class Company implements Serializable, SystemObserver {
             return interviewerManager.getUser(username);
         }
         return null;
+    }
+
+    public List<String> getTags() {
+        return tags;
+    }
+
+    public void addTag(String newTag) {
+        if(!tags.contains(newTag))tags.add(newTag);
     }
 
     public void addSubsidiary(Company subsidiary){
