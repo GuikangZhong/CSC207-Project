@@ -78,7 +78,7 @@ public class LoginController extends ApplicationController {
             } else if (user.getType() == User.Type.REFEREE) {
                 setUser(user);
                 Menu menu = new Menu();
-                menu.addOption("Upload reference letters", "RefereeMenu.fxml");
+                menu.addOption("Upload RL", "RefereeMenu.fxml");
                 setMenu(menu);
                 SceneSwitcher.switchScene(this, event, "RefereeMenu.fxml");
             }
