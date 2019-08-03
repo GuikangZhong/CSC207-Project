@@ -15,23 +15,26 @@
         <AnchorPane prefHeight="661.0" prefWidth="715.0">
             <children>
                 <Button alignment="CENTER" layoutX="765.0" layoutY="18.0" mnemonicParsing="false" onAction="#exit" prefHeight="30.0" prefWidth="100.0" text="Sign out" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="18.0" />
-            <VBox layoutX="97.0" AnchorPane.leftAnchor="60.0">
+            <VBox layoutX="97.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="60.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0">
+                  <HBox alignment="CENTER" prefHeight="30.0" prefWidth="200.0">
                      <children>
                         <Label alignment="CENTER" text="Tags" textAlignment="CENTER" />
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="570.0" prefWidth="200.0">
+                  <HBox alignment="CENTER" prefHeight="580.0" prefWidth="200.0">
                      <children>
-                        <ListView fx:id="tagList" prefHeight="600.0" prefWidth="280.0" />
+                        <ListView fx:id="tagList" prefWidth="280.0" />
                      </children>
                   </HBox>
-                  <HBox prefHeight="30.0" prefWidth="200.0" />
+                  <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0">
+                     <children>
+                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#addTag" prefHeight="30.0" prefWidth="120.0" text="Remove Tag" />
+                     </children></HBox>
                       <HBox alignment="CENTER">
                           <children>
                               <TextField fx:id="newTag" prefHeight="30.0" prefWidth="160.0" />
-                            <Button mnemonicParsing="false" onAction="#addTag" prefHeight="30.0" prefWidth="120.0" text="Add Tag" />
+                            <Button alignment="CENTER" mnemonicParsing="false" onAction="#addTag" prefHeight="30.0" prefWidth="120.0" text="Add Tag" />
                           </children>
                       </HBox>
                </children>
@@ -43,7 +46,7 @@
         <TreeView fx:id="options" onContextMenuRequested="#selectItems" onMouseClicked="#selectItems" prefHeight="400.0" prefWidth="158.0" BorderPane.alignment="CENTER" />
     </left>
     <top>
-        <AnchorPane prefHeight="32.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+        <AnchorPane prefHeight="32.0" prefWidth="696.0" BorderPane.alignment="CENTER">
             <children>
                 <Label fx:id="companyName" alignment="CENTER" layoutX="14.0" layoutY="9.0" text="Label" />
             </children>
