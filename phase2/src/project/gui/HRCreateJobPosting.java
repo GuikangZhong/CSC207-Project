@@ -75,6 +75,7 @@ public class HRCreateJobPosting extends ApplicationController {
 
 
     private int numLetterRequired;
+    static private Logger logger = Logging.getLogger();
 
 
     @Override
@@ -102,16 +103,20 @@ public class HRCreateJobPosting extends ApplicationController {
         jobTag5.getItems().addAll(tagList);
 
     }
-    static private Logger logger = Logging.getLogger();
 
     public void addTag(ActionEvent event){
         Company company = getSystem().getCompany(companyName.getText());
-        company.addTag(newTag.getText());
-        jobTag1.getItems().add(newTag.getText());
-        jobTag2.getItems().add(newTag.getText());
-        jobTag3.getItems().add(newTag.getText());
-        jobTag4.getItems().add(newTag.getText());
-        jobTag5.getItems().add(newTag.getText());
+        if (company.addTag(newTag.getText())){
+            showModal("Great","Tag added successfully");
+            jobTag1.getItems().add(newTag.getText());
+            jobTag2.getItems().add(newTag.getText());
+            jobTag3.getItems().add(newTag.getText());
+            jobTag4.getItems().add(newTag.getText());
+            jobTag5.getItems().add(newTag.getText());
+        }else {
+//            logger.info("Tag added successfully");
+            showModal("Tag already exists.");
+        }
     }
 
     public void submitJobPos(ActionEvent event) throws IOException {
@@ -123,10 +128,10 @@ public class HRCreateJobPosting extends ApplicationController {
         Integer closeMonth = closedMonth.getSelectionModel().getSelectedItem();
         Integer closeDay = closedDay.getSelectionModel().getSelectedItem();
         String tag1 = jobTag1.getSelectionModel().getSelectedItem();
-        String tag2 = jobTag1.getSelectionModel().getSelectedItem();
-        String tag3 = jobTag1.getSelectionModel().getSelectedItem();
-        String tag4 = jobTag1.getSelectionModel().getSelectedItem();
-        String tag5 = jobTag1.getSelectionModel().getSelectedItem();
+        String tag2 = jobTag2.getSelectionModel().getSelectedItem();
+        String tag3 = jobTag3.getSelectionModel().getSelectedItem();
+        String tag4 = jobTag4.getSelectionModel().getSelectedItem();
+        String tag5 = jobTag5.getSelectionModel().getSelectedItem();
         List<String> tags = new ArrayList<>();
         tags.add(tag1);
         tags.add(tag2);
@@ -198,8 +203,6 @@ public class HRCreateJobPosting extends ApplicationController {
         stage.setScene(stageScene);
         stage.showAndWait();
     }
-
-
 
     public void exit(Event event) throws IOException{
         SceneSwitcher.switchScene(this, event, "Main.fxml");

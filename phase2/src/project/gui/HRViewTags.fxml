@@ -24,12 +24,13 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="580.0" prefWidth="200.0">
                      <children>
-                        <ListView fx:id="tagList" prefWidth="280.0" />
+                        <ListView fx:id="tags" prefWidth="280.0" />
+<!--                                  onMouseClicked="#tagClicked"/>-->
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="60.0" prefWidth="200.0">
                      <children>
-                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#addTag" prefHeight="30.0" prefWidth="120.0" text="Remove Tag" />
+                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#removeTag" prefHeight="30.0" prefWidth="120.0" text="Remove Tag" />
                      </children></HBox>
                       <HBox alignment="CENTER">
                           <children>

@@ -24,7 +24,6 @@ class CellFactoryFactory {
                             setText("");
                         }
                     }
-
                 };
                 ContextMenu contextMenu = new ContextMenu();
                 MenuItem showInfo = new MenuItem();
@@ -72,6 +71,31 @@ class CellFactoryFactory {
                         super.updateItem(t, bln);
                         if (t != null) {
                             setText(t.getJobPosting().getJobTitle());
+                        }else{
+                            setText("");
+                        }
+                    }
+
+                };
+
+                return cell;
+            }
+        };
+    }
+
+    static Callback<ListView<String>, ListCell<String>>  getCellFactoryForTag(){
+        return new Callback<ListView<String>, ListCell<String>>() {
+
+            @Override
+            public ListCell<String> call(ListView<String> p) {
+
+                ListCell<String> cell = new ListCell<String>() {
+
+                    @Override
+                    protected void updateItem(String  t, boolean bln) {
+                        super.updateItem(t, bln);
+                        if (t != null) {
+                            setText(t);
                         }else{
                             setText("");
                         }
