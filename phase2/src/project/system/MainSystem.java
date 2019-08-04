@@ -107,11 +107,12 @@ public class MainSystem implements Serializable {
     }
 
     public List<String> getAllTags() {
-        Collection<Company> companies = getCompanies();
+        Collection<JobPosting> jobPostings = getAllJobPostings();
         List<String> tags = new ArrayList<>();
-        for (Company company : companies) {
-            if (company.getTags().size() != 0) {
-                tags.addAll(company.getTags());
+        for (JobPosting jobPosting : jobPostings) {
+            for (String tag: jobPosting.getTagList()
+                 ) {
+                if(tag!=null) tags.add(tag);
             }
         }
         return tags;

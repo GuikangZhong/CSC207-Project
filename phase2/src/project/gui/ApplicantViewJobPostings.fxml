@@ -111,7 +111,7 @@
                                                 <VBox prefHeight="200.0" prefWidth="100.0">
                                                    <children>
                                                       <HBox prefHeight="15.0" prefWidth="200.0" />
-                                                      <ListView fx:id="jobList1" onContextMenuRequested="#selectJobPosting" onMouseClicked="#selectJobPosting" prefHeight="300.0" prefWidth="134.0" />
+                                                      <ListView fx:id="jobList1" onContextMenuRequested="#selectJobPosting1" onMouseClicked="#selectJobPosting1" prefHeight="300.0" prefWidth="134.0" />
                                                    </children>
                                                 </VBox>
                                                 <VBox prefHeight="150.0" prefWidth="15.0" />
@@ -152,7 +152,7 @@
                                                       <HBox prefHeight="15.0" prefWidth="200.0" />
                                                       <HBox alignment="CENTER" prefWidth="142.0" spacing="10.0">
                                                          <children>
-                                                            <Button mnemonicParsing="false" onAction="#applyButton" prefHeight="30.0" prefWidth="100.0" text="Apply" />
+                                                            <Button mnemonicParsing="false" onAction="#applyButton1" prefHeight="30.0" prefWidth="100.0" text="Apply" />
                                                          </children>
                                                       </HBox>
                                                    </children>
