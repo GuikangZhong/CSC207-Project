@@ -55,9 +55,7 @@ public class RefereeMenu extends ApplicationController implements Serializable {
 
     private void pollApplicants() {
         HashMap<String, Applicant> allPostings = getSystem().getApplicants();
-        for (Map.Entry mapElement : allPostings.entrySet()) {
-            applicants.getItems().add((Applicant) mapElement.getValue());
-        }
+        applicants.getItems().addAll(allPostings.values());
     }
 
     public void applicantsClicked(MouseEvent event) {
