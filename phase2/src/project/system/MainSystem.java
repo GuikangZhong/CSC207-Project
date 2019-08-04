@@ -106,6 +106,17 @@ public class MainSystem implements Serializable {
         return jobPostings;
     }
 
+    public List<String> getAllTags() {
+        Collection<Company> companies = getCompanies();
+        List<String> tags = new ArrayList<>();
+        for (Company company : companies) {
+            if (company.getTags().size() != 0) {
+                tags.addAll(company.getTags());
+            }
+        }
+        return tags;
+    }
+
     public void serializeToFile(String filename) throws IOException {
         FileOutputStream file = new FileOutputStream(filename);
         ObjectOutputStream out = new ObjectOutputStream(file);

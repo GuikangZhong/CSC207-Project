@@ -3,6 +3,7 @@ package project.gui;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
@@ -12,7 +13,7 @@ import project.application.Company;
 import java.io.IOException;
 import java.util.List;
 
-public class HRViewTags extends ApplicationController{
+public class HRViewTags extends ApplicationController implements Initializable {
     @FXML
     private TextField newTag;
     @FXML

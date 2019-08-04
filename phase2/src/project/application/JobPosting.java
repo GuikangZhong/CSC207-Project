@@ -56,6 +56,10 @@ public class JobPosting implements Serializable, SystemObserver {
         return str;
     }
 
+    public List<String> getTagList() {
+        return tags;
+    }
+
     public void addTag(String tag) {
         if(!this.tags.contains(tag) && tags.size() < 5) this.tags.add(tag);
     }
