@@ -116,8 +116,12 @@ public class Company implements Serializable, SystemObserver {
         return tags;
     }
 
-    public void addTag(String newTag) {
-        if(!tags.contains(newTag))tags.add(newTag);
+    public boolean addTag(String newTag) {
+        if(!tags.contains(newTag)){
+            tags.add(newTag);
+            return true;
+        }
+        return false;
     }
 
     public void addSubsidiary(Company subsidiary){

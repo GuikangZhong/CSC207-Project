@@ -52,7 +52,7 @@ public class JobPosting implements Serializable, SystemObserver {
     public String getTags() {
         String str = "";
         for (String tag:tags
-             ) {str = str + tag + "; ";}
+             ) {if (tag!= null)str = str + tag + "; ";}
         return str;
     }
 
