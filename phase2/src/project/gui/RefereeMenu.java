@@ -10,6 +10,7 @@ import javafx.stage.FileChooser;
 import javafx.util.Callback;
 import project.application.*;
 import project.user.Applicant;
+import project.user.Referee;
 
 import java.io.File;
 import java.io.IOException;
@@ -22,6 +23,10 @@ public class RefereeMenu extends ApplicationController implements Serializable {
     @FXML
     ListView<Applicant> applicants;
     Applicant applicant;
+    @FXML
+    ListView<JobPosting> jobPostings;
+    private JobPosting jobPosting;
+
 
     private FileChooser fc = new FileChooser();
 
@@ -29,6 +34,7 @@ public class RefereeMenu extends ApplicationController implements Serializable {
     void postInit() {
         super.postInit();
         applicants.setCellFactory(CellFactoryFactory.getCellFactoryForApplicant());
+        jobPostings.setCellFactory(CellFactoryFactory.getCellFactoryForJobPosting());
         pollApplicants();
     }
 
@@ -45,6 +51,7 @@ public class RefereeMenu extends ApplicationController implements Serializable {
             if (!(applicant.addDocument(document))) {
                 showModal("Cannot add document");
             } else {
+                ((Referee)user).removeItem(applicant, jobPosting);
                 showModal("Successfully added");
             }
         } else {
@@ -52,14 +59,33 @@ public class RefereeMenu extends ApplicationController implements Serializable {
         }
     }
 
+    private void pollJobPostings(){
+        jobPostings.getItems().clear();
+        List<JobPosting> jobPostingList = ((Referee)getUser()).getRequestList().get(applicant);
+        if (jobPostingList != null) {
+            for (JobPosting jobPosting:jobPostingList){
+                jobPostings.getItems().add(jobPosting);
+            }
+        }
+    }
 
     private void pollApplicants() {
-        HashMap<String, Applicant> allPostings = getSystem().getApplicants();
-        applicants.getItems().addAll(allPostings.values());
+        for (Applicant applicant: ((Referee)getUser()).getRequestList().keySet()) {
+            applicants.getItems().add(applicant);
+        }
     }
 
     public void applicantsClicked(MouseEvent event) {
         applicant = applicants.getSelectionModel().getSelectedItem();
+        pollJobPostings();
+    }
+
+    public void jobPostingsClicked(MouseEvent event) throws IOException {
+        jobPosting = jobPostings.getSelectionModel().getSelectedItem();
+        if (event.getClickCount() == 2){
+            RefereeViewPostings.setJobPosting(jobPosting);
+            SceneSwitcher.switchScene(this, event, "RefereeViewPostings.fxml");
+        }
     }
 
     public void exit(Event event) throws IOException {
