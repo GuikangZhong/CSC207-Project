@@ -28,27 +28,7 @@ public class RefereeMenu extends ApplicationController implements Serializable {
     @Override
     void postInit() {
         super.postInit();
-        applicants.setCellFactory(new Callback<ListView<Applicant>, ListCell<Applicant>>() {
-
-            @Override
-            public ListCell<Applicant> call(ListView<Applicant> p) {
-
-                ListCell<Applicant> cell = new ListCell<Applicant>() {
-
-                    @Override
-                    protected void updateItem(Applicant t, boolean bln) {
-                        super.updateItem(t, bln);
-                        if (t != null) {
-                            setText(t.getUsername());
-                        } else {
-                            setText("");
-                        }
-                    }
-
-                };
-                return cell;
-            }
-        });
+        applicants.setCellFactory(CellFactoryFactory.getCellFactoryForApplicant());
         pollApplicants();
     }
 
@@ -75,9 +55,7 @@ public class RefereeMenu extends ApplicationController implements Serializable {
 
     private void pollApplicants() {
         HashMap<String, Applicant> allPostings = getSystem().getApplicants();
-        for (Map.Entry mapElement : allPostings.entrySet()) {
-            applicants.getItems().add((Applicant) mapElement.getValue());
-        }
+        applicants.getItems().addAll(allPostings.values());
     }
 
     public void applicantsClicked(MouseEvent event) {
