@@ -85,6 +85,10 @@ public class MainSystem implements Serializable {
         return applicants.getUsers();
     }
 
+    public HashMap<String, Referee> getReferees() {
+        return referees.getUsers();
+    }
+
     public Collection<Company> getCompanies() {
         return companies.values();
     }

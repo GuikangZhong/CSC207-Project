@@ -1,5 +1,6 @@
 package project.user;
 
+import project.application.JobPosting;
 import project.application.ReferenceLetter;
 import project.observer.SystemObserver;
 
@@ -9,19 +10,23 @@ import java.util.*;
 
 public class Referee extends User implements Serializable, SystemObserver {
     private static final long serialVersionUID = -5182837267201535114L;
-    private List<ReferenceLetter> letterList;
+    private HashMap<Applicant, List<JobPosting>> requestList;
 
     public Referee(UserHistory history, String username, String password, String realName, List<String> company){
         super(history, username, password, realName, company);
-        letterList = new ArrayList<>();
+        requestList = new HashMap<>();
     }
 
-    public void addLetter(ReferenceLetter letter) {
-        letterList.add(letter);
-    }
-
-    public List<ReferenceLetter> getLetterList(){
-        return letterList;
+    public void addItems(Applicant applicant, JobPosting jobPosting) {
+        List<JobPosting> postings = requestList.get(applicant);
+        if (postings == null) {
+            postings = new ArrayList<>();
+            postings.add(jobPosting);
+            requestList.put(applicant, postings);
+        } else {
+            postings.add(jobPosting);
+            requestList.put(applicant, postings);
+        }
     }
 
     @Override

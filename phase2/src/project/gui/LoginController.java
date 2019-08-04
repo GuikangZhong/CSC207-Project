@@ -44,7 +44,8 @@ public class LoginController extends ApplicationController {
                         .addOption("Job Posting", "ApplicantViewJobPostings.fxml")
                         .addOption("Application", "ApplicantViewApplications.fxml")
                         .addOption("Your history", "ApplicantViewHistory.fxml")
-                        .addOption("Notifications", "ApplicantViewNotifications.fxml");
+                        .addOption("Notifications", "ApplicantViewNotifications.fxml")
+                        .addOption("Reference", "RequestReference.fxml");
                 setMenu(menu);
                 SceneSwitcher.switchScene(this, event, "ApplicantViewNotifications.fxml");
             } else if (user.getType() == User.Type.HR) {
@@ -78,7 +79,7 @@ public class LoginController extends ApplicationController {
             } else if (user.getType() == User.Type.REFEREE) {
                 setUser(user);
                 Menu menu = new Menu();
-                menu.addOption("Upload reference letters", "RefereeMenu.fxml");
+                menu.addOption("Upload RL", "RefereeMenu.fxml");
                 setMenu(menu);
                 SceneSwitcher.switchScene(this, event, "RefereeMenu.fxml");
             }

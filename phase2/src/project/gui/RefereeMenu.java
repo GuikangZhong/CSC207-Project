@@ -10,7 +10,6 @@ import javafx.stage.FileChooser;
 import javafx.util.Callback;
 import project.application.*;
 import project.user.Applicant;
-import project.user.HR;
 
 import java.io.File;
 import java.io.IOException;
