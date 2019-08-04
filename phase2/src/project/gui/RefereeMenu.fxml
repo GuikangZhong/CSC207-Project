@@ -9,7 +9,9 @@
       <TreeView fx:id="options" prefHeight="425.0" prefWidth="139.0" />
       <Button layoutX="534.0" layoutY="14.0" mnemonicParsing="false" onAction="#exit" text="Sign Out" />
       <ListView fx:id="applicants" layoutX="161.0" layoutY="49.0" onMouseClicked="#applicantsClicked" prefHeight="353.0" prefWidth="139.0" />
-      <Label layoutX="203.0" layoutY="18.0" text="Applicants" />
-      <Button layoutX="347.0" layoutY="200.0" mnemonicParsing="false" onAction="#uploadButton" text="Upload letter" />
+      <Label layoutX="203.0" layoutY="27.0" text="Applicants" />
+      <Button layoutX="511.0" layoutY="377.0" mnemonicParsing="false" onAction="#uploadButton" text="Upload letter" />
+      <ListView fx:id="jobPostings" layoutX="300.0" layoutY="49.0" onMouseClicked="#jobPostingsClicked" prefHeight="353.0" prefWidth="139.0" />
+      <Label layoutX="336.0" layoutY="27.0" text="Job Postings" />
    </children>
 </AnchorPane>

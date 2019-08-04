@@ -3,6 +3,7 @@ package project.gui;
 import javafx.beans.binding.Bindings;
 import javafx.scene.control.*;
 import javafx.util.Callback;
+import project.application.JobPosting;
 import project.interview.InterviewGroup;
 import project.user.Applicant;
 import project.user.Interviewer;
@@ -78,6 +79,30 @@ class CellFactoryFactory {
 
                 };
 
+                return cell;
+            }
+        };
+    }
+
+    static Callback<ListView<JobPosting>, ListCell<JobPosting>>  getCellFactoryForJobPosting(){
+        return new Callback<ListView<JobPosting>, ListCell<JobPosting>>() {
+
+            @Override
+            public ListCell<JobPosting> call(ListView<JobPosting> p) {
+
+                ListCell<JobPosting> cell = new ListCell<JobPosting>() {
+
+                    @Override
+                    protected void updateItem(JobPosting t, boolean bln) {
+                        super.updateItem(t, bln);
+                        if (t != null) {
+                            setText(t.getJobTitle());
+                        }else{
+                            setText("");
+                        }
+                    }
+
+                };
                 return cell;
             }
         };

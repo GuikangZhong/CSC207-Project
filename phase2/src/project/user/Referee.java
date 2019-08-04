@@ -29,6 +29,16 @@ public class Referee extends User implements Serializable, SystemObserver {
         }
     }
 
+    public void removeItem(Applicant applicant, JobPosting jobPosting) {
+        List<JobPosting> jobPostingList = requestList.get(applicant);
+        jobPostingList.remove(jobPosting);
+        requestList.put(applicant,jobPostingList);
+    }
+
+    public HashMap<Applicant, List<JobPosting>> getRequestList(){
+        return  requestList;
+    }
+
     @Override
     public Type getType() {
         return Type.REFEREE;

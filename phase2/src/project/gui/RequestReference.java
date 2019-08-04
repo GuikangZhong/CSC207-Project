@@ -1,6 +1,7 @@
 package project.gui;
 
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
@@ -49,27 +50,7 @@ public class RequestReference extends ApplicationController implements Serializa
                 return cell;
             }
         });
-        jobPostings.setCellFactory(new Callback<ListView<JobPosting>, ListCell<JobPosting>>() {
-
-            @Override
-            public ListCell<JobPosting> call(ListView<JobPosting> p) {
-
-                ListCell<JobPosting> cell = new ListCell<JobPosting>() {
-
-                    @Override
-                    protected void updateItem(JobPosting t, boolean bln) {
-                        super.updateItem(t, bln);
-                        if (t != null) {
-                            setText(t.getJobTitle());
-                        } else {
-                            setText("");
-                        }
-                    }
-
-                };
-                return cell;
-            }
-        });
+        jobPostings.setCellFactory(CellFactoryFactory.getCellFactoryForJobPosting());
         pollReferees();
         pollJobPostings();
     }
@@ -97,9 +78,17 @@ public class RequestReference extends ApplicationController implements Serializa
     }
 
     public void requestButton(ActionEvent event) throws IOException {
-        if (selectedReferee != null && selectedPosting != null) {
+        if (selectedReferee == null) {
+            showModal("Warning", "referee not selected");
+        } else if (selectedPosting == null) {
+            showModal("Warning", "job posting not selected");
+        } else {
             selectedReferee.addItems((Applicant) getUser(), selectedPosting);
             showModal("Successfully requested");
         }
+    }
+
+    public void exit(Event event) throws IOException {
+        SceneSwitcher.switchScene(this, event, "Main.fxml");
     }
 }
