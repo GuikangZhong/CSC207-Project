@@ -77,19 +77,19 @@ public class ApplicantViewJobPostings extends ApplicationController implements I
             }
         }
         List<String> tagList = getSystem().getAllTags();
-        for (String tag: tagList
-             ) {
-            tag1.getItems().add(tag);
-            tag2.getItems().add(tag);
-            tag3.getItems().add(tag);
-            tag4.getItems().add(tag);
-            tag5.getItems().add(tag);
-        }
-//        tag1.getItems().addAll(tagList);
-//        tag2.getItems().addAll(tagList);
-//        tag3.getItems().addAll(tagList);
-//        tag4.getItems().addAll(tagList);
-//        tag5.getItems().addAll(tagList);
+//        for (String tag: tagList
+//             ) {
+//            tag1.getItems().add(tag);
+//            tag2.getItems().add(tag);
+//            tag3.getItems().add(tag);
+//            tag4.getItems().add(tag);
+//            tag5.getItems().add(tag);
+//        }
+        tag1.getItems().addAll(tagList);
+        tag2.getItems().addAll(tagList);
+        tag3.getItems().addAll(tagList);
+        tag4.getItems().addAll(tagList);
+        tag5.getItems().addAll(tagList);
     }
 
     public void selectJobPosting(MouseEvent event) {

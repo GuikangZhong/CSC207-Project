@@ -96,6 +96,7 @@ public class HRCreateJobPosting extends ApplicationController {
             openedMonth.getItems().add(m);
             closedMonth.getItems().add(m);
         }
+//        List<String> tagList = getSystem().getAllTags();
         jobTag1.getItems().addAll(tagList);
         jobTag2.getItems().addAll(tagList);
         jobTag3.getItems().addAll(tagList);

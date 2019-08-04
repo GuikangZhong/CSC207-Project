@@ -94,11 +94,11 @@
                                        <children>
                                           <HBox>
                                              <children>
-                                                <ChoiceBox prefWidth="100.0" />
-                                                <ChoiceBox prefWidth="100.0" />
-                                                <ChoiceBox prefWidth="100.0" />
-                                                <ChoiceBox prefWidth="100.0" />
-                                                <ChoiceBox prefWidth="100.0" />
+                                                <ChoiceBox fx:id = "tag1" prefWidth="100.0" />
+                                                <ChoiceBox fx:id = "tag2" prefWidth="100.0" />
+                                                <ChoiceBox fx:id = "tag3" prefWidth="100.0" />
+                                                <ChoiceBox fx:id = "tag4" prefWidth="100.0" />
+                                                <ChoiceBox fx:id = "tag5" prefWidth="100.0" />
                                                 <HBox alignment="CENTER" prefWidth="100.0">
                                                    <children>
                                                       <Button mnemonicParsing="false" onAction="#filter" prefWidth="70.0" text="Filter" />
