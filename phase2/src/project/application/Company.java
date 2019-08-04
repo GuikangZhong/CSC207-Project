@@ -124,6 +124,10 @@ public class Company implements Serializable, SystemObserver {
         return false;
     }
 
+    public void removeTag(String oldTag){
+        this.tags.remove(oldTag);
+    }
+
     public void addSubsidiary(Company subsidiary){
         subsidiaries.add(subsidiary);
     }
