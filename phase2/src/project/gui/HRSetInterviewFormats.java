@@ -3,10 +3,7 @@ package project.gui;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListCell;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.util.Callback;
 import project.application.Company;
 import project.application.JobPosting;
@@ -26,7 +23,7 @@ public class HRSetInterviewFormats extends ApplicationController {
     private ListView<String> formats;
 
     @FXML
-    private TextField overview;
+    private TextArea overview;
 
     private HR hr;
 

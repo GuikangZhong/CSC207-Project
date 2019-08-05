@@ -35,17 +35,6 @@ public class HRCreateJobPosting extends ApplicationController {
     private TextArea jobDescription;
 
     @FXML
-    private ChoiceBox<String> jobTag1;
-    @FXML
-    private ChoiceBox<String> jobTag2;
-    @FXML
-    private ChoiceBox<String> jobTag3;
-    @FXML
-    private ChoiceBox<String> jobTag4;
-    @FXML
-    private ChoiceBox<String> jobTag5;
-
-    @FXML
     private ChoiceBox<Integer> openedYear;
 
     @FXML
@@ -69,6 +58,9 @@ public class HRCreateJobPosting extends ApplicationController {
     @FXML
     private TextField newTag;
 
+    @FXML
+    private ListView<CheckBox> availableTags;
+
 
     @FXML
     private Label companyName;
@@ -83,7 +75,11 @@ public class HRCreateJobPosting extends ApplicationController {
         super.postInit();
         requirementsAvailable.getItems().addAll("Basic", "Reference");
         companyName.setText(getUser().getSignedInCompany());
-        List<String> tagList = getSystem().getCompany(companyName.getText()).getTags();
+        List<String> tagList = system.getCompany(user.getSignedInCompany()).getTags();
+        for (String tag: tagList){
+            CheckBox tagOption = new CheckBox(tag);
+            availableTags.getItems().add(tagOption);
+        }
         for (int y = 2019; y <= 2022; y++){
             openedYear.getItems().add(y);
             closedYear.getItems().add(y);
@@ -96,26 +92,15 @@ public class HRCreateJobPosting extends ApplicationController {
             openedMonth.getItems().add(m);
             closedMonth.getItems().add(m);
         }
-//        List<String> tagList = getSystem().getAllTags();
-        jobTag1.getItems().addAll(tagList);
-        jobTag2.getItems().addAll(tagList);
-        jobTag3.getItems().addAll(tagList);
-        jobTag4.getItems().addAll(tagList);
-        jobTag5.getItems().addAll(tagList);
-
     }
 
     public void addTag(ActionEvent event){
-        Company company = getSystem().getCompany(companyName.getText());
+        Company company = system.getCompany(companyName.getText());
         if (company.addTag(newTag.getText())){
+            CheckBox tempBox = new CheckBox(newTag.getText());
+            availableTags.getItems().add(tempBox);
             showModal("Great","Tag added successfully");
-            jobTag1.getItems().add(newTag.getText());
-            jobTag2.getItems().add(newTag.getText());
-            jobTag3.getItems().add(newTag.getText());
-            jobTag4.getItems().add(newTag.getText());
-            jobTag5.getItems().add(newTag.getText());
         }else {
-//            logger.info("Tag added successfully");
             showModal("Tag already exists.");
         }
     }
@@ -128,17 +113,12 @@ public class HRCreateJobPosting extends ApplicationController {
         Integer closeYear = closedYear.getSelectionModel().getSelectedItem();
         Integer closeMonth = closedMonth.getSelectionModel().getSelectedItem();
         Integer closeDay = closedDay.getSelectionModel().getSelectedItem();
-        String tag1 = jobTag1.getSelectionModel().getSelectedItem();
-        String tag2 = jobTag2.getSelectionModel().getSelectedItem();
-        String tag3 = jobTag3.getSelectionModel().getSelectedItem();
-        String tag4 = jobTag4.getSelectionModel().getSelectedItem();
-        String tag5 = jobTag5.getSelectionModel().getSelectedItem();
         List<String> tags = new ArrayList<>();
-        tags.add(tag1);
-        tags.add(tag2);
-        tags.add(tag3);
-        tags.add(tag5);
-        tags.add(tag4);
+        for (CheckBox tagOption: availableTags.getItems()){
+            if (tagOption.isSelected()) {
+                tags.add(tagOption.getText());
+            }
+        }
 
         LocalDate openDate = LocalDate.of(openYear, openMonth, openDay);
         LocalDate closedDate = LocalDate.of(closeYear, closeMonth, closeDay);
@@ -153,16 +133,7 @@ public class HRCreateJobPosting extends ApplicationController {
             String description_ = jobDescription.getText();
             String comName = companyName.getText();
             Company company = getSystem().getCompany(comName);
-//            VerificationStrategy requirement = new BasicVerificationStrategy();
-//            VerificationStrategy requirement = null;
             VerificationStrategyFactory factory = new VerificationStrategyFactory();
-//            if (requirementsAvailable.getSelectionModel().getSelectedItem().equals("Basic")){
-//                requirement = factory.getStrategy()
-//            }
-//            else{
-//                promptSetRefNum();
-//
-//            }
             VerificationStrategy requirement = factory
                     .getStrategy(requirementsAvailable
                     .getSelectionModel()
@@ -187,10 +158,8 @@ public class HRCreateJobPosting extends ApplicationController {
         Stage stage = new Stage();
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setTitle("Set required number of reference letters");
-//        ComboBox<String> companies = new ComboBox<>();
         TextField numField = new TextField();
         Button okButton = new Button("OK");
-//        okButton.setOnAction(e -> {user.setSignedInCompany(companies.getSelectionModel().getSelectedItem()));
         okButton.setOnAction(e -> {
             numLetterRequired = Integer.parseInt(numField.getText());
             stage.close();

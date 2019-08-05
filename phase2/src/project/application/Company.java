@@ -35,7 +35,12 @@ public class Company implements Serializable, SystemObserver {
         interviewFormats = new HashMap<>();
         subsidiaries = new ArrayList<>();
         parentCompany = null;
-        tags = new ArrayList<>();
+        tags = new ArrayList<String>(Arrays.asList(
+                "Full-time",
+                "Internship",
+                "Management",
+                "Remote"
+        ));
     }
 
     public InterviewSetup getInterviewFormat(String formatName) {

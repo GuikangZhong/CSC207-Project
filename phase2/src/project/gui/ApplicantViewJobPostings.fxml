@@ -1,19 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.TreeView?>
-<?import javafx.scene.effect.ColorAdjust?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="504.0" prefWidth="760.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.gui.ApplicantViewJobPostings">
   <center>
@@ -86,81 +76,12 @@
                               </AnchorPane>
                            </content>
                         </Tab>
-                        <Tab text="View By Tag">
+                        <Tab text="Filter By Tags">
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="394.0" prefWidth="619.0">
                                  <children>
-                                    <VBox layoutX="14.0" layoutY="14.0">
-                                       <children>
-                                          <HBox>
-                                             <children>
-                                                <ChoiceBox fx:id = "tag1" prefWidth="100.0" />
-                                                <ChoiceBox fx:id = "tag2" prefWidth="100.0" />
-                                                <ChoiceBox fx:id = "tag3" prefWidth="100.0" />
-                                                <ChoiceBox fx:id = "tag4" prefWidth="100.0" />
-                                                <ChoiceBox fx:id = "tag5" prefWidth="100.0" />
-                                                <HBox alignment="CENTER" prefWidth="100.0">
-                                                   <children>
-                                                      <Button mnemonicParsing="false" onAction="#filter" prefWidth="70.0" text="Filter" />
-                                                   </children>
-                                                </HBox>
-                                             </children>
-                                          </HBox>
-                                          <HBox>
-                                             <children>
-                                                <VBox prefHeight="200.0" prefWidth="100.0">
-                                                   <children>
-                                                      <HBox prefHeight="15.0" prefWidth="200.0" />
-                                                      <ListView fx:id="jobList1" onContextMenuRequested="#selectJobPosting1" onMouseClicked="#selectJobPosting1" prefHeight="300.0" prefWidth="134.0" />
-                                                   </children>
-                                                </VBox>
-                                                <VBox prefHeight="150.0" prefWidth="15.0" />
-                                                <VBox prefHeight="350.0" prefWidth="370.0">
-                                                   <children>
-                                                      <HBox prefHeight="15.0" prefWidth="200.0" />
-                                                      <HBox alignment="CENTER_LEFT" prefHeight="33.0" prefWidth="355.0">
-                                                         <children>
-                                                            <Label prefHeight="15.0" prefWidth="100.0" text="Status : " />
-                                                            <Label fx:id="postStatus1" prefHeight="15.0" prefWidth="100.0" />
-                                                         </children>
-                                                      </HBox>
-                                                      <HBox alignment="CENTER_LEFT" prefHeight="33.0" prefWidth="150.0">
-                                                         <children>
-                                                            <Label prefHeight="15.0" prefWidth="100.0" text="Company : " />
-                                                            <Label fx:id="companyName1" prefHeight="15.0" prefWidth="100.0" />
-                                                         </children>
-                                                      </HBox>
-                                                      <HBox alignment="CENTER_LEFT" prefHeight="33.0" prefWidth="355.0">
-                                                         <children>
-                                                            <Label prefHeight="15.0" prefWidth="100.0" text="Open From : " />
-                                                            <Label fx:id="openDays1" prefHeight="15.0" prefWidth="205.0" />
-                                                         </children>
-                                                      </HBox>
-                                                      <HBox alignment="CENTER_LEFT" prefHeight="33.0" prefWidth="355.0">
-                                                         <children>
-                                                            <Label prefHeight="15.0" prefWidth="200.0" text="Number of openings : " />
-                                                            <Label fx:id="nNeeded1" prefHeight="15.0" prefWidth="280.0" />
-                                                         </children>
-                                                      </HBox>
-                                                      <HBox alignment="CENTER_LEFT" prefHeight="33.0" prefWidth="355.0">
-                                                         <children>
-                                                            <Label prefWidth="100.0" text="Tags : " />
-                                                            <Label fx:id="tags1" prefHeight="15.0" prefWidth="280.0" />
-                                                         </children>
-                                                      </HBox>
-                                                      <TextArea fx:id="description1" prefHeight="163.0" prefWidth="370.0" />
-                                                      <HBox prefHeight="15.0" prefWidth="200.0" />
-                                                      <HBox alignment="CENTER" prefWidth="142.0" spacing="10.0">
-                                                         <children>
-                                                            <Button mnemonicParsing="false" onAction="#applyButton1" prefHeight="30.0" prefWidth="100.0" text="Apply" />
-                                                         </children>
-                                                      </HBox>
-                                                   </children>
-                                                </VBox>
-                                             </children>
-                                          </HBox>
-                                       </children>
-                                    </VBox>
+                                    <ListView fx:id="availableTags" layoutX="27.0" layoutY="20.0" prefHeight="375.0" prefWidth="200.0" />
+                                    <Button layoutX="343.0" layoutY="239.0" mnemonicParsing="false" onAction="#filter" prefHeight="27.0" prefWidth="108.0" text="Filter" />
                                  </children>
                               </AnchorPane>
                            </content>
