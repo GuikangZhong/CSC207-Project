@@ -61,7 +61,7 @@ public class JobPosting implements Serializable, SystemObserver {
     }
 
     public void addTag(String tag) {
-        if(!this.tags.contains(tag) && tags.size() < 5) this.tags.add(tag);
+        if(!this.tags.contains(tag)) this.tags.add(tag);
     }
 
     public void removeTag(String tag){
@@ -88,11 +88,7 @@ public class JobPosting implements Serializable, SystemObserver {
     public String getDescription() {
         return description;
     }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
+    
     public void addObserver(JobPostingObserver observer) {
         observers.add(observer);
     }
