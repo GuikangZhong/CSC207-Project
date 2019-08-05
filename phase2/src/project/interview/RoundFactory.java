@@ -14,6 +14,6 @@ public class RoundFactory {
         else if (roundType.equals(GroupRound.roundType())){
             return new GroupRound();
         }
-        return null;
+        throw new RuntimeException("Unrecognizable round type: "+roundType);
     }
 }
