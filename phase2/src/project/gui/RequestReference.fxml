@@ -6,7 +6,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="425.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.gui.RequestReference">
    <children>
-      <TreeView fx:id="options" prefHeight="425.0" prefWidth="139.0" />
+      <TreeView fx:id="options" onContextMenuRequested="#selectItems" onMouseClicked="#selectItems" prefHeight="425.0" prefWidth="139.0" />
       <Button layoutX="534.0" layoutY="14.0" mnemonicParsing="false" onAction="#exit" text="Sign Out" />
       <ListView fx:id="referees" layoutX="161.0" layoutY="49.0" onMouseClicked="#refereeClicked" prefHeight="353.0" prefWidth="139.0" />
       <Label layoutX="203.0" layoutY="18.0" text="Referees" />

@@ -18,7 +18,7 @@ public class SwitchCompany extends ApplicationController{
         }
     }
 
-    public void comfirmClicked(ActionEvent event) throws IOException {
+    public void confirmClicked(ActionEvent event) throws IOException {
         String companyName = companies.getSelectionModel().getSelectedItem();
         user.setSignedInCompany(companyName);
         SceneSwitcher.switchScene(this, event, "HRSetInterviewFormats.fxml");

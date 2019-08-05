@@ -17,7 +17,7 @@ public class Referee extends User implements Serializable, SystemObserver {
     }
 
     public void addRequest(Applicant applicant, JobPosting jobPosting) {
-        if (requests.containsKey(applicant)) {
+        if (!requests.containsKey(applicant)) {
             List<JobPosting> postings = new ArrayList<>();
             postings.add(jobPosting);
             requests.put(applicant, postings);
@@ -30,7 +30,6 @@ public class Referee extends User implements Serializable, SystemObserver {
     public void removeRequest(Applicant applicant, JobPosting jobPosting) {
         List<JobPosting> jobPostingList = requests.get(applicant);
         jobPostingList.remove(jobPosting);
-        requests.put(applicant, jobPostingList);
     }
 
     public HashMap<Applicant, List<JobPosting>> getRequests() {
