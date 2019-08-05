@@ -83,7 +83,7 @@ public class RequestReference extends ApplicationController implements Serializa
         } else if (selectedPosting == null) {
             showModal("Warning", "job posting not selected");
         } else {
-            selectedReferee.addItems((Applicant) getUser(), selectedPosting);
+            selectedReferee.addRequest((Applicant) getUser(), selectedPosting);
             showModal("Successfully requested");
         }
     }

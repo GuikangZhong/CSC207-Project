@@ -3,11 +3,9 @@ package project.gui;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
-import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
-import javafx.util.Callback;
 import project.application.*;
 import project.user.Applicant;
 import project.user.Referee;
@@ -51,7 +49,7 @@ public class RefereeMenu extends ApplicationController implements Serializable {
             if (!(applicant.addDocument(document))) {
                 showModal("Cannot add document");
             } else {
-                ((Referee)user).removeItem(applicant, jobPosting);
+                ((Referee)user).removeRequest(applicant, jobPosting);
                 showModal("Successfully added");
             }
         } else {
@@ -61,7 +59,7 @@ public class RefereeMenu extends ApplicationController implements Serializable {
 
     private void pollJobPostings(){
         jobPostings.getItems().clear();
-        List<JobPosting> jobPostingList = ((Referee)getUser()).getRequestList().get(applicant);
+        List<JobPosting> jobPostingList = ((Referee)getUser()).getRequests().get(applicant);
         if (jobPostingList != null) {
             for (JobPosting jobPosting:jobPostingList){
                 jobPostings.getItems().add(jobPosting);
@@ -70,7 +68,7 @@ public class RefereeMenu extends ApplicationController implements Serializable {
     }
 
     private void pollApplicants() {
-        for (Applicant applicant: ((Referee)getUser()).getRequestList().keySet()) {
+        for (Applicant applicant: ((Referee)getUser()).getRequests().keySet()) {
             applicants.getItems().add(applicant);
         }
     }
