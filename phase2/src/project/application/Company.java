@@ -152,4 +152,12 @@ public class Company implements Serializable, SystemObserver {
         logger.info("Update on " + now);
         jobPostingManager.updateOnTime(now);
     }
+
+    public boolean isSiblingCompany(Company other){
+        if(other == null)return false;
+        return other.getParentCompany() == getParentCompany();
+    }
+    public boolean isRootCompany(){
+        return getParentCompany() == null;
+    }
 }

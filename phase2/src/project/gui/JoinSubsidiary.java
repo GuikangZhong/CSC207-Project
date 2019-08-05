@@ -6,6 +6,10 @@ import javafx.scene.control.ChoiceBox;
 import project.application.Company;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import java.util.stream.Stream;
 
 public class JoinSubsidiary extends ApplicationController {
 
@@ -42,13 +46,19 @@ public class JoinSubsidiary extends ApplicationController {
      * @param currentCompany: The company that the user currently signs in.
      */
     private void initializeSiblingCompanies(Company currentCompany) {
+        if(currentCompany.isRootCompany())
+            return;
+        List<Company> candidates = new ArrayList<>();
         for (Company company : system.getCompanies()) {
-            if ((company.getParentCompany() == currentCompany.getParentCompany())
-                    && !(availableSubsidiaries.getItems().contains(company.getName()))
-                    && (company.getParentCompany() != null)
-                    && (company != currentCompany)
-            ) {
-                availableSubsidiaries.getItems().add(company.getName());
+            if (currentCompany.isSiblingCompany(company)) {
+                candidates.add(company);
+            }
+        }
+        for(Company company:candidates){
+            if(company != currentCompany){
+                if(!availableSubsidiaries.getItems().contains(company.getName())){
+                    availableSubsidiaries.getItems().add(company.getName());
+                }
             }
         }
     }
