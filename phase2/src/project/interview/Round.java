@@ -79,7 +79,7 @@ public abstract class Round implements Serializable, InterviewGroupObserver, Clo
             group.setRound(this);
             for(Applicant applicant:group.getApplicants()){
                 Application application = applicant.getApplicationOf(jobPosting.getJobTitle()).get();
-                group.addObserver(application.getStatus());
+                group.addObserver(application);
             }
         }
         this.groups = groups;

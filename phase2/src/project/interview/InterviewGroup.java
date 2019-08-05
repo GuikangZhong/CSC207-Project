@@ -55,15 +55,6 @@ public class InterviewGroup implements Serializable {
         for (InterviewGroupObserver observer : observers) {
             observer.updateOnGroupSubmitted(this);
         }
-        for (Applicant applicant : applicants) {
-            if (!applicantsStatus.get(applicant.getUsername())) {
-                applicant.moveToApplied(getJobPosting());
-                applicant.addRejected(getJobPosting());
-            }
-            else {
-                applicant.updateInterviewProgress(getJobPosting(), getRound());
-            }
-        }
     }
 
     public Interviewer getInterviewer() {
@@ -82,6 +73,10 @@ public class InterviewGroup implements Serializable {
             }
         }
         return result;
+    }
+
+    public boolean isApplicantPassed(Applicant applicant){
+        return applicantsStatus.get(applicant.getUsername());
     }
 
     public Round getRound() {

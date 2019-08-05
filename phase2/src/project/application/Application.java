@@ -1,6 +1,7 @@
 package project.application;
 
-import project.interview.ApplicationStatus;
+import project.interview.InterviewGroup;
+import project.observer.InterviewGroupObserver;
 import project.user.Applicant;
 
 import java.io.Serializable;
@@ -12,7 +13,7 @@ import java.util.List;
  * Application is the material the applicant sends for the job posting
  */
 
-public class Application implements Serializable {
+public class Application implements Serializable, InterviewGroupObserver {
     private static final long serialVersionUID = -8550792289386170705L;
     private Applicant applicant;
     private List<Document> documents;
@@ -40,5 +41,18 @@ public class Application implements Serializable {
 
     public ApplicationStatus getStatus() {
         return status;
+    }
+
+    @Override
+    public void updateOnGroupSubmitted(InterviewGroup group) {
+        getStatus().currentRoundFinished(group.getRound());
+        boolean passed = group.isApplicantPassed(applicant);
+        if (!passed) {
+            applicant.moveToApplied(getJobPosting());
+            applicant.addRejected(getJobPosting());
+        }
+        else {
+            applicant.updateInterviewProgress(getJobPosting(), group.getRound());
+        }
     }
 }
