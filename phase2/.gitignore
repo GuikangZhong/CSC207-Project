@@ -1,1 +1,3 @@
 out/
+*.ser
+log.txt
