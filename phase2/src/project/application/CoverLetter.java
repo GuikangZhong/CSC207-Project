@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 
 public class CoverLetter extends Document implements Serializable {
     private static final long serialVersionUID = 4089162745833731740L;
+    private static final int maxLetters = 1;
 
     public CoverLetter(){
         super();
@@ -25,6 +26,6 @@ public class CoverLetter extends Document implements Serializable {
 
     @Override
     public int maxNumber() {
-        return 1;
+        return maxLetters;
     }
 }
