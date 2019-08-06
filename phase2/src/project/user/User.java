@@ -15,15 +15,15 @@ public abstract class User implements Serializable {
     private UserHistory history;
     private String username;
     private String realName;
-    private List<String> companies;
-    private String signedInCompany;
+    private List<Company> companies;
+    private Company signedInCompany;
     private byte[] password;
 
     public User(UserHistory history,
                 String username,
                 String password,
                 String realName,
-                List<String> companies) {
+                List<Company> companies) {
         this.history = history;
         this.realName = realName;
         this.username = username;
@@ -39,23 +39,23 @@ public abstract class User implements Serializable {
         return md.digest(password.getBytes());
     }
 
-    public List<String> getCompanies() {
+    public List<Company> getCompanies() {
         return companies;
     }
 
-    public void addCompany(String companyName){
-        companies.add(companyName);
+    public void addCompany(Company company){
+        companies.add(company);
     }
 
-    public String getSignedInCompany(){
+    public Company getSignedInCompany(){
         return signedInCompany;
     }
 
-    public void setSignedInCompany(String signedInCompany){
+    public void setSignedInCompany(Company signedInCompany){
         this.signedInCompany = signedInCompany;
     }
 
-    public void setCompanies(List<String> companies) {
+    public void setCompanies(List<Company> companies) {
         this.companies = companies;
     }
 

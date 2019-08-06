@@ -25,7 +25,7 @@ public class Applicant
                      String username,
                      String password,
                      String realName,
-                     List<String> company) {
+                     List<Company> company) {
         super(history, username, password, realName, company);
         applications = new ArrayList<>();
         documents = new ArrayList<>();

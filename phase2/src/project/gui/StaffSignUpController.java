@@ -43,14 +43,14 @@ public class StaffSignUpController extends ApplicationController implements Init
                     usernameInput.getText(),
                     passwordInput.getText(),
                     realNameInput.getText(),
-                    new ArrayList<String>(Arrays.asList(companyName))));
+                    new ArrayList<>(Arrays.asList(system.getCompany(companyName)))));
         }
         else if (UserTypes.typeName.equals("Interviewer")){
             added = getSystem().addUser(new Interviewer(new UserHistory(getSystem().now()),
                     usernameInput.getText(),
                     passwordInput.getText(),
                     realNameInput.getText(),
-                    new ArrayList<>(Arrays.asList(companyName))));
+                    new ArrayList<>(Arrays.asList(system.getCompany(companyName)))));
         }
         if (added){
             SceneSwitcher.switchScene(this, event, "SignUpSuccess.fxml");

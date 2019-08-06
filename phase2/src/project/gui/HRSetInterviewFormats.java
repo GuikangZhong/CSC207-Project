@@ -36,7 +36,8 @@ public class HRSetInterviewFormats extends ApplicationController {
     void postInit() {
         super.postInit();
         hr = (HR) getUser();
-        company = getSystem().getCompany(hr.getSignedInCompany());
+//        company = getSystem().getCompany(hr.getSignedInCompany());
+        company = hr.getSignedInCompany();
         companyName.setText(company.getName());
         jobPostings.setCellFactory(new Callback<ListView<JobPosting>, ListCell<JobPosting>>() {
 

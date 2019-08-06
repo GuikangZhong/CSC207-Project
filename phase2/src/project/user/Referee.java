@@ -1,5 +1,6 @@
 package project.user;
 
+import project.application.Company;
 import project.application.JobPosting;
 import project.observer.SystemObserver;
 
@@ -11,7 +12,7 @@ public class Referee extends User implements Serializable, SystemObserver {
     private static final long serialVersionUID = -5182837267201535114L;
     private HashMap<Applicant, List<JobPosting>> requests;
 
-    public Referee(UserHistory history, String username, String password, String realName, List<String> company) {
+    public Referee(UserHistory history, String username, String password, String realName, List<Company> company) {
         super(history, username, password, realName, company);
         requests = new HashMap<>();
     }

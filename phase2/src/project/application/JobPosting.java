@@ -88,7 +88,7 @@ public class JobPosting implements Serializable, SystemObserver {
     public String getDescription() {
         return description;
     }
-    
+
     public void addObserver(JobPostingObserver observer) {
         observers.add(observer);
     }

@@ -9,6 +9,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import project.application.Company;
 import project.user.User;
 
 import java.io.IOException;
@@ -91,12 +92,12 @@ public class LoginController extends ApplicationController {
         stage.initModality(Modality.APPLICATION_MODAL);
         stage.setTitle("Choose a company to sign in");
         ComboBox<String> companies = new ComboBox<>();
-        for (String company: user.getCompanies())
-            companies.getItems().add(company);
+        for (Company company: user.getCompanies())
+            companies.getItems().add(company.getName());
         Button okButton = new Button("OK");
 //        okButton.setOnAction(e -> {user.setSignedInCompany(companies.getSelectionModel().getSelectedItem()));
         okButton.setOnAction(e -> {
-            user.setSignedInCompany(companies.getSelectionModel().getSelectedItem());
+            user.setSignedInCompany(system.getCompany(companies.getSelectionModel().getSelectedItem()));
             stage.close();
         });
         HBox hBox = new HBox();

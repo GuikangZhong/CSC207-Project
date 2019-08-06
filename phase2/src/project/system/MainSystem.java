@@ -71,7 +71,7 @@ public class MainSystem implements Serializable {
                 addObserver((Referee) user);
                 return referees.addUser((Referee) user);
             } else {
-                Company company = getCompany(user.getCompanies().get(0));
+                Company company = user.getCompanies().get(0);
                 return company.addUser(user);
             }
         }

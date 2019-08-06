@@ -1,5 +1,6 @@
 package project.user;
 
+import project.application.Company;
 import project.application.JobPosting;
 import project.interview.*;
 import project.utils.Logging;
@@ -23,7 +24,7 @@ public class HR extends User {
               String username,
               String password,
               String realName,
-              List<String> company) {
+              List<Company> company) {
         super(history, username, password, realName, company);
         finalCandidates = new HashMap<>();
         interviewsRoundFinished = new ArrayList<>();

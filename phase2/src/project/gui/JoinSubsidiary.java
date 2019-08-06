@@ -19,7 +19,7 @@ public class JoinSubsidiary extends ApplicationController {
     @Override
     void postInit() {
         super.postInit();
-        Company currentCompany = system.getCompany(user.getSignedInCompany());
+        Company currentCompany = user.getSignedInCompany();
         for (Company subsidiary : currentCompany.getSubsidiaries()) {
             if (!user.getCompanies().contains(subsidiary.getName())) {
                 availableSubsidiaries.getItems().add(subsidiary.getName());
@@ -31,7 +31,8 @@ public class JoinSubsidiary extends ApplicationController {
     public void confirmButton(ActionEvent event) throws IOException {
         String subsidiaryName = availableSubsidiaries.getSelectionModel().getSelectedItem();
 //        Company subsidiary = system.getCompany(subsidiaryName);
-        user.addCompany(subsidiaryName);
+//        user.addCompany(subsidiaryName);
+        user.addCompany(system.getCompany(subsidiaryName));
         SceneSwitcher.switchScene(this, event, "HRSetInterviewFormats.fxml");
     }
 

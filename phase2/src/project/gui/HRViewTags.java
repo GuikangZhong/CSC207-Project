@@ -26,7 +26,7 @@ public class HRViewTags extends ApplicationController implements Initializable {
     @Override
     void postInit(){
         super.postInit();
-        companyName.setText(getUser().getSignedInCompany());
+        companyName.setText(user.getSignedInCompany().getName());
         Company company = getSystem().getCompany(companyName.getText());
         List<String> tags = company.getTags();
         if (tags.size() != 0) {

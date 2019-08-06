@@ -39,7 +39,7 @@ public class HRCreateInterviewFormat extends ApplicationController {
     @Override
     void postInit() {
         super.postInit();
-        companyName.setText(getUser().getSignedInCompany());
+        companyName.setText(user.getSignedInCompany().getName());
         availableTypes.getItems().addAll(interviewFormats);
         availableTypes.setOnMouseClicked((MouseEvent event) -> addItemToAnother(event, availableTypes, typesSelected));
         typesSelected.setOnMouseClicked((MouseEvent event) -> removeByClick(event, typesSelected));
@@ -71,7 +71,7 @@ public class HRCreateInterviewFormat extends ApplicationController {
             format.addRound(factory.createRound(selectedType));
         }
         try{
-            Company company = getSystem().getCompany((getUser()).getSignedInCompany());
+            Company company = user.getSignedInCompany();
             company.addInterviewFormat(name, format);
             showModal("Successfully added.");
         }

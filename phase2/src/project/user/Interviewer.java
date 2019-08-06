@@ -1,5 +1,6 @@
 package project.user;
 
+import project.application.Company;
 import project.interview.Interview;
 import project.interview.InterviewGroup;
 import project.observer.InterviewGroupObserver;
@@ -20,7 +21,7 @@ public class Interviewer extends User implements InterviewGroupObserver, Intervi
                        String username,
                        String password,
                        String realName,
-                       List<String> company) {
+                       List<Company> company) {
         super(history, username, password, realName, company);
         interviews = new ArrayList<>();
     }

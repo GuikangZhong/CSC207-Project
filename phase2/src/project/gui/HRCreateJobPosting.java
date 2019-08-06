@@ -74,8 +74,8 @@ public class HRCreateJobPosting extends ApplicationController {
     void postInit(){
         super.postInit();
         requirementsAvailable.getItems().addAll("Basic", "Reference");
-        companyName.setText(getUser().getSignedInCompany());
-        List<String> tagList = system.getCompany(user.getSignedInCompany()).getTags();
+        companyName.setText(getUser().getSignedInCompany().getName());
+        List<String> tagList = user.getSignedInCompany().getTags();
         for (String tag: tagList){
             CheckBox tagOption = new CheckBox(tag);
             availableTags.getItems().add(tagOption);
