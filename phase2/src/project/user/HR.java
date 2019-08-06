@@ -17,7 +17,7 @@ public class HR extends User {
     private Map<String, Interview> finalCandidates;
     private List<Interview> interviewsRoundFinished;
     private List<Interview> interviewsToBeScheduled;
-    private List<JobPosting> postingsToAssignformat;
+    private List<JobPosting> postingsToAssignFormat;
     static private Logger logger = Logging.getLogger();
 
     public HR(UserHistory history,
@@ -29,7 +29,7 @@ public class HR extends User {
         finalCandidates = new HashMap<>();
         interviewsRoundFinished = new ArrayList<>();
         interviewsToBeScheduled = new ArrayList<>();
-        postingsToAssignformat = new ArrayList<>();
+        postingsToAssignFormat = new ArrayList<>();
     }
 
     public List<Interview> getInterviewsRoundFinished() {
@@ -41,18 +41,18 @@ public class HR extends User {
         return interviewsToBeScheduled;
     }
 
-    public List<JobPosting> getPostingsToAssignformat() {
-        return postingsToAssignformat;
+    public List<JobPosting> getPostingsToAssignFormat() {
+        return postingsToAssignFormat;
     }
 
     public void addPostingToAssignFormat(JobPosting posting){
-        if (!(postingsToAssignformat.contains(posting))){
-            postingsToAssignformat.add(posting);
+        if (!(postingsToAssignFormat.contains(posting))){
+            postingsToAssignFormat.add(posting);
         }
     }
 
     public void postingAssignedFormat(JobPosting posting){
-        postingsToAssignformat.remove(posting);
+        postingsToAssignFormat.remove(posting);
     }
 
     @Override
