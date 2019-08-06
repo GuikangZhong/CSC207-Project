@@ -13,12 +13,11 @@ import java.util.logging.Logger;
 
 public class Company implements Serializable, SystemObserver {
     private static final long serialVersionUID = 2088083308860080279L;
-
+    static private Logger logger = Logging.getLogger();
     private String name;
     private JobPostingManager jobPostingManager;
     private InterviewerManager interviewerManager;
     private HRManager hrManager;
-    static private Logger logger = Logging.getLogger();
     private MainSystem system;
     private HashMap<String, InterviewSetup> interviewFormats;
     private List<Company> subsidiaries;
@@ -137,15 +136,15 @@ public class Company implements Serializable, SystemObserver {
         subsidiaries.add(subsidiary);
     }
 
+    public Company getParentCompany() {
+        return parentCompany;
+    }
+
     public void setParentCompany(Company parent){
         if (parentCompany == null)
             parentCompany = parent;
         else
             throw new RuntimeException("You cannot set parent for the second time");
-    }
-
-    public Company getParentCompany() {
-        return parentCompany;
     }
 
     public List<Company> getSubsidiaries(){

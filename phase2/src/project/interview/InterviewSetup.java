@@ -17,7 +17,13 @@ public class InterviewSetup implements Serializable, Cloneable {
     private static final long serialVersionUID = -1939537566544034408L;
     private List<Round> rounds;
     private Map<String, Integer> record;
+    private boolean isTemplate;
 
+    public InterviewSetup() {
+        this.rounds = new ArrayList<>();
+        record = new HashMap<>();
+        isTemplate = true;
+    }
 
     /**
      * When a new InterviewSetup is created, by default it serves the purpose of being a certain "template" and should
@@ -26,14 +32,6 @@ public class InterviewSetup implements Serializable, Cloneable {
      */
     protected boolean isTemplate() {
         return isTemplate;
-    }
-
-    private boolean isTemplate;
-
-    public InterviewSetup() {
-        this.rounds = new ArrayList<>();
-        record = new HashMap<>();
-        isTemplate = true;
     }
 
     @Override

@@ -82,8 +82,8 @@ public class Applicant
     // tries to apply for a job
     public Application apply(JobPosting jobPosting) {
         Application application = new Application(this, getDocuments(), jobPosting);
-        jobPosting.addObserver(this.getApplicantHistory());
         if (jobPosting.addApplication(application)) {
+            jobPosting.addObserver(this.getApplicantHistory());
             applications.add(application);
             getApplicantHistory().addJobApplying(jobPosting);
             return application;
