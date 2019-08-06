@@ -138,7 +138,7 @@ public class Applicant
             LocalDateTime close = history.getLastApplicationClosed();
             if (close != null) {
                 if (close.plusDays(getDocumentsAutoDeleteDays()).isBefore(now)) {
-                    System.out.println(documents.removeIf(document -> document.getCreatedDate().isBefore(close)));
+                    documents.removeIf(document -> document.getCreatedDate().isBefore(close));
                 }
             }
         }
