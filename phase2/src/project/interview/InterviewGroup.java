@@ -33,7 +33,6 @@ public class InterviewGroup implements Serializable {
         this.interviewer = interviewer;
         this.applicants = applicants;
         applicantsStatus = new HashMap<>();
-        observers = new ArrayList<>();
         for (Applicant applicant : applicants) {
             applicantsStatus.put(applicant.getUsername(), false);
         }
