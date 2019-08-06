@@ -53,14 +53,12 @@ public class ApplicantViewJobPostings extends ApplicationController implements I
 
     private void initializeTags(){
         Set<String> tagOptions = new HashSet<>();
-        for (Company company: system.getCompanies()){
-            tagOptions.addAll(company.getTags());
-            }
+        tagOptions.addAll(system.getAllTags());
         for (String tag: tagOptions){
             CheckBox tagBox = new CheckBox(tag);
             availableTags.getItems().add(tagBox);
         }
-        }
+    }
 
 
     public void selectJobPosting(MouseEvent event) {
@@ -77,8 +75,18 @@ public class ApplicantViewJobPostings extends ApplicationController implements I
         }
     }
 
-    public void filter(ActionEvent event){
+    public void clearAll(){
+        postStatus.setText(null);
+        companyName.setText(null);
+        description.setText(null);
+        openDays.setText(null);
+        nNeeded.setText(null);
+        tags.setText(null);
         jobList.getItems().clear();
+    }
+
+    public void filter(ActionEvent event){
+        clearAll();
         List<String> chosenTags = new ArrayList<>();
         for (CheckBox tagBox: availableTags.getItems()){
             if (tagBox.isSelected()){
