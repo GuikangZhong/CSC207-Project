@@ -3,14 +3,17 @@ package project.user;
 import project.application.Company;
 import project.application.JobPosting;
 import project.observer.SystemObserver;
+import project.utils.Logging;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.*;
+import java.util.logging.Logger;
 
 public class Referee extends User implements Serializable, SystemObserver {
     private static final long serialVersionUID = -5182837267201535114L;
     private HashMap<Applicant, List<JobPosting>> requests;
+    private static Logger logger = Logging.getLogger();
 
     public Referee(UserHistory history, String username, String password, String realName, List<Company> company) {
         super(history, username, password, realName, company);
@@ -44,6 +47,9 @@ public class Referee extends User implements Serializable, SystemObserver {
 
     @Override
     public void updateOnTime(LocalDateTime now) {
-
+        for (Applicant applicant: requests.keySet()) {
+            List<JobPosting> jobPostingList = requests.get(applicant);
+            jobPostingList.removeIf(jobPosting -> jobPosting.getCloseDate().isBefore(now));
+        }
     }
 }

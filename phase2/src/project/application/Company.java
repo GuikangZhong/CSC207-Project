@@ -13,7 +13,7 @@ import java.util.logging.Logger;
 
 public class Company implements Serializable, SystemObserver {
     private static final long serialVersionUID = 2088083308860080279L;
-    static private Logger logger = Logging.getLogger();
+    private static Logger logger = Logging.getLogger();
     private String name;
     private JobPostingManager jobPostingManager;
     private InterviewerManager interviewerManager;
@@ -34,7 +34,7 @@ public class Company implements Serializable, SystemObserver {
         interviewFormats = new HashMap<>();
         subsidiaries = new ArrayList<>();
         parentCompany = null;
-        tags = new ArrayList<String>(Arrays.asList(
+        tags = new ArrayList<>(Arrays.asList(
                 "Full-time",
                 "Internship",
                 "Management",

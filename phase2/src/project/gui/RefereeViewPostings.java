@@ -15,8 +15,10 @@ public class RefereeViewPostings extends ApplicationController {
     private static JobPosting jobPosting;
 
     void postInit(){
-        openDays.setText(String.format(" %s to %s", jobPosting.getOpenDate().toLocalDate(),
-                jobPosting.getCloseDate().toLocalDate()));
+        if (jobPosting != null) {
+            openDays.setText(String.format(" %s to %s", jobPosting.getOpenDate().toLocalDate(),
+                    jobPosting.getCloseDate().toLocalDate()));
+        }
     }
 
     public static void setJobPosting(JobPosting jobPosting1){
