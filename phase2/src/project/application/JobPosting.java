@@ -1,6 +1,5 @@
 package project.application;
 
-import project.interview.InterviewSetup;
 import project.observer.JobPostingObserver;
 import project.observer.SystemObserver;
 import project.user.Applicant;
