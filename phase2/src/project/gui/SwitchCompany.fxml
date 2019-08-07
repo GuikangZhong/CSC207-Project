@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="252.0" prefWidth="523.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.gui.SwitchCompany">
+<AnchorPane prefHeight="252.0" prefWidth="523.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.gui.SwitchCompany">
    <children>
       <Label alignment="CENTER" layoutX="92.0" layoutY="37.0" prefHeight="47.0" prefWidth="340.0" text="Please select the company you want to switch to">
          <font>
