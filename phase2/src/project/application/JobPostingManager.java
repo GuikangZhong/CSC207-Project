@@ -1,7 +1,6 @@
 package project.application;
 
 import project.interview.Interview;
-import project.observer.InterviewObserver;
 import project.observer.SystemObserver;
 import project.system.MainSystem;
 import project.user.Applicant;

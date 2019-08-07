@@ -159,6 +159,7 @@ public class Applicant
 
     public void addHired(JobPosting job){
         ApplicantHistory history = getApplicantHistory();
+        moveToApplied(job);
         history.addHiredPositions(job);
 //        history.removeInProgress(job);
     }

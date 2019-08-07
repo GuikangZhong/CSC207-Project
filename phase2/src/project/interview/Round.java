@@ -9,6 +9,7 @@ import project.utils.Logging;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -29,12 +30,6 @@ public abstract class Round implements Serializable, InterviewGroupObserver, Clo
         number = -1;
         observers = new ArrayList<>();
     }
-
-//    public Round(Job job){
-//        number = -1;
-//        observers = new ArrayList<>();
-//        setJob(job);
-//    }
 
     @Override
     public Object clone() throws CloneNotSupportedException {
@@ -85,6 +80,9 @@ public abstract class Round implements Serializable, InterviewGroupObserver, Clo
         this.groups = groups;
     }
 
+
+
+
     boolean isAllGroupsSubmitted() {
         for (InterviewGroup group : groups) {
             if (!group.isSubmitted())
@@ -131,5 +129,7 @@ public abstract class Round implements Serializable, InterviewGroupObserver, Clo
         }
     }
 
-
+    List<InterviewGroup> getGroups() {
+        return Collections.unmodifiableList(groups);
+    }
 }
