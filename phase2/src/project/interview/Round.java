@@ -31,13 +31,13 @@ public abstract class Round implements Serializable, InterviewGroupObserver, Clo
         observers = new ArrayList<>();
     }
 
-    @Override
-    public Object clone() throws CloneNotSupportedException {
-        if(groups != null || observers.size() > 0){
-            throw new RuntimeException("You cannot clone this round by now!!!");
-        }
-        return super.clone();
-    }
+//    @Override
+//    public Object clone() throws CloneNotSupportedException {
+//        if(groups != null || observers.size() > 0){
+//            throw new RuntimeException("You cannot clone this round by now!!!");
+//        }
+//        return super.clone();
+//    }
 
     public abstract String getRoundType();
 

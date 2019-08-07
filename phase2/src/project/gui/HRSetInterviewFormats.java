@@ -87,17 +87,12 @@ public class HRSetInterviewFormats extends ApplicationController {
         int indexSelected = jobPostings.getSelectionModel().getSelectedIndex();
         String formatName = formats.getSelectionModel().getSelectedItem();
         InterviewSetup tempFormat = company.getInterviewFormat(formatName);
-        try {
-            InterviewSetup setupAssigned = tempFormat.createSetupWithJob(selectedPosting);
-            Interview interview = new Interview(hr, selectedPosting, setupAssigned);
-            interview.addObserver(company.getHrManager());
-            hr.addInterviewsToBeScheduled(interview);
-            hr.postingAssignedFormat(selectedPosting);
-            jobPostings.getItems().remove(indexSelected);
-        }
-        catch (CloneNotSupportedException e){
-            e.printStackTrace();
-        }
+        InterviewSetup setupAssigned = tempFormat.createSetupWithJob(selectedPosting);
+        Interview interview = new Interview(hr, selectedPosting, setupAssigned);
+        interview.addObserver(company.getHrManager());
+        hr.addInterviewsToBeScheduled(interview);
+        hr.postingAssignedFormat(selectedPosting);
+        jobPostings.getItems().remove(indexSelected);
     }
 
     public void createNewFormat(ActionEvent event) throws IOException {

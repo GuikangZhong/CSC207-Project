@@ -13,7 +13,7 @@ import java.util.Map;
  * Holds a setup of a interview.
  * That is it contains all possible rounds.
  */
-public class InterviewSetup implements Serializable, Cloneable {
+public class InterviewSetup implements Serializable {
     private static final long serialVersionUID = -1939537566544034408L;
     private List<Round> rounds;
     private Map<String, Integer> record;
@@ -34,30 +34,42 @@ public class InterviewSetup implements Serializable, Cloneable {
         return isTemplate;
     }
 
-    @Override
-    public Object clone() throws CloneNotSupportedException {
-        InterviewSetup setup  = (InterviewSetup)super.clone();
-        setup.rounds = new ArrayList<>();
-        for(Round round: rounds){
-            setup.rounds.add((Round)round.clone());
-        }
-        setup.isTemplate = false;
-        return setup;
-    }
+//    @Override
+//    public Object clone() throws CloneNotSupportedException {
+//        InterviewSetup setup  = (InterviewSetup)super.clone();
+//        setup.rounds = new ArrayList<>();
+//        for(Round round: rounds){
+//            setup.rounds.add((Round)round.clone());
+//        }
+//        setup.isTemplate = false;
+//        return setup;
+//    }
 
+
+
+
+//    public InterviewSetup createSetupWithJob(JobPosting jobPosting) throws CloneNotSupportedException{
+//        InterviewSetup setup = (InterviewSetup)this.clone();
+//        for (Round round: setup.getRounds()){
+////            Round temp = (Round) round.clone();
+//            round.setJobPosting(jobPosting);
+//        }
+//        return setup;
+//    }
     /**
      * Creates a concrete setup for the job based on the "template format".
      * @param jobPosting: the job that the program need to set the interview format for.
      * @return The concrete setup of interview for job.
-     * @throws CloneNotSupportedException
      */
-
-    public InterviewSetup createSetupWithJob(JobPosting jobPosting) throws CloneNotSupportedException{
-        InterviewSetup setup = (InterviewSetup)this.clone();
-        for (Round round: setup.getRounds()){
-//            Round temp = (Round) round.clone();
-            round.setJobPosting(jobPosting);
+    public InterviewSetup createSetupWithJob(JobPosting jobPosting){
+        InterviewSetup setup = new InterviewSetup();
+        RoundFactory factory = new RoundFactory();
+        for (Round round: getRounds()){
+            Round tempRound = factory.createRound(round.getRoundType());
+            tempRound.setJobPosting(jobPosting);
+            setup.addRound(tempRound);
         }
+        setup.isTemplate = false;
         return setup;
     }
 
