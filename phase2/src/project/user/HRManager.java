@@ -16,11 +16,9 @@ import java.util.Optional;
 public class HRManager extends UserManager<HR> implements InterviewObserver, JobPostingObserver {
     private static final long serialVersionUID = 5741768326107391635L;
 
-    private Company company;
 
-    public HRManager(MainSystem system, Company company) {
+    public HRManager(MainSystem system) {
         super(system);
-        this.company = company;
     }
 
 
@@ -33,26 +31,6 @@ public class HRManager extends UserManager<HR> implements InterviewObserver, Job
         // select an HR
         HR hr = jobPosting.getHr();
         hr.addPostingToAssignFormat(jobPosting);
-
-//        InterviewSetup setup = new InterviewSetup();
-//        Job job = jobPosting.getJobPosting();
-//        setup.addRound(new PhoneRound(job));
-//        setup.addRound(new InPersonRound(job));
-//        setup.addRound(new InPersonRound(job));
-//        setup.addRound(new InPersonRound(job));
-////        Interview interview = new Interview(hr, jobPosting, (InterviewSetup)setup.clone());
-////        interview.addObserver(this);
-////        interview.addObserver(company.getJobPostingManager());
-////        hr.addInterviewsToBeScheduled(interview);
-//        try{
-//            Interview interview = new Interview(hr, jobPosting, (InterviewSetup)setup.clone());
-//            interview.addObserver(this);
-//            interview.addObserver(company.getJobPostingManager());
-//            hr.addInterviewsToBeScheduled(interview);
-//        }
-//        catch (CloneNotSupportedException ex){
-//            ex.printStackTrace();
-//        }
     }
 
     @Override

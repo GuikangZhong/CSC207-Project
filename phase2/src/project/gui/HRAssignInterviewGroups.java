@@ -122,7 +122,7 @@ public class HRAssignInterviewGroups extends ApplicationController {
         if (getUser() != null) {
             String companyName = user.getSignedInCompany().getName();
             Company company = getSystem().getCompany(companyName);
-            InterviewerManager interviewerManager = company.getInterviewerManager();
+            UserManager<Interviewer> interviewerManager = company.getInterviewerManager();
             for (Interviewer interviewer : interviewerManager.getUsers().values()) {
                 interviewers.getItems().add(interviewer);
             }

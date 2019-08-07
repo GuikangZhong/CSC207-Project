@@ -5,13 +5,13 @@ import project.system.MainSystem;
 import java.io.Serializable;
 import java.util.HashMap;
 
-abstract public class UserManager<T extends User> implements Serializable {
+public class UserManager<T extends User> implements Serializable {
     private static final long serialVersionUID = -3896729601031943756L;
 
     HashMap<String, T> users;
     private MainSystem system;
 
-    UserManager(MainSystem system) {
+    public UserManager(MainSystem system) {
         this.system = system;
         users = new HashMap<>();
     }

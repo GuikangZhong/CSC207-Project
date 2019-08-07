@@ -1,5 +1,6 @@
 package project.application;
 
+import project.interview.Interview;
 import project.interview.InterviewSetup;
 import project.observer.SystemObserver;
 import project.system.MainSystem;
@@ -16,7 +17,7 @@ public class Company implements Serializable, SystemObserver {
     private static Logger logger = Logging.getLogger();
     private String name;
     private JobPostingManager jobPostingManager;
-    private InterviewerManager interviewerManager;
+    private UserManager<Interviewer> interviewerManager;
     private HRManager hrManager;
     private MainSystem system;
     private HashMap<String, InterviewSetup> interviewFormats;
@@ -29,8 +30,8 @@ public class Company implements Serializable, SystemObserver {
         this.name = name;
         this.system = system;
         jobPostingManager = new JobPostingManager(system, this);
-        hrManager = new HRManager(system, this);
-        interviewerManager = new InterviewerManager(system, this);
+        hrManager = new HRManager(system);
+        interviewerManager = new UserManager<>(system);
         interviewFormats = new HashMap<>();
         subsidiaries = new ArrayList<>();
         parentCompany = null;
@@ -81,7 +82,7 @@ public class Company implements Serializable, SystemObserver {
         return hrManager;
     }
 
-    public InterviewerManager getInterviewerManager() {
+    public UserManager<Interviewer> getInterviewerManager() {
         return interviewerManager;
     }
 

@@ -20,14 +20,14 @@ public class MainSystem implements Serializable {
     static private Logger logger = Logging.getLogger();
     private List<SystemObserver> observers;
     private HashMap<String, Company> companies;
-    private ApplicantManager applicants;
-    private RefereeManager referees;
+    private UserManager<Applicant> applicants;
+    private UserManager<Referee> referees;
 
     public MainSystem() {
         clock = new SystemClock();
         companies = new HashMap<>();
-        applicants = new ApplicantManager(this);
-        referees = new RefereeManager(this);
+        applicants = new UserManager<>(this);
+        referees = new UserManager<>(this);
         observers = new ArrayList<>();
     }
 
