@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
@@ -10,14 +7,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="732.0" prefWidth="836.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.gui.HRSeeApplicantsForJobPostings">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="836.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.gui.HRSeeApplicantsForJobPostings">
   <center>
     <AnchorPane prefHeight="200.0" prefWidth="200.0">
       <children>
-        <ListView fx:id="applications" layoutX="349.0" layoutY="50.0" onMouseClicked="#applicationClicked" prefHeight="625.0" prefWidth="200.0" AnchorPane.leftAnchor="349.0" AnchorPane.topAnchor="50.0" />
-        <ListView fx:id="jobPostings" layoutX="129.0" layoutY="50.0" onMouseClicked="#jobPostingClicked" prefHeight="625.0" prefWidth="200.0" AnchorPane.leftAnchor="129.0" AnchorPane.topAnchor="50.0" />
-            <Label layoutX="195.0" layoutY="24.0" text="Job Postings" />
-            <Label layoutX="421.0" layoutY="24.0" text="Applicants" />
+        <ListView fx:id="applications" layoutX="349.0" layoutY="43.0" onMouseClicked="#applicationClicked" prefHeight="500.0" prefWidth="200.0" AnchorPane.leftAnchor="349.0" AnchorPane.topAnchor="43.0" />
+        <ListView fx:id="jobPostings" layoutX="129.0" layoutY="43.0" onMouseClicked="#jobPostingClicked" prefHeight="500.0" prefWidth="200.0" AnchorPane.leftAnchor="129.0" AnchorPane.topAnchor="43.0" />
+            <Label layoutX="187.0" layoutY="17.0" text="Job Postings" />
+            <Label layoutX="414.0" layoutY="17.0" text="Applicants" />
       </children>
     </AnchorPane>
   </center>
@@ -27,8 +24,8 @@
   <top>
     <AnchorPane prefHeight="32.0" prefWidth="600.0" BorderPane.alignment="CENTER">
       <children>
-        <Label fx:id="companyName" alignment="CENTER" layoutX="14.0" layoutY="9.0" text="Label" />
-        <Button alignment="CENTER" layoutX="769.0" layoutY="6.0" mnemonicParsing="false" onAction="#exit" text="Sign out" AnchorPane.bottomAnchor="1.0" AnchorPane.rightAnchor="6.2000000000000455" AnchorPane.topAnchor="6.0" />
+        <Label fx:id="companyName" alignment="CENTER" layoutX="14.0" layoutY="9.0" text="Label" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="10.0" />
+        <Button alignment="CENTER" layoutX="769.0" layoutY="6.0" mnemonicParsing="false" onAction="#exit" text="Sign out" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="10.0" />
       </children>
     </AnchorPane>
   </top>

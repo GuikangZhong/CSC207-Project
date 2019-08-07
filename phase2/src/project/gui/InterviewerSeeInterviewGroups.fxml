@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="654.0" prefWidth="998.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="project.gui.InterviewerSeeInterviewGroup">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="642.0" prefWidth="641.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.gui.InterviewerSeeInterviewGroup">
   <center>
     <HBox prefHeight="100.0" prefWidth="200.0">
       <children>
@@ -15,17 +21,17 @@
               <content>
                 <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                   <children>
-                    <ListView fx:id="interviewGroups" layoutX="22.0" layoutY="32.0" onMouseClicked="#interviewGroupClicked" prefHeight="464.0" prefWidth="200.00009999999747" />
-                    <Label layoutX="22.0" layoutY="14.0" text="Interview Groups" />
-                    <Label layoutX="249.0" layoutY="14.0" text="Applicants" />
-                    <Button layoutX="450.0" layoutY="509.0" mnemonicParsing="false" onAction="#promoteButton" text="Submit" />
+                    <ListView fx:id="interviewGroups" layoutX="25.0" layoutY="39.0" onMouseClicked="#interviewGroupClicked" prefHeight="464.0" prefWidth="200.00009999999747" />
+                    <Label layoutX="69.0" layoutY="11.0" text="Interview Groups" />
+                    <Label layoutX="318.0" layoutY="11.0" text="Applicants" />
+                    <Button layoutX="278.0" layoutY="517.0" mnemonicParsing="false" onAction="#promoteButton" prefWidth="150.0" text="Submit" />
                     <Label layoutX="232.0" layoutY="230.0" text="&gt;">
                       <font>
                         <Font size="18.0" fx:id="x1" />
                       </font>
                     </Label>
-                    <ListView id="applications" fx:id="applicantCheckBoxes" layoutX="249.0" layoutY="33.0" prefHeight="464.0" prefWidth="200.00009999999747" />
-                    <Button layoutX="467.0" layoutY="71.0" mnemonicParsing="false" onAction="#viewApplicant" text="View Applicant" />
+                    <ListView id="applications" fx:id="applicantCheckBoxes" layoutX="252.0" layoutY="40.0" prefHeight="464.0" prefWidth="200.00009999999747" />
+                    <Button layoutX="51.0" layoutY="517.0" mnemonicParsing="false" onAction="#viewApplicant" prefWidth="150.0" text="View Applicant" />
                   </children>
                 </AnchorPane>
               </content>
@@ -41,8 +47,8 @@
   <top>
     <AnchorPane prefHeight="32.0" prefWidth="600.0" BorderPane.alignment="CENTER">
       <children>
-        <Label fx:id="companyName" alignment="CENTER" font="$x1" layoutX="14.0" layoutY="6.0" text="Interviewer" />
-        <Button alignment="CENTER" mnemonicParsing="false" onAction="#exit" text="Sign out" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="2.0" />
+        <Label fx:id="companyName" alignment="CENTER" font="$x1" layoutX="14.0" layoutY="6.0" text="Interviewer" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="10.0" />
+        <Button alignment="CENTER" mnemonicParsing="false" onAction="#exit" text="Sign out" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="10.0" />
       </children>
     </AnchorPane>
   </top>

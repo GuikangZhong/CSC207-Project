@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="281.0" prefWidth="343.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.gui.RefereeViewPostings">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="281.0" prefWidth="343.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.gui.RefereeViewPostings">
     <children>
-        <Button layoutX="266.0" layoutY="14.0" mnemonicParsing="false" onAction="#exit" text="Sign Out" />
-        <Label fx:id="openDays" layoutX="55.0" layoutY="124.0" text="" />
-        <Button layoutX="277.0" layoutY="235.0" mnemonicParsing="false" onAction="#returnButton" text="Return" />
-        <Label fx:id="openDays1" layoutX="55.0" layoutY="87.0" text="This posting opens from " />
+        <Button layoutX="266.0" layoutY="14.0" mnemonicParsing="false" onAction="#exit" text="Sign Out" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="10.0" />
+        <Label fx:id="openDays" layoutX="72.0" layoutY="141.0" prefHeight="21.0" prefWidth="200.0" text="" />
+        <Button layoutX="277.0" layoutY="235.0" mnemonicParsing="false" onAction="#returnButton" text="Return" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="15.0" />
+        <Label fx:id="openDays1" layoutX="89.0" layoutY="109.0" text="This posting opens from " />
     </children>
 </AnchorPane>
