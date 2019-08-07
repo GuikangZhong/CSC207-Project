@@ -3,7 +3,6 @@ package project.gui;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.CheckBox;
 import javafx.scene.control.ListView;
 import project.application.JobPosting;
 import project.user.Applicant;

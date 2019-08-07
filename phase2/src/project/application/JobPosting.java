@@ -16,7 +16,6 @@ import java.util.logging.Logger;
 
 public class JobPosting implements Serializable, SystemObserver {
     private static final long serialVersionUID = 726794651891649767L;
-//    private Job job;
     private Company company;
     private String jobTitle;
     private Status status;
@@ -27,7 +26,6 @@ public class JobPosting implements Serializable, SystemObserver {
     private LocalDateTime openDate, closeDate;
     private List<Applicant> hiredApplicants;
     private List<JobPostingObserver> observers;
-    private InterviewSetup interviewFormat;
     static private Logger logger = Logging.getLogger();
     private HR hr;
     private List<String> tags;
@@ -58,14 +56,6 @@ public class JobPosting implements Serializable, SystemObserver {
 
     public List<String> getTagList() {
         return tags;
-    }
-
-    public void addTag(String tag) {
-        if(!this.tags.contains(tag)) this.tags.add(tag);
-    }
-
-    public void removeTag(String tag){
-        this.tags.remove(tag);
     }
 
     public enum Status {
@@ -103,14 +93,6 @@ public class JobPosting implements Serializable, SystemObserver {
 
     public LocalDateTime getCloseDate() {
         return closeDate;
-    }
-
-    public InterviewSetup getInterviewFormat() {
-        return interviewFormat;
-    }
-
-    public void setInterviewFormat(InterviewSetup interviewFormat) {
-        this.interviewFormat = interviewFormat;
     }
 
     /**

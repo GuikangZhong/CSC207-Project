@@ -9,8 +9,6 @@ public interface InterviewObserver {
      */
     void updateOnInterviewRoundFinished(Interview interview);
 
-//    void updateOnHireResult(Interview interview);
-
     /**
      * is called when a interview has exhausted all of its rounds
      * @param interview

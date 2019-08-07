@@ -117,9 +117,6 @@ public abstract class Round implements Serializable, InterviewGroupObserver, Clo
         return getRoundType() + "#" + number;
     }
 
-    boolean assigned() {
-        return groups != null;
-    }
 
     void withdraw(Applicant applicant){
         if (groups != null) {

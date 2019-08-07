@@ -1,7 +1,5 @@
 package project.application;
 
-import project.user.Applicant;
-
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
