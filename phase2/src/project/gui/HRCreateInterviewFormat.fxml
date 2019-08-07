@@ -14,6 +14,7 @@
             <ListView fx:id="typesSelected" layoutX="552.0" layoutY="110.0" prefHeight="414.0" prefWidth="200.0" />
             <TextField fx:id="formatName" layoutX="33.0" layoutY="427.0" prefHeight="72.0" prefWidth="211.0" />
             <Button layoutX="675.0" layoutY="538.0" mnemonicParsing="false" onAction="#returnClicked" text="Return" />
+            <Label layoutX="46.0" layoutY="399.0" text="Name of the format" />
             </children>
         </AnchorPane>
     </center>
