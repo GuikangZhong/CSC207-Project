@@ -33,7 +33,7 @@ public class InterviewSetup implements Serializable {
     protected boolean isTemplate() {
         return isTemplate;
     }
-    
+
     /**
      * Creates a concrete setup for the job based on the "template format".
      * @param jobPosting: the job that the program need to set the interview format for.
