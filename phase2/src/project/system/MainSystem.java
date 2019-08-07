@@ -29,7 +29,6 @@ public class MainSystem implements Serializable {
         applicants = new ApplicantManager(this);
         referees = new RefereeManager(this);
         observers = new ArrayList<>();
-        addObserver(applicants);
     }
 
     public boolean addCompany(String name) {
