@@ -33,29 +33,7 @@ public class InterviewSetup implements Serializable {
     protected boolean isTemplate() {
         return isTemplate;
     }
-
-//    @Override
-//    public Object clone() throws CloneNotSupportedException {
-//        InterviewSetup setup  = (InterviewSetup)super.clone();
-//        setup.rounds = new ArrayList<>();
-//        for(Round round: rounds){
-//            setup.rounds.add((Round)round.clone());
-//        }
-//        setup.isTemplate = false;
-//        return setup;
-//    }
-
-
-
-
-//    public InterviewSetup createSetupWithJob(JobPosting jobPosting) throws CloneNotSupportedException{
-//        InterviewSetup setup = (InterviewSetup)this.clone();
-//        for (Round round: setup.getRounds()){
-////            Round temp = (Round) round.clone();
-//            round.setJobPosting(jobPosting);
-//        }
-//        return setup;
-//    }
+    
     /**
      * Creates a concrete setup for the job based on the "template format".
      * @param jobPosting: the job that the program need to set the interview format for.
