@@ -4,10 +4,11 @@ import project.application.JobPosting;
 import project.interview.Round;
 import project.observer.JobPostingObserver;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.*;
 
-public class ApplicantHistory implements JobPostingObserver {
+public class ApplicantHistory implements JobPostingObserver, Serializable {
     private static final long serialVersionUID = -3949731953506050255L;
 
     private List<JobPosting> jobApplied;
