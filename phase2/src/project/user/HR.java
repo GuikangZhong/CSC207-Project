@@ -20,12 +20,12 @@ public class HR extends User {
     private List<JobPosting> postingsToAssignFormat;
     static private Logger logger = Logging.getLogger();
 
-    public HR(UserHistory history,
+    public HR(
               String username,
               String password,
               String realName,
               List<Company> company) {
-        super(history, username, password, realName, company);
+        super(username, password, realName, company);
         finalCandidates = new HashMap<>();
         interviewsRoundFinished = new ArrayList<>();
         interviewsToBeScheduled = new ArrayList<>();

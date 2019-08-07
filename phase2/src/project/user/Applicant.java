@@ -20,13 +20,15 @@ public class Applicant
     private Collection<Application> applications;
     private List<Document> documents;
     private List<ApplicantObserver> observers;
+    private ApplicantHistory history;
 
     public Applicant(ApplicantHistory history,
                      String username,
                      String password,
                      String realName,
                      List<Company> company) {
-        super(history, username, password, realName, company);
+        super(username, password, realName, company);
+        this.history = history;
         applications = new ArrayList<>();
         documents = new ArrayList<>();
         observers = new ArrayList<>();
@@ -49,7 +51,7 @@ public class Applicant
     }
 
     public ApplicantHistory getApplicantHistory() {
-        return (ApplicantHistory) getHistory();
+        return history;
     }
 
     public List<Document> getDocuments() {

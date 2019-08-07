@@ -18,13 +18,13 @@ public class Application implements Serializable, InterviewGroupObserver {
     private Applicant applicant;
     private List<Document> documents;
     private JobPosting jobPosting;
-    private ApplicationStatus status;
+    private List<String> roundsFinished;
 
     public Application(Applicant applicant, List<Document> documents, JobPosting job) {
         this.applicant = applicant;
         this.documents = new ArrayList<>(documents);
         this.jobPosting = job;
-        this.status = new ApplicationStatus();
+        this.roundsFinished = new ArrayList<>();
     }
 
     public Applicant getApplicant() {
@@ -39,13 +39,21 @@ public class Application implements Serializable, InterviewGroupObserver {
         return jobPosting;
     }
 
-    public ApplicationStatus getStatus() {
-        return status;
+    public String getRoundsFinishedInfo() {
+        if (roundsFinished.size() == 0) {
+            return "Submitted";
+        } else {
+            StringBuilder stringBuilder = new StringBuilder("Finished rounds:\n");
+            for (String s : roundsFinished) {
+                stringBuilder.append(s + "\n");
+            }
+            return stringBuilder.toString();
+        }
     }
 
     @Override
     public void updateOnGroupSubmitted(InterviewGroup group) {
-        getStatus().currentRoundFinished(group.getRound());
+        roundsFinished.add(group.getRound().toString());
         boolean passed = group.isApplicantPassed(applicant);
         if (!passed) {
             applicant.moveToApplied(getJobPosting());

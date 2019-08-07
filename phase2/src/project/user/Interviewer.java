@@ -17,12 +17,12 @@ public class Interviewer extends User implements InterviewGroupObserver, Intervi
     static private Logger logger = Logging.getLogger();
     private List<InterviewGroup> interviews;
 
-    public Interviewer(UserHistory history,
+    public Interviewer(
                        String username,
                        String password,
                        String realName,
                        List<Company> company) {
-        super(history, username, password, realName, company);
+        super(username, password, realName, company);
         interviews = new ArrayList<>();
     }
 

@@ -9,7 +9,6 @@ import javafx.scene.input.MouseEvent;
 import project.application.Company;
 import project.user.HR;
 import project.user.Interviewer;
-import project.user.UserHistory;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -39,14 +38,14 @@ public class StaffSignUpController extends ApplicationController implements Init
     public void signUpButton(ActionEvent event) throws IOException {
         boolean added = false;
         if (UserTypes.typeName.equals("HR")){
-            added = getSystem().addUser(new HR(new UserHistory(getSystem().now()),
+            added = getSystem().addUser(new HR(
                     usernameInput.getText(),
                     passwordInput.getText(),
                     realNameInput.getText(),
                     new ArrayList<>(Arrays.asList(system.getCompany(companyName)))));
         }
         else if (UserTypes.typeName.equals("Interviewer")){
-            added = getSystem().addUser(new Interviewer(new UserHistory(getSystem().now()),
+            added = getSystem().addUser(new Interviewer(
                     usernameInput.getText(),
                     passwordInput.getText(),
                     realNameInput.getText(),

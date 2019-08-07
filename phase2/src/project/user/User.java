@@ -12,19 +12,17 @@ import java.util.List;
 public abstract class User implements Serializable {
     private static final long serialVersionUID = -5007096129053697211L;
 
-    private UserHistory history;
     private String username;
     private String realName;
     private List<Company> companies;
     private Company signedInCompany;
     private byte[] password;
 
-    public User(UserHistory history,
+    public User(
                 String username,
                 String password,
                 String realName,
                 List<Company> companies) {
-        this.history = history;
         this.realName = realName;
         this.username = username;
         this.companies = companies;
@@ -67,10 +65,6 @@ public abstract class User implements Serializable {
 
     public String getUsername() {
         return this.username;
-    }
-
-    public UserHistory getHistory() {
-        return this.history;
     }
 
     public final boolean verifyPassword(String password) {

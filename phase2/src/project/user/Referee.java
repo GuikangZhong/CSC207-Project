@@ -15,8 +15,8 @@ public class Referee extends User implements Serializable, SystemObserver {
     private HashMap<Applicant, List<JobPosting>> requests;
     private static Logger logger = Logging.getLogger();
 
-    public Referee(UserHistory history, String username, String password, String realName, List<Company> company) {
-        super(history, username, password, realName, company);
+    public Referee(String username, String password, String realName, List<Company> company) {
+        super(username, password, realName, company);
         requests = new HashMap<>();
     }
 

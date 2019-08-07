@@ -6,7 +6,6 @@ import javafx.event.ActionEvent;
 import project.user.Applicant;
 import project.user.ApplicantHistory;
 import project.user.Referee;
-import project.user.UserHistory;
 import project.utils.Logging;
 
 import java.io.IOException;
@@ -34,7 +33,7 @@ public class SignUpController extends ApplicationController {
                     usernameInput.getText(),passwordInput.getText(),
                     realNameInput.getText(), null));
         } else {
-            added = getSystem().addUser(new Referee(new UserHistory(getSystem().now()),
+            added = getSystem().addUser(new Referee(
                     usernameInput.getText(),passwordInput.getText(),
                     realNameInput.getText(), null));
         }

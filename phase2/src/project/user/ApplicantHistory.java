@@ -7,7 +7,7 @@ import project.observer.JobPostingObserver;
 import java.time.LocalDateTime;
 import java.util.*;
 
-public class ApplicantHistory extends UserHistory implements JobPostingObserver {
+public class ApplicantHistory implements JobPostingObserver {
     private static final long serialVersionUID = -3949731953506050255L;
 
     private List<JobPosting> jobApplied;
@@ -18,9 +18,10 @@ public class ApplicantHistory extends UserHistory implements JobPostingObserver 
     private Map<JobPosting, Round> applicationsInProgress;
     private List<JobPosting> applicationsRejected;
     private List<JobPosting> hiredPositions;
+    private LocalDateTime dateCreated;
 
     public ApplicantHistory(LocalDateTime now) {
-        super(now);
+        dateCreated = now;
         jobApplied = new ArrayList<>();
         jobApplying = new HashMap<>();
         lastApplicationClosed = null;
@@ -65,6 +66,10 @@ public class ApplicantHistory extends UserHistory implements JobPostingObserver 
         latestClosedDate = lastApplicationClosed;
         lastApplicationClosed = null;
 
+    }
+
+    public LocalDateTime getDateCreated() {
+        return dateCreated;
     }
 
     void removeJobApplying(JobPosting job) {

@@ -86,7 +86,7 @@ public class ApplicantViewApplications extends ApplicationController {
                 }
             });
         } else {
-            applicationStatus.setText(application.getStatus().toString());
+            applicationStatus.setText(application.getRoundsFinishedInfo());
         }
     }
 
