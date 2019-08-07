@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.logging.Logger;
 
-public class JobPostingManager implements InterviewObserver, Serializable, SystemObserver {
+public class JobPostingManager implements Serializable, SystemObserver {
     private static final long serialVersionUID = -9197333240356088957L;
     private HashMap<String, JobPosting> jobPostings;
     private Company company;
@@ -53,31 +53,31 @@ public class JobPostingManager implements InterviewObserver, Serializable, Syste
         return jobPostings.get(title);
     }
 
-    @Override
-    public void updateOnInterviewRoundFinished(Interview interview) {
+//    @Override
+//    public void updateOnInterviewRoundFinished(Interview interview) {
+//
+//    }
 
-    }
+//    @Override
+//    public void updateOnHireResult(Interview interview) {
+//        String name = interview.getJobPosting().getJobTitle();
+//        JobPosting jobPosting = getJobPosting(name);
+//        // if the size is 0, it means no one is hired for this posting
+//        if (interview.getApplicants().size() == 0) {
+//            jobPosting.addHired(null);
+//        } else {
+//            for (Applicant applicant : interview.getApplicants()) {
+//                jobPosting.addHired(applicant);
+//                applicant.moveToApplied(interview.getJobPosting());
+//                applicant.addHired(interview.getJobPosting());
+//            }
+//        }
+//    }
 
-    @Override
-    public void updateOnHireResult(Interview interview) {
-        String name = interview.getJobPosting().getJobTitle();
-        JobPosting jobPosting = getJobPosting(name);
-        // if the size is 0, it means no one is hired for this posting
-        if (interview.getApplicants().size() == 0) {
-            jobPosting.addHired(null);
-        } else {
-            for (Applicant applicant : interview.getApplicants()) {
-                jobPosting.addHired(applicant);
-                applicant.moveToApplied(interview.getJobPosting());
-                applicant.addHired(interview.getJobPosting());
-            }
-        }
-    }
-
-    @Override
-    public void updateOnNoMoreRounds(Interview interview) {
-
-    }
+//    @Override
+//    public void updateOnNoMoreRounds(Interview interview) {
+//
+//    }
 
     @Override
     public void updateOnTime(LocalDateTime now) {

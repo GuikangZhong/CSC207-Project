@@ -61,18 +61,14 @@ public class HRManager extends UserManager<HR> implements InterviewObserver, Job
         hr.addInterviewRoundFinished(interview);
     }
 
-    @Override
-    public void updateOnHireResult(Interview interview) {
-
-    }
+//    @Override
+//    public void updateOnHireResult(Interview interview) {
+//
+//    }
 
     @Override
     public void updateOnNoMoreRounds(Interview interview) {
         HR hr = interview.getHR();
         hr.addFinalCandidates(interview);
-    }
-
-    InterviewSetup cloneSetup(InterviewSetup setup) throws CloneNotSupportedException{
-        return (InterviewSetup) setup.clone();
     }
 }

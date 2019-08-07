@@ -94,14 +94,15 @@ public class Interview implements Serializable, RoundObserver, ApplicantObserver
             throw new RuntimeException("You cannot assign more than needed");
         }
         this.applicants = applicants;
-        notifyHireResult();
+        automaticHire();
+        removeObservers();
     }
 
-    private void notifyHireResult() {
-        logger.info("Hire result for " + jobPosting.getJobTitle());
-        for (InterviewObserver observer : observers) {
-            observer.updateOnHireResult(this);
-        }
+    private void removeObservers() {
+//        logger.info("Hire result for " + jobPosting.getJobTitle());
+//        for (InterviewObserver observer : observers) {
+//            observer.updateOnHireResult(this);
+//        }
         for (Applicant applicant : applicants) {
             applicant.removeObserver(this);
         }
@@ -157,7 +158,8 @@ public class Interview implements Serializable, RoundObserver, ApplicantObserver
 
     private void updateOnRoundFinished() {
         if (applicants.size() <= numberNeeded) {
-            notifyHireResult();
+            automaticHire();
+            removeObservers();
         } else if (hasNextRound()) {
             for (InterviewObserver observer : observers) {
                 observer.updateOnInterviewRoundFinished(this);
@@ -168,6 +170,17 @@ public class Interview implements Serializable, RoundObserver, ApplicantObserver
                 observer.updateOnNoMoreRounds(this);
             }
         }
+    }
+
+    /**
+     * This method will only get called when the number of applicants remaining in applicant pool is less than or equal
+     * to the
+     */
+    private void automaticHire(){
+        for (Applicant applicant: applicants){
+            applicant.addHired(getJobPosting());
+        }
+        jobPosting.addHired(applicants);
     }
 
     @Override
@@ -186,7 +199,8 @@ public class Interview implements Serializable, RoundObserver, ApplicantObserver
         }
         getRoundInProgress().withdraw(application.getApplicant());
         if (applicants.size() <= numberNeeded) {
-            notifyHireResult();
+            automaticHire();
+            removeObservers();
         }
     }
 }
