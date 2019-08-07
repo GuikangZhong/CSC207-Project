@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import project.user.Applicant;
 import project.user.ApplicantHistory;
 import project.user.Referee;
+import project.user.UserFactory;
 import project.utils.Logging;
 
 import java.io.IOException;
@@ -28,14 +29,15 @@ public class SignUpController extends ApplicationController {
     static private Logger logger = Logging.getLogger();
     public void signUpButton(ActionEvent event) throws IOException {
         boolean added;
+        UserFactory factory = new UserFactory();
         if (UserTypes.typeName.equals("Applicant")){
-            added = getSystem().addUser(new Applicant(new ApplicantHistory(getSystem().now()),
+            added = getSystem().addUser(factory.createUser(new ApplicantHistory(getSystem().now()),
                     usernameInput.getText(),passwordInput.getText(),
-                    realNameInput.getText(), null));
+                    realNameInput.getText(), null, "Applicant"));
         } else {
-            added = getSystem().addUser(new Referee(
+            added = getSystem().addUser(factory.createUser(
                     usernameInput.getText(),passwordInput.getText(),
-                    realNameInput.getText(), null));
+                    realNameInput.getText(), null, "Referee"));
         }
         if (added){
             SceneSwitcher.switchScene(this, event, "SignUpSuccess.fxml");

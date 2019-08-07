@@ -9,7 +9,8 @@ import java.time.LocalDateTime;
 public class DocumentFactory implements Serializable {
     private static final long serialVersionUID = -5864681886578805239L;
 
-    public static Document createByFileName(String name, String path, LocalDateTime dateTime, String type) throws IOException {
+    public static Document createByFileName(String name, String path, LocalDateTime dateTime, String type)
+            throws IOException {
         StringBuilder content = new StringBuilder();
         try (BufferedReader in = new BufferedReader(new FileReader(path))) {
             String s = in.readLine();

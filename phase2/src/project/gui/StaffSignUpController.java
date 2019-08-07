@@ -7,8 +7,7 @@ import javafx.scene.control.TextField;
 import javafx.event.ActionEvent;
 import javafx.scene.input.MouseEvent;
 import project.application.Company;
-import project.user.HR;
-import project.user.Interviewer;
+import project.user.UserFactory;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -37,19 +36,22 @@ public class StaffSignUpController extends ApplicationController implements Init
 
     public void signUpButton(ActionEvent event) throws IOException {
         boolean added = false;
+        UserFactory factory = new UserFactory();
         if (UserTypes.typeName.equals("HR")){
-            added = getSystem().addUser(new HR(
+            added = getSystem().addUser(factory.createUser(
                     usernameInput.getText(),
                     passwordInput.getText(),
                     realNameInput.getText(),
-                    new ArrayList<>(Arrays.asList(system.getCompany(companyName)))));
+                    new ArrayList<>(Arrays.asList(system.getCompany(companyName))),
+                    "HR"));
         }
         else if (UserTypes.typeName.equals("Interviewer")){
-            added = getSystem().addUser(new Interviewer(
+            added = getSystem().addUser(factory.createUser(
                     usernameInput.getText(),
                     passwordInput.getText(),
                     realNameInput.getText(),
-                    new ArrayList<>(Arrays.asList(system.getCompany(companyName)))));
+                    new ArrayList<>(Arrays.asList(system.getCompany(companyName))),
+                    "Interviewer"));
         }
         if (added){
             SceneSwitcher.switchScene(this, event, "SignUpSuccess.fxml");
