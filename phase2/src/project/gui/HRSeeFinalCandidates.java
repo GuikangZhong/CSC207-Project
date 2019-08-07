@@ -106,6 +106,9 @@ public class HRSeeFinalCandidates extends ApplicationController {
                 }
                 applicant.moveToApplied(interview.getJobPosting());
             }
+            interviewList.getItems().remove(interview);
+            applicantList.getItems().clear();
+            selectedApplicants.getItems().clear();
             showModal("Great", "Hired successfully");
         } else {
             showModal("Bad", "You have selected too many applicants");

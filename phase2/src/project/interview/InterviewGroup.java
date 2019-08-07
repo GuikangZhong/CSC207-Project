@@ -113,4 +113,8 @@ public class InterviewGroup implements Serializable {
             logger.info("Removed " + applicant.getUsername());
         }
     }
+
+    void updateInterviewerMessage(){
+        interviewer.removeInterviewGroup(this);
+    }
 }

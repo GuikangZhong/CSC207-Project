@@ -140,7 +140,7 @@ public class Interview implements Serializable, RoundObserver, ApplicantObserver
             logger.info(group.toString());
             Interviewer interviewer = group.getInterviewer();
             interviewer.addInterviewGroup(group);
-            addObserver(interviewer);
+//            addObserver(interviewer);
             group.addObserver(interviewer);
         }
         getRoundInProgress().setGroups(groups);
@@ -201,6 +201,15 @@ public class Interview implements Serializable, RoundObserver, ApplicantObserver
         if (applicants.size() <= numberNeeded) {
             automaticHire();
             removeObservers();
+            updateInterviewerMessage();
+
+        }
+    }
+
+    private void updateInterviewerMessage(){
+        Round round = getRoundInProgress();
+        for (InterviewGroup group: round.getGroups()){
+            group.updateInterviewerMessage();
         }
     }
 }
