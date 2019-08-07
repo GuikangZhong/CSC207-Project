@@ -7,7 +7,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import project.application.Application;
-import project.application.Company;
 import project.application.JobPosting;
 import project.user.Applicant;
 import project.utils.Logging;

@@ -1,6 +1,5 @@
 package project.application;
 
-import project.interview.Interview;
 import project.interview.InterviewSetup;
 import project.observer.SystemObserver;
 import project.system.MainSystem;

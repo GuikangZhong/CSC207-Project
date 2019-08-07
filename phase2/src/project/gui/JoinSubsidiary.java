@@ -7,9 +7,7 @@ import project.application.Company;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
-import java.util.stream.Stream;
 
 public class JoinSubsidiary extends ApplicationController {
 
@@ -30,8 +28,6 @@ public class JoinSubsidiary extends ApplicationController {
 
     public void confirmButton(ActionEvent event) throws IOException {
         String subsidiaryName = availableSubsidiaries.getSelectionModel().getSelectedItem();
-//        Company subsidiary = system.getCompany(subsidiaryName);
-//        user.addCompany(subsidiaryName);
         user.addCompany(system.getCompany(subsidiaryName));
         SceneSwitcher.switchScene(this, event, "HRSetInterviewFormats.fxml");
     }

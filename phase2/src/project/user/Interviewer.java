@@ -1,10 +1,8 @@
 package project.user;
 
 import project.application.Company;
-import project.interview.Interview;
 import project.interview.InterviewGroup;
 import project.observer.InterviewGroupObserver;
-import project.observer.InterviewObserver;
 import project.utils.Logging;
 
 import java.util.ArrayList;

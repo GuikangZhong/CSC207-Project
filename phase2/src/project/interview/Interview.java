@@ -99,10 +99,6 @@ public class Interview implements Serializable, RoundObserver, ApplicantObserver
     }
 
     private void removeObservers() {
-//        logger.info("Hire result for " + jobPosting.getJobTitle());
-//        for (InterviewObserver observer : observers) {
-//            observer.updateOnHireResult(this);
-//        }
         for (Applicant applicant : applicants) {
             applicant.removeObserver(this);
         }

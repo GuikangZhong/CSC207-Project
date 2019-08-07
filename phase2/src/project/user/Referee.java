@@ -13,7 +13,6 @@ import java.util.logging.Logger;
 public class Referee extends User implements Serializable, SystemObserver {
     private static final long serialVersionUID = -5182837267201535114L;
     private HashMap<Applicant, List<JobPosting>> requests;
-    private static Logger logger = Logging.getLogger();
 
     public Referee(String username, String password, String realName, List<Company> company) {
         super(username, password, realName, company);
