@@ -157,17 +157,30 @@ public class Applicant
         history.addJobApplied(job);
     }
 
+    /**
+     * Update that the applicant gets hired for a job posting.
+     * @param job: the job posting for which the applicant is hired.
+     */
     public void addHired(JobPosting job){
         ApplicantHistory history = getApplicantHistory();
         moveToApplied(job);
         history.addHiredPositions(job);
     }
 
+    /**
+     * Update that the applicant passed a new round of interview for a job posting.
+     * @param job: The job posting that the applicant just passed a new round of interview
+     * @param round: The round of interview that the applicant just passed
+     */
     public void updateInterviewProgress(JobPosting job, Round round){
         ApplicantHistory history = getApplicantHistory();
         history.addApplicationInProgress(job, round);
     }
 
+    /**
+     * Update that the applicant gets rejected for a job posting.
+     * @param job: the job posting for which the applicant gets rejected.
+     */
     public void addRejected(JobPosting job){
         ApplicantHistory history = getApplicantHistory();
         history.addApplicationRejected(job);
