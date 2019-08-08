@@ -95,10 +95,13 @@ public class Interview implements Serializable, RoundObserver, ApplicantObserver
         }
         this.applicants = applicants;
         automaticHire();
-        removeObservers();
+        applicantsRemoveObserver();
     }
 
-    private void removeObservers() {
+    /**
+     * Make the applicants in the interview no longer this interview as an observer
+     */
+    private void applicantsRemoveObserver() {
         for (Applicant applicant : applicants) {
             applicant.removeObserver(this);
         }
@@ -155,7 +158,7 @@ public class Interview implements Serializable, RoundObserver, ApplicantObserver
     private void updateOnRoundFinished() {
         if (applicants.size() <= numberNeeded) {
             automaticHire();
-            removeObservers();
+            applicantsRemoveObserver();
         } else if (hasNextRound()) {
             for (InterviewObserver observer : observers) {
                 observer.updateOnInterviewRoundFinished(this);
@@ -177,7 +180,7 @@ public class Interview implements Serializable, RoundObserver, ApplicantObserver
             applicant.addHired(getJobPosting());
         }
         jobPosting.addHired(applicants);
-        removeObservers();
+        applicantsRemoveObserver();
         updateInterviewerMessage();
     }
 
