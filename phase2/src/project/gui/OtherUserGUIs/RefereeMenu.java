@@ -84,6 +84,10 @@ public class RefereeMenu extends ApplicationController implements Serializable {
     public void jobPostingsClicked(MouseEvent event) throws IOException {
         jobPosting = jobPostings.getSelectionModel().getSelectedItem();
         if (event.getClickCount() == 2){
+            if (jobPosting == null){
+                showModal("Job posting not selected");
+                return;
+            }
             RefereeViewPostings.setJobPosting(jobPosting);
             SceneSwitcher.switchScene(this, event, "RefereeViewPostings.fxml");
         }

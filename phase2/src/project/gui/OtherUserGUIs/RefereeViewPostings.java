@@ -16,18 +16,16 @@ public class RefereeViewPostings extends ApplicationController {
     Label openDays;
     private static JobPosting jobPosting;
 
-    public void postInit(){
-        if (jobPosting != null) {
-            openDays.setText(String.format(" %s to %s", jobPosting.getOpenDate().toLocalDate(),
-                    jobPosting.getCloseDate().toLocalDate()));
-        }
+    public void postInit() {
+        openDays.setText(String.format(" %s to %s", jobPosting.getOpenDate().toLocalDate(),
+                jobPosting.getCloseDate().toLocalDate()));
     }
 
-    public static void setJobPosting(JobPosting jobPosting1){
+    public static void setJobPosting(JobPosting jobPosting1) {
         jobPosting = jobPosting1;
     }
 
-    public void returnButton(ActionEvent event) throws IOException{
+    public void returnButton(ActionEvent event) throws IOException {
         jobPosting = null;
         SceneSwitcher.switchScene(this, event, "RefereeMenu.fxml");
     }
