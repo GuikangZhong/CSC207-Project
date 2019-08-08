@@ -85,8 +85,9 @@ public class InterviewerSeeInterviewGroup extends ApplicationController implemen
             final InterviewGroup interviewGroup = interviewGroups.getSelectionModel().getSelectedItem();
             showModal(stage -> {
                 try {
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("../ApplicantGUIs/ApplicationInfo.fxml"));
-                    AnchorPane pane = (AnchorPane) loader.load();
+                    FXMLLoader loader =
+                            new FXMLLoader(getClass().getResource("../ApplicantGUIs/ApplicationInfo.fxml"));
+                    AnchorPane pane = loader.load();
                     ApplicationInfoController controller = loader.<ApplicationInfoController>getController();
                     Application application
                             = applicant.getApplicationOf(interviewGroup.getJobPosting().getJobTitle()).get();

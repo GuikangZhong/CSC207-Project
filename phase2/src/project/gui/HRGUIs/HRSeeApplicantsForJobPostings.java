@@ -107,9 +107,10 @@ public class HRSeeApplicantsForJobPostings extends ApplicationController {
         if (event.getClickCount() == 2) {
             showModal(stage -> {
                 try {
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("../ApplicantGUIs/ApplicationInfo.fxml"));
-                    AnchorPane pane = (AnchorPane) loader.load();
-                    ApplicationInfoController controller = loader.<ApplicationInfoController>getController();
+                    FXMLLoader loader =
+                            new FXMLLoader(getClass().getResource("../ApplicantGUIs/ApplicationInfo.fxml"));
+                    AnchorPane pane = loader.load();
+                    ApplicationInfoController controller = loader.getController();
                     Application application = applications.getSelectionModel().getSelectedItem();
                     controller.setApplication(application);
                     Scene scene = new Scene(pane);
@@ -125,7 +126,8 @@ public class HRSeeApplicantsForJobPostings extends ApplicationController {
         applications.getItems().clear();
         pollApplicants(jobPostings,  applications);
         JobPosting jobPosting = jobPostings.getSelectionModel().getSelectedItem();
-        if (event.getClickCount() == 2 && ((jobPosting.getStatus() == JobPosting.Status.FILLED))){
+        if (event.getClickCount() == 2 && (((jobPosting.getStatus() == JobPosting.Status.FILLED))
+        || (jobPosting.getStatus() == JobPosting.Status.UNFILLED))){
             StringBuilder builder = new StringBuilder();
             for (Applicant hiredApplicant: jobPosting.getHiredApplicants()){
                 builder.append(hiredApplicant.getRealName()).append(" (").

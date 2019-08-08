@@ -3,6 +3,7 @@ package project.interview;
 import project.application.Application;
 import project.application.JobPosting;
 import project.observer.ApplicantObserver;
+import project.observer.InterviewGroupObserver;
 import project.observer.InterviewObserver;
 import project.observer.RoundObserver;
 import project.user.Applicant;
@@ -131,7 +132,8 @@ public class Interview implements Serializable, RoundObserver, ApplicantObserver
     public void assignRound(InterviewGroupAssignmentStrategy strategy, List<Interviewer> interviewers) {
         logger.info("Job" + jobPosting.getJobTitle() + " Round: " + getRoundInProgress() + " assigned");
         List<InterviewGroup> groups = strategy.select(applicants, interviewers);
-        logger.info("Job" + jobPosting.getJobTitle() + " Round: " + getRoundInProgress() + " assigned successful");
+        logger.info("Job" + jobPosting.getJobTitle() + " Round: "
+                + getRoundInProgress() + " assigned successful");
         for (InterviewGroup group : groups) {
             logger.info(group.toString());
             Interviewer interviewer = group.getInterviewer();
@@ -169,13 +171,15 @@ public class Interview implements Serializable, RoundObserver, ApplicantObserver
 
     /**
      * This method will only get called when the number of applicants remaining in applicant pool is less than or equal
-     * to the
+     * to the number of candidates needed for the job.
      */
     private void automaticHire(){
         for (Applicant applicant: applicants){
             applicant.addHired(getJobPosting());
         }
         jobPosting.addHired(applicants);
+        removeObservers();
+        updateInterviewerMessage();
     }
 
     @Override
@@ -183,7 +187,6 @@ public class Interview implements Serializable, RoundObserver, ApplicantObserver
         logger.info("Interview for " + jobPosting.getJobTitle() + "round finished");
         filterPassed();
         updateOnRoundFinished();
-
     }
 
     @Override
@@ -195,16 +198,19 @@ public class Interview implements Serializable, RoundObserver, ApplicantObserver
         getRoundInProgress().withdraw(application.getApplicant());
         if (applicants.size() <= numberNeeded) {
             automaticHire();
-            removeObservers();
-            updateInterviewerMessage();
-
         }
     }
 
+    /**
+     * Gets called that the interview automatically ends, and the interview group will no longer be viewed by
+     * the corresponding interviewer.
+     */
     private void updateInterviewerMessage(){
         Round round = getRoundInProgress();
         for (InterviewGroup group: round.getGroups()){
             group.updateInterviewerMessage();
         }
     }
+
+
 }

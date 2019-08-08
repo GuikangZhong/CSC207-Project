@@ -10,7 +10,8 @@ public class ReferenceVerificationStrategy implements VerificationStrategy {
     public boolean satisfies(Application application) {
         List<ReferenceLetter> letters = new ArrayList<>();
         for (Document document: application.getDocument()){
-            if (document.getDocumentType().equals(ReferenceLetter.documentType())){
+            if ((document.getDocumentType().equals(ReferenceLetter.documentType()))
+            && ((ReferenceLetter)document).getJobPosting() == application.getJobPosting()){
                 letters.add((ReferenceLetter) document);
             }
         }

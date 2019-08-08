@@ -45,14 +45,22 @@ public class RefereeMenu extends ApplicationController implements Serializable {
             return;
         }
         fc.setInitialDirectory(new File("."));
-        fc.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Text Document", "*.txt"));
+        fc.getExtensionFilters().
+                addAll(new FileChooser.ExtensionFilter("Text Document", "*.txt"));
         File selectedFile = fc.showOpenDialog(null);
         if (selectedFile != null) {
-            Document document = DocumentFactory.createByFileName(selectedFile.getName(), selectedFile.getAbsolutePath(), getSystem().now(), "ReferenceLetter");
+            Document document = DocumentFactory.createByFileName(selectedFile.getName(), selectedFile.getAbsolutePath(),
+                    getSystem().now(),
+                    "ReferenceLetter");
+            ((ReferenceLetter)document).setJobPosting(jobPostings.getSelectionModel().getSelectedItem());
             if (!(applicant.addDocument(document))) {
                 showModal("Cannot add document");
             } else {
                 ((Referee)user).removeRequest(applicant, jobPosting);
+                jobPostings.getItems().remove(jobPosting);
+                if (((Referee)user).getRequests().get(applicant).size() == 0){
+                    applicants.getItems().remove(applicant);
+                }
                 showModal("Successfully added");
             }
         } else {
@@ -72,7 +80,9 @@ public class RefereeMenu extends ApplicationController implements Serializable {
 
     private void pollApplicants() {
         for (Applicant applicant: ((Referee)getUser()).getRequests().keySet()) {
-            applicants.getItems().add(applicant);
+            if (((Referee)getUser()).getRequests().get(applicant).size() > 0) {
+                applicants.getItems().add(applicant);
+            }
         }
     }
 
@@ -93,6 +103,13 @@ public class RefereeMenu extends ApplicationController implements Serializable {
         }
     }
 
+    public void rejectClicked(Event event) {
+        jobPostings.getItems().remove(jobPosting);
+        ((Referee)user).removeRequest(applicant, jobPosting);
+        if (((Referee) user).getRequests().get(applicant).size() == 0) {
+            applicants.getItems().remove(applicant);
+        }
+    }
     public void exit(Event event) throws IOException {
         SceneSwitcher.switchScene(this, event, "../GeneralUseGUIs/Main.fxml");
     }

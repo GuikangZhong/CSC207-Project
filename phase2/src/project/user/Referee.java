@@ -33,8 +33,8 @@ public class Referee extends User implements Serializable, SystemObserver {
         jobPostingList.remove(jobPosting);
     }
 
-    public HashMap<Applicant, List<JobPosting>> getRequests() {
-        return requests;
+    public Map<Applicant, List<JobPosting>> getRequests() {
+        return Collections.unmodifiableMap(requests);
     }
 
     @Override

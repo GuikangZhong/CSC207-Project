@@ -44,10 +44,9 @@ public class Applicant
 
     public void removeObserver(ApplicantObserver observer) {
         if (!observers.remove(observer)) {
-            throw new RuntimeException("You removed an observer that is not in the list");
-        } else {
-            logger.info("Applicant " + getUsername() + " Removed observer" + observer);
+            return;
         }
+            logger.info("Applicant " + getUsername() + " Removed observer" + observer);
     }
 
     public ApplicantHistory getApplicantHistory() {
@@ -59,7 +58,8 @@ public class Applicant
     }
 
     public Optional<Application> getApplicationOf(String jobTitle) {
-        return getApplications().stream().filter(application -> application.getJobPosting().getJobTitle().equals(jobTitle)).findAny();
+        return getApplications().stream()
+                .filter(application -> application.getJobPosting().getJobTitle().equals(jobTitle)).findAny();
     }
 
     public Collection<Application> getApplications() {

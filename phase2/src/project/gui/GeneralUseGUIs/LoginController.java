@@ -95,7 +95,6 @@ public class LoginController extends ApplicationController {
         for (Company company: user.getCompanies())
             companies.getItems().add(company.getName());
         Button okButton = new Button("OK");
-//        okButton.setOnAction(e -> {user.setSignedInCompany(companies.getSelectionModel().getSelectedItem()));
         okButton.setOnAction(e -> {
             user.setSignedInCompany(system.getCompany(companies.getSelectionModel().getSelectedItem()));
             stage.close();
