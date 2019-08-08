@@ -86,7 +86,7 @@ public class ApplicantViewOrUpdateDocument extends ApplicationController impleme
             }
             pollDocuments();
         } else {
-            System.out.println("File not selected");
+            showModal("File not selected.");
         }
     }
 

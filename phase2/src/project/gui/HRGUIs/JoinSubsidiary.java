@@ -8,8 +8,6 @@ import project.gui.GeneralUseGUIs.ApplicationController;
 import project.gui.GeneralUseGUIs.SceneSwitcher;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class JoinSubsidiary extends ApplicationController {
 

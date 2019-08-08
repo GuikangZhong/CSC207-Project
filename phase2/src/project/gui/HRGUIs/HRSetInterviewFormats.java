@@ -62,7 +62,6 @@ public class HRSetInterviewFormats extends ApplicationController {
                 return cell;
             }
         });
-//        jobPostings.getItems().addAll(hr.getPostingsToAssignFormat());
         for (JobPosting jobPosting: hr.getPostingsToAssignFormat()){
             if (jobPosting.getCompany() == hr.getSignedInCompany()){
                 jobPostings.getItems().add(jobPosting);
