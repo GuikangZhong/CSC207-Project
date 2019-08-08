@@ -28,7 +28,7 @@ public class Company implements Serializable, SystemObserver {
     public Company(String name, MainSystem system) {
         this.name = name;
         this.system = system;
-        jobPostingManager = new JobPostingManager(system, this);
+        jobPostingManager = new JobPostingManager(this);
         hrManager = new HRManager(system);
         interviewerManager = new UserManager<>(system);
         interviewFormats = new HashMap<>();
