@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="704.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.gui.ApplicantGUIs.ApplicantViewHistory">
+  <center>
+    <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <children>
+        <Pane layoutX="23.0" layoutY="84.0" prefHeight="363.0" prefWidth="447.0">
+          <children>
+                  <HBox layoutX="24.0" layoutY="9.0">
+                     <children>
+                        <VBox prefWidth="200.0">
+                           <children>
+                              <HBox alignment="TOP_CENTER" prefHeight="30.0">
+                                 <children>
+                              <Label alignment="TOP_CENTER" prefWidth="139.0" text="Applying" textAlignment="CENTER" />
+                                 </children>
+                              </HBox>
+                        <ListView fx:id="applyingJobs" prefHeight="317.0" prefWidth="200.0" />
+                           </children>
+                        </VBox>
+                        <VBox>
+                           <children>
+                              <HBox alignment="TOP_CENTER" prefHeight="30.0">
+                                 <children>
+                              <Label text="Applied" />
+                                 </children>
+                              </HBox>
+                        <ListView fx:id="appliedJobs" prefHeight="317.0" prefWidth="200.0" />
+                           </children>
+                           <HBox.margin>
+                              <Insets left="7.5" />
+                           </HBox.margin>
+                        </VBox>
+                     </children>
+                  </HBox>
+          </children>
+        </Pane>
+        <Label layoutX="47.0" layoutY="55.0" prefHeight="17.0" prefWidth="158.0" text="Last application closed: " />
+        <Label fx:id="lastApplicationClosed" layoutX="276.0" layoutY="55.0" prefHeight="17.0" prefWidth="172.0" />
+        <HBox layoutX="47.0" prefHeight="20.0" prefWidth="458.0">
+          <children>
+            <Label fx:id="username" prefHeight="17.0" prefWidth="68.0" />
+            <Label fx:id="realname" alignment="BASELINE_RIGHT" prefHeight="17.0" prefWidth="246.0" textAlignment="RIGHT" />
+          </children>
+        </HBox>
+        <HBox layoutX="47.0" layoutY="29.0" prefHeight="20.0" prefWidth="458.0">
+          <children>
+            <HBox prefHeight="20.0" prefWidth="458.0">
+              <children>
+                <Label prefHeight="17.0" prefWidth="102.0" text="Created On: " />
+                <Label fx:id="createDate" alignment="BASELINE_RIGHT" prefHeight="17.0" prefWidth="293.0" textAlignment="RIGHT" />
+              </children>
+            </HBox>
+          </children>
+        </HBox>
+      </children>
+    </AnchorPane>
+  </center>
+  <left>
+    <TreeView fx:id="options" onContextMenuRequested="#selectItems" onMouseClicked="#selectItems" prefHeight="400.0" prefWidth="139.0" BorderPane.alignment="CENTER" />
+  </left>
+  <top>
+    <AnchorPane prefHeight="23.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <children>
+        <Label prefHeight="27.0" prefWidth="111.0" text="Applicant" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="475.0" AnchorPane.topAnchor="7.5">
+          <font>
+            <Font size="18.0" />
+          </font>
+        </Label>
+        <Button alignment="CENTER" mnemonicParsing="false" onAction="#exit" text="Sign Out" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="7.5" />
+      </children>
+      <effect>
+        <ColorAdjust />
+      </effect>
+    </AnchorPane>
+  </top>
+</BorderPane>
