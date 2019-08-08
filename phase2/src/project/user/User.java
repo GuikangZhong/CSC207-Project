@@ -19,10 +19,10 @@ public abstract class User implements Serializable {
     private byte[] password;
 
     public User(
-                String username,
-                String password,
-                String realName,
-                List<Company> companies) {
+            String username,
+            String password,
+            String realName,
+            List<Company> companies) {
         this.realName = realName;
         this.username = username;
         this.companies = companies;
@@ -32,6 +32,7 @@ public abstract class User implements Serializable {
             throw new RuntimeException("No MD5 algorithm found");
         }
     }
+
     private static byte[] getMD5ForPassword(String password) throws NoSuchAlgorithmException {
         MessageDigest md = MessageDigest.getInstance("MD5");
         return md.digest(password.getBytes());
@@ -41,15 +42,16 @@ public abstract class User implements Serializable {
         return companies;
     }
 
-    public void addCompany(Company company){
-        companies.add(company);
+    public void addCompany(Company company) {
+        if (!companies.contains(company))
+            companies.add(company);
     }
 
-    public Company getSignedInCompany(){
+    public Company getSignedInCompany() {
         return signedInCompany;
     }
 
-    public void setSignedInCompany(Company signedInCompany){
+    public void setSignedInCompany(Company signedInCompany) {
         this.signedInCompany = signedInCompany;
     }
 
@@ -75,7 +77,6 @@ public abstract class User implements Serializable {
             throw new RuntimeException("No MD5 algorithm found");
         }
     }
-
 
 
     public enum Type {

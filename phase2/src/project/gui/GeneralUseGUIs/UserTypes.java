@@ -21,7 +21,7 @@ public class UserTypes extends ApplicationController implements Initializable {
         type.getItems().addAll("Applicant", "HR", "Interviewer", "Referee");
     }
     public void returnButton(ActionEvent event) throws IOException {
-        SceneSwitcher.switchScene(this, event, "Main.fxml");
+        SceneSwitcher.switchScene(this, event, "../GeneralUseGUIs/Main.fxml");
     }
 
     public void confirmButton(ActionEvent event) throws IOException {

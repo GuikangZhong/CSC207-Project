@@ -1,13 +1,15 @@
-package project.gui.GeneralUseGUIs;
+package project.gui.HRGUIs;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
 import project.application.Company;
+import project.gui.GeneralUseGUIs.ApplicationController;
+import project.gui.GeneralUseGUIs.SceneSwitcher;
 
 import java.io.IOException;
 
-public class SwitchCompany extends ApplicationController{
+public class SwitchCompany extends ApplicationController {
     @FXML
     private ChoiceBox<String> companies;
 

@@ -45,19 +45,24 @@ public class JoinSubsidiary extends ApplicationController {
      * @param currentCompany: The company that the user currently signs in.
      */
     private void initializeSiblingCompanies(Company currentCompany) {
-        if(currentCompany.isRootCompany())
-            return;
-        List<Company> candidates = new ArrayList<>();
-        for (Company company : system.getCompanies()) {
-            if (currentCompany.isSiblingCompany(company)) {
-                candidates.add(company);
-            }
-        }
-        for(Company company:candidates){
-            if(company != currentCompany){
-                if(!availableSubsidiaries.getItems().contains(company.getName())){
-                    availableSubsidiaries.getItems().add(company.getName());
-                }
+//        if (currentCompany.isRootCompany())
+//            return;
+//        List<Company> candidates = new ArrayList<>();
+//        for (Company company : system.getCompanies()) {
+//            if (currentCompany.isSiblingCompany(company)) {
+//                candidates.add(company);
+//            }
+//        }
+//        for(Company company:candidates){
+//            if(company != currentCompany){
+//                if(!availableSubsidiaries.getItems().contains(company.getName())){
+//                    availableSubsidiaries.getItems().add(company.getName());
+//                }
+//            }
+//        }
+        for (Company company : currentCompany) {
+            if (!availableSubsidiaries.getItems().contains(company.getName())) {
+                availableSubsidiaries.getItems().add(company.getName());
             }
         }
     }

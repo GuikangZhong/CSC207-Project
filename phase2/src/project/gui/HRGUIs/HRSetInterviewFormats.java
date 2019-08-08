@@ -102,6 +102,6 @@ public class HRSetInterviewFormats extends ApplicationController {
     }
 
     public void exit(Event event) throws IOException {
-        SceneSwitcher.switchScene(this, event, "Main.fxml");
+        SceneSwitcher.switchScene(this, event, "../GeneralUseGUIs/Main.fxml");
     }
 }

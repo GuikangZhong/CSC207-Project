@@ -49,6 +49,6 @@ public class SignUpController extends ApplicationController {
     }
 
     public void confirmButton(ActionEvent event) throws IOException {
-        SceneSwitcher.switchScene(this, event, "Main.fxml");
+        SceneSwitcher.switchScene(this, event, "../GeneralUseGUIs/Main.fxml");
     }
 }

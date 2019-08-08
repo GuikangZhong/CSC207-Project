@@ -2,8 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="45a278f9-5571-4e1f-9dc9-870d68a3e170" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../phase1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../phase1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../phase1/README.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../phase1/README.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/application/Company.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/application/Company.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/gui/ApplicantGUIs/ApplicantViewApplications.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/ApplicantGUIs/ApplicantViewApplications.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/gui/ApplicantGUIs/ApplicantViewHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/ApplicantGUIs/ApplicantViewHistory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/gui/ApplicantGUIs/ApplicantViewJobPostings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/ApplicantGUIs/ApplicantViewJobPostings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/gui/ApplicantGUIs/ApplicantViewNotifications.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/ApplicantGUIs/ApplicantViewNotifications.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/gui/ApplicantGUIs/ApplicantViewOrUpdateDocument.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/ApplicantGUIs/ApplicantViewOrUpdateDocument.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/gui/ApplicantGUIs/RequestReference.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/ApplicantGUIs/RequestReference.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/gui/GeneralUseGUIs/AddSubsidiary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/GeneralUseGUIs/AddSubsidiary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/gui/GeneralUseGUIs/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/GeneralUseGUIs/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/gui/GeneralUseGUIs/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/GeneralUseGUIs/MainWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/gui/GeneralUseGUIs/SignUpController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/GeneralUseGUIs/SignUpController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/gui/GeneralUseGUIs/SwitchCompany.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/HRGUIs/SwitchCompany.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/gui/GeneralUseGUIs/SwitchCompany.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/HRGUIs/SwitchCompany.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/gui/GeneralUseGUIs/UserTypes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/GeneralUseGUIs/UserTypes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/gui/HRGUIs/HRAssignInterviewGroups.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/HRGUIs/HRAssignInterviewGroups.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/gui/HRGUIs/HRCreateInterviewFormat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/HRGUIs/HRCreateInterviewFormat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/gui/HRGUIs/HRCreateJobPosting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/HRGUIs/HRCreateJobPosting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/gui/HRGUIs/HRSeeApplicantsForJobPostings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/HRGUIs/HRSeeApplicantsForJobPostings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/gui/HRGUIs/HRSeeFinalCandidates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/HRGUIs/HRSeeFinalCandidates.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/gui/HRGUIs/HRSeeScheduledInterviews.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/HRGUIs/HRSeeScheduledInterviews.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/gui/HRGUIs/HRSetInterviewFormats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/HRGUIs/HRSetInterviewFormats.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/gui/HRGUIs/HRViewAllApplicants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/HRGUIs/HRViewAllApplicants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/gui/HRGUIs/HRViewTags.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/HRGUIs/HRViewTags.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/gui/HRGUIs/JoinSubsidiary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/HRGUIs/JoinSubsidiary.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/gui/OtherUserGUIs/InterviewerSeeInterviewGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/OtherUserGUIs/InterviewerSeeInterviewGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/gui/OtherUserGUIs/RefereeMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/OtherUserGUIs/RefereeMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/gui/OtherUserGUIs/RefereeViewPostings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/gui/OtherUserGUIs/RefereeViewPostings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/project/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/project/user/User.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,99 +44,25 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/project/interview/InterviewGroup.java">
+        <entry file="file://$PROJECT_DIR$/src/project/gui/GeneralUseGUIs/LoginController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="58">
-              <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/project/gui/JoinSubsidiary.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5">
-              <caret line="49" column="19" selection-start-line="49" selection-start-column="19" selection-end-line="49" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/project/interview/TakeHomeTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="32">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/project/interview/Round.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="77" column="36" lean-forward="true" selection-start-line="77" selection-start-column="36" selection-end-line="77" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/project/interview/RoundFactory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="16" column="76" selection-start-line="16" selection-start-column="76" selection-end-line="16" selection-end-column="76" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/project/application/ReferenceLetter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-              <folding>
-                <element signature="e#463#464#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/project/application/DocumentFactory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="13" column="76" lean-forward="true" selection-start-line="13" selection-start-column="76" selection-end-line="13" selection-end-column="76" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/project/interview/InPersonRound.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
-              <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/project/interview/GroupRound.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="32">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/project/interview/PhoneRound.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="280">
+              <caret line="113" column="51" selection-start-line="113" selection-start-column="51" selection-end-line="113" selection-end-column="51" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>Main.fxml</find>
+      <find>GeneralUserGUIs</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>../GeneralUserGUIs/Main.fxml</replace>
+      <replace>GeneralUseGUIs</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -126,7 +79,6 @@
         <option value="$PROJECT_DIR$/src/project/application/CoverLetter.java" />
         <option value="$PROJECT_DIR$/src/project/application/CV.java" />
         <option value="$PROJECT_DIR$/src/project/application/ReferenceLetter.java" />
-        <option value="$PROJECT_DIR$/src/project/user/User.java" />
         <option value="$PROJECT_DIR$/src/project/user/HR.java" />
         <option value="$PROJECT_DIR$/src/project/user/Interviewer.java" />
         <option value="$PROJECT_DIR$/src/project/system/MainSystem.java" />
@@ -140,11 +92,15 @@
         <option value="$PROJECT_DIR$/src/project/application/ApplicationStatus.java" />
         <option value="$PROJECT_DIR$/src/project/application/Application.java" />
         <option value="$PROJECT_DIR$/src/project/interview/Round.java" />
-        <option value="$PROJECT_DIR$/src/project/application/Company.java" />
         <option value="$PROJECT_DIR$/src/project/gui/JoinSubsidiary.java" />
         <option value="$PROJECT_DIR$/src/project/interview/RoundFactory.java" />
         <option value="$PROJECT_DIR$/src/project/application/DocumentFactory.java" />
         <option value="$PROJECT_DIR$/src/project/interview/InterviewGroup.java" />
+        <option value="$PROJECT_DIR$/src/project/application/Company.java" />
+        <option value="$PROJECT_DIR$/src/project/gui/HRGUIs/JoinSubsidiary.java" />
+        <option value="$PROJECT_DIR$/src/project/gui/GeneralUseGUIs/Main.java" />
+        <option value="$PROJECT_DIR$/src/project/user/User.java" />
+        <option value="$PROJECT_DIR$/src/project/gui/GeneralUseGUIs/LoginController.java" />
       </list>
     </option>
   </component>
@@ -170,8 +126,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -203,6 +157,30 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="project" type="462c0819:PsiDirectoryNode" />
               <item name="gui" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="phase2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="phase2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="gui" type="462c0819:PsiDirectoryNode" />
+              <item name="GeneralUseGUIs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="phase2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="phase2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="gui" type="462c0819:PsiDirectoryNode" />
+              <item name="HRGUIs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="phase2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="phase2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="gui" type="462c0819:PsiDirectoryNode" />
+              <item name="OtherUserGUIs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="phase2" type="b2602c69:ProjectViewProjectNode" />
@@ -243,6 +221,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -257,6 +237,9 @@
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="project.application" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\xiaoc\Documents\repos\group_0002\phase2\src\project\gui\HRGUIs" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -279,7 +262,7 @@
       </method>
     </configuration>
     <configuration name="Run" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="project.gui.Main" />
+      <option name="MAIN_CLASS_NAME" value="project.gui.GeneralUseGUIs.Main" />
       <module name="phase2" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -345,8 +328,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="735" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23686337" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24090542" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -355,13 +339,13 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3283582" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3283582" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3283582" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3283582" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32504147" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3233831" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.62852407" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.3283582" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -417,75 +401,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/project/application/Document.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/application/CV.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-          <folding>
-            <element signature="e#395#396#0" expanded="true" />
-            <element signature="e#422#423#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/gui/JoinSubsidiary.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/interview/InterviewGroupAssignmentStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/application/VerificationStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/application/Job.java" />
-    <entry file="file://$PROJECT_DIR$/src/project/application/BasicVerificationStrategy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="28" lean-forward="true" selection-start-column="28" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/observer/ApplicantObserver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/observer/SystemObserver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/observer/JobPostingObserver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/project/observer/InterviewObserver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64">
@@ -549,13 +464,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/user/HR.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/project/user/HRManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="896">
@@ -602,19 +510,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
           <caret line="32" column="36" lean-forward="true" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/user/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-          <folding>
-            <element signature="e#1304#1305#0" expanded="true" />
-            <element signature="e#1336#1337#0" expanded="true" />
-            <element signature="e#1468#1469#0" expanded="true" />
-            <element signature="e#1506#1507#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -708,28 +603,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/application/Company.java">
+    <entry file="file://$PROJECT_DIR$/src/project/interview/InterviewGroup.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="160" column="42" selection-start-line="160" selection-start-column="42" selection-end-line="160" selection-end-column="42" />
-          <folding>
-            <element signature="e#4593#4594#0" expanded="true" />
-            <element signature="e#4614#4615#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="218">
+          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/project/gui/JoinSubsidiary.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5">
-          <caret line="49" column="19" selection-start-line="49" selection-start-column="19" selection-end-line="49" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/interview/Round.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="77" column="36" lean-forward="true" selection-start-line="77" selection-start-column="36" selection-end-line="77" selection-end-column="36" />
+        <state relative-caret-position="640">
+          <caret line="50" column="19" selection-start-line="50" selection-start-column="19" selection-end-line="50" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -740,10 +624,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/interview/PhoneRound.java">
+    <entry file="file://$PROJECT_DIR$/src/project/interview/Round.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="800">
+          <caret line="59" column="36" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -756,18 +640,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/project/application/ReferenceLetter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="e#463#464#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="224">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/project/application/DocumentFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
-          <caret line="13" column="76" lean-forward="true" selection-start-line="13" selection-start-column="76" selection-end-line="13" selection-end-column="76" />
+          <caret line="14" column="76" selection-start-line="14" selection-start-column="76" selection-end-line="14" selection-end-column="76" />
         </state>
       </provider>
     </entry>
@@ -785,10 +666,130 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/interview/InterviewGroup.java">
+    <entry file="file://$PROJECT_DIR$/src/project/interview/PhoneRound.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
+        <state relative-caret-position="128">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/src.zip!/java/util/Stack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="52" column="11" selection-start-line="52" selection-start-column="11" selection-end-line="52" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/application/Company.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="160" column="44" selection-start-line="160" selection-start-column="44" selection-end-line="160" selection-end-column="44" />
+          <folding>
+            <element signature="e#1501#1502#0" expanded="true" />
+            <element signature="e#1556#1557#0" expanded="true" />
+            <element signature="e#1687#1688#0" expanded="true" />
+            <element signature="e#2188#2189#0" expanded="true" />
+            <element signature="e#2217#2218#0" expanded="true" />
+            <element signature="e#2248#2249#0" expanded="true" />
+            <element signature="e#2275#2276#0" expanded="true" />
+            <element signature="e#2330#2331#0" expanded="true" />
+            <element signature="e#2370#2371#0" expanded="true" />
+            <element signature="e#2409#2410#0" expanded="true" />
+            <element signature="e#2441#2442#0" expanded="true" />
+            <element signature="e#2504#2505#0" expanded="true" />
+            <element signature="e#2545#2546#0" expanded="true" />
+            <element signature="e#3183#3184#0" expanded="true" />
+            <element signature="e#3210#3211#0" expanded="true" />
+            <element signature="e#3485#3486#0" expanded="true" />
+            <element signature="e#3582#3583#0" expanded="true" />
+            <element signature="e#3603#3604#0" expanded="true" />
+            <element signature="e#3639#3640#0" expanded="true" />
+            <element signature="e#3967#3968#0" expanded="true" />
+            <element signature="e#4375#4376#0" expanded="true" />
+            <element signature="e#4541#4542#0" expanded="true" />
+            <element signature="e#4577#4578#0" expanded="true" />
+            <element signature="e#4628#4629#0" expanded="true" />
+            <element signature="e#4663#4664#0" expanded="true" />
+            <element signature="e#4415#4416#0" expanded="true" />
+            <element signature="e#4442#4443#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/gui/HRGUIs/HRSeeApplicantsForJobPostings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-119">
+          <caret line="102" column="66" selection-start-line="102" selection-start-column="66" selection-end-line="102" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/gui/GeneralUseGUIs/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="37" column="67" selection-start-line="37" selection-start-column="67" selection-end-line="37" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/user/HR.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="27" column="51" selection-start-line="27" selection-start-column="44" selection-end-line="27" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/gui/HRGUIs/JoinSubsidiary.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="32" column="17" lean-forward="true" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/user/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="36" column="60" lean-forward="true" selection-start-line="36" selection-start-column="60" selection-end-line="36" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/gui/GeneralUseGUIs/ApplicationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="113" column="22" selection-start-line="113" selection-start-column="22" selection-end-line="113" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/gui/GeneralUseGUIs/Menu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/gui/GeneralUseGUIs/SceneSwitcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="30" column="27" lean-forward="true" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/gui/GeneralUseGUIs/SignUpController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-413">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/gui/HRGUIs/HRCreateJobPosting.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="512">
+          <caret line="170" column="8" lean-forward="true" selection-start-line="170" selection-start-column="8" selection-end-line="170" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/gui/GeneralUseGUIs/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="113" column="51" selection-start-line="113" selection-start-column="51" selection-end-line="113" selection-end-column="51" />
         </state>
       </provider>
     </entry>

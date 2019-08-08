@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 import java.util.*;
 import java.util.logging.Logger;
 
-public class Company implements Serializable, SystemObserver {
+public class Company implements Serializable, SystemObserver, Iterable<Company> {
     private static final long serialVersionUID = 2088083308860080279L;
     private static Logger logger = Logging.getLogger();
     private String name;
@@ -46,18 +46,18 @@ public class Company implements Serializable, SystemObserver {
         return interviewFormats.get(formatName);
     }
 
-    public Set<String> getFormatNames(){
+    public Set<String> getFormatNames() {
         return Collections.unmodifiableSet(interviewFormats.keySet());
     }
 
     public void addInterviewFormat(String formatName, InterviewSetup setup) {
 
 //        interviewFormats.put(formatName, setup)
-        if (interviewFormats.keySet().contains(formatName)){
+        if (interviewFormats.keySet().contains(formatName)) {
             throw new RuntimeException();
         }
-        for (InterviewSetup format: interviewFormats.values()){
-            if (format.equalSetup(setup)){
+        for (InterviewSetup format : interviewFormats.values()) {
+            if (format.equalSetup(setup)) {
                 throw new RuntimeException();
             }
         }
@@ -108,18 +108,18 @@ public class Company implements Serializable, SystemObserver {
     }
 
     public boolean addTag(String newTag) {
-        if(!tags.contains(newTag)){
+        if (!tags.contains(newTag)) {
             tags.add(newTag);
             return true;
         }
         return false;
     }
 
-    public void removeTag(String oldTag){
+    public void removeTag(String oldTag) {
         this.tags.remove(oldTag);
     }
 
-    public void addSubsidiary(Company subsidiary){
+    public void addSubsidiary(Company subsidiary) {
         subsidiaries.add(subsidiary);
     }
 
@@ -127,14 +127,14 @@ public class Company implements Serializable, SystemObserver {
         return parentCompany;
     }
 
-    public void setParentCompany(Company parent){
+    public void setParentCompany(Company parent) {
         if (parentCompany == null)
             parentCompany = parent;
         else
             throw new RuntimeException("You cannot set parent for the second time");
     }
 
-    public List<Company> getSubsidiaries(){
+    public List<Company> getSubsidiaries() {
         return subsidiaries;
     }
 
@@ -144,11 +144,52 @@ public class Company implements Serializable, SystemObserver {
         jobPostingManager.updateOnTime(now);
     }
 
-    public boolean isSiblingCompany(Company other){
-        if(other == null)return false;
+    public boolean isSiblingCompany(Company other) {
+        if (other == null) return false;
         return other.getParentCompany() == getParentCompany();
     }
-    public boolean isRootCompany(){
+
+    public boolean isRootCompany() {
         return getParentCompany() == null;
+    }
+
+    private static Deque<Company> retrieveAllSubsidiaries(Company company) {
+        Deque<Company> result = new LinkedList<>();
+        Deque<Company> queue = new LinkedList<>();
+        queue.addLast(company);
+        while (!queue.isEmpty()) {
+            Company c = queue.removeFirst();
+            if (c != company)
+                result.addLast(c);
+            for (Company sub : c.getSubsidiaries()) {
+                queue.addLast(sub);
+            }
+        }
+        return result;
+    }
+
+    private class Iter implements Iterator<Company> {
+        Deque<Company> queue;
+        Iterator<Company> iterator;
+
+        Iter(Company company) {
+            queue = retrieveAllSubsidiaries(company);
+            iterator = queue.iterator();
+        }
+
+        @Override
+        public boolean hasNext() {
+            return iterator.hasNext();
+        }
+
+        @Override
+        public Company next() {
+            return iterator.next();
+        }
+    }
+
+    @Override
+    public Iterator<Company> iterator() {
+        return new Iter(this);
     }
 }

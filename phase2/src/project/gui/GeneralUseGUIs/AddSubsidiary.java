@@ -35,7 +35,7 @@ public class AddSubsidiary extends ApplicationController {
             parentCompany.addSubsidiary(sub);
             sub.setParentCompany(parentCompany);
 //            showModal("Completed", "Subsidiary added.");
-            SceneSwitcher.switchScene(this, event, "Main.fxml");
+            SceneSwitcher.switchScene(this, event, "../GeneralUseGUIs/Main.fxml");
         }
         else {
             showModal("Company name already exists.");
@@ -43,6 +43,6 @@ public class AddSubsidiary extends ApplicationController {
     }
 
     public void returnButton(ActionEvent event) throws IOException {
-        SceneSwitcher.switchScene(this, event, "Main.fxml");
+        SceneSwitcher.switchScene(this, event, "../GeneralUseGUIs/Main.fxml");
     }
 }

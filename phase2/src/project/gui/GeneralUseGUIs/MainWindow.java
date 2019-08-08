@@ -46,7 +46,7 @@ public class MainWindow extends ApplicationController implements Initializable {
             boolean added = getSystem().addCompany(name);
             if (added) {
                 logger.info("Successfully added");
-                SceneSwitcher.switchScene(this, event, "Main.fxml");
+                SceneSwitcher.switchScene(this, event, "../GeneralUseGUIs/Main.fxml");
             } else {
                 logger.warning("Company already exist");
             }
@@ -54,7 +54,7 @@ public class MainWindow extends ApplicationController implements Initializable {
     }
 
     public void returnButton(ActionEvent event) throws IOException {
-        SceneSwitcher.switchScene(this, event, "Main.fxml");
+        SceneSwitcher.switchScene(this, event, "../GeneralUseGUIs/Main.fxml");
     }
 
     public void setButtonClicked(ActionEvent event) {

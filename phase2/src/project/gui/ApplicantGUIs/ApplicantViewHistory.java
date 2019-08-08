@@ -33,7 +33,7 @@ public class ApplicantViewHistory extends ApplicationController {
     private Label lastApplicationClosed;
 
     public void exit(Event event) throws IOException {
-        SceneSwitcher.switchScene(this, event, "Main.fxml");
+        SceneSwitcher.switchScene(this, event, "../GeneralUseGUIs/Main.fxml");
     }
 
     @Override
