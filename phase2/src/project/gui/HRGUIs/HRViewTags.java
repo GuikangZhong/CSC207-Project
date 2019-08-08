@@ -44,7 +44,6 @@ public class HRViewTags extends ApplicationController implements Initializable {
             showModal("Great","Tag added successfully");
             tagList.getItems().add(newTag.getText());
         }else {
-//            logger.info("Tag added successfully");
             showModal("Tag already exists.");
         }
     }

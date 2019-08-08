@@ -13,10 +13,11 @@ public class BasicVerificationStrategy implements VerificationStrategy {
      * In our design, it is impossible that the application contains two CV's or two cover letters since the maximum
      * allowed number for both of the two documents are 1.
      * @param application: The application being verified.
-     * @return
+     * @return true if and only if the application contains one CV and one Cover Letter.
      */
     @Override
     public boolean satisfies(Application application) {
+        int requiredNum = 2;
         int cnt = 0;
         for (Document document : application.getDocument()) {
             if (document.getDocumentType().equals(CV.documentType())
@@ -24,6 +25,6 @@ public class BasicVerificationStrategy implements VerificationStrategy {
                 cnt++;
             }
         }
-        return cnt == 2;
+        return cnt == requiredNum;
     }
 }

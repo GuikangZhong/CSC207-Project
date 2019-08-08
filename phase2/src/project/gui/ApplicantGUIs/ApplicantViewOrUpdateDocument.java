@@ -21,8 +21,7 @@ import java.io.IOException;
 import java.util.List;
 
 public class ApplicantViewOrUpdateDocument extends ApplicationController implements Initializable {
-    @FXML
-    private TreeView<String> options;
+
     @FXML
     private ListView<Document> documentList;
     @FXML

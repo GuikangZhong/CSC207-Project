@@ -161,7 +161,6 @@ public class Applicant
         ApplicantHistory history = getApplicantHistory();
         moveToApplied(job);
         history.addHiredPositions(job);
-//        history.removeInProgress(job);
     }
 
     public void updateInterviewProgress(JobPosting job, Round round){

@@ -30,7 +30,7 @@ public class InterviewSetup implements Serializable {
      * not be used as a concrete setting for a certain interview.
      * @return true if and only if it serves as a template.
      */
-    protected boolean isTemplate() {
+    boolean isTemplate() {
         return isTemplate;
     }
 
@@ -55,18 +55,14 @@ public class InterviewSetup implements Serializable {
      * @param round: The round to be added.
      * @return if given round can be added to the setup
      */
-    public boolean addRound(Round round) {
+    public void addRound(Round round) {
         if (!record.containsKey(round.getRoundType())) {
             record.put(round.getRoundType(), 0);
         }
         int n = record.get(round.getRoundType());
-        if (n == round.getMaxRoundNumber()) {
-            return false;
-        }
         record.put(round.getRoundType(), n + 1);
         round.setNumber(n + 1);
         rounds.add(round);
-        return true;
     }
 
 
@@ -74,7 +70,7 @@ public class InterviewSetup implements Serializable {
         return rounds;
     }
 
-    public int getTotalRoundCount() {
+    int getTotalRoundCount() {
         return rounds.size();
     }
 

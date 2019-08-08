@@ -24,7 +24,7 @@ public class InterviewGroup implements Serializable {
     private List<InterviewGroupObserver> observers;
     static private Logger logger = Logging.getLogger();
 
-    public void addObserver(InterviewGroupObserver observer) {
+    void addObserver(InterviewGroupObserver observer) {
         logger.info(this + "add observer " + observer);
         observers.add(observer);
     }
@@ -60,11 +60,11 @@ public class InterviewGroup implements Serializable {
         return interviewer;
     }
 
-    public boolean isSubmitted() {
+    boolean isSubmitted() {
         return submitted;
     }
 
-    public List<Applicant> getApplicantsPassed() {
+    List<Applicant> getApplicantsPassed() {
         List<Applicant> result = new ArrayList<>();
         for (Applicant applicant : applicants) {
             if (applicantsStatus.get(applicant.getUsername())) {

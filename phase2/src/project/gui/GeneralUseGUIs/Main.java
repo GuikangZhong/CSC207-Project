@@ -16,7 +16,7 @@ import java.util.logging.Logger;
 public class Main extends Application {
 
 
-    static String autoSaveFileName = "auto.ser";
+    private static String autoSaveFileName = "auto.ser";
     static private Logger logger = Logging.getLogger();
     private static MainSystem system;
     public static void main(String[] args) throws IOException, ClassNotFoundException{

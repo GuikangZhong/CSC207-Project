@@ -15,7 +15,7 @@ public class Menu {
 
     private TreeItem<String> options;
 
-    public Menu() {
+    Menu() {
         itemToResource = new HashMap<>();
         options = new TreeItem<>();
         options.setExpanded(true);
@@ -25,7 +25,7 @@ public class Menu {
         SceneSwitcher.switchScene(controller, event, itemToResource.get(item));
     }
 
-    public Menu addOption(String item, String resource) {
+    Menu addOption(String item, String resource) {
         itemToResource.put(item, resource);
         options.getChildren().add(new TreeItem<>(item));
         return this;

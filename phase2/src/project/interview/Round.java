@@ -33,17 +33,12 @@ public abstract class Round implements Serializable, InterviewGroupObserver, Clo
 
     public abstract String getRoundType();
 
-    public abstract int getMaxRoundNumber();
-
     public void addObserver(RoundObserver observer) {
         logger.info(this + " addObserver " + observer);
         observers.add(observer);
     }
 
     public void setNumber(int number) {
-        if (number > getMaxRoundNumber()) {
-            throw new RuntimeException("No you cannot add more rounds !!!");
-        }
         this.number = number;
     }
 
@@ -52,7 +47,7 @@ public abstract class Round implements Serializable, InterviewGroupObserver, Clo
      * Set the round with given group
      * Can be called only once
      * Further calling attempts results in RuntimeException
-     * @param groups
+     * @param groups: the group to be set
      */
     void setGroups(List<InterviewGroup> groups) {
         if(groups == null){

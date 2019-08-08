@@ -1,4 +1,4 @@
-package project.HRGUIs;
+package project.gui.HRGUIs;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -21,7 +21,7 @@ public class JoinSubsidiary extends ApplicationController {
         super.postInit();
         Company currentCompany = user.getSignedInCompany();
         for (Company subsidiary : currentCompany.getSubsidiaries()) {
-            if (!user.getCompanies().contains(subsidiary.getName())) {
+            if (!user.getCompanies().contains(subsidiary)) {
                 availableSubsidiaries.getItems().add(subsidiary.getName());
             }
         }

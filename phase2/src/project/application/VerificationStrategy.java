@@ -6,7 +6,7 @@ import java.io.Serializable;
 public interface VerificationStrategy extends Serializable {
     /**
      *
-     * @param application
+     * @param application: the application to be verified whether contains all the required documents.
      * @return true if given application satisfies the VerificationStrategy
      */
     boolean satisfies(Application application);

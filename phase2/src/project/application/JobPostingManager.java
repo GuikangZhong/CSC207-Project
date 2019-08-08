@@ -13,13 +13,11 @@ public class JobPostingManager implements Serializable, SystemObserver {
     private static final long serialVersionUID = -9197333240356088957L;
     private HashMap<String, JobPosting> jobPostings;
     private Company company;
-    private MainSystem system;
     static private Logger logger = Logging.getLogger();
 
-    public JobPostingManager(MainSystem system, Company company) {
+    public JobPostingManager(Company company) {
         jobPostings = new HashMap<>();
         this.company = company;
-        this.system = system;
     }
 
     public Company getCompany() {

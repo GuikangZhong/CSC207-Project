@@ -23,9 +23,6 @@ public class HRSeeScheduledInterviews extends ApplicationController {
     @FXML
     private ListView<Interview> interviewsRoundFinished;
 
-    @FXML
-    private Button assignment;
-
 
     @Override
     public void postInit() {

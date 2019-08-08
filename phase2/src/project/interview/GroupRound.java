@@ -6,11 +6,6 @@ public class GroupRound extends Round implements Cloneable {
         return roundType();
     }
 
-    @Override
-    public int getMaxRoundNumber() {
-        return 5;
-    }
-
     public static String roundType(){
         return "Group";
     }

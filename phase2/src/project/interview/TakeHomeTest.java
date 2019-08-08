@@ -8,8 +8,4 @@ public class TakeHomeTest extends Round implements Cloneable {
         return roundType();
     }
 
-    @Override
-    public int getMaxRoundNumber() {
-        return 5;
-    }
 }

@@ -85,19 +85,6 @@ public class Company implements Serializable, SystemObserver {
         return interviewerManager;
     }
 
-    //    public boolean addUser(User user) {
-//        if (user.getType() == User.Type.INTERVIEWER) {
-//            return interviewerManager.addUser((Interviewer) user);
-//        }
-//        return false;
-//    }
-//
-//    public User getUser(String username) {
-//         if (interviewerManager.containsUser(username)) {
-//            return interviewerManager.getUser(username);
-//        }
-//        return null;
-//    }
     public boolean addUser(User user) {
         if (user.getType() == User.Type.HR) {
             return hrManager.addUser((HR) user);

@@ -15,6 +15,7 @@ import project.application.Application;
 import project.application.Company;
 import project.application.JobPosting;
 import project.gui.GeneralUseGUIs.ApplicationController;
+import project.gui.GeneralUseGUIs.CellFactoryFactory;
 import project.gui.GeneralUseGUIs.SceneSwitcher;
 import project.user.Applicant;
 
@@ -50,7 +51,7 @@ public class ApplicantViewApplications extends ApplicationController {
             @Override
             public ListCell<Application> call(ListView<Application> p) {
 
-                ListCell<Application> listCell = new ListCell<Application>() {
+                return new ListCell<Application>() {
 
                     @Override
                     protected void updateItem(Application t, boolean bln) {
@@ -63,7 +64,6 @@ public class ApplicantViewApplications extends ApplicationController {
                     }
 
                 };
-                return listCell;
             }
         });
         pollApplications();

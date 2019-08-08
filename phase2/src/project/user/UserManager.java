@@ -8,7 +8,7 @@ import java.util.HashMap;
 public class UserManager<T extends User> implements Serializable {
     private static final long serialVersionUID = -3896729601031943756L;
 
-    HashMap<String, T> users;
+    private HashMap<String, T> users;
     private MainSystem system;
 
     public UserManager(MainSystem system) {

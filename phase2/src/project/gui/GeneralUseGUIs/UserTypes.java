@@ -3,7 +3,6 @@ package project.gui.GeneralUseGUIs;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.input.MouseEvent;
 
@@ -13,8 +12,6 @@ public class UserTypes extends ApplicationController implements Initializable {
 
     @FXML
     ChoiceBox<String> type;
-    @FXML
-    private Button confirm;
 
     static String typeName;
 

@@ -17,10 +17,8 @@ public class ApplicationInfoController {
     private ListView<Document> documents;
     @FXML
     private TextArea content;
-    Application application;
 
     public void setApplication(Application application) {
-        this.application = application;
         applicantName.setText(application.getApplicant().getRealName());
         documents.getItems().clear();
         documents.getItems().addAll(application.getDocument());

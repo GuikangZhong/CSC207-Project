@@ -14,8 +14,4 @@ public class PhoneRound extends Round implements Cloneable{
         return roundType();
     }
 
-    @Override
-    public int getMaxRoundNumber() {
-        return 1;
-    }
 }

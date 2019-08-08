@@ -25,7 +25,7 @@ public abstract class ApplicationController implements Initializable {
     protected TreeView<String> options;
     protected MainSystem system;
     protected User user;
-    protected Menu menu;
+    private Menu menu;
 
     public ApplicationController() {
 

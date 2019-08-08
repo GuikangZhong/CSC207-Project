@@ -53,8 +53,7 @@ public class ApplicantViewJobPostings extends ApplicationController implements I
     }
 
     private void initializeTags(){
-        Set<String> tagOptions = new HashSet<>();
-        tagOptions.addAll(system.getAllTags());
+        Set<String> tagOptions = new HashSet<>(system.getAllTags());
         for (String tag: tagOptions){
             CheckBox tagBox = new CheckBox(tag);
             availableTags.getItems().add(tagBox);
@@ -76,7 +75,7 @@ public class ApplicantViewJobPostings extends ApplicationController implements I
         }
     }
 
-    public void clearAll(){
+    private void clearAll(){
         postStatus.setText(null);
         companyName.setText(null);
         description.setText(null);
