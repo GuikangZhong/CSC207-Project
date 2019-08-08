@@ -3,7 +3,6 @@ package project.interview;
 import project.application.Application;
 import project.application.JobPosting;
 import project.observer.ApplicantObserver;
-import project.observer.InterviewGroupObserver;
 import project.observer.InterviewObserver;
 import project.observer.RoundObserver;
 import project.user.Applicant;
