@@ -166,14 +166,21 @@ public class HRCreateJobPosting extends ApplicationController {
             numLetterRequired = Integer.parseInt(numField.getText());
             stage.close();
         });
-        HBox hBox = new HBox();
-        hBox.getChildren().add(numField);
-        hBox.setAlignment(Pos.CENTER);
+        numField.setPrefWidth(250);
+        okButton.setPrefWidth(100);
+        HBox hBox1 = new HBox();
+        hBox1.getChildren().add(numField);
+        hBox1.setAlignment(Pos.CENTER);
+        HBox hBox2 = new HBox();
+        hBox2.getChildren().add(okButton);
+        hBox2.setAlignment(Pos.CENTER);
         VBox layout = new VBox();
-        layout.getChildren().addAll(hBox, okButton);
-        Scene stageScene = new Scene(layout, 300, 300);
+        layout.setSpacing(50);
+        layout.getChildren().addAll(hBox1, hBox2);
+        Scene stageScene = new Scene(layout, 300, 100);
         stage.setScene(stageScene);
         stage.showAndWait();
+
     }
 
     public void exit(Event event) throws IOException{

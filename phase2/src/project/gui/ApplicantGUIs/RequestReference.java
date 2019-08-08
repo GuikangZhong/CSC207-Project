@@ -80,7 +80,7 @@ public class RequestReference extends ApplicationController implements Serializa
         selectedPosting = jobPostings.getSelectionModel().getSelectedItem();
     }
 
-    public void requestButton(ActionEvent event) throws IOException {
+    public void requestButton(ActionEvent event) {
         if (selectedReferee == null) {
             showModal("Warning", "referee not selected");
         } else if (selectedPosting == null) {

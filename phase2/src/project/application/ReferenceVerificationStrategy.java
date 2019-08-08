@@ -14,7 +14,7 @@ public class ReferenceVerificationStrategy implements VerificationStrategy {
                 letters.add((ReferenceLetter) document);
             }
         }
-        return letters.size() == referenceLettersRequired;
+        return letters.size() >= referenceLettersRequired;
     }
 
     public void setReferenceLettersRequired(int numRequired){

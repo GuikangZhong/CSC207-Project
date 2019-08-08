@@ -52,7 +52,6 @@ public class Company implements Serializable, SystemObserver, Iterable<Company> 
 
     public void addInterviewFormat(String formatName, InterviewSetup setup) {
 
-//        interviewFormats.put(formatName, setup)
         if (interviewFormats.keySet().contains(formatName)) {
             throw new RuntimeException();
         }
@@ -144,15 +143,12 @@ public class Company implements Serializable, SystemObserver, Iterable<Company> 
         jobPostingManager.updateOnTime(now);
     }
 
-    public boolean isSiblingCompany(Company other) {
-        if (other == null) return false;
-        return other.getParentCompany() == getParentCompany();
-    }
-
-    public boolean isRootCompany() {
-        return getParentCompany() == null;
-    }
-
+    /**
+     *
+     * @param company: The company of which we will get all the subsidiaries.
+     * @return: All the companies that are directly the subsidiary of company or the subsidiary of
+     * a subsidiary of company,... and so on.
+     */
     private static Deque<Company> retrieveAllSubsidiaries(Company company) {
         Deque<Company> result = new LinkedList<>();
         Deque<Company> queue = new LinkedList<>();
